@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: userver/cache/update_type.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -91,31 +92,35 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// @file userver/cache/update_type.hpp</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// @brief Enums representing periodic update types for `CachingComponentBase`</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">yaml_config</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;USERVER_NAMESPACE_BEGIN</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> cache {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/// Type of `CachingComponentBase` update</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1">   13</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">UpdateType</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1aa60924e124da4d51bd4dc74c8f85b158" title="requests all the items, starting from scratch">kFull</a>,         <span class="comment">///&lt; requests all the items, starting from scratch</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1a4461e3132c6a68cc061f851d6b53fc15" title="requests only newly updated items">kIncremental</a>,  <span class="comment">///&lt; requests only newly updated items</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// Update types allowed for a `CachingComponentBase` instance by static config</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f">   19</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f" title="Update types allowed for a CachingComponentBase instance by static config.">AllowedUpdateTypes</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  kFullAndIncremental,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  kOnlyFull,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  kOnlyIncremental,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f" title="Update types allowed for a CachingComponentBase instance by static config.">AllowedUpdateTypes</a> Parse(<span class="keyword">const</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::YamlConfig&amp; value,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                         formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f" title="Update types allowed for a CachingComponentBase instance by static config.">AllowedUpdateTypes</a>&gt;);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}  <span class="comment">// namespace cache</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">json_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">yaml_config</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;USERVER_NAMESPACE_BEGIN</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace</span> cache {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/// Type of `CachingComponentBase` update</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1">   14</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">UpdateType</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1aa60924e124da4d51bd4dc74c8f85b158" title="requests all the items, starting from scratch">kFull</a>,         <span class="comment">///&lt; requests all the items, starting from scratch</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1a4461e3132c6a68cc061f851d6b53fc15" title="requests only newly updated items">kIncremental</a>,  <span class="comment">///&lt; requests only newly updated items</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// Update types allowed for a `CachingComponentBase` instance by static config</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f">   20</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f" title="Update types allowed for a CachingComponentBase instance by static config.">AllowedUpdateTypes</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  kFullAndIncremental,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  kOnlyFull,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  kOnlyIncremental,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f" title="Update types allowed for a CachingComponentBase instance by static config.">AllowedUpdateTypes</a> Parse(<span class="keyword">const</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::YamlConfig&amp; value,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                         formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f" title="Update types allowed for a CachingComponentBase instance by static config.">AllowedUpdateTypes</a>&gt;);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">UpdateType</a> Parse(<span class="keyword">const</span> formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value&amp; value,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                 formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">UpdateType</a>&gt;);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}  <span class="comment">// namespace cache</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
@@ -285,7 +290,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

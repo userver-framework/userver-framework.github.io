@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: dump::Dumper Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -146,12 +147,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </ul>
 <p>Dumps will be stored in <code>{dump-root}/{dumper_name}</code>, where <code>dump-root</code> is taken from <code><a class="el" href="../../d2/da7/classcomponents_1_1DumpConfigurator.html" title="Helper component that manages common configuration for userver dumps.">components::DumpConfigurator</a></code>.</p>
 <p>Here, <code>dumper_name</code> is the name of the parent component.</p>
-<h2><a class="anchor" id="autotoc_md405"></a>
+<h2><a class="anchor" id="autotoc_md406"></a>
 Dynamic config</h2>
 <ul>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_DUMPS">USERVER_DUMPS</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md406"></a>
+<h2><a class="anchor" id="autotoc_md407"></a>
 Static config</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -177,7 +178,7 @@ Static config</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>first-update-type</code> </td><td class="markdownTableBodyNone"><code>string</code> </td><td class="markdownTableBodyNone">specifies whether incremental and/or full first update will be used </td><td class="markdownTableBodyNone">full  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md407"></a>
+<h2><a class="anchor" id="autotoc_md408"></a>
 Sample usage</h2>
 <div class="fragment"><div class="line"><span class="keyword">class </span>SampleComponentWithDumps final : <span class="keyword">public</span> <a class="code" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">components::LoggableComponentBase</a>,</div>
 <div class="line">                                       <span class="keyword">private</span> <a class="code" href="../../dc/d3a/classdump_1_1DumpableEntity.html">dump::DumpableEntity</a> {</div>
@@ -585,7 +586,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

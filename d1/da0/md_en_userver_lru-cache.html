@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: Least Recently Used (LRU) Caches and expirable LRU caches</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -84,7 +85,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>A Least Recently Used (LRU) Cache organizes items in order of use. It drops items not used for the longest amount of time in favor of caching new items. There are also expirable LRU caches that drop expired records and may prolong record lifetime on usage.</p>
 <p>To implement those caches userver provides a base component class <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a> that manages an instance of <a class="el" href="../../d1/d22/classcache_1_1ExpirableLruCache.html" title="Class for expirable LRU cache. Use cache::LruMap for not expirable LRU Cache.">cache::ExpirableLruCache</a>.</p>
-<h1><a class="anchor" id="autotoc_md174"></a>
+<h1><a class="anchor" id="autotoc_md175"></a>
 Typical use cases</h1>
 <p>LRU cache is useful for reducing the network interactions while working with data that does not fit into service memory and rarely changes. Examples:</p><ul>
 <li>caching user ids by their emails</li>
@@ -95,7 +96,7 @@ Typical use cases</h1>
 <li>caching road average traffic situation for an area for a few minutes</li>
 <li>caching cab rating for a median travel time</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md175"></a>
+<h1><a class="anchor" id="autotoc_md176"></a>
 Usage</h1>
 <p>Using <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a> is quite straightforward. Write a component that derives from it:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU-cache components.">userver/cache/lru_cache_component_base.hpp</a>&gt;</span></div>
@@ -121,7 +122,7 @@ Usage</h1>
 <div class="line">  Value GetValueForExpiredKeyFromRemote(<span class="keyword">const</span> Key&amp; key);</div>
 <div class="line">};</div>
 </div><!-- fragment --><p> After that, get the component using the <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html#a4ba6078e836fc718192a75444f93f9f3" title="Finds a component of type T with specified name (if any) and returns the component after it was initi...">components::ComponentContext::FindComponent()</a> and call cache::LruCacheComponent::GetCache(). Use the returned <a class="el" href="../../dd/ddb/classcache_1_1LruCacheWrapper.html">cache::LruCacheWrapper</a>.</p>
-<h1><a class="anchor" id="autotoc_md176"></a>
+<h1><a class="anchor" id="autotoc_md177"></a>
 Low level primitives</h1>
 <p><a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a> should be your choice by default for implementing all the LRU caches. However, in some cases there is a need to avoid using the <a class="el" href="../../d3/df4/md_en_userver_component-system.html">component system</a>, or to avoid synchronization, or to control the expiration logic more precisely.</p>
 <p>Here's a brief introduction into LRU types:</p><ul>
@@ -302,7 +303,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: Functional service tests (testsuite)</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -178,14 +179,14 @@ Userver testsuite support</h2>
 </div><!-- fragment --><p> Add testsuite components to <code>config.yaml</code>:</p>
 <div class="fragment"><div class="line">        tests-control:</div>
 <div class="line">            load-enabled: $testsuite-enabled</div>
-<div class="line">            path: /tests/control</div>
+<div class="line">            path: /tests/{action}</div>
 <div class="line">            method: POST</div>
 <div class="line">            task_processor: main-task-processor</div>
 <div class="line">            testpoint-timeout: 10s</div>
 <div class="line">            testpoint-url: mockserver/testpoint</div>
 <div class="line">            throttling_enabled: false</div>
 <div class="line">        testsuite-support:</div>
-</div><!-- fragment --><p>Please note that the testsuite support must be disabled in production enviroment. Testsuite sets the <code>testsuite-enabled</code> variable into <code>true</code> when runs the service. In the example above this variable controls whether or <code>tests-control</code> component is loaded.</p>
+</div><!-- fragment --> <dl class="section warning"><dt>Warning</dt><dd>Please note that the testsuite support must be disabled in production enviroment. Testsuite sets the <code>testsuite-enabled</code> variable into <code>true</code> when runs the service. In the example above this variable controls whether or <code>tests-control</code> component is loaded.</dd></dl>
 <h2><a class="anchor" id="autotoc_md116"></a>
 Features</h2>
 <h3><a class="anchor" id="autotoc_md117"></a>
@@ -263,8 +264,8 @@ Mock time</h3>
 <li>C++ code: <a class="el" href="../../d0/d58/samples_2testsuite-support_2now_8cpp-example.html">samples/testsuite-support/now.cpp</a></li>
 <li>Testcase: <a class="el" href="../../dd/df0/samples_2testsuite-support_2tests_2test_mocked_time_8py-example.html">samples/testsuite-support/tests/test_mocked_time.py</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md123"></a>
-Testpoint</h2>
+<h3><a class="anchor" id="autotoc_md123"></a>
+Testpoint</h3>
 <p><a href="https://yandex.github.io/yandex-taxi-testsuite/testpoint/">Testpoints</a> are used to send messages from the service to testcase and back. Typical use cases are:</p>
 <ul>
 <li>Retrieve intermediate state of the service and test it</li>
@@ -321,7 +322,34 @@ Logs capture</h3>
 </div><!-- fragment --><p> Example on logs capture usage could be found here:</p>
 <ul>
 <li>C++ code: <a class="el" href="../../d5/dfa/samples_2testsuite-support_2logcapture_8cpp-example.html">samples/testsuite-support/logcapture.cpp</a></li>
-<li>Testcase: <a class="el" href="../../d1/d98/samples_2testsuite-support_2tests_2test_logcapture_8py-example.html">samples/testsuite-support/tests/test_logcapture.py</a> </li>
+<li>Testcase: <a class="el" href="../../d1/d98/samples_2testsuite-support_2tests_2test_logcapture_8py-example.html">samples/testsuite-support/tests/test_logcapture.py</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md125"></a>
+Testsuite tasks</h3>
+<p>Testsuite tasks facility allows to register a custom function and call it by name from testsuite. It's useful for testing components that perform periodic job not related to its own HTTP handler.</p>
+<p>You can use <code><a class="el" href="../../dd/dc0/classtestsuite_1_1TestsuiteTasks.html" title="Testsuite tasks support.">testsuite::TestsuiteTasks</a></code> to register your own task:</p>
+<div class="fragment"><div class="line">  <span class="keyword">auto</span>&amp; testsuite_tasks = <a class="code" href="../../d3/d56/namespacetestsuite.html#a6eeee30a0d49f8c1ab78a45248a3a7e9" title="Get reference to TestsuiteTasks instance.">userver::testsuite::GetTestsuiteTasks</a>(context);</div>
+<div class="line">  <span class="comment">// Only register task for testsuite environment</span></div>
+<div class="line">  <span class="keywordflow">if</span> (testsuite_tasks.IsEnabled()) {</div>
+<div class="line">    testsuite_tasks.RegisterTask(<span class="stringliteral">&quot;sample-task&quot;</span>, [] {</div>
+<div class="line">      <a class="code" href="../../d9/d1d/testpoint_8hpp.html#a8a6d27a839e4327f705ac8d965e4b6e8" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon...">TESTPOINT</a>(<span class="stringliteral">&quot;sample-task/action&quot;</span>, [] {</div>
+<div class="line">        userver::formats::json::ValueBuilder builder;</div>
+<div class="line">        <span class="keywordflow">return</span> builder.ExtractValue();</div>
+<div class="line">      }());</div>
+<div class="line">    });</div>
+<div class="line">  } <span class="keywordflow">else</span> {</div>
+<div class="line">    <span class="comment">// Proudction code goes here</span></div>
+<div class="line">  }</div>
+</div><!-- fragment --><p> After that you can call your task from testsuite code:</p>
+<div class="fragment"><div class="line">    await service_client.run_task(<span class="stringliteral">&#39;sample-task&#39;</span>)</div>
+<div class="line">    <span class="keyword">assert</span> task_action.times_called == 1</div>
+</div><!-- fragment --><p> Or spawn the task asynchronously using context manager:</p>
+<div class="fragment"><div class="line">    async <span class="keyword">with</span> service_client.spawn_task(<span class="stringliteral">&#39;sample-task&#39;</span>):</div>
+<div class="line">        await task_action.wait_call()</div>
+</div><!-- fragment --><p> An example on testsuite tasks could be found here:</p>
+<ul>
+<li>C++ code: <a class="el" href="../../dc/dba/samples_2testsuite-support_2tasks_8cpp-example.html">samples/testsuite-support/tasks.cpp</a></li>
+<li>Testcase: <a class="el" href="../../d1/d57/samples_2testsuite-support_2tests_2test_tasks_8py-example.html">samples/testsuite-support/tests/test_tasks.py</a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -493,7 +521,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

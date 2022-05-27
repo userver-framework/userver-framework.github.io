@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: components::Logging Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -160,13 +161,13 @@ static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bot
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Logging component </p>
 <p>Allows to configure the default logger and/or additional loggers for your needs.</p>
-<h2><a class="anchor" id="autotoc_md428"></a>
+<h2><a class="anchor" id="autotoc_md429"></a>
 Static options:</h2>
 <p>Name | Description | Default value -&mdash; | --------&mdash; | ----------&mdash; file_path | path to the log file | level | log verbosity | info format | log output format, either 'tskv' or 'ltsv' | tskv pattern | message formatting pattern, see <a href="https://github.com/gabime/spdlog/wiki/3.-Custom-formatting#pattern-flags">spdlog wiki</a> for details, %v means message text | tskv or ltsv prologue with timestamp, timezone and level fields flush_level | messages of this and higher levels get flushed to the file immediately | warning message_queue_size | the size of internal message queue, must be a power of 2 | 65536 overflow_behavior | message handling policy while the queue is full: <code>discard</code> drops messages, <code>block</code> waits until message gets into the queue | discard testsuite-capture | if exists, setups additional TCP log sink for testing purposes | {}</p>
-<h3><a class="anchor" id="autotoc_md429"></a>
+<h3><a class="anchor" id="autotoc_md430"></a>
 testsuite-capture options:</h3>
 <p>Name | Description | Default value -&mdash; | --------&mdash; | ----------&mdash; host | testsuite hostname, e.g. localhost | port | testsuite port |</p>
-<h2><a class="anchor" id="autotoc_md430"></a>
+<h2><a class="anchor" id="autotoc_md431"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    <a class="code" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>:</div>
@@ -422,7 +423,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

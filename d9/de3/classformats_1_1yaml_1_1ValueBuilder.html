@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: formats::yaml::ValueBuilder Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -232,7 +233,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Iterator&lt; IterTra
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Builder for YAML. </p>
 <p>Class provides methods for building YAML. For read only access to the existing YAML values use <a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html" title="Non-mutable YAML value representation.">formats::yaml::Value</a>.</p>
-<h2><a class="anchor" id="autotoc_md367"></a>
+<h2><a class="anchor" id="autotoc_md368"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="comment">// #include &lt;userver/formats/yaml.hpp&gt;</span></div>
 <div class="line">  <a class="code" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html" title="Builder for YAML.">formats::yaml::ValueBuilder</a> builder;</div>
@@ -245,7 +246,7 @@ Example usage:</h2>
 <div class="line"> </div>
 <div class="line">  ASSERT_EQ(yaml[<span class="stringliteral">&quot;key1&quot;</span>].As&lt;int&gt;(), 1);</div>
 <div class="line">  ASSERT_EQ(yaml[<span class="stringliteral">&quot;key2&quot;</span>][<span class="stringliteral">&quot;key3&quot;</span>].As&lt;std::string&gt;(), <span class="stringliteral">&quot;val&quot;</span>);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md368"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md369"></a>
 Customization example:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
 <div class="line"> </div>
@@ -804,7 +805,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

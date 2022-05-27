@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: gRPC client and service</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -82,13 +83,13 @@ $(function() {
 <div class="title">gRPC client and service </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md266"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md267"></a>
 Before you start</h1>
 <p>Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md267"></a>
+<h1><a class="anchor" id="autotoc_md268"></a>
 Step by step guide</h1>
 <p>In this example, we will write a client side and a server side for a simple <code>GreeterService</code> from <code>greeter.proto</code> (see the schema below). Its single <code>SayHello</code> method accepts a <code>name</code> string and replies with a corresponding <code>greeting</code> string.</p>
-<h2><a class="anchor" id="autotoc_md268"></a>
+<h2><a class="anchor" id="autotoc_md269"></a>
 Installation</h2>
 <p>We generate and link to a CMake library from our <code>.proto</code> schema:</p>
 <div class="fragment"><div class="line">include(GrpcTargets)</div>
@@ -98,7 +99,7 @@ Installation</h2>
 <div class="fragment"><div class="line">      <a class="code" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList</a>()</div>
 <div class="line">          .Append&lt;<a class="code" href="../../db/d02/classugrpc_1_1client_1_1ClientFactoryComponent.html" title="Provides a ClientFactory in the component system.">ugrpc::client::ClientFactoryComponent</a>&gt;()</div>
 <div class="line">          .Append&lt;ugrpc::server::ServerComponent&gt;()</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md269"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md270"></a>
 The client side</h2>
 <p>Wrap the generated <code>api::GreeterServiceClient</code> in a component that exposes a simplified interface:</p>
 <div class="fragment"><div class="line"><span class="comment">// A user-defined wrapper around api::GreeterServiceClient that provides</span></div>
@@ -169,7 +170,7 @@ The client side</h2>
 <div class="line">        grpc-blocking-task-processor:  # For blocking gRPC channel creation</div>
 <div class="line">            thread_name: grpc-worker</div>
 <div class="line">            worker_threads: 2</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md270"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md271"></a>
 The server side</h2>
 <p>Implement the generated <code>api::GreeterServiceBase</code>. A single request-response RPC handling is simple: fill in the <code>response</code> and send it.</p>
 <div class="fragment"><div class="line"><span class="comment">// An implementation of GreeterService from the proto schema</span></div>
@@ -228,7 +229,7 @@ The server side</h2>
 <div class="line">        greeter-service:</div>
 <div class="line">            task-processor: main-task-processor</div>
 <div class="line">            greeting-prefix: Hello</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md271"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md272"></a>
 int main()</h2>
 <p>Finally, we register our components and start the server.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
@@ -241,7 +242,7 @@ int main()</h2>
 <div class="line">          .Append&lt;<a class="code" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a>&gt;();</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>(argc, argv, component_list);</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md272"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md273"></a>
 Build</h2>
 <p>To build the sample, execute the following build steps at the userver root directory:</p>
 <div class="fragment"><div class="line">mkdir build_release</div>
@@ -249,7 +250,7 @@ Build</h2>
 <div class="line">cmake -DCMAKE_BUILD_TYPE=Release ..</div>
 <div class="line">make userver-samples-grpc_service</div>
 </div><!-- fragment --><p>Start the server by running <code>./samples/grpc_service/userver-samples-grpc_service</code>. The service is available locally at port 8091 (as per our <code>static_config.yaml</code>).</p>
-<h1><a class="anchor" id="autotoc_md273"></a>
+<h1><a class="anchor" id="autotoc_md274"></a>
 Full sources</h1>
 <p>See the full example at:</p>
 <ul>
@@ -429,7 +430,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

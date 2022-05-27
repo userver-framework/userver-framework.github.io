@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: components::DynamicConfigClient Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -174,7 +175,7 @@ static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bot
 <div class="textblock"><p>Component that starts a clients::dynamic_config::Client client. </p>
 <p>Returned references to clients::dynamic_config::Client live for a lifetime of the component and are safe for concurrent use.</p>
 <p>The component must be configured in service config.</p>
-<h2><a class="anchor" id="autotoc_md408"></a>
+<h2><a class="anchor" id="autotoc_md409"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -191,7 +192,7 @@ Static options:</h2>
 <td class="markdownTableBodyNone">config-url </td><td class="markdownTableBodyNone">HTTP URL to request configs via POST request </td><td class="markdownTableBodyNone">-  </td></tr>
 </table>
 <p>configs-stage: stage name provided statically, can be overridden from file | - configs-stage-filepath: file to read stage name from, overrides static "configs-stage" if both are provided, expected format: json file with "env_name" property | - fallback-to-no-proxy | make additional attempts to retrieve configs by bypassing proxy that is set in USERVER_HTTP_PROXY runtime variable | true</p>
-<h2><a class="anchor" id="autotoc_md409"></a>
+<h2><a class="anchor" id="autotoc_md410"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    taxi-configs-client:</div>
@@ -376,7 +377,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

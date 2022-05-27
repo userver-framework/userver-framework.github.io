@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: rcu::RcuMap&lt; Key, Value &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -219,7 +220,7 @@ class rcu::RcuMap&lt; Key, Value &gt;</h3>
 
 <p>Map-like structure allowing RCU keyset updates. </p>
 <p>Only keyset changes are thread-safe in scope of this class. Values are stored in <code>shared_ptr</code>s and are not copied during keyset change. The map itself is implemented as <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable</a>, so every keyset change (e.g. insert or erase) triggers the whole map copying. </p><dl class="section note"><dt>Note</dt><dd>No synchronization is provided for value access, it must be implemented by Value when necessary.</dd></dl>
-<h2><a class="anchor" id="autotoc_md432"></a>
+<h2><a class="anchor" id="autotoc_md433"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="keyword">struct </span>Data {</div>
 <div class="line">    <span class="comment">// Access to RcuMap content must be synchronized via std::atomic</span></div>
@@ -607,7 +608,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

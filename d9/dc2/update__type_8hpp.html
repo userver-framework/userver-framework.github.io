@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: userver/cache/update_type.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -93,7 +94,8 @@ $(function() {
 
 <p>Enums representing periodic update types for <code>CachingComponentBase</code>  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="../../de/d41/yaml__config_2fwd_8hpp_source.html">userver/yaml_config/fwd.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="../../dc/d7d/json__fwd_8hpp_source.html">userver/formats/json_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../de/d41/yaml__config_2fwd_8hpp_source.html">userver/yaml_config/fwd.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for update_type.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -101,9 +103,11 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d7/d4f/update__type_8hpp__incl.png" border="0" usemap="#userver_2cache_2update__type_8hpp" alt=""/></div>
 <map name="userver_2cache_2update__type_8hpp" id="userver_2cache_2update__type_8hpp">
-<area shape="rect" title="Enums representing periodic update types for CachingComponentBase" alt="" coords="7,5,170,47"/>
+<area shape="rect" title="Enums representing periodic update types for CachingComponentBase" alt="" coords="97,5,259,47"/>
+<area shape="rect" href="../../dc/d7d/json__fwd_8hpp.html" title="Forward declarations of formats::json types, formats::parse::To and formats::serialize::To." alt="" coords="190,95,347,136"/>
 <area shape="rect" href="../../de/d41/yaml__config_2fwd_8hpp.html" title="Forward declarations of YamlConfig type and formats::parse::To." alt="" coords="11,95,166,136"/>
 <area shape="rect" href="../../d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="5,184,172,225"/>
+<area shape="rect" href="../../d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="196,184,381,225"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -163,6 +167,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8126e818c53b52b87b95488c6ca889dc"><td class="memItemLeft" align="right" valign="top"><a id="a8126e818c53b52b87b95488c6ca889dc"></a>
 AllowedUpdateTypes&#160;</td><td class="memItemRight" valign="bottom"><b>cache::Parse</b> (const <a class="el" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html">yaml_config::YamlConfig</a> &amp;value, <a class="el" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To</a>&lt; AllowedUpdateTypes &gt;)</td></tr>
 <tr class="separator:a8126e818c53b52b87b95488c6ca889dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e3bebc269a6d9b6e076a9ec71e4f24"><td class="memItemLeft" align="right" valign="top"><a id="ab7e3bebc269a6d9b6e076a9ec71e4f24"></a>
+UpdateType&#160;</td><td class="memItemRight" valign="bottom"><b>cache::Parse</b> (const <a class="el" href="../../de/d91/classformats_1_1json_1_1Value.html">formats::json::Value</a> &amp;value, <a class="el" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To</a>&lt; UpdateType &gt;)</td></tr>
+<tr class="separator:ab7e3bebc269a6d9b6e076a9ec71e4f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Enums representing periodic update types for <code>CachingComponentBase</code> </p>
@@ -337,7 +344,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: utest::PrintTestName Struct Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -104,9 +105,9 @@ template&lt;typename ParamType &gt; </td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Test name printer for parameterized tests written in gtest. </p>
-<h2><a class="anchor" id="autotoc_md460"></a>
+<h2><a class="anchor" id="autotoc_md461"></a>
 Example usage:</h2>
-<h3><a class="anchor" id="autotoc_md461"></a>
+<h3><a class="anchor" id="autotoc_md462"></a>
 Singly-parameterized test.</h3>
 <p>Special-purpose field <code>test_name</code> of type <code>std::string</code> may be used for describing test input in a human-readable form.</p>
 <div class="fragment"><div class="line"><span class="comment">// Declare a structure to keep input parameters for a test.</span></div>
@@ -145,7 +146,7 @@ Singly-parameterized test.</h3>
 <div class="fragment"><div class="line">ParametrizedTest.BasicTest/First</div>
 <div class="line">ParametrizedTest.BasicTest/Second</div>
 <div class="line">ParametrizedTest.BasicTest/Third</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md462"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md463"></a>
 Another option to override a test name.</h3>
 <p>Helper class <code>::utest::PrintTestName()</code> also supports conventional <code>PrintTo</code> override. However field <code>test_name</code> of a parameters' structure has a higher priority for overriding a test name than a <code>PrintTo</code> function.</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>AnotherTestParams {</div>
@@ -178,7 +179,7 @@ Another option to override a test name.</h3>
 <div class="line">INSTANTIATE_TEST_SUITE_P(<span class="comment">/* no prefix */</span>, AnotherParametrizedTest,</div>
 <div class="line">                         testing::ValuesIn(kAnotherTestParams),</div>
 <div class="line">                         <a class="code" href="../../df/d72/structutest_1_1PrintTestName.html" title="Test name printer for parameterized tests written in gtest.">utest::PrintTestName</a>());</div>
-</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md463"></a>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md464"></a>
 Doubly-parametrized test.</h3>
 <p>In case you have more than one dimension for possible test parameters, you can also use <code>::utest::PrintTestName()</code> to combine names for the dimensions of every parameter. You can mix methods for overriding test names for the dimension of every parameter independently.</p>
 <div class="fragment"><div class="line"><span class="comment">// Define a class for running tests which get parameterized with the structures</span></div>
@@ -388,7 +389,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

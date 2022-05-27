@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: components::TestsuiteSupport Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -147,6 +148,9 @@ const <a class="el" href="../../d6/d2d/classtestsuite_1_1PostgresControl.html">t
 <tr class="memitem:a5fef0a4d9ad56b1a65670d627db39c6e"><td class="memItemLeft" align="right" valign="top"><a id="a5fef0a4d9ad56b1a65670d627db39c6e"></a>
 const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetRedisControl</b> ()</td></tr>
 <tr class="separator:a5fef0a4d9ad56b1a65670d627db39c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f1ba45ceac0fcff85659ca98b54c0bc"><td class="memItemLeft" align="right" valign="top"><a id="a4f1ba45ceac0fcff85659ca98b54c0bc"></a>
+<a class="el" href="../../dd/dc0/classtestsuite_1_1TestsuiteTasks.html">testsuite::TestsuiteTasks</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTestsuiteTasks</b> ()</td></tr>
+<tr class="separator:a4f1ba45ceac0fcff85659ca98b54c0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -163,7 +167,7 @@ static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bot
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Testsuite support component. </p>
 <p>Provides additional functionality for testing, e.g. forced cache updates.</p>
-<h2><a class="anchor" id="autotoc_md456"></a>
+<h2><a class="anchor" id="autotoc_md457"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -182,8 +186,10 @@ Static options:</h2>
 <td class="markdownTableBodyNone">testsuite-redis-timeout-single </td><td class="markdownTableBodyNone">minimum single shard timeout for redis </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">testsuite-redis-timeout-all </td><td class="markdownTableBodyNone">minimum command timeout for redis </td><td class="markdownTableBodyNone">-  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">testsuite-tasks-enabled </td><td class="markdownTableBodyNone">enable testsuite tasks facility </td><td class="markdownTableBodyNone">true if the correspoding testsuite component is available  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md457"></a>
+<h2><a class="anchor" id="autotoc_md458"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    <a class="code" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>-support:</div>
@@ -197,7 +203,7 @@ Static configuration example:</h2>
 </div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/db5/samples_2http_caching_2http_caching_8cpp-example.html#_a22">samples/http_caching/http_caching.cpp</a>, and <a class="el" href="../../dd/dd2/samples_2postgres_service_2postgres_service_8cpp-example.html#_a25">samples/postgres_service/postgres_service.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d37/testsuite__support_8hpp_source.html#l00047">47</a> of file <a class="el" href="../../d3/d37/testsuite__support_8hpp_source.html">testsuite_support.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d37/testsuite__support_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../d3/d37/testsuite__support_8hpp_source.html">testsuite_support.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>userver/testsuite/<a class="el" href="../../d3/d37/testsuite__support_8hpp_source.html">testsuite_support.hpp</a></li>
 </ul>
@@ -370,7 +376,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

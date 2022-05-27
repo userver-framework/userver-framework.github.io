@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -188,12 +189,12 @@ class cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt;</h3>
 <p>Base class for LRU-cache components. </p>
 <p>Provides facilities for creating LRU caches. You need to override LruCacheComponent::DoGetByKey to handle cache misses.</p>
 <p>Caching components must be configured in service config (see options below) and may be reconfigured dynamically via <a class="el" href="../../dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the runtime config.">components::DynamicConfig</a>.</p>
-<h2><a class="anchor" id="autotoc_md374"></a>
+<h2><a class="anchor" id="autotoc_md375"></a>
 Dynamic config</h2>
 <ul>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_LRU_CACHES">USERVER_LRU_CACHES</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md375"></a>
+<h2><a class="anchor" id="autotoc_md376"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -207,7 +208,7 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">config-settings </td><td class="markdownTableBodyNone">enables dynamic reconfiguration with CacheConfigSet </td><td class="markdownTableBodyNone">true  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md376"></a>
+<h2><a class="anchor" id="autotoc_md377"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU-cache components.">userver/cache/lru_cache_component_base.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d9/d32/component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">userver/components/component_list.hpp</a>&gt;</span></div>
@@ -233,7 +234,7 @@ Example usage:</h2>
 <div class="line">};</div>
 </div><!-- fragment --><p> Do not forget to <a class="el" href="../../dd/d1c/group__userver__components.html">add the component to component list</a>: </p><div class="fragment"><div class="line">  <span class="keyword">auto</span> component_list = <a class="code" href="../../dd/d1c/group__userver__components.html#gae24db3a604b813e3f36497b0a1c7d792" title="Returns a list of components to do basic logging, component initialization and configuration.">components::MinimalComponentList</a>();</div>
 <div class="line">  component_list.Append&lt;ExampleCacheComponent&gt;();</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md377"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md378"></a>
 Example config:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    example-<a class="code" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>:</div>
@@ -415,7 +416,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

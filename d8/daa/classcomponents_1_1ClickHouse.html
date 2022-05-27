@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: components::ClickHouse Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -170,7 +171,7 @@ static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../d8/daa/classcomponents_1_1ClickHouse.html" title="ClickHouse client component.">ClickHouse</a> client component. </p>
 <p>Provides access to a <a class="el" href="../../d8/daa/classcomponents_1_1ClickHouse.html" title="ClickHouse client component.">ClickHouse</a> cluster.</p>
-<h2><a class="anchor" id="autotoc_md498"></a>
+<h2><a class="anchor" id="autotoc_md499"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"># yaml</div>
 <div class="line">        clickhouse-database:</div>
@@ -181,7 +182,7 @@ Static configuration example:</h2>
 <div class="line">            use_secure_connection: false</div>
 <div class="line">            compression: lz4</div>
 </div><!-- fragment --><p> If the component is configured with an secdist_alias, it will lookup connection data in secdist.json via secdist_alias value, otherwise via components name.</p>
-<h2><a class="anchor" id="autotoc_md499"></a>
+<h2><a class="anchor" id="autotoc_md500"></a>
 Secdist format</h2>
 <p>A <a class="el" href="../../d8/daa/classcomponents_1_1ClickHouse.html" title="ClickHouse client component.">ClickHouse</a> alias in secdist is described as a JSON object <code>clickhouse_settings</code>, containing descriptions of databases.</p>
 <div class="fragment"><div class="line">    <span class="comment"># json</span></div>
@@ -194,7 +195,7 @@ Secdist format</h2>
 <div class="line">            <span class="stringliteral">&#39;dbname&#39;</span>: <span class="stringliteral">&#39;clickhouse-database&#39;</span>,</div>
 <div class="line">        },</div>
 <div class="line">    },</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md500"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md501"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -386,7 +387,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }

@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta property="og:image" content="../../logo.svg"/>
 <link rel="icon" href="../../favicon.svg">
 <title>userver: gRPC</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
@@ -33,11 +34,11 @@
    <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework (beta)</a></div>
   </td>
   <td style="float: right; padding-right: 40px; padding-top: 15px;">
-    <a href="https://github.com/userver-framework/userver" rel="noopener" target="_blank" class="titlelink">
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
       <img src="../../github_logo.svg" alt="Github"/>
     </a>
     &nbsp;
-    <a href="https://t.me/+i3k5A6V0oFgwNmYy" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
       <img src="../../telegram_logo.svg" alt="Telegram"/>
     </a>
   </td>
@@ -82,7 +83,7 @@ $(function() {
 <div class="title">gRPC </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md126"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md127"></a>
 Introduction</h1>
 <p>userver provides a gRPC driver as <code>userver-grpc</code> library. It uses <code>namespace <a class="el" href="../../df/d12/namespaceugrpc_1_1client.html" title="Client-side utilities.">ugrpc::client</a></code> and <code>namespace <a class="el" href="../../db/dfe/namespaceugrpc_1_1server.html" title="Server-side utilities.">ugrpc::server</a></code>.</p>
 <p>The driver wraps <code>grpcpp</code> in the userver asynchronous interface.</p>
@@ -92,7 +93,7 @@ Introduction</h1>
 <li><a href="https://grpc.github.io/grpc/cpp/index.html">grpcpp reference</a></li>
 <li><a href="https://grpc.github.io/grpc/core/index.html">grpc-core reference</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md127"></a>
+<h1><a class="anchor" id="autotoc_md128"></a>
 Capabilities</h1>
 <ul>
 <li>Creating asynchronous gRPC clients and services</li>
@@ -103,7 +104,7 @@ Capabilities</h1>
 <li>Cancellation support (<b>TODO</b>)</li>
 <li>Automatic authentication (<b>TODO</b>)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md128"></a>
+<h1><a class="anchor" id="autotoc_md129"></a>
 Installation</h1>
 <p>Generate and link a library from <code>.proto</code> schemas and link to it in your <code>CMakeLists.txt</code>:</p>
 <div class="fragment"><div class="line">include(GrpcTargets)</div>
@@ -112,13 +113,13 @@ Installation</h1>
 </div><!-- fragment --><p> <code>add_grpc_library</code> will link <code>userver-grpc</code> transitively and will generate the usual <code>.pb.h + .pb.cc</code> files. For service definitions, it will additionally generate asynchronous interfaces <code>foo_client.usrv.pb.hpp</code> and <code>foo_service.usrv.pb.hpp</code>.</p>
 <p>To create gRPC clients in your microservice, register the provided <a class="el" href="../../db/d02/classugrpc_1_1client_1_1ClientFactoryComponent.html" title="Provides a ClientFactory in the component system.">ugrpc::client::ClientFactoryComponent</a> and add the corresponding component section to the static config.</p>
 <p>To create gRPC services in your microservice, register the provided <a class="el" href="../../d7/d9a/classugrpc_1_1server_1_1ServerComponent.html" title="Component that configures and manages the gRPC server.">ugrpc::server::ServerComponent</a> and add the corresponding component section to the static config.</p>
-<h1><a class="anchor" id="autotoc_md129"></a>
+<h1><a class="anchor" id="autotoc_md130"></a>
 gRPC clients</h1>
-<h2><a class="anchor" id="autotoc_md130"></a>
+<h2><a class="anchor" id="autotoc_md131"></a>
 Client creation</h2>
 <p>In a component constructor, find <a class="el" href="../../db/d02/classugrpc_1_1client_1_1ClientFactoryComponent.html" title="Provides a ClientFactory in the component system.">ugrpc::client::ClientFactoryComponent</a> and store a reference to its <a class="el" href="../../d5/dac/classugrpc_1_1client_1_1ClientFactory.html" title="Creates generated gRPC clients. Has a minimal built-in channel cache: as long as a channel to the sam...">ugrpc::client::ClientFactory</a>. Using it, you can create gRPC clients of code-generated <code>YourServiceClient</code> types.</p>
 <p>Client creation in an expensive operation! Either create them once at the server boot time or cache them.</p>
-<h2><a class="anchor" id="autotoc_md131"></a>
+<h2><a class="anchor" id="autotoc_md132"></a>
 Client usage</h2>
 <p>Typical steps include:</p><ul>
 <li>Filling a <code>std::unique_ptr&lt;grpc::ClientContext&gt;</code> with request settings<ul>
@@ -137,9 +138,9 @@ Client usage</h2>
 <li>Request stream, response stream <a class="el" href="../../d1/dd7/classugrpc_1_1client_1_1BidirectionalStream.html" title="Controls a request stream -&gt; response stream RPC.">ugrpc::client::BidirectionalStream</a></li>
 </ul>
 <p>On errors, exceptions from <a class="el" href="../../db/dfb/grpc_2include_2userver_2ugrpc_2client_2exceptions_8hpp.html" title="Exceptions thrown by gRPC client streams.">userver/ugrpc/client/exceptions.hpp</a> are thrown. It is recommended to catch them outside the entire stream interaction. You can catch exceptions for <a href="https://grpc.github.io/grpc/core/md_doc_statuscodes.html">specific gRPC error codes</a> or all at once.</p>
-<h1><a class="anchor" id="autotoc_md132"></a>
+<h1><a class="anchor" id="autotoc_md133"></a>
 gRPC services</h1>
-<h2><a class="anchor" id="autotoc_md133"></a>
+<h2><a class="anchor" id="autotoc_md134"></a>
 Service creation</h2>
 <p>A service implementation is a class derived from a code-generated <code>YourServiceBase</code> interface class. Each service method from the schema corresponds to a method of the interface class. If you don't override some of the methods, <code>UNIMPLEMENTED</code> error code will be reported for those.</p>
 <p>To register your service:</p><ul>
@@ -148,7 +149,7 @@ Service creation</h2>
 <li>Call <a class="el" href="../../df/d19/classugrpc_1_1server_1_1ServiceComponentBase.html#a395af87934a76f44ae7f419fc26d5b43">ugrpc::server::ServiceComponentBase::RegisterService</a> in the component's constructor</li>
 <li>Don't forget to register your service component.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md134"></a>
+<h2><a class="anchor" id="autotoc_md135"></a>
 Service method handling</h2>
 <p>Each method receives:</p><ul>
 <li>A stream controller object, used to respond to the RPC<ul>
@@ -165,7 +166,7 @@ Service method handling</h2>
 <li>Request stream, response stream <a class="el" href="../../d3/d6c/classugrpc_1_1server_1_1BidirectionalStream.html" title="Controls a request stream -&gt; response stream RPC.">ugrpc::server::BidirectionalStream</a></li>
 </ul>
 <p>On connection errors, exceptions from <a class="el" href="../../d0/dba/grpc_2include_2userver_2ugrpc_2server_2exceptions_8hpp_source.html">userver/ugrpc/server/exceptions.hpp</a> are thrown. It is recommended not to catch them, leading to RPC interruption. You can catch exceptions for <a href="https://grpc.github.io/grpc/core/md_doc_statuscodes.html">specific gRPC error codes</a> or all at once.</p>
-<h1><a class="anchor" id="autotoc_md135"></a>
+<h1><a class="anchor" id="autotoc_md136"></a>
 Metrics</h1>
 <ul>
 <li>Client metrics are put inside <code>grpc.client.FULL_SERVICE_NAME.METHOD_NAME</code></li>
@@ -358,7 +359,7 @@ function telegram_channel_language() {
   if (/^ru/.test(navigator.language)) {
     const channel = $('#telegram_channel');
     if (channel) {
-      channel.attr('href', 'https://t.me/+AdadhDPVG5xhNWRi');
+      channel.attr('href', 'https://t.me/userver_ru');
     }
   }
 }
