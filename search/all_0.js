@@ -132,5 +132,6 @@ var searchData=
   ['authenticationexception_129',['AuthenticationException',['../d5/dd6/classstorages_1_1mongo_1_1AuthenticationException.html',1,'storages::mongo']]],
   ['authfailedexception_130',['AuthFailedException',['../de/dff/classclients_1_1http_1_1AuthFailedException.html',1,'clients::http']]],
   ['autostartdistlock_131',['AutostartDistLock',['../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html#a82ad49041dbb1a281b5d704b842e7610',1,'storages::postgres::DistLockComponentBase']]],
-  ['api_20and_20abi_20stability_2c_20versioning_132',['API and ABI stability, versioning',['../d3/d2b/md_en_userver_development_stability.html',1,'']]]
+  ['arch_132',['arch',['../db/d78/md_en_deps_arch.html',1,'']]],
+  ['api_20and_20abi_20stability_2c_20versioning_133',['API and ABI stability, versioning',['../d3/d2b/md_en_userver_development_stability.html',1,'']]]
 ];

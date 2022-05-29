@@ -84,10 +84,10 @@ $(function() {
 <div class="title">Writing your own configs server </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md248"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md249"></a>
 Before you start</h1>
 <p>Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md249"></a>
+<h1><a class="anchor" id="autotoc_md250"></a>
 Step by step guide</h1>
 <p>An ability to change service behavior at runtime without restarting the service is priceless! We have that ability, it is called dynamic configs and it allows you:</p>
 <ul>
@@ -121,7 +121,7 @@ Step by step guide</h1>
 <div class="line">    full-update-interval: 1m</div>
 <div class="line">    config-settings: false</div>
 </div><!-- fragment --><p>Now let's create a configuration service.</p>
-<h2><a class="anchor" id="autotoc_md250"></a>
+<h2><a class="anchor" id="autotoc_md251"></a>
 HTTP handler component</h2>
 <p>Dynamic configs are requested via JSON requests, so we need to create a simple JSON handler that is responding with config values.</p>
 <p>There are two ways to write a JSON handler:</p><ul>
@@ -165,7 +165,7 @@ HTTP handler component</h2>
 </div><!-- fragment --> <dl class="section warning"><dt>Warning</dt><dd><code>Handle*</code> functions are invoked concurrently on the same instance of the handler class. Use <a class="el" href="../../d1/d6b/md_en_userver_synchronization.html">synchronization primitives</a> or do not modify shared data in <code>Handle*</code>.</dd></dl>
 <p>Note the <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable</a>. There may be (and will be!) multiple concurrent requests and the <code>HandleRequestJsonThrow</code> would be invoked concurrently on the same instance of <code>ConfigDistributor</code>. The <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable</a> allows us to atomically update the config value, concurrently with the <code>HandleRequestJsonThrow</code> invocations.</p>
 <p>Function <code>ConfigDistributor::SetNewValues</code> is meant for setting config values to send. For example, you can write another component that accepts JSON requests with new config values and puts those values into <code>ConfigDistributor</code> via <code>SetNewValues(new_values)</code>.</p>
-<h2><a class="anchor" id="autotoc_md251"></a>
+<h2><a class="anchor" id="autotoc_md252"></a>
 HandleRequestJsonThrow</h2>
 <p>All the interesting things happen in the <code>HandleRequestJsonThrow</code> function, where we grab a <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable</a> snapshot, fill the update time and the configuration from it:</p>
 <div class="fragment"><div class="line"><a class="code" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> MakeConfigs(</div>
@@ -226,7 +226,7 @@ HandleRequestJsonThrow</h2>
 <div class="line">  <span class="keywordflow">return</span> configs;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Note that the service name is sent in the "service" field of the JSON request body. Using it you can make <b>service specific dynamic configs</b>.</p>
-<h2><a class="anchor" id="autotoc_md252"></a>
+<h2><a class="anchor" id="autotoc_md253"></a>
 Static config</h2>
 <p>Now we have to configure our new HTTP handle. The configuration is quite straightforward:</p>
 <div class="fragment"><div class="line">        # yaml</div>
@@ -234,7 +234,7 @@ Static config</h2>
 <div class="line">            path: /configs/values</div>
 <div class="line">            method: POST              # Only for HTTP POST requests. Other handlers may reuse the same URL but use different method.</div>
 <div class="line">            task_processor: main-task-processor</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md253"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md254"></a>
 int main()</h2>
 <p>Finally, we add required components to the <code><a class="el" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList()</a></code>, and start the server with static config <code>kStaticConfig</code>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
@@ -242,7 +242,7 @@ int main()</h2>
 <div class="line">                                  .Append&lt;samples::ConfigDistributor&gt;();</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>(argc, argv, component_list);</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md254"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md255"></a>
 Build</h2>
 <p>To build the sample, execute the following build steps at the userver root directory: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">mkdir build_release</div>
@@ -295,7 +295,7 @@ Build</h2>
 <div class="line">  },</div>
 <div class="line">  &quot;updated_at&quot;: &quot;2021-06-29T14:15:31.173239295+0000&quot;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md255"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md256"></a>
 Functional testing</h2>
 <p><a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">Functional tests</a> for the service could be implemented using the testsuite in the following way:</p>
 <div class="fragment"><div class="line">async <span class="keyword">def </span>test_config(service_client):</div>
@@ -317,10 +317,10 @@ Functional testing</h2>
 <div class="line">    reply = response.json()</div>
 <div class="line">    <span class="keyword">assert</span> len(reply[<span class="stringliteral">&#39;configs&#39;</span>]) == 1</div>
 <div class="line">    <span class="keyword">assert</span> reply[<span class="stringliteral">&#39;configs&#39;</span>][<span class="stringliteral">&#39;USERVER_TASK_PROCESSOR_QOS&#39;</span>]</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md256"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md257"></a>
 Ready to use uservice-dynconf</h1>
 <p>Note that there is a ready to use opensource <a href="https://github.com/userver-framework/uservice-dynconf">uservice-dynconf</a> dynamic configs service. Use it for your projects or just disable dynamic config updates and keep developing without a supplementary service.</p>
-<h1><a class="anchor" id="autotoc_md257"></a>
+<h1><a class="anchor" id="autotoc_md258"></a>
 Full sources</h1>
 <p>See the full example:</p><ul>
 <li><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html">samples/config_service/config_service.cpp</a></li>

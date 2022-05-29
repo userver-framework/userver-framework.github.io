@@ -257,6 +257,23 @@ Gentoo</h2>
 </div><!-- fragment --></li>
 </ol>
 <h2><a class="anchor" id="autotoc_md244"></a>
+Arch</h2>
+<ol type="1">
+<li>Install the build and test dependencies from arch.md file:<ul>
+<li>Using an AUR helper (pikaur in this example) ``` bash pikaur -S $(cat scripts/docs/en/deps/arch.md | tr '<br  />
+' ' ') ```</li>
+<li>No AUR helper ``` bash sudo pacman -S $(cat scripts/docs/en/deps/arch.md | grep -v &ndash; '-git' | tr '<br  />
+' ' ') cat scripts/docs/en/deps/arch.md | grep &ndash; '-git' | while read ;\ do \ DIR=$(mktemp -d) ;\ git clone <a href="https://aur.archlinux.org/$REPLY.git">https://aur.archlinux.org/$REPLY.git</a> $DIR ;\ pushd $DIR ;\ yes|makepkg -si ;\ popd ;\ rm -rf $DIR ;\ done ```</li>
+</ul>
+</li>
+<li>Build the userver: <div class="fragment"><div class="line">bash</div>
+<div class="line">mkdir build_release</div>
+<div class="line">cd build_release</div>
+<div class="line">cmake -DUSERVER_CHECK_PACKAGE_VERSIONS=0 -DUSERVER_FEATURE_PATCH_LIBPQ=0 -DCMAKE_BUILD_TYPE=Release ..</div>
+<div class="line">make -j$(nproc)</div>
+</div><!-- fragment --></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md245"></a>
 MacOS</h2>
 <p>MacOS is recommended only for development as it may have performance issues in some cases. At least MacOS 10.15 required with <a href="https://apps.apple.com/us/app/xcode/id497799835">Xcode</a> and <a href="https://brew.sh/">Homebrew</a>.</p>
 <p>Start with the following command: </p><div class="fragment"><div class="line">bash</div>
@@ -267,11 +284,11 @@ MacOS</h2>
 <div class="line">      -DUSERVER_FEATURE_CLICKHOUSE=0 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@1.1 \</div>
 <div class="line">      -DBENCHMARK_ENABLE_WERROR=0 ..</div>
 </div><!-- fragment --><p>Follow the cmake hints for the installation of required packets and keep calling cmake with the options.</p>
-<h2><a class="anchor" id="autotoc_md245"></a>
+<h2><a class="anchor" id="autotoc_md246"></a>
 Other POSIX based platforms</h2>
 <p>userver works well on modern POSIX platforms. Follow the cmake hints for the installation of required packets and experiment with the cmake options.</p>
 <p>Feel free to provide a PR with instructions for your favorite platform at <a href="https://github.com/userver-framework/userver">https://github.com/userver-framework/userver</a>.</p>
-<h1><a class="anchor" id="autotoc_md246"></a>
+<h1><a class="anchor" id="autotoc_md247"></a>
 Run framework tests</h1>
 <p>To run tests and make sure that the framework works fine use the following command: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">cd build_release</div>

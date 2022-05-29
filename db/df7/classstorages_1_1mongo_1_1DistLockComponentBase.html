@@ -181,16 +181,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <div class="textblock"><p>Base class for mongo-based distlock worker components. </p>
 <p>A component that implements a distlock with lock in Mongo. Inherit from <a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html" title="Base class for mongo-based distlock worker components.">DistLockComponentBase</a> and implement <a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#a96d93e09038ee6afca3d1c7f3d2582fd">DoWork()</a>. Lock options are configured in static config.</p>
 <p>Mongo might not perform well on a high load, so you might want to use postgres-based distlock <a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html" title="Base class for postgres-based distlock worker components.">storages::postgres::DistLockComponentBase</a> instead. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html" title="Base class for postgres-based distlock worker components.">storages::postgres::DistLockComponentBase</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md480"></a>
+<h2><a class="anchor" id="autotoc_md481"></a>
 Cancellation checks</h2>
 <p>Functions <a class="el" href="../../db/df2/cancel_8hpp.html#aed8fc1cdfd588f3973f5c9bc503c9986">engine::current_task::ShouldCancel()</a>, <a class="el" href="../../dc/d3f/namespaceengine.html#a19462f750672c6fa7f5f690c2575b9f6">engine::InterruptibleSleepFor()</a>, <a class="el" href="../../dc/d3f/namespaceengine.html#a76ed2a2c05f7445c5a944dd4fbe31b82">engine::InterruptibleSleepUntil()</a> and <a class="el" href="../../db/df2/cancel_8hpp.html#a8d5e89aac1226c90d4f8e0826ea68256" title="Throws an exception if a cancellation request for this task is pending.">engine::current_task::CancellationPoint()</a> check for task cancellation. Overriden <a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#a96d93e09038ee6afca3d1c7f3d2582fd">DistLockComponentBase::DoWork</a> must use the above functions to honour task cancellation and stop ASAP when it is cancelled.</p>
-<h2><a class="anchor" id="autotoc_md481"></a>
+<h2><a class="anchor" id="autotoc_md482"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">example-distlock:</div>
 <div class="line">    lockname: master</div>
 <div class="line">    mongo-timeout: 1s</div>
 <div class="line">    lock-ttl: 10s</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md482"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md483"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -232,7 +232,7 @@ Static options:</h2>
 </table>
 </div><div class="memdoc">
 <p>Override this function with anything that must be done under the mongo lock.</p>
-<h2><a class="anchor" id="autotoc_md483"></a>
+<h2><a class="anchor" id="autotoc_md484"></a>
 Example implementation</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> MyDistLockComponent::DoWork()</div>
 <div class="line">{</div>

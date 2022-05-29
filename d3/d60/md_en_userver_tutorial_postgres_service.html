@@ -84,17 +84,17 @@ $(function() {
 <div class="title">PostgreSQL service </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md313"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md314"></a>
 Before you start</h1>
 <p>Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md314"></a>
+<h1><a class="anchor" id="autotoc_md315"></a>
 Step by step guide</h1>
 <p>Microservices that have state often work with database to store their data and replicate that state across instances of the microservice. In this tutorial we will write a service that is a simple key-value storage on top of PostgreSQL database. The service would have the following Rest API:</p><ul>
 <li>HTTP POST by path '/v1/key-value' with query parameters 'key' and 'value' stores the provided key and value or return an existing value for the key</li>
 <li>HTTP GET by path '/v1/key-value' with query parameter 'key' returns the value if it exists</li>
 <li>HTTP DELETE by path '/v1/key-value' with query parameter 'key' deletes the key if it exists and returns number of deleted keys</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md315"></a>
+<h2><a class="anchor" id="autotoc_md316"></a>
 HTTP handler component</h2>
 <p>Like in <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> we create a component for handling HTTP requests:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server.">userver/components/minimal_server_component_list.hpp</a>&gt;</span></div>
@@ -129,7 +129,7 @@ HTTP handler component</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace samples::pg</span></div>
 </div><!-- fragment --><p> Note that the component holds a <a class="el" href="../../de/d6d/namespacestorages_1_1postgres.html#a1f3c170f905023f7794d9be83255de95" title="Smart pointer to the storages::postgres::Cluster.">storages::postgres::ClusterPtr</a> - a client to the PostgreSQL DB. That client is thread safe, you can use it concurrently from different threads and tasks.</p>
-<h2><a class="anchor" id="autotoc_md316"></a>
+<h2><a class="anchor" id="autotoc_md317"></a>
 Initializing the database</h2>
 <p>To access the database from our new component we need to find the PostgreSQL component and request a client to the DB. After that we may create the required tables.</p>
 <div class="fragment"><div class="line">KeyValue::KeyValue(<span class="keyword">const</span> <a class="code" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp; config,</div>
@@ -149,7 +149,7 @@ Initializing the database</h2>
 <div class="line">  pg_cluster_-&gt;Execute(ClusterHostType::kMaster, kCreateTable);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> To create a table we just execute an SQL statement, mentioning that it should go to the master instance. After that, our component is ready to process incoming requests in the KeyValue::HandleRequestThrow function.</p>
-<h2><a class="anchor" id="autotoc_md317"></a>
+<h2><a class="anchor" id="autotoc_md318"></a>
 KeyValue::HandleRequestThrow</h2>
 <p>In this sample we use a single handler to deal with all the HTTP methods. The KeyValue::HandleRequestThrow member function mostly dispatches the request to one of the member functions that actually implement the key-value storage logic:</p>
 <div class="fragment"><div class="line">std::string KeyValue::HandleRequestThrow(</div>
@@ -174,7 +174,7 @@ KeyValue::HandleRequestThrow</h2>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --> <dl class="section warning"><dt>Warning</dt><dd><code>Handle*</code> functions are invoked concurrently on the same instance of the handler class. In this sample the KeyValue component only uses the thread safe DB client. In more complex cases <a class="el" href="../../d1/d6b/md_en_userver_synchronization.html">synchronization primitives</a> should be used or data must not be mutated.</dd></dl>
-<h2><a class="anchor" id="autotoc_md318"></a>
+<h2><a class="anchor" id="autotoc_md319"></a>
 KeyValue::GetValue</h2>
 <p>Postgres driver in userver implicitly works with prepared statements. For the first time you execute the query a prepared statement is created. Executing the query next time would result in only sending the arguments for the already created prepared statement.</p>
 <p>You could pass strings as queries, just like we done in constructor of KeyValue. Also queries could be stored in variables along with query names and reused across the functions. Name of the query could be used in dynamic configs to set the execution timeouts (see <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_QUERIES_COMMAND_CONTROL">POSTGRES_QUERIES_COMMAND_CONTROL</a>).</p>
@@ -194,7 +194,7 @@ KeyValue::GetValue</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> res.<a class="code" href="../../d0/d5b/classstorages_1_1postgres_1_1ResultSet.html#af396fa72f7e8dae52bc627d3955295c4" title="Extract first row into user type. A single row result set is expected, will throw an exception when r...">AsSingleRow</a>&lt;std::string&gt;();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md319"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md320"></a>
 KeyValue::PostValue</h2>
 <p>You can start a transaction by calling <a class="el" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html#a03bd02e2c9d945b75d12745465c9a871">storages::postgres::Cluster::Begin()</a>. Transactions are automatically rolled back, if you do not commit them. To execute a query in transaction, just call Execute member function of a transaction. Just like with non-transactional Execute, you can pass string or <a class="el" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">storages::postgres::Query</a>, you could reuse the same query in different functions. Transactions also could be named, and those names could be used in <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_QUERIES_COMMAND_CONTROL">POSTGRES_QUERIES_COMMAND_CONTROL</a>.</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">storages::postgres::Query</a> kInsertValue{</div>
@@ -229,7 +229,7 @@ KeyValue::PostValue</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> res.<a class="code" href="../../d0/d5b/classstorages_1_1postgres_1_1ResultSet.html#af396fa72f7e8dae52bc627d3955295c4" title="Extract first row into user type. A single row result set is expected, will throw an exception when r...">AsSingleRow</a>&lt;std::string&gt;();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md320"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md321"></a>
 KeyValue::DeleteValue</h2>
 <p>Note that mutating queries should be executed on a master instance.</p>
 <div class="fragment"><div class="line">std::string KeyValue::DeleteValue(std::string_view key)<span class="keyword"> const </span>{</div>
@@ -238,7 +238,7 @@ KeyValue::DeleteValue</h2>
 <div class="line">                           <span class="stringliteral">&quot;DELETE FROM key_value_table WHERE key=$1&quot;</span>, key);</div>
 <div class="line">  <span class="keywordflow">return</span> std::to_string(res.RowsAffected());</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md321"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md322"></a>
 Static config</h2>
 <p>Static configuration of service is quite close to the configuration from <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> except for the handler and DB:</p>
 <div class="fragment"><div class="line"># yaml</div>
@@ -258,12 +258,12 @@ Static config</h2>
 <div class="line"> </div>
 <div class="line">        server:</div>
 <div class="line">            # ...</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md322"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md323"></a>
 Dynamic config</h2>
 <p>We are not planning to get new dynamic config values in this sample. Because of that we just write the defaults to the fallback file of the <code><a class="el" href="../../d8/d9c/classcomponents_1_1DynamicConfigFallbacks.html" title="Component that setup runtime configs based on fallbacks from file.">components::DynamicConfigFallbacks</a></code> component: <a class="el" href="../../d8/d86/samples_2postgres_service_2dynamic_config_fallback_8json-example.html">samples/postgres_service/dynamic_config_fallback.json</a></p>
 <p>All the values are described in a separate section <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html">Dynamic configs</a> .</p>
 <p>A production ready service would dynamically retrieve the above options at runtime from a configuration service. See <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">Writing your own configs server</a> for insights on how to change the above options on the fly, without restarting the service.</p>
-<h2><a class="anchor" id="autotoc_md323"></a>
+<h2><a class="anchor" id="autotoc_md324"></a>
 int main()</h2>
 <p>Finally, after writing down the dynamic config values into file at <code>taxi-config-fallbacks.fallback-path</code>, we add our component to the <a class="el" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList()</a>, and start the server with static config <code>kStaticConfig</code>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
@@ -275,7 +275,7 @@ int main()</h2>
 <div class="line">          .Append&lt;clients::dns::Component&gt;();</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>(argc, argv, component_list);</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md324"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md325"></a>
 Build</h2>
 <p>To build the sample, execute the following build steps at the userver root directory: </p><div class="fragment"><div class="line">mkdir build_release</div>
 <div class="line">cd build_release</div>
@@ -318,7 +318,7 @@ Build</h2>
 <div class="line">Content-Length: 1</div>
 <div class="line"> </div>
 <div class="line">1</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md325"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md326"></a>
 Functional testing</h2>
 <p><a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">Functional tests</a> for the service could be implemented using the testsuite. To do that you have to:</p>
 <ul>
@@ -356,7 +356,7 @@ Functional testing</h2>
 <div class="line">    <span class="keyword">assert</span> response.content == b<span class="stringliteral">&#39;there&#39;</span></div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md326"></a>
+<h1><a class="anchor" id="autotoc_md327"></a>
 Full sources</h1>
 <p>See the full example:</p><ul>
 <li><a class="el" href="../../dd/dd2/samples_2postgres_service_2postgres_service_8cpp-example.html">samples/postgres_service/postgres_service.cpp</a></li>

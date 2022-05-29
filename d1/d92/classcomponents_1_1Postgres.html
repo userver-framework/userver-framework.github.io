@@ -203,7 +203,7 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>PosgreSQL client component. </p>
 <p>Provides access to a PostgreSQL cluster.</p>
-<h2><a class="anchor" id="autotoc_md485"></a>
+<h2><a class="anchor" id="autotoc_md486"></a>
 Dynamic options:</h2>
 <ul>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_DEFAULT_COMMAND_CONTROL">POSTGRES_DEFAULT_COMMAND_CONTROL</a></li>
@@ -212,7 +212,7 @@ Dynamic options:</h2>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_CONNECTION_POOL_SETTINGS">POSTGRES_CONNECTION_POOL_SETTINGS</a></li>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_STATEMENT_METRICS_SETTINGS">POSTGRES_STATEMENT_METRICS_SETTINGS</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md486"></a>
+<h2><a class="anchor" id="autotoc_md487"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">postgres-taxi:</div>
@@ -226,10 +226,10 @@ Static configuration example:</h2>
 </div><!-- fragment --><p>You must specify either <code>dbalias</code> or <code>conn_info</code>. If the component is configured with an alias, it will lookup connection data in secdist.json</p>
 <p>You must specify <code>blocking_task_processor</code> as well.</p>
 <p><code>max_replication_lag</code> can be used to tune replication lag limit for replicas. Once the replica lag exceeds this value it will be automatically disabled. Note, however, that client-size lag detection is not precise in nature and can only provide the precision of couple seconds.</p>
-<h2><a class="anchor" id="autotoc_md487"></a>
+<h2><a class="anchor" id="autotoc_md488"></a>
 Secdist format</h2>
 <p>A PosgreSQL alias in secdist is described as a JSON array of objects containing a single cluster description. There are two formats of describing a cluster, the first one assigns predefined roles to DSNs, the second one is just a list of DSNs and the <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">Postgres</a> component takes care of discovering the cluster's topology itself.</p>
-<h3><a class="anchor" id="autotoc_md488"></a>
+<h3><a class="anchor" id="autotoc_md489"></a>
 Predefined roles</h3>
 <p>In predefined roles format the component requires single-host connection strings.</p>
 <div class="fragment"><div class="line">{</div>
@@ -241,7 +241,7 @@ Predefined roles</h3>
 <div class="line">  ]</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The predefined roles format is deprecated and the support will be removed as soon as all µservices migrate to the automatical discovery format.</p>
-<h3><a class="anchor" id="autotoc_md489"></a>
+<h3><a class="anchor" id="autotoc_md490"></a>
 Automatic discovery</h3>
 <p>In automatic discovery format the connection strings are any valid PostgreSQL connection strings including multi-host ones with the exception of <code>target_session_attrs</code> which will be ignored.</p>
 <div class="fragment"><div class="line">{</div>
@@ -253,7 +253,7 @@ Automatic discovery</h3>
 <div class="line">}</div>
 </div><!-- fragment --><p>The <code>shard_number</code> parameter is required in both formats and must match the index of cluster description object in the alias array.</p>
 <p>Please see <a href="https://www.postgresql.org/docs/12/libpq-connect.html#LIBPQ-CONNSTRING">PostgreSQL documentation</a> on connection strings.</p>
-<h2><a class="anchor" id="autotoc_md490"></a>
+<h2><a class="anchor" id="autotoc_md491"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">

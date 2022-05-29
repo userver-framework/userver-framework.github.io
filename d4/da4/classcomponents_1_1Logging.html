@@ -162,13 +162,13 @@ static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bot
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Logging component </p>
 <p>Allows to configure the default logger and/or additional loggers for your needs.</p>
-<h2><a class="anchor" id="autotoc_md429"></a>
+<h2><a class="anchor" id="autotoc_md430"></a>
 Static options:</h2>
 <p>Name | Description | Default value -&mdash; | --------&mdash; | ----------&mdash; file_path | path to the log file | level | log verbosity | info format | log output format, either 'tskv' or 'ltsv' | tskv pattern | message formatting pattern, see <a href="https://github.com/gabime/spdlog/wiki/3.-Custom-formatting#pattern-flags">spdlog wiki</a> for details, %v means message text | tskv or ltsv prologue with timestamp, timezone and level fields flush_level | messages of this and higher levels get flushed to the file immediately | warning message_queue_size | the size of internal message queue, must be a power of 2 | 65536 overflow_behavior | message handling policy while the queue is full: <code>discard</code> drops messages, <code>block</code> waits until message gets into the queue | discard testsuite-capture | if exists, setups additional TCP log sink for testing purposes | {}</p>
-<h3><a class="anchor" id="autotoc_md430"></a>
+<h3><a class="anchor" id="autotoc_md431"></a>
 testsuite-capture options:</h3>
 <p>Name | Description | Default value -&mdash; | --------&mdash; | ----------&mdash; host | testsuite hostname, e.g. localhost | port | testsuite port |</p>
-<h2><a class="anchor" id="autotoc_md431"></a>
+<h2><a class="anchor" id="autotoc_md432"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    <a class="code" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>:</div>
