@@ -260,7 +260,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>InternalServerError<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all the <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">Userver HTTP Handlers</a>. </p>
-<h2><a class="anchor" id="autotoc_md441"></a>
+<h2><a class="anchor" id="autotoc_md442"></a>
 Static options:</h2>
 <p>Inherits all the options from <a class="el" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers.">server::handlers::HandlerBase</a> and adds the following ones:</p>
 <table class="markdownTable">
@@ -269,12 +269,34 @@ Static options:</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">log-level </td><td class="markdownTableBodyNone">overrides log level for this handle </td><td class="markdownTableBodyNone">&lt;no override&gt;  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md442"></a>
+<h2><a class="anchor" id="autotoc_md443"></a>
 Example usage:</h2>
-<div class="fragment"></div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../db/de5/samples_2grpc_service_2grpc_service_8cpp-example.html#_a11">samples/grpc_service/grpc_service.cpp</a>, <a class="el" href="../../da/de2/samples_2hello_service_2hello_service_8cpp-example.html#_a0">samples/hello_service/hello_service.cpp</a>, <a class="el" href="../../d3/db5/samples_2http_caching_2http_caching_8cpp-example.html#_a15">samples/http_caching/http_caching.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#_a0">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../dd/dd2/samples_2postgres_service_2postgres_service_8cpp-example.html#_a0">samples/postgres_service/postgres_service.cpp</a>, and <a class="el" href="../../d0/d6c/samples_2redis_service_2redis_service_8cpp-example.html#_a0">samples/redis_service/redis_service.cpp</a>.</dd>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server.">userver/components/minimal_server_component_list.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d4/df6/http__handler__base_8hpp.html" title="Base class for all the Userver HTTP Handlers.">userver/server/handlers/http_handler_base.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d7/de0/daemon__run_8hpp.html" title="Functions to start a daemon with specified components list.">userver/utils/daemon_run.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>samples::hello {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Hello final : <span class="keyword">public</span> <a class="code" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers.">server::handlers::HttpHandlerBase</a> {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="comment">// `kName` is used as the component name in static config</span></div>
+<div class="line">  <span class="keyword">static</span> constexpr std::string_view kName = <span class="stringliteral">&quot;handler-hello-sample&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Component is valid after construction and is able to accept requests</span></div>
+<div class="line">  <span class="keyword">using</span> HttpHandlerBase::HttpHandlerBase;</div>
+<div class="line"> </div>
+<div class="line">  std::string HandleRequestThrow(</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html" title="HTTP Request data.">server::http::HttpRequest</a>&amp;,</div>
+<div class="line">      <a class="code" href="../../de/df6/classserver_1_1request_1_1RequestContext.html" title="Stores request-specific data during request processing.">server::request::RequestContext</a>&amp;)<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Hello world!\n&quot;</span>;</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace samples::hello</span></div>
+</div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../db/de5/samples_2grpc_service_2grpc_service_8cpp-example.html#_a11">samples/grpc_service/grpc_service.cpp</a>, <a class="el" href="../../da/de2/samples_2hello_service_2hello_service_8cpp-example.html#_a0">samples/hello_service/hello_service.cpp</a>, <a class="el" href="../../d3/db5/samples_2http_caching_2http_caching_8cpp-example.html#_a15">samples/http_caching/http_caching.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#_a0">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../dd/dd2/samples_2postgres_service_2postgres_service_8cpp-example.html#_a0">samples/postgres_service/postgres_service.cpp</a>, and <a class="el" href="../../d0/d6c/samples_2redis_service_2redis_service_8cpp-example.html#_a0">samples/redis_service/redis_service.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00053">53</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="addb64289d7fb6a16e67b3be661c733e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#addb64289d7fb6a16e67b3be661c733e2">&#9670;&nbsp;</a></span>GetLogLevelForResponseStatus()</h2>
@@ -366,7 +388,7 @@ Example usage:</h2>
 </div><div class="memdoc">
 <p>Override it to show per HTTP-method statistics besides statistics for all methods </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +416,7 @@ Example usage:</h2>
 </div><div class="memdoc">
 <p>Override it if you want to disable auth checks in handler by some condition </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00097">97</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00102">102</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +457,7 @@ Example usage:</h2>
 
 <p>Reimplemented in <a class="el" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html#aaa755d358108e5cefdea979082d72c42">server::handlers::HttpHandlerJsonBase</a>, and <a class="el" href="../../d8/dfe/classserver_1_1handlers_1_1HttpHandlerFlatbufBase.html#a555c6194c7062c6e5a56a5c7618102dc">server::handlers::HttpHandlerFlatbufBase&lt; InputType, ReturnType &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00111">111</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../d4/df6/http__handler__base_8hpp_source.html">http_handler_base.hpp</a>.</p>
 
 </div>
 </div>

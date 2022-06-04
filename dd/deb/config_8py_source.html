@@ -253,17 +253,19 @@ $(function() {
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">for</span> component_name <span class="keywordflow">in</span> (</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="stringliteral">&#39;taxi-config-fallbacks&#39;</span>,</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="stringliteral">&#39;taxi-config-client-updater&#39;</span>,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ):</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> component_name <span class="keywordflow">not</span> <span class="keywordflow">in</span> components:</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            component = components[component_name]</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> pytestconfig.option.config_fallback:</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                pytest.fail(<span class="stringliteral">&#39;Please run with --config-fallback=...&#39;</span>)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            component[<span class="stringliteral">&#39;fallback-path&#39;</span>] = str(</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                pytestconfig.option.config_fallback,</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            )</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> _patch_config</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="stringliteral">&#39;dynamic-config-fallbacks&#39;</span>,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="stringliteral">&#39;dynamic-config-client-updater&#39;</span>,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        ):</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">if</span> component_name <span class="keywordflow">not</span> <span class="keywordflow">in</span> components:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            component = components[component_name]</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> pytestconfig.option.config_fallback:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                pytest.fail(<span class="stringliteral">&#39;Please run with --config-fallback=...&#39;</span>)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            component[<span class="stringliteral">&#39;fallback-path&#39;</span>] = str(</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                pytestconfig.option.config_fallback,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            )</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> _patch_config</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

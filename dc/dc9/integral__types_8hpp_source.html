@@ -188,7 +188,7 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __x86_64__</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span>__x86_64__<span class="preprocessor">)</span> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">__aarch64__</span><span class="preprocessor">)</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// 64bit architectures have two types for 64bit integers, this is the second one</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">using</span> AltInteger =</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::conditional_t&lt;std::is_same_v&lt;Bigint, <span class="keywordtype">long</span>&gt;, <span class="keywordtype">long</span> <span class="keywordtype">long</span>, <span class="keywordtype">long</span>&gt;;</div>

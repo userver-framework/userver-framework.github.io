@@ -200,7 +200,7 @@ Service config generation</h3>
 <div class="line"><span class="keyword">def </span>userver_config_configs_client(mockserver_info):</div>
 <div class="line">    <span class="keyword">def </span>do_patch(config_yaml, config_vars):</div>
 <div class="line">        components = config_yaml[<span class="stringliteral">&#39;components_manager&#39;</span>][<span class="stringliteral">&#39;components&#39;</span>]</div>
-<div class="line">        components[<span class="stringliteral">&#39;taxi-configs-client&#39;</span>][</div>
+<div class="line">        components[<span class="stringliteral">&#39;dynamic-config-client&#39;</span>][</div>
 <div class="line">            <span class="stringliteral">&#39;config-url&#39;</span></div>
 <div class="line">        ] = mockserver_info.base_url.rstrip(<span class="stringliteral">&#39;/&#39;</span>)</div>
 <div class="line"> </div>
@@ -350,7 +350,26 @@ Testsuite tasks</h3>
 </div><!-- fragment --><p> An example on testsuite tasks could be found here:</p>
 <ul>
 <li>C++ code: <a class="el" href="../../dc/dba/samples_2testsuite-support_2tasks_8cpp-example.html">samples/testsuite-support/tasks.cpp</a></li>
-<li>Testcase: <a class="el" href="../../d1/d57/samples_2testsuite-support_2tests_2test_tasks_8py-example.html">samples/testsuite-support/tests/test_tasks.py</a> </li>
+<li>Testcase: <a class="el" href="../../d1/d57/samples_2testsuite-support_2tests_2test_tasks_8py-example.html">samples/testsuite-support/tests/test_tasks.py</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md126"></a>
+Metrics</h3>
+<p>Testsuite provides access to userver metrics, see <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html#tutorial_metrics">tutorial on configuration</a>. It allows to:</p>
+<ul>
+<li>retrieve service metrics with <code>await monitor_client.get_metrics()</code></li>
+<li>reset metrics using <code>await service_client.reset_metrics()</code></li>
+</ul>
+<p>Example usage:</p>
+<div class="fragment"><div class="line">async <span class="keyword">def </span>test_reset(service_client, monitor_client):</div>
+<div class="line">    <span class="comment"># Reset service metrics</span></div>
+<div class="line">    await service_client.reset_metrics()</div>
+<div class="line">    <span class="comment"># Retrieve metrics</span></div>
+<div class="line">    metrics = await monitor_client.get_metrics()</div>
+<div class="line">    <span class="keyword">assert</span> metrics[<span class="stringliteral">&#39;sample-metrics&#39;</span>][<span class="stringliteral">&#39;foo&#39;</span>] == 0</div>
+</div><!-- fragment --><ul>
+<li>C++ code: <a class="el" href="../../d4/da1/samples_2testsuite-support_2metrics_8cpp-example.html">samples/testsuite-support/metrics.cpp</a></li>
+<li>C++ header: <a class="el" href="../../d6/d64/samples_2testsuite-support_2metrics_8hpp-example.html">samples/testsuite-support/metrics.hpp</a></li>
+<li>Testcase: <a class="el" href="../../dc/da2/samples_2testsuite-support_2tests_2test_metrics_8py-example.html">samples/testsuite-support/tests/test_metrics.py</a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

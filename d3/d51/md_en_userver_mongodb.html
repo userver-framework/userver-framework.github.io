@@ -85,7 +85,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The mongo asynchronous driver provides an interface to work with MongoDB databases and the BSON format.</p>
-<h1><a class="anchor" id="autotoc_md184"></a>
+<h1><a class="anchor" id="autotoc_md185"></a>
 Main features</h1>
 <ul>
 <li>Building and reading BSON documents with support for most of the C++ types;</li>
@@ -94,7 +94,7 @@ Main features</h1>
 <li>Dynamic management of database sets;</li>
 <li>Aggregation support.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md185"></a>
+<h1><a class="anchor" id="autotoc_md186"></a>
 Metrics</h1>
 <p>Most important ones:</p>
 <table class="markdownTable">
@@ -120,7 +120,7 @@ Metrics</h1>
 <td class="markdownTableBodyNone">mongo.timings </td><td class="markdownTableBodyNone">query timings  </td></tr>
 </table>
 <p>See <a class="el" href="../../d6/dba/md_en_userver_service-monitor.html">Service statistics</a> for info on how to get the metrics.</p>
-<h1><a class="anchor" id="autotoc_md186"></a>
+<h1><a class="anchor" id="autotoc_md187"></a>
 Usage</h1>
 <p>To use MongoDB you have to add the component <a class="el" href="../../d0/dda/classcomponents_1_1Mongo.html" title="MongoDB client component.">components::Mongo</a> and configure it according to the documentation. After that you can work with a collection via <a class="el" href="../../db/d50/classstorages_1_1mongo_1_1Collection.html" title="MongoDB collection handle, the main way to operate with MongoDB.">storages::mongo::Collection</a>:</p>
 <div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keywordtype">void</span> SampleMongoPool(<a class="code" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html" title="MongoDB client pool.">storages::mongo::Pool</a> pool) {</div>
@@ -151,11 +151,11 @@ Usage</h1>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Methods and options correspond to <a href="https://docs.mongodb.com/manual/reference/method/#collection">the standard MongoDB Collections API</a>.</p>
-<h2><a class="anchor" id="autotoc_md187"></a>
+<h2><a class="anchor" id="autotoc_md188"></a>
 Timeouts</h2>
 <p>It is recommended to set timeouts on the server side using <a class="el" href="../../d0/db6/classstorages_1_1mongo_1_1options_1_1MaxServerTime.html" title="Specifies the server-side time limit for the operation.">storages::mongo::options::MaxServerTime</a> as for other cancellation mechanisms MongoDB does not guarantee that the cancelled operation was not applied.</p>
 <p>To interrupt a request on the client side, you can use <a class="el" href="../../d2/d54/md_en_userver_intro.html#task_cancellation_intro">cancellation mechanism</a> to cancel the task that executes the Mongo request, but this leads to reopening of the connection (and possibly to errors in the logs). On the server side, the operation is not interrupted.</p>
-<h2><a class="anchor" id="autotoc_md188"></a>
+<h2><a class="anchor" id="autotoc_md189"></a>
 Write results</h2>
 <p>Methods that modify a collection return an object <a class="el" href="../../d3/dc9/classstorages_1_1mongo_1_1WriteResult.html" title="MongoDB write operation result.">storages::mongo::WriteResult</a> containing information about the result of the operation:</p>
 <div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keywordtype">void</span> UpdateOneDoc(<a class="code" href="../../db/d50/classstorages_1_1mongo_1_1Collection.html" title="MongoDB collection handle, the main way to operate with MongoDB.">storages::mongo::Collection</a>&amp; coll) {</div>
@@ -170,7 +170,7 @@ Write results</h2>
 <div class="line">  EXPECT_TRUE(result.ServerErrors().empty());</div>
 <div class="line">  EXPECT_TRUE(result.WriteConcernErrors().empty());</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md189"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md190"></a>
 Packaging operations</h2>
 <p>In cases where the same operation is performed with the same arguments many times, it can be stored into a variable and reused. The finished operation can be passed to the collection method <code>Execute()</code>.</p>
 <div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../d0/d55/classstorages_1_1mongo_1_1operations_1_1Find.html" title="Retrieves documents matching the filter.">storages::mongo::operations::Find</a>&amp; Top3ScoresOp() {</div>
@@ -198,7 +198,7 @@ Packaging operations</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md190"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md191"></a>
 BSON</h2>
 <p>BSON follows the common formats interface that is described in detail at <a class="el" href="../../db/dd7/md_en_userver_formats.html">Formats (JSON, YAML, BSON, ...)</a>.</p>
 <p>Since BSON is a binary format, it is not human readable. Differences in the BSON and JSON formats type systems do not always allow you to perform conversions between them unambiguously. In this regard, we do not provide conversion functions between BSON and text formats by default, but they are available in &lt;<a class="el" href="../../d6/de5/mongo_2include_2userver_2formats_2bson_2serialize_8hpp.html" title="Textual serialization helpers.">userver/formats/bson/serialize.hpp</a>&gt;. These functions are provided without guarantees for the stability of the conversion, and are primarily intended for debugging. </p>

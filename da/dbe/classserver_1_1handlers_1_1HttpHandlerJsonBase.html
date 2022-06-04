@@ -271,12 +271,41 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>InternalServerError<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Convenient base for handlers that accept requests with body in JSON format and respond with body in JSON format. </p>
-<h2><a class="anchor" id="autotoc_md444"></a>
+<h2><a class="anchor" id="autotoc_md445"></a>
 Example usage:</h2>
-<div class="fragment"></div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#_a0">samples/config_service/config_service.cpp</a>.</dd>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>ConfigDataWithTimestamp {</div>
+<div class="line">  std::chrono::system_clock::time_point updated_at;</div>
+<div class="line">  std::unordered_map&lt;std::string, formats::json::Value&gt; key_values;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>ConfigDistributor final : <span class="keyword">public</span> <a class="code" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J...">server::handlers::HttpHandlerJsonBase</a> {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> constexpr std::string_view kName = <span class="stringliteral">&quot;handler-config&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">using</span> KeyValues = std::unordered_map&lt;std::string, formats::json::Value&gt;;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Component is valid after construction and is able to accept requests</span></div>
+<div class="line">  ConfigDistributor(<span class="keyword">const</span> <a class="code" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp; config,</div>
+<div class="line">                    <span class="keyword">const</span> <a class="code" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>&amp; context);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> HandleRequestJsonThrow(</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html" title="HTTP Request data.">server::http::HttpRequest</a>&amp;, <span class="keyword">const</span> <a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>&amp; json,</div>
+<div class="line">      <a class="code" href="../../de/df6/classserver_1_1request_1_1RequestContext.html" title="Stores request-specific data during request processing.">server::request::RequestContext</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> SetNewValues(KeyValues&amp;&amp; key_values) {</div>
+<div class="line">    config_values_.Assign(ConfigDataWithTimestamp{</div>
+<div class="line">        <span class="comment">/*.updated_at=*/</span><a class="code" href="../../db/dec/namespaceutils_1_1datetime.html#a55c8fa2daccb0874282e200e656e005f" title="std::chrono::system_clock::now() that could be mocked">utils::datetime::Now</a>(),</div>
+<div class="line">        <span class="comment">/*.key_values=*/</span>std::move(key_values),</div>
+<div class="line">    });</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable&lt;ConfigDataWithTimestamp&gt;</a> config_values_;</div>
+<div class="line">};</div>
+</div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#_a0">samples/config_service/config_service.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d58/http__handler__json__base_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../d1/d58/http__handler__json__base_8hpp_source.html">http_handler_json_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d58/http__handler__json__base_8hpp_source.html#l00025">25</a> of file <a class="el" href="../../d1/d58/http__handler__json__base_8hpp_source.html">http_handler_json_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adfd9b3907f5f81935bc39fd03584eb09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfd9b3907f5f81935bc39fd03584eb09">&#9670;&nbsp;</a></span>GetRequestJson()</h2>

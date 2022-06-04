@@ -119,11 +119,13 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d0/dd2/classcomponents_1_1DynamicConfigClientUpdater__coll__graph.png" border="0" usemap="#components_1_1DynamicConfigClientUpdater_coll__map" alt="Collaboration graph"/></div>
 <map name="components_1_1DynamicConfigClientUpdater_coll__map" id="components_1_1DynamicConfigClientUpdater_coll__map">
-<area shape="rect" title="Component that does a periodic update of runtime configs." alt="" coords="165,244,375,285"/>
-<area shape="rect" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="143,155,397,196"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,281,107"/>
-<area shape="rect" title="Don&#39;t use it for application components, use LoggableComponentBase instead." alt="" coords="16,5,271,32"/>
-<area shape="rect" href="../../da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="305,80,488,107"/>
+<area shape="rect" title="Component that does a periodic update of runtime configs." alt="" coords="989,78,1199,119"/>
+<area shape="rect" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="635,49,889,90"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="309,5,585,32"/>
+<area shape="rect" title="Don&#39;t use it for application components, use LoggableComponentBase instead." alt="" coords="5,5,260,32"/>
+<area shape="rect" href="../../da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="356,56,539,83"/>
+<area shape="rect" title="STL class." alt="" coords="699,115,825,141"/>
+<area shape="rect" title="STL class." alt="" coords="364,107,531,149"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -190,9 +192,9 @@ static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a349eaf3eb2e8f751a405068c4bca17f6"><td class="memItemLeft" align="right" valign="top"><a id="a349eaf3eb2e8f751a405068c4bca17f6"></a>
-static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>kName</b> = &quot;taxi-config-client-updater&quot;</td></tr>
-<tr class="separator:a349eaf3eb2e8f751a405068c4bca17f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c2be848a732700b5f1163970073abe"><td class="memItemLeft" align="right" valign="top"><a id="af8c2be848a732700b5f1163970073abe"></a>
+static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>kName</b> = &quot;dynamic-config-client-updater&quot;</td></tr>
+<tr class="separator:af8c2be848a732700b5f1163970073abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -261,7 +263,7 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Na
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Component that does a periodic update of runtime configs. </p>
-<h2><a class="anchor" id="autotoc_md418"></a>
+<h2><a class="anchor" id="autotoc_md419"></a>
 Optional update event deduplication</h2>
 <p>Config update types to deduplicate. If enabled, JSON of the whole config is compared to the previous one; if same, no config update event is sent to the subscribers of <a class="el" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">dynamic_config::Source</a> (<code>OnConfigUpdate</code> functions).</p>
 <p><code>deduplicate-update-types</code> static config option specifies the update types of the config cache, for which deduplication should be performed. Possible values:</p><ul>
@@ -271,7 +273,7 @@ Optional update event deduplication</h2>
 <li><code>full-and-incremental</code></li>
 </ul>
 <p>Note: This is not a silver bullet against extra events, because the events will be sent to every dynamic config subscriber if <em>any</em> part of the config has updated, not if the interesting part has updated.</p>
-<h2><a class="anchor" id="autotoc_md419"></a>
+<h2><a class="anchor" id="autotoc_md420"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -288,10 +290,10 @@ Static options:</h2>
 <td class="markdownTableBodyNone">deduplicate-update-types </td><td class="markdownTableBodyNone">update types for best-effort update event deduplication, see above </td><td class="markdownTableBodyNone"><code>none</code>  </td></tr>
 </table>
 <p>See also the options for <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.</p>
-<h2><a class="anchor" id="autotoc_md420"></a>
+<h2><a class="anchor" id="autotoc_md421"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
-<div class="line">    taxi-config-client-updater:</div>
+<div class="line">    dynamic-config-client-updater:</div>
 <div class="line">      store-enabled: <span class="keyword">true</span></div>
 <div class="line">      load-only-my-values: <span class="keyword">true</span></div>
 <div class="line">      fallback-path: $runtime_config_path</div>

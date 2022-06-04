@@ -178,12 +178,12 @@ static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ae940488ae852e7dec69ce542627773b1"><td class="memItemLeft" align="right" valign="top"><a id="ae940488ae852e7dec69ce542627773b1"></a>
-static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>kName</b> = &quot;taxi-config&quot;</td></tr>
+static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>kName</b> = &quot;dynamic-config&quot;</td></tr>
 <tr class="separator:ae940488ae852e7dec69ce542627773b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Component that stores the runtime config. </p>
-<h2><a class="anchor" id="autotoc_md415"></a>
+<h2><a class="anchor" id="autotoc_md416"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,9 +193,13 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">fs-task-processor </td><td class="markdownTableBodyNone">name of the task processor to run the blocking file write operations </td><td class="markdownTableBodyNone">-  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md416"></a>
+<h2><a class="anchor" id="autotoc_md417"></a>
 Static configuration example:</h2>
-<div class="fragment"></div><!-- fragment --> <h2><a class="anchor" id="autotoc_md417"></a>
+<div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
+<div class="line">    dynamic-config:</div>
+<div class="line">      <a class="code" href="../../d5/d8f/namespacefs.html" title="filesystem support">fs</a>-<a class="code" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>-path: $runtime_config_path</div>
+<div class="line">      <a class="code" href="../../d5/d8f/namespacefs.html" title="filesystem support">fs</a>-task-processor: <a class="code" href="../../d5/d8f/namespacefs.html" title="filesystem support">fs</a>-task-processor</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md418"></a>
 Usage example:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>myservice::smth {</div>
 <div class="line"> </div>

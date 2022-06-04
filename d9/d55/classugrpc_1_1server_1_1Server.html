@@ -131,7 +131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:ac5febb9601e62e4ff9a2f9dab116fdba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac5febb9601e62e4ff9a2f9dab116fdba">GetPort</a> () const noexcept</td></tr>
 <tr class="separator:ac5febb9601e62e4ff9a2f9dab116fdba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31004deea8f49f100f23401f2dace9d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7">Stop</a> () noexcept</td></tr>
-<tr class="memdesc:a31004deea8f49f100f23401f2dace9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop accepting requests.  <a href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7">More...</a><br /></td></tr>
+<tr class="memdesc:a31004deea8f49f100f23401f2dace9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop accepting requests. Also destroys server statistics and closes the associated CompletionQueue.  <a href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7">More...</a><br /></td></tr>
 <tr class="separator:a31004deea8f49f100f23401f2dace9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -237,8 +237,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </table>
 </div><div class="memdoc">
 
-<p>Stop accepting requests. </p>
-<dl class="section note"><dt>Note</dt><dd>Should be called once before the services are destroyed </dd></dl>
+<p>Stop accepting requests. Also destroys server statistics and closes the associated CompletionQueue. </p>
+<dl class="section note"><dt>Note</dt><dd>Should be called at least once before the services are destroyed </dd></dl>
 
 </div>
 </div>

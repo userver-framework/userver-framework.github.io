@@ -98,48 +98,66 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">grpcpp</span><span class="preprocessor">/</span><span class="preprocessor">support</span><span class="preprocessor">/</span><span class="preprocessor">channel_arguments</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">engine</span><span class="preprocessor">/</span><span class="preprocessor">task</span><span class="preprocessor">/</span><span class="preprocessor">task_processor_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">client</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">channel_cache</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">client</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">statistics_storage</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;USERVER_NAMESPACE_BEGIN</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">logging</span><span class="preprocessor">/</span><span class="preprocessor">level</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">yaml_config</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">client</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">channel_cache</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">client</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">statistics_storage</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace</span> ugrpc::<a class="code" href="../../df/d12/namespaceugrpc_1_1client.html" title="Client-side utilities.">client</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @brief Creates generated gRPC clients. Has a minimal built-in channel cache:</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// as long as a channel to the same endpoint is used somewhere, the same</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// channel is given out.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d5/dac/classugrpc_1_1client_1_1ClientFactory.html">   23</a></span>&#160;<span class="keyword">class</span> ClientFactory <span class="keyword">final</span> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ClientFactory(engine::TaskProcessor&amp; channel_task_processor,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                grpc::CompletionQueue&amp; queue,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                std::shared_ptr&lt;grpc::ChannelCredentials&gt; credentials,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keyword">const</span> grpc::ChannelArguments&amp; channel_args,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Storage&amp; statistics_storage);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace</span> ugrpc::<a class="code" href="../../df/d12/namespaceugrpc_1_1client.html" title="Client-side utilities.">client</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// Settings relating to the ClientFactory</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html">   23</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html" title="Settings relating to the ClientFactory.">ClientFactoryConfig</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">/// gRPC channel credentials, none by default</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ad51e349db5aff5fb0bb35c67333acab5">   25</a></span>&#160;  std::shared_ptr&lt;grpc::ChannelCredentials&gt; <a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ad51e349db5aff5fb0bb35c67333acab5" title="gRPC channel credentials, none by default">credentials</a>{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      grpc::InsecureChannelCredentials()};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">/// Optional grpc-core channel args</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ac1c958d7bd208ca317b4246cfb640715">   29</a></span>&#160;  grpc::ChannelArguments <a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ac1c958d7bd208ca317b4246cfb640715" title="Optional grpc-core channel args.">channel_args</a>{};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Client&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  Client MakeClient(<span class="keyword">const</span> std::string&amp; endpoint);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  impl::ChannelCache::Token GetChannel(<span class="keyword">const</span> std::string&amp; endpoint);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  engine::TaskProcessor&amp; channel_task_processor_;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  grpc::CompletionQueue&amp; queue_;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  impl::ChannelCache channel_cache_;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  impl::StatisticsStorage client_statistics_storage_;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Client&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;Client ClientFactory::MakeClient(<span class="keyword">const</span> std::string&amp; endpoint) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">auto</span>&amp; statistics =</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      client_statistics_storage_.GetServiceStatistics(Client::GetMetadata());</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> Client(GetChannel(endpoint), queue_, statistics);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace ugrpc::client</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">/// The logging level override for the internal grpcpp library. Must be either</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">/// `kDebug`, `kInfo` or `kError`.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ad04dcdf09c72104ae7918f34ba5b544c">   33</a></span>&#160;  <a class="code" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::<a class="code" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> <a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ad04dcdf09c72104ae7918f34ba5b544c">native_log_level</a>{<a class="code" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::<a class="code" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a>::kError};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html" title="Settings relating to the ClientFactory.">ClientFactoryConfig</a> Parse(<span class="keyword">const</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::YamlConfig&amp; value,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                          formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html" title="Settings relating to the ClientFactory.">ClientFactoryConfig</a>&gt;);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/// @brief Creates generated gRPC clients. Has a minimal built-in channel cache:</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/// as long as a channel to the same endpoint is used somewhere, the same</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/// channel is given out.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d5/dac/classugrpc_1_1client_1_1ClientFactory.html">   42</a></span>&#160;<span class="keyword">class</span> ClientFactory <span class="keyword">final</span> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ClientFactory(<a class="code" href="../../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html" title="Settings relating to the ClientFactory.">ClientFactoryConfig</a>&amp;&amp; config,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                engine::TaskProcessor&amp; channel_task_processor,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                grpc::CompletionQueue&amp; queue,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Storage&amp; statistics_storage);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Client&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  Client MakeClient(<span class="keyword">const</span> std::string&amp; endpoint);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  impl::ChannelCache::Token GetChannel(<span class="keyword">const</span> std::string&amp; endpoint);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  engine::TaskProcessor&amp; channel_task_processor_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  grpc::CompletionQueue&amp; queue_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  impl::ChannelCache channel_cache_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  impl::StatisticsStorage client_statistics_storage_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Client&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;Client ClientFactory::MakeClient(<span class="keyword">const</span> std::string&amp; endpoint) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">auto</span>&amp; statistics =</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      client_statistics_storage_.GetServiceStatistics(Client::GetMetadata());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> Client(GetChannel(endpoint), queue_, statistics);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace ugrpc::client</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

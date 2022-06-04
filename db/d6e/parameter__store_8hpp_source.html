@@ -117,24 +117,26 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">/// Returns whether the parameter list is empty.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a004597b49f0a9d3ae05b341fcdd53b12">   30</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a004597b49f0a9d3ae05b341fcdd53b12" title="Returns whether the parameter list is empty.">IsEmpty</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> data_.Empty(); }</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a004597b49f0a9d3ae05b341fcdd53b12">   30</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a004597b49f0a9d3ae05b341fcdd53b12" title="Returns whether the parameter list is empty.">IsEmpty</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> data_.Size() == 0; }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">/// Returns current size of the list.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a338537bfe93b2558ec303251b9a8e0cb">   33</a></span>&#160;  size_t <a class="code" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a338537bfe93b2558ec303251b9a8e0cb" title="Returns current size of the list.">Size</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> data_.Size(); }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">/// @cond</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">const</span> detail::QueryParameters&amp; GetInternalData() <span class="keyword">const</span> { <span class="keywordflow">return</span> data_; }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">/// @endcond</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> UserTypes kNoUserTypes;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  detail::QueryParameters data_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}  <span class="comment">// namespace storages::postgres</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">const</span> detail::DynamicQueryParameters&amp; GetInternalData() <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> data_;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">/// @endcond</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">static</span> UserTypes kNoUserTypes;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  detail::DynamicQueryParameters data_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}  <span class="comment">// namespace storages::postgres</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

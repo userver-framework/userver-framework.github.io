@@ -87,16 +87,15 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;benchmark/benchmark.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;random&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d4/dbb/engine_2async_8hpp.html" title="TaskWithResult creation helpers.">userver/engine/async.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d8/da6/mutex_8hpp.html" title="std::mutex replacement for asynchronous tasks">userver/engine/mutex.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/dc0/run__standalone_8hpp.html" title="Runs a payload in a temporary coroutine engine instance.">userver/engine/run_standalone.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d0/d8d/sleep_8hpp.html" title="Time-based coroutine suspension helpers.">userver/engine/sleep.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;utils/gbench_auxilary.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d4/d0b/rand_8hpp.html" title="Random number generators for use in a coroutine environment.">userver/utils/rand.hpp</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line">USERVER_NAMESPACE_BEGIN</div>
 <div class="line"> </div>
@@ -108,10 +107,10 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>ThreadPool {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line">  ThreadPool(<span class="keywordtype">unsigned</span> count, F f) {</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; count; i++) {</div>
-<div class="line">      tasks.push_back(std::thread(f));</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Func&gt;</div>
+<div class="line">  ThreadPool(std::size_t count, Func func) {</div>
+<div class="line">    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; count; i++) {</div>
+<div class="line">      tasks.push_back(std::thread(func));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line"> </div>
@@ -127,16 +126,16 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>AsyncCoroPool {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line">  AsyncCoroPool(<span class="keywordtype">unsigned</span> count, F f) {</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; count; i++) {</div>
-<div class="line">      tasks.push_back(<a name="a0"></a><a class="code" href="../../dc/d3f/namespaceengine.html#ac249644dedd4351b50adc96c8b76c358" title="Runs an asynchronous function call using specified task processor.">engine::AsyncNoSpan</a>(f));</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Func&gt;</div>
+<div class="line">  AsyncCoroPool(std::size_t count, Func func) {</div>
+<div class="line">    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; count; i++) {</div>
+<div class="line">      tasks.push_back(<a name="a0"></a><a class="code" href="../../dc/d3f/namespaceengine.html#ac249644dedd4351b50adc96c8b76c358" title="Runs an asynchronous function call using specified task processor.">engine::AsyncNoSpan</a>(func));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> Wait() {</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; t : tasks) {</div>
-<div class="line">      t.Wait();</div>
+<div class="line">      t.Get();</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line"> </div>
@@ -144,10 +143,8 @@ $(function() {
 <div class="line">  std::vector&lt;engine::TaskWithResult&lt;void&gt;&gt; tasks;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><span class="keyword">struct </span>PoolForImpl {</div>
-<div class="line">  static_assert(<span class="keyword">sizeof</span>(T) == 0, <span class="stringliteral">&quot;No specialization for T&quot;</span>);</div>
-<div class="line">};</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">struct </span>PoolForImpl;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;&gt;</div>
 <div class="line"><span class="keyword">struct </span>PoolForImpl&lt;std::mutex&gt; {</div>
@@ -159,20 +156,20 @@ $(function() {
 <div class="line">  <span class="keyword">using</span> Pool = AsyncCoroPool;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><span class="keyword">using</span> PoolFor = <span class="keyword">typename</span> PoolForImpl&lt;T&gt;::Pool;</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Mutex&gt;</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Mutex&gt;</div>
 <div class="line"><span class="keywordtype">void</span> generic_lock(benchmark::State&amp; state) {</div>
-<div class="line">  <span class="keywordtype">unsigned</span> i = 0;</div>
-<div class="line">  constexpr <span class="keywordtype">unsigned</span> mutex_count = 256;</div>
-<div class="line">  Mutex mutexes[mutex_count];</div>
+<div class="line">  constexpr std::size_t kMutexCount = 256;</div>
+<div class="line">  std::size_t i = 0;</div>
+<div class="line">  Mutex mutexes[kMutexCount];</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
 <div class="line">    mutexes[i].lock();</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (++i == mutex_count) {</div>
+<div class="line">    <span class="keywordflow">if</span> (++i == kMutexCount) {</div>
 <div class="line">      state.PauseTiming();</div>
 <div class="line">      i = 0;</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; m : mutexes) {</div>
@@ -182,16 +179,16 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0; j &lt; i; ++j) {</div>
+<div class="line">  <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; i; ++j) {</div>
 <div class="line">    mutexes[j].unlock();</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Mutex&gt;</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Mutex&gt;</div>
 <div class="line"><span class="keywordtype">void</span> generic_unlock(benchmark::State&amp; state) {</div>
-<div class="line">  <span class="keywordtype">unsigned</span> i = 0;</div>
-<div class="line">  constexpr <span class="keywordtype">unsigned</span> mutex_count = 256;</div>
-<div class="line">  Mutex mutexes[mutex_count];</div>
+<div class="line">  constexpr std::size_t kMutexCount = 256;</div>
+<div class="line">  std::size_t i = 0;</div>
+<div class="line">  Mutex mutexes[kMutexCount];</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; m : mutexes) {</div>
 <div class="line">    m.lock();</div>
@@ -200,7 +197,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
 <div class="line">    mutexes[i].unlock();</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (++i == mutex_count) {</div>
+<div class="line">    <span class="keywordflow">if</span> (++i == kMutexCount) {</div>
 <div class="line">      state.PauseTiming();</div>
 <div class="line">      i = 0;</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; m : mutexes) {</div>
@@ -210,24 +207,30 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (; i &lt; mutex_count; ++i) {</div>
+<div class="line">  <span class="keywordflow">for</span> (; i &lt; kMutexCount; ++i) {</div>
 <div class="line">    mutexes[i].unlock();</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Mutex&gt;</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Mutex&gt;</div>
 <div class="line"><span class="keywordtype">void</span> generic_contention(benchmark::State&amp; state) {</div>
 <div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) std::atomic&lt;bool&gt; run{<span class="keyword">true</span>};</div>
 <div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) std::atomic&lt;std::size_t&gt; lock_unlock_count{0};</div>
 <div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) Mutex m;</div>
 <div class="line"> </div>
 <div class="line">  PoolFor&lt;Mutex&gt; pool(state.range(0) - 1, [&amp;]() {</div>
+<div class="line">    std::uint64_t local_lock_unlock_count = 0;</div>
+<div class="line"> </div>
 <div class="line">    while (run) {</div>
 <div class="line">      m.lock();</div>
 <div class="line">      m.unlock();</div>
-<div class="line">      ++lock_unlock_count;</div>
+<div class="line">      ++local_lock_unlock_count;</div>
 <div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    lock_unlock_count += local_lock_unlock_count;</div>
 <div class="line">  });</div>
+<div class="line"> </div>
+<div class="line">  std::uint64_t local_lock_unlock_count = 0;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
 <div class="line">    m.lock();</div>
@@ -235,43 +238,58 @@ $(function() {
 <div class="line">    ++lock_unlock_count;</div>
 <div class="line">  }</div>
 <div class="line"> </div>
+<div class="line">  lock_unlock_count += local_lock_unlock_count;</div>
+<div class="line"> </div>
 <div class="line">  run = <span class="keyword">false</span>;</div>
 <div class="line">  pool.Wait();</div>
-<div class="line">  state.SetItemsProcessed(lock_unlock_count.load());</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> total_lock_unlock_count =</div>
+<div class="line">      <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(lock_unlock_count.load());</div>
+<div class="line">  state.counters[<span class="stringliteral">&quot;locks&quot;</span>] =</div>
+<div class="line">      benchmark::Counter(total_lock_unlock_count, benchmark::Counter::kIsRate);</div>
+<div class="line">  state.counters[<span class="stringliteral">&quot;locks-per-thread&quot;</span>] = benchmark::Counter(</div>
+<div class="line">      total_lock_unlock_count / state.range(0), benchmark::Counter::kIsRate);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Mutex&gt;</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Mutex&gt;</div>
 <div class="line"><span class="keywordtype">void</span> generic_contention_with_payload(benchmark::State&amp; state) {</div>
 <div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) std::atomic&lt;bool&gt; run{<span class="keyword">true</span>};</div>
-<div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) std::atomic&lt;std::size_t&gt; lock_unlock_count{0};</div>
+<div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) std::atomic&lt;std::uint64_t&gt; lock_unlock_count{0};</div>
 <div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) Mutex m;</div>
-<div class="line">  <span class="keyword">alignas</span>(kInterferenceSize) std::atomic&lt;std::size_t&gt; total_result{0};</div>
-<div class="line">  std::mt19937_64 <a class="code" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>;</div>
 <div class="line"> </div>
 <div class="line">  PoolFor&lt;Mutex&gt; pool(state.range(0) - 1, [&amp;]() {</div>
-<div class="line">    std::size_t result{0};</div>
+<div class="line">    std::uint64_t local_lock_unlock_count = 0;</div>
+<div class="line">    auto&amp; engine = utils::DefaultRandom();</div>
+<div class="line"> </div>
 <div class="line">    while (run) {</div>
 <div class="line">      m.lock();</div>
-<div class="line">      result += <a class="code" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>();</div>
+<div class="line">      for (int i = 0; i &lt; 10; ++i) benchmark::DoNotOptimize(engine());</div>
 <div class="line">      m.unlock();</div>
-<div class="line">      ++lock_unlock_count;</div>
+<div class="line">      ++local_lock_unlock_count;</div>
 <div class="line">    }</div>
-<div class="line">    total_result += result;</div>
+<div class="line"> </div>
+<div class="line">    lock_unlock_count += local_lock_unlock_count;</div>
 <div class="line">  });</div>
 <div class="line"> </div>
-<div class="line">  std::size_t result{0};</div>
+<div class="line">  std::uint64_t local_lock_unlock_count = 0;</div>
+<div class="line">  <span class="keyword">auto</span>&amp; <a class="code" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a> = <a name="a1"></a><a class="code" href="../../d6/d84/namespaceutils.html#a9da7b40c64e23fa6fef8f97372c4c010" title="Returns a thread-local UniformRandomBitGenerator.">utils::DefaultRandom</a>();</div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
 <div class="line">    m.lock();</div>
-<div class="line">    result += <a class="code" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i) benchmark::DoNotOptimize(<a class="code" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>());</div>
 <div class="line">    m.unlock();</div>
-<div class="line">    ++lock_unlock_count;</div>
+<div class="line">    ++local_lock_unlock_count;</div>
 <div class="line">  }</div>
-<div class="line">  total_result += result;</div>
+<div class="line"> </div>
+<div class="line">  lock_unlock_count += local_lock_unlock_count;</div>
 <div class="line"> </div>
 <div class="line">  run = <span class="keyword">false</span>;</div>
 <div class="line">  pool.Wait();</div>
-<div class="line">  state.SetItemsProcessed(lock_unlock_count.load());</div>
-<div class="line">  benchmark::DoNotOptimize(total_result.load());</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> total_lock_unlock_count =</div>
+<div class="line">      <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(lock_unlock_count.load());</div>
+<div class="line">  state.counters[<span class="stringliteral">&quot;locks&quot;</span>] =</div>
+<div class="line">      benchmark::Counter(total_lock_unlock_count, benchmark::Counter::kIsRate);</div>
+<div class="line">  state.counters[<span class="stringliteral">&quot;locks-per-thread&quot;</span>] = benchmark::Counter(</div>
+<div class="line">      total_lock_unlock_count / state.range(0), benchmark::Counter::kIsRate);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -280,7 +298,7 @@ $(function() {
 <div class="line"><span class="comment">// some synchronization primitives).</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> mutex_coro_lock(benchmark::State&amp; state) {</div>
-<div class="line">  <a name="a1"></a><a class="code" href="../../dc/d3f/namespaceengine.html#a5b808a81d43d062275ca56dc09980277" title="Runs a payload in a temporary coroutine engine instance.">engine::RunStandalone</a>([&amp;] { generic_lock&lt;engine::Mutex&gt;(state); });</div>
+<div class="line">  <a name="a2"></a><a class="code" href="../../dc/d3f/namespaceengine.html#a5b808a81d43d062275ca56dc09980277" title="Runs a payload in a temporary coroutine engine instance.">engine::RunStandalone</a>([&amp;] { generic_lock&lt;engine::Mutex&gt;(state); });</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> mutex_std_lock(benchmark::State&amp; state) {</div>

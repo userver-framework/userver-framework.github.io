@@ -91,7 +91,7 @@ $(function() {
 <li>there are arguments in favor of the fact that the service will soon experience a shortage of RSS. For example, due to the growth of caches or other internal structures by an order of magnitude.</li>
 </ul>
 <p>All the userver based services could use <a href="https://github.com/jemalloc/jemalloc/wiki/Use-Case%3A-Heap-Profiling">jemalloc profiler</a> that could be is dynamically enabled/disabled via the <a class="el" href="../../d2/d34/classserver_1_1handlers_1_1Jemalloc.html" title="Handler that controlls the jemalloc allocator.">server::handlers::Jemalloc</a>.</p>
-<h1><a class="anchor" id="autotoc_md179"></a>
+<h1><a class="anchor" id="autotoc_md180"></a>
 How to profile a running service</h1>
 <ol type="1">
 <li>Set the environment variable <code>MALLOC_CONF</code> for your service before the service start: <div class="fragment"><div class="line">MALLOC_CONF=&quot;prof:true,prof_active:false,lg_prof_sample:14,prof_prefix:/tmp/jeprof-SERVICE&quot;</div>
@@ -115,7 +115,7 @@ How to profile a running service</h1>
 <div class="line">  prof.active: false</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md180"></a>
+<h1><a class="anchor" id="autotoc_md181"></a>
 How to profile at service start</h1>
 <ol type="1">
 <li>Set the environment variable <code>MALLOC_CONF</code> for your service before the service start: <div class="fragment"><div class="line">MALLOC_CONF=&quot;prof:true,prof_active:true,lg_prof_sample:14,prof_prefix:/tmp/jeprof-SERVICE&quot;</div>
@@ -138,14 +138,14 @@ How to profile at service start</h1>
 </div><!-- fragment --></li>
 </ol>
 <p><a class="anchor" id="how-to-analyse-the-dump"></a></p>
-<h1><a class="anchor" id="autotoc_md181"></a>
+<h1><a class="anchor" id="autotoc_md182"></a>
 How to analyse the dump</h1>
 <ol type="1">
 <li>To decrypt the dump file, you need the binary files of your service and dynamic libraries with which the process was launched during profiling. Therefore, it is recommended to run <code>jeprof</code> on the target machine and parse the resulting pdf/text file on your working machine. To install <code>jeprof</code>, you can do <code>apt install libjemalloc-dev</code>.</li>
 <li>If you want to get a call graph with notes about the allocated memory, use the command: ``` bash $ jeprof &ndash;show_bytes &ndash;pdf build/services/userver-sample /tmp/jeprof.5503.1.m1.heap&gt; prof.pdf $ gnome-open prof.pdf # Open the file in PDF viewer ``<code> For the command to work, you need to make sure that the</code>apt install graphviz ghostscript` packages are installed.</li>
 <li>If you want to get the top of memory allocation commands, use the command: ``` bash $ jeprof &ndash;show_bytes &ndash;text &ndash;cum build/samples/userver-sample /tmp/jeprof.5503.1.m1.heap Using local file build/services/userver-sample. Using local file /tmp/jeprof.5503.1.m1.heap. ```</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md182"></a>
+<h1><a class="anchor" id="autotoc_md183"></a>
 FAQ</h1>
 <ul>
 <li><p class="startli"><b>Q:</b> I get <code>mallctl() returned error: Bad address</code> when calling <code>dump</code>.</p>

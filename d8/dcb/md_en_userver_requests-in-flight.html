@@ -85,14 +85,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>If your service has a <a class="el" href="../../d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in-flight requests.">server::handlers::InspectRequests</a> configured, then you may inspect the active requests. The feature is useful for investigating a broken production service to find request parameters that lead to handle malfunction.</p>
-<h1><a class="anchor" id="autotoc_md197"></a>
+<h1><a class="anchor" id="autotoc_md198"></a>
 Commands</h1>
 <p><a class="el" href="../../d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in-flight requests.">server::handlers::InspectRequests</a> provides the following REST API: </p><div class="fragment"><div class="line">GET /service/inspect-requests</div>
 <div class="line">GET /service/inspect-requests?body=1</div>
 </div><!-- fragment --><p>Note that the <a class="el" href="../../d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in-flight requests.">server::handlers::InspectRequests</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/inspect-requests</code> handle path.</p>
-<h1><a class="anchor" id="autotoc_md198"></a>
+<h1><a class="anchor" id="autotoc_md199"></a>
 Examples:</h1>
-<h2><a class="anchor" id="autotoc_md199"></a>
+<h2><a class="anchor" id="autotoc_md200"></a>
 Get the requests in flight</h2>
 <p>In this example there is one in-flight request that is being executed for more than 3 seconds.</p>
 <div class="fragment"><div class="line">bash</div>
@@ -115,7 +115,7 @@ Get the requests in flight</h2>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">]</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md200"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md201"></a>
 Get the bodies of the in-flight requests</h2>
 <p>In this example there are multiple in-flight request that actually have no body. </p><div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl http://localhost:8085/internal/inspect-requests?body=1 | jq</div>

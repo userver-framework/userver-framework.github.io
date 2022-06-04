@@ -130,58 +130,60 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> JsonValueToBuffer(<span class="keyword">const</span> formats::json::Value&amp; value,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                       std::vector&lt;<span class="keywordtype">char</span>&gt;&amp; buffer);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> JsonValue&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">struct</span> JsonFormatter : BufferFormatterBase&lt;JsonValue&gt; {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">using</span> BaseType = BufferFormatterBase&lt;JsonValue&gt;;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">using</span> BaseType::BaseType;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp;, Buffer&amp; buffer) <span class="keyword">const</span> {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (!std::is_same_v&lt;PlainJson, JsonValue&gt;) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      buffer.push_back(kJsonbVersion);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    JsonValueToBuffer(<span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> formats::json::Value&amp;&gt;(<span class="keyword">this</span>-&gt;value),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                      buffer);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}  <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> JsonValueToBuffer(<span class="keyword">const</span> formats::json::Value&amp; value, std::string&amp; buffer);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> JsonValue&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">struct</span> JsonFormatter : BufferFormatterBase&lt;JsonValue&gt; {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">using</span> BaseType = BufferFormatterBase&lt;JsonValue&gt;;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">using</span> BaseType::BaseType;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp;, Buffer&amp; buffer) <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (!std::is_same_v&lt;PlainJson, JsonValue&gt;) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      buffer.push_back(kJsonbVersion);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    detail::JsonValueToBuffer(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> formats::json::Value&amp;&gt;(<span class="keyword">this</span>-&gt;value), buffer);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">namespace</span> traits {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}  <span class="comment">// namespace detail</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d8/ddc/structstorages_1_1postgres_1_1io_1_1traits_1_1Input_3_01formats_1_1json_1_1Value_01_4.html">   64</a></span>&#160;<span class="keyword">struct</span> Input&lt;formats::json::Value&gt; {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">using</span> type = io::detail::JsonParser;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">struct</span> ParserBufferCategory&lt;io::detail::JsonParser&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    : std::integral_constant&lt;BufferCategory, BufferCategory::kPlainBuffer&gt; {};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d8/d49/structstorages_1_1postgres_1_1io_1_1traits_1_1Output_3_01formats_1_1json_1_1Value_01_4.html">   73</a></span>&#160;<span class="keyword">struct</span> Output&lt;formats::json::Value&gt; {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">using</span> type = io::detail::JsonFormatter&lt;formats::json::Value&gt;;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d7/d5d/structstorages_1_1postgres_1_1io_1_1traits_1_1Output_3_01PlainJson_01_4.html">   78</a></span>&#160;<span class="keyword">struct</span> Output&lt;PlainJson&gt; {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">using</span> type = io::detail::JsonFormatter&lt;PlainJson&gt;;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}  <span class="comment">// namespace traits</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">namespace</span> traits {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d8/ddc/structstorages_1_1postgres_1_1io_1_1traits_1_1Input_3_01formats_1_1json_1_1Value_01_4.html">   66</a></span>&#160;<span class="keyword">struct</span> Input&lt;formats::json::Value&gt; {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">using</span> type = io::detail::JsonParser;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">struct</span> ParserBufferCategory&lt;io::detail::JsonParser&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    : std::integral_constant&lt;BufferCategory, BufferCategory::kPlainBuffer&gt; {};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d8/d49/structstorages_1_1postgres_1_1io_1_1traits_1_1Output_3_01formats_1_1json_1_1Value_01_4.html">   75</a></span>&#160;<span class="keyword">struct</span> Output&lt;formats::json::Value&gt; {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">using</span> type = io::detail::JsonFormatter&lt;formats::json::Value&gt;;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d7/d5d/structstorages_1_1postgres_1_1io_1_1traits_1_1Output_3_01PlainJson_01_4.html">   80</a></span>&#160;<span class="keyword">struct</span> Output&lt;PlainJson&gt; {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">using</span> type = io::detail::JsonFormatter&lt;PlainJson&gt;;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d0/d83/structstorages_1_1postgres_1_1io_1_1CppToSystemPg_3_01formats_1_1json_1_1Value_01_4.html">   85</a></span>&#160;<span class="keyword">struct</span> CppToSystemPg&lt;formats::json::Value&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    : PredefinedOid&lt;PredefinedOids::kJsonb&gt; {};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d7/d07/structstorages_1_1postgres_1_1io_1_1CppToSystemPg_3_01PlainJson_01_4.html">   89</a></span>&#160;<span class="keyword">struct</span> CppToSystemPg&lt;PlainJson&gt; : PredefinedOid&lt;PredefinedOids::kJson&gt; {};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}  <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}  <span class="comment">// namespace storages::postgres</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}  <span class="comment">// namespace traits</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d0/d83/structstorages_1_1postgres_1_1io_1_1CppToSystemPg_3_01formats_1_1json_1_1Value_01_4.html">   87</a></span>&#160;<span class="keyword">struct</span> CppToSystemPg&lt;formats::json::Value&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    : PredefinedOid&lt;PredefinedOids::kJsonb&gt; {};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../d7/d07/structstorages_1_1postgres_1_1io_1_1CppToSystemPg_3_01PlainJson_01_4.html">   91</a></span>&#160;<span class="keyword">struct</span> CppToSystemPg&lt;PlainJson&gt; : PredefinedOid&lt;PredefinedOids::kJson&gt; {};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace storages::postgres</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

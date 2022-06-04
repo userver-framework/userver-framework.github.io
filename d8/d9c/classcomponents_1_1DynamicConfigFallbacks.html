@@ -166,12 +166,12 @@ static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a46e4c7c9012247a3cbcdd2fd7042cbe0"><td class="memItemLeft" align="right" valign="top"><a id="a46e4c7c9012247a3cbcdd2fd7042cbe0"></a>
-static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>kName</b> = &quot;taxi-config-fallbacks&quot;</td></tr>
+static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>kName</b> = &quot;dynamic-config-fallbacks&quot;</td></tr>
 <tr class="separator:a46e4c7c9012247a3cbcdd2fd7042cbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Component that setup runtime configs based on fallbacks from file. </p>
-<h2><a class="anchor" id="autotoc_md412"></a>
+<h2><a class="anchor" id="autotoc_md413"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -180,10 +180,10 @@ Static options:</h2>
 <td class="markdownTableBodyNone">fallback-path </td><td class="markdownTableBodyNone">a path to the fallback config to load the required config names from it </td><td class="markdownTableBodyNone">-  </td></tr>
 </table>
 <p>If you use this component, you have to disable loading of other updaters (like <a class="el" href="../../d3/da0/classcomponents_1_1DynamicConfigClientUpdater.html" title="Component that does a periodic update of runtime configs.">DynamicConfigClientUpdater</a>) as there must be only a single component that sets config values.</p>
-<h2><a class="anchor" id="autotoc_md413"></a>
+<h2><a class="anchor" id="autotoc_md414"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
-<div class="line">    taxi-config-fallbacks:</div>
+<div class="line">    dynamic-config-fallbacks:</div>
 <div class="line">      fallback-path: $runtime_config_path</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="../../d0/d56/core_2include_2userver_2dynamic__config_2fallbacks_2component_8hpp_source.html#l00036">36</a> of file <a class="el" href="../../d0/d56/core_2include_2userver_2dynamic__config_2fallbacks_2component_8hpp_source.html">component.hpp</a>.</p>

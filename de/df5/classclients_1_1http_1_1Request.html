@@ -324,7 +324,21 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
       </table>
 </div><div class="memdoc">
 <p>Perform request asynchronously.</p>
-<p><a class="el" href="../../de/df5/classclients_1_1http_1_1Request.html" title="Class for creating and performing new http requests.">Request</a> object could be reused after retrieval of data from <a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a>, all the setup holds: </p><div class="fragment"><div class="line">std::string DifferentUrlsRetry(std::string <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#acbb69fafe950db785ec9604ac98d0d17" title="data for POST request">data</a>, <a class="code" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a>&amp; <a class="code" href="../../d3/d69/namespacehttp.html" title="HTTP helpers.">http</a>,</div>
+<p>Works well with <a class="el" href="../../dc/db7/group__userver__concurrency.html#gafe29f85e5a5dd200efb8664f32e5defd" title="Waits for the completion of any of the specified tasks or the cancellation of the caller.">engine::WaitAny</a>, engine::WaitAnyFor, and engine::WaitUntil functions: </p><div class="fragment"><div class="line">std::size_t ProcessReadyRequests(</div>
+<div class="line">    std::vector&lt;clients::http::ResponseFuture&gt;&amp; requests,</div>
+<div class="line">    <a class="code" href="../../de/d6a/classengine_1_1Deadline.html" title="Internal representation of a deadline time point.">engine::Deadline</a> deadline) {</div>
+<div class="line">  std::size_t processed_requests = 0;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">while</span> (<span class="keyword">auto</span> indx = engine::WaitAnyUntil(deadline, requests)) {</div>
+<div class="line">    ++processed_requests;</div>
+<div class="line"> </div>
+<div class="line">    std::shared_ptr&lt;clients::http::Response&gt; response = requests[*indx].Get();</div>
+<div class="line">    EXPECT_TRUE(response-&gt;<a class="code" href="../../dd/d3b/classclients_1_1http_1_1Response.html#a99f5954496cc3c3fd139dcf32311d984" title="check status code">IsOk</a>());</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> processed_requests;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> <a class="el" href="../../de/df5/classclients_1_1http_1_1Request.html" title="Class for creating and performing new http requests.">Request</a> object could be reused after retrieval of data from <a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a>, all the setup holds: </p><div class="fragment"><div class="line">std::string DifferentUrlsRetry(std::string <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#acbb69fafe950db785ec9604ac98d0d17" title="data for POST request">data</a>, <a class="code" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a>&amp; <a class="code" href="../../d3/d69/namespacehttp.html" title="HTTP helpers.">http</a>,</div>
 <div class="line">                               std::initializer_list&lt;std::string&gt; urls_list) {</div>
 <div class="line">  <span class="keyword">auto</span> request = <a class="code" href="../../d3/d69/namespacehttp.html" title="HTTP helpers.">http</a>.CreateRequest()</div>
 <div class="line">                     -&gt;post()</div>

@@ -278,36 +278,40 @@ $(function() {
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">/// Perform request asynchronously.</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">///</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">/// Request object could be reused after retrieval of data from</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">/// ResponseFuture, all the setup holds:</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">/// @snippet src/clients/http/client_test.cpp  HTTP Client - reuse async</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  [[nodiscard]] ResponseFuture <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a8151dd360c3b3e0ffe61cfe1474ae095">async_perform</a>();</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="comment">/// Calls async_perform and wait for timeout_ms on a future. Default time</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">/// for waiting will be timeout value if it was setted. If error occured it</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="comment">/// will be thrown as exception.</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="comment">///</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="comment">/// Request object could be reused after return from perform(), all the</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">/// setup holds:</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">/// @snippet src/clients/http/client_test.cpp  HTTP Client - request reuse</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  [[nodiscard]] std::shared_ptr&lt;Response&gt; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#ab14a15c12b757b30823d67405da4aa9e">perform</a>();</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="comment">/// Returns a reference to the original URL of a request</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a3f98fef98d3b188ed963522000d0f766" title="Returns a reference to the original URL of a request.">GetUrl</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="comment">/// Returns a reference to the HTTP body of a request to send</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#add21dba080ca7d2b8a19560eafaa2682" title="Returns a reference to the HTTP body of a request to send.">GetData</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="comment">/// Returns HTTP body of a request, leaving it empty</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  std::string <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a9b44d22f746bf0d93f377c8ca34460ba" title="Returns HTTP body of a request, leaving it empty.">ExtractData</a>();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  std::shared_ptr&lt;RequestState&gt; pimpl_;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;};</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">/// Works well with engine::WaitAny, engine::WaitAnyFor, and</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">/// engine::WaitUntil functions:</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">/// @snippet src/clients/http/client_wait_test.cpp HTTP Client - waitany</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">///</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="comment">/// Request object could be reused after retrieval of data from</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="comment">/// ResponseFuture, all the setup holds:</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">/// @snippet src/clients/http/client_test.cpp  HTTP Client - reuse async</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  [[nodiscard]] ResponseFuture <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a8151dd360c3b3e0ffe61cfe1474ae095">async_perform</a>();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="comment">/// Calls async_perform and wait for timeout_ms on a future. Default time</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">/// for waiting will be timeout value if it was setted. If error occured it</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">/// will be thrown as exception.</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="comment">///</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="comment">/// Request object could be reused after return from perform(), all the</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="comment">/// setup holds:</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="comment">/// @snippet src/clients/http/client_test.cpp  HTTP Client - request reuse</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  [[nodiscard]] std::shared_ptr&lt;Response&gt; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#ab14a15c12b757b30823d67405da4aa9e">perform</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="comment">/// Returns a reference to the original URL of a request</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a3f98fef98d3b188ed963522000d0f766" title="Returns a reference to the original URL of a request.">GetUrl</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="comment">/// Returns a reference to the HTTP body of a request to send</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#add21dba080ca7d2b8a19560eafaa2682" title="Returns a reference to the HTTP body of a request to send.">GetData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="comment">/// Returns HTTP body of a request, leaving it empty</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  std::string <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a9b44d22f746bf0d93f377c8ca34460ba" title="Returns HTTP body of a request, leaving it empty.">ExtractData</a>();</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}  <span class="comment">// namespace clients::http</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  std::shared_ptr&lt;RequestState&gt; pimpl_;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}  <span class="comment">// namespace clients::http</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

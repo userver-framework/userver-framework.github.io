@@ -137,9 +137,9 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ResultSet Execute(OptionalCommandControl statement_cmd_ctl,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keyword">const</span> Query&amp; query, <span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    detail::QueryParameters params;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    detail::StaticQueryParameters&lt;<span class="keyword">sizeof</span>...(args)&gt; params;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    params.Write(GetConnectionUserTypes(), args...);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> DoExecute(query, params, statement_cmd_ctl);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> DoExecute(query, detail::QueryParameters{params}, statement_cmd_ctl);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">/// Execute statement with stored arguments.</span></div>

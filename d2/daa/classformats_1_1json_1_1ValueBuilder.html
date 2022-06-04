@@ -218,6 +218,10 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6c390d3e4331bdcb9e3508d5c3b8fa1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a6c390d3e4331bdcb9e3508d5c3b8fa1d">HasMember</a> (const std::string &amp;key) const</td></tr>
 <tr class="memdesc:a6c390d3e4331bdcb9e3508d5c3b8fa1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value holds a <code>key</code>.  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a6c390d3e4331bdcb9e3508d5c3b8fa1d">More...</a><br /></td></tr>
 <tr class="separator:a6c390d3e4331bdcb9e3508d5c3b8fa1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481a0410df62d97577911ff7709b591c"><td class="memItemLeft" align="right" valign="top"><a id="a481a0410df62d97577911ff7709b591c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a481a0410df62d97577911ff7709b591c">GetPath</a> () const</td></tr>
+<tr class="memdesc:a481a0410df62d97577911ff7709b591c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns full path to this value. <br /></td></tr>
+<tr class="separator:a481a0410df62d97577911ff7709b591c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab06f01103a22c56bf5f599a1cee9d779"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#ab06f01103a22c56bf5f599a1cee9d779">Resize</a> (std::size_t size)</td></tr>
 <tr class="memdesc:ab06f01103a22c56bf5f599a1cee9d779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the array value or convert null value into an array of requested size.  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#ab06f01103a22c56bf5f599a1cee9d779">More...</a><br /></td></tr>
 <tr class="separator:ab06f01103a22c56bf5f599a1cee9d779"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +244,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Iterator&lt; IterTra
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Builder for JSON. </p>
 <p>Class provides methods for building JSON. For read only access to the existing JSON values use <a class="el" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>.</p>
-<h2><a class="anchor" id="autotoc_md365"></a>
+<h2><a class="anchor" id="autotoc_md366"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="comment">// #include &lt;userver/formats/json.hpp&gt;</span></div>
 <div class="line">  <a class="code" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> builder;</div>
@@ -250,7 +254,7 @@ Example usage:</h2>
 <div class="line"> </div>
 <div class="line">  ASSERT_EQ(json[<span class="stringliteral">&quot;key1&quot;</span>].As&lt;int&gt;(), 1);</div>
 <div class="line">  ASSERT_EQ(json[<span class="stringliteral">&quot;key2&quot;</span>][<span class="stringliteral">&quot;key3&quot;</span>].As&lt;std::string&gt;(), <span class="stringliteral">&quot;val&quot;</span>);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md366"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md367"></a>
 Customization example:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
 <div class="line"> </div>
@@ -281,7 +285,7 @@ Customization example:</h2>
 <div class="line">}  <span class="comment">// namespace my_namespace</span></div>
 <div class="line"> </div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/dd7/md_en_userver_formats.html">Formats (JSON, YAML, BSON, ...)</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#_a9">samples/config_service/config_service.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#_a15">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../d0/d58/samples_2testsuite-support_2now_8cpp-example.html#_a3">samples/testsuite-support/now.cpp</a>, and <a class="el" href="../../d3/dbf/samples_2testsuite-support_2testpoint_8cpp-example.html#_a4">samples/testsuite-support/testpoint.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#_a9">samples/config_service/config_service.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#_a15">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../d4/da1/samples_2testsuite-support_2metrics_8cpp-example.html#_a6">samples/testsuite-support/metrics.cpp</a>, <a class="el" href="../../d0/d58/samples_2testsuite-support_2now_8cpp-example.html#_a3">samples/testsuite-support/now.cpp</a>, and <a class="el" href="../../d3/dbf/samples_2testsuite-support_2testpoint_8cpp-example.html#_a4">samples/testsuite-support/testpoint.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00041">41</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
@@ -385,7 +389,7 @@ Customization example:</h2>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#a10">samples/config_service/config_service.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#a19">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../d0/d58/samples_2testsuite-support_2now_8cpp-example.html#a5">samples/testsuite-support/now.cpp</a>, and <a class="el" href="../../d3/dbf/samples_2testsuite-support_2testpoint_8cpp-example.html#a5">samples/testsuite-support/testpoint.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#a10">samples/config_service/config_service.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#a19">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../d4/da1/samples_2testsuite-support_2metrics_8cpp-example.html#a7">samples/testsuite-support/metrics.cpp</a>, <a class="el" href="../../d0/d58/samples_2testsuite-support_2now_8cpp-example.html#a5">samples/testsuite-support/now.cpp</a>, and <a class="el" href="../../d3/dbf/samples_2testsuite-support_2testpoint_8cpp-example.html#a5">samples/testsuite-support/testpoint.cpp</a>.</dd>
 </dl>
 
 </div>

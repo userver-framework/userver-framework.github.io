@@ -271,12 +271,41 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>InternalServerError<
 class server::handlers::HttpHandlerFlatbufBase&lt; InputType, ReturnType &gt;</h3>
 
 <p>Convenient base for handlers that accept requests with body in Flatbuffer format and respond with body in Flatbuffer format. </p>
-<h2><a class="anchor" id="autotoc_md443"></a>
+<h2><a class="anchor" id="autotoc_md444"></a>
 Example usage:</h2>
-<div class="fragment"></div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html#_a0">samples/flatbuf_service/flatbuf_service.cpp</a>.</dd>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d4d/http__handler__flatbuf__base_8hpp.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod...">userver/server/handlers/http_handler_flatbuf_base.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;flatbuffer_schema.fbs.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>samples::fbs_handle {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>FbsSumEcho final</div>
+<div class="line">    : <span class="keyword">public</span> <a class="code" href="../../d8/dfe/classserver_1_1handlers_1_1HttpHandlerFlatbufBase.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod...">server::handlers::HttpHandlerFlatbufBase</a>&lt;fbs::SampleRequest,</div>
+<div class="line">                                                      fbs::SampleResponse&gt; {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="comment">// `kName` is used as the component name in static config</span></div>
+<div class="line">  <span class="keyword">static</span> constexpr std::string_view kName = <span class="stringliteral">&quot;handler-fbs-sample&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Component is valid after construction and is able to accept requests</span></div>
+<div class="line">  FbsSumEcho(<span class="keyword">const</span> <a class="code" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp; config,</div>
+<div class="line">             <span class="keyword">const</span> <a class="code" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>&amp; context)</div>
+<div class="line">      : HttpHandlerFlatbufBase(config, context) {}</div>
+<div class="line"> </div>
+<div class="line">  fbs::SampleResponse::NativeTableType HandleRequestFlatbufThrow(</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html" title="HTTP Request data.">server::http::HttpRequest</a>&amp; <span class="comment">/*request*/</span>,</div>
+<div class="line">      <span class="keyword">const</span> fbs::SampleRequest::NativeTableType&amp; fbs_request,</div>
+<div class="line">      <a class="code" href="../../de/df6/classserver_1_1request_1_1RequestContext.html" title="Stores request-specific data during request processing.">server::request::RequestContext</a>&amp;)<span class="keyword"> const override </span>{</div>
+<div class="line">    fbs::SampleResponse::NativeTableType res;</div>
+<div class="line">    res.sum = fbs_request.arg1 + fbs_request.arg2;</div>
+<div class="line">    res.echo = fbs_request.data;</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace samples::fbs_handle</span></div>
+</div><!-- fragment --><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html#_a0">samples/flatbuf_service/flatbuf_service.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00035">35</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00040">40</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7ddcbb3c5315b3ea49439eb8da734987"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ddcbb3c5315b3ea49439eb8da734987">&#9670;&nbsp;</a></span>GetInputData()</h2>
@@ -297,7 +326,7 @@ template&lt;typename InputType , typename ReturnType &gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A pointer to input data if it was parsed successfully or nullptr otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00110">110</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -320,7 +349,7 @@ template&lt;typename InputType , typename ReturnType &gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>a pointer to output data if it was returned successfully by <code>HandleRequestFlatbufThrow()</code> or nullptr otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00113">113</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00118">118</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +392,7 @@ template&lt;typename InputType , typename ReturnType &gt; </div>
 
 <p>Reimplemented from <a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html#a6ac8d23eae53b071a4d61b2bc54e48aa">server::handlers::HttpHandlerBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00138">138</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html#l00143">143</a> of file <a class="el" href="../../d5/d4d/http__handler__flatbuf__base_8hpp_source.html">http_handler_flatbuf_base.hpp</a>.</p>
 
 </div>
 </div>

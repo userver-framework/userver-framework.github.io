@@ -100,6 +100,7 @@ $(function() {
 <code>#include &lt;boost/smart_ptr/intrusive_ptr.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d2/d22/deadline_8hpp_source.html">userver/engine/deadline.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d27/core_2include_2userver_2engine_2exception_8hpp_source.html">userver/engine/exception.hpp</a>&gt;</code><br />
+<code>#include &lt;userver/engine/impl/context_accessor.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../db/df2/cancel_8hpp_source.html">userver/engine/task/cancel.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d8/d03/task__processor__fwd_8hpp_source.html">userver/engine/task/task_processor_fwd.hpp</a>&gt;</code><br />
 <code>#include &lt;userver/utils/clang_format_workarounds.hpp&gt;</code><br />
@@ -110,15 +111,16 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../da/d7e/task_8hpp__incl.png" border="0" usemap="#userver_2engine_2task_2task_8hpp" alt=""/></div>
 <map name="userver_2engine_2task_2task_8hpp" id="userver_2engine_2task_2task_8hpp">
-<area shape="rect" title="Asynchronous task." alt="" coords="364,5,515,47"/>
-<area shape="rect" title=" " alt="" coords="361,348,427,375"/>
+<area shape="rect" title="Asynchronous task." alt="" coords="438,5,588,47"/>
+<area shape="rect" title=" " alt="" coords="361,348,428,375"/>
 <area shape="rect" title=" " alt="" coords="426,273,485,300"/>
-<area shape="rect" title=" " alt="" coords="49,95,235,136"/>
-<area shape="rect" href="../../d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="153,273,360,300"/>
+<area shape="rect" title=" " alt="" coords="49,95,236,136"/>
+<area shape="rect" href="../../d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="154,273,360,300"/>
 <area shape="rect" href="../../d9/d27/core_2include_2userver_2engine_2exception_8hpp.html" title="Coroutine engine exceptions." alt="" coords="260,102,475,129"/>
-<area shape="rect" href="../../db/df2/cancel_8hpp.html" title="Task cancellation helpers." alt="" coords="181,184,332,225"/>
-<area shape="rect" href="../../d8/d03/task__processor__fwd_8hpp.html" title=" " alt="" coords="601,95,784,136"/>
-<area shape="rect" href="../../de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="808,95,999,136"/>
+<area shape="rect" href="../../db/df2/cancel_8hpp.html" title="Task cancellation helpers." alt="" coords="182,184,332,225"/>
+<area shape="rect" href="../../dc/db0/context__accessor_8hpp_source.html" title=" " alt="" coords="602,95,768,136"/>
+<area shape="rect" href="../../d8/d03/task__processor__fwd_8hpp.html" title=" " alt="" coords="792,95,975,136"/>
+<area shape="rect" href="../../de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="999,95,1190,136"/>
 <area shape="rect" title=" " alt="" coords="356,191,443,218"/>
 </map>
 </div>
@@ -136,7 +138,7 @@ $(function() {
 <area shape="rect" href="../../d5/d65/shared__task__with__result_8hpp.html" title=" " alt="" coords="1809,206,2021,247"/>
 <area shape="rect" href="../../d5/df2/task__context__holder_8hpp.html" title="engine::Task implementation hiding helpers" alt="" coords="2004,102,2189,143"/>
 <area shape="rect" href="../../d2/dcd/task__with__result_8hpp.html" title=" " alt="" coords="2235,206,2396,247"/>
-<area shape="rect" href="../../d2/d1c/wait__any_8hpp.html" title=" " alt="" coords="2265,102,2416,143"/>
+<area shape="rect" href="../../d2/d1c/wait__any_8hpp.html" title="Provides engine::WaitAny, engine::WaitAnyFor and engine::WaitAnyUntil." alt="" coords="2265,102,2416,143"/>
 <area shape="rect" href="../../d2/d63/dns__server__mock_8hpp_source.html" title=" " alt="" coords="2440,102,2623,143"/>
 <area shape="rect" href="../../db/d39/condition__variable_8hpp.html" title="std::condition_variable replacement for asynchronous tasks" alt="" coords="591,206,773,247"/>
 <area shape="rect" href="../../d1/d43/blocking__future__state_8hpp_source.html" title=" " alt="" coords="851,206,1046,247"/>
@@ -188,8 +190,6 @@ $(function() {
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7c/classengine_1_1Task.html">engine::Task</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous task.  <a href="../../d8/d7c/classengine_1_1Task.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dde/classengine_1_1Task_1_1ContextAccessor.html">engine::Task::ContextAccessor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>

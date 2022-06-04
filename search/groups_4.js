@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['parsers_6217',['Parsers',['../da/d5d/group__userver__formats__parse.html',1,'']]],
-  ['postgres_20parsers_20and_20formatters_6218',['Postgres parsers and formatters',['../d9/dab/group__userver__postgres__parse__and__format.html',1,'']]]
+  ['parsers_6219',['Parsers',['../da/d5d/group__userver__formats__parse.html',1,'']]],
+  ['postgres_20parsers_20and_20formatters_6220',['Postgres parsers and formatters',['../d9/dab/group__userver__postgres__parse__and__format.html',1,'']]]
 ];

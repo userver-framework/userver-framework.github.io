@@ -294,6 +294,16 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5b61624d95c1da32e02c5313e66fa200"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="../../d8/d72/namespacedump.html#afee7cf7dcee6a7110655af2950f7a809">kIsReadable</a>&lt; T &gt;, std::optional&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#a5b61624d95c1da32e02c5313e66fa200">Read</a> (<a class="el" href="../../d2/d03/classdump_1_1Reader.html">Reader</a> &amp;reader, <a class="el" href="../../dc/d52/structdump_1_1To.html">To</a>&lt; std::optional&lt; T &gt;&gt;)</td></tr>
 <tr class="memdesc:a5b61624d95c1da32e02c5313e66fa200"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>std::optional</code> deserialization support <br /></td></tr>
 <tr class="separator:a5b61624d95c1da32e02c5313e66fa200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03297c62b2413e61fa4a8cb57452ca8"><td class="memTemplParams" colspan="2"><a id="ae03297c62b2413e61fa4a8cb57452ca8"></a>
+template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ae03297c62b2413e61fa4a8cb57452ca8"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(true &amp;&amp;... &amp;&amp;<a class="el" href="../../d8/d72/namespacedump.html#a7553b927261d29b11724ed8c58ed153e">kIsWritable</a>&lt; Args &gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#ae03297c62b2413e61fa4a8cb57452ca8">Write</a> (<a class="el" href="../../df/d09/classdump_1_1Writer.html">Writer</a> &amp;writer, const std::variant&lt; Args... &gt; &amp;value)</td></tr>
+<tr class="memdesc:ae03297c62b2413e61fa4a8cb57452ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>std::variant</code> serialization support <br /></td></tr>
+<tr class="separator:ae03297c62b2413e61fa4a8cb57452ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53aa28a17c320639488cc05bf3bd6fb8"><td class="memTemplParams" colspan="2"><a id="a53aa28a17c320639488cc05bf3bd6fb8"></a>
+template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a53aa28a17c320639488cc05bf3bd6fb8"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(true &amp;&amp;... &amp;&amp;(std::is_move_constructible_v&lt; Args &gt; &amp;&amp;<a class="el" href="../../d8/d72/namespacedump.html#afee7cf7dcee6a7110655af2950f7a809">kIsReadable</a>&lt; Args &gt;)), std::variant&lt; Args... &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#a53aa28a17c320639488cc05bf3bd6fb8">Read</a> (<a class="el" href="../../d2/d03/classdump_1_1Reader.html">Reader</a> &amp;reader, <a class="el" href="../../dc/d52/structdump_1_1To.html">To</a>&lt; std::variant&lt; Args... &gt;&gt;)</td></tr>
+<tr class="memdesc:a53aa28a17c320639488cc05bf3bd6fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>std::variant</code> deserialization support <br /></td></tr>
+<tr class="separator:a53aa28a17c320639488cc05bf3bd6fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62d9aa3a182eafa1c454914962e274c4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a62d9aa3a182eafa1c454914962e274c4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="../../d8/d72/namespacedump.html#afee7cf7dcee6a7110655af2950f7a809">kIsReadable</a>&lt; T &gt;, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#a62d9aa3a182eafa1c454914962e274c4">Read</a> (<a class="el" href="../../d2/d03/classdump_1_1Reader.html">Reader</a> &amp;reader, <a class="el" href="../../dc/d52/structdump_1_1To.html">To</a>&lt; const T &gt;)</td></tr>
 <tr class="separator:a62d9aa3a182eafa1c454914962e274c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -394,9 +404,9 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2aa2a0bf84718b46857367fbab3267ed"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed">FromBinary</a> (std::string data)</td></tr>
 <tr class="memdesc:a2aa2a0bf84718b46857367fbab3267ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts from binary using <code>Read(<a class="el" href="../../d2/d03/classdump_1_1Reader.html" title="A general interface for binary data input.">Reader</a>&amp;, <a class="el" href="../../dc/d52/structdump_1_1To.html" title="A marker type used in ADL-found Read">To</a>&lt;T&gt;)</code> <br /></td></tr>
 <tr class="separator:a2aa2a0bf84718b46857367fbab3267ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c1815326215e1245333b25f126d9067"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5c1815326215e1245333b25f126d9067"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#a5c1815326215e1245333b25f126d9067">TestWriteReadCycle</a> (const T &amp;value)</td></tr>
-<tr class="separator:a5c1815326215e1245333b25f126d9067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c12be26fdae1224e898a87d9db9945e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7c12be26fdae1224e898a87d9db9945e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d72/namespacedump.html#a7c12be26fdae1224e898a87d9db9945e">TestWriteReadCycle</a> (const T &amp;original)</td></tr>
+<tr class="separator:a7c12be26fdae1224e898a87d9db9945e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -523,7 +533,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Allows reading <code>const T</code>, which is usually encountered as a member of some container </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html#l00130">130</a> of file <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html">common_containers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html#l00179">179</a> of file <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html">common_containers.hpp</a>.</p>
 
 </div>
 </div>
@@ -593,7 +603,7 @@ template&lt;typename T &gt; </div>
 <p><code>std::shared_ptr</code> deserialization support </p>
 <dl class="section warning"><dt>Warning</dt><dd>If two or more <code>shared_ptr</code> within a single dumped entity point to the same object, they will point to its distinct copies after loading a dump </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html#l00178">178</a> of file <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html">common_containers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html#l00227">227</a> of file <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html">common_containers.hpp</a>.</p>
 
 </div>
 </div>
@@ -745,8 +755,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5c1815326215e1245333b25f126d9067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c1815326215e1245333b25f126d9067">&#9670;&nbsp;</a></span>TestWriteReadCycle()</h2>
+<a id="a7c12be26fdae1224e898a87d9db9945e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c12be26fdae1224e898a87d9db9945e">&#9670;&nbsp;</a></span>TestWriteReadCycle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -757,14 +767,14 @@ template&lt;typename T &gt; </div>
           <td class="memname">void dump::TestWriteReadCycle </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramname"><em>original</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Write a value to a cache dump and immediately read it back. If <code>Write</code> and <code>Read</code> are implemented correctly, the result should be equal to the original value. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d7c/testing_2include_2userver_2dump_2test__helpers_8hpp_source.html#l00034">34</a> of file <a class="el" href="../../d7/d7c/testing_2include_2userver_2dump_2test__helpers_8hpp_source.html">test_helpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d7c/testing_2include_2userver_2dump_2test__helpers_8hpp_source.html#l00035">35</a> of file <a class="el" href="../../d7/d7c/testing_2include_2userver_2dump_2test__helpers_8hpp_source.html">test_helpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -799,7 +809,7 @@ template&lt;typename T &gt; </div>
 <p><code>std::shared_ptr</code> serialization support </p>
 <dl class="section warning"><dt>Warning</dt><dd>If two or more <code>shared_ptr</code> within a single dumped entity point to the same object, they will point to its distinct copies after loading a dump </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html#l00168">168</a> of file <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html">common_containers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html#l00217">217</a> of file <a class="el" href="../../df/d8a/core_2include_2userver_2dump_2common__containers_8hpp_source.html">common_containers.hpp</a>.</p>
 
 </div>
 </div>

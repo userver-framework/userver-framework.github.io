@@ -93,41 +93,45 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">utility</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utest</span><span class="preprocessor">/</span><span class="preprocessor">utest</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">dump</span><span class="preprocessor">/</span><span class="preprocessor">operations_mock</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;USERVER_NAMESPACE_BEGIN</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../dc/d52/structdump_1_1To.html" title="A marker type used in ADL-found Read">dump</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/// Converts to binary using `Write(Writer&amp;, const T&amp;)`</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6">   15</a></span>&#160;std::string <a class="code" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6" title="Converts to binary using Write(Writer&amp;, const T&amp;)">ToBinary</a>(<span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  MockWriter writer;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  writer.Write(value);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> std::move(writer).Extract();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// Converts from binary using `Read(Reader&amp;, To&lt;T&gt;)`</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed">   23</a></span>&#160;T <a class="code" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed" title="Converts from binary using Read(Reader&amp;, To&lt;T&gt;)">FromBinary</a>(std::string data) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  MockReader reader(std::move(data));</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  T value = reader.Read&lt;T&gt;();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  reader<a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">.</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">(</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">)</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/// Write a value to a cache dump and immediately read it back. If `Write` and</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/// `Read` are implemented correctly, the result should be equal to the original</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/// value.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a5c1815326215e1245333b25f126d9067">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d72/namespacedump.html#a5c1815326215e1245333b25f126d9067">TestWriteReadCycle</a>(<span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  EXPECT_EQ(FromBinary&lt;T&gt;(ToBinary(value)), value);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace dump</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">fast_scope_guard</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">dump</span><span class="preprocessor">/</span><span class="preprocessor">operations_mock</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;USERVER_NAMESPACE_BEGIN</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../dc/d52/structdump_1_1To.html" title="A marker type used in ADL-found Read">dump</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/// Converts to binary using `Write(Writer&amp;, const T&amp;)`</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6">   16</a></span>&#160;std::string <a class="code" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6" title="Converts to binary using Write(Writer&amp;, const T&amp;)">ToBinary</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  MockWriter writer;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  writer.Write(value);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">return</span> std::move(writer).Extract();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// Converts from binary using `Read(Reader&amp;, To&lt;T&gt;)`</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed">   24</a></span>&#160;T <a class="code" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed" title="Converts from binary using Read(Reader&amp;, To&lt;T&gt;)">FromBinary</a>(std::string data) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  MockReader reader(std::move(data));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  T value = reader.Read&lt;T&gt;();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  reader<a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">.</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">(</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">)</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/// Write a value to a cache dump and immediately read it back. If `Write` and</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/// `Read` are implemented correctly, the result should be equal to the original</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/// value.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a7c12be26fdae1224e898a87d9db9945e">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d72/namespacedump.html#a7c12be26fdae1224e898a87d9db9945e">TestWriteReadCycle</a>(<span class="keyword">const</span> T&amp; original) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  MockReader reader(<a class="code" href="../../dc/d52/structdump_1_1To.html" title="A marker type used in ADL-found Read">dump</a>::ToBinary(original));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  T after_cycle = reader.Read&lt;T&gt;();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  reader<a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">.</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">(</a><a class="code" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">)</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  EXPECT_EQ(after_cycle, original);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}  <span class="comment">// namespace dump</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

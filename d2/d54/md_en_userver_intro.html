@@ -84,7 +84,7 @@ $(function() {
 <div class="title">The Basics </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md138"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md139"></a>
 Microservices and other I/O-bound applications</h1>
 <p>For <a href="https://en.wikipedia.org/wiki/Microservices">microservices</a> waiting for I/O is typical: often the response of a microservice is formed from several responses from other microservices and databases.</p>
 <p>The problem of efficient waits for I/O in the classical approach is solved by callbacks: a function (called a callback) is passed to the method that performs I/O, the callback is called by the method when the wait is complete. If you need to perform several I/O operations sequentially, the callback from the first I/O method calls the method for the next I/O and passes the next callback to it. As a result, you get code that is unpleasant to write and difficult to maintain due to the many nested functions and non-obvious control flow.</p>
@@ -143,7 +143,7 @@ Microservices and other I/O-bound applications</h1>
 <div class="line">  });</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The classical approach is almost twice as long, and it is difficult to read and maintain because of the deep nesting of the lambda functions. Moreover, the time-consuming error codes handling is completely omitted, while in the first example all the errors are automatically reported through the exception mechanism.</p>
-<h1><a class="anchor" id="autotoc_md139"></a>
+<h1><a class="anchor" id="autotoc_md140"></a>
 Coroutines</h1>
 <p>In simple terms, coroutines are lightweight threads that are managed by the application itself, not by the operating system.</p>
 <p>Coroutines provide an additional benefit in high-load applications:</p><ul>
@@ -155,7 +155,7 @@ Coroutines</h1>
 <li>Coroutine scheduler is not preemptive. Poorly written coroutine payloads could occupy the system threads and make the other coroutines starve, but in most cases there are means to make them cooperate better with minimal code changes.</li>
 </ul>
 <p>The user of the framework does not work directly with the coroutines, but rather works with tasks that are executed on the coroutines. It is very expensive to create and destroy coroutines for each asynchronous operation, so coroutines are reused between tasks. When a new task is starting, a free coroutine is selected to host it. After the task is finished, the coroutine is released, and can be used by another task.</p>
-<h1><a class="anchor" id="autotoc_md140"></a>
+<h1><a class="anchor" id="autotoc_md141"></a>
 Performance</h1>
 <p>The main purpose of userver is to be an effective solution for IO-bound applications. Coroutines help to achieve that purpose.</p>
 <p>It takes less than 1us to invoke and wait for a noop task <code>engine::Async([] () {}).Wait()</code>. In this case, the task execution time will be automatically measured inside the <code><a class="el" href="../../dc/db7/group__userver__concurrency.html#gac91f56844690ea79c568cb3b43ba98a5">engine::Async()</a></code>, the task will be linked to the parent task to simplify <a class="el" href="../../de/db6/md_en_userver_logging.html">tracing, all information will be recorded in logs</a>.</p>
@@ -171,7 +171,7 @@ Performance</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">4 </td><td class="markdownTableBodyNone">403 ns </td><td class="markdownTableBodyNone">669 ns  </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md141"></a>
+<h1><a class="anchor" id="autotoc_md142"></a>
 Restrictions</h1>
 <p>Usage of <code>catch (...)</code> without <code>throw;</code> <b>should be avoided</b> as the framework may use exceptions not derived from <code>std::exception</code> to manage some resources. Usage of <code>catch</code> with explicit exception type specification (like <code>std::exception</code> or <code>std::runtime_error</code>) is fine without <code>throw;</code>.</p>
 <p>The use of synchronization primitives or IO operations of the C++ standard library and libc in the context of coroutine <b>should be avoided</b>.</p>
@@ -208,7 +208,7 @@ Restrictions</h1>
 <hr  />
 <p> ⚠️🐙❗ If you want to run code that uses standard synchronization primitives (for example, code from a third-party library), then this code should be run in a separate <code>engine::TaskProcessor</code> to avoid starvation of main task processors.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md142"></a>
+<h1><a class="anchor" id="autotoc_md143"></a>
 Tasks</h1>
 <p>The asynchronous <b>task</b> (<code><a class="el" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">engine::Task</a></code>, <code><a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">engine::TaskWithResult</a></code>) can return a result (possibly in form of an exception) or return nothing. In any case, the task has the semantics of future, i.e. you can wait for it and get the result from it.</p>
 <p>To create a task call the <code><a class="el" href="../../dc/db7/group__userver__concurrency.html#gac91f56844690ea79c568cb3b43ba98a5">utils::Async</a></code> function. It accepts the name of a task, the user-defined function to execute, and the arguments of the user-defined function:</p>
@@ -216,7 +216,7 @@ Tasks</h1>
 <div class="line">auto task = utils::Async(&quot;my_job&quot;, &amp;func, arg1, arg2);</div>
 <div class="line">// do something ...</div>
 <div class="line">auto result = task.Get();</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md143"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md144"></a>
 Waiting</h1>
 <p>The code inside the coroutine may want to wait for an external event - a response from the database, a response from the HTTP client, the arrival of a certain time. If a coroutine wants to wait, it tells the engine that it wants to suspend its execution, and another coroutine starts executing on the current thread of the operating system instead. As a result, the thread is not idle, but reused by other users. After an external event occurs, the coroutine will be scheduled and executed.</p>
 <div class="fragment"><div class="line">cpp</div>
@@ -224,7 +224,7 @@ Waiting</h1>
 <div class="line">engine::SleepFor(std::chrono::seconds(60)); // voluntarily giving the current thread to other coroutines</div>
 <div class="line">g(); // The thread has returned to us</div>
 </div><!-- fragment --><p><a class="anchor" id="task_cancellation_intro"></a></p>
-<h1><a class="anchor" id="autotoc_md144"></a>
+<h1><a class="anchor" id="autotoc_md145"></a>
 Task cancellation</h1>
 <p>Task can be notified that it needs to discard its progress and finish early. Cancelling a task restricts the execution of blocking operations in that task.</p>
 <p>To cancel a task, just call the <code><a class="el" href="../../d8/d7c/classengine_1_1Task.html#a7571e37ab539ef8cea8c29b69a604779" title="Queues task cancellation request.">engine::Task::RequestCancel()</a></code> or <code><a class="el" href="../../d8/d7c/classengine_1_1Task.html#a96cf988764c95fc158d9a3cf55ffe607" title="Cancels the task and suspends execution until it is finished. Can be called from coroutine context on...">engine::Task::SyncCancel()</a></code> method. It cancels only a single task and does not affect the subtasks that were created by the canceled task. The framework typically reports a wait interrupt either by using a return code (for example, <code>CvStatus</code> for <code><a class="el" href="../../d3/d5d/classengine_1_1ConditionVariable.html#aae663b5b5865e24e5c3aff2a87e954c2">engine::ConditionVariable::Wait</a></code>), or by throwing a module-specific exception (<code>WaitInterruptedException</code> for <code><a class="el" href="../../d8/d7c/classengine_1_1Task.html#a36a919b59746cb2603e7b189c4ac619d" title="Suspends execution until the task finishes or caller is cancelled. Can be called from coroutine conte...">engine::Task::Wait</a></code>).</p>

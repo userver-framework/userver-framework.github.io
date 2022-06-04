@@ -85,14 +85,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>If your service has a <a class="el" href="../../dc/d10/classserver_1_1handlers_1_1ServerMonitor.html" title="Handler that returns statistics data.">server::handlers::ServerMonitor</a> configured, then you may get the service statistics and metrics.</p>
-<h1><a class="anchor" id="autotoc_md202"></a>
+<h1><a class="anchor" id="autotoc_md203"></a>
 Commands</h1>
 <p><a class="el" href="../../dc/d10/classserver_1_1handlers_1_1ServerMonitor.html" title="Handler that returns statistics data.">server::handlers::ServerMonitor</a> has a REST API: </p><div class="fragment"><div class="line">GET /service/monitor/</div>
 <div class="line">GET /service/monitor?prefix={prefix}</div>
 </div><!-- fragment --><p>Note that the <a class="el" href="../../dc/d10/classserver_1_1handlers_1_1ServerMonitor.html" title="Handler that returns statistics data.">server::handlers::ServerMonitor</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/monitor</code> handle path.</p>
-<h1><a class="anchor" id="autotoc_md203"></a>
+<h1><a class="anchor" id="autotoc_md204"></a>
 Examples:</h1>
-<h2><a class="anchor" id="autotoc_md204"></a>
+<h2><a class="anchor" id="autotoc_md205"></a>
 Get all the metrics</h2>
 <p>The amount of metrics depends on components count, threads count, <a class="el" href="../../d7/d33/classutils_1_1statistics_1_1MetricTag.html" title="Metric description.">utils::statistics::MetricTag</a> usage and configuration options. </p><div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl http://localhost:8085/service/monitor | jq</div>
@@ -120,7 +120,7 @@ Get all the metrics</h2>
 <div class="line">  &quot;io_read_bytes&quot;: 0,</div>
 <div class="line">  &quot;io_write_bytes&quot;: 225280,</div>
 <div class="line">  &quot;cache&quot;: {</div>
-<div class="line">    &quot;taxi-config-client-updater&quot;: {</div>
+<div class="line">    &quot;dynamic-config-client-updater&quot;: {</div>
 <div class="line">      &quot;$meta&quot;: {</div>
 <div class="line">        &quot;solomon_label&quot;: &quot;cache_name&quot;</div>
 <div class="line">      },</div>
@@ -990,7 +990,7 @@ Get all the metrics</h2>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md205"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md206"></a>
 Get metrics with prefix</h2>
 <p>Prefixes are matched against the JSON keys of the first level of nesting. </p><div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl http://localhost:8085/service/monitor?prefix=dns | jq</div>

@@ -122,7 +122,9 @@ class utils::statistics::MetricTag&lt; Metric &gt;</h3>
 <p>Use <code><a class="el" href="../../d7/d33/classutils_1_1statistics_1_1MetricTag.html" title="Metric description.">MetricTag</a>&lt;Metric&gt;</code> for declarative style of metric registration and call <code>MetricStorage::GetMetric&lt;Metric&gt;()</code> for accessing metric data. Please note that metrics can be accessed from multiple coroutines, so <code>Metric</code> must be thread-safe (e.g. std::atomic&lt;T&gt;, rcu::Variable&lt;T&gt;, rcu::RcuMap&lt;T&gt;, concurrent::Variable&lt;T&gt;, etc.).</p>
 <p>For custom type of <code>Metric</code> you have to define method to dump your type to JSON:</p>
 <div class="fragment"><div class="line"><a class="code" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> DumpMetric(<span class="keyword">const</span> Metric&amp; m);</div>
-</div><!-- fragment --> 
+</div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d4/da1/samples_2testsuite-support_2metrics_8cpp-example.html#_a0">samples/testsuite-support/metrics.cpp</a>.</dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d8/d3e/metric__tag_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../d8/d3e/metric__tag_8hpp_source.html">metric_tag.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>userver/utils/statistics/<a class="el" href="../../d8/d3e/metric__tag_8hpp_source.html">metric_tag.hpp</a></li>

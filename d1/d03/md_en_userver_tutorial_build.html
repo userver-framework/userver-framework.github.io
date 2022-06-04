@@ -85,13 +85,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><b>❗ Yandex and MLU (Taxi): refer to the <a href="https://nda.ya.ru/t/JgZmw_ck44jKhx">uservices tutorial for build info</a>.</b></p>
-<h1><a class="anchor" id="autotoc_md233"></a>
+<h1><a class="anchor" id="autotoc_md234"></a>
 Requirements</h1>
 <p>A x86 or x86_64 POSIX compatible OS (Linux, MacOS, ...) and a C++17 compatible compiler (GCC-8 or above, Clang-9 or above) are required to build the userver.</p>
-<h1><a class="anchor" id="autotoc_md234"></a>
+<h1><a class="anchor" id="autotoc_md235"></a>
 Download</h1>
 <p>Download and extract the latest release from <a href="https://github.com/userver-framework/userver">https://github.com/userver-framework/userver</a></p>
-<h1><a class="anchor" id="autotoc_md235"></a>
+<h1><a class="anchor" id="autotoc_md236"></a>
 CMake options</h1>
 <p>The following options could be used to control <code>cmake</code>:</p>
 <table class="markdownTable">
@@ -158,9 +158,9 @@ CMake options</h1>
 </table>
 <p>To explicitly specialize the compiler use the cmake options <code>CMAKE_C_COMPILER</code> and <code>CMAKE_CXX_COMPILER</code>. For example to use clang-12 compiler install it and add the following options to cmake: <code>-DCMAKE_CXX_COMPILER=clang++-12 -DCMAKE_C_COMPILER=clang-12</code></p>
 <p>Prefer avoiding Boost versions that are affected by the bug <a href="https://github.com/boostorg/lockfree/issues/59">https://github.com/boostorg/lockfree/issues/59</a> (1.71 and above).</p>
-<h1><a class="anchor" id="autotoc_md236"></a>
+<h1><a class="anchor" id="autotoc_md237"></a>
 Installation instructions</h1>
-<h2><a class="anchor" id="autotoc_md237"></a>
+<h2><a class="anchor" id="autotoc_md238"></a>
 Ubuntu 22.04 (Jammy Jellyfish)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-22.04.md file, configure git: <div class="fragment"><div class="line">bash</div>
@@ -174,7 +174,7 @@ Ubuntu 22.04 (Jammy Jellyfish)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md238"></a>
+<h2><a class="anchor" id="autotoc_md239"></a>
 Ubuntu 21.10 (Impish Indri)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-21.10.md file: <div class="fragment"><div class="line">bash</div>
@@ -187,7 +187,7 @@ Ubuntu 21.10 (Impish Indri)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md239"></a>
+<h2><a class="anchor" id="autotoc_md240"></a>
 Ubuntu 20.04 (Focal Fossa)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-20.04.md file: <div class="fragment"><div class="line">bash</div>
@@ -200,7 +200,7 @@ Ubuntu 20.04 (Focal Fossa)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md240"></a>
+<h2><a class="anchor" id="autotoc_md241"></a>
 Ubuntu 18.04 (Bionic Beaver)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-18.04.md file: <div class="fragment"><div class="line">bash</div>
@@ -215,7 +215,7 @@ Ubuntu 18.04 (Bionic Beaver)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md241"></a>
+<h2><a class="anchor" id="autotoc_md242"></a>
 Fedora 35</h2>
 <ol type="1">
 <li>Install the build and test dependencies from fedora-35.md file: <div class="fragment"><div class="line">bash</div>
@@ -228,7 +228,7 @@ Fedora 35</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md242"></a>
+<h2><a class="anchor" id="autotoc_md243"></a>
 Debian 11 32-bit</h2>
 <ol type="1">
 <li>Install the build and test dependencies from debian-11x32.md file: <div class="fragment"><div class="line">bash</div>
@@ -242,7 +242,7 @@ Debian 11 32-bit</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md243"></a>
+<h2><a class="anchor" id="autotoc_md244"></a>
 Gentoo</h2>
 <ol type="1">
 <li>Install the build and test dependencies from gentoo.md file: <div class="fragment"><div class="line">bash</div>
@@ -256,7 +256,7 @@ Gentoo</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md244"></a>
+<h2><a class="anchor" id="autotoc_md245"></a>
 Arch</h2>
 <ol type="1">
 <li>Install the build and test dependencies from arch.md file:<ul>
@@ -273,7 +273,7 @@ Arch</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md245"></a>
+<h2><a class="anchor" id="autotoc_md246"></a>
 MacOS</h2>
 <p>MacOS is recommended only for development as it may have performance issues in some cases. At least MacOS 10.15 required with <a href="https://apps.apple.com/us/app/xcode/id497799835">Xcode</a> and <a href="https://brew.sh/">Homebrew</a>.</p>
 <p>Start with the following command: </p><div class="fragment"><div class="line">bash</div>
@@ -284,11 +284,11 @@ MacOS</h2>
 <div class="line">      -DUSERVER_FEATURE_CLICKHOUSE=0 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@1.1 \</div>
 <div class="line">      -DBENCHMARK_ENABLE_WERROR=0 ..</div>
 </div><!-- fragment --><p>Follow the cmake hints for the installation of required packets and keep calling cmake with the options.</p>
-<h2><a class="anchor" id="autotoc_md246"></a>
+<h2><a class="anchor" id="autotoc_md247"></a>
 Other POSIX based platforms</h2>
 <p>userver works well on modern POSIX platforms. Follow the cmake hints for the installation of required packets and experiment with the cmake options.</p>
 <p>Feel free to provide a PR with instructions for your favorite platform at <a href="https://github.com/userver-framework/userver">https://github.com/userver-framework/userver</a>.</p>
-<h1><a class="anchor" id="autotoc_md247"></a>
+<h1><a class="anchor" id="autotoc_md248"></a>
 Run framework tests</h1>
 <p>To run tests and make sure that the framework works fine use the following command: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">cd build_release</div>
