@@ -141,16 +141,17 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> EnsureCurrent() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t kSize = <a class="code" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::SelectSize()  <span class="comment">//</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                           .ForLibCpp64(80)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                           .ForLibStdCpp64(88)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                           .ForLibStdCpp32(52);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t kAlignment = <span class="keyword">alignof</span>(<span class="keywordtype">void</span>*);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;Impl, kSize, kAlignment, <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a><a class="code" href="../../d6/d84/namespaceutils.html#a0d42c06fe06b11258f95abaf33760c27" title="Helper constant to use with FastPimpl.">::</a><a class="code" href="../../d6/d84/namespaceutils.html#a0d42c06fe06b11258f95abaf33760c27" title="Helper constant to use with FastPimpl.">kStrictMatch</a>&gt; impl_;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}  <span class="comment">// namespace formats::json::impl</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                           .ForLibCpp32(40)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                           .ForLibCpp64(80)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                           .ForLibStdCpp64(88)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                           .ForLibStdCpp32(52);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t kAlignment = <span class="keyword">alignof</span>(<span class="keywordtype">void</span>*);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;Impl, kSize, kAlignment, <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a><a class="code" href="../../d6/d84/namespaceutils.html#a0d42c06fe06b11258f95abaf33760c27" title="Helper constant to use with FastPimpl.">::</a><a class="code" href="../../d6/d84/namespaceutils.html#a0d42c06fe06b11258f95abaf33760c27" title="Helper constant to use with FastPimpl.">kStrictMatch</a>&gt; impl_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}  <span class="comment">// namespace formats::json::impl</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

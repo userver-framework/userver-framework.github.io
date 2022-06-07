@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zaddoptions_3075',['ZaddOptions',['../dc/d21/structredis_1_1ZaddOptions.html',1,'redis']]]
+  ['zaddoptions_3076',['ZaddOptions',['../dc/d21/structredis_1_1ZaddOptions.html',1,'redis']]]
 ];

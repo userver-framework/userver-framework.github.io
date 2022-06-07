@@ -179,6 +179,8 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Ge
 <tr class="memitem:a42a790d9a78dcacce6e49b597269d550"><td class="memItemLeft" align="right" valign="top"><a id="a42a790d9a78dcacce6e49b597269d550"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LogTo</b> (<a class="el" href="../../d0/d22/classlogging_1_1LogHelper.html">logging::LogHelper</a> &amp;log_helper) const &amp;</td></tr>
 <tr class="separator:a42a790d9a78dcacce6e49b597269d550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fa057d25df51d9c51a4463e520cb6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/classtracing_1_1Span.html#a01fa057d25df51d9c51a4463e520cb6f">ShouldLogDefault</a> () const noexcept</td></tr>
+<tr class="separator:a01fa057d25df51d9c51a4463e520cb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d6ac15c6018f1199fa114458485ba7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/classtracing_1_1Span.html#aa4d6ac15c6018f1199fa114458485ba7">DetachFromCoroStack</a> ()</td></tr>
 <tr class="separator:aa4d6ac15c6018f1199fa114458485ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e22bcac06040a6cce0d8fa78170ce73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/classtracing_1_1Span.html#a2e22bcac06040a6cce0d8fa78170ce73">AttachToCoroStack</a> ()</td></tr>
@@ -552,6 +554,32 @@ static <a class="el" href="../../d7/d1a/classtracing_1_1Span.html">Span</a> *&#1
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">Span</a> attached to current <a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">Span</a> (if any), sets <code>link</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a01fa057d25df51d9c51a4463e520cb6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01fa057d25df51d9c51a4463e520cb6f">&#9670;&nbsp;</a></span>ShouldLogDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tracing::Span::ShouldLogDefault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true if this span would be logged with the current local and global log levels to the default logger. </dd></dl>
 
 </div>
 </div>

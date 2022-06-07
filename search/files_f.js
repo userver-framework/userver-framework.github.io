@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['query_2ehpp_4506',['query.hpp',['../d3/d42/postgresql_2include_2userver_2storages_2postgres_2query_8hpp.html',1,'(Global Namespace)'],['../d7/de9/clickhouse_2include_2userver_2storages_2clickhouse_2query_8hpp.html',1,'(Global Namespace)']]],
-  ['queue_5fholder_2ehpp_4507',['queue_holder.hpp',['../d6/d71/queue__holder_8hpp.html',1,'']]]
+  ['query_2ehpp_4507',['query.hpp',['../d3/d42/postgresql_2include_2userver_2storages_2postgres_2query_8hpp.html',1,'(Global Namespace)'],['../d7/de9/clickhouse_2include_2userver_2storages_2clickhouse_2query_8hpp.html',1,'(Global Namespace)']]],
+  ['queue_5fholder_2ehpp_4508',['queue_holder.hpp',['../d6/d71/queue__holder_8hpp.html',1,'']]]
 ];
