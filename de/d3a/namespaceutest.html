@@ -120,6 +120,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6320e32e9fba35faa39b8518b4342fc1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3a/namespaceutest.html#a6320e32e9fba35faa39b8518b4342fc1">CurrentProcessOpenFiles</a> ()</td></tr>
+<tr class="memdesc:a6320e32e9fba35faa39b8518b4342fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns files opened by current process  <a href="../../de/d3a/namespaceutest.html#a6320e32e9fba35faa39b8518b4342fc1">More...</a><br /></td></tr>
+<tr class="separator:a6320e32e9fba35faa39b8518b4342fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3f67f8945c15d1fc062c0df145e9c0d"><td class="memItemLeft" align="right" valign="top"><a id="ae3f67f8945c15d1fc062c0df145e9c0d"></a>
 std::shared_ptr&lt; <a class="el" href="../../d5/dee/classclients_1_1http_1_1Client.html">clients::http::Client</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateHttpClient</b> ()</td></tr>
 <tr class="separator:ae3f67f8945c15d1fc062c0df145e9c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +135,26 @@ std::shared_ptr&lt; <a class="el" href="../../d5/dee/classclients_1_1http_1_1Cli
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Mocks and test helpers. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6320e32e9fba35faa39b8518b4342fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6320e32e9fba35faa39b8518b4342fc1">&#9670;&nbsp;</a></span>CurrentProcessOpenFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; utest::CurrentProcessOpenFiles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns files opened by current process </p>
+<p>jemalloc opens /proc/sys/vm/overcommit_memory, other libraries may also open some files randomly. To avoid problems in tests and make them reliable check files for specific prefix. </p>
+
+</div>
+</div>
 <a id="a6a7fc86c2b4c6aa79e1826a1a2c18814"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a7fc86c2b4c6aa79e1826a1a2c18814">&#9670;&nbsp;</a></span>kMaxTestWaitTime()</h2>
 

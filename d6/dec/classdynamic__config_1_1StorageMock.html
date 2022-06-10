@@ -95,7 +95,7 @@ $(function() {
 <p>Backing storage for <code><a class="el" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">dynamic_config::Source</a></code> in tests and benchmarks.  
  <a href="../../d6/dec/classdynamic__config_1_1StorageMock.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d5/dd6/dynamic__config_2storage__mock_8hpp_source.html">userver/dynamic_config/storage_mock.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../df/db4/storage__mock_8hpp_source.html">userver/dynamic_config/storage_mock.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -154,10 +154,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <div class="line"> </div>
 <div class="line">  <span class="comment">// &#39;DummyClient&#39; stores &#39;dynamic_config::Source&#39; for access to latest configs</span></div>
 <div class="line">  DummyClient client{storage.GetSource()};</div>
-<div class="line">  UEXPECT_NO_THROW(client.DoStuff());</div>
+<div class="line">  <a class="code" href="../../d1/db2/group__userver__utest.html#gafdf4f737b3561621eff19fb93f9c27fd">UEXPECT_NO_THROW</a>(client.DoStuff());</div>
 <div class="line"> </div>
 <div class="line">  storage.Extend({{kDummyConfig, {-10000, <span class="stringliteral">&quot;invalid&quot;</span>}}});</div>
-<div class="line">  UEXPECT_THROW(client.DoStuff(), std::runtime_error);</div>
+<div class="line">  <a class="code" href="../../d1/db2/group__userver__utest.html#ga002db3b75559b788f4d6cc5ff537f1df">UEXPECT_THROW</a>(client.DoStuff(), std::runtime_error);</div>
 <div class="line">}</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> kJson = <a class="code" href="../../de/da1/namespaceformats_1_1json.html#aebd74445be0a82a8db7976c19324f098" title="Parse JSON from string.">formats::json::FromString</a>(R<span class="stringliteral">&quot;( {&quot;foo&quot;: 42, &quot;bar&quot;: &quot;what&quot;} )&quot;);</span></div>
 <div class="line"><span class="stringliteral"></span> </div>
@@ -177,7 +177,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <dd>
 dynamic_config::MakeDefaultStorage </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/dd6/dynamic__config_2storage__mock_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../d5/dd6/dynamic__config_2storage__mock_8hpp_source.html">storage_mock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/db4/storage__mock_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../df/db4/storage__mock_8hpp_source.html">storage_mock.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afc981c21575050e691ac975c6c7d46c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc981c21575050e691ac975c6c7d46c3">&#9670;&nbsp;</a></span>StorageMock() <span class="overload">[1/2]</span></h2>
@@ -230,7 +230,7 @@ dynamic_config::MakeDefaultStorage </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>userver/dynamic_config/<a class="el" href="../../d5/dd6/dynamic__config_2storage__mock_8hpp_source.html">storage_mock.hpp</a></li>
+<li>userver/dynamic_config/<a class="el" href="../../df/db4/storage__mock_8hpp_source.html">storage_mock.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

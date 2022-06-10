@@ -161,7 +161,7 @@ class rcu::Variable&lt; T &gt;</h3>
 <dl class="section see"><dt>See also</dt><dd>Based on ideas from <a href="http://www.drdobbs.com/lock-free-data-structures-with-hazard-po/184401890">http://www.drdobbs.com/lock-free-data-structures-with-hazard-po/184401890</a> with modified API.</dd></dl>
 <p>A variable with MT-access pattern "very often reads, seldom writes". It is specially optimized for reads. On read, one obtains a ReaderPtr&lt;T&gt; from it and uses the obtained value as long as it wants to. On write, one obtains a WritablePtr&lt;T&gt; with a copy of the last version of the value, makes some changes to it, and commits the result to update current variable value (does Read-Copy-Update). Old version of the value is not freed on update, it will be eventually freed when a subsequent writer identifies that nobody works with this version.</p>
 <dl class="section note"><dt>Note</dt><dd>There is no way to create a "null" <code><a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">Variable</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md434"></a>
+<h2><a class="anchor" id="autotoc_md437"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line"> </div>
 <div class="line">  constexpr <span class="keywordtype">int</span> kOldValue = 1;</div>

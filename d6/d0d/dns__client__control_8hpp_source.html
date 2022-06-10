@@ -97,8 +97,8 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> clients::dns {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class</span> Resolver;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> clients::<a class="code" href="../../d4/d8a/namespaceclients_1_1dns.html" title="DNS client.">dns</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class</span> <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">Resolver</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}  <span class="comment">// namespace clients::dns</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> server::handlers {</div>
@@ -128,23 +128,23 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kName = <span class="stringliteral">&quot;handler-dns-client-control&quot;</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  DnsClientControl(<span class="keyword">const</span> components::ComponentConfig&amp;,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   <span class="keyword">const</span> components::ComponentContext&amp;);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  DnsClientControl(<span class="keyword">const</span> <a class="code" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::ComponentConfig&amp;,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   <span class="keyword">const</span> <a class="code" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::ComponentContext&amp;);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::string HandleRequestThrow(<span class="keyword">const</span> http::HttpRequest&amp;,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                 request::RequestContext&amp;) <span class="keyword">const</span> <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::string HandleRequestThrow(<span class="keyword">const</span> <a class="code" href="../../df/df5/namespaceserver_1_1http.html" title="Server parts of the HTTP protocol implementation.">http</a>::HttpRequest&amp;,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                 <a class="code" href="../../d9/df8/namespaceserver_1_1request.html" title="Server request related types and functions.">request</a>::RequestContext&amp;) <span class="keyword">const</span> <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">static</span> yaml_config::Schema GetStaticConfigSchema();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::Schema GetStaticConfigSchema();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  clients::dns::Resolver* resolver_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  clients::<a class="code" href="../../d4/d8a/namespaceclients_1_1dns.html" title="DNS client.">dns</a>::<a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">Resolver</a>* resolver_;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}  <span class="comment">// namespace server::handlers</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    components::kHasValidate&lt;server::handlers::DnsClientControl&gt; = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::kHasValidate&lt;server::handlers::DnsClientControl&gt; = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->

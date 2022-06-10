@@ -166,11 +166,11 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  ReadableBasePtr source_;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::size_t kBufferSize = compiler::SelectSize()  <span class="comment">//</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::size_t kBufferSize = <a class="code" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::SelectSize()  <span class="comment">//</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                 .For64Bit(40)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                 .For32Bit(20);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::size_t kBufferAlignment = <span class="keyword">alignof</span>(<span class="keywordtype">void</span>*);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  utils::FastPimpl&lt;impl::Buffer, kBufferSize, kBufferAlignment, <span class="keyword">true</span>&gt; buffer_;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;impl::Buffer, kBufferSize, kBufferAlignment, <span class="keyword">true</span>&gt; buffer_;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}  <span class="comment">// namespace engine::io</span></div>

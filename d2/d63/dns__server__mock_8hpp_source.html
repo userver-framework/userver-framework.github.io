@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> utest {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../da/d50/classutest_1_1DnsServerMock.html">   17</a></span>&#160;<span class="keyword">class</span> DnsServerMock final {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../da/d50/classutest_1_1DnsServerMock.html">   17</a></span>&#160;<span class="keyword">class</span> DnsServerMock <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">enum</span> <span class="keyword">class</span> RecordType {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    kInvalid = 0,</div>
@@ -113,26 +113,26 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    kCname = 5,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  };</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d3/d60/structutest_1_1DnsServerMock_1_1DnsQuery.html">   26</a></span>&#160;  <span class="keyword">struct</span> DnsQuery {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d3/d60/structutest_1_1DnsServerMock_1_1DnsQuery.html">   26</a></span>&#160;  <span class="keyword">struct</span> <a class="code" href="../../d3/d60/structutest_1_1DnsServerMock_1_1DnsQuery.html">DnsQuery</a> {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    RecordType type{RecordType::kInvalid};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::string name;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  };</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d3/d5f/structutest_1_1DnsServerMock_1_1DnsAnswer.html">   31</a></span>&#160;  <span class="keyword">struct</span> DnsAnswer {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d3/d5f/structutest_1_1DnsServerMock_1_1DnsAnswer.html">   31</a></span>&#160;  <span class="keyword">struct</span> <a class="code" href="../../d3/d5f/structutest_1_1DnsServerMock_1_1DnsAnswer.html">DnsAnswer</a> {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">using</span> AnswerData =</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::variant&lt;std::monostate, engine::io::Sockaddr, std::string&gt;;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::variant&lt;std::monostate, engine::<a class="code" href="../../dd/daf/namespaceengine_1_1io.html" title="Low-level asynchronous I/O interfaces.">io</a>::Sockaddr, std::string&gt;;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    RecordType type{RecordType::kInvalid};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    AnswerData data;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> ttl{0};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  };</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">using</span> DnsAnswerVector = std::vector&lt;DnsAnswer&gt;;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">using</span> DnsAnswerVector = std::vector&lt;<a class="code" href="../../d3/d5f/structutest_1_1DnsServerMock_1_1DnsAnswer.html">DnsAnswer</a>&gt;;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d2/d73/structutest_1_1DnsServerMock_1_1NoAnswer.html">   42</a></span>&#160;  <span class="keyword">struct</span> NoAnswer : std::exception {};</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d2/d73/structutest_1_1DnsServerMock_1_1NoAnswer.html">   42</a></span>&#160;  <span class="keyword">struct</span> <a class="code" href="../../d2/d73/structutest_1_1DnsServerMock_1_1NoAnswer.html">NoAnswer</a> : std::exception {};</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// throwing an exception will cause SERVFAIL</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">using</span> DnsHandler = std::function&lt;DnsAnswerVector(<span class="keyword">const</span> DnsQuery&amp;)&gt;;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">using</span> DnsHandler = std::function&lt;DnsAnswerVector(<span class="keyword">const</span> <a class="code" href="../../d3/d60/structutest_1_1DnsServerMock_1_1DnsQuery.html">DnsQuery</a>&amp;)&gt;;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">explicit</span> DnsServerMock(DnsHandler);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
@@ -141,9 +141,9 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> ProcessRequests();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  UdpListener listener_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d3/ded/structutest_1_1UdpListener.html">UdpListener</a> listener_;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  DnsHandler handler_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  engine::Task receiver_task_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  engine::<a class="code" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">Task</a> receiver_task_;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}  <span class="comment">// namespace utest</span></div>

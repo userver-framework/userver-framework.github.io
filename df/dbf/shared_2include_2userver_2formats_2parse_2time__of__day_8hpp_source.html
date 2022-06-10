@@ -102,16 +102,16 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> formats::parse {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value, <span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::enable_if_t&lt;common::kIsFormatValue&lt;Value&gt;,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                 utils::datetime::TimeOfDay&lt;Duration&gt;&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;Parse(<span class="keyword">const</span> Value&amp; value, To&lt;utils::datetime::TimeOfDay&lt;Duration&gt;&gt;) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::enable_if_t&lt;<a class="code" href="../../d4/d6e/namespaceformats_1_1common.html" title="Common utilities for all the formats.">common</a>::kIsFormatValue&lt;Value&gt;,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                 <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::TimeOfDay&lt;Duration&gt;&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;Parse(<span class="keyword">const</span> Value&amp; value, <a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::TimeOfDay&lt;Duration&gt;&gt;) {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  std::optional&lt;std::string&gt; str;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    str = value.<span class="keyword">template</span> As&lt;std::string&gt;();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> utils::datetime::TimeOfDay&lt;Duration&gt;{*str};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::TimeOfDay&lt;Duration&gt;{*str};</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (str) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">typename</span> Value::ParseException(</div>

@@ -146,10 +146,10 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">explicit</span> FileOperationsFactory(boost::filesystem::perms perms);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::unique_ptr&lt;Reader&gt; CreateReader(std::string full_path) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::unique_ptr&lt;<a class="code" href="../../d2/d03/classdump_1_1Reader.html" title="A general interface for binary data input.">Reader</a>&gt; CreateReader(std::string full_path) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::unique_ptr&lt;Writer&gt; CreateWriter(std::string full_path,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       tracing::ScopeTime&amp; scope) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::unique_ptr&lt;<a class="code" href="../../df/d09/classdump_1_1Writer.html" title="A general interface for binary data output.">Writer</a>&gt; CreateWriter(std::string full_path,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       <a class="code" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::<a class="code" href="../../d9/db8/classtracing_1_1ScopeTime.html" title="Type to measure execution time of a scope.">ScopeTime</a>&amp; scope) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">const</span> boost::filesystem::perms perms_;</div>

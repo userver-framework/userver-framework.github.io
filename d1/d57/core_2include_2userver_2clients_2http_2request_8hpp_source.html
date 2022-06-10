@@ -106,7 +106,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// HTTP client helpers</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace</span> clients::http {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace</span> clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class</span> RequestState;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace</span> impl {</div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">explicit</span> Request(std::shared_ptr&lt;impl::EasyWrapper&gt;&amp;&amp;,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   std::shared_ptr&lt;RequestStats&gt;&amp;&amp; req_stats,</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                   <span class="keyword">const</span> std::shared_ptr&lt;DestinationStatistics&gt;&amp; dest_stats,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   clients::dns::Resolver* resolver);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   clients::<a class="code" href="../../d4/d8a/namespaceclients_1_1dns.html" title="DNS client.">dns</a>::<a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">Resolver</a>* resolver);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">/// Specifies method</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::shared_ptr&lt;Request&gt; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a63105d5a26aba7fd87280c1620049338" title="Specifies method.">method</a>(<a class="code" href="../../df/d66/namespaceclients_1_1http.html#a15e71a4203523ac3e98b244f298ca109" title="HTTP request method.">HttpMethod</a> method);</div>
@@ -215,7 +215,7 @@ $(function() {
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="comment">/// Set timeout in ms for request</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  std::shared_ptr&lt;Request&gt; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a7db088edc4a4d50d12e31b1fb8363d5f" title="Set timeout in ms for request.">timeout</a>(<span class="keywordtype">long</span> timeout_ms);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  std::shared_ptr&lt;Request&gt; timeout(std::chrono::milliseconds timeout_ms) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> timeout(timeout_ms.count());</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a7db088edc4a4d50d12e31b1fb8363d5f" title="Set timeout in ms for request.">timeout</a><a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a7db088edc4a4d50d12e31b1fb8363d5f" title="Set timeout in ms for request.">(</a>timeout_ms.count()<a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a7db088edc4a4d50d12e31b1fb8363d5f" title="Set timeout in ms for request.">)</a>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="comment">/// Verify host and peer or not. Default: verify</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  std::shared_ptr&lt;Request&gt; <a class="code" href="../../de/df5/classclients_1_1http_1_1Request.html#a17e6aab622609800c2d0fa16ed0875a6" title="Verify host and peer or not. Default: verify.">verify</a>(<span class="keywordtype">bool</span> verify = <span class="keyword">true</span>);</div>

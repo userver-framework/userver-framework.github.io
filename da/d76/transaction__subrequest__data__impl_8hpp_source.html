@@ -99,11 +99,11 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> storages::<a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a>::impl {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a>::impl {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span> ReplyType&gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class</span> TransactionSubrequestDataImpl <span class="keyword">final</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    : <span class="keyword">public</span> RequestDataBase&lt;Result, ReplyType&gt; {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    : <span class="keyword">public</span> <a class="code" href="../../d4/ddc/classstorages_1_1redis_1_1RequestDataBase.html">RequestDataBase</a>&lt;Result, ReplyType&gt; {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  TransactionSubrequestDataImpl(engine::impl::BlockingFuture&lt;ReplyType&gt; future)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      : future_(std::move(future)) {}</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> CheckIsReady(<span class="keyword">const</span> std::string&amp; description) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (future_.wait_for(std::chrono::seconds(0)) !=</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::future_status::ready) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">throw</span> NotStartedTransactionException(</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">throw</span> <a class="code" href="../../d2/de6/classstorages_1_1redis_1_1NotStartedTransactionException.html">NotStartedTransactionException</a>(</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          <span class="stringliteral">&quot;trying to &quot;</span> + description +</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          <span class="stringliteral">&quot; transaction&#39;s subcommand result before calling Exec() + Get() for &quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          <span class="stringliteral">&quot;the entire transaction&quot;</span>);</div>

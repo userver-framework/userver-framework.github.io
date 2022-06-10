@@ -115,10 +115,10 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  Status status{Status::kOk};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  std::optional&lt;std::string&gt; reason{};</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  std::optional&lt;std::string&gt; ext_reason{};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  std::optional&lt;HandlerErrorCode&gt; code{};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  std::optional&lt;<a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#ab868a1e6cf573e2728f59d318078e265">HandlerErrorCode</a>&gt; code{};</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">const</span> std::string&amp; GetDefaultReasonForStatus(AuthCheckResult::Status status);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">const</span> std::string&amp; GetDefaultReasonForStatus(<a class="code" href="../../dc/d67/structserver_1_1handlers_1_1auth_1_1AuthCheckResult.html">AuthCheckResult</a>::Status status);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> RaiseForStatus(<span class="keyword">const</span> <a class="code" href="../../dc/d67/structserver_1_1handlers_1_1auth_1_1AuthCheckResult.html">AuthCheckResult</a>&amp; auth_check);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d6/db7/classserver_1_1handlers_1_1auth_1_1AuthCheckerBase.html">   34</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d6/db7/classserver_1_1handlers_1_1auth_1_1AuthCheckerBase.html">AuthCheckerBase</a> {</div>
@@ -126,17 +126,17 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> ~AuthCheckerBase();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  [[<a class="code" href="../../d6/db7/classserver_1_1handlers_1_1auth_1_1AuthCheckerBase.html">nodiscard</a>]] <span class="keyword">virtual</span> <a class="code" href="../../dc/d67/structserver_1_1handlers_1_1auth_1_1AuthCheckResult.html">AuthCheckResult</a> CheckAuth(</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">const</span> http::HttpRequest&amp; request,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      request::RequestContext&amp; context) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../df/df5/namespaceserver_1_1http.html" title="Server parts of the HTTP protocol implementation.">http</a>::HttpRequest&amp; request,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="../../d9/df8/namespaceserver_1_1request.html" title="Server request related types and functions.">request</a>::RequestContext&amp; context) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  [[<a class="code" href="../../d6/db7/classserver_1_1handlers_1_1auth_1_1AuthCheckerBase.html">nodiscard</a>]] <span class="keyword">virtual</span> <span class="keywordtype">bool</span> SupportsUserAuth() <span class="keyword">const</span> <span class="keyword">noexcept</span> = 0;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> SetUserAuthInfo(server::request::RequestContext&amp; request_context,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> SetUserAuthInfo(server::<a class="code" href="../../d9/df8/namespaceserver_1_1request.html" title="Server request related types and functions.">request</a>::RequestContext&amp; request_context,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                       server::auth::UserAuthInfo&amp;&amp; info) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">using</span> AuthCheckerBasePtr = std::shared_ptr&lt;AuthCheckerBase&gt;;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">using</span> AuthCheckerBasePtr = std::shared_ptr&lt;<a class="code" href="../../d6/db7/classserver_1_1handlers_1_1auth_1_1AuthCheckerBase.html">AuthCheckerBase</a>&gt;;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace server::handlers::auth</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>

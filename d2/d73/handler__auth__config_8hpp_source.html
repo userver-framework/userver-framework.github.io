@@ -99,9 +99,9 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> server::handlers::auth {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d0/dd7/classserver_1_1handlers_1_1auth_1_1HandlerAuthConfig.html">   12</a></span>&#160;<span class="keyword">class</span> HandlerAuthConfig final : <span class="keyword">public</span> yaml_config::YamlConfig {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d0/dd7/classserver_1_1handlers_1_1auth_1_1HandlerAuthConfig.html">   12</a></span>&#160;<span class="keyword">class</span> HandlerAuthConfig <span class="keyword">final</span> : <span class="keyword">public</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">explicit</span> HandlerAuthConfig(yaml_config::YamlConfig value);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">explicit</span> HandlerAuthConfig(<a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a> value);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; GetTypes() <span class="keyword">const</span> { <span class="keywordflow">return</span> types_; };</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
@@ -109,8 +109,8 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  std::vector&lt;std::string&gt; types_;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;HandlerAuthConfig Parse(<span class="keyword">const</span> yaml_config::YamlConfig&amp; value,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        formats::parse::To&lt;HandlerAuthConfig&gt;);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;HandlerAuthConfig Parse(<span class="keyword">const</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a>&amp; value,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;HandlerAuthConfig&gt;);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}  <span class="comment">// namespace server::handlers::auth</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>

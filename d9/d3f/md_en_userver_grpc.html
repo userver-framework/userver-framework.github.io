@@ -166,7 +166,7 @@ Service method handling</h2>
 <li>Single request, response stream <a class="el" href="../../da/d89/classugrpc_1_1server_1_1OutputStream.html" title="Controls a single request -&gt; response stream RPC.">ugrpc::server::OutputStream</a></li>
 <li>Request stream, response stream <a class="el" href="../../d3/d6c/classugrpc_1_1server_1_1BidirectionalStream.html" title="Controls a request stream -&gt; response stream RPC.">ugrpc::server::BidirectionalStream</a></li>
 </ul>
-<p>On connection errors, exceptions from <a class="el" href="../../d0/dba/grpc_2include_2userver_2ugrpc_2server_2exceptions_8hpp_source.html">userver/ugrpc/server/exceptions.hpp</a> are thrown. It is recommended not to catch them, leading to RPC interruption. You can catch exceptions for <a href="https://grpc.github.io/grpc/core/md_doc_statuscodes.html">specific gRPC error codes</a> or all at once.</p>
+<p>On connection errors, exceptions from <a class="el" href="../../d0/dba/grpc_2include_2userver_2ugrpc_2server_2exceptions_8hpp.html" title="Errors thrown by gRPC server streams.">userver/ugrpc/server/exceptions.hpp</a> are thrown. It is recommended not to catch them, leading to RPC interruption. You can catch exceptions for <a href="https://grpc.github.io/grpc/core/md_doc_statuscodes.html">specific gRPC error codes</a> or all at once.</p>
 <h1><a class="anchor" id="autotoc_md137"></a>
 Metrics</h1>
 <ul>

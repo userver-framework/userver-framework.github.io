@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace</span> formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::parser {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace</span> formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::<a class="code" href="../../d0/dc4/namespaceformats_1_1json_1_1parser.html" title="SAX parser tools.">parser</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">   13</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> : <span class="keyword">public</span> formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::<a class="code" href="../../d4/d84/classformats_1_1json_1_1Exception.html">Exception</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d4/d84/classformats_1_1json_1_1Exception.html">Exception</a>::Exception;</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d2/d03/classformats_1_1json_1_1parser_1_1ParseError.html">   17</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d2/d03/classformats_1_1json_1_1parser_1_1ParseError.html">ParseError</a> : <span class="keyword">public</span> <a class="code" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  ParseError(size_t pos, std::string_view path, std::string what)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      : BaseError(fmt::format(<span class="stringliteral">&quot;Parse error at pos {}, path &#39;{}&#39;: {}&quot;</span>, pos, path,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      : <a class="code" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a>(fmt::format(<span class="stringliteral">&quot;Parse error at pos {}, path &#39;{}&#39;: {}&quot;</span>, pos, path,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                              what)) {}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>

@@ -122,14 +122,14 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;USERVER_NAMESPACE_END</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../dc/def/structfmt_1_1formatter_3_1_1server_1_1http_1_1HttpMethod_01_4.html">   35</a></span>&#160;<span class="keyword">struct</span> fmt::formatter&lt;USERVER_NAMESPACE::server::http::HttpMethod&gt; {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../dc/def/structfmt_1_1formatter_3_1_1server_1_1http_1_1HttpMethod_01_4.html">   35</a></span>&#160;<span class="keyword">struct</span> fmt::formatter&lt;USERVER_NAMESPACE::server::<a class="code" href="../../df/df5/namespaceserver_1_1http.html" title="Server parts of the HTTP protocol implementation.">http</a>::<a class="code" href="../../df/df5/namespaceserver_1_1http.html#aa4ebf7ee28399246260f1b162e822892" title="List of HTTP methods.">HttpMethod</a>&gt; {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">static</span> <span class="keyword">auto</span> parse(format_parse_context&amp; ctx) { <span class="keywordflow">return</span> ctx.begin(); }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatContext&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">auto</span> format(USERVER_NAMESPACE::server::http::HttpMethod method,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">auto</span> format(USERVER_NAMESPACE::server::<a class="code" href="../../df/df5/namespaceserver_1_1http.html" title="Server parts of the HTTP protocol implementation.">http</a>::<a class="code" href="../../df/df5/namespaceserver_1_1http.html#aa4ebf7ee28399246260f1b162e822892" title="List of HTTP methods.">HttpMethod</a> method,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;              FormatContext&amp; ctx) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> fmt::format_to(ctx.out(), <span class="stringliteral">&quot;{}&quot;</span>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                          USERVER_NAMESPACE::server::http::ToString(method));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                          USERVER_NAMESPACE::server::<a class="code" href="../../df/df5/namespaceserver_1_1http.html" title="Server parts of the HTTP protocol implementation.">http</a>::ToString(method));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->

@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace</span> components {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using</span> TaxiConfig = DynamicConfig;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// @snippet components/common_component_list_test.cpp  Sample http client component config</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dd/d5a/classcomponents_1_1HttpClient.html">   58</a></span>&#160;<span class="keyword">class</span> HttpClient <span class="keyword">final</span> : <span class="keyword">public</span> LoggableComponentBase {</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dd/d5a/classcomponents_1_1HttpClient.html">   58</a></span>&#160;<span class="keyword">class</span> HttpClient <span class="keyword">final</span> : <span class="keyword">public</span> <a class="code" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">LoggableComponentBase</a> {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kName = <span class="stringliteral">&quot;http-client&quot;</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
@@ -155,18 +155,18 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a>::Client&amp; GetHttpClient();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">static</span> yaml_config::Schema GetStaticConfigSchema();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::Schema GetStaticConfigSchema();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> OnConfigUpdate(<span class="keyword">const</span> dynamic_config::Snapshot&amp; config);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  formats::json::Value ExtendStatistics();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value ExtendStatistics();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> disable_pool_stats_;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a>::Client http_client_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  concurrent::AsyncEventSubscriberScope subscriber_scope_;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  utils::statistics::Entry statistics_holder_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::AsyncEventSubscriberScope subscriber_scope_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Entry statistics_holder_;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>

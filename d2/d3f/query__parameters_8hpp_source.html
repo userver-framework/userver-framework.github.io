@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> storages::<a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">postgres</a>::detail {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::detail {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Helper to write query parameters to buffers</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class</span> QueryParameters {</div>
@@ -146,33 +146,33 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* ParamFormatsBuffer() <span class="keyword">const</span> { <span class="keywordflow">return</span> param_formats; }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> Write(std::size_t index, <span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp; arg) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static_assert</span>(io::traits::kIsMappedToPg&lt;T&gt;,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> Write(std::size_t index, <span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp; arg) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static_assert</span>(<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsMappedToPg&lt;T&gt;,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                  <span class="stringliteral">&quot;Type doesn&#39;t have mapping to Postgres type&quot;</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    WriteParamType(index, types, arg);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    WriteNullable(index, types, arg, io::traits::IsNullable&lt;T&gt;{});</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    WriteNullable(index, types, arg, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../da/df0/structstorages_1_1postgres_1_1io_1_1traits_1_1IsNullable.html" title="Metafunction to detect nullability of a type.">IsNullable</a>&lt;T&gt;{});</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... T&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp;... args) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp;... args) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::size_t index = 0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    (Write(index++, types, args), ...);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> WriteParamType(std::size_t index, <span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp;) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> WriteParamType(std::size_t index, <span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp;) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// C++ to pg oid mapping</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    param_types[index] = io::CppToPg&lt;T&gt;::GetOid(types);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> WriteNullable(std::size_t index, <span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp; arg,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> WriteNullable(std::size_t index, <span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp; arg,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                     std::true_type) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">using</span> NullDetector = io::traits::GetSetNull&lt;T&gt;;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">using</span> NullDetector = <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../d1/d54/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull.html">GetSetNull</a>&lt;T&gt;;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (NullDetector::IsNull(arg)) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      param_formats[index] = io::kPgBinaryDataFormat;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      param_lengths[index] = io::kPgNullBufferSize;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      param_formats[index] = <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::kPgBinaryDataFormat;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      param_lengths[index] = <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a><a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a67bb0b018852ef188a209a7abd037892" title="Fields that are null are denoted by specifying their length == -1.">::</a><a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a67bb0b018852ef188a209a7abd037892" title="Fields that are null are denoted by specifying their length == -1.">kPgNullBufferSize</a>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      param_buffers[index] = <span class="keywordtype">nullptr</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      WriteNullable(index, types, arg, std::false_type{});</div>
@@ -180,11 +180,11 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> WriteNullable(std::size_t index, <span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp; arg,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> WriteNullable(std::size_t index, <span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp; arg,</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                     std::false_type) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    param_formats[index] = io::kPgBinaryDataFormat;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    param_formats[index] = <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::kPgBinaryDataFormat;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">auto</span>&amp; buffer = parameters[index];</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    io::WriteBuffer(types, buffer, arg);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, arg);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">auto</span> size = buffer.size();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    param_lengths[index] = size;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (size == 0) {</div>
@@ -218,7 +218,7 @@ $(function() {
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>* ParamLengthsBuffer() { <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>; }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>* ParamFormatsBuffer() { <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>; }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Write(<span class="keyword">const</span> UserTypes&amp; <span class="comment">/*types*/</span>) {}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Write(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; <span class="comment">/*types*/</span>) {}</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span>  <span class="comment">// #ifndef USERVER_FEATURE_DISABLE_FAST_POSTGRE_PARAMS</span></div>
@@ -232,28 +232,28 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* ParamFormatsBuffer() <span class="keyword">const</span> { <span class="keywordflow">return</span> param_formats.data(); }</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp; arg) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">static_assert</span>(io::traits::kIsMappedToPg&lt;T&gt;,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp; arg) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">static_assert</span>(<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsMappedToPg&lt;T&gt;,</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                  <span class="stringliteral">&quot;Type doesn&#39;t have mapping to Postgres type&quot;</span>);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    WriteParamType(types, arg);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    WriteNullable(types, arg, io::traits::IsNullable&lt;T&gt;{});</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    WriteNullable(types, arg, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../da/df0/structstorages_1_1postgres_1_1io_1_1traits_1_1IsNullable.html" title="Metafunction to detect nullability of a type.">IsNullable</a>&lt;T&gt;{});</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... T&gt;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp;... args) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp;... args) {</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    (Write(types, args), ...);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span> WriteParamType(<span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp;) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span> WriteParamType(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp;) {</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// C++ to pg oid mapping</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    param_types.push_back(io::CppToPg&lt;T&gt;::GetOid(types));</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">void</span> WriteNullable(<span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp; arg, std::true_type) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">using</span> NullDetector = io::traits::GetSetNull&lt;T&gt;;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">void</span> WriteNullable(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp; arg, std::true_type) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">using</span> NullDetector = <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../d1/d54/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull.html">GetSetNull</a>&lt;T&gt;;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (NullDetector::IsNull(arg)) {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      param_formats.push_back(io::kPgBinaryDataFormat);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      param_lengths.push_back(io::kPgNullBufferSize);</div>
@@ -264,7 +264,7 @@ $(function() {
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">void</span> WriteNullable(<span class="keyword">const</span> UserTypes&amp; types, <span class="keyword">const</span> T&amp; arg, std::false_type) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">void</span> WriteNullable(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, <span class="keyword">const</span> T&amp; arg, std::false_type) {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    param_formats.push_back(io::kPgBinaryDataFormat);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    parameters.push_back({});</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">auto</span>&amp; buffer = parameters.back();</div>

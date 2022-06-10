@@ -102,14 +102,14 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> server::handlers {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/// Defines matching behavior for paths with trailing slashes.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0">   15</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> UrlTrailingSlashOption {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  kBoth,         <span class="comment">///&lt; ignore trailing slashes when matching paths</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  kStrictMatch,  <span class="comment">///&lt; require exact match for trailing slashes in paths</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0">   15</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0" title="Defines matching behavior for paths with trailing slashes.">UrlTrailingSlashOption</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0a4f968049bc5e5f7c6e0d89946366fff2" title="ignore trailing slashes when matching paths">kBoth</a>,         <span class="comment">///&lt; ignore trailing slashes when matching paths</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0a306d50dcd9a211b93dd90d3df00547f0" title="require exact match for trailing slashes in paths">kStrictMatch</a>,  <span class="comment">///&lt; require exact match for trailing slashes in paths</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  kDefault = kBoth,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  kDefault = <a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0a4f968049bc5e5f7c6e0d89946366fff2" title="ignore trailing slashes when matching paths">kBoth</a>,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d5/d5f/structserver_1_1handlers_1_1HandlerConfig.html">   22</a></span>&#160;<span class="keyword">struct</span> HandlerConfig {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d5/d5f/structserver_1_1handlers_1_1HandlerConfig.html">   22</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d5/d5f/structserver_1_1handlers_1_1HandlerConfig.html">HandlerConfig</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  std::variant&lt;std::string, FallbackHandler&gt; path;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  std::string task_processor;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  std::string method;</div>
@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  size_t response_data_size_log_limit{0};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  std::optional&lt;<span class="keywordtype">bool</span>&gt; parse_args_from_body;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  std::optional&lt;auth::HandlerAuthConfig&gt; auth;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  UrlTrailingSlashOption url_trailing_slash{UrlTrailingSlashOption::kDefault};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0" title="Defines matching behavior for paths with trailing slashes.">UrlTrailingSlashOption</a> url_trailing_slash{<a class="code" href="../../d2/d24/namespaceserver_1_1handlers.html#a16ec2900f455208da9830442622c79c0" title="Defines matching behavior for paths with trailing slashes.">UrlTrailingSlashOption</a>::kDefault};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  std::optional&lt;size_t&gt; max_requests_in_flight;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  std::optional&lt;size_t&gt; max_requests_per_second;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">bool</span> decompress_request{<span class="keyword">false</span>};</div>
@@ -128,8 +128,8 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::optional&lt;<span class="keywordtype">bool</span>&gt; set_response_server_hostname;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;HandlerConfig Parse(<span class="keyword">const</span> yaml_config::YamlConfig&amp; value,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    formats::parse::To&lt;HandlerConfig&gt;);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="../../d5/d5f/structserver_1_1handlers_1_1HandlerConfig.html">HandlerConfig</a> Parse(<span class="keyword">const</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a>&amp; value,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../d5/d5f/structserver_1_1handlers_1_1HandlerConfig.html">HandlerConfig</a>&gt;);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace server::handlers</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>

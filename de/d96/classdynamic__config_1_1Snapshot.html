@@ -96,7 +96,7 @@ $(function() {
 <p>The storage for a snapshot of configs.  
  <a href="../../de/d96/classdynamic__config_1_1Snapshot.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../de/dd5/dynamic__config_2snapshot_8hpp_source.html">userver/dynamic_config/snapshot.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../df/d22/snapshot_8hpp_source.html">userver/dynamic_config/snapshot.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,12 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac1d2a7f128bb72eef64243f5c6890a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aaaddc9b7ea3ade080608c42183b23e"><td class="memTemplParams" colspan="2"><a id="a3aaaddc9b7ea3ade080608c42183b23e"></a>
 template&lt;typename Key &gt; </td></tr>
-<tr class="memitem:a3aaaddc9b7ea3ade080608c42183b23e"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="../../de/dd5/dynamic__config_2snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a">VariableOfKey</a>&lt; <a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d96/classdynamic__config_1_1Snapshot.html#a3aaaddc9b7ea3ade080608c42183b23e">operator[]</a> (<a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a> key) const &amp;</td></tr>
+<tr class="memitem:a3aaaddc9b7ea3ade080608c42183b23e"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a">VariableOfKey</a>&lt; <a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d96/classdynamic__config_1_1Snapshot.html#a3aaaddc9b7ea3ade080608c42183b23e">operator[]</a> (<a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a> key) const &amp;</td></tr>
 <tr class="memdesc:a3aaaddc9b7ea3ade080608c42183b23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to access individual configs in the type-safe config map. <br /></td></tr>
 <tr class="separator:a3aaaddc9b7ea3ade080608c42183b23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a825cfeb13eaf7f913def7164814fe820"><td class="memTemplParams" colspan="2"><a id="a825cfeb13eaf7f913def7164814fe820"></a>
 template&lt;typename Key &gt; </td></tr>
-<tr class="memitem:a825cfeb13eaf7f913def7164814fe820"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="../../de/dd5/dynamic__config_2snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a">VariableOfKey</a>&lt; <a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d96/classdynamic__config_1_1Snapshot.html#a825cfeb13eaf7f913def7164814fe820">operator[]</a> (<a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a>) &amp;&amp;</td></tr>
+<tr class="memitem:a825cfeb13eaf7f913def7164814fe820"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a">VariableOfKey</a>&lt; <a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d96/classdynamic__config_1_1Snapshot.html#a825cfeb13eaf7f913def7164814fe820">operator[]</a> (<a class="el" href="../../dc/d03/structdynamic__config_1_1Key.html">Key</a>) &amp;&amp;</td></tr>
 <tr class="memdesc:a825cfeb13eaf7f913def7164814fe820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to access individual configs in the type-safe config map. <br /></td></tr>
 <tr class="separator:a825cfeb13eaf7f913def7164814fe820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad66ed692b4c08319eb5b03963217093d"><td class="memTemplParams" colspan="2"><a id="ad66ed692b4c08319eb5b03963217093d"></a>
@@ -143,7 +143,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Source</b></td></tr>
 <div class="textblock"><p>The storage for a snapshot of configs. </p>
 <p>When a config update comes in via new <code><a class="el" href="../../d0/d0a/classdynamic__config_1_1DocsMap.html">DocsMap</a></code>, configs of all the registered types are constructed and stored in <code>Config</code>. After that the <code><a class="el" href="../../d0/d0a/classdynamic__config_1_1DocsMap.html">DocsMap</a></code> is dropped.</p>
 <p>Config types are automatically registered if they are accessed with <code>Get</code> somewhere in the program.</p>
-<h2><a class="anchor" id="autotoc_md415"></a>
+<h2><a class="anchor" id="autotoc_md418"></a>
 Usage example:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>myservice::smth {</div>
 <div class="line"> </div>
@@ -162,9 +162,9 @@ Usage example:</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace myservice::smth</span></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="../../de/dd5/dynamic__config_2snapshot_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../de/dd5/dynamic__config_2snapshot_8hpp_source.html">snapshot.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d22/snapshot_8hpp_source.html#l00041">41</a> of file <a class="el" href="../../df/d22/snapshot_8hpp_source.html">snapshot.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>userver/dynamic_config/<a class="el" href="../../de/dd5/dynamic__config_2snapshot_8hpp_source.html">snapshot.hpp</a></li>
+<li>userver/dynamic_config/<a class="el" href="../../df/d22/snapshot_8hpp_source.html">snapshot.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

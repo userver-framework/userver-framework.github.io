@@ -100,17 +100,17 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> tracing {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class</span> Span;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}  <span class="comment">// namespace tracing</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> storages::postgres {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @brief Holds a query, its name and logging mode</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html">   20</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">Query</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">Name</a> =</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      USERVER_NAMESPACE::<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">utils</a>::<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">StrongTypedef</a>&lt;<span class="keyword">struct</span> NameTag, <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">std</a>::<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">string</a>&gt;;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      USERVER_NAMESPACE::<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">utils</a>::<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">StrongTypedef</a>&lt;<span class="keyword">struct</span> NameTag, std::string&gt;;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">enum</span> <span class="keyword">class</span> LogMode { kFull, kNameOnly };</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
@@ -127,11 +127,11 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">const</span> std::string&amp; Statement() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">/// @brief Fills provided span with connection info</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html#a3400b73c030a2bb8f0af8fcb1b37189a" title="Fills provided span with connection info.">FillSpanTags</a>(tracing::Span&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html#a3400b73c030a2bb8f0af8fcb1b37189a" title="Fills provided span with connection info.">FillSpanTags</a>(<a class="code" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::Span&amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::string statement_{};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">std</a>::<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">optional</a>&lt;<a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">Name</a>&gt; name_{};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::optional&lt;Name&gt; name_{};</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  LogMode log_mode_ = LogMode::kFull;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>

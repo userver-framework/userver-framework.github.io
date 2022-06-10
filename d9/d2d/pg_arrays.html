@@ -89,7 +89,7 @@ $(function() {
 <p>Array formatter will throw <a class="el" href="../../da/d07/classstorages_1_1postgres_1_1InvalidDimensions.html">InvalidDimensions</a> if containers on same level of depth have different sizes.</p>
 <p>Example of invalid dimensions from tests: </p><div class="fragment"><div class="line">    static_test::two_dim_vector src{{1, 2, 3}, {4, 5}};</div>
 <div class="line">    pg::test::Buffer buffer;</div>
-<div class="line">    UEXPECT_THROW(io::WriteBuffer(types, buffer, src), pg::InvalidDimensions);</div>
+<div class="line">    <a class="code" href="../../d1/db2/group__userver__utest.html#ga002db3b75559b788f4d6cc5ff537f1df">UEXPECT_THROW</a>(io::WriteBuffer(types, buffer, src), pg::InvalidDimensions);</div>
 </div><!-- fragment --> <dl class="section user"><dt>Currently supported containers</dt><dd><ul>
 <li>std::array</li>
 <li>std::set</li>

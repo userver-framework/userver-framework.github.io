@@ -87,7 +87,7 @@ $(function() {
 <div class="textblock"><p>Userver provides classes for reading, working with, and serializing various data formats. Classes for different formats have an almost identical interface. There are common points for customizing parsers and serializers of custom types.</p>
 <h2><a class="anchor" id="autotoc_md101"></a>
 formats::*::Value</h2>
-<p>Classes <code><a class="el" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a></code>, <code><a class="el" href="../../db/d67/classformats_1_1bson_1_1Value.html" title="Non-mutable BSON value representation.">formats::bson::Value</a></code>, <code><a class="el" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a></code> and <code><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html" title="Non-mutable YAML value representation.">formats::yaml::Value</a></code> are intended for non-modifying work with formats (in other words, for reading data).</p>
+<p>Classes <a class="el" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>, <a class="el" href="../../db/d67/classformats_1_1bson_1_1Value.html" title="Non-mutable BSON value representation.">formats::bson::Value</a>, <a class="el" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> and <a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html" title="Non-mutable YAML value representation.">formats::yaml::Value</a> are intended for non-modifying work with formats (in other words, for reading data).</p>
 <p>Usage Example:</p>
 <div class="fragment"><div class="line">  <span class="comment">// #include &lt;userver/formats/json.hpp&gt;</span></div>
 <div class="line"> </div>
@@ -131,8 +131,53 @@ Customization of formats::*::Value::As&lt;T&gt;()</h2>
 <div class="line">  EXPECT_EQ(data.field2, 1);</div>
 <div class="line">}</div>
 <div class="line">}  <span class="comment">// namespace my_namespace</span></div>
-</div><!-- fragment --><p>You can write a single parser for all formats, just make it a template:</p>
-<div class="fragment"></div><!-- fragment --><h2><a class="anchor" id="autotoc_md103"></a>
+</div><!-- fragment --><p> You can write a single parser for all formats, just make it a template:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d5/db8/json_8hpp.html" title="Include-all header for JSON support.">userver/formats/json.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d95/yaml_8hpp.html" title="Include-all header for YAML support.">userver/formats/yaml.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line">USERVER_NAMESPACE_BEGIN</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>my_namespace {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>MyKeyValue {</div>
+<div class="line">  std::string field1;</div>
+<div class="line">  <span class="keywordtype">int</span> field2;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// The function must be declared in the namespace of your type</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Value&gt;</div>
+<div class="line">MyKeyValue Parse(<span class="keyword">const</span> Value&amp; data, <a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To&lt;MyKeyValue&gt;</a>) {</div>
+<div class="line">  <span class="keywordflow">return</span> MyKeyValue{</div>
+<div class="line">      data[<span class="stringliteral">&quot;field1&quot;</span>].template As&lt;std::string&gt;(),</div>
+<div class="line">      data[<span class="stringliteral">&quot;field2&quot;</span>].template As&lt;int&gt;(-1),  <span class="comment">// return `1` if &quot;field2&quot; is missing</span></div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">TEST(CommonFormats, Parse) {</div>
+<div class="line">  <span class="comment">// json</span></div>
+<div class="line">  <a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> json = <a class="code" href="../../de/da1/namespaceformats_1_1json.html#aebd74445be0a82a8db7976c19324f098" title="Parse JSON from string.">formats::json::FromString</a>(R<span class="stringliteral">&quot;({</span></div>
+<div class="line"><span class="stringliteral">    &quot;my_value&quot;: {</span></div>
+<div class="line"><span class="stringliteral">        &quot;field1&quot;: &quot;one&quot;,</span></div>
+<div class="line"><span class="stringliteral">        &quot;field2&quot;: 1</span></div>
+<div class="line"><span class="stringliteral">    }</span></div>
+<div class="line"><span class="stringliteral">  })&quot;);</span></div>
+<div class="line"><span class="stringliteral">  </span><span class="keyword">auto</span> data_json = json[<span class="stringliteral">&quot;my_value&quot;</span>].<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#a4383138b64646d372ab3990e38e2fc62" title="Returns value of *this converted to T.">As</a>&lt;MyKeyValue&gt;();</div>
+<div class="line">  EXPECT_EQ(data_json.field1, <span class="stringliteral">&quot;one&quot;</span>);</div>
+<div class="line">  EXPECT_EQ(data_json.field2, 1);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// yaml</span></div>
+<div class="line">  <a class="code" href="../../da/dc1/classformats_1_1yaml_1_1Value.html" title="Non-mutable YAML value representation.">formats::yaml::Value</a> yaml = <a class="code" href="../../d7/d72/namespaceformats_1_1yaml.html#adaade9466d62f79f127e112bead15081" title="Parse JSON from string.">formats::yaml::FromString</a>(R<span class="stringliteral">&quot;(</span></div>
+<div class="line"><span class="stringliteral">    my_value:</span></div>
+<div class="line"><span class="stringliteral">        field1: &quot;one&quot;</span></div>
+<div class="line"><span class="stringliteral">        field2: 1</span></div>
+<div class="line"><span class="stringliteral">  )&quot;);</span></div>
+<div class="line"><span class="stringliteral">  </span><span class="keyword">auto</span> data_yaml = yaml[<span class="stringliteral">&quot;my_value&quot;</span>].<a class="code" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a5802cd1f6d84d14213ccf51c282cbd65" title="Returns value of *this converted to T.">As</a>&lt;MyKeyValue&gt;();</div>
+<div class="line">  EXPECT_EQ(data_yaml.field1, <span class="stringliteral">&quot;one&quot;</span>);</div>
+<div class="line">  EXPECT_EQ(data_yaml.field2, 1);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace my_namespace</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md103"></a>
 Inline helpers formats::*::Make*</h2>
 <p>To build objects of trivial types some of the formats provide inline helpers, like <a class="el" href="../../d3/dcb/group__userver__formats.html#gafc1e568ca1efc4014483f1bf319e105d">formats::json::MakeArray()</a>, <a class="el" href="../../d3/dcb/group__userver__formats.html#ga9fbc3907a2068f250572de539e6cf6de">formats::json::MakeObject()</a>:</p>
 <div class="fragment"></div><!-- fragment --><p> Or <a class="el" href="../../dd/dee/namespaceformats_1_1bson.html#a63db58ec47961e5e12ca50d7f4d58636" title="Constructs a Document from provided key-value pairs.">formats::bson::MakeDoc()</a>, <a class="el" href="../../dd/dee/namespaceformats_1_1bson.html#a9037c8402aa532f2c93c89d1e9f573ab" title="Constructs an array Value from provided element list.">formats::bson::MakeArray()</a>:</p>
@@ -269,9 +314,9 @@ Streaming Serialization</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace my_namespace</span></div>
 </div><!-- fragment --><p>Note that you may get <b>invalid</b> JSON, since:</p><ul>
-<li>methods <code>format::json methods::StringBuilder::Key</code> <b>does not</b> check the uniqueness of keys</li>
-<li><code>StringBuilder</code> itself does not put curly brackets, you need to use <code><a class="el" href="../../dc/d9e/classformats_1_1json_1_1StringBuilder_1_1ObjectGuard.html">formats::json::StringBuilder::ObjectGuard</a></code></li>
-<li><code>StringBuilder</code> itself does not put square brackets, you need to use <code><a class="el" href="../../d2/da7/classformats_1_1json_1_1StringBuilder_1_1ArrayGuard.html">formats::json::StringBuilder::ArrayGuard</a></code></li>
+<li>methods <code>format::json methods::StringBuilder::Key</code> <b>do not</b> check the uniqueness of keys</li>
+<li><code>StringBuilder</code> itself does not put curly brackets, you need to use <a class="el" href="../../dc/d9e/classformats_1_1json_1_1StringBuilder_1_1ObjectGuard.html">formats::json::StringBuilder::ObjectGuard</a></li>
+<li><code>StringBuilder</code> itself does not put square brackets, you need to use <a class="el" href="../../d2/da7/classformats_1_1json_1_1StringBuilder_1_1ArrayGuard.html">formats::json::StringBuilder::ArrayGuard</a></li>
 <li>You can write any nonsense in JSON using <code>StringBuilder</code> methods</li>
 <li>etc.</li>
 </ul>

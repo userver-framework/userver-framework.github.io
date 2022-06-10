@@ -98,22 +98,22 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace</span> storages::<a class="code" href="../../dd/de0/namespacestorages_1_1clickhouse.html" title="Top namespace for uClickHouse driver.">clickhouse</a>::io {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::clickhouse::io {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/// @brief StrongTypedef for serializing `system_clock::time_point`</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/// to DateTime64(3) format when used as a query argument</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> DateTime64Milli = USERVER_NAMESPACE::utils::StrongTypedef&lt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html#a6b2662831e5aed9afc81cf6d9eacca34">   16</a></span>&#160;    columns::DateTime64ColumnMilli::Tag, std::chrono::system_clock::time_point&gt;;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> DateTime64Milli = USERVER_NAMESPACE::<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::StrongTypedef&lt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html#a6b2662831e5aed9afc81cf6d9eacca34">   16</a></span>&#160;    <a class="code" href="../../d6/d2f/namespacestorages_1_1clickhouse_1_1io_1_1columns.html" title="uClickHouse columns.">columns</a>::DateTime64ColumnMilli::Tag, std::chrono::system_clock::time_point&gt;;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @brief StrongTypedef for serializing `system_clock::time_point`</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// to DateTime64(6) format when used as a query argument</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using</span> DateTime64Micro = USERVER_NAMESPACE::utils::StrongTypedef&lt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html#ae9dc85fee7e9532a1e0384f4669eca07">   21</a></span>&#160;    columns::DateTime64ColumnMicro::Tag, std::chrono::system_clock::time_point&gt;;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using</span> DateTime64Micro = USERVER_NAMESPACE::<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::StrongTypedef&lt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html#ae9dc85fee7e9532a1e0384f4669eca07">   21</a></span>&#160;    <a class="code" href="../../d6/d2f/namespacestorages_1_1clickhouse_1_1io_1_1columns.html" title="uClickHouse columns.">columns</a>::DateTime64ColumnMicro::Tag, std::chrono::system_clock::time_point&gt;;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/// @brief StrongTypedef for serializing `system_clock::time_point`</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// to DateTime64(9) format when used as a query argument</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> DateTime64Nano = USERVER_NAMESPACE::utils::StrongTypedef&lt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html#a188bc75e318491a419a632425c341a7e">   26</a></span>&#160;    columns::DateTime64ColumnNano::Tag, std::chrono::system_clock::time_point&gt;;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> DateTime64Nano = USERVER_NAMESPACE::<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::StrongTypedef&lt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html#a188bc75e318491a419a632425c341a7e">   26</a></span>&#160;    <a class="code" href="../../d6/d2f/namespacestorages_1_1clickhouse_1_1io_1_1columns.html" title="uClickHouse columns.">columns</a>::DateTime64ColumnNano::Tag, std::chrono::system_clock::time_point&gt;;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}  <span class="comment">// namespace storages::clickhouse::io</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>

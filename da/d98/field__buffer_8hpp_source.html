@@ -97,59 +97,59 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> storages::postgres::io {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">inline</span> <span class="keyword">constexpr</span> FieldBuffer FieldBuffer::GetSubBuffer(</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::size_t offset, std::size_t size, BufferCategory cat) <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a> <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>::GetSubBuffer(</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::size_t offset, std::size_t size, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a> cat) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">auto</span> new_buffer_start = buffer + offset;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">if</span> (offset &gt; length) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">throw</span> InvalidInputBufferSize(</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="../../da/d14/classstorages_1_1postgres_1_1InvalidInputBufferSize.html" title="Buffer size is invalid for a fixed-size type. Can occur when a wrong field type is requested for repl...">InvalidInputBufferSize</a>(</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        length, <span class="stringliteral">&quot;. Offset requested &quot;</span> + std::to_string(offset));</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  size = size == npos ? length - offset : size;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span> (offset + size &gt; length) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">throw</span> InvalidInputBufferSize(</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="../../da/d14/classstorages_1_1postgres_1_1InvalidInputBufferSize.html" title="Buffer size is invalid for a fixed-size type. Can occur when a wrong field type is requested for repl...">InvalidInputBufferSize</a>(</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        size, <span class="stringliteral">&quot;. Buffer remaininig size is &quot;</span> + std::to_string(length - offset));</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span> (cat == BufferCategory::kKeepCategory) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span> (cat == <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a><a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22adcae0745af3ce6928bd13a9640313ef3" title="kKeepCategory keep current buffer category">::</a><a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22adcae0745af3ce6928bd13a9640313ef3" title="kKeepCategory keep current buffer category">kKeepCategory</a>) {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    cat = category;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> {is_null, cat, size, new_buffer_start};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;std::size_t FieldBuffer::Read(T&amp;&amp; value, BufferCategory cat, std::size_t len) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  io::ReadBuffer(GetSubBuffer(0, len, cat), std::forward&lt;T&gt;(value));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;std::size_t <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>::Read(T&amp;&amp; value, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a> cat, std::size_t len) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::ReadBuffer(GetSubBuffer(0, len, cat), std::forward&lt;T&gt;(value));</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  length -= len;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  buffer += len;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">return</span> len;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::size_t FieldBuffer::Read(T&amp;&amp; value, <span class="keyword">const</span> TypeBufferCategory&amp; categories,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                              std::size_t len, BufferCategory cat) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  io::ReadBuffer(GetSubBuffer(0, len, cat), std::forward&lt;T&gt;(value), categories);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::size_t <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>::Read(T&amp;&amp; value, <span class="keyword">const</span> TypeBufferCategory&amp; categories,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                              std::size_t len, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a> cat) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::ReadBuffer(GetSubBuffer(0, len, cat), std::forward&lt;T&gt;(value), categories);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  length -= len;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  buffer += len;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> len;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;std::size_t FieldBuffer::ReadRaw(T&amp;&amp; value,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;std::size_t <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>::ReadRaw(T&amp;&amp; value,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 <span class="keyword">const</span> TypeBufferCategory&amp; categories,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                 BufferCategory cat) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                 <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a> cat) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">using</span> ValueType = std::decay_t&lt;T&gt;;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  Integer field_length{0};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">auto</span> consumed = Read(field_length, BufferCategory::kPlainBuffer);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (field_length == kPgNullBufferSize) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">auto</span> consumed = Read(field_length, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a><a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22af488377ad58e124fc274a7a87ae55404" title="kPlainBuffer the buffer is a single plain value">::</a><a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22af488377ad58e124fc274a7a87ae55404" title="kPlainBuffer the buffer is a single plain value">kPlainBuffer</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (field_length == <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a67bb0b018852ef188a209a7abd037892" title="Fields that are null are denoted by specifying their length == -1.">kPgNullBufferSize</a>) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// NULL value</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    traits::GetSetNull&lt;ValueType&gt;::SetNull(std::forward&lt;T&gt;(value));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../d1/d54/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull.html">GetSetNull</a>&lt;ValueType&gt;::SetNull(std::forward&lt;T&gt;(value));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> consumed;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (field_length &lt; 0) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// invalid length value</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">throw</span> InvalidInputBufferSize(0, <span class="stringliteral">&quot;Negative buffer size value&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="../../da/d14/classstorages_1_1postgres_1_1InvalidInputBufferSize.html" title="Buffer size is invalid for a fixed-size type. Can occur when a wrong field type is requested for repl...">InvalidInputBufferSize</a>(0, <span class="stringliteral">&quot;Negative buffer size value&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (field_length == 0) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    traits::GetSetNull&lt;ValueType&gt;::SetDefault(std::forward&lt;T&gt;(value));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../d1/d54/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull.html">GetSetNull</a>&lt;ValueType&gt;::SetDefault(std::forward&lt;T&gt;(value));</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> consumed;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> consumed + Read(value, categories, field_length, cat);</div>
@@ -157,7 +157,7 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;std::size_t ReadRawBinary(FieldBuffer buffer, T&amp; value,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;std::size_t ReadRawBinary(<a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a> buffer, T&amp; value,</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                          <span class="keyword">const</span> TypeBufferCategory&amp; categories) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> buffer.ReadRaw(value, categories);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
@@ -165,14 +165,14 @@ $(function() {
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">namespace</span> detail {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Buffer,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          <span class="keyword">typename</span> Enable = USERVER_NAMESPACE::utils::void_t&lt;&gt;&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          <span class="keyword">typename</span> Enable = USERVER_NAMESPACE::<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::void_t&lt;&gt;&gt;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">struct</span> FormatterAcceptsReplacementOid : std::false_type {};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Buffer&gt;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">struct</span> FormatterAcceptsReplacementOid&lt;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    T, Buffer,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    USERVER_NAMESPACE::utils::void_t&lt;<span class="keyword">decltype</span>(std::declval&lt;T&amp;&gt;()(</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::declval&lt;<span class="keyword">const</span> UserTypes&amp;&gt;(), std::declval&lt;Buffer&amp;&gt;(),</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    USERVER_NAMESPACE::<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::void_t&lt;<span class="keyword">decltype</span>(std::declval&lt;T&amp;&gt;()(</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::declval&lt;<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp;&gt;(), std::declval&lt;Buffer&amp;&gt;(),</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::declval&lt;Oid&gt;()))&gt;&gt; : std::true_type {};</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}  <span class="comment">// namespace detail</span></div>
@@ -180,12 +180,12 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Buffer&gt;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> WriteRawBinary(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, Buffer&amp; buffer, <span class="keyword">const</span> T&amp; value,</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    [[maybe_unused]] Oid replace_oid = kInvalidOid) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  traits::CheckFormatter&lt;T&gt;();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::CheckFormatter&lt;T&gt;();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> size_len = <span class="keyword">sizeof</span>(Integer);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (traits::<a class="code" href="../../d1/d54/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull.html">GetSetNull</a>&lt;T&gt;::IsNull(value)) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    io::WriteBuffer(types, buffer, kPgNullBufferSize);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../d1/d54/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull.html">GetSetNull</a>&lt;T&gt;::IsNull(value)) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a67bb0b018852ef188a209a7abd037892" title="Fields that are null are denoted by specifying their length == -1.">kPgNullBufferSize</a>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">using</span> BufferFormatter = <span class="keyword">typename</span> traits::IO&lt;T&gt;::FormatterType;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">using</span> BufferFormatter = <span class="keyword">typename</span> <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::<a class="code" href="../../d9/dd6/structstorages_1_1postgres_1_1io_1_1traits_1_1IO.html" title="A default deducer of parsers/formatters for a type/data format. Can be specialised for a type/format ...">IO</a>&lt;T&gt;::FormatterType;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">using</span> AcceptsReplacementOid =</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        detail::FormatterAcceptsReplacementOid&lt;BufferFormatter, Buffer&gt;;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">auto</span> len_start = buffer.size();</div>
@@ -194,7 +194,7 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (AcceptsReplacementOid{}) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      BufferFormatter{value}(types, buffer, replace_oid);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      io::WriteBuffer(types, buffer, value);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, value);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Integer bytes = buffer.size() - size_before;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    BufferWriter(bytes)(buffer.begin() + len_start);</div>

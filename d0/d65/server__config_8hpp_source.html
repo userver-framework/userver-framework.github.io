@@ -101,9 +101,9 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> server {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dd/de2/structserver_1_1ServerConfig.html">   14</a></span>&#160;<span class="keyword">struct</span> ServerConfig {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dd/de2/structserver_1_1ServerConfig.html">   14</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">ServerConfig</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  net::ListenerConfig listener;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  std::optional&lt;net::ListenerConfig&gt; monitor_listener;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">std</a>::<a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">optional</a>&lt;<a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">net</a>::<a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">ListenerConfig</a>&gt; monitor_listener;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  std::optional&lt;std::string&gt; logger_access;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  std::optional&lt;std::string&gt; logger_access_tskv;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  std::optional&lt;size_t&gt; max_response_size_in_flight;</div>
@@ -111,8 +111,8 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">bool</span> set_response_server_hostname{<span class="keyword">false</span>};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;ServerConfig Parse(<span class="keyword">const</span> yaml_config::YamlConfig&amp; value,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                   formats::parse::To&lt;ServerConfig&gt;);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">ServerConfig</a> Parse(<span class="keyword">const</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a>&amp; value,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                   formats::<a class="code" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<a class="code" href="../../dd/de2/structserver_1_1ServerConfig.html">ServerConfig</a>&gt;);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}  <span class="comment">// namespace server</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>

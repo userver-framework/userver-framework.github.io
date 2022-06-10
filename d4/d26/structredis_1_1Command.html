@@ -125,12 +125,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1be5831c0902d875d983d1fd957f4935"><td class="memItemLeft" align="right" valign="top"><a id="a1be5831c0902d875d983d1fd957f4935"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a> &amp;&amp;args, ReplyCallback callback, <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> control, int counter, bool asking, size_t instance_idx, bool redirected)</td></tr>
-<tr class="separator:a1be5831c0902d875d983d1fd957f4935"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ad429dcd9d0762b8c1672ac5c6b8e62"><td class="memItemLeft" align="right" valign="top"><a id="a5ad429dcd9d0762b8c1672ac5c6b8e62"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a> &amp;&amp;args, ReplyCallbackEx &amp;&amp;callback, <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> control, int counter, bool asking)</td></tr>
-<tr class="separator:a5ad429dcd9d0762b8c1672ac5c6b8e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64283bdfa64598d6f0e080887f3c31f7"><td class="memItemLeft" align="right" valign="top"><a id="a64283bdfa64598d6f0e080887f3c31f7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a> &amp;&amp;args, ReplyCallback callback, <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> control, int counter, bool asking, size_t instance_idx, bool redirected, bool read_only)</td></tr>
+<tr class="separator:a64283bdfa64598d6f0e080887f3c31f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a365d6e792a92a6af32bc01ca23657913"><td class="memItemLeft" align="right" valign="top"><a id="a365d6e792a92a6af32bc01ca23657913"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a> &amp;&amp;args, ReplyCallbackEx &amp;&amp;callback, <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> control, int counter, bool asking, bool read_only)</td></tr>
+<tr class="separator:a365d6e792a92a6af32bc01ca23657913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ba40a4aba1f792117d7fa8cc68e0d72"><td class="memItemLeft" align="right" valign="top"><a id="a9ba40a4aba1f792117d7fa8cc68e0d72"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="../../d4/d26/structredis_1_1Command.html">Command</a> &amp;&amp;cmd)=delete</td></tr>
 <tr class="separator:a9ba40a4aba1f792117d7fa8cc68e0d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,6 +188,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>executed</b> = false<
 <tr class="memitem:aba8d97e064c9d58097bc583c99d1be2d"><td class="memItemLeft" align="right" valign="top"><a id="aba8d97e064c9d58097bc583c99d1be2d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>redirected</b> = false</td></tr>
 <tr class="separator:aba8d97e064c9d58097bc583c99d1be2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2fe186ee694562bac07360fb164f77"><td class="memItemLeft" align="right" valign="top"><a id="a1a2fe186ee694562bac07360fb164f77"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>read_only</b> = false</td></tr>
+<tr class="separator:a1a2fe186ee694562bac07360fb164f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">

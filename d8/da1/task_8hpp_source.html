@@ -255,49 +255,47 @@ $(function() {
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">void</span> AppendWaiter(impl::TaskContext&amp; context) <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">void</span> RemoveWaiter(impl::TaskContext&amp; context) <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordtype">void</span> WakeupAllWaiters() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordtype">bool</span> IsWaitingEnabledFrom(<span class="keyword">const</span> impl::TaskContext&amp; context) <span class="keyword">const</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">bool</span> IsSharedWaitAllowed() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordtype">bool</span> IsSharedWaitAllowed() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordtype">void</span> Terminate(<a class="code" href="../../dc/d3f/namespaceengine.html#a0d5218b35f5861d406b7d3f8868d5cfd" title="Task cancellation reason.">TaskCancellationReason</a>) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">void</span> Terminate(<a class="code" href="../../dc/d3f/namespaceengine.html#a0d5218b35f5861d406b7d3f8868d5cfd" title="Task cancellation reason.">TaskCancellationReason</a>) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  boost::intrusive_ptr&lt;impl::TaskContext&gt; context_;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;};</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  boost::intrusive_ptr&lt;impl::TaskContext&gt; context_;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;};</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">namespace</span> current_task {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">namespace</span> current_task {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">/// Returns reference to the task processor executing the caller</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;TaskProcessor&amp; <a class="code" href="../../d8/da1/task_8hpp.html#af2fdd04261a47f8ac5c507a758b038f7" title="Returns reference to the task processor executing the caller.">GetTaskProcessor</a>();</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">/// @cond</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">/// Returns ev thread handle, internal use only</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;ev::ThreadControl&amp; GetEventThread();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/// Updates spurious wakeup statistics, internal use only</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keywordtype">void</span> AccountSpuriousWakeup();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">/// @endcond</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">/// Returns task coroutine stack size</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;size_t <a class="code" href="../../d8/da1/task_8hpp.html#a142508a2a7040a5f08ee6016d29f6585" title="Returns task coroutine stack size.">GetStackSize</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">/// Returns reference to the task processor executing the caller</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;TaskProcessor&amp; <a class="code" href="../../d8/da1/task_8hpp.html#af2fdd04261a47f8ac5c507a758b038f7" title="Returns reference to the task processor executing the caller.">GetTaskProcessor</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">/// @cond</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">/// Returns ev thread handle, internal use only</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;ev::ThreadControl&amp; GetEventThread();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">/// Updates spurious wakeup statistics, internal use only</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="keywordtype">void</span> AccountSpuriousWakeup();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/// @endcond</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">/// Returns task coroutine stack size</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;size_t <a class="code" href="../../d8/da1/task_8hpp.html#a142508a2a7040a5f08ee6016d29f6585" title="Returns task coroutine stack size.">GetStackSize</a>();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}  <span class="comment">// namespace current_task</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}  <span class="comment">// namespace current_task</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e">  197</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">Task</a>::<a class="code" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e" title="Suspends execution until the task finishes or after the specified timeout or until caller is cancelle...">WaitFor</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; duration) <span class="keyword">const</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  WaitUntil(Deadline::FromDuration(duration));</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Clock, <span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10">  203</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">Task</a>::<a class="code" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10" title="Suspends execution until the task finishes or until the specified time point is reached or until call...">WaitUntil</a>(<span class="keyword">const</span> std::chrono::time_point&lt;Clock, Duration&gt;&amp; until)</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keyword">const</span> <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  WaitUntil(Deadline::FromTimePoint(until));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e">  195</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">Task</a>::<a class="code" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e" title="Suspends execution until the task finishes or after the specified timeout or until caller is cancelle...">WaitFor</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; duration) <span class="keyword">const</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  WaitUntil(Deadline::FromDuration(duration));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Clock, <span class="keyword">typename</span> Duration&gt;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10">  201</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">Task</a>::<a class="code" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10" title="Suspends execution until the task finishes or until the specified time point is reached or until call...">WaitUntil</a>(<span class="keyword">const</span> std::chrono::time_point&lt;Clock, Duration&gt;&amp; until)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">const</span> <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  WaitUntil(Deadline::FromTimePoint(until));</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}  <span class="comment">// namespace engine</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}  <span class="comment">// namespace engine</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

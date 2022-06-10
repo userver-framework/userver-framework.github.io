@@ -107,17 +107,17 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace</span> storages::<a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">postgres</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> <a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">PortalName</a> =</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    USERVER_NAMESPACE::<a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">utils</a>::<a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">StrongTypedef</a>&lt;<span class="keyword">struct</span> PortalNameTag, <a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">std</a>::<a class="code" href="../../df/d29/classstorages_1_1postgres_1_1TypedResultSet.html#a6c49a01a461b97c9332281af2fffb55f" title="Access a row by index.">string</a>&gt;;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> <a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">PortalName</a> =</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    USERVER_NAMESPACE::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">utils</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">StrongTypedef</a>&lt;<span class="keyword">struct</span> PortalNameTag, <a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">std</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">string</a>&gt;;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">   25</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">Portal</a> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  Portal(detail::Connection* conn, <span class="keyword">const</span> Query&amp; query,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  Portal(detail::Connection* conn, <span class="keyword">const</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">Query</a>&amp; query,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         <span class="keyword">const</span> detail::QueryParameters&amp; = {},</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;         OptionalCommandControl cmd_ctl = {});</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  Portal(detail::Connection* conn, <span class="keyword">const</span> PortalName&amp;, <span class="keyword">const</span> Query&amp; query,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  Portal(detail::Connection* conn, <span class="keyword">const</span> PortalName&amp;, <span class="keyword">const</span> <a class="code" href="../../d2/d8f/classstorages_1_1postgres_1_1Query.html" title="Holds a query, its name and logging mode.">Query</a>&amp; query,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;         <span class="keyword">const</span> detail::QueryParameters&amp; = {},</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;         OptionalCommandControl cmd_ctl = {});</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
@@ -129,7 +129,7 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ~Portal();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ResultSet Fetch(std::uint32_t n_rows);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d0/d5b/classstorages_1_1postgres_1_1ResultSet.html" title="PostgreSQL result set.">ResultSet</a> Fetch(std::uint32_t n_rows);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> Done() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  std::size_t FetchedSoFar() <span class="keyword">const</span>;</div>
@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t kImplAlign = 8;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">struct</span> Impl;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  USERVER_NAMESPACE::<a class="code" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">utils</a>::<a class="code" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">FastPimpl</a>&lt;<a class="code" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">Impl</a>, <a class="code" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">kImplSize</a>, <a class="code" href="../../d9/d93/classstorages_1_1postgres_1_1Portal.html">kImplAlign</a>&gt; pimpl_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  USERVER_NAMESPACE::utils::FastPimpl&lt;Impl, kImplSize, kImplAlign&gt; pimpl_;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}  <span class="comment">// namespace storages::postgres</span></div>

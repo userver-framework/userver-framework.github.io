@@ -94,7 +94,7 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace</span> storages::postgres::io {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace</span> detail {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
@@ -106,7 +106,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// A helper function to read PostgreSQL binary buffer containing a</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// numeric/decimal to string representation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;std::string NumericBufferToString(<span class="keyword">const</span> FieldBuffer&amp; buffer);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;std::string NumericBufferToString(<span class="keyword">const</span> <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>&amp; buffer);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// A helper function to write string representation of a numeric/decimal to</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// PostgreSQL binary buffer representation</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;std::string StringToNumericBuffer(<span class="keyword">const</span> std::string&amp; str_rep);</div>
@@ -116,7 +116,7 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// @throw NumericOverflow if the int64 is not enough to represent value in the</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">///                        buffer</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/// @throw ValueIsNaN      if the value in the buffer is NaN</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;IntegralRepresentation NumericBufferToInt64(<span class="keyword">const</span> FieldBuffer&amp; buffer);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;IntegralRepresentation NumericBufferToInt64(<span class="keyword">const</span> <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>&amp; buffer);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/// A helper function to write PostgreSQL numeric/decimal binary buffer using</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/// a value packed into a single int64 value.</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/// @throw InvalidRepresentation if the dec_digits field of binary</span></div>

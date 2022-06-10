@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> testsuite::impl::actions {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>::impl::actions {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class</span> BaseTestsuiteAction;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -149,28 +149,28 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// clang-format on</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d5/ded/classserver_1_1handlers_1_1TestsControl.html">   60</a></span>&#160;<span class="keyword">class</span> TestsControl <span class="keyword">final</span> : <span class="keyword">public</span> <a class="code" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J...">HttpHandlerJsonBase</a> {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  TestsControl(<span class="keyword">const</span> components::ComponentConfig&amp; config,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;               <span class="keyword">const</span> components::ComponentContext&amp; component_context);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  TestsControl(<span class="keyword">const</span> <a class="code" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::ComponentConfig&amp; config,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;               <span class="keyword">const</span> <a class="code" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::ComponentContext&amp; component_context);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  ~TestsControl() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;tests-control&quot;</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  formats::json::Value HandleRequestJsonThrow(</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">const</span> http::HttpRequest&amp; request,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keyword">const</span> formats::json::Value&amp; request_body,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      request::RequestContext&amp; context) <span class="keyword">const</span> <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value HandleRequestJsonThrow(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../df/df5/namespaceserver_1_1http.html" title="Server parts of the HTTP protocol implementation.">http</a>::HttpRequest&amp; request,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keyword">const</span> formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value&amp; request_body,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="../../d9/df8/namespaceserver_1_1request.html" title="Server request related types and functions.">request</a>::RequestContext&amp; context) <span class="keyword">const</span> <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">static</span> yaml_config::Schema GetStaticConfigSchema();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::Schema GetStaticConfigSchema();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  formats::json::Value PerformAction(</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value PerformAction(</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keyword">const</span> std::string&amp; action_name,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keyword">const</span> formats::json::Value&amp; request_body) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keyword">const</span> formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value&amp; request_body) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::unique_ptr&lt;testsuite::TestpointClientBase&gt; testpoint_client_;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::unique_ptr&lt;<a class="code" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>::<a class="code" href="../../dc/dc9/classtestsuite_1_1TestpointClientBase.html" title="Base testpoint client. Used to report TESTPOINT executions to testsuite.">TestpointClientBase</a>&gt; testpoint_client_;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  std::unordered_map&lt;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      std::string,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      std::unique_ptr&lt;testsuite::impl::actions::BaseTestsuiteAction&gt;&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      std::unique_ptr&lt;<a class="code" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>::impl::actions::BaseTestsuiteAction&gt;&gt;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      actions_;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>

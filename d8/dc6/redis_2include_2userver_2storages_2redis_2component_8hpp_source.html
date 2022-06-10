@@ -99,8 +99,8 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">components</span><span class="preprocessor">/</span><span class="preprocessor">component_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">components</span><span class="preprocessor">/</span><span class="preprocessor">loggable_component_base</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">storages</span><span class="preprocessor">/</span><span class="preprocessor">redis</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">wait_connected_mode</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">taxi_config</span><span class="preprocessor">/</span><span class="preprocessor">source</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">dynamic_config</span><span class="preprocessor">/</span><span class="preprocessor">source</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">storages</span><span class="preprocessor">/</span><span class="preprocessor">redis</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">wait_connected_mode</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">testsuite</span><span class="preprocessor">/</span><span class="preprocessor">redis_control</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">/</span><span class="preprocessor">entry</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -114,9 +114,9 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// Components, clients and helpers for different databases and storages</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// Redis client</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace</span> redis {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class</span> Client;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class</span> SubscribeClient;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class</span> <a class="code" href="../../d4/da0/classstorages_1_1redis_1_1Client.html" title="Redis client.">Client</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class</span> <a class="code" href="../../d6/d2d/classstorages_1_1redis_1_1SubscribeClient.html" title="When you call Subscribe() or Psubscribe() command a new async task will be started....">SubscribeClient</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class</span> SubscribeClientImpl;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}  <span class="comment">// namespace redis</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}  <span class="comment">// namespace storages</span></div>
@@ -140,84 +140,85 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/// groups.[].config_name | key name in secdist with options for this cluster | -</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// groups.[].db | name to refer to the cluster in components::Redis::GetClient() | -</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/// groups.[].sharding_strategy | one of RedisCluster, KeyShardCrc32, KeyShardTaximeterCrc32 or KeyShardGpsStorageDriver | &quot;KeyShardTaximeterCrc32&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// subscribe_groups | array of redis clusters to work with in subscribe mode | -</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/// subscribe_groups.[].config_name | key name in secdist with options for this cluster | -</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// subscribe_groups.[].db | name to refer to the cluster in components::Redis::GetSubscribeClient() | -</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/// subscribe_groups.[].sharding_strategy | either RedisCluster or KeyShardTaximeterCrc32 | &quot;KeyShardTaximeterCrc32&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/// ## Static configuration example:</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// ```</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">///    redis:</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">///        groups:</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">///          - config_name: taxi-tmp</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">///            db: taxi-tmp</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">///            sharding_strategy: &quot;RedisCluster&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">///          - config_name: taxi-tmp-pubsub</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">///            db: taxi-tmp-pubsub</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">///        subscribe_groups:</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">///          - config_name: taxi-tmp-pubsub</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">///            db: taxi-tmp-pubsub</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">///        thread_pools:</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">///            redis_thread_pool_size: 8</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">///            sentinel_thread_pool_size: 1</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/// ```</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d6/dd0/classcomponents_1_1Redis.html">   77</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d6/dd0/classcomponents_1_1Redis.html" title="Redis client component.">Redis</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">LoggableComponentBase</a> {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  Redis(<span class="keyword">const</span> ComponentConfig&amp; config,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> ComponentContext&amp; component_context);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  ~Redis() override;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;redis&quot;</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::redis::Client&gt; GetClient(</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      USERVER_NAMESPACE::redis::<a class="code" href="../../d1/dd5/structredis_1_1RedisWaitConnected.html">RedisWaitConnected</a> wait_connected = {}) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  [[<a class="code" href="../../d6/dd0/classcomponents_1_1Redis.html" title="Redis client component.">deprecated</a>(<span class="stringliteral">&quot;use GetClient()&quot;</span>)]] std::shared_ptr&lt;redis::<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&gt; Client(</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::redis::SubscribeClient&gt; GetSubscribeClient(</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      USERVER_NAMESPACE::redis::<a class="code" href="../../d1/dd5/structredis_1_1RedisWaitConnected.html">RedisWaitConnected</a> wait_connected = {}) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::Schema GetStaticConfigSchema();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> OnConfigUpdate(<span class="keyword">const</span> dynamic_config::Snapshot&amp; cfg);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">void</span> Connect(<span class="keyword">const</span> ComponentConfig&amp; config,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;               <span class="keyword">const</span> ComponentContext&amp; component_context,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;               <span class="keyword">const</span> <a class="code" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>::<a class="code" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">RedisControl</a>&amp; testsuite_redis_control);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value ExtendStatisticsRedis(</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::<a class="code" href="../../dc/dcf/structutils_1_1statistics_1_1StatisticsRequest.html">StatisticsRequest</a>&amp; <span class="comment">/*request*/</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value ExtendStatisticsRedisPubsub(</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::<a class="code" href="../../dc/dcf/structutils_1_1statistics_1_1StatisticsRequest.html">StatisticsRequest</a>&amp; <span class="comment">/*request*/</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  std::shared_ptr&lt;redis::<a class="code" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a>&gt; thread_pools_;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  std::unordered_map&lt;std::string, std::shared_ptr&lt;redis::<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&gt;&gt; sentinels_;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  std::unordered_map&lt;std::string, std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::redis::Client&gt;&gt;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      clients_;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  std::unordered_map&lt;std::string,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                     std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::redis::SubscribeClientImpl&gt;&gt;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      subscribe_clients_;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  dynamic_config::Source config_;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::AsyncEventSubscriberScope config_subscription_;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Entry statistics_holder_;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Entry subscribe_statistics_holder_;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> kHasValidate&lt;Redis&gt; = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}  <span class="comment">// namespace components</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// groups.[].allow_reads_from_master | allows read requests from master instance | false</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/// subscribe_groups | array of redis clusters to work with in subscribe mode | -</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// subscribe_groups.[].config_name | key name in secdist with options for this cluster | -</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/// subscribe_groups.[].db | name to refer to the cluster in components::Redis::GetSubscribeClient() | -</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// subscribe_groups.[].sharding_strategy | either RedisCluster or KeyShardTaximeterCrc32 | &quot;KeyShardTaximeterCrc32&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// ## Static configuration example:</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// ```</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">///    redis:</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">///        groups:</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">///          - config_name: taxi-tmp</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">///            db: taxi-tmp</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">///            sharding_strategy: &quot;RedisCluster&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">///          - config_name: taxi-tmp-pubsub</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">///            db: taxi-tmp-pubsub</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">///        subscribe_groups:</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">///          - config_name: taxi-tmp-pubsub</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">///            db: taxi-tmp-pubsub</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">///        thread_pools:</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">///            redis_thread_pool_size: 8</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">///            sentinel_thread_pool_size: 1</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// ```</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// clang-format on</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d6/dd0/classcomponents_1_1Redis.html">   78</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d6/dd0/classcomponents_1_1Redis.html" title="Redis client component.">Redis</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">LoggableComponentBase</a> {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  Redis(<span class="keyword">const</span> ComponentConfig&amp; config,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> ComponentContext&amp; component_context);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  ~Redis() override;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;redis&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a>::<a class="code" href="../../d4/da0/classstorages_1_1redis_1_1Client.html" title="Redis client.">Client</a>&gt; GetClient(</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      USERVER_NAMESPACE::redis::<a class="code" href="../../d1/dd5/structredis_1_1RedisWaitConnected.html">RedisWaitConnected</a> wait_connected = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  [[<a class="code" href="../../d6/dd0/classcomponents_1_1Redis.html" title="Redis client component.">deprecated</a>(<span class="stringliteral">&quot;use GetClient()&quot;</span>)]] std::shared_ptr&lt;redis::<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&gt; Client(</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a>::<a class="code" href="../../d6/d2d/classstorages_1_1redis_1_1SubscribeClient.html" title="When you call Subscribe() or Psubscribe() command a new async task will be started....">SubscribeClient</a>&gt; GetSubscribeClient(</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      USERVER_NAMESPACE::redis::<a class="code" href="../../d1/dd5/structredis_1_1RedisWaitConnected.html">RedisWaitConnected</a> wait_connected = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::Schema GetStaticConfigSchema();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">void</span> OnConfigUpdate(<span class="keyword">const</span> dynamic_config::Snapshot&amp; cfg);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> Connect(<span class="keyword">const</span> ComponentConfig&amp; config,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;               <span class="keyword">const</span> ComponentContext&amp; component_context,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;               <span class="keyword">const</span> <a class="code" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>::<a class="code" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">RedisControl</a>&amp; testsuite_redis_control);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value ExtendStatisticsRedis(</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::<a class="code" href="../../dc/dcf/structutils_1_1statistics_1_1StatisticsRequest.html">StatisticsRequest</a>&amp; <span class="comment">/*request*/</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  formats::<a class="code" href="../../de/d91/classformats_1_1json_1_1Value.html#ae1274d68ce2832fab94cff1fc03f7061" title="Log JSON.">json</a>::Value ExtendStatisticsRedisPubsub(</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::<a class="code" href="../../dc/dcf/structutils_1_1statistics_1_1StatisticsRequest.html">StatisticsRequest</a>&amp; <span class="comment">/*request*/</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  std::shared_ptr&lt;redis::<a class="code" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a>&gt; thread_pools_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  std::unordered_map&lt;std::string, std::shared_ptr&lt;redis::<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&gt;&gt; sentinels_;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  std::unordered_map&lt;std::string, std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a>::<a class="code" href="../../d4/da0/classstorages_1_1redis_1_1Client.html" title="Redis client.">Client</a>&gt;&gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      clients_;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  std::unordered_map&lt;std::string,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                     std::shared_ptr&lt;<a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../d3/d0c/namespacestorages_1_1redis.html" title="Redis client.">redis</a>::SubscribeClientImpl&gt;&gt;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      subscribe_clients_;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  dynamic_config::Source config_;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::AsyncEventSubscriberScope config_subscription_;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Entry statistics_holder_;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Entry subscribe_statistics_holder_;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> kHasValidate&lt;Redis&gt; = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}  <span class="comment">// namespace components</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

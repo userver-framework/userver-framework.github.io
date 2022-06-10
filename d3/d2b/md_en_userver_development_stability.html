@@ -98,6 +98,7 @@ API stability</h1>
 <h1><a class="anchor" id="autotoc_md92"></a>
 Compilation</h1>
 <p>Transitive includes could not be relied on. Even a change in patch version could remove some <code>#include</code> from header and break code that relies on transitive includes. However, we provide script <code>./scripts/add-missing-include.sh</code> that helps to add missing includes in big code bases.</p>
+<p>Avoid adding your own forward declarations for the framework types as the type could change to an alias or vice versa during the userver development process.</p>
 <h1><a class="anchor" id="autotoc_md93"></a>
 ABI stability</h1>
 <p>Userver is meant for usage mostly as a static library that is linked with the application. Because of that userver has no Application <b>Binary</b> Interface (ABI) stability guarantees. While the API is kept stable, binary interface may change even on patch version change.</p>

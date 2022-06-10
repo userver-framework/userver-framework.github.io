@@ -202,7 +202,7 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">using</span> BaseType::BaseType;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, Buffer&amp; buffer) <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> UserTypes&amp; types, Buffer&amp; buffer) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; type_desc =</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        types.GetCompositeDescription(PgMapping::GetOid(types));</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (type_desc.Size() != size) {</div>
@@ -217,8 +217,8 @@ $(function() {
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer, <span class="keyword">typename</span> U&gt;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span> WriteField(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                  <span class="keyword">const</span> <a class="code" href="../../da/d7c/classstorages_1_1postgres_1_1CompositeTypeDescription.html" title="PostgreSQL composite type description.">CompositeTypeDescription</a>&amp; type_desc, std::size_t index,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span> WriteField(<span class="keyword">const</span> UserTypes&amp; types,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                  <span class="keyword">const</span> CompositeTypeDescription&amp; type_desc, std::size_t index,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                  Buffer&amp; buffer, <span class="keyword">const</span> U&amp; val) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">auto</span> field_type = CppToPg&lt;U&gt;::GetOid(types);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; field_desc = type_desc[index];</div>
@@ -237,8 +237,8 @@ $(function() {
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    io::WriteRawBinary(types, buffer, val, field_type);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer, <span class="keyword">typename</span> Tuple, std::size_t... Indexes&gt;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> WriteTuple(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                  <span class="keyword">const</span> <a class="code" href="../../da/d7c/classstorages_1_1postgres_1_1CompositeTypeDescription.html" title="PostgreSQL composite type description.">CompositeTypeDescription</a>&amp; type_desc, Buffer&amp; buffer,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> WriteTuple(<span class="keyword">const</span> UserTypes&amp; types,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                  <span class="keyword">const</span> CompositeTypeDescription&amp; type_desc, Buffer&amp; buffer,</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                  Tuple&amp;&amp; tuple, std::index_sequence&lt;Indexes...&gt;) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    (WriteField(types, type_desc, Indexes, buffer,</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                std::get&lt;Indexes&gt;(std::forward&lt;Tuple&gt;(tuple))),</div>

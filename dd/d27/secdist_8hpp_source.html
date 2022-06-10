@@ -238,7 +238,7 @@ $(function() {
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kImplSize = 928;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kImplAlign = 8;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  utils::FastPimpl&lt;Impl, kImplSize, kImplAlign&gt; impl_;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;Impl, kImplSize, kImplAlign&gt; impl_;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class&gt;</div>
@@ -246,7 +246,7 @@ $(function() {
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    Class* obj, std::string_view name,</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> (Class::*func)(<span class="keyword">const</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../d1/d49/namespacestorages_1_1secdist.html" title="Credentials storage.">secdist</a>::SecdistConfig&amp; secdist)) {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">return</span> DoUpdateAndListen(</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      concurrent::FunctionId(obj), name,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      <a class="code" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::FunctionId(obj), name,</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      [obj, func](<span class="keyword">const</span> SecdistConfig&amp; config) { (obj-&gt;*func)(config); });</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>

@@ -101,9 +101,9 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::postgres {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> io {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @brief Detect mapping of a C++ type to Postgres type.</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Enable = USERVER_NAMESPACE::<a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::void_t&lt;&gt;&gt;</div>
@@ -164,14 +164,14 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> RegisterPredefinedOidParser init_ =</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      RegisterPredefinedOidParser::Register(type_oid, array_oid,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                            io::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kTypeBufferCategory&lt;T&gt;,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                            <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kTypeBufferCategory&lt;T&gt;,</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                            <a class="code" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::GetTypeName&lt;T&gt;());</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> Oid GetOid(<span class="keyword">const</span> UserTypes&amp;) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> Oid GetOid(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp;) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ForceReference(init_);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;Oid&gt;(type_oid);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> Oid GetArrayOid(<span class="keyword">const</span> UserTypes&amp;) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> Oid GetArrayOid(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp;) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ForceReference(init_);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;Oid&gt;(array_oid);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
@@ -197,7 +197,7 @@ $(function() {
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> RegisterPredefinedOidParser init_ =</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      RegisterPredefinedOidParser::Register(type_oid, array_oid,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                            io::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kTypeBufferCategory&lt;T&gt;,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                            <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kTypeBufferCategory&lt;T&gt;,</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                            <a class="code" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::GetTypeName&lt;T&gt;());</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>

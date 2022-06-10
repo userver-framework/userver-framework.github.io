@@ -107,10 +107,10 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> crypto {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// Base verifier class</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../dc/d53/classcrypto_1_1Verifier.html">   20</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../dc/d53/classcrypto_1_1Verifier.html" title="Base verifier class.">Verifier</a> : <span class="keyword">public</span> <a class="code" href="../../dc/d53/classcrypto_1_1Verifier.html" title="Base verifier class.">NamedAlgo</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../dc/d53/classcrypto_1_1Verifier.html">   20</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../dc/d53/classcrypto_1_1Verifier.html" title="Base verifier class.">Verifier</a> : <span class="keyword">public</span> <a class="code" href="../../de/dac/classcrypto_1_1NamedAlgo.html" title="Base class for a crypto algorithm implementation.">NamedAlgo</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">explicit</span> Verifier(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ~Verifier() override;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ~Verifier() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">/// Verifies a signature against the message</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d53/classcrypto_1_1Verifier.html#aec482905e7f9df1005d52ad2db677b31" title="Verifies a signature against the message.">Verify</a>(std::initializer_list&lt;std::string_view&gt; data,</div>
@@ -128,12 +128,12 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/// HMAC-SHA verifier</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt;DigestSize bits&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt;<a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a> bits&gt;</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d6/db8/classcrypto_1_1HmacShaVerifier.html">   42</a></span>&#160;<span class="keyword">class</span> HmacShaVerifier <span class="keyword">final</span> : <span class="keyword">public</span> <a class="code" href="../../dc/d53/classcrypto_1_1Verifier.html" title="Base verifier class.">Verifier</a> {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">/// Constructor from a shared secret</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="../../d6/db8/classcrypto_1_1HmacShaVerifier.html#abc467fb898ce3747016a850c19b33b1a" title="Constructor from a shared secret.">HmacShaVerifier</a>(std::string secret);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  ~HmacShaVerifier() override;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  ~HmacShaVerifier() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">/// Verifies a signature against the message</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d6/db8/classcrypto_1_1HmacShaVerifier.html#aa33bbb1ed990e035ecfe6c8daaaa445b" title="Verifies a signature against the message.">Verify</a>(std::initializer_list&lt;std::string_view&gt; data,</div>
@@ -145,14 +145,14 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/// @name Verifies HMAC SHA MAC.</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">using</span> VerifierHs1 = HmacShaVerifier&lt;DigestSize::k160&gt;;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">using</span> VerifierHs256 = HmacShaVerifier&lt;DigestSize::k256&gt;;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">using</span> VerifierHs384 = HmacShaVerifier&lt;DigestSize::k384&gt;;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">using</span> VerifierHs512 = HmacShaVerifier&lt;DigestSize::k512&gt;;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">using</span> VerifierHs1 = HmacShaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k160&gt;;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">using</span> VerifierHs256 = HmacShaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k256&gt;;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">using</span> VerifierHs384 = HmacShaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k384&gt;;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">using</span> VerifierHs512 = HmacShaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k512&gt;;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// @}</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/// Generic verifier for asymmetric cryptography</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">template</span> &lt;DsaType type, DigestSize bits&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">template</span> &lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a> type, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a> bits&gt;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../dc/d8c/classcrypto_1_1DsaVerifier.html">   66</a></span>&#160;<span class="keyword">class</span> DsaVerifier <span class="keyword">final</span> : <span class="keyword">public</span> <a class="code" href="../../dc/d53/classcrypto_1_1Verifier.html" title="Base verifier class.">Verifier</a> {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">/// Constructor from public key</span></div>
@@ -178,9 +178,9 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/// @name Verifies RSASSA signature using SHA-2 and PKCS1 padding.</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">using</span> VerifierRs256 = DsaVerifier&lt;DsaType::kRsa, DigestSize::k256&gt;;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">using</span> VerifierRs384 = DsaVerifier&lt;DsaType::kRsa, DigestSize::k384&gt;;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">using</span> VerifierRs512 = DsaVerifier&lt;DsaType::kRsa, DigestSize::k512&gt;;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">using</span> VerifierRs256 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsa, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k256&gt;;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">using</span> VerifierRs384 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsa, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k384&gt;;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">using</span> VerifierRs512 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsa, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k512&gt;;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">/// @}</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/// @name Verifies ECDSA as per RFC7518.</span></div>
@@ -188,9 +188,9 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/// OpenSSL generates ECDSA signatures in ASN.1/DER format, RFC7518 specifies</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/// signature as a concatenation of zero-padded big-endian `(R, S)` values.</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">using</span> VerifierEs256 = DsaVerifier&lt;DsaType::kEc, DigestSize::k256&gt;;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">using</span> VerifierEs384 = DsaVerifier&lt;DsaType::kEc, DigestSize::k384&gt;;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">using</span> VerifierEs512 = DsaVerifier&lt;DsaType::kEc, DigestSize::k512&gt;;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">using</span> VerifierEs256 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kEc, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k256&gt;;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">using</span> VerifierEs384 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kEc, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k384&gt;;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">using</span> VerifierEs512 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kEc, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k512&gt;;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">/// @}</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">/// @name Verifies RSASSA signature using SHA-2 and PSS padding as per RFC7518.</span></div>
@@ -198,21 +198,21 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">/// JWA specifications require using MGF1 function with the same hash function</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/// as for the digest and salt length to be the same size as the hash output.</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">using</span> VerifierPs256 = DsaVerifier&lt;DsaType::kRsaPss, DigestSize::k256&gt;;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">using</span> VerifierPs384 = DsaVerifier&lt;DsaType::kRsaPss, DigestSize::k384&gt;;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">using</span> VerifierPs512 = DsaVerifier&lt;DsaType::kRsaPss, DigestSize::k512&gt;;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">using</span> VerifierPs256 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsaPss, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k256&gt;;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">using</span> VerifierPs384 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsaPss, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k384&gt;;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">using</span> VerifierPs512 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsaPss, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k512&gt;;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">/// @}</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">namespace</span> weak {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">/// Verifies RSASSA signature using SHA-1 and PKCS1 padding.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">using</span> VerifierRs1 = DsaVerifier&lt;DsaType::kRsa, DigestSize::k160&gt;;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">using</span> VerifierRs1 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsa, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k160&gt;;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/// Verifies RSASSA signature using SHA-1 and PSS padding.</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">///</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">/// JWA specifications require using MGF1 function with the same hash function</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">/// as for the digest and salt length to be the same size as the hash output.</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">using</span> VerifierPs1 = DsaVerifier&lt;DsaType::kRsaPss, DigestSize::k160&gt;;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">using</span> VerifierPs1 = DsaVerifier&lt;<a class="code" href="../../de/d36/namespacecrypto.html#ac50d8786ea9524dc28904785710e2f2b" title="Digital signature type.">DsaType</a>::kRsaPss, <a class="code" href="../../de/d36/namespacecrypto.html#a99126ec814052afc57f524a318b8cd50" title="SHA digest size in bits.">DigestSize</a>::k160&gt;;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}  <span class="comment">// namespace weak</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}  <span class="comment">// namespace crypto</span></div>

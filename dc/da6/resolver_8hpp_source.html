@@ -104,26 +104,26 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> clients::dns {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> clients::<a class="code" href="../../d4/d8a/namespaceclients_1_1dns.html" title="DNS client.">dns</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// Caching DNS resolver implementation.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">///</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// Combines file-based (/etc/hosts) name resolution with network-based one.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">   22</a></span>&#160;<span class="keyword">class</span> Resolver {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">   22</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">Resolver</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/da0/structclients_1_1dns_1_1Resolver_1_1LookupSourceCounters.html">   24</a></span>&#160;  <span class="keyword">struct</span> LookupSourceCounters {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    utils::statistics::RelaxedCounter&lt;size_t&gt; file{0};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    utils::statistics::RelaxedCounter&lt;size_t&gt; cached{0};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    utils::statistics::RelaxedCounter&lt;size_t&gt; cached_stale{0};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    utils::statistics::RelaxedCounter&lt;size_t&gt; cached_failure{0};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    utils::statistics::RelaxedCounter&lt;size_t&gt; network{0};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    utils::statistics::RelaxedCounter&lt;size_t&gt; network_failure{0};</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/da0/structclients_1_1dns_1_1Resolver_1_1LookupSourceCounters.html">   24</a></span>&#160;  <span class="keyword">struct</span> <a class="code" href="../../df/da0/structclients_1_1dns_1_1Resolver_1_1LookupSourceCounters.html">LookupSourceCounters</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::RelaxedCounter&lt;size_t&gt; file{0};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::RelaxedCounter&lt;size_t&gt; cached{0};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::RelaxedCounter&lt;size_t&gt; cached_stale{0};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::RelaxedCounter&lt;size_t&gt; cached_failure{0};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::RelaxedCounter&lt;size_t&gt; network{0};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::RelaxedCounter&lt;size_t&gt; network_failure{0};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  Resolver(engine::TaskProcessor&amp; fs_task_processor,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;           <span class="keyword">const</span> ResolverConfig&amp; config);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  Resolver(<span class="keyword">const</span> Resolver&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  Resolver(Resolver&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;           <span class="keyword">const</span> <a class="code" href="../../dd/dc2/structclients_1_1dns_1_1ResolverConfig.html" title="Caching DNS resolver static configuration.">ResolverConfig</a>&amp; config);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  Resolver(<span class="keyword">const</span> <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">Resolver</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  Resolver(<a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">Resolver</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  ~Resolver();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">/// Performs a domain name resolution.</span></div>
@@ -135,25 +135,25 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">///</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">/// @throws clients::dns::NotResolvedException if none of the sources provide</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">/// a result within the specified deadline.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  AddrVector Resolve(<span class="keyword">const</span> std::string&amp; name, engine::Deadline deadline);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  AddrVector <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html#a7e13925236cefdb934d040c524cda6ca">Resolve</a>(<span class="keyword">const</span> std::string&amp; name, engine::Deadline deadline);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">/// Returns lookup source counters.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> LookupSourceCounters&amp; GetLookupSourceCounters() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../df/da0/structclients_1_1dns_1_1Resolver_1_1LookupSourceCounters.html">LookupSourceCounters</a>&amp; <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html#a0a8aac3427a809db24fc83f4ac882d9b" title="Returns lookup source counters.">GetLookupSourceCounters</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">/// Forces the reload of lookup table file. Waits until the reload is done.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> ReloadHosts();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html#a28d0dfddada66264696a37811ee99899" title="Forces the reload of lookup table file. Waits until the reload is done.">ReloadHosts</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">/// Resets the network results cache.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> FlushNetworkCache();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html#a6439293e041f694efe2e1cb4a60dfa81" title="Resets the network results cache.">FlushNetworkCache</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">/// Removes the specified domain name from the network results cache.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> FlushNetworkCache(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html#aaad5a686605e00c47241e984c2c5d4d9" title="Removes the specified domain name from the network results cache.">FlushNetworkCache</a>(<span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">constexpr</span> <span class="keyword">static</span> size_t kSize = 1568;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">constexpr</span> <span class="keyword">static</span> size_t kAlignment = 16;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  utils::FastPimpl&lt;Impl, kSize, kAlignment&gt; impl_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;Impl, kSize, kAlignment&gt; impl_;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace clients::dns</span></div>

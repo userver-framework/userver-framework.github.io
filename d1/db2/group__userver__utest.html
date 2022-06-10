@@ -101,6 +101,20 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga197452dcb8b39ea0ab94ed09e5c45afb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#ga197452dcb8b39ea0ab94ed09e5c45afb">UEXPECT_THROW_MSG</a>(statement,  exception_type,  message_substring)</td></tr>
+<tr class="separator:ga197452dcb8b39ea0ab94ed09e5c45afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe4c811e71e3b5f5e6366512f479c23f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#gabe4c811e71e3b5f5e6366512f479c23f">UASSERT_THROW_MSG</a>(statement,  exception_type,  message_substring)</td></tr>
+<tr class="separator:gabe4c811e71e3b5f5e6366512f479c23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga002db3b75559b788f4d6cc5ff537f1df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#ga002db3b75559b788f4d6cc5ff537f1df">UEXPECT_THROW</a>(statement,  exception_type)</td></tr>
+<tr class="separator:ga002db3b75559b788f4d6cc5ff537f1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae40cab46bd4ca4a0c4c015149d0bb6bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#gae40cab46bd4ca4a0c4c015149d0bb6bb">UASSERT_THROW</a>(statement,  exception_type)</td></tr>
+<tr class="separator:gae40cab46bd4ca4a0c4c015149d0bb6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdf4f737b3561621eff19fb93f9c27fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#gafdf4f737b3561621eff19fb93f9c27fd">UEXPECT_NO_THROW</a>(statement)</td></tr>
+<tr class="separator:gafdf4f737b3561621eff19fb93f9c27fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3d7ed0bf8da418831be5c4777250f92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#gae3d7ed0bf8da418831be5c4777250f92">UASSERT_NO_THROW</a>(statement)</td></tr>
+<tr class="separator:gae3d7ed0bf8da418831be5c4777250f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8183175b2c77d1cf962821197e206b8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#ga8183175b2c77d1cf962821197e206b8e">EXPECT_UINVARIANT_FAILURE</a>(statement)</td></tr>
+<tr class="separator:ga8183175b2c77d1cf962821197e206b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99fe29774caf35ceab2a40b72b230ec7"><td class="memItemLeft" align="right" valign="top"><a id="ga99fe29774caf35ceab2a40b72b230ec7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db2/group__userver__utest.html#ga99fe29774caf35ceab2a40b72b230ec7">UTEST</a>(test_suite_name,  test_name)</td></tr>
 <tr class="memdesc:ga99fe29774caf35ceab2a40b72b230ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">An equivalent of the gtest macro TEST that starts the test body as a coroutine task. <br /></td></tr>
@@ -169,7 +183,7 @@ Macros</h2></td></tr>
 <li><code>_MT</code> ("multi-threaded") macro versions take 'thread_count' integer as the 3rd parameter at the test definition. It specifies the number of worker threads that should be created for the test. By default, there is only 1 worker thread, which should be enough for most tests;</li>
 <li><code>GetThreadCount()</code> method is available in the test scope.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md468"></a>
+<h2><a class="anchor" id="autotoc_md471"></a>
 Usage examples:</h2>
 <div class="fragment"><div class="line"><a class="code" href="../../d1/db2/group__userver__utest.html#ga99fe29774caf35ceab2a40b72b230ec7" title="An equivalent of the gtest macro TEST that starts the test body as a coroutine task.">UTEST</a>(Semaphore, PassAcrossCoroutines) {</div>
 <div class="line">  <a class="code" href="../../db/d16/classengine_1_1Semaphore.html" title="Class that allows up to max_simultaneous_locks concurrent accesses to the critical section.">engine::Semaphore</a> s{1};</div>
@@ -190,6 +204,27 @@ Usage examples:</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p> See <a class="el" href="../../d8/d06/md_en_userver_testing.html">Unit Tests and Benchmarks</a> for more usage examples and descriptions </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga8183175b2c77d1cf962821197e206b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8183175b2c77d1cf962821197e206b8e">&#9670;&nbsp;</a></span>EXPECT_UINVARIANT_FAILURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPECT_UINVARIANT_FAILURE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Test that a UINVARIANT check triggers </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00135">135</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ga00b4cab053e07c29a89f02fe72b1963d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga00b4cab053e07c29a89f02fe72b1963d">&#9670;&nbsp;</a></span>TYPED_UTEST_MT</h2>
 
@@ -275,6 +310,184 @@ Usage examples:</h2>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/dc9/utest_8hpp_source.html#l00184">184</a> of file <a class="el" href="../../dc/dc9/utest_8hpp_source.html">utest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae3d7ed0bf8da418831be5c4777250f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3d7ed0bf8da418831be5c4777250f92">&#9670;&nbsp;</a></span>UASSERT_NO_THROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UASSERT_NO_THROW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An equivalent to <code>EXPECT_THROW</code> with better diagnostics </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00121">121</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae40cab46bd4ca4a0c4c015149d0bb6bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae40cab46bd4ca4a0c4c015149d0bb6bb">&#9670;&nbsp;</a></span>UASSERT_THROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UASSERT_THROW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">exception_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An equivalent to <code>ASSERT_THROW</code> with better diagnostics </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gabe4c811e71e3b5f5e6366512f479c23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe4c811e71e3b5f5e6366512f479c23f">&#9670;&nbsp;</a></span>UASSERT_THROW_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UASSERT_THROW_MSG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">exception_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">message_substring&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An equivalent to <code>ASSERT_THROW</code> with an additional check for a message substring </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gafdf4f737b3561621eff19fb93f9c27fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafdf4f737b3561621eff19fb93f9c27fd">&#9670;&nbsp;</a></span>UEXPECT_NO_THROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UEXPECT_NO_THROW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An equivalent to <code>EXPECT_NO_THROW</code> with better diagnostics </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00112">112</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga002db3b75559b788f4d6cc5ff537f1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga002db3b75559b788f4d6cc5ff537f1df">&#9670;&nbsp;</a></span>UEXPECT_THROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UEXPECT_THROW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">exception_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An equivalent to <code>EXPECT_THROW</code> with better diagnostics </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga197452dcb8b39ea0ab94ed09e5c45afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga197452dcb8b39ea0ab94ed09e5c45afb">&#9670;&nbsp;</a></span>UEXPECT_THROW_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UEXPECT_THROW_MSG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">statement, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">exception_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">message_substring&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An equivalent to <code>EXPECT_THROW</code> with an additional check for a message substring </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html#l00072">72</a> of file <a class="el" href="../../d5/d01/assert__macros_8hpp_source.html">assert_macros.hpp</a>.</p>
 
 </div>
 </div>

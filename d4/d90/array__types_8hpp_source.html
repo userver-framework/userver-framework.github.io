@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html">   24</a></span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::postgres::io {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html">   24</a></span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// @page pg_arrays uPg: Arrays</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">///</span></div>
@@ -216,8 +216,8 @@ $(function() {
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element&gt;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> ForceInitElementMapping() {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="comment">// composite types can be parsed without an explicit mapping</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (io::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsMappedToPg&lt;Element&gt; ||</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                !io::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsCompositeType&lt;Element&gt;) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsMappedToPg&lt;Element&gt; ||</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                !<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsCompositeType&lt;Element&gt;) {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> ForceReference(CppToPg&lt;Element&gt;::init_);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -250,7 +250,7 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        swap(<span class="keyword">this</span>-&gt;value, empty);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">throw</span> DimensionMismatch{};</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d98/classstorages_1_1postgres_1_1DimensionMismatch.html" title="Array received from postgres has different dimensions from those of C++ container.">DimensionMismatch</a>{};</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// read flags</span></div>
@@ -275,7 +275,7 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      buffer.Read(lbound, BufferCategory::kPlainBuffer);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">if</span> (!CheckDimensions(on_the_wire)) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">throw</span> DimensionMismatch{};</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d98/classstorages_1_1postgres_1_1DimensionMismatch.html" title="Array received from postgres has different dimensions from those of C++ container.">DimensionMismatch</a>{};</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// read elements</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ValueType tmp;</div>
@@ -378,7 +378,7 @@ $(function() {
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="comment">// top level container</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> UserTypes&amp; types, Buffer&amp; buffer,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, Buffer&amp; buffer,</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                  Oid replace_oid = kInvalidOid) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keyword">auto</span> elem_type_oid = ElementMapping::GetOid(types);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (replace_oid != kInvalidOid &amp;&amp;</div>
@@ -388,16 +388,16 @@ $(function() {
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">// Fast path for default-constructed vectors</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">this</span>-&gt;value.empty()) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(0));  <span class="comment">// dims</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(0));  <span class="comment">// flags</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(0));  <span class="comment">// dims</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(0));  <span class="comment">// flags</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(elem_type_oid));</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// Write number of dimensions</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(dimensions));</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(dimensions));</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Write flags</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(0));</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(0));</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// Write element type oid</span></div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(elem_type_oid));</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    Dimensions dims = GetDimensions();</div>
@@ -429,19 +429,19 @@ $(function() {
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  }</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="keywordtype">void</span> WriteDimensionData(<span class="keyword">const</span> UserTypes&amp; types, Buffer&amp; buffer,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="keywordtype">void</span> WriteDimensionData(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, Buffer&amp; buffer,</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                          <span class="keyword">const</span> Dimensions&amp; dims) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dim : dims) {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(dim));</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;      io::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(1));  <span class="comment">// lbound</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(dim));</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;      <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, <span class="keyword">static_cast</span>&lt;Integer&gt;(1));  <span class="comment">// lbound</span></div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  }</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer, <span class="keyword">typename</span> Element&gt;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordtype">void</span> WriteData(<span class="keyword">const</span> UserTypes&amp; types, DimensionConstIterator dim,</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordtype">void</span> WriteData(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, DimensionConstIterator dim,</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                 Buffer&amp; buffer, <span class="keyword">const</span> Element&amp; element) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">if</span> (*dim != element.size()) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;      <span class="keywordflow">throw</span> InvalidDimensions{*dim, element.size()};</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;      <span class="keywordflow">throw</span> <a class="code" href="../../da/d07/classstorages_1_1postgres_1_1InvalidDimensions.html">InvalidDimensions</a>{*dim, element.size()};</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (1 &lt; <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kDimensionCount&lt;Element&gt;) {</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      <span class="comment">// this is a (sub)dimension of array</span></div>
@@ -451,13 +451,13 @@ $(function() {
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;      <span class="comment">// this is the final dimension</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; sub : element) {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        io::WriteRawBinary(types, buffer, sub);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteRawBinary(types, buffer, sub);</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;      }</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  }</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordtype">void</span> WriteData(<span class="keyword">const</span> UserTypes&amp; types, DimensionConstIterator dim,</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordtype">void</span> WriteData(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, DimensionConstIterator dim,</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                 Buffer&amp; buffer, <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">bool</span>&gt;&amp; element) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">if</span> (*dim != element.size()) {</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      <span class="keywordflow">throw</span> InvalidDimensions{*dim, element.size()};</div>
@@ -474,7 +474,7 @@ $(function() {
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="keyword">using</span> ElementMapping = CppToPg&lt;ElementType&gt;;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  <span class="keyword">using</span> Mapping = ArrayPgOid&lt;Container, System&gt;;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keyword">static</span> Oid GetOid(<span class="keyword">const</span> UserTypes&amp; types) {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keyword">static</span> Oid GetOid(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types) {</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">return</span> ElementMapping::GetArrayOid(types);</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  }</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;};</div>
@@ -485,7 +485,7 @@ $(function() {
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="keyword">using</span> ElementMapping = CppToPg&lt;ElementType&gt;;</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="keyword">using</span> Mapping = ArrayPgOid&lt;Container, <span class="keyword">true</span>&gt;;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> Oid GetOid(<span class="keyword">const</span> UserTypes&amp;) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> Oid GetOid(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp;) {</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;Oid&gt;(ElementMapping::array_oid);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  }</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;};</div>
@@ -526,9 +526,9 @@ $(function() {
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;}  <span class="comment">// namespace detail</span></div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keyword">struct</span> CppToPg&lt;T, std::enable_if_t&lt;traits::detail::EnableContainerMapping&lt;T&gt;()&gt;&gt;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    : detail::ArrayPgOid&lt;T, detail::IsElementMappedToSystem&lt;T&gt;()&gt; {};</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">T</a>&gt;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">CppToPg</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">T</a>, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">std</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">enable_if_t</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">traits</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">detail</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">EnableContainerMapping</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">T</a>&gt;()&gt;&gt;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    : <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">detail</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">ArrayPgOid</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">T</a>, <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">detail</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">IsElementMappedToSystem</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">T</a>&gt;()&gt; {};</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a> {</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
@@ -545,7 +545,7 @@ $(function() {
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;};</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">ParserBufferCategory</a>&lt;io::detail::ArrayBinaryParser&lt;T&gt;&gt;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">ParserBufferCategory</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::detail::ArrayBinaryParser&lt;T&gt;&gt;</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    : <a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">std</a>::<a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">integral_constant</a>&lt;<a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">BufferCategory</a>, <a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">BufferCategory</a>::<a class="code" href="../../d6/df6/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory.html" title="Buffer category for parser.">kArrayBuffer</a>&gt; {};</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="comment">// std::vector</span></div>
@@ -680,7 +680,7 @@ $(function() {
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a> {</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d7/ddc/structstorages_1_1postgres_1_1io_1_1traits_1_1IsCompatibleContainer.html" title="Mark C++ container type as supported by the driver.">IsCompatibleContainer</a>&lt;io::detail::ContainerChunk&lt;Container&gt;&gt;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d7/ddc/structstorages_1_1postgres_1_1io_1_1traits_1_1IsCompatibleContainer.html" title="Mark C++ container type as supported by the driver.">IsCompatibleContainer</a>&lt;<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::detail::ContainerChunk&lt;Container&gt;&gt;</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    : <a class="code" href="../../d7/ddc/structstorages_1_1postgres_1_1io_1_1traits_1_1IsCompatibleContainer.html" title="Mark C++ container type as supported by the driver.">IsCompatibleContainer</a>&lt;Container&gt; {};</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;}  <span class="comment">// namespace traits</span></div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>

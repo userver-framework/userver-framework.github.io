@@ -111,9 +111,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2b00fced3607dcacf30632105e8c4317"><td class="memItemLeft" align="right" valign="top"><a id="a2b00fced3607dcacf30632105e8c4317"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ReadyChangeCallback</b> = std::function&lt; void(size_t shard, const std::string &amp;shard_name, bool master, bool ready)&gt;</td></tr>
-<tr class="separator:a2b00fced3607dcacf30632105e8c4317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d04307406928ba40dc542a03c8a75d2"><td class="memItemLeft" align="right" valign="top"><a id="a6d04307406928ba40dc542a03c8a75d2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ReadyChangeCallback</b> = std::function&lt; void(size_t shard, const std::string &amp;shard_name, bool ready)&gt;</td></tr>
+<tr class="separator:a6d04307406928ba40dc542a03c8a75d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779131913d094dd1015a7e3170bbb34b"><td class="memItemLeft" align="right" valign="top"><a id="a779131913d094dd1015a7e3170bbb34b"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>UserMessageCallback</b> = std::function&lt; void(const std::string &amp;channel, const std::string &amp;message)&gt;</td></tr>
 <tr class="separator:a779131913d094dd1015a7e3170bbb34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,9 +135,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>UnsubscribeCallback<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab260cb3dd7b751ee889689f617511bd4"><td class="memItemLeft" align="right" valign="top"><a id="ab260cb3dd7b751ee889689f617511bd4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Sentinel</b> (const std::shared_ptr&lt; <a class="el" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> &gt; &amp;thread_pools, const std::vector&lt; std::string &gt; &amp;shards, const std::vector&lt; <a class="el" href="../../de/dd2/structredis_1_1ConnectionInfo.html">ConnectionInfo</a> &gt; &amp;conns, std::string shard_group_name, const std::string &amp;client_name, const <a class="el" href="../../d4/d67/classutils_1_1StrongTypedef.html">Password</a> &amp;password, ReadyChangeCallback ready_callback, std::unique_ptr&lt; <a class="el" href="../../d2/d7a/classredis_1_1KeyShard.html">KeyShard</a> &gt; &amp;&amp;key_shard=nullptr, <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> command_control=command_control_init, const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;testsuite_redis_control={}, bool track_masters=true, bool track_slaves=true, bool is_subscriber=false)</td></tr>
-<tr class="separator:ab260cb3dd7b751ee889689f617511bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be4952789cfaf1fa0aa8ac356aa1c78"><td class="memItemLeft" align="right" valign="top"><a id="a3be4952789cfaf1fa0aa8ac356aa1c78"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Sentinel</b> (const std::shared_ptr&lt; <a class="el" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> &gt; &amp;thread_pools, const std::vector&lt; std::string &gt; &amp;shards, const std::vector&lt; <a class="el" href="../../de/dd2/structredis_1_1ConnectionInfo.html">ConnectionInfo</a> &gt; &amp;conns, std::string shard_group_name, const std::string &amp;client_name, const <a class="el" href="../../d4/d67/classutils_1_1StrongTypedef.html">Password</a> &amp;password, ReadyChangeCallback ready_callback, std::unique_ptr&lt; <a class="el" href="../../d2/d7a/classredis_1_1KeyShard.html">KeyShard</a> &gt; &amp;&amp;key_shard=nullptr, <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> command_control=kDefaultCommandControl, const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;testsuite_redis_control={}, ConnectionMode mode=ConnectionMode::kCommands)</td></tr>
+<tr class="separator:a3be4952789cfaf1fa0aa8ac356aa1c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab558a61d41e910ee3b2cccd0a3b40e86"><td class="memItemLeft" align="right" valign="top"><a id="ab558a61d41e910ee3b2cccd0a3b40e86"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
 <tr class="separator:ab558a61d41e910ee3b2cccd0a3b40e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,12 +204,12 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetConfigDefa
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a043487e3e21e67291fdf7eebb304e353"><td class="memItemLeft" align="right" valign="top"><a id="a043487e3e21e67291fdf7eebb304e353"></a>
-static std::shared_ptr&lt; <a class="el" href="../../d0/de8/classredis_1_1Sentinel.html">redis::Sentinel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateSentinel</b> (const std::shared_ptr&lt; <a class="el" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> &gt; &amp;thread_pools, const <a class="el" href="../../d7/d05/structsecdist_1_1RedisSettings.html">secdist::RedisSettings</a> &amp;settings, std::string shard_group_name, const std::string &amp;client_name, <a class="el" href="../../dd/d65/classredis_1_1KeyShardFactory.html">KeyShardFactory</a> key_shard_factory, const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;testsuite_redis_control)</td></tr>
-<tr class="separator:a043487e3e21e67291fdf7eebb304e353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1751e7022e58d4c92c7cae0bcfb4a653"><td class="memItemLeft" align="right" valign="top"><a id="a1751e7022e58d4c92c7cae0bcfb4a653"></a>
-static std::shared_ptr&lt; <a class="el" href="../../d0/de8/classredis_1_1Sentinel.html">redis::Sentinel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateSentinel</b> (const std::shared_ptr&lt; <a class="el" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> &gt; &amp;thread_pools, const <a class="el" href="../../d7/d05/structsecdist_1_1RedisSettings.html">secdist::RedisSettings</a> &amp;settings, std::string shard_group_name, const std::string &amp;client_name, ReadyChangeCallback ready_callback, <a class="el" href="../../dd/d65/classredis_1_1KeyShardFactory.html">KeyShardFactory</a> key_shard_factory, const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;testsuite_redis_control)</td></tr>
-<tr class="separator:a1751e7022e58d4c92c7cae0bcfb4a653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c4775a531e3298765fe5c7180e34e8"><td class="memItemLeft" align="right" valign="top"><a id="a70c4775a531e3298765fe5c7180e34e8"></a>
+static std::shared_ptr&lt; <a class="el" href="../../d0/de8/classredis_1_1Sentinel.html">redis::Sentinel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateSentinel</b> (const std::shared_ptr&lt; <a class="el" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> &gt; &amp;thread_pools, const <a class="el" href="../../d7/d05/structsecdist_1_1RedisSettings.html">secdist::RedisSettings</a> &amp;settings, std::string shard_group_name, const std::string &amp;client_name, <a class="el" href="../../dd/d65/classredis_1_1KeyShardFactory.html">KeyShardFactory</a> key_shard_factory, const <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> &amp;command_control=kDefaultCommandControl, const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;testsuite_redis_control={})</td></tr>
+<tr class="separator:a70c4775a531e3298765fe5c7180e34e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886d721d4267e38e7bb935e04e411aaa"><td class="memItemLeft" align="right" valign="top"><a id="a886d721d4267e38e7bb935e04e411aaa"></a>
+static std::shared_ptr&lt; <a class="el" href="../../d0/de8/classredis_1_1Sentinel.html">redis::Sentinel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateSentinel</b> (const std::shared_ptr&lt; <a class="el" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> &gt; &amp;thread_pools, const <a class="el" href="../../d7/d05/structsecdist_1_1RedisSettings.html">secdist::RedisSettings</a> &amp;settings, std::string shard_group_name, const std::string &amp;client_name, ReadyChangeCallback ready_callback, <a class="el" href="../../dd/d65/classredis_1_1KeyShardFactory.html">KeyShardFactory</a> key_shard_factory, const <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> &amp;command_control=kDefaultCommandControl, const <a class="el" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> &amp;testsuite_redis_control={})</td></tr>
+<tr class="separator:a886d721d4267e38e7bb935e04e411aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9068676bf3cada353216385e18a00968"><td class="memItemLeft" align="right" valign="top"><a id="a9068676bf3cada353216385e18a00968"></a>
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>CreateTmpKey</b> (const std::string &amp;key, std::string prefix=&quot;tmp:&quot;)</td></tr>
 <tr class="separator:a9068676bf3cada353216385e18a00968"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,18 +225,15 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>OnPsubscribeRe
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae2bebf0d96cfa679596794bbf2bfdab1"><td class="memItemLeft" align="right" valign="top"><a id="ae2bebf0d96cfa679596794bbf2bfdab1"></a>
-boost::signals2::signal&lt; void(size_t shard, bool master)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>signal_instances_changed</b></td></tr>
-<tr class="separator:ae2bebf0d96cfa679596794bbf2bfdab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e4b93dca05ee09f4ef1a5ef5bfaf3e"><td class="memItemLeft" align="right" valign="top"><a id="aa2e4b93dca05ee09f4ef1a5ef5bfaf3e"></a>
+boost::signals2::signal&lt; void(size_t shard)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>signal_instances_changed</b></td></tr>
+<tr class="separator:aa2e4b93dca05ee09f4ef1a5ef5bfaf3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8af6545156d29ea3330288d3fcd3608"><td class="memItemLeft" align="right" valign="top"><a id="af8af6545156d29ea3330288d3fcd3608"></a>
 boost::signals2::signal&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>signal_not_in_cluster_mode</b></td></tr>
 <tr class="separator:af8af6545156d29ea3330288d3fcd3608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a9ded772b37a4df13f4049faf4ec4d415"><td class="memItemLeft" align="right" valign="top"><a id="a9ded772b37a4df13f4049faf4ec4d415"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnConnectionReady</b> (size_t, const std::string &amp;, bool)</td></tr>
-<tr class="separator:a9ded772b37a4df13f4049faf4ec4d415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a337261743f0689a042149856140a4680"><td class="memItemLeft" align="right" valign="top"><a id="a337261743f0689a042149856140a4680"></a>
 std::vector&lt; std::shared_ptr&lt; const Shard &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetMasterShards</b> () const</td></tr>
 <tr class="separator:a337261743f0689a042149856140a4680"><td class="memSeparator" colspan="2">&#160;</td></tr>

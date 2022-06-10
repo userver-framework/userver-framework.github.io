@@ -103,13 +103,13 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> clients {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> http {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">struct</span> Statistics;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d4/d53/classclients_1_1http_1_1RequestStats.html">   20</a></span>&#160;<span class="keyword">class</span> RequestStats <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">explicit</span> RequestStats(Statistics&amp; stats);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">explicit</span> RequestStats(<a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>&amp; stats);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ~RequestStats();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> Start();</div>
@@ -124,7 +124,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> StoreTiming();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  Statistics&amp; stats_;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>&amp; stats_;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::chrono::steady_clock::time_point start_time_;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
@@ -148,7 +148,7 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                  <span class="comment">/*extra_buckets=*/</span>1180,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                  <span class="comment">/*extra_bucket_size=*/</span>100&gt;;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">   61</a></span>&#160;<span class="keyword">struct</span> Statistics {</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">   61</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a> {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  Statistics();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::shared_ptr&lt;RequestStats&gt; CreateRequestStats() {</div>
@@ -166,7 +166,7 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    kCount,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  };</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kErrorGroupCount =</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keyword">static_cast</span>&lt;<span class="keywordtype">int</span>&gt;(Statistics::ErrorGroup::kCount);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keyword">static_cast</span>&lt;<span class="keywordtype">int</span>&gt;(<a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>::ErrorGroup::kCount);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">static</span> ErrorGroup ErrorCodeToGroup(std::error_code ec);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
@@ -200,19 +200,19 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> IsForcedStatusCode(<span class="keywordtype">int</span> status);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  InstanceStatistics(<span class="keyword">const</span> Statistics&amp; other);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  InstanceStatistics(<span class="keyword">const</span> <a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>&amp; other);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  uint64_t GetNotOkErrorCount() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> std::vector&lt;InstanceStatistics&gt;&amp; stats);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> std::vector&lt;<a class="code" href="../../de/dea/structclients_1_1http_1_1InstanceStatistics.html">InstanceStatistics</a>&gt;&amp; stats);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">using</span> ErrorGroup = Statistics::ErrorGroup;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">using</span> ErrorGroup = <a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>::ErrorGroup;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  uint64_t easy_handles{0};</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  uint64_t last_time_to_start_us{0};</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  Percentile timings_percentile;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  std::array&lt;uint64_t, Statistics::kErrorGroupCount&gt; error_count{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  std::array&lt;uint64_t, <a class="code" href="../../d9/de1/structclients_1_1http_1_1Statistics.html">Statistics</a>::kErrorGroupCount&gt; error_count{</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      {0, 0, 0, 0, 0, 0, 0}};</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  std::unordered_map&lt;<span class="keywordtype">int</span>, uint64_t&gt; reply_status;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  uint64_t retries{0};</div>
@@ -221,7 +221,7 @@ $(function() {
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="../../df/d23/structclients_1_1http_1_1PoolStatistics.html">  133</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="../../df/d23/structclients_1_1http_1_1PoolStatistics.html">PoolStatistics</a> {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  std::vector&lt;InstanceStatistics&gt; multi;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  std::vector&lt;<a class="code" href="../../de/dea/structclients_1_1http_1_1InstanceStatistics.html">InstanceStatistics</a>&gt; multi;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> FormatMode {</div>

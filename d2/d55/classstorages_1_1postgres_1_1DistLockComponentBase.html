@@ -184,7 +184,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d9d/classdist__lock_1_1DistLockedTask.html">dist_lock::DistLockedTask</a> </dd>
 <dd>
 locked_periodiccomponents::PgLockedPeriodic</dd></dl>
-<h2><a class="anchor" id="autotoc_md493"></a>
+<h2><a class="anchor" id="autotoc_md496"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">example-distlock:</div>
 <div class="line">    cluster: postgresql-service</div>
@@ -193,7 +193,7 @@ Static configuration example:</h2>
 <div class="line">    pg-timeout: 1s</div>
 <div class="line">    lock-ttl: 10s</div>
 <div class="line">    autostart: true</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md494"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md497"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -215,7 +215,7 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">task-processor </td><td class="markdownTableBodyNone">the name of the TaskProcessor for running DoWork </td><td class="markdownTableBodyNone">main-task-processor  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md495"></a>
+<h2><a class="anchor" id="autotoc_md498"></a>
 Migration example</h2>
 <p>You have to create a SQL table for distlocks. An example of the migration script is as following:</p>
 <div class="fragment"><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> service.distlocks</div>
@@ -250,7 +250,7 @@ Migration example</h2>
 </table>
 </div><div class="memdoc">
 <p>Override this function with anything that must be done under the pg lock.</p>
-<h2><a class="anchor" id="autotoc_md496"></a>
+<h2><a class="anchor" id="autotoc_md499"></a>
 Example implementation</h2>
 <p>```cpp void MyDistLockComponent::DoWork() { while (!engine<a class="el" href="../../db/df2/cancel_8hpp.html#aed8fc1cdfd588f3973f5c9bc503c9986">ShouldCancel()</a>) { // If Foo() or other function in <a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html#a892089bee12f7906fc76cb2d72debf46">DoWork()</a> throws an exception, // <a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html#a892089bee12f7906fc76cb2d72debf46">DoWork()</a> will be restarted in <code>restart-delay</code> seconds. Foo();</p>
 <p>// Check for cancellation after cpu-intensive Foo(). // You must check for cancellation at least every <code>lock-ttl</code> // seconds to have time to notice lock prolongation failure. if (<a class="el" href="../../db/df2/cancel_8hpp.html#aed8fc1cdfd588f3973f5c9bc503c9986">engine::ShouldCancel()</a>) break;</p>

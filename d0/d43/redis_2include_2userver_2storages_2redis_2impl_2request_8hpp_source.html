@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> tracing {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class</span> Span;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  RequestFuture() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  RequestFuture(ReplyPtrFuture&amp;&amp; fut,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  RequestFuture(<a class="code" href="../../d0/db4/classredis_1_1ReplyPtrFuture.html">ReplyPtrFuture</a>&amp;&amp; fut,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                std::chrono::steady_clock::time_point t) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      : ro_future_(std::move(fut)), until_(t) {}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ~RequestFuture() = <span class="keywordflow">default</span>;</div>
@@ -121,9 +121,9 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ReplyPtr Get();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  ReplyPtrFuture ro_future_;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d0/db4/classredis_1_1ReplyPtrFuture.html">ReplyPtrFuture</a> ro_future_;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  std::chrono::steady_clock::time_point until_;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::shared_ptr&lt;tracing::Span&gt; span_ptr_;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::shared_ptr&lt;<a class="code" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::Span&gt; span_ptr_;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d5/de1/classredis_1_1Request.html">   39</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d5/de1/classredis_1_1Request.html">Request</a> {</div>
@@ -136,15 +136,15 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  ReplyPtr Get();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d7/d6c/classredis_1_1RequestFuture.html">RequestFuture</a>&amp;&amp; PopFuture();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class</span> Sentinel;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  Request(Sentinel&amp; sentinel, <a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args, <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  Request(<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&amp; sentinel, <a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args, <span class="keyword">const</span> std::string&amp; key,</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          <span class="keywordtype">bool</span> master, <span class="keyword">const</span> <a class="code" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a>&amp; command_control,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          size_t replies_to_skip = 0);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Request(Sentinel&amp; sentinel, <a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args, size_t shard, <span class="keywordtype">bool</span> master,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Request(<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&amp; sentinel, <a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args, size_t shard, <span class="keywordtype">bool</span> master,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          <span class="keyword">const</span> <a class="code" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a>&amp; command_control, size_t replies_to_skip = 0);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  Request(Sentinel&amp; sentinel, <a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args, size_t shard, <span class="keywordtype">bool</span> master,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  Request(<a class="code" href="../../d0/de8/classredis_1_1Sentinel.html">Sentinel</a>&amp; sentinel, <a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args, size_t shard, <span class="keywordtype">bool</span> master,</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <span class="keyword">const</span> <a class="code" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a>&amp; command_control,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          redis::ReplyCallback&amp;&amp; callback);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  CommandPtr PrepareRequest(<a class="code" href="../../d8/d21/classredis_1_1CmdArgs.html">CmdArgs</a>&amp;&amp; args,</div>

@@ -90,7 +90,7 @@ $(function() {
 <div class="contents">
 <a href="../../d6/d50/get__if_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// @file utils/get_if.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// @file userver/utils/get_if.hpp</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// @brief @copybrief utils::GetIf</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">functional</span><span class="preprocessor">&gt;</span></div>
@@ -125,24 +125,25 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/// @brief Dereferences a chain of indirections and compositions,</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/// returns nullptr if one of the chain elements is not set</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/// @snippet shared/src/utils/get_if_test.cpp Sample GetIf Usage</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Root, <span class="keyword">typename</span> Head, <span class="keyword">typename</span>... Tail&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d6/d84/namespaceutils.html#aeb592e7bb4e542c2d916aa5471e29df8">   40</a></span>&#160;<span class="keyword">constexpr</span> <span class="keyword">auto</span>* <a class="code" href="../../d6/d84/namespaceutils.html#aeb592e7bb4e542c2d916aa5471e29df8" title="Dereferences a chain of indirections and compositions, returns nullptr if one of the chain elements i...">GetIf</a>(Root&amp;&amp; root, Head&amp;&amp; head, Tail&amp;&amp;... tail) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (impl::kIsPointerLike&lt;Root&gt;) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> root ? <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::GetIf(*std::forward&lt;Root&gt;(root),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                               std::forward&lt;Head&gt;(head),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                               std::forward&lt;Tail&gt;(tail)...)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                : <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::GetIf(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::invoke(std::forward&lt;Head&gt;(head), std::forward&lt;Root&gt;(root)),</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::forward&lt;Tail&gt;(tail)...);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}  <span class="comment">// namespace utils</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;USERVER_NAMESPACE_END</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/// @snippet shared/src/utils/get_if_test.cpp Sample Usage</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Root, <span class="keyword">typename</span> Head, <span class="keyword">typename</span>... Tail&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d6/d84/namespaceutils.html#aeb592e7bb4e542c2d916aa5471e29df8">   41</a></span>&#160;<span class="keyword">constexpr</span> <span class="keyword">auto</span>* <a class="code" href="../../d6/d84/namespaceutils.html#aeb592e7bb4e542c2d916aa5471e29df8" title="Dereferences a chain of indirections and compositions, returns nullptr if one of the chain elements i...">GetIf</a>(Root&amp;&amp; root, Head&amp;&amp; head, Tail&amp;&amp;... tail) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (impl::kIsPointerLike&lt;Root&gt;) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> root ? <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::GetIf(*std::forward&lt;Root&gt;(root),</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                               std::forward&lt;Head&gt;(head),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                               std::forward&lt;Tail&gt;(tail)...)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                : <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::GetIf(</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::invoke(std::forward&lt;Head&gt;(head), std::forward&lt;Root&gt;(root)),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::forward&lt;Tail&gt;(tail)...);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}  <span class="comment">// namespace utils</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

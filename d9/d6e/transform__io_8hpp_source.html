@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> storages::postgres::io {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::<a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> detail {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -110,9 +110,9 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">using</span> BaseType = BufferParserBase&lt;UserType&gt;;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">using</span> BaseType::BaseType;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> FieldBuffer&amp; buffer) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>&amp; buffer) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    WireType tmp;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    io::ReadBuffer(buffer, tmp);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::ReadBuffer(buffer, tmp);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">this</span>-&gt;value = Converter{}(tmp);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
@@ -123,10 +123,10 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">using</span> BaseType = BufferParserBase&lt;UserType&gt;;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">using</span> BaseType::BaseType;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> FieldBuffer&amp; buffer,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>&amp; buffer,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                  <span class="keyword">const</span> TypeBufferCategory&amp; categories) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    WireType tmp;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    io::ReadBuffer(buffer, tmp, categories);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::ReadBuffer(buffer, tmp, categories);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">this</span>-&gt;value = Converter{}(tmp);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
@@ -150,8 +150,8 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Buffer&gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d8/d8e/classstorages_1_1postgres_1_1UserTypes.html" title="Container for connection-specific user data types.">UserTypes</a>&amp; types, Buffer&amp; buffer) <span class="keyword">const</span> {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (traits::kIsMappedToSystemType&lt;UserType&gt; &amp;&amp;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                  traits::kIsMappedToSystemType&lt;WireType&gt;) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsMappedToSystemType&lt;UserType&gt; &amp;&amp;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                  <a class="code" href="../../d1/d7d/namespacestorages_1_1postgres_1_1io_1_1traits.html" title="uPg input-output traits.">traits</a>::kIsMappedToSystemType&lt;WireType&gt;) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">static_assert</span>(CppToPg&lt;UserType&gt;::type_oid == CppToPg&lt;WireType&gt;::type_oid,</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="stringliteral">&quot;Database type mismatch in TransformFormatter&quot;</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
@@ -160,7 +160,7 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="stringliteral">&quot;Database type mismatch in TransformFormatter&quot;</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    WireType tmp = Converter{}(<span class="keyword">this</span>-&gt;value);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    io::WriteBuffer(types, buffer, tmp);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a>::WriteBuffer(types, buffer, tmp);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace storages::postgres::io</span></div>

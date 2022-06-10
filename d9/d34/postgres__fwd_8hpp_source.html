@@ -99,16 +99,16 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::postgres {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> <a class="code" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class</span> Transaction;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class</span> ResultSet;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class</span> Row;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class</span> <a class="code" href="../../d1/dc2/classstorages_1_1postgres_1_1Transaction.html" title="PostgreSQL transaction.">Transaction</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class</span> <a class="code" href="../../d0/d5b/classstorages_1_1postgres_1_1ResultSet.html" title="PostgreSQL result set.">ResultSet</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class</span> <a class="code" href="../../db/dfe/classstorages_1_1postgres_1_1Row.html">Row</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class</span> Cluster;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class</span> <a class="code" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html" title="Interface for executing queries on a cluster of PostgreSQL servers.">Cluster</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @brief Smart pointer to the storages::postgres::Cluster</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#a1f3c170f905023f7794d9be83255de95">   21</a></span>&#160;<span class="keyword">using</span> ClusterPtr = std::shared_ptr&lt;Cluster&gt;;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#a1f3c170f905023f7794d9be83255de95">   21</a></span>&#160;<span class="keyword">using</span> ClusterPtr = std::shared_ptr&lt;<a class="code" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html" title="Interface for executing queries on a cluster of PostgreSQL servers.">Cluster</a>&gt;;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace</span> detail {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class</span> Connection;</div>

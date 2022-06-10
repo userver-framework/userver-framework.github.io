@@ -102,17 +102,17 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d8/d2b/classutest_1_1HttpServerMock.html">   12</a></span>&#160;<span class="keyword">class</span> <a class="code" href="../../d8/d2b/classutest_1_1HttpServerMock.html">HttpServerMock</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d9/dab/structutest_1_1HttpServerMock_1_1HttpRequest.html">   14</a></span>&#160;  <span class="keyword">struct</span> <a class="code" href="../../d9/dab/structutest_1_1HttpServerMock_1_1HttpRequest.html">HttpRequest</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    clients::http::<a class="code" href="../../df/d66/namespaceclients_1_1http.html#a15e71a4203523ac3e98b244f298ca109" title="HTTP request method.">HttpMethod</a> method{clients::http::<a class="code" href="../../df/d66/namespaceclients_1_1http.html#a15e71a4203523ac3e98b244f298ca109" title="HTTP request method.">HttpMethod</a>::kGet};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a>::<a class="code" href="../../df/d66/namespaceclients_1_1http.html#a15e71a4203523ac3e98b244f298ca109" title="HTTP request method.">HttpMethod</a> method{clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a>::<a class="code" href="../../df/d66/namespaceclients_1_1http.html#a15e71a4203523ac3e98b244f298ca109" title="HTTP request method.">HttpMethod</a>::kGet};</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::string path;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; query;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    clients::http::Headers headers;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a>::Headers headers;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string body;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  };</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/d6f/structutest_1_1HttpServerMock_1_1HttpResponse.html">   23</a></span>&#160;  <span class="keyword">struct</span> <a class="code" href="../../da/d6f/structutest_1_1HttpServerMock_1_1HttpResponse.html">HttpResponse</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> response_status;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    clients::http::Headers headers;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    clients::<a class="code" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a>::Headers headers;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::string body;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  };</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>

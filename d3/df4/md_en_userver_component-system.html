@@ -162,7 +162,7 @@ HowTo</h2>
 <p>Start writing your component from adding a header file with a class inherited from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">components::LoggableComponentBase</a>. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../da/d11/loggable__component__base_8hpp.html" title="Contains components::LoggableComponentBase declaration and forward declarations of components::Compon...">userver/components/loggable_component_base.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d6/dee/dynamic__config_2source_8hpp.html" title="A client for easy dynamic config fetching in components.">userver/dynamic_config/source.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d2e/source_8hpp.html" title="A client for easy dynamic config fetching in components.">userver/dynamic_config/source.hpp</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>myservice::smth {</div>
 <div class="line"> </div>
@@ -189,7 +189,7 @@ HowTo</h2>
 </div><!-- fragment --><p> In source file write the implementation of the component: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d2e/core_2include_2userver_2components_2component_8hpp.html" title="Convinience header that provides all the types for component implementation (components::ComponentCon...">userver/components/component.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d88/core_2include_2userver_2dynamic__config_2storage_2component_8hpp.html" title="Component that stores the runtime config.">userver/dynamic_config/storage/component.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;userver/dynamic_config/value.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;userver/yaml_config/merge_schemas.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d5f/merge__schemas_8hpp.html" title="Merge parent and child components schemas of static configs.">userver/yaml_config/merge_schemas.hpp</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>myservice::smth {</div>
 <div class="line"> </div>

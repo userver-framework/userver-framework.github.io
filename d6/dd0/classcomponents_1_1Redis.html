@@ -181,7 +181,7 @@ static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bot
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../d6/dd0/classcomponents_1_1Redis.html" title="Redis client component.">Redis</a> client component. </p>
 <p>Provides access to a redis cluster.</p>
-<h2><a class="anchor" id="autotoc_md499"></a>
+<h2><a class="anchor" id="autotoc_md502"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -199,15 +199,17 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">groups.[].sharding_strategy </td><td class="markdownTableBodyNone">one of RedisCluster, KeyShardCrc32, KeyShardTaximeterCrc32 or KeyShardGpsStorageDriver </td><td class="markdownTableBodyNone">"KeyShardTaximeterCrc32"  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">groups.[].allow_reads_from_master </td><td class="markdownTableBodyNone">allows read requests from master instance </td><td class="markdownTableBodyNone">false  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">subscribe_groups </td><td class="markdownTableBodyNone">array of redis clusters to work with in subscribe mode </td><td class="markdownTableBodyNone">-  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">subscribe_groups.[].config_name </td><td class="markdownTableBodyNone">key name in secdist with options for this cluster </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">subscribe_groups.[].db </td><td class="markdownTableBodyNone">name to refer to the cluster in components::Redis::GetSubscribeClient() </td><td class="markdownTableBodyNone">-  </td></tr>
+<td class="markdownTableBodyNone">subscribe_groups.[].config_name </td><td class="markdownTableBodyNone">key name in secdist with options for this cluster </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">subscribe_groups.[].db </td><td class="markdownTableBodyNone">name to refer to the cluster in components::Redis::GetSubscribeClient() </td><td class="markdownTableBodyNone">-  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">subscribe_groups.[].sharding_strategy </td><td class="markdownTableBodyNone">either RedisCluster or KeyShardTaximeterCrc32 </td><td class="markdownTableBodyNone">"KeyShardTaximeterCrc32"  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md500"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">redis:</div>
 <div class="line">    groups:</div>
@@ -225,7 +227,7 @@ Static configuration example:</h2>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d0/d6c/samples_2redis_service_2redis_service_8cpp-example.html#_a6">samples/redis_service/redis_service.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dc6/redis_2include_2userver_2storages_2redis_2component_8hpp_source.html#l00077">77</a> of file <a class="el" href="../../d8/dc6/redis_2include_2userver_2storages_2redis_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dc6/redis_2include_2userver_2storages_2redis_2component_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../d8/dc6/redis_2include_2userver_2storages_2redis_2component_8hpp_source.html">component.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>userver/storages/redis/<a class="el" href="../../d8/dc6/redis_2include_2userver_2storages_2redis_2component_8hpp_source.html">component.hpp</a></li>
 </ul>
