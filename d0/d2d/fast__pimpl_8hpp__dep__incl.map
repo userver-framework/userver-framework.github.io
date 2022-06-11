@@ -1,52 +1,52 @@
 <map id="userver/utils/fast_pimpl.hpp" name="userver/utils/fast_pimpl.hpp">
-<area shape="rect" id="node1" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="3327,5,3459,47"/>
-<area shape="rect" id="node2" href="$dc/d4c/mutable__value__wrapper_8hpp_source.html" title=" " alt="" coords="325,199,568,240"/>
-<area shape="rect" id="node5" href="$da/de6/parser__json_8hpp_source.html" title=" " alt="" coords="246,288,421,329"/>
-<area shape="rect" id="node7" href="$d4/d53/parser__state_8hpp_source.html" title=" " alt="" coords="70,102,250,143"/>
-<area shape="rect" id="node10" href="$d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html" title="Parsers and serializers to/from string and stream." alt="" coords="643,102,800,143"/>
-<area shape="rect" id="node12" href="$d6/da3/string__builder_8hpp.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo..." alt="" coords="1080,288,1237,329"/>
-<area shape="rect" id="node14" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="875,288,1056,329"/>
-<area shape="rect" id="node15" href="$d9/d0a/shared_2include_2userver_2formats_2yaml_2iterator_8hpp.html" title="Iterator for formats::yaml::Value" alt="" coords="976,102,1139,143"/>
-<area shape="rect" id="node16" href="$d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp.html" title="Non&#45;mutable YAML value representation." alt="" coords="1036,199,1199,240"/>
-<area shape="rect" id="node17" href="$d5/dff/c__file_8hpp.html" title="A std::FILE* wrapper." alt="" coords="1213,102,1360,143"/>
-<area shape="rect" id="node18" href="$d3/d85/operations__file_8hpp_source.html" title=" " alt="" coords="1265,199,1450,240"/>
-<area shape="rect" id="node19" href="$d6/d6f/regex_8hpp.html" title="Small alias for boost::regex / std::regex without huge includes." alt="" coords="1435,109,1607,136"/>
-<area shape="rect" id="node20" href="$da/de0/traceful__exception_8hpp.html" title="Exception that remembers the backtrace at the point of its construction." alt="" coords="1632,102,1789,143"/>
-<area shape="rect" id="node21" href="$d1/d20/cache__update__trait_8hpp.html" title="Base class for periodically updated caches." alt="" coords="1813,102,1968,143"/>
-<area shape="rect" id="node22" href="$dc/da6/resolver_8hpp.html" title=" " alt="" coords="1993,102,2138,143"/>
-<area shape="rect" id="node23" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="2162,102,2310,143"/>
-<area shape="rect" id="node24" href="$d2/de8/response__future_8hpp_source.html" title=" " alt="" coords="2334,102,2493,143"/>
-<area shape="rect" id="node25" href="$d0/dbe/background__task__storage__fwd_8hpp_source.html" title=" " alt="" coords="2517,95,2710,151"/>
-<area shape="rect" id="node26" href="$dd/d55/core_2include_2userver_2congestion__control_2component_8hpp.html" title="Component to limit too active requests, also known as CC." alt="" coords="3207,199,3385,240"/>
-<area shape="rect" id="node27" href="$d5/dd9/dumper_8hpp.html" title="Manages dumps of a cache&#45;like component." alt="" coords="2786,109,2979,136"/>
-<area shape="rect" id="node28" href="$d9/de9/operations__encrypted_8hpp_source.html" title=" " alt="" coords="3003,102,3189,143"/>
-<area shape="rect" id="node29" href="$df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs." alt="" coords="3403,102,3581,143"/>
-<area shape="rect" id="node30" href="$d2/d88/core_2include_2userver_2dynamic__config_2storage_2component_8hpp.html" title="Component that stores the runtime config." alt="" coords="4346,199,4526,240"/>
-<area shape="rect" id="node31" href="$d9/d6a/detached__tasks__sync__block_8hpp_source.html" title=" " alt="" coords="3605,95,3771,151"/>
-<area shape="rect" id="node32" href="$df/ddb/task__local__storage_8hpp_source.html" title=" " alt="" coords="3795,102,3971,143"/>
-<area shape="rect" id="node33" href="$d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="3995,102,4147,143"/>
-<area shape="rect" id="node34" href="$d0/d92/buffered_8hpp.html" title="Buffered I/O wrappers." alt="" coords="4171,109,4392,136"/>
-<area shape="rect" id="node35" href="$d2/d28/tls__wrapper_8hpp.html" title="TLS socket wrappers." alt="" coords="4416,102,4571,143"/>
-<area shape="rect" id="node36" href="$d6/def/log__extra_8hpp.html" title="Extra tskv fields storage." alt="" coords="4595,102,4741,143"/>
-<area shape="rect" id="node37" href="$dc/dbf/request__context_8hpp.html" title="Stores request&#45;specific data during request processing." alt="" coords="4766,102,4935,143"/>
-<area shape="rect" id="node38" href="$d0/d02/in__place__span_8hpp.html" title="Avoids an extra allocation by storing tracing::Span data in&#45;place." alt="" coords="4960,102,5096,143"/>
-<area shape="rect" id="node39" href="$de/d4e/utils_2async_8hpp.html" title="Utility functions to start asynchronous tasks." alt="" coords="5120,109,5293,136"/>
-<area shape="rect" id="node40" href="$d4/ddc/entry_8hpp_source.html" title=" " alt="" coords="3213,102,3379,143"/>
-<area shape="rect" id="node41" href="$d9/d03/bson__builder_8hpp.html" title="Internal helpers for inline document build." alt="" coords="5369,102,5530,143"/>
-<area shape="rect" id="node42" href="$d1/d71/mongo_2include_2userver_2formats_2bson_2inline_8hpp.html" title="Inline value builders." alt="" coords="5427,199,5589,240"/>
-<area shape="rect" id="node43" href="$d6/de5/mongo_2include_2userver_2formats_2bson_2serialize_8hpp.html" title="Textual serialization helpers." alt="" coords="5606,102,5767,143"/>
-<area shape="rect" id="node44" href="$d5/d0f/bulk_8hpp.html" title="Bulk collection operation model." alt="" coords="5779,199,5959,240"/>
-<area shape="rect" id="node45" href="$d3/df1/bulk__ops_8hpp.html" title="Bulk sub&#45;operation models." alt="" coords="5843,102,6023,143"/>
-<area shape="rect" id="node46" href="$de/d6b/mongo_2include_2userver_2storages_2mongo_2operations_8hpp.html" title="Collection operation models." alt="" coords="6047,102,6227,143"/>
-<area shape="rect" id="node47" href="$d2/de3/portal_8hpp_source.html" title=" " alt="" coords="6251,102,6442,143"/>
-<area shape="rect" id="node48" href="$d0/d28/redis_2include_2userver_2storages_2redis_2impl_2types_8hpp_source.html" title=" " alt="" coords="6466,102,6633,143"/>
-<area shape="rect" id="node49" href="$d6/d71/queue__holder_8hpp.html" title="Manages a gRPC completion queue, usable only in clients." alt="" coords="6657,102,6807,143"/>
-<area shape="rect" id="node50" href="$d4/d79/grpc_2include_2userver_2ugrpc_2server_2server_8hpp.html" title="Manages the gRPC server." alt="" coords="6831,102,6987,143"/>
-<area shape="rect" id="node3" href="$db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp.html" title="Builder for JSON." alt="" coords="541,288,699,329"/>
-<area shape="rect" id="node4" href="$d5/db8/json_8hpp.html" title="Include&#45;all header for JSON support." alt="" coords="521,385,706,411"/>
-<area shape="rect" id="node6" href="$d1/d46/parser_8hpp_source.html" title=" " alt="" coords="255,377,412,419"/>
-<area shape="rect" id="node8" href="$d9/d0a/base__parser_8hpp_source.html" title=" " alt="" coords="73,199,250,240"/>
-<area shape="rect" id="node9" href="$dd/d4b/parser__handler_8hpp_source.html" title=" " alt="" coords="5,288,200,329"/>
-<area shape="rect" id="node11" href="$d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non&#45;mutable JSON value representation." alt="" coords="643,199,800,240"/>
-<area shape="rect" id="node13" href="$df/db4/json__helpers_8hpp.html" title="Convenience functions to load and dump as JSON in classes derived from components::CachingComponentBa..." alt="" coords="731,385,957,411"/>
+<area shape="rect" id="node1" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="3048,5,3167,47"/>
+<area shape="rect" id="node2" href="$d1/d20/cache__update__trait_8hpp.html" title="Base class for periodically updated caches." alt="" coords="11,102,153,143"/>
+<area shape="rect" id="node4" href="$dc/da6/resolver_8hpp.html" title=" " alt="" coords="397,102,529,143"/>
+<area shape="rect" id="node6" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="293,288,426,329"/>
+<area shape="rect" id="node8" href="$d2/de8/response__future_8hpp_source.html" title=" " alt="" coords="178,102,322,143"/>
+<area shape="rect" id="node10" href="$d0/dbe/background__task__storage__fwd_8hpp_source.html" title=" " alt="" coords="1015,95,1189,151"/>
+<area shape="rect" id="node11" href="$dd/d55/core_2include_2userver_2congestion__control_2component_8hpp.html" title="Component to limit too active requests, also known as CC." alt="" coords="605,199,767,240"/>
+<area shape="rect" id="node12" href="$d5/dd9/dumper_8hpp.html" title="Manages dumps of a cache&#45;like component." alt="" coords="1213,109,1385,136"/>
+<area shape="rect" id="node14" href="$d9/de9/operations__encrypted_8hpp_source.html" title=" " alt="" coords="1410,102,1575,143"/>
+<area shape="rect" id="node15" href="$d3/d85/operations__file_8hpp_source.html" title=" " alt="" coords="1599,199,1765,240"/>
+<area shape="rect" id="node16" href="$df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs." alt="" coords="779,102,939,143"/>
+<area shape="rect" id="node19" href="$d2/d88/core_2include_2userver_2dynamic__config_2storage_2component_8hpp.html" title="Component that stores the runtime config." alt="" coords="1198,199,1361,240"/>
+<area shape="rect" id="node20" href="$d9/d6a/detached__tasks__sync__block_8hpp_source.html" title=" " alt="" coords="1807,95,1960,151"/>
+<area shape="rect" id="node21" href="$df/ddb/task__local__storage_8hpp_source.html" title=" " alt="" coords="1985,102,2145,143"/>
+<area shape="rect" id="node22" href="$d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="2169,102,2304,143"/>
+<area shape="rect" id="node23" href="$d0/d92/buffered_8hpp.html" title="Buffered I/O wrappers." alt="" coords="2329,109,2526,136"/>
+<area shape="rect" id="node24" href="$d2/d28/tls__wrapper_8hpp.html" title="TLS socket wrappers." alt="" coords="2550,102,2689,143"/>
+<area shape="rect" id="node25" href="$d9/d03/bson__builder_8hpp.html" title="Internal helpers for inline document build." alt="" coords="2764,102,2909,143"/>
+<area shape="rect" id="node26" href="$d1/d71/mongo_2include_2userver_2formats_2bson_2inline_8hpp.html" title="Inline value builders." alt="" coords="2708,199,2853,240"/>
+<area shape="rect" id="node27" href="$d6/de5/mongo_2include_2userver_2formats_2bson_2serialize_8hpp.html" title="Textual serialization helpers." alt="" coords="2933,102,3079,143"/>
+<area shape="rect" id="node28" href="$dc/d4c/mutable__value__wrapper_8hpp_source.html" title=" " alt="" coords="3103,102,3317,143"/>
+<area shape="rect" id="node29" href="$da/de6/parser__json_8hpp_source.html" title=" " alt="" coords="3341,102,3500,143"/>
+<area shape="rect" id="node30" href="$d4/d53/parser__state_8hpp_source.html" title=" " alt="" coords="3525,102,3687,143"/>
+<area shape="rect" id="node31" href="$d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html" title="Parsers and serializers to/from string and stream." alt="" coords="3711,102,3853,143"/>
+<area shape="rect" id="node32" href="$d6/da3/string__builder_8hpp.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo..." alt="" coords="3877,102,4018,143"/>
+<area shape="rect" id="node33" href="$d9/d0a/shared_2include_2userver_2formats_2yaml_2iterator_8hpp.html" title="Iterator for formats::yaml::Value" alt="" coords="4093,102,4239,143"/>
+<area shape="rect" id="node34" href="$d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp.html" title="Non&#45;mutable YAML value representation." alt="" coords="4037,199,4183,240"/>
+<area shape="rect" id="node35" href="$d5/dff/c__file_8hpp.html" title="A std::FILE* wrapper." alt="" coords="1651,102,1783,143"/>
+<area shape="rect" id="node36" href="$d6/def/log__extra_8hpp.html" title="Extra tskv fields storage." alt="" coords="4263,102,4394,143"/>
+<area shape="rect" id="node37" href="$dc/dbf/request__context_8hpp.html" title="Stores request&#45;specific data during request processing." alt="" coords="4418,102,4570,143"/>
+<area shape="rect" id="node38" href="$d5/d0f/bulk_8hpp.html" title="Bulk collection operation model." alt="" coords="4585,199,4747,240"/>
+<area shape="rect" id="node39" href="$d3/df1/bulk__ops_8hpp.html" title="Bulk sub&#45;operation models." alt="" coords="4645,102,4807,143"/>
+<area shape="rect" id="node40" href="$de/d6b/mongo_2include_2userver_2storages_2mongo_2operations_8hpp.html" title="Collection operation models." alt="" coords="4831,102,4994,143"/>
+<area shape="rect" id="node41" href="$d2/de3/portal_8hpp_source.html" title=" " alt="" coords="5018,102,5191,143"/>
+<area shape="rect" id="node42" href="$d0/d28/redis_2include_2userver_2storages_2redis_2impl_2types_8hpp_source.html" title=" " alt="" coords="5216,102,5367,143"/>
+<area shape="rect" id="node43" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="5391,102,5557,143"/>
+<area shape="rect" id="node44" href="$d0/d02/in__place__span_8hpp.html" title="Avoids an extra allocation by storing tracing::Span data in&#45;place." alt="" coords="5581,102,5703,143"/>
+<area shape="rect" id="node45" href="$d6/d71/queue__holder_8hpp.html" title="Manages a gRPC completion queue, usable only in clients." alt="" coords="5727,102,5863,143"/>
+<area shape="rect" id="node46" href="$d4/d79/grpc_2include_2userver_2ugrpc_2server_2server_8hpp.html" title="Manages the gRPC server." alt="" coords="5887,102,6029,143"/>
+<area shape="rect" id="node47" href="$de/d4e/utils_2async_8hpp.html" title="Utility functions to start asynchronous tasks." alt="" coords="6053,109,6210,136"/>
+<area shape="rect" id="node48" href="$d6/d6f/regex_8hpp.html" title="Small alias for boost::regex / std::regex without huge includes." alt="" coords="6234,109,6389,136"/>
+<area shape="rect" id="node49" href="$d4/ddc/entry_8hpp_source.html" title=" " alt="" coords="553,102,704,143"/>
+<area shape="rect" id="node50" href="$da/de0/traceful__exception_8hpp.html" title="Exception that remembers the backtrace at the point of its construction." alt="" coords="6413,102,6553,143"/>
+<area shape="rect" id="node3" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="5,199,159,240"/>
+<area shape="rect" id="node5" href="$d6/dbb/core_2include_2userver_2clients_2dns_2component_8hpp.html" title="Caching DNS resolver component." alt="" coords="397,199,529,240"/>
+<area shape="rect" id="node7" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="501,377,634,419"/>
+<area shape="rect" id="node9" href="$d1/d57/core_2include_2userver_2clients_2http_2request_8hpp.html" title="Class for creating and performing new http requests." alt="" coords="186,199,319,240"/>
+<area shape="rect" id="node13" href="$d2/d2b/dump__control_8hpp.html" title="Dumper control interface for testsuite." alt="" coords="1385,199,1539,240"/>
+<area shape="rect" id="node17" href="$da/d9b/cache__config_8hpp_source.html" title=" " alt="" coords="843,199,985,240"/>
+<area shape="rect" id="node18" href="$d0/dbc/lru__cache__config_8hpp_source.html" title=" " alt="" coords="1009,199,1173,240"/>
 </map>

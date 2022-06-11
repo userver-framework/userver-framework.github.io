@@ -1,52 +1,52 @@
 <map id="userver/formats/json/exception.hpp" name="userver/formats/json/exception.hpp">
-<area shape="rect" id="node1" title="Exception classes for JSON module." alt="" coords="395,5,553,47"/>
-<area shape="rect" id="node2" href="$d1/d15/shared_2include_2userver_2formats_2json_2parser_2exception_8hpp_source.html" title=" " alt="" coords="251,95,414,136"/>
-<area shape="rect" id="node8" href="$d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non&#45;mutable JSON value representation." alt="" coords="2363,95,2521,136"/>
-<area shape="rect" id="node10" href="$d5/db8/json_8hpp.html" title="Include&#45;all header for JSON support." alt="" coords="432,281,617,307"/>
-<area shape="rect" id="node3" href="$d9/d0a/base__parser_8hpp_source.html" title=" " alt="" coords="221,184,399,225"/>
-<area shape="rect" id="node4" href="$dd/d4b/parser__handler_8hpp_source.html" title=" " alt="" coords="213,273,407,315"/>
-<area shape="rect" id="node5" href="$d7/de6/typed__parser_8hpp_source.html" title=" " alt="" coords="5,273,188,315"/>
-<area shape="rect" id="node6" href="$da/de6/parser__json_8hpp_source.html" title=" " alt="" coords="732,363,907,404"/>
-<area shape="rect" id="node7" href="$d1/d46/parser_8hpp_source.html" title=" " alt="" coords="741,452,898,493"/>
-<area shape="rect" id="node9" href="$dd/d6c/shared_2include_2userver_2formats_2json_2inline_8hpp.html" title="Inline value builders." alt="" coords="1026,184,1183,225"/>
-<area shape="rect" id="node12" href="$d3/d0e/json__error__builder_8hpp_source.html" title=" " alt="" coords="4122,452,4298,493"/>
-<area shape="rect" id="node13" href="$db/d08/legacy__json__error__builder_8hpp_source.html" title=" " alt="" coords="4453,452,4673,493"/>
-<area shape="rect" id="node16" href="$d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html" title="Parsers and serializers to/from string and stream." alt="" coords="562,184,719,225"/>
-<area shape="rect" id="node17" href="$df/db4/json__helpers_8hpp.html" title="Convenience functions to load and dump as JSON in classes derived from components::CachingComponentBa..." alt="" coords="642,281,869,307"/>
-<area shape="rect" id="node18" href="$d6/da3/string__builder_8hpp.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo..." alt="" coords="794,184,951,225"/>
-<area shape="rect" id="node19" href="$db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp.html" title="Builder for JSON." alt="" coords="1665,184,1822,225"/>
-<area shape="rect" id="node26" href="$d3/d9b/metric__tag__impl_8hpp_source.html" title=" " alt="" coords="2383,273,2549,315"/>
-<area shape="rect" id="node28" href="$d4/d6c/core_2include_2userver_2clients_2http_2statistics_8hpp_source.html" title=" " alt="" coords="1968,184,2116,225"/>
-<area shape="rect" id="node31" href="$d8/ded/dist__locked__worker_8hpp_source.html" title=" " alt="" coords="2140,184,2301,225"/>
-<area shape="rect" id="node34" href="$d6/d05/dump_2config_8hpp_source.html" title=" " alt="" coords="3453,191,3636,218"/>
-<area shape="rect" id="node36" href="$df/db4/storage__mock_8hpp.html" title="Backing storage for dynamic_config::Source in tests and benchmarks." alt="" coords="3684,273,3861,315"/>
-<area shape="rect" id="node39" href="$d0/dcf/core_2include_2userver_2dynamic__config_2value_8hpp_source.html" title=" " alt="" coords="3940,184,4117,225"/>
-<area shape="rect" id="node43" href="$d7/d16/auth__checker__settings_8hpp_source.html" title=" " alt="" coords="2326,184,2558,225"/>
-<area shape="rect" id="node44" href="$d8/d82/core_2include_2userver_2server_2server_8hpp_source.html" title=" " alt="" coords="2583,191,2771,218"/>
-<area shape="rect" id="node45" href="$df/db4/storages_2secdist_2helpers_8hpp_source.html" title=" " alt="" coords="2795,184,2977,225"/>
-<area shape="rect" id="node46" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="3001,184,3182,225"/>
-<area shape="rect" id="node47" href="$d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon..." alt="" coords="3207,191,3429,218"/>
-<area shape="rect" id="node48" href="$d1/dd7/mongo_2include_2userver_2storages_2mongo_2component_8hpp.html" title="MongoDB client component." alt="" coords="4329,273,4509,315"/>
-<area shape="rect" id="node49" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="4151,184,4331,225"/>
-<area shape="rect" id="node50" href="$d3/de4/clickhouse_2include_2userver_2storages_2clickhouse_2impl_2pool_8hpp_source.html" title=" " alt="" coords="3712,184,3916,225"/>
-<area shape="rect" id="node15" href="$dd/d80/min__max__avg_8hpp.html" title="Class for concurrent safe calculation of minimum, maximum and average over series of values." alt="" coords="944,273,1111,315"/>
-<area shape="rect" id="node11" href="$d4/d07/core_2include_2userver_2server_2handlers_2exceptions_8hpp.html" title="Helpers for throwing exceptions." alt="" coords="1361,363,1537,404"/>
-<area shape="rect" id="node14" href="$dd/d50/json__types_8hpp.html" title="JSON I/O support." alt="" coords="429,363,620,404"/>
-<area shape="rect" id="node20" href="$d8/de6/serialize__boost__variant_8hpp.html" title="Serializers for boost::variant types." alt="" coords="1771,273,1977,315"/>
-<area shape="rect" id="node21" href="$d2/d2a/serialize__duration_8hpp.html" title="Serializers for std::chrono::duration types." alt="" coords="2001,273,2171,315"/>
-<area shape="rect" id="node22" href="$df/d21/serialize__variant_8hpp.html" title="Serializers for std::variant." alt="" coords="2195,273,2358,315"/>
-<area shape="rect" id="node23" href="$dd/dd1/aggregated__values_8hpp_source.html" title=" " alt="" coords="1135,273,1314,315"/>
-<area shape="rect" id="node24" href="$da/d24/metadata_8hpp.html" title="Definitions for metrics metadata." alt="" coords="1580,273,1747,315"/>
-<area shape="rect" id="node25" href="$d8/d7b/percentile__format__json_8hpp_source.html" title=" " alt="" coords="1561,363,1765,404"/>
-<area shape="rect" id="node27" href="$da/d07/storage_8hpp_source.html" title=" " alt="" coords="1389,273,1556,315"/>
-<area shape="rect" id="node29" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="2573,273,2721,315"/>
-<area shape="rect" id="node30" href="$db/dea/destination__statistics_8hpp_source.html" title=" " alt="" coords="2745,273,2939,315"/>
-<area shape="rect" id="node32" href="$d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp.html" title="Base class for mongo&#45;based distlock worker components." alt="" coords="2963,273,3193,315"/>
-<area shape="rect" id="node33" href="$dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="3217,273,3448,315"/>
-<area shape="rect" id="node35" href="$dc/d2d/factory_8hpp_source.html" title=" " alt="" coords="3472,281,3660,307"/>
-<area shape="rect" id="node37" href="$d6/dc6/benchmark__helpers_8hpp_source.html" title=" " alt="" coords="3652,452,3835,493"/>
-<area shape="rect" id="node38" href="$d5/d18/include_2userver_2dynamic__config_2impl_2test__helpers_8hpp_source.html" title=" " alt="" coords="3620,363,3797,404"/>
-<area shape="rect" id="node40" href="$d3/dc3/core_2include_2userver_2clients_2config_2client_8hpp_source.html" title=" " alt="" coords="4005,363,4167,404"/>
-<area shape="rect" id="node41" href="$d2/d68/core_2include_2userver_2dynamic__config_2client_2client_8hpp.html" title="Client for the configs service." alt="" coords="4128,273,4305,315"/>
-<area shape="rect" id="node42" href="$d0/d5e/redis__config_8hpp_source.html" title=" " alt="" coords="3937,273,4104,315"/>
+<area shape="rect" id="node1" title="Exception classes for JSON module." alt="" coords="2055,5,2197,47"/>
+<area shape="rect" id="node2" href="$d5/db8/json_8hpp.html" title="Include&#45;all header for JSON support." alt="" coords="2371,281,2537,307"/>
+<area shape="rect" id="node13" href="$d1/d15/shared_2include_2userver_2formats_2json_2parser_2exception_8hpp_source.html" title=" " alt="" coords="999,95,1146,136"/>
+<area shape="rect" id="node19" href="$d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non&#45;mutable JSON value representation." alt="" coords="2055,95,2197,136"/>
+<area shape="rect" id="node3" href="$d4/d07/core_2include_2userver_2server_2handlers_2exceptions_8hpp.html" title="Helpers for throwing exceptions." alt="" coords="1852,363,2011,404"/>
+<area shape="rect" id="node11" href="$dd/d50/json__types_8hpp.html" title="JSON I/O support." alt="" coords="2367,363,2541,404"/>
+<area shape="rect" id="node4" href="$da/dff/auth__checker__base_8hpp_source.html" title=" " alt="" coords="2035,452,2228,493"/>
+<area shape="rect" id="node5" href="$d4/df6/http__handler__base_8hpp.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="2120,541,2279,583"/>
+<area shape="rect" id="node7" href="$df/dd5/handler__base_8hpp.html" title="Base class for the request handlers." alt="" coords="1852,452,2011,493"/>
+<area shape="rect" id="node8" href="$d3/d0e/json__error__builder_8hpp_source.html" title=" " alt="" coords="1224,452,1383,493"/>
+<area shape="rect" id="node9" href="$db/d08/legacy__json__error__builder_8hpp_source.html" title=" " alt="" coords="1473,452,1670,493"/>
+<area shape="rect" id="node10" href="$da/dfa/http__error_8hpp.html" title="Get http status code mapped to generic handler error code." alt="" coords="1697,452,1827,493"/>
+<area shape="rect" id="node6" href="$d8/d82/core_2include_2userver_2server_2server_8hpp_source.html" title=" " alt="" coords="2912,631,3081,657"/>
+<area shape="rect" id="node12" href="$de/d7f/supported__types_8hpp_source.html" title=" " alt="" coords="2367,452,2541,493"/>
+<area shape="rect" id="node14" href="$d9/d0a/base__parser_8hpp_source.html" title=" " alt="" coords="207,184,368,225"/>
+<area shape="rect" id="node15" href="$dd/d4b/parser__handler_8hpp_source.html" title=" " alt="" coords="5,273,180,315"/>
+<area shape="rect" id="node16" href="$d7/de6/typed__parser_8hpp_source.html" title=" " alt="" coords="205,273,370,315"/>
+<area shape="rect" id="node17" href="$da/de6/parser__json_8hpp_source.html" title=" " alt="" coords="513,363,672,404"/>
+<area shape="rect" id="node18" href="$d1/d46/parser_8hpp_source.html" title=" " alt="" coords="522,452,663,493"/>
+<area shape="rect" id="node20" href="$d4/d6c/core_2include_2userver_2clients_2http_2statistics_8hpp_source.html" title=" " alt="" coords="3774,184,3907,225"/>
+<area shape="rect" id="node23" href="$d8/ded/dist__locked__worker_8hpp_source.html" title=" " alt="" coords="659,184,806,225"/>
+<area shape="rect" id="node26" href="$d6/d05/dump_2config_8hpp_source.html" title=" " alt="" coords="865,191,1030,218"/>
+<area shape="rect" id="node28" href="$df/db4/json__helpers_8hpp.html" title="Convenience functions to load and dump as JSON in classes derived from components::CachingComponentBa..." alt="" coords="1801,281,2003,307"/>
+<area shape="rect" id="node29" href="$df/db4/storage__mock_8hpp.html" title="Backing storage for dynamic_config::Source in tests and benchmarks." alt="" coords="1105,273,1265,315"/>
+<area shape="rect" id="node32" href="$d0/dcf/core_2include_2userver_2dynamic__config_2value_8hpp_source.html" title=" " alt="" coords="1390,184,1550,225"/>
+<area shape="rect" id="node36" href="$dd/d6c/shared_2include_2userver_2formats_2json_2inline_8hpp.html" title="Inline value builders." alt="" coords="1955,184,2097,225"/>
+<area shape="rect" id="node38" href="$d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html" title="Parsers and serializers to/from string and stream." alt="" coords="1790,184,1931,225"/>
+<area shape="rect" id="node39" href="$d6/da3/string__builder_8hpp.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo..." alt="" coords="1574,184,1715,225"/>
+<area shape="rect" id="node40" href="$db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp.html" title="Builder for JSON." alt="" coords="3270,184,3411,225"/>
+<area shape="rect" id="node43" href="$d3/d9b/metric__tag__impl_8hpp_source.html" title=" " alt="" coords="3361,273,3512,315"/>
+<area shape="rect" id="node44" href="$d7/d16/auth__checker__settings_8hpp_source.html" title=" " alt="" coords="2121,184,2331,225"/>
+<area shape="rect" id="node45" href="$d3/de4/clickhouse_2include_2userver_2storages_2clickhouse_2impl_2pool_8hpp_source.html" title=" " alt="" coords="2356,184,2541,225"/>
+<area shape="rect" id="node46" href="$d1/dd7/mongo_2include_2userver_2storages_2mongo_2component_8hpp.html" title="MongoDB client component." alt="" coords="3537,273,3699,315"/>
+<area shape="rect" id="node47" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="3537,184,3699,225"/>
+<area shape="rect" id="node48" href="$df/db4/storages_2secdist_2helpers_8hpp_source.html" title=" " alt="" coords="2617,184,2782,225"/>
+<area shape="rect" id="node49" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="2806,184,2971,225"/>
+<area shape="rect" id="node50" href="$d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon..." alt="" coords="2996,191,3195,218"/>
+<area shape="rect" id="node21" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="3774,273,3907,315"/>
+<area shape="rect" id="node22" href="$db/dea/destination__statistics_8hpp_source.html" title=" " alt="" coords="3932,273,4107,315"/>
+<area shape="rect" id="node24" href="$d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp.html" title="Base class for mongo&#45;based distlock worker components." alt="" coords="628,273,837,315"/>
+<area shape="rect" id="node25" href="$dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="395,273,604,315"/>
+<area shape="rect" id="node27" href="$dc/d2d/factory_8hpp_source.html" title=" " alt="" coords="862,281,1030,307"/>
+<area shape="rect" id="node30" href="$d6/dc6/benchmark__helpers_8hpp_source.html" title=" " alt="" coords="1012,452,1176,493"/>
+<area shape="rect" id="node31" href="$d5/d18/include_2userver_2dynamic__config_2impl_2test__helpers_8hpp_source.html" title=" " alt="" coords="1001,363,1161,404"/>
+<area shape="rect" id="node33" href="$d3/dc3/core_2include_2userver_2clients_2config_2client_8hpp_source.html" title=" " alt="" coords="1618,363,1765,404"/>
+<area shape="rect" id="node34" href="$d2/d68/core_2include_2userver_2dynamic__config_2client_2client_8hpp.html" title="Client for the configs service." alt="" coords="1617,273,1777,315"/>
+<area shape="rect" id="node35" href="$d0/d5e/redis__config_8hpp_source.html" title=" " alt="" coords="1441,273,1592,315"/>
+<area shape="rect" id="node37" href="$dd/d80/min__max__avg_8hpp.html" title="Class for concurrent safe calculation of minimum, maximum and average over series of values." alt="" coords="2028,273,2179,315"/>
+<area shape="rect" id="node41" href="$d8/de6/serialize__boost__variant_8hpp.html" title="Serializers for boost::variant types." alt="" coords="3153,273,3337,315"/>
+<area shape="rect" id="node42" href="$d2/d2a/serialize__duration_8hpp.html" title="Serializers for std::chrono::duration types." alt="" coords="2977,273,3129,315"/>
 </map>

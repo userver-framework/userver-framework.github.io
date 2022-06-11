@@ -1,21 +1,21 @@
 <map id="userver/formats/yaml_fwd.hpp" name="userver/formats/yaml_fwd.hpp">
-<area shape="rect" id="node1" title="Forward declarations of formats::yaml types, formats::parse::To and formats::serialize::To." alt="" coords="676,5,839,47"/>
-<area shape="rect" id="node2" href="$d2/d67/schema_8hpp.html" title="JSON Schema&#45;like type definition." alt="" coords="680,95,835,136"/>
-<area shape="rect" id="node3" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="189,191,357,233"/>
-<area shape="rect" id="node7" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="568,191,747,233"/>
-<area shape="rect" id="node8" href="$d5/d4d/http__handler__flatbuf__base_8hpp.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="771,184,947,240"/>
-<area shape="rect" id="node9" href="$d2/d80/validate__static__config_8hpp_source.html" title=" " alt="" coords="971,184,1125,240"/>
-<area shape="rect" id="node18" href="$dc/d5f/merge__schemas_8hpp.html" title="Merge parent and child components schemas of static configs." alt="" coords="382,191,543,233"/>
-<area shape="rect" id="node19" href="$d1/d68/service__component__base_8hpp.html" title="Base class for all the gRPC service components." alt="" coords="1149,191,1368,233"/>
-<area shape="rect" id="node4" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="5,288,187,329"/>
-<area shape="rect" id="node5" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="211,288,359,329"/>
-<area shape="rect" id="node6" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL derived from components::CachingComponentBase." alt="" coords="383,288,542,329"/>
-<area shape="rect" id="node10" href="$df/d88/static__config__validator_8hpp_source.html" title=" " alt="" coords="948,288,1148,329"/>
-<area shape="rect" id="node11" href="$d9/d32/component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co..." alt="" coords="971,377,1125,419"/>
-<area shape="rect" id="node12" href="$d1/d1c/common__component__list_8hpp.html" title="Returns the most common list of components with runtime config updates and HTTP client." alt="" coords="345,474,564,515"/>
-<area shape="rect" id="node13" href="$dc/dec/common__server__component__list_8hpp.html" title="Returns the most common list of components to start a fully functional server." alt="" coords="588,467,799,523"/>
-<area shape="rect" id="node14" href="$d9/d9e/minimal__component__list_8hpp.html" title="Returns a list of components to do basic logging, component initialization and configuration." alt="" coords="823,474,1038,515"/>
-<area shape="rect" id="node15" href="$db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server." alt="" coords="1063,467,1271,523"/>
-<area shape="rect" id="node16" href="$da/d51/run_8hpp.html" title="Functions to start a service or tool with the specified config and components::ComponentList." alt="" coords="1295,474,1449,515"/>
-<area shape="rect" id="node17" href="$d7/de0/daemon__run_8hpp.html" title="Functions to start a daemon with specified components list." alt="" coords="1473,474,1633,515"/>
+<area shape="rect" id="node1" title="Forward declarations of formats::yaml types, formats::parse::To and formats::serialize::To." alt="" coords="455,5,601,47"/>
+<area shape="rect" id="node2" href="$d2/d67/schema_8hpp.html" title="JSON Schema&#45;like type definition." alt="" coords="459,95,597,136"/>
+<area shape="rect" id="node3" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="177,191,330,233"/>
+<area shape="rect" id="node7" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="354,191,518,233"/>
+<area shape="rect" id="node8" href="$d5/d4d/http__handler__flatbuf__base_8hpp.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="542,184,701,240"/>
+<area shape="rect" id="node9" href="$d1/d68/service__component__base_8hpp.html" title="Base class for all the gRPC service components." alt="" coords="725,191,923,233"/>
+<area shape="rect" id="node10" href="$d2/d80/validate__static__config_8hpp_source.html" title=" " alt="" coords="948,184,1087,240"/>
+<area shape="rect" id="node19" href="$dc/d5f/merge__schemas_8hpp.html" title="Merge parent and child components schemas of static configs." alt="" coords="5,191,152,233"/>
+<area shape="rect" id="node4" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="11,288,147,329"/>
+<area shape="rect" id="node5" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL derived from components::CachingComponentBase." alt="" coords="171,288,317,329"/>
+<area shape="rect" id="node6" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="341,288,504,329"/>
+<area shape="rect" id="node11" href="$df/d88/static__config__validator_8hpp_source.html" title=" " alt="" coords="927,288,1107,329"/>
+<area shape="rect" id="node12" href="$d9/d32/component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co..." alt="" coords="947,377,1087,419"/>
+<area shape="rect" id="node13" href="$d1/d1c/common__component__list_8hpp.html" title="Returns the most common list of components with runtime config updates and HTTP client." alt="" coords="382,474,578,515"/>
+<area shape="rect" id="node14" href="$dc/dec/common__server__component__list_8hpp.html" title="Returns the most common list of components to start a fully functional server." alt="" coords="602,467,793,523"/>
+<area shape="rect" id="node15" href="$d9/d9e/minimal__component__list_8hpp.html" title="Returns a list of components to do basic logging, component initialization and configuration." alt="" coords="817,474,1007,515"/>
+<area shape="rect" id="node16" href="$db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server." alt="" coords="1031,467,1217,523"/>
+<area shape="rect" id="node17" href="$da/d51/run_8hpp.html" title="Functions to start a service or tool with the specified config and components::ComponentList." alt="" coords="1241,474,1381,515"/>
+<area shape="rect" id="node18" href="$d7/de0/daemon__run_8hpp.html" title="Functions to start a daemon with specified components list." alt="" coords="1405,474,1547,515"/>
 </map>

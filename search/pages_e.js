@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['third_20party_20code_20licenses_6291',['Third Party Code Licenses',['../da/d00/md__home_alex_docs_userver_THIRD_PARTY.html',1,'']]],
-  ['the_20basics_6292',['The Basics',['../d2/d54/md_en_userver_intro.html',1,'']]],
-  ['todo_20list_6293',['Todo List',['../dd/da0/todo.html',1,'']]]
+  ['the_20basics_0',['The Basics',['../d2/d54/md_en_userver_intro.html',1,'']]],
+  ['third_20party_20code_20licenses_1',['Third Party Code Licenses',['../d4/d8b/md__Users_alexiprof_userver_THIRD_PARTY.html',1,'']]],
+  ['todo_20list_2',['Todo List',['../dd/da0/todo.html',1,'']]]
 ];

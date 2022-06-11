@@ -1,3 +1,53 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d5/df5/structcache_1_1LruCacheConfig.html" title=" " alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node1" href="$da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="324,86,495,113"/>
+<area shape="rect" id="node2" href="$df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="591,5,821,47"/>
+<area shape="rect" id="node4" href="$df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="598,71,814,127"/>
+<area shape="rect" id="node6" href="$df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components." alt="" coords="598,152,814,193"/>
+<area shape="rect" id="node3" href="$d3/da0/classcomponents_1_1DynamicConfigClientUpdater.html" title="Component that does a periodic update of runtime configs." alt="" coords="893,5,1084,47"/>
+<area shape="rect" id="node5" href="$d2/d39/classcomponents_1_1MongoCache.html" title="Base class for all caches polling mongo collection" alt="" coords="899,79,1078,120"/>
+<area shape="rect" id="node7" href="$d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL derived from components::CachingComponentBase." alt="" coords="897,152,1081,193"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,842,236,869"/>
+<area shape="rect" id="node9" href="$d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="284,867,535,894"/>
+<area shape="rect" id="node47" href="$d4/da4/classcomponents_1_1Logging.html" title="Logging component" alt="" coords="336,918,483,945"/>
+<area shape="rect" id="node48" href="$d0/d7a/classcomponents_1_1LoggingConfigurator.html" title="Helper component to configure logging." alt="" coords="301,969,518,995"/>
+<area shape="rect" id="node49" href="$dc/d21/classcomponents_1_1ManagerControllerComponent.html" title="Component that prepares the engine internals and starts all the other components." alt="" coords="306,700,513,741"/>
+<area shape="rect" id="node50" href="$d9/de2/classcomponents_1_1TestsuiteSupport.html" title="Testsuite support component." alt="" coords="310,766,509,793"/>
+<area shape="rect" id="node51" href="$d4/d23/classcomponents_1_1Tracer.html" title="Component that initializes the request tracing facilities." alt="" coords="340,817,479,843"/>
+<area shape="rect" id="node10" href="$d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU&#45;cache components." alt="" coords="612,751,800,792"/>
+<area shape="rect" id="node11" href="$d0/d1e/classclients_1_1dns_1_1Component.html" title="Caching DNS resolver component." alt="" coords="624,817,788,843"/>
+<area shape="rect" id="node12" href="$dc/d75/classcomponents_1_1AuthCheckerSettings.html" title="Component that loads auth configuration settings from a components::Secdist componenet if the latter ..." alt="" coords="593,867,819,894"/>
+<area shape="rect" id="node13" href="$d8/daa/classcomponents_1_1ClickHouse.html" title="ClickHouse client component." alt="" coords="621,918,791,945"/>
+<area shape="rect" id="node14" href="$d2/da7/classcomponents_1_1DumpConfigurator.html" title="Helper component that manages common configuration for userver dumps." alt="" coords="603,969,809,995"/>
+<area shape="rect" id="node15" href="$dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the runtime config." alt="" coords="611,1019,801,1046"/>
+<area shape="rect" id="node16" href="$d8/d1f/classcomponents_1_1DynamicConfigClient.html" title="Component that starts a clients::dynamic_config::Client client." alt="" coords="611,1071,801,1112"/>
+<area shape="rect" id="node17" href="$d8/d9c/classcomponents_1_1DynamicConfigFallbacks.html" title="Component that setup runtime configs based on fallbacks from file." alt="" coords="611,1136,801,1177"/>
+<area shape="rect" id="node18" href="$dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client." alt="" coords="626,1202,786,1229"/>
+<area shape="rect" id="node19" href="$d0/dda/classcomponents_1_1Mongo.html" title="MongoDB client component." alt="" coords="636,1253,776,1279"/>
+<area shape="rect" id="node20" href="$d2/d4a/classcomponents_1_1MultiMongo.html" title="Dynamically configurable MongoDB client component." alt="" coords="622,1303,790,1330"/>
+<area shape="rect" id="node21" href="$d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component." alt="" coords="629,1354,783,1381"/>
+<area shape="rect" id="node22" href="$d6/d8c/classcomponents_1_1ProcessStarter.html" title="Component for getting the engine::subprocess::ProcessStarter." alt="" coords="612,1405,800,1431"/>
+<area shape="rect" id="node23" href="$d6/dd0/classcomponents_1_1Redis.html" title="Redis client component." alt="" coords="639,1455,773,1482"/>
+<area shape="rect" id="node24" href="$da/dc7/classcomponents_1_1Secdist.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="633,1506,779,1533"/>
+<area shape="rect" id="node25" href="$d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ..." alt="" coords="637,1557,775,1583"/>
+<area shape="rect" id="node26" href="$d4/dfa/classcomponents_1_1SingleThreadedTaskProcessors.html" title=" " alt="" coords="611,1608,801,1649"/>
+<area shape="rect" id="node27" href="$d8/daf/classcomponents_1_1StatisticsStorage.html" title="Component that keeps a utils::statistics::Storage storage for metrics." alt="" coords="605,218,807,245"/>
+<area shape="rect" id="node28" href="$df/df4/classcomponents_1_1SystemStatisticsCollector.html" title="Component for system resource usage statistics collection." alt="" coords="605,269,807,311"/>
+<area shape="rect" id="node29" href="$de/dac/classcongestion__control_1_1Component.html" title="Component to limit too active requests, also known as CC." alt="" coords="641,335,771,376"/>
+<area shape="rect" id="node30" href="$d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="607,401,805,427"/>
+<area shape="rect" id="node42" href="$db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html" title="Base class for mongo&#45;based distlock worker components." alt="" coords="617,452,795,493"/>
+<area shape="rect" id="node43" href="$d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="617,517,795,559"/>
+<area shape="rect" id="node44" href="$db/d02/classugrpc_1_1client_1_1ClientFactoryComponent.html" title="Provides a ClientFactory in the component system." alt="" coords="617,583,795,624"/>
+<area shape="rect" id="node45" href="$d7/d9a/classugrpc_1_1server_1_1ServerComponent.html" title="Component that configures and manages the gRPC server." alt="" coords="601,649,811,675"/>
+<area shape="rect" id="node46" href="$df/d19/classugrpc_1_1server_1_1ServiceComponentBase.html" title="Base class for all the gRPC service components." alt="" coords="583,699,829,726"/>
+<area shape="rect" id="node31" href="$d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="877,401,1100,427"/>
+<area shape="rect" id="node32" href="$d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client." alt="" coords="1181,168,1363,209"/>
+<area shape="rect" id="node33" href="$dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for specific log lines enabling/disabling." alt="" coords="1185,233,1359,275"/>
+<area shape="rect" id="node34" href="$d8/dfe/classserver_1_1handlers_1_1HttpHandlerFlatbufBase.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="1148,299,1396,340"/>
+<area shape="rect" id="node35" href="$da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J..." alt="" coords="1175,364,1369,405"/>
+<area shape="rect" id="node38" href="$d2/d34/classserver_1_1handlers_1_1Jemalloc.html" title="Handler that controlls the jemalloc allocator." alt="" coords="1185,430,1359,457"/>
+<area shape="rect" id="node39" href="$da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers." alt="" coords="1185,481,1359,507"/>
+<area shape="rect" id="node40" href="$d7/d6d/classserver_1_1handlers_1_1Ping.html" title="Handler that returns HTTP 200 if the service is OK and able to process requests." alt="" coords="1197,531,1347,558"/>
+<area shape="rect" id="node41" href="$dc/d10/classserver_1_1handlers_1_1ServerMonitor.html" title="Handler that returns statistics data." alt="" coords="1191,583,1353,624"/>
+<area shape="rect" id="node36" href="$d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in&#45;flight requests." alt="" coords="1459,335,1626,376"/>
+<area shape="rect" id="node37" href="$d5/ded/classserver_1_1handlers_1_1TestsControl.html" title="Handler that allows to control the behavior of server from tests." alt="" coords="1444,401,1641,427"/>
 </map>

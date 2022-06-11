@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['join_5118',['Join',['../d6/d21/namespaceutils_1_1text.html#a72f0721e5937249b92223ffad3f3f828',1,'utils::text']]]
+  ['join_0',['Join',['../d6/d21/namespaceutils_1_1text.html#a72f0721e5937249b92223ffad3f3f828',1,'utils::text']]]
 ];
