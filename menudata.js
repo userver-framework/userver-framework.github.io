@@ -26,7 +26,7 @@ var menudata={children:[
 {text:"Documentation",url:"d6/d2f/md_en_index.html"},
 {text:"API Groups",url:"modules.html"},
 {text:"Namespaces",url:"namespaces.html"},
-{text:"API Reference",url:"usergroup0.html",children:[
+{text:"Reference",url:"usergroup0.html",children:[
 {text:"Namespace Members",url:"namespacemembers.html",children:[
 {text:"All",url:"namespacemembers.html",children:[
 {text:"a",url:"namespacemembers.html#index_a"},

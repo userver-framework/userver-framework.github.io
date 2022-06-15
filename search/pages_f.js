@@ -23,6 +23,5 @@ var searchData=
   ['upg_3a_20transactions_20',['uPg: Transactions',['../db/dd8/pg_transactions.html',1,'']]],
   ['upg_3a_20typed_20postgresql_20results_21',['uPg: Typed PostgreSQL results',['../d2/d2f/pg_user_row_types.html',1,'']]],
   ['upg_3a_20working_20with_20result_20sets_22',['uPg: Working with result sets',['../db/db5/pg_process_results.html',1,'']]],
-  ['userver_23',['userver',['../index.html',1,'']]],
-  ['userver_20_2d_20the_20c_2b_2b_20asynchronous_20framework_24',['userver - The C++ Asynchronous Framework',['../d6/d2f/md_en_index.html',1,'']]]
+  ['userver_23',['userver',['../index.html',1,'']]]
 ];
