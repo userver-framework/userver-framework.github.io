@@ -87,7 +87,7 @@ $(function() {
 <div class="textblock"><p >Any userver-based service consists of components. A component is a basic building block that encapsulates dependencies logic with configuration and is able to interact with other components.</p>
 <p >Only components should know about components. Clients and other types constructed by components should not use <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>, <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>, or components directly. All the components should inherit from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">components::LoggableComponentBase</a> base class and may override its methods.</p>
 <p >All the components are listed at the <a class="el" href="../../dd/d1c/group__userver__components.html">Components</a> API Group.</p>
-<h1><a class="anchor" id="autotoc_md77"></a>
+<h1><a class="anchor" id="autotoc_md79"></a>
 Components static configuration</h1>
 <p ><a class="el" href="../../dc/d21/classcomponents_1_1ManagerControllerComponent.html" title="Component that prepares the engine internals and starts all the other components.">components::ManagerControllerComponent</a> configures the engine internals from information provided in its static config: preallocates coroutines, creates the engine::TaskProcessor, creates threads for low-level event processing. After that it starts all the components that were added to the <a class="el" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">components::ComponentList</a>. Each registered component should have a section in service config (also known as static config).</p>
 <p >The component configuration is passed as a first parameter of type <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a> to the constructor of the component. Note that <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a> extends the functionality of <a class="el" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> that is able to substitute variables with values, use fallbacks. See <a class="el" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> for more info and examples.</p>
@@ -99,7 +99,7 @@ Components static configuration</h1>
 <td class="markdownTableBodyNone">load-enabled   </td><td class="markdownTableBodyNone">set to <code>false</code> to disable loading of the component   </td><td class="markdownTableBodyNone">true   </td></tr>
 </table>
 <p ><a class="anchor" id="static-configs-validation"></a></p>
-<h2><a class="anchor" id="autotoc_md78"></a>
+<h2><a class="anchor" id="autotoc_md80"></a>
 Static configs validation</h2>
 <p >To validate static configs, define member function of your component <code>GetStaticConfigSchema()</code> and specialize variable <code><a class="el" href="../../d0/d1f/namespacecomponents.html#a6449aa8d70e696bcd34f8cf75798c7a4">components::kHasValidate</a></code></p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>myservice::smth {</div>
@@ -126,14 +126,24 @@ Static configs validation</h2>
 <li><code>object</code> must have options <code>additionalProperties</code> and <code>properties</code></li>
 <li><code>array</code> must have option <code>items</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<p ><a class="anchor" id="select-config-file-mode"></a></p>
+<h2><a class="anchor" id="autotoc_md81"></a>
+Setup config file mode</h2>
+<p >You can configure the configuration mode of the component in the configuration file by specializing the <code><a class="el" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">components::kConfigFileMode</a></code> template variable in the file with component declaration Supported mode:</p><ul>
+<li><code>kConfigFileMode::kRequired</code> - The component must be defined in configuration file</li>
+<li><code>kConfigFileMode::kNotRequired</code> - The component may not be defined in the configuration file</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> components::kConfigFileMode&lt;myservice::smth::Component&gt; =</div>
+<div class="line">    ConfigFileMode::kNotRequired;</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md82"></a>
 Startup context</h1>
 <p >On component construction a <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a> is passed as a second parameter to the constructor of the component. That context could be used to get references to other components. That reference to the component is guaranteed to outlive the component that is being constructed.</p>
-<h1><a class="anchor" id="autotoc_md80"></a>
+<h1><a class="anchor" id="autotoc_md83"></a>
 Components construction order</h1>
 <p ><a class="el" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>, <a class="el" href="../../d0/d1f/namespacecomponents.html#a17ac62098291e106b4ddad40a8cc179e">components::Run</a> or <a class="el" href="../../d0/d1f/namespacecomponents.html#a1bbc0de4bbd8399a1c3d1801a8bfeb17">components::RunOnce</a> start all the components from the passed <a class="el" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">components::ComponentList</a>. Each component is constructed in a separate <a class="el" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">engine::Task</a> which makes them initialize concurrently. This is a useful feature, for examples in cases with multiple caches that slowly read from different databases.</p>
 <p >To make component <em>A</em> depend on component <em>B</em> just call <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html#a4ba6078e836fc718192a75444f93f9f3" title="Finds a component of type T with specified name (if any) and returns the component after it was initi...">components::ComponentContext::FindComponent&lt;B&gt;()</a> in the constructor of A. FindComponent() suspends the current task and continues only after the construction of component B is finished. Components are destroyed in reverse order of construction, so the component A is destroyed before the component B. In other words - references from FindComponent() outlive the component that called the FindComponent() function. If any component loading fails, FindComponent() wakes up and throws an <a class="el" href="../../d2/d43/classcomponents_1_1ComponentsLoadCancelledException.html" title="Exception that is thrown from components::ComponentContext::FindComponent() if a component load faile...">components::ComponentsLoadCancelledException</a>.</p>
-<h1><a class="anchor" id="autotoc_md81"></a>
+<h1><a class="anchor" id="autotoc_md84"></a>
 References from components</h1>
 <p >It is a common practice to have a component that returns reference <em>R</em> from some function <em>F</em>. In such cases:</p><ul>
 <li>a reference <em>R</em> lives as long as the component is alive</li>
@@ -144,12 +154,12 @@ References from components</h1>
 <li>components::HttpClient::GetHttpClient()</li>
 <li>components::StatisticsStorage::GetStorage()</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md82"></a>
+<h1><a class="anchor" id="autotoc_md85"></a>
 Writing your own components</h1>
 <p >Users of the framework may (and should) write their own components.</p>
 <p >Components provide functionality to tie the main part of the program with the configuration and other components. Component should be lightweight and simple.</p>
 <dl class="section note"><dt>Note</dt><dd>Rule of a thumb: if you wish to unit test some code that is located in the component, then in 99% of cases that code should not be located in the component.</dd></dl>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md86"></a>
 Should I write a new component or class would be enough?</h2>
 <p >You need a component if:</p><ul>
 <li>you need a static config</li>
@@ -157,7 +167,7 @@ Should I write a new component or class would be enough?</h2>
 <li>you are writing clients (you need a component to be the factory for your clients)</li>
 <li>you want to subscribe for configs or cache changes</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md84"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 HowTo</h2>
 <p >Start writing your component from adding a header file with a class inherited from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">components::LoggableComponentBase</a>. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
@@ -233,7 +243,7 @@ HowTo</h2>
 <li><a class="el" href="../../d3/d25/components_2component_sample_test_8cpp-example.html">components/component_sample_test.cpp</a></li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>For info on writing HTTP handler components refer to the <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md85"></a>
+<h2><a class="anchor" id="autotoc_md88"></a>
 Testing</h2>
 <p >Starting up the components in unit tests is quite hard. Prefer moving out all the functionality from the component or testing the component with the help of <a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">testsuite functional tests</a>. </p>
 </div></div><!-- contents -->

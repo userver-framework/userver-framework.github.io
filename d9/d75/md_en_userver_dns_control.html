@@ -85,15 +85,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p >If your service has a <a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a> configured, then you may force hosts reload from cache and wipe DNS caches. The feature is useful to apply DNS changes faster.</p>
-<h1><a class="anchor" id="autotoc_md95"></a>
+<h1><a class="anchor" id="autotoc_md98"></a>
 Commands</h1>
 <p ><a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a> provides the following REST API: </p><div class="fragment"><div class="line">POST /service/dnsclient/reload_hosts</div>
 <div class="line">POST /service/dnsclient/flush_cache?name={some name}</div>
 <div class="line">POST /service/dnsclient/flush_cache_full</div>
 </div><!-- fragment --><p> Note that the <a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/dnsclient/</code> handle path.</p>
-<h1><a class="anchor" id="autotoc_md96"></a>
+<h1><a class="anchor" id="autotoc_md99"></a>
 Examples:</h1>
-<h2><a class="anchor" id="autotoc_md97"></a>
+<h2><a class="anchor" id="autotoc_md100"></a>
 Reload hosts file</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X POST http://localhost:8085/service/dnsclient/reload_hosts -i</div>
@@ -108,7 +108,7 @@ Reload hosts file</h2>
 <div class="line">Content-Length: 2</div>
 <div class="line"> </div>
 <div class="line">OK</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md98"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md101"></a>
 Rediscover the ya.ru DNS records</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X POST http://localhost:8085/service/dnsclient/flush_cache?name=ya.ru -i</div>
@@ -123,7 +123,7 @@ Rediscover the ya.ru DNS records</h2>
 <div class="line">Content-Length: 2</div>
 <div class="line"> </div>
 <div class="line">OK</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md99"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
 Rediscover all the DNS records</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X POST http://localhost:8085/service/dnsclient/flush_cache_full -i</div>

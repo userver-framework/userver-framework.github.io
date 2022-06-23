@@ -102,24 +102,26 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../db/dff/classcomponents_1_1ComponentConfig.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a>(<a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> value);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">const</span> std::string&amp; Name() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordtype">void</span> SetName(std::string name);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../db/dff/classcomponents_1_1ComponentConfig.html#a0450052602afb9fab7e4ff7ed575292a">   16</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../db/dff/classcomponents_1_1ComponentConfig.html#a0450052602afb9fab7e4ff7ed575292a" title="Creates an empty config.">ComponentConfig</a>(std::string name);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_function" href="../../db/dff/classcomponents_1_1ComponentConfig.html#a0450052602afb9fab7e4ff7ed575292a" title="Creates an empty config.">ComponentConfig</a>(<a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> value);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::string name_;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> Parse(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a>&amp; value,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                      <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To&lt;ComponentConfig&gt;</a>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">const</span> std::string&amp; Name() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> SetName(std::string name);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::string name_;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">using </span>ComponentConfigMap =</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::unordered_map&lt;std::string, const ComponentConfig&amp;&gt;;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> Parse(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a>&amp; value,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                      <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To&lt;ComponentConfig&gt;</a>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}  <span class="comment">// namespace components</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">using </span>ComponentConfigMap =</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::unordered_map&lt;std::string, const ComponentConfig&amp;&gt;;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}  <span class="comment">// namespace components</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

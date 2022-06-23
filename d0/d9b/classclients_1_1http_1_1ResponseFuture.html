@@ -91,24 +91,26 @@ $(function() {
   <div class="headertitle"><div class="title">clients::http::ResponseFuture Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Allows to perform a request concurrently with other work without creating an extra coroutine for waiting.  
+ <a href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/de8/response__future_8hpp_source.html">userver/clients/http/response_future.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9fdc3e599d5953678dcae93bc1f3a0ee"><td class="memItemLeft" align="right" valign="top"><a id="a9fdc3e599d5953678dcae93bc1f3a0ee" name="a9fdc3e599d5953678dcae93bc1f3a0ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ResponseFuture</b> (engine::impl::BlockingFuture&lt; std::shared_ptr&lt; <a class="el" href="../../dd/d3b/classclients_1_1http_1_1Response.html">Response</a> &gt; &gt; &amp;&amp;future, std::chrono::milliseconds total_timeout, std::shared_ptr&lt; RequestState &gt; request)</td></tr>
-<tr class="separator:a9fdc3e599d5953678dcae93bc1f3a0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a907c22ed1d22305da07e2a7f90c5f4f8"><td class="memItemLeft" align="right" valign="top"><a id="a907c22ed1d22305da07e2a7f90c5f4f8" name="a907c22ed1d22305da07e2a7f90c5f4f8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ResponseFuture</b> (<a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="separator:a907c22ed1d22305da07e2a7f90c5f4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad105034b2a049a1ae1ac4a85ea96211a"><td class="memItemLeft" align="right" valign="top"><a id="ad105034b2a049a1ae1ac4a85ea96211a" name="ad105034b2a049a1ae1ac4a85ea96211a"></a>
+<a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;&amp;) noexcept</td></tr>
+<tr class="separator:ad105034b2a049a1ae1ac4a85ea96211a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed70b3b8f89bee60f63583b1168c13ca"><td class="memItemLeft" align="right" valign="top"><a id="aed70b3b8f89bee60f63583b1168c13ca" name="aed70b3b8f89bee60f63583b1168c13ca"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ResponseFuture</b> (const <a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;)=delete</td></tr>
 <tr class="separator:aed70b3b8f89bee60f63583b1168c13ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adac89b73e151af07612db0423a81d9b0"><td class="memItemLeft" align="right" valign="top"><a id="adac89b73e151af07612db0423a81d9b0" name="adac89b73e151af07612db0423a81d9b0"></a>
 <a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;)=delete</td></tr>
 <tr class="separator:adac89b73e151af07612db0423a81d9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad105034b2a049a1ae1ac4a85ea96211a"><td class="memItemLeft" align="right" valign="top"><a id="ad105034b2a049a1ae1ac4a85ea96211a" name="ad105034b2a049a1ae1ac4a85ea96211a"></a>
-<a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="../../d0/d9b/classclients_1_1http_1_1ResponseFuture.html">ResponseFuture</a> &amp;&amp;) noexcept</td></tr>
-<tr class="separator:ad105034b2a049a1ae1ac4a85ea96211a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4acc78820f70ad3229d6d7f392949f92"><td class="memItemLeft" align="right" valign="top"><a id="a4acc78820f70ad3229d6d7f392949f92" name="a4acc78820f70ad3229d6d7f392949f92"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> ()</td></tr>
 <tr class="separator:a4acc78820f70ad3229d6d7f392949f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,7 +125,8 @@ std::shared_ptr&lt; <a class="el" href="../../dd/d3b/classclients_1_1http_1_1Res
 <tr class="separator:a48b87d4e85f6e31f4f06a2266324095c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
+<div class="textblock"><p >Allows to perform a request concurrently with other work without creating an extra coroutine for waiting. </p>
+
 <p class="definition">Definition at line <a class="el" href="../../d2/de8/response__future_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../d2/de8/response__future_8hpp_source.html">response_future.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>userver/clients/http/<a class="el" href="../../d2/de8/response__future_8hpp_source.html">response_future.hpp</a></li>

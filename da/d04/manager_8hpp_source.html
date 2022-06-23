@@ -183,24 +183,27 @@ $(function() {
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          <span class="keyword">const</span> <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>&amp;)&gt;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          factory);</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> ClearComponents() <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  std::unique_ptr&lt;const ManagerConfig&gt; config_;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  TaskProcessorsStorage task_processors_storage_;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">mutable</span> std::shared_timed_mutex context_mutex_;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a> component_context_;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">bool</span> components_cleared_;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  engine::TaskProcessor* default_task_processor_;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">const</span> std::chrono::steady_clock::time_point start_time_;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <a class="code hl_class" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a>* logging_component_;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  std::chrono::milliseconds load_duration_;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}  <span class="comment">// namespace components</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  components::ComponentConfigMap MakeComponentConfigMap(</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keyword">const</span> <a class="code hl_class" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">ComponentList</a>&amp; component_list);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  std::unique_ptr&lt;const ManagerConfig&gt; config_;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  std::vector&lt;ComponentConfig&gt; empty_configs_;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  TaskProcessorsStorage task_processors_storage_;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keyword">mutable</span> std::shared_timed_mutex context_mutex_;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a> component_context_;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">bool</span> components_cleared_;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  engine::TaskProcessor* default_task_processor_;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keyword">const</span> std::chrono::steady_clock::time_point start_time_;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <a class="code hl_class" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a>* logging_component_;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  std::chrono::milliseconds load_duration_;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>};</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}  <span class="comment">// namespace components</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

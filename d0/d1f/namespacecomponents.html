@@ -215,6 +215,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a7a041524f23130330b0aec16f1e3410f"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of the component.  <a href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f">More...</a><br /></td></tr>
 <tr class="separator:a7a041524f23130330b0aec16f1e3410f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcb9f95aed3bdf47421fcc9e298139c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139c">ConfigFileMode</a> { <br />
+&#160;&#160;<a class="el" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1">kRequired</a>
+, <br />
+&#160;&#160;<a class="el" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf41e181a8f52db2f4f6c22c982edf97b">kNotRequired</a>
+<br />
+ }</td></tr>
+<tr class="separator:a4dcb9f95aed3bdf47421fcc9e298139c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6ffd64cf9d43642d301e62000896293"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>ValidationMode</b> { <br />
 &#160;&#160;<b>kOnlyTurnedOn</b>
 , <br />
@@ -267,10 +274,16 @@ Variables</h2></td></tr>
 <tr class="memitem:a6449aa8d70e696bcd34f8cf75798c7a4"><td class="memTemplParams" colspan="2">template&lt;typename Component &gt; </td></tr>
 <tr class="memitem:a6449aa8d70e696bcd34f8cf75798c7a4"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a6449aa8d70e696bcd34f8cf75798c7a4">kHasValidate</a> = false</td></tr>
 <tr class="separator:a6449aa8d70e696bcd34f8cf75798c7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647349627b7de0a22e024ffe4d628309"><td class="memTemplParams" colspan="2">template&lt;typename Component &gt; </td></tr>
+<tr class="memitem:a647349627b7de0a22e024ffe4d628309"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">kConfigFileMode</a> = <a class="el" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1">ConfigFileMode::kRequired</a></td></tr>
+<tr class="separator:a647349627b7de0a22e024ffe4d628309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa474817cd478ba6b332bbb895ab720"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a6aa474817cd478ba6b332bbb895ab720"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a6aa474817cd478ba6b332bbb895ab720">kHasValidate&lt; LoggingConfigurator &gt;</a> = true</td></tr>
 <tr class="memdesc:a6aa474817cd478ba6b332bbb895ab720"><td class="mdescLeft">&#160;</td><td class="mdescRight">}@  <a href="../../d0/d1f/namespacecomponents.html#a6aa474817cd478ba6b332bbb895ab720">More...</a><br /></td></tr>
 <tr class="separator:a6aa474817cd478ba6b332bbb895ab720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8da3fb51e3da352318bb910b40a8d3"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:a6b8da3fb51e3da352318bb910b40a8d3"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a6b8da3fb51e3da352318bb910b40a8d3">kConfigFileMode&lt; ManagerControllerComponent &gt;</a></td></tr>
+<tr class="separator:a6b8da3fb51e3da352318bb910b40a8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5155b6f526cf10bda1375e0215acf25c"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a5155b6f526cf10bda1375e0215acf25c"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a5155b6f526cf10bda1375e0215acf25c">kHasValidate&lt; ProcessStarter &gt;</a> = true</td></tr>
 <tr class="separator:a5155b6f526cf10bda1375e0215acf25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,6 +293,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a3eabf864819c214b2a8b412d39eaef45"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a3eabf864819c214b2a8b412d39eaef45"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a3eabf864819c214b2a8b412d39eaef45">kHasValidate&lt; StatisticsStorage &gt;</a> = true</td></tr>
 <tr class="separator:a3eabf864819c214b2a8b412d39eaef45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9308358b4c57d7a672516722764a45ce"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:a9308358b4c57d7a672516722764a45ce"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a9308358b4c57d7a672516722764a45ce">kConfigFileMode&lt; StatisticsStorage &gt;</a></td></tr>
+<tr class="separator:a9308358b4c57d7a672516722764a45ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95f224e6b83d94aaff17a688432687d7"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a95f224e6b83d94aaff17a688432687d7"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a95f224e6b83d94aaff17a688432687d7">kHasValidate&lt; Tracer &gt;</a> = true</td></tr>
 <tr class="separator:a95f224e6b83d94aaff17a688432687d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,6 +320,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4c0bb7fc8de399f8554179d90ab607b7"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a4c0bb7fc8de399f8554179d90ab607b7"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a4c0bb7fc8de399f8554179d90ab607b7">kHasValidate&lt; AuthCheckerSettings &gt;</a> = true</td></tr>
 <tr class="separator:a4c0bb7fc8de399f8554179d90ab607b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b21ebab52d09fcd806863f2c5753449"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:a2b21ebab52d09fcd806863f2c5753449"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a2b21ebab52d09fcd806863f2c5753449">kConfigFileMode&lt; AuthCheckerSettings &gt;</a></td></tr>
+<tr class="separator:a2b21ebab52d09fcd806863f2c5753449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83d02b488179f5f992a55e89519b9a39"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a83d02b488179f5f992a55e89519b9a39"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d1f/namespacecomponents.html#a83d02b488179f5f992a55e89519b9a39">kHasValidate&lt; Secdist &gt;</a> = true</td></tr>
 <tr class="separator:a83d02b488179f5f992a55e89519b9a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,7 +375,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/dba/component__config_8hpp_source.html#l00027">27</a> of file <a class="el" href="../../d0/dba/component__config_8hpp_source.html">component_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/dba/component__config_8hpp_source.html#l00030">30</a> of file <a class="el" href="../../d0/dba/component__config_8hpp_source.html">component_config.hpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +423,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00124">124</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00127">127</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
 
 </div>
 </div>
@@ -440,6 +459,37 @@ Variables</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d61/component__base_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d2/d61/component__base_8hpp_source.html">component_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4dcb9f95aed3bdf47421fcc9e298139c" name="a4dcb9f95aed3bdf47421fcc9e298139c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dcb9f95aed3bdf47421fcc9e298139c">&#9670;&nbsp;</a></span>ConfigFileMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139c">components::ConfigFileMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Whether the static config for the component must always be present, or can be missing </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1" name="a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1"></a>kRequired&#160;</td><td class="fielddoc"><p >component must be setup in config </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4dcb9f95aed3bdf47421fcc9e298139caf41e181a8f52db2f4f6c22c982edf97b" name="a4dcb9f95aed3bdf47421fcc9e298139caf41e181a8f52db2f4f6c22c982edf97b"></a>kNotRequired&#160;</td><td class="fielddoc"><p >component must be not setup in config </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d61/component__base_8hpp_source.html#l00025">25</a> of file <a class="el" href="../../d2/d61/component__base_8hpp_source.html">component_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -661,6 +711,118 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a647349627b7de0a22e024ffe4d628309" name="a647349627b7de0a22e024ffe4d628309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a647349627b7de0a22e024ffe4d628309">&#9670;&nbsp;</a></span>kConfigFileMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Component &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto components::kConfigFileMode = <a class="el" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1">ConfigFileMode::kRequired</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Specialize this to customize the loading of component settings</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d66/md_en_userver_component_system.html#select-config-file-mode">Setup config file mode</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d61/component__base_8hpp_source.html#l00071">71</a> of file <a class="el" href="../../d2/d61/component__base_8hpp_source.html">component_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b21ebab52d09fcd806863f2c5753449" name="a2b21ebab52d09fcd806863f2c5753449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b21ebab52d09fcd806863f2c5753449">&#9670;&nbsp;</a></span>kConfigFileMode&lt; AuthCheckerSettings &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">components::kConfigFileMode</a>&lt; <a class="el" href="../../dc/d75/classcomponents_1_1AuthCheckerSettings.html">AuthCheckerSettings</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    ConfigFileMode::kNotRequired</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../da/db3/auth__checker__settings__component_8hpp_source.html#l00047">47</a> of file <a class="el" href="../../da/db3/auth__checker__settings__component_8hpp_source.html">auth_checker_settings_component.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6b8da3fb51e3da352318bb910b40a8d3" name="a6b8da3fb51e3da352318bb910b40a8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8da3fb51e3da352318bb910b40a8d3">&#9670;&nbsp;</a></span>kConfigFileMode&lt; ManagerControllerComponent &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">components::kConfigFileMode</a>&lt; <a class="el" href="../../dc/d21/classcomponents_1_1ManagerControllerComponent.html">ManagerControllerComponent</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    ConfigFileMode::kNotRequired</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../d8/d56/manager__controller__component_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../d8/d56/manager__controller__component_8hpp_source.html">manager_controller_component.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9308358b4c57d7a672516722764a45ce" name="a9308358b4c57d7a672516722764a45ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9308358b4c57d7a672516722764a45ce">&#9670;&nbsp;</a></span>kConfigFileMode&lt; StatisticsStorage &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">components::kConfigFileMode</a>&lt; <a class="el" href="../../d8/daf/classcomponents_1_1StatisticsStorage.html">StatisticsStorage</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    ConfigFileMode::kNotRequired</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../d6/d3a/core_2include_2userver_2components_2statistics__storage_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../d6/d3a/core_2include_2userver_2components_2statistics__storage_8hpp_source.html">statistics_storage.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a41843ede3732897ddd44ce740f774788" name="a41843ede3732897ddd44ce740f774788"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41843ede3732897ddd44ce740f774788">&#9670;&nbsp;</a></span>kCpuRelaxInterval</h2>
 
@@ -757,7 +919,7 @@ template&lt;typename Component &gt; </div>
 <p >Specialize it for typename Component to validate static config against schema from Component::GetStaticConfigSchema</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d66/md_en_userver_component_system.html#static-configs-validation">Static configs validation</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d61/component__base_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../d2/d61/component__base_8hpp_source.html">component_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d61/component__base_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../d2/d61/component__base_8hpp_source.html">component_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -913,7 +1075,7 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00127">127</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00130">130</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
 
 </div>
 </div>

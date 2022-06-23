@@ -84,7 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">I/O-bound Applications and Coroutines </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md144"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md147"></a>
 Microservices and other I/O-bound applications</h1>
 <p >For <a href="https://en.wikipedia.org/wiki/Microservices">microservices</a> waiting for I/O is typical: often the response of a microservice is formed from several responses from other microservices and databases.</p>
 <p >The problem of efficient waits for I/O in the classical approach is solved by callbacks: a function (called a callback) is passed to the method that performs I/O, the callback is called by the method when the wait is complete. If you need to perform several I/O operations sequentially, the callback from the first I/O method calls the method for the next I/O and passes the next callback to it. As a result, you get code that is unpleasant to write and difficult to maintain due to the many nested functions and non-obvious control flow.</p>
@@ -143,7 +143,7 @@ Microservices and other I/O-bound applications</h1>
 <div class="line">  });</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >The classical approach is almost twice as long, and it is difficult to read and maintain because of the deep nesting of the lambda functions. Moreover, the time-consuming error codes handling is completely omitted, while in the first example all the errors are automatically reported through the exception mechanism.</p>
-<h1><a class="anchor" id="autotoc_md145"></a>
+<h1><a class="anchor" id="autotoc_md148"></a>
 Coroutines</h1>
 <p >In simple terms, coroutines are lightweight threads that are managed by the application itself, not by the operating system.</p>
 <p >Coroutines provide an additional benefit in high-load applications:</p><ul>
@@ -155,7 +155,7 @@ Coroutines</h1>
 <li>Coroutine scheduler is not preemptive. Poorly written coroutine payloads could occupy the system threads and make the other coroutines starve, but in most cases there are means to make them cooperate better with minimal code changes.</li>
 </ul>
 <p >The user of the framework does not work directly with the coroutines, but rather works with tasks that are executed on the coroutines. It is very expensive to create and destroy coroutines for each asynchronous operation, so coroutines are reused between tasks. When a new task is starting, a free coroutine is selected to host it. After the task is finished, the coroutine is released, and can be used by another task.</p>
-<h1><a class="anchor" id="autotoc_md146"></a>
+<h1><a class="anchor" id="autotoc_md149"></a>
 Performance</h1>
 <p >The main purpose of userver is to be an effective solution for IO-bound applications. Coroutines help to achieve that purpose.</p>
 <p >It takes less than 1us to invoke and wait for a noop task <code>engine::Async([] () {}).Wait()</code>. In this case, the task execution time will be automatically measured inside the <code><a class="el" href="../../dc/db7/group__userver__concurrency.html#gac91f56844690ea79c568cb3b43ba98a5">engine::Async()</a></code>, the task will be linked to the parent task to simplify <a class="el" href="../../de/db6/md_en_userver_logging.html">tracing, all information will be recorded in logs</a>.</p>

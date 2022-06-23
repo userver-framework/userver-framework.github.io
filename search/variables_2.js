@@ -9,7 +9,7 @@ var searchData=
   ['commit_5ftotal_6',['commit_total',['../d8/d2f/structstorages_1_1postgres_1_1TransactionStatistics.html#a3858f341ec58be0fd599291c2b8a7122',1,'storages::postgres::TransactionStatistics']]],
   ['conn_5fsettings_7',['conn_settings',['../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a11c8fb54028e2a6f7b5b0959e427bf6f',1,'storages::postgres::ClusterSettings']]],
   ['conn_5ftimeout_8',['conn_timeout',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#a6957e1a738ad0204965523e7dec495f9',1,'storages::mongo::PoolConfig']]],
-  ['connecting_5flimit_9',['connecting_limit',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#a210e636cd173f84c9ccb3389d1e97df8',1,'storages::mongo::PoolConfig']]],
+  ['connecting_5flimit_9',['connecting_limit',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#a210e636cd173f84c9ccb3389d1e97df8',1,'storages::mongo::PoolConfig::connecting_limit()'],['../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c',1,'storages::postgres::PoolSettings::connecting_limit()']]],
   ['connection_10',['connection',['../df/d1c/structstorages_1_1postgres_1_1InstanceStatisticsTemplate.html#ad94c1786dfa0089e2cb69f9a6532b467',1,'storages::postgres::InstanceStatisticsTemplate']]],
   ['connection_5fpercentile_11',['connection_percentile',['../df/d1c/structstorages_1_1postgres_1_1InstanceStatisticsTemplate.html#a005b0cddaea3f0d345ab971419d7c684',1,'storages::postgres::InstanceStatisticsTemplate']]],
   ['credentials_12',['credentials',['../d1/d8e/structugrpc_1_1client_1_1ClientFactoryConfig.html#ad51e349db5aff5fb0bb35c67333acab5',1,'ugrpc::client::ClientFactoryConfig']]]

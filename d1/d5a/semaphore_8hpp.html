@@ -97,6 +97,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;shared_mutex&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d2/d22/deadline_8hpp_source.html">userver/engine/deadline.hpp</a>&gt;</code><br />
 <code>#include &lt;userver/engine/impl/wait_list_fwd.hpp&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -108,21 +109,22 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../de/dff/semaphore_8hpp__incl.png" border="0" usemap="#auserver_2engine_2semaphore_8hpp" alt=""/></div>
 <map name="auserver_2engine_2semaphore_8hpp" id="auserver_2engine_2semaphore_8hpp">
-<area shape="rect" title="Class that allows up to max_simultaneous_locks concurrent accesses to the critical section." alt="" coords="261,5,461,32"/>
+<area shape="rect" title="Class that allows up to max_simultaneous_locks concurrent accesses to the critical section." alt="" coords="287,5,487,32"/>
 <area shape="rect" title=" " alt="" coords="5,87,67,114"/>
-<area shape="rect" title=" " alt="" coords="201,177,263,203"/>
+<area shape="rect" title=" " alt="" coords="253,177,315,203"/>
 <area shape="rect" title=" " alt="" coords="141,87,245,114"/>
-<area shape="rect" href="../../d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="269,87,453,114"/>
-<area shape="rect" href="../../d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="478,80,613,121"/>
-<area shape="rect" title=" " alt="" coords="637,87,707,114"/>
-<area shape="rect" href="../../d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="731,87,890,114"/>
-<area shape="rect" href="../../d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values." alt="" coords="347,177,530,203"/>
-<area shape="rect" href="../../d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="554,169,673,211"/>
-<area shape="rect" title=" " alt="" coords="409,259,474,285"/>
-<area shape="rect" title=" " alt="" coords="501,259,547,285"/>
-<area shape="rect" title=" " alt="" coords="572,259,655,285"/>
-<area shape="rect" title=" " alt="" coords="679,259,732,285"/>
-<area shape="rect" title=" " alt="" coords="767,177,855,203"/>
+<area shape="rect" title=" " alt="" coords="270,87,349,114"/>
+<area shape="rect" href="../../d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="373,87,557,114"/>
+<area shape="rect" href="../../d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="582,80,717,121"/>
+<area shape="rect" title=" " alt="" coords="741,87,811,114"/>
+<area shape="rect" href="../../d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="835,87,994,114"/>
+<area shape="rect" href="../../d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values." alt="" coords="451,177,634,203"/>
+<area shape="rect" href="../../d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="658,169,777,211"/>
+<area shape="rect" title=" " alt="" coords="513,259,578,285"/>
+<area shape="rect" title=" " alt="" coords="605,259,651,285"/>
+<area shape="rect" title=" " alt="" coords="676,259,759,285"/>
+<area shape="rect" title=" " alt="" coords="783,259,836,285"/>
+<area shape="rect" title=" " alt="" coords="871,177,959,203"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -132,19 +134,20 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../de/d3f/semaphore_8hpp__dep__incl.png" border="0" usemap="#auserver_2engine_2semaphore_8hppdep" alt=""/></div>
 <map name="auserver_2engine_2semaphore_8hppdep" id="auserver_2engine_2semaphore_8hppdep">
-<area shape="rect" title="Class that allows up to max_simultaneous_locks concurrent accesses to the critical section." alt="" coords="131,5,331,32"/>
-<area shape="rect" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html" title=" " alt="" coords="11,80,142,121"/>
-<area shape="rect" href="../../d7/ded/queue_8hpp_source.html" title=" " alt="" coords="166,80,297,121"/>
-<area shape="rect" href="../../d8/d96/shared__mutex_8hpp.html" title="std::shared_mutex replacement for asynchronous tasks" alt="" coords="321,80,472,121"/>
-<area shape="rect" href="../../da/d74/engine_2mpsc__queue_8hpp_source.html" title=" " alt="" coords="5,169,148,211"/>
-<area shape="rect" href="../../d1/d53/grpc_2include_2userver_2ugrpc_2client_2impl_2statistics__storage_8hpp_source.html" title=" " alt="" coords="239,169,421,211"/>
-<area shape="rect" href="../../da/d07/storage_8hpp_source.html" title=" " alt="" coords="529,169,680,211"/>
-<area shape="rect" href="../../d0/d98/client__factory_8hpp.html" title="Creates generated gRPC clients. Has a minimal built&#45;in channel cache: as long as a channel to the sam..." alt="" coords="221,259,357,300"/>
-<area shape="rect" href="../../da/dd3/client__factory__component_8hpp.html" title="Provides a ClientFactory in the component system." alt="" coords="189,348,389,389"/>
-<area shape="rect" href="../../d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="381,259,545,300"/>
-<area shape="rect" href="../../d6/d3a/core_2include_2userver_2components_2statistics__storage_8hpp.html" title="Component that keeps a utils::statistics::Storage storage for metrics." alt="" coords="570,259,725,300"/>
-<area shape="rect" href="../../d2/d2e/clickhouse_2include_2userver_2storages_2clickhouse_2component_8hpp.html" title="ClickHouse client component." alt="" coords="749,259,935,300"/>
-<area shape="rect" href="../../d7/d29/clickhouse_8hpp.html" title=" " alt="" coords="737,355,947,382"/>
+<area shape="rect" title="Class that allows up to max_simultaneous_locks concurrent accesses to the critical section." alt="" coords="151,5,351,32"/>
+<area shape="rect" href="../../d2/da1/semaphore__capacity__control_8hpp_source.html" title=" " alt="" coords="101,80,276,136"/>
+<area shape="rect" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html" title=" " alt="" coords="11,184,142,225"/>
+<area shape="rect" href="../../d7/ded/queue_8hpp_source.html" title=" " alt="" coords="173,184,303,225"/>
+<area shape="rect" href="../../d8/d96/shared__mutex_8hpp.html" title="std::shared_mutex replacement for asynchronous tasks" alt="" coords="352,87,503,129"/>
+<area shape="rect" href="../../da/d74/engine_2mpsc__queue_8hpp_source.html" title=" " alt="" coords="5,273,148,315"/>
+<area shape="rect" href="../../d1/d53/grpc_2include_2userver_2ugrpc_2client_2impl_2statistics__storage_8hpp_source.html" title=" " alt="" coords="332,184,515,225"/>
+<area shape="rect" href="../../da/d07/storage_8hpp_source.html" title=" " alt="" coords="623,184,773,225"/>
+<area shape="rect" href="../../d0/d98/client__factory_8hpp.html" title="Creates generated gRPC clients. Has a minimal built&#45;in channel cache: as long as a channel to the sam..." alt="" coords="313,273,449,315"/>
+<area shape="rect" href="../../da/dd3/client__factory__component_8hpp.html" title="Provides a ClientFactory in the component system." alt="" coords="281,363,481,404"/>
+<area shape="rect" href="../../d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="473,273,637,315"/>
+<area shape="rect" href="../../d6/d3a/core_2include_2userver_2components_2statistics__storage_8hpp.html" title="Component that keeps a utils::statistics::Storage storage for metrics." alt="" coords="662,273,817,315"/>
+<area shape="rect" href="../../d2/d2e/clickhouse_2include_2userver_2storages_2clickhouse_2component_8hpp.html" title="ClickHouse client component." alt="" coords="841,273,1027,315"/>
+<area shape="rect" href="../../d7/d29/clickhouse_8hpp.html" title=" " alt="" coords="829,370,1039,397"/>
 </map>
 </div>
 </div>
@@ -152,6 +155,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/classengine_1_1UnreachableSemaphoreLockError.html">engine::UnreachableSemaphoreLockError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/classengine_1_1Semaphore.html">engine::Semaphore</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows up to <code>max_simultaneous_locks</code> concurrent accesses to the critical section.  <a href="../../db/d16/classengine_1_1Semaphore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>

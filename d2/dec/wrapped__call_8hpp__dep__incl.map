@@ -1,45 +1,44 @@
 <map id="userver/utils/impl/wrapped_call.hpp" name="userver/utils/impl/wrapped_call.hpp">
-<area shape="rect" id="node1" title="std::packaged_task replacement with noncopyable types support" alt="" coords="1325,5,1451,47"/>
-<area shape="rect" id="node2" href="$d4/dbb/engine_2async_8hpp.html" title="TaskWithResult creation helpers." alt="" coords="1169,191,1340,218"/>
-<area shape="rect" id="node35" href="$d5/d65/shared__task__with__result_8hpp.html" title=" " alt="" coords="1159,95,1351,136"/>
-<area shape="rect" id="node36" href="$d2/dcd/task__with__result_8hpp.html" title=" " alt="" coords="1904,95,2051,136"/>
-<area shape="rect" id="node3" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="1203,467,1357,508"/>
-<area shape="rect" id="node7" href="$d8/de1/expirable__lru__cache_8hpp.html" title="Class for expirable LRU cache. Use cache::LruMap for not expirable LRU Cache." alt="" coords="1596,281,1756,322"/>
-<area shape="rect" id="node9" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="793,288,927,315"/>
-<area shape="rect" id="node30" href="$db/d93/service__worker__impl_8hpp_source.html" title=" " alt="" coords="951,273,1094,329"/>
-<area shape="rect" id="node31" href="$de/d4e/utils_2async_8hpp.html" title="Utility functions to start asynchronous tasks." alt="" coords="1415,288,1572,315"/>
-<area shape="rect" id="node4" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="1385,563,1521,605"/>
-<area shape="rect" id="node5" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL derived from components::CachingComponentBase." alt="" coords="2059,563,2205,605"/>
-<area shape="rect" id="node6" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="1199,563,1361,605"/>
-<area shape="rect" id="node8" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="1863,377,2027,419"/>
-<area shape="rect" id="node10" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="1045,467,1179,508"/>
-<area shape="rect" id="node12" href="$de/d04/environment__variables_8hpp_source.html" title=" " alt="" coords="13,377,195,419"/>
-<area shape="rect" id="node15" href="$d1/d0d/rcu__map_8hpp.html" title="Map&#45;like structure allowing RCU keyset updates." alt="" coords="461,385,627,411"/>
-<area shape="rect" id="node17" href="$d2/de5/multi__mongo_8hpp_source.html" title=" " alt="" coords="859,467,1021,508"/>
-<area shape="rect" id="node19" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="660,377,823,419"/>
-<area shape="rect" id="node21" href="$d9/d02/postgresql_2include_2userver_2storages_2postgres_2dist__lock__strategy_8hpp.html" title="Postgres distributed locking strategy." alt="" coords="1217,377,1391,419"/>
-<area shape="rect" id="node23" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="253,377,419,419"/>
-<area shape="rect" id="node26" href="$d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon..." alt="" coords="1415,385,1614,411"/>
-<area shape="rect" id="node27" href="$dd/d64/periodic__task_8hpp.html" title="Task that periodically runs a user callback." alt="" coords="1050,377,1193,419"/>
-<area shape="rect" id="node11" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="1041,563,1175,605"/>
-<area shape="rect" id="node13" href="$d9/d32/engine_2subprocess_2process__starter_8hpp.html" title="Creates a new OS subprocess and executes a command in it." alt="" coords="5,467,184,508"/>
-<area shape="rect" id="node14" href="$d1/d12/components_2process__starter_8hpp.html" title="Component for getting the engine::subprocess::ProcessStarter." alt="" coords="25,563,165,605"/>
-<area shape="rect" id="node16" href="$db/dea/destination__statistics_8hpp_source.html" title=" " alt="" coords="398,467,573,508"/>
-<area shape="rect" id="node18" href="$d1/dd7/mongo_2include_2userver_2storages_2mongo_2component_8hpp.html" title="MongoDB client component." alt="" coords="529,563,692,605"/>
-<area shape="rect" id="node20" href="$d2/d86/mongo_8hpp.html" title="Include&#45;all header for MongoDB client." alt="" coords="648,474,835,501"/>
-<area shape="rect" id="node22" href="$dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="1883,467,2093,508"/>
-<area shape="rect" id="node24" href="$dd/d60/core_2include_2userver_2storages_2secdist_2component_8hpp.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="208,467,373,508"/>
-<area shape="rect" id="node25" href="$da/db3/auth__checker__settings__component_8hpp.html" title="Component that loads auth configuration settings from a components::Secdist componenet if the latter ..." alt="" coords="197,556,384,612"/>
-<area shape="rect" id="node28" href="$dc/d2e/core_2include_2userver_2logging_2component_8hpp.html" title="Logging component" alt="" coords="1615,474,1817,501"/>
-<area shape="rect" id="node29" href="$db/d5f/system__statistics__collector_8hpp.html" title="Component for system resource usage statistics collection." alt="" coords="1381,467,1590,508"/>
-<area shape="rect" id="node32" href="$d2/d09/async__event__channel_8hpp.html" title=" " alt="" coords="2051,377,2229,419"/>
-<area shape="rect" id="node34" href="$d5/dbc/background__task__storage_8hpp.html" title=" " alt="" coords="1639,377,1839,419"/>
-<area shape="rect" id="node33" href="$d3/d71/conflated__event__channel_8hpp_source.html" title=" " alt="" coords="2189,467,2384,508"/>
-<area shape="rect" id="node37" href="$d2/d92/dist__locked__task_8hpp.html" title=" " alt="" coords="1819,184,1965,225"/>
-<area shape="rect" id="node38" href="$d8/ded/dist__locked__worker_8hpp_source.html" title=" " alt="" coords="1989,184,2136,225"/>
-<area shape="rect" id="node40" href="$db/d71/get__all_8hpp.html" title=" " alt="" coords="2161,184,2290,225"/>
-<area shape="rect" id="node41" href="$de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp.html" title="Interface for executing queries on a cluster of PostgreSQL servers." alt="" coords="2571,184,2744,225"/>
-<area shape="rect" id="node43" href="$d2/dbd/tasks_8hpp.html" title="Testsuite tasks support." alt="" coords="2366,191,2546,218"/>
-<area shape="rect" id="node39" href="$d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp.html" title="Base class for mongo&#45;based distlock worker components." alt="" coords="1958,281,2167,322"/>
-<area shape="rect" id="node42" href="$df/d02/postgres_8hpp.html" title=" " alt="" coords="2447,281,2620,322"/>
+<area shape="rect" id="node1" title="std::packaged_task replacement with noncopyable types support" alt="" coords="519,5,646,47"/>
+<area shape="rect" id="node2" href="$d4/dbb/engine_2async_8hpp.html" title="TaskWithResult creation helpers." alt="" coords="364,191,535,218"/>
+<area shape="rect" id="node35" href="$d5/d65/shared__task__with__result_8hpp.html" title=" " alt="" coords="353,95,545,136"/>
+<area shape="rect" id="node36" href="$d2/dcd/task__with__result_8hpp.html" title=" " alt="" coords="755,95,901,136"/>
+<area shape="rect" id="node3" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="427,467,581,508"/>
+<area shape="rect" id="node7" href="$d8/de1/expirable__lru__cache_8hpp.html" title="Class for expirable LRU cache. Use cache::LruMap for not expirable LRU Cache." alt="" coords="193,281,353,322"/>
+<area shape="rect" id="node9" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="1251,288,1386,315"/>
+<area shape="rect" id="node30" href="$db/d93/service__worker__impl_8hpp_source.html" title=" " alt="" coords="26,273,169,329"/>
+<area shape="rect" id="node31" href="$de/d4e/utils_2async_8hpp.html" title="Utility functions to start asynchronous tasks." alt="" coords="377,288,535,315"/>
+<area shape="rect" id="node4" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="507,563,643,605"/>
+<area shape="rect" id="node5" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL derived from components::CachingComponentBase." alt="" coords="733,563,880,605"/>
+<area shape="rect" id="node6" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="320,563,483,605"/>
+<area shape="rect" id="node8" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="38,377,202,419"/>
+<area shape="rect" id="node10" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="2655,467,2788,508"/>
+<area shape="rect" id="node12" href="$de/d04/environment__variables_8hpp_source.html" title=" " alt="" coords="1029,377,1211,419"/>
+<area shape="rect" id="node15" href="$d1/d0d/rcu__map_8hpp.html" title="Map&#45;like structure allowing RCU keyset updates." alt="" coords="1235,385,1402,411"/>
+<area shape="rect" id="node17" href="$d2/de5/multi__mongo_8hpp_source.html" title=" " alt="" coords="1772,467,1935,508"/>
+<area shape="rect" id="node19" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="1616,377,1779,419"/>
+<area shape="rect" id="node21" href="$d9/d02/postgresql_2include_2userver_2storages_2postgres_2dist__lock__strategy_8hpp.html" title="Postgres distributed locking strategy." alt="" coords="1853,377,2027,419"/>
+<area shape="rect" id="node23" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="1427,377,1592,419"/>
+<area shape="rect" id="node26" href="$d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon..." alt="" coords="705,385,903,411"/>
+<area shape="rect" id="node27" href="$dd/d64/periodic__task_8hpp.html" title="Task that periodically runs a user callback." alt="" coords="2223,377,2366,419"/>
+<area shape="rect" id="node11" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="2655,563,2788,605"/>
+<area shape="rect" id="node13" href="$d9/d32/engine_2subprocess_2process__starter_8hpp.html" title="Creates a new OS subprocess and executes a command in it." alt="" coords="919,467,1097,508"/>
+<area shape="rect" id="node14" href="$d1/d12/components_2process__starter_8hpp.html" title="Component for getting the engine::subprocess::ProcessStarter." alt="" coords="938,563,1078,605"/>
+<area shape="rect" id="node16" href="$db/dea/destination__statistics_8hpp_source.html" title=" " alt="" coords="1122,467,1297,508"/>
+<area shape="rect" id="node18" href="$d1/dd7/mongo_2include_2userver_2storages_2mongo_2component_8hpp.html" title="MongoDB client component." alt="" coords="1653,563,1816,605"/>
+<area shape="rect" id="node20" href="$d2/d86/mongo_8hpp.html" title="Include&#45;all header for MongoDB client." alt="" coords="1511,474,1697,501"/>
+<area shape="rect" id="node22" href="$dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="1959,467,2169,508"/>
+<area shape="rect" id="node24" href="$dd/d60/core_2include_2userver_2storages_2secdist_2component_8hpp.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="1321,467,1487,508"/>
+<area shape="rect" id="node25" href="$da/db3/auth__checker__settings__component_8hpp.html" title="Component that loads auth configuration settings from a components::Secdist componenet if the latter ..." alt="" coords="1311,556,1497,612"/>
+<area shape="rect" id="node28" href="$dc/d2e/core_2include_2userver_2logging_2component_8hpp.html" title="Logging component" alt="" coords="2193,474,2396,501"/>
+<area shape="rect" id="node29" href="$db/d5f/system__statistics__collector_8hpp.html" title="Component for system resource usage statistics collection." alt="" coords="2421,467,2630,508"/>
+<area shape="rect" id="node32" href="$d2/d09/async__event__channel_8hpp.html" title=" " alt="" coords="451,377,629,419"/>
+<area shape="rect" id="node34" href="$d5/dbc/background__task__storage_8hpp.html" title=" " alt="" coords="227,377,427,419"/>
+<area shape="rect" id="node33" href="$d3/d71/conflated__event__channel_8hpp_source.html" title=" " alt="" coords="605,467,800,508"/>
+<area shape="rect" id="node37" href="$d2/d92/dist__locked__task_8hpp.html" title=" " alt="" coords="1517,184,1664,225"/>
+<area shape="rect" id="node38" href="$d8/ded/dist__locked__worker_8hpp_source.html" title=" " alt="" coords="1347,184,1493,225"/>
+<area shape="rect" id="node40" href="$de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp.html" title="Interface for executing queries on a cluster of PostgreSQL servers." alt="" coords="865,184,1039,225"/>
+<area shape="rect" id="node42" href="$d2/dbd/tasks_8hpp.html" title="Testsuite tasks support." alt="" coords="610,191,790,218"/>
+<area shape="rect" id="node39" href="$d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp.html" title="Base class for mongo&#45;based distlock worker components." alt="" coords="1609,281,1818,322"/>
+<area shape="rect" id="node41" href="$df/d02/postgres_8hpp.html" title=" " alt="" coords="1411,281,1584,322"/>
 </map>

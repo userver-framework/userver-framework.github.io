@@ -99,19 +99,23 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8041d7f4ae83bb7c4b134bcb09df9e30"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df9/classutils_1_1StrIcaseHash.html#a8041d7f4ae83bb7c4b134bcb09df9e30">operator()</a> (const std::string &amp;s) const noexcept</td></tr>
-<tr class="separator:a8041d7f4ae83bb7c4b134bcb09df9e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a498aae69d01690ee3345e024b0b6534f"><td class="memItemLeft" align="right" valign="top"><a id="a498aae69d01690ee3345e024b0b6534f" name="a498aae69d01690ee3345e024b0b6534f"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (std::string_view s) const noexcept</td></tr>
-<tr class="separator:a498aae69d01690ee3345e024b0b6534f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdde185f31c59cf1035a7ccb111aa42d"><td class="memItemLeft" align="right" valign="top"><a id="abdde185f31c59cf1035a7ccb111aa42d" name="abdde185f31c59cf1035a7ccb111aa42d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>StrIcaseHash</b> ()</td></tr>
+<tr class="memdesc:abdde185f31c59cf1035a7ccb111aa42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new random hash seed for each hasher instance. <br /></td></tr>
+<tr class="separator:abdde185f31c59cf1035a7ccb111aa42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0711f622ac10cdd3a6e6e439f455e376"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df9/classutils_1_1StrIcaseHash.html#a0711f622ac10cdd3a6e6e439f455e376">StrIcaseHash</a> (std::size_t seed) noexcept</td></tr>
+<tr class="separator:a0711f622ac10cdd3a6e6e439f455e376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a219de1ddc0eb7bf9038796ae7e3c134e"><td class="memItemLeft" align="right" valign="top"><a id="a219de1ddc0eb7bf9038796ae7e3c134e" name="a219de1ddc0eb7bf9038796ae7e3c134e"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (std::string_view s) const &amp;noexcept</td></tr>
+<tr class="separator:a219de1ddc0eb7bf9038796ae7e3c134e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Case insensitive ASCII hashing functor. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d46/str__icase_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d1/d46/str__icase_8hpp_source.html">str_icase.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8041d7f4ae83bb7c4b134bcb09df9e30" name="a8041d7f4ae83bb7c4b134bcb09df9e30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8041d7f4ae83bb7c4b134bcb09df9e30">&#9670;&nbsp;</a></span>operator()()</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0711f622ac10cdd3a6e6e439f455e376" name="a0711f622ac10cdd3a6e6e439f455e376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0711f622ac10cdd3a6e6e439f455e376">&#9670;&nbsp;</a></span>StrIcaseHash()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,21 +124,20 @@ std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t utils::StrIcaseHash::operator() </td>
+          <td class="memname">utils::StrIcaseHash::StrIcaseHash </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>seed</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d1/d46/str__icase_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d1/d46/str__icase_8hpp_source.html">str_icase.hpp</a>.</p>
+<p >Uses the provided seed. Use with caution: a constant seed makes the hasher vulnerable to HashDOS attacks when arbitrary keys are allowed. </p>
 
 </div>
 </div>

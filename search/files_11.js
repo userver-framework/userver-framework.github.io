@@ -27,7 +27,7 @@ var searchData=
   ['sockaddr_2ehpp_24',['sockaddr.hpp',['../d7/d1b/sockaddr_8hpp.html',1,'']]],
   ['socket_2ehpp_25',['socket.hpp',['../da/dfc/socket_8hpp.html',1,'']]],
   ['source_2ehpp_26',['source.hpp',['../d2/d2e/source_8hpp.html',1,'']]],
-  ['span_2ehpp_27',['span.hpp',['../da/de1/span_8hpp.html',1,'']]],
+  ['span_2ehpp_27',['span.hpp',['../d8/d23/tracing_2span_8hpp.html',1,'']]],
   ['sql_5fstate_2ehpp_28',['sql_state.hpp',['../d8/d77/sql__state_8hpp.html',1,'']]],
   ['statistics_2ehpp_29',['statistics.hpp',['../d1/db6/postgresql_2include_2userver_2storages_2postgres_2statistics_8hpp.html',1,'']]],
   ['statistics_5fmock_2ehpp_30',['statistics_mock.hpp',['../dd/dd2/statistics__mock_8hpp.html',1,'']]],

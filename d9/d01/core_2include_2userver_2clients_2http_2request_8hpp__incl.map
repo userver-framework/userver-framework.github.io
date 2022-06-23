@@ -1,34 +1,43 @@
 <map id="userver/clients/http/request.hpp" name="userver/clients/http/request.hpp">
-<area shape="rect" id="node1" title="Class for creating and performing new http requests." alt="" coords="612,5,745,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="1063,385,1132,411"/>
-<area shape="rect" id="node3" href="$d9/dfe/resolver__fwd_8hpp_source.html" title=" " alt="" coords="273,102,405,143"/>
-<area shape="rect" id="node4" href="$da/dd9/enforce__task__deadline__config_8hpp_source.html" title=" " alt="" coords="429,95,585,151"/>
-<area shape="rect" id="node5" href="$d9/d99/error_8hpp_source.html" title=" " alt="" coords="168,377,301,419"/>
-<area shape="rect" id="node13" href="$db/da4/response_8hpp.html" title="Class that will be returned for successful request." alt="" coords="521,288,655,329"/>
-<area shape="rect" id="node17" href="$d2/de8/response__future_8hpp_source.html" title=" " alt="" coords="1191,199,1335,240"/>
-<area shape="rect" id="node26" href="$d1/dab/certificate_8hpp.html" title="Loaded into memory X509 certificate." alt="" coords="833,109,1023,136"/>
-<area shape="rect" id="node32" href="$d4/d2b/private__key_8hpp.html" title="Loaded into memory private key." alt="" coords="661,102,809,143"/>
-<area shape="rect" id="node6" title=" " alt="" coords="721,474,799,501"/>
-<area shape="rect" id="node7" title=" " alt="" coords="642,474,697,501"/>
-<area shape="rect" id="node8" title=" " alt="" coords="5,474,93,501"/>
-<area shape="rect" id="node9" title=" " alt="" coords="185,474,284,501"/>
-<area shape="rect" id="node10" href="$df/d78/local__stats_8hpp_source.html" title=" " alt="" coords="396,467,529,508"/>
-<area shape="rect" id="node11" title=" " alt="" coords="267,556,328,583"/>
-<area shape="rect" id="node12" title=" " alt="" coords="1209,556,1274,583"/>
-<area shape="rect" id="node14" title=" " alt="" coords="326,385,386,411"/>
-<area shape="rect" id="node15" title=" " alt="" coords="410,385,521,411"/>
-<area shape="rect" id="node16" href="$d1/d46/str__icase_8hpp.html" title="Case insensitive ASCII comparators and hashers." alt="" coords="597,385,771,411"/>
-<area shape="rect" id="node18" title=" " alt="" coords="1363,295,1418,322"/>
-<area shape="rect" id="node19" title=" " alt="" coords="1472,556,1555,583"/>
-<area shape="rect" id="node20" href="$d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values." alt="" coords="1150,474,1333,501"/>
-<area shape="rect" id="node21" href="$d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="256,295,440,322"/>
-<area shape="rect" id="node22" href="$dc/db0/context__accessor_8hpp_source.html" title=" " alt="" coords="1186,288,1339,329"/>
-<area shape="rect" id="node23" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="1357,467,1475,508"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1397,556,1443,583"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1319,556,1372,583"/>
-<area shape="rect" id="node27" href="$d0/df9/basic__types_8hpp.html" title="Common types for crypto module." alt="" coords="726,199,866,240"/>
-<area shape="rect" id="node28" href="$de/d2a/shared_2include_2userver_2crypto_2exception_8hpp.html" title="Exception classes for crypto module." alt="" coords="767,295,958,322"/>
-<area shape="rect" id="node29" href="$da/de0/traceful__exception_8hpp.html" title="Exception that remembers the backtrace at the point of its construction." alt="" coords="898,377,1038,419"/>
-<area shape="rect" id="node30" title=" " alt="" coords="824,474,917,501"/>
-<area shape="rect" id="node31" title=" " alt="" coords="941,467,1125,508"/>
+<area shape="rect" id="node1" title="Class for creating and performing new http requests." alt="" coords="585,5,719,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="1091,385,1160,411"/>
+<area shape="rect" id="node3" href="$d9/dfe/resolver__fwd_8hpp_source.html" title=" " alt="" coords="235,102,367,143"/>
+<area shape="rect" id="node4" href="$da/dd9/enforce__task__deadline__config_8hpp_source.html" title=" " alt="" coords="391,95,547,151"/>
+<area shape="rect" id="node5" href="$d9/d99/error_8hpp_source.html" title=" " alt="" coords="5,288,139,329"/>
+<area shape="rect" id="node13" href="$db/da4/response_8hpp.html" title="Class that will be returned for successful request." alt="" coords="525,199,659,240"/>
+<area shape="rect" id="node17" href="$d2/de8/response__future_8hpp.html" title="Allows to perform a request concurrently with other work without creating an extra coroutine for wait..." alt="" coords="1260,102,1404,143"/>
+<area shape="rect" id="node35" href="$d1/dab/certificate_8hpp.html" title="Loaded into memory X509 certificate." alt="" coords="623,109,814,136"/>
+<area shape="rect" id="node41" href="$d4/d2b/private__key_8hpp.html" title="Loaded into memory private key." alt="" coords="838,102,986,143"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1414,474,1493,501"/>
+<area shape="rect" id="node7" title=" " alt="" coords="594,474,649,501"/>
+<area shape="rect" id="node8" title=" " alt="" coords="659,385,747,411"/>
+<area shape="rect" id="node9" title=" " alt="" coords="23,385,121,411"/>
+<area shape="rect" id="node10" href="$df/d78/local__stats_8hpp_source.html" title=" " alt="" coords="451,377,584,419"/>
+<area shape="rect" id="node11" title=" " alt="" coords="1987,474,2048,501"/>
+<area shape="rect" id="node12" title=" " alt="" coords="1123,556,1189,583"/>
+<area shape="rect" id="node14" title=" " alt="" coords="362,295,422,322"/>
+<area shape="rect" id="node15" title=" " alt="" coords="446,295,557,322"/>
+<area shape="rect" id="node16" href="$d1/d46/str__icase_8hpp.html" title="Case insensitive ASCII comparators and hashers." alt="" coords="163,295,338,322"/>
+<area shape="rect" id="node18" title=" " alt="" coords="1305,295,1359,322"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1333,556,1416,583"/>
+<area shape="rect" id="node20" href="$d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values." alt="" coords="1065,474,1247,501"/>
+<area shape="rect" id="node21" href="$d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="1925,385,2109,411"/>
+<area shape="rect" id="node22" href="$db/ddf/future_8hpp.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise" alt="" coords="1546,206,1715,233"/>
+<area shape="rect" id="node26" href="$dc/db0/context__accessor_8hpp_source.html" title=" " alt="" coords="2134,377,2287,419"/>
+<area shape="rect" id="node23" href="$d0/dd6/future__status_8hpp.html" title="std::future state extended with &quot;cancelled&quot; state" alt="" coords="1757,377,1901,419"/>
+<area shape="rect" id="node24" href="$de/d5c/future__state_8hpp_source.html" title=" " alt="" coords="1669,288,1803,329"/>
+<area shape="rect" id="node34" href="$d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="1383,295,1542,322"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1517,385,1579,411"/>
+<area shape="rect" id="node27" href="$d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="1257,377,1391,419"/>
+<area shape="rect" id="node31" href="$d8/df1/result__store_8hpp.html" title="Simple value/exception store." alt="" coords="1603,377,1733,419"/>
+<area shape="rect" id="node28" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="1271,467,1390,508"/>
+<area shape="rect" id="node29" title=" " alt="" coords="1262,556,1309,583"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1596,556,1649,583"/>
+<area shape="rect" id="node32" title=" " alt="" coords="1631,474,1697,501"/>
+<area shape="rect" id="node33" title=" " alt="" coords="1527,474,1606,501"/>
+<area shape="rect" id="node36" href="$d0/df9/basic__types_8hpp.html" title="Common types for crypto module." alt="" coords="734,199,874,240"/>
+<area shape="rect" id="node37" href="$de/d2a/shared_2include_2userver_2crypto_2exception_8hpp.html" title="Exception classes for crypto module." alt="" coords="835,295,1026,322"/>
+<area shape="rect" id="node38" href="$da/de0/traceful__exception_8hpp.html" title="Exception that remembers the backtrace at the point of its construction." alt="" coords="899,377,1039,419"/>
+<area shape="rect" id="node39" title=" " alt="" coords="688,474,781,501"/>
+<area shape="rect" id="node40" title=" " alt="" coords="805,467,989,508"/>
 </map>

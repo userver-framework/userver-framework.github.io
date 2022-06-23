@@ -157,6 +157,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">TaskWithResult</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/classengine_1_1UnreachableSemaphoreLockError.html">UnreachableSemaphoreLockError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -255,16 +257,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ad4c5beafea20f0620482fd7dddcf0c63"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#ad4c5beafea20f0620482fd7dddcf0c63">CriticalAsyncNoSpan</a> (<a class="el" href="../../de/d6a/classengine_1_1Deadline.html">Deadline</a> deadline, Function &amp;&amp;f, Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ad4c5beafea20f0620482fd7dddcf0c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs an asynchronous function call that will start regardless of cancellations, using task processor of the caller, with deadline.  <a href="../../dc/d3f/namespaceengine.html#ad4c5beafea20f0620482fd7dddcf0c63">More...</a><br /></td></tr>
 <tr class="separator:ad4c5beafea20f0620482fd7dddcf0c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e4cffae40e9319b7c6409caab2aef33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a5e4cffae40e9319b7c6409caab2aef33">GetAll</a> (std::vector&lt; <a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">TaskWithResult</a>&lt; void &gt; &gt; &amp;tasks)</td></tr>
-<tr class="memdesc:a5e4cffae40e9319b7c6409caab2aef33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or the cancellation of the caller. Effectively performs <code>for (auto&amp; task : tasks) task.Get();</code> with a twist: task.Get() is called in tasks completion order rather than in provided order, thus exceptions are rethrown ASAP. After successful return from this method the tasks are invalid, in case of exception being thrown some of the tasks might be invalid.  <a href="../../dc/d3f/namespaceengine.html#a5e4cffae40e9319b7c6409caab2aef33">More...</a><br /></td></tr>
-<tr class="separator:a5e4cffae40e9319b7c6409caab2aef33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae91e4a1d33fee3d40962575978beefd0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae91e4a1d33fee3d40962575978beefd0"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#ae91e4a1d33fee3d40962575978beefd0">GetAll</a> (std::vector&lt; <a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">TaskWithResult</a>&lt; T &gt; &gt; &amp;tasks)</td></tr>
-<tr class="separator:ae91e4a1d33fee3d40962575978beefd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14a0337843b7713086e7a5d06229b638"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
-<tr class="memitem:a14a0337843b7713086e7a5d06229b638"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a14a0337843b7713086e7a5d06229b638">GetAll</a> (Tasks &amp;... tasks)</td></tr>
-<tr class="memdesc:a14a0337843b7713086e7a5d06229b638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or the cancellation of the caller. Effectively performs <code>for (auto&amp; task : tasks) task.Get();</code> with a twist: task.Get() is called in tasks completion order rather than in provided order, thus exceptions are rethrown ASAP. After successful return from this method the tasks are invalid, in case of exception being thrown some of the tasks might be invalid.  <a href="../../dc/d3f/namespaceengine.html#a14a0337843b7713086e7a5d06229b638">More...</a><br /></td></tr>
-<tr class="separator:a14a0337843b7713086e7a5d06229b638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c1ba3047210ae48bbc0f027fedd31c"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:a26c1ba3047210ae48bbc0f027fedd31c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a26c1ba3047210ae48bbc0f027fedd31c">GetAll</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:a26c1ba3047210ae48bbc0f027fedd31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or the cancellation of the caller.  <a href="../../dc/d3f/namespaceengine.html#a26c1ba3047210ae48bbc0f027fedd31c">More...</a><br /></td></tr>
+<tr class="separator:a26c1ba3047210ae48bbc0f027fedd31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b808a81d43d062275ca56dc09980277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a5b808a81d43d062275ca56dc09980277">RunStandalone</a> (std::function&lt; void()&gt; payload)</td></tr>
 <tr class="memdesc:a5b808a81d43d062275ca56dc09980277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a payload in a temporary coroutine engine instance.  <a href="../../dc/d3f/namespaceengine.html#a5b808a81d43d062275ca56dc09980277">More...</a><br /></td></tr>
 <tr class="separator:a5b808a81d43d062275ca56dc09980277"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -298,28 +294,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Yield</b> ()</td></tr
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> (<a class="el" href="../../dc/d3f/namespaceengine.html#a0d5218b35f5861d406b7d3f8868d5cfd">TaskCancellationReason</a> reason)</td></tr>
 <tr class="memdesc:adbde2c9ac4b204da493330c74fa08fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of a cancellation reason. <br /></td></tr>
 <tr class="separator:adbde2c9ac4b204da493330c74fa08fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe29f85e5a5dd200efb8664f32e5defd"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
-<tr class="memitem:gafe29f85e5a5dd200efb8664f32e5defd"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gafe29f85e5a5dd200efb8664f32e5defd">WaitAny</a> (Container &amp;tasks)</td></tr>
-<tr class="memdesc:gafe29f85e5a5dd200efb8664f32e5defd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the completion of any of the specified tasks or the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#gafe29f85e5a5dd200efb8664f32e5defd">More...</a><br /></td></tr>
-<tr class="separator:gafe29f85e5a5dd200efb8664f32e5defd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
-<tr class="memitem:a6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a6fc06edbfecd5d58598fb3880ae9edb2">WaitAny</a> (Tasks &amp;... tasks)</td></tr>
-<tr class="separator:a6fc06edbfecd5d58598fb3880ae9edb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7189a16877ac5db026e0b5f10779ea67"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Rep , typename Period &gt; </td></tr>
-<tr class="memitem:a7189a16877ac5db026e0b5f10779ea67"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a7189a16877ac5db026e0b5f10779ea67">WaitAnyFor</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;duration, Container &amp;tasks)</td></tr>
-<tr class="separator:a7189a16877ac5db026e0b5f10779ea67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279">WaitAllChecked</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or for the cancellation of the caller.  <a href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279">More...</a><br /></td></tr>
+<tr class="separator:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2">WaitAny</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the completion of any of the specified tasks or the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2">More...</a><br /></td></tr>
+<tr class="separator:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42ece55a94029e949c56470cdc045973"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks, typename Rep , typename Period &gt; </td></tr>
 <tr class="memitem:a42ece55a94029e949c56470cdc045973"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a42ece55a94029e949c56470cdc045973">WaitAnyFor</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;duration, Tasks &amp;... tasks)</td></tr>
 <tr class="separator:a42ece55a94029e949c56470cdc045973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52712b06392d5608d18d1a7db2e9b273"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Clock , typename Duration &gt; </td></tr>
-<tr class="memitem:a52712b06392d5608d18d1a7db2e9b273"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a52712b06392d5608d18d1a7db2e9b273">WaitAnyUntil</a> (const std::chrono::time_point&lt; Clock, Duration &gt; &amp;until, Container &amp;tasks)</td></tr>
-<tr class="separator:a52712b06392d5608d18d1a7db2e9b273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac29a9e85bf8e89ae978092398813f810"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks, typename Clock , typename Duration &gt; </td></tr>
 <tr class="memitem:ac29a9e85bf8e89ae978092398813f810"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#ac29a9e85bf8e89ae978092398813f810">WaitAnyUntil</a> (const std::chrono::time_point&lt; Clock, Duration &gt; &amp;until, Tasks &amp;... tasks)</td></tr>
 <tr class="separator:ac29a9e85bf8e89ae978092398813f810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11cc8935be10596dcabe4a5c54e6a9b7"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
-<tr class="memitem:a11cc8935be10596dcabe4a5c54e6a9b7"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a11cc8935be10596dcabe4a5c54e6a9b7">WaitAnyUntil</a> (<a class="el" href="../../de/d6a/classengine_1_1Deadline.html">Deadline</a>, Container &amp;tasks)</td></tr>
-<tr class="separator:a11cc8935be10596dcabe4a5c54e6a9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a832284c62ba7b5a9d9e88ec0affb0b5a"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
 <tr class="memitem:a832284c62ba7b5a9d9e88ec0affb0b5a"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a832284c62ba7b5a9d9e88ec0affb0b5a">WaitAnyUntil</a> (<a class="el" href="../../de/d6a/classengine_1_1Deadline.html">Deadline</a>, Tasks &amp;... tasks)</td></tr>
 <tr class="separator:a832284c62ba7b5a9d9e88ec0affb0b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -724,57 +712,8 @@ template&lt;typename Function , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="ae91e4a1d33fee3d40962575978beefd0" name="ae91e4a1d33fee3d40962575978beefd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae91e4a1d33fee3d40962575978beefd0">&#9670;&nbsp;</a></span>GetAll() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; T &gt; engine::GetAll </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">TaskWithResult</a>&lt; T &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tasks</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/d71/get__all_8hpp_source.html#l00164">164</a> of file <a class="el" href="../../db/d71/get__all_8hpp_source.html">get_all.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5e4cffae40e9319b7c6409caab2aef33" name="a5e4cffae40e9319b7c6409caab2aef33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e4cffae40e9319b7c6409caab2aef33">&#9670;&nbsp;</a></span>GetAll() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void engine::GetAll </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">TaskWithResult</a>&lt; void &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tasks</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Waits for the successful completion of all of the specified tasks or the cancellation of the caller. Effectively performs <code>for (auto&amp; task : tasks) task.Get();</code> with a twist: task.Get() is called in tasks completion order rather than in provided order, thus exceptions are rethrown ASAP. After successful return from this method the tasks are invalid, in case of exception being thrown some of the tasks might be invalid. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td><td>when <code><a class="el" href="../../db/df2/cancel_8hpp.html#a561f4b1f4b6d9b12f41a8f6a0d98547e" title="Checks for pending cancellation requests.">current_task::IsCancelRequested()</a></code> and no TaskCancellationBlockers are present. Rethrows one of specified tasks exception, if any, in no particular order.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>: has overall computational complexity of O(N^2), where N is the number of tasks. </dd></dl>
-
-</div>
-</div>
-<a id="a14a0337843b7713086e7a5d06229b638" name="a14a0337843b7713086e7a5d06229b638"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14a0337843b7713086e7a5d06229b638">&#9670;&nbsp;</a></span>GetAll() <span class="overload">[3/3]</span></h2>
+<a id="a26c1ba3047210ae48bbc0f027fedd31c" name="a26c1ba3047210ae48bbc0f027fedd31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c1ba3047210ae48bbc0f027fedd31c">&#9670;&nbsp;</a></span>GetAll()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,7 +721,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename... Tasks&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void engine::GetAll </td>
+          <td class="memname">auto engine::GetAll </td>
           <td>(</td>
           <td class="paramtype">Tasks &amp;...&#160;</td>
           <td class="paramname"><em>tasks</em></td><td>)</td>
@@ -791,16 +730,28 @@ template&lt;typename... Tasks&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Waits for the successful completion of all of the specified tasks or the cancellation of the caller. Effectively performs <code>for (auto&amp; task : tasks) task.Get();</code> with a twist: task.Get() is called in tasks completion order rather than in provided order, thus exceptions are rethrown ASAP. After successful return from this method the tasks are invalid, in case of exception being thrown some of the tasks might be invalid. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td><td>when <code><a class="el" href="../../db/df2/cancel_8hpp.html#a561f4b1f4b6d9b12f41a8f6a0d98547e" title="Checks for pending cancellation requests.">current_task::IsCancelRequested()</a></code> and no TaskCancellationBlockers are present. Rethrows one of specified tasks exception, if any, in no particular order.</td></tr>
+<p>Waits for the successful completion of all of the specified tasks or the cancellation of the caller. </p>
+<p >Effectively performs <code>for (auto&amp; task : tasks) task.Get();</code> with a twist: task.Get() is called in tasks completion order rather than in provided order, thus exceptions are rethrown ASAP.</p>
+<p >After successful return from this method the tasks are invalid, in case of an exception being thrown some of the tasks might be invalid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>either a single container, or a pack of future-like elements. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>: has overall computational complexity of O(N^2), where N is the number of tasks. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::vector&lt;Result&gt;</code> or <code>void</code>, depending on the tasks result type (which must be the same for all <code>tasks</code>). </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td><td>when <code><a class="el" href="../../db/df2/cancel_8hpp.html#a561f4b1f4b6d9b12f41a8f6a0d98547e" title="Checks for pending cancellation requests.">current_task::IsCancelRequested()</a></code> and no TaskCancellationBlockers are present. </td></tr>
+    <tr><td class="paramname">std::exception</td><td>rethrows one of specified tasks exception, if any, in no particular order.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Has overall computational complexity of O(N^2), where N is the number of tasks. </dd>
+<dd>
+Prefer <a class="el" href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279" title="Waits for the successful completion of all of the specified tasks or for the cancellation of the call...">engine::WaitAllChecked</a> for tasks with a result, unless you specifically need the results stored in a <code>std::vector</code> or when storing the results long-term. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d71/get__all_8hpp_source.html#l00159">159</a> of file <a class="el" href="../../db/d71/get__all_8hpp_source.html">get_all.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d71/get__all_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../db/d71/get__all_8hpp_source.html">get_all.hpp</a>.</p>
 
 </div>
 </div>
@@ -1164,8 +1115,8 @@ template&lt;typename Clock , typename Duration &gt; </div>
 
 </div>
 </div>
-<a id="a6fc06edbfecd5d58598fb3880ae9edb2" name="a6fc06edbfecd5d58598fb3880ae9edb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fc06edbfecd5d58598fb3880ae9edb2">&#9670;&nbsp;</a></span>WaitAny()</h2>
+<a id="ae7a0b9edf6e9e23e3433edafc6d59279" name="ae7a0b9edf6e9e23e3433edafc6d59279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a0b9edf6e9e23e3433edafc6d59279">&#9670;&nbsp;</a></span>WaitAllChecked()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1173,7 +1124,7 @@ template&lt;typename Clock , typename Duration &gt; </div>
 template&lt;typename... Tasks&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; std::size_t &gt; engine::WaitAny </td>
+          <td class="memname">void engine::WaitAllChecked </td>
           <td>(</td>
           <td class="paramtype">Tasks &amp;...&#160;</td>
           <td class="paramname"><em>tasks</em></td><td>)</td>
@@ -1182,44 +1133,35 @@ template&lt;typename... Tasks&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
+<p>Waits for the successful completion of all of the specified tasks or for the cancellation of the caller. </p>
+<p >Effectively performs <code>for (auto&amp; task : tasks) task.Wait();</code> with a twist: if any task completes with an exception, it gets rethrown ASAP.</p>
+<p >Invalid tasks are skipped.</p>
+<p >Tasks are not invalidated by <code>WaitAllChecked</code>; the result can be retrieved after the call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>either a single container, or a pack of future-like elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td><td>when <code><a class="el" href="../../db/df2/cancel_8hpp.html#a561f4b1f4b6d9b12f41a8f6a0d98547e" title="Checks for pending cancellation requests.">current_task::IsCancelRequested()</a></code> and no TaskCancellationBlockers are present. </td></tr>
+    <tr><td class="paramname">std::exception</td><td>one of specified tasks exception, if any, in no particular order.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Has overall computational complexity of O(N^2), where N is the number of tasks. </dd>
+<dd>
+Keeping the tasks valid may have a small extra memory impact. Make sure to drop the tasks after reading the results. </dd>
+<dd>
+Prefer <a class="el" href="../../dc/d3f/namespaceengine.html#a26c1ba3047210ae48bbc0f027fedd31c" title="Waits for the successful completion of all of the specified tasks or the cancellation of the caller.">engine::GetAll</a> for tasks without a result, unless you specifically need to keep the tasks alive for some reason. </dd></dl>
 
-</div>
-</div>
-<a id="a7189a16877ac5db026e0b5f10779ea67" name="a7189a16877ac5db026e0b5f10779ea67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7189a16877ac5db026e0b5f10779ea67">&#9670;&nbsp;</a></span>WaitAnyFor() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Container , typename Rep , typename Period &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::optional&lt; std::size_t &gt; engine::WaitAnyFor </td>
-          <td>(</td>
-          <td class="paramtype">const std::chrono::duration&lt; Rep, Period &gt; &amp;&#160;</td>
-          <td class="paramname"><em>duration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Container &amp;&#160;</td>
-          <td class="paramname"><em>tasks</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d30/wait__all__checked_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../db/d30/wait__all__checked_8hpp_source.html">wait_all_checked.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a42ece55a94029e949c56470cdc045973" name="a42ece55a94029e949c56470cdc045973"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42ece55a94029e949c56470cdc045973">&#9670;&nbsp;</a></span>WaitAnyFor() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ece55a94029e949c56470cdc045973">&#9670;&nbsp;</a></span>WaitAnyFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1246,44 +1188,12 @@ template&lt;typename... Tasks, typename Rep , typename Period &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00097">97</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a52712b06392d5608d18d1a7db2e9b273" name="a52712b06392d5608d18d1a7db2e9b273"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52712b06392d5608d18d1a7db2e9b273">&#9670;&nbsp;</a></span>WaitAnyUntil() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Container , typename Clock , typename Duration &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::optional&lt; std::size_t &gt; engine::WaitAnyUntil </td>
-          <td>(</td>
-          <td class="paramtype">const std::chrono::time_point&lt; Clock, Duration &gt; &amp;&#160;</td>
-          <td class="paramname"><em>until</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Container &amp;&#160;</td>
-          <td class="paramname"><em>tasks</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ac29a9e85bf8e89ae978092398813f810" name="ac29a9e85bf8e89ae978092398813f810"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac29a9e85bf8e89ae978092398813f810">&#9670;&nbsp;</a></span>WaitAnyUntil() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29a9e85bf8e89ae978092398813f810">&#9670;&nbsp;</a></span>WaitAnyUntil() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1310,44 +1220,12 @@ template&lt;typename... Tasks, typename Clock , typename Duration &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00109">109</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a11cc8935be10596dcabe4a5c54e6a9b7" name="a11cc8935be10596dcabe4a5c54e6a9b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11cc8935be10596dcabe4a5c54e6a9b7">&#9670;&nbsp;</a></span>WaitAnyUntil() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Container &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::optional&lt; std::size_t &gt; engine::WaitAnyUntil </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/d6a/classengine_1_1Deadline.html">Deadline</a>&#160;</td>
-          <td class="paramname"><em>deadline</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Container &amp;&#160;</td>
-          <td class="paramname"><em>tasks</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00187">187</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00067">67</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a832284c62ba7b5a9d9e88ec0affb0b5a" name="a832284c62ba7b5a9d9e88ec0affb0b5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a832284c62ba7b5a9d9e88ec0affb0b5a">&#9670;&nbsp;</a></span>WaitAnyUntil() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a832284c62ba7b5a9d9e88ec0affb0b5a">&#9670;&nbsp;</a></span>WaitAnyUntil() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1374,7 +1252,7 @@ template&lt;typename... Tasks&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00196">196</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
 
 </div>
 </div>

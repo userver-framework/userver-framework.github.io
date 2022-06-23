@@ -88,49 +88,49 @@ $(function() {
 <blockquote class="doxtable">
 <p >&zwj;Note that writing down the debug or trace logs can significantly affect the performance of the service. In addition to the overhead of writing down more log records, C++ debug symbols may be loaded from the disk to report stack traces. Such IO could lead to significant and unpredictable delays in task processing. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md148"></a>
+<h1><a class="anchor" id="autotoc_md151"></a>
 Commands for default logger</h1>
 <p ><a class="el" href="../../da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers.">server::handlers::LogLevel</a> provides the following REST API: </p><div class="fragment"><div class="line">GET /service/log-level/</div>
 <div class="line">PUT /service/log-level/{level} (possible values {level}: trace, debug, info, warning, error, critical, none)</div>
 <div class="line">PUT /service/log-level/reset</div>
 </div><!-- fragment --><p> Note that the <a class="el" href="../../da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers.">server::handlers::LogLevel</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/log-level/</code> handle path.</p>
-<h1><a class="anchor" id="autotoc_md149"></a>
+<h1><a class="anchor" id="autotoc_md152"></a>
 Examples:</h1>
-<h2><a class="anchor" id="autotoc_md150"></a>
+<h2><a class="anchor" id="autotoc_md153"></a>
 Get the current log-level</h2>
 <p >Note that <code>/</code> is important at the end, without it you may get a response from other handler.</p>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/&#39;</div>
 <div class="line">{&quot;current-log-level&quot;:&quot;info&quot;,&quot;init-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md151"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md154"></a>
 Set log-level to debug</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log-level/debug&#39;</div>
 <div class="line">{&quot;current-log-level&quot;:&quot;debug&quot;,&quot;init-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md152"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md155"></a>
 Restore the default log-level</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log-level/reset&#39;</div>
 <div class="line">{&quot;current-log-level&quot;:&quot;info&quot;,&quot;init-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md153"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md156"></a>
 Commands for custom loggers</h1>
 <div class="fragment"><div class="line">GET /service/log-level/?logger={logger}</div>
 <div class="line">PUT /service/log-level/{level}?logger={logger} (possible values {level}: trace, debug, info, warning, error, critical, none)</div>
 <div class="line">PUT /service/log-level/reset?logger={logger}</div>
 </div><!-- fragment --><p> Note that the <a class="el" href="../../da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers.">server::handlers::LogLevel</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration.</p>
-<h1><a class="anchor" id="autotoc_md154"></a>
+<h1><a class="anchor" id="autotoc_md157"></a>
 Examples:</h1>
-<h2><a class="anchor" id="autotoc_md155"></a>
+<h2><a class="anchor" id="autotoc_md158"></a>
 Get the current log-level of the access logger</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/?logger=access&#39; </div>
 <div class="line">{&quot;init-log-level&quot;:&quot;info&quot;,&quot;current-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md156"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md159"></a>
 Set the log level of the access logger to debug</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/debug?logger=access&#39; -X PUT</div>
 <div class="line">{&quot;init-log-level&quot;:&quot;info&quot;,&quot;current-log-level&quot;:&quot;debug&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md157"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md160"></a>
 Reset the current log level of the access logger</h2>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/reset?logger=access&#39; -X PUT</div>

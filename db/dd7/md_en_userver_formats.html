@@ -85,7 +85,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p >Userver provides classes for reading, working with, and serializing various data formats. Classes for different formats have an almost identical interface. There are common points for customizing parsers and serializers of custom types.</p>
-<h2><a class="anchor" id="autotoc_md101"></a>
+<h2><a class="anchor" id="autotoc_md104"></a>
 formats::*::Value</h2>
 <p >Classes <a class="el" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>, <a class="el" href="../../db/d67/classformats_1_1bson_1_1Value.html" title="Non-mutable BSON value representation.">formats::bson::Value</a>, <a class="el" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a> and <a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html" title="Non-mutable YAML value representation.">formats::yaml::Value</a> are intended for non-modifying work with formats (in other words, for reading data).</p>
 <p >Usage Example:</p>
@@ -101,7 +101,7 @@ formats::*::Value</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> key3 = json[<span class="stringliteral">&quot;key2&quot;</span>][<span class="stringliteral">&quot;key3&quot;</span>].<a class="code hl_function" href="../../de/d91/classformats_1_1json_1_1Value.html#a4383138b64646d372ab3990e38e2fc62" title="Returns value of *this converted to T.">As</a>&lt;std::string&gt;();</div>
 <div class="line">  ASSERT_EQ(key3, <span class="stringliteral">&quot;val&quot;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md105"></a>
 Customization of formats::*::Value::As&lt;T&gt;()</h2>
 <p >In order for <code>formats::*::Value</code> to be able to represent data as a C++ type, you should write a special function <code>Parse</code> for that C++ type. <code>Parse</code> should be located in the namespace of the type or may be located in the <code><a class="el" href="../../d4/d6e/namespaceformats_1_1common.html" title="Common utilities for all the formats.">formats::common</a></code> namespace if the type comes from third-party library that you have no control of:</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
@@ -177,7 +177,7 @@ Customization of formats::*::Value::As&lt;T&gt;()</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace my_namespace</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md103"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md106"></a>
 Inline helpers formats::*::Make*</h2>
 <p >To build objects of trivial types some of the formats provide inline helpers, like <a class="el" href="../../d3/dcb/group__userver__formats.html#gafc1e568ca1efc4014483f1bf319e105d">formats::json::MakeArray()</a>, <a class="el" href="../../d3/dcb/group__userver__formats.html#ga9fbc3907a2068f250572de539e6cf6de">formats::json::MakeObject()</a>:</p>
 <div class="fragment"></div><!-- fragment --><p >Or <a class="el" href="../../dd/dee/namespaceformats_1_1bson.html#a63db58ec47961e5e12ca50d7f4d58636" title="Constructs a Document from provided key-value pairs.">formats::bson::MakeDoc()</a>, <a class="el" href="../../dd/dee/namespaceformats_1_1bson.html#a9037c8402aa532f2c93c89d1e9f573ab" title="Constructs an array Value from provided element list.">formats::bson::MakeArray()</a>:</p>
@@ -191,7 +191,7 @@ Inline helpers formats::*::Make*</h2>
 <div class="line">  EXPECT_EQ(1, umap[<span class="stringliteral">&quot;one&quot;</span>]);</div>
 <div class="line">  EXPECT_EQ(2, umap[<span class="stringliteral">&quot;two&quot;</span>]);</div>
 </div><!-- fragment --><p >Those inline helper functions usually work slightly faster than <code>formats::*::ValueBuilder</code>. However, if you need a <code>std::string</code> with JSON the fastest way would be to use the <a class="el" href="../../db/dd7/md_en_userver_formats.html#formats_streaming_serialization">Streaming Serialization</a>. Inline helpers could not be customized for used provided types, unlike other format building types. Inline helpers could produce broken value on bad input because they skip some of the checks, for example a key uniqueness check.</p>
-<h2><a class="anchor" id="autotoc_md104"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 formats::*::ValueBuilder</h2>
 <p >Classes <code><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a></code>, <code><a class="el" href="../../de/d70/classformats_1_1bson_1_1ValueBuilder.html" title="Builder for BSON.">formats::bson::ValueBuilder</a></code> and <code><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html" title="Builder for YAML.">formats::yaml::ValueBuilder</a></code> are designed for building objects of a given format.</p>
 <p >Usage Example:</p>
@@ -203,7 +203,7 @@ formats::*::ValueBuilder</h2>
 <div class="line"> </div>
 <div class="line">  ASSERT_EQ(json[<span class="stringliteral">&quot;key1&quot;</span>].As&lt;int&gt;(), 1);</div>
 <div class="line">  ASSERT_EQ(json[<span class="stringliteral">&quot;key2&quot;</span>][<span class="stringliteral">&quot;key3&quot;</span>].As&lt;std::string&gt;(), <span class="stringliteral">&quot;val&quot;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md105"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md108"></a>
 Customization of formats::*::ValueBuilder</h2>
 <p >In order for <code>formats::*::ValueBuilder</code> to be able to represent a C++ type in the specified format, you should write a special function <code>Serialize</code> for that C++ type. <code>Serialize</code> should be located in the namespace of the type or may be located in the <code><a class="el" href="../../d4/d6e/namespaceformats_1_1common.html" title="Common utilities for all the formats.">formats::common</a></code> namespace if the type comes from third-party library that you have no control of:</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
@@ -278,7 +278,7 @@ Customization of formats::*::ValueBuilder</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace my_namespace</span></div>
 </div><!-- fragment --><p ><a class="anchor" id="formats_streaming_serialization"></a></p>
-<h2><a class="anchor" id="autotoc_md106"></a>
+<h2><a class="anchor" id="autotoc_md109"></a>
 Streaming Serialization</h2>
 <p >For runtime-critical code, it is possible to use streaming serializers. They allow you to serialize several times faster than <code><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a></code>, but should be used carefully because may produce broken format.</p>
 <p >At the moment, <b>stream serialization is implemented only for JSON</b> via the <code><a class="el" href="../../da/d55/classformats_1_1json_1_1StringBuilder.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo...">formats::json::StringBuilder</a></code>.</p>

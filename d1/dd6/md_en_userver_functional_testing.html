@@ -84,7 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">Functional service tests (testsuite) </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md108"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md111"></a>
 Getting started</h1>
 <p >Userver has built-in support for functional service tests using <a href="https://pypi.org/project/yandex-taxi-testsuite/">Yandex.Taxi Testsuite</a>. Testsuite is based on <a href="https://pytest.org/">pytest</a> and allows developers to test thier services in isolated environment. It starts service binary with minimal database and all external services mocked then allows developer to call service handlers and test their result.</p>
 <p >Supported features:</p>
@@ -98,7 +98,7 @@ Getting started</h1>
 <li>Cache invalidation</li>
 <li>Logs capture</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md109"></a>
+<h1><a class="anchor" id="autotoc_md112"></a>
 CMake integration</h1>
 <p >With <code>userver_testsuite_add()</code> function you can easily add testsuite support to your project. Its main purpose is:</p>
 <ul>
@@ -118,7 +118,7 @@ CMake integration</h1>
 <div class="line">  --config-fallback=${CMAKE_CURRENT_SOURCE_DIR}/dynamic_config_fallback.json</div>
 <div class="line">  --service-config-vars=${CMAKE_CURRENT_SOURCE_DIR}/config_vars.yaml</div>
 <div class="line">)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md110"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md113"></a>
 Arguments</h2>
 <ul>
 <li>NAME, required test name used as <code>ctest</code> target name.</li>
@@ -128,7 +128,7 @@ Arguments</h2>
 <li>REQUIREMENTS, list of reqirements.txt files used to populate <code>virtualenv</code>.</li>
 <li>PYTHON_BINARY, path to existing Python binary.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md111"></a>
+<h2><a class="anchor" id="autotoc_md114"></a>
 Python environment</h2>
 <p >You may want to create new virtual environment with its own set of packages. Or reuse existing one. That could be done this way:</p>
 <ul>
@@ -140,11 +140,11 @@ Python environment</h2>
 <div class="fragment"><div class="line">yandex-taxi-testsuite[mongodb]</div>
 </div><!-- fragment --><p >Creating per-testsuite virtual environment is a recommended way to go. It creates virtualenv that could be found in current binary directory:</p>
 <p ><code>${CMAKE_CURRENT_BINARY_DIR}/venv-${ARG_NAME}</code></p>
-<h2><a class="anchor" id="autotoc_md112"></a>
+<h2><a class="anchor" id="autotoc_md115"></a>
 Run with ctest</h2>
 <p ><code>userver_testsuite_add()</code> registers a ctest target with name NAME. Run all project tests with ctest command or use filters to run specific tests:</p>
 <div class="fragment"><div class="line">ctest -V -R my-project  # NAME argument is used</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md113"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md116"></a>
 Direct run</h2>
 <p >To run pytest directly <code>userver_testsuite_add()</code> creates a testsuite runner script that could be found in corresponding binary directory. This may be useful to run a single testcase, to start the testsuite with gdb or to start the testsuite with extra pytest arguments:</p>
 <p ><code>${CMAKE_CURRENT_BINARY_DIR}/runtests-${ARG_NAME}</code></p>
@@ -152,7 +152,7 @@ Direct run</h2>
 <div class="fragment"><div class="line">./build/tests/runtests-my-project -vvx ./tests -k test_foo</div>
 </div><!-- fragment --><p >Please refer to <code>testuite</code> and <code>pytest</code> documentation for available options. Run it with <code>--help</code> argument to see the short options description.</p>
 <div class="fragment"><div class="line">./build/tests/runtests-my-project ./tests --help</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md114"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md117"></a>
 pytest_userver</h1>
 <p >By default internal <code>pytest_userver</code> plugin is included in python path. It provides basic testsuite support for userver service. To use it add it to your <code>pytest_plugins</code> in root <code>conftest.py</code>:</p>
 <div class="fragment"><div class="line">pytest_plugins = [<span class="stringliteral">&#39;pytest_userver.plugins&#39;</span>]</div>
@@ -167,7 +167,7 @@ pytest_userver</h1>
 <div class="line">  --config-fallback=${CMAKE_CURRENT_SOURCE_DIR}/dynamic_config_fallback.json</div>
 <div class="line">  --service-config-vars=${CMAKE_CURRENT_SOURCE_DIR}/config_vars.yaml</div>
 <div class="line">)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md115"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md118"></a>
 Userver testsuite support</h2>
 <p >Userver has built-in support for testsuite.</p>
 <p >In order to use it you need to register correspoding components:</p>
@@ -188,9 +188,9 @@ Userver testsuite support</h2>
 <div class="line">            throttling_enabled: false</div>
 <div class="line">        testsuite-support:</div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Please note that the testsuite support must be disabled in production enviroment. Testsuite sets the <code>testsuite-enabled</code> variable into <code>true</code> when runs the service. In the example above this variable controls whether or <code>tests-control</code> component is loaded.</dd></dl>
-<h2><a class="anchor" id="autotoc_md116"></a>
+<h2><a class="anchor" id="autotoc_md119"></a>
 Features</h2>
-<h3><a class="anchor" id="autotoc_md117"></a>
+<h3><a class="anchor" id="autotoc_md120"></a>
 Service config generation</h3>
 <p ><code>pytest_userver</code> uses config.yaml and config_vars.yaml passed to pytest to generate services configs. <code>pytest_userver</code> provides a way to modify this configs before startings service. You can decalre <code>USERVER_CONFIG_HOOKS</code> variable in your pytest-plugin it is list of functions or pytest-fixtures that are run before config is written to disk. Example usage:</p>
 <div class="fragment"><div class="line">USERVER_CONFIG_HOOKS = [<span class="stringliteral">&#39;userver_config_configs_client&#39;</span>]</div>
@@ -205,7 +205,7 @@ Service config generation</h3>
 <div class="line">        ] = mockserver_info.base_url.rstrip(<span class="stringliteral">&#39;/&#39;</span>)</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> do_patch</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md118"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md121"></a>
 Service client</h3>
 <p >Fixture <code>service_client</code> is used to access service being tested:</p>
 <div class="fragment"><div class="line"><span class="keyword">async def </span>test_ping(service_client):</div>
@@ -213,19 +213,19 @@ Service client</h3>
 <div class="line">    <span class="keyword">assert</span> response.status == 200</div>
 </div><!-- fragment --><p >When <code>tests-control</code> component is enabled service_client is <code><a class="el" href="../../d5/d79/classpytest__userver_1_1client_1_1Client.html">pytest_userver.client.Client</a></code> instance. Which supports special testsuite related methods.</p>
 <p >On first call to <code>service_client</code> service state is implicitly updated, e.g.: caches, mocked time, etc.</p>
-<h3><a class="anchor" id="autotoc_md119"></a>
+<h3><a class="anchor" id="autotoc_md122"></a>
 Service environment variables</h3>
 <p >Use this fixture to provide extra environment variables for your service:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
 <div class="line"><span class="keyword">def </span>service_env():</div>
 <div class="line">    <span class="keywordflow">return</span> {<span class="stringliteral">&#39;SECDIST_CONFIG&#39;</span>: json.dumps(SECDIST_CONFIG)}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md120"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md123"></a>
 Extra client dependencies</h3>
 <p >Use this fixture to provide extra fixtures that your service depends on:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">@pytest.fixture</span></div>
 <div class="line"><span class="keyword">def </span>client_deps(pgsql):</div>
 <div class="line">    <span class="keywordflow">pass</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md121"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md124"></a>
 Mockserver</h3>
 <p ><a href="https://yandex.github.io/yandex-taxi-testsuite/mockserver/">Mockserver</a> allows to mock external HTTP handlers. It starts its own HTTP server that receives HTTP traffic from service being tested. And allows to install custom HTTP handlers within testsuite. In order to use it all HTTP clients must be pointed to mockserver address.</p>
 <p >Mockserver usage example:</p>
@@ -242,7 +242,7 @@ Mockserver</h3>
 </div><!-- fragment --><ul>
 <li>Testcase: <a class="el" href="../../dd/df0/samples_2http_caching_2tests_2conftest_8py-example.html">samples/http_caching/tests/conftest.py</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md122"></a>
+<h3><a class="anchor" id="autotoc_md125"></a>
 Mock time</h3>
 <p >Userver provides a way to mock internal datetime value. It only works for datetime retrieved with <code><a class="el" href="../../db/dec/namespaceutils_1_1datetime.html#a55c8fa2daccb0874282e200e656e005f" title="std::chrono::system_clock::now() that could be mocked">utils::datetime::Now()</a></code>, see <a class="el" href="../../d8/d06/md_en_userver_testing.html#utest-mocked-time">Mocked time section</a> for details.</p>
 <p >From testsuite you can control it with <a href="https://yandex.github.io/yandex-taxi-testsuite/other_plugins/#mocked-time">mocked_time</a> plugin.</p>
@@ -265,7 +265,7 @@ Mock time</h3>
 <li>C++ code: <a class="el" href="../../d0/d58/samples_2testsuite-support_2now_8cpp-example.html">samples/testsuite-support/now.cpp</a></li>
 <li>Testcase: <a class="el" href="../../dd/df0/samples_2testsuite-support_2tests_2test_mocked_time_8py-example.html">samples/testsuite-support/tests/test_mocked_time.py</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md123"></a>
+<h3><a class="anchor" id="autotoc_md126"></a>
 Testpoint</h3>
 <p ><a href="https://yandex.github.io/yandex-taxi-testsuite/testpoint/">Testpoints</a> are used to send messages from the service to testcase and back. Typical use cases are:</p>
 <ul>
@@ -308,7 +308,7 @@ Testpoint</h3>
 <li>C++ code: <a class="el" href="../../d3/dbf/samples_2testsuite-support_2testpoint_8cpp-example.html">samples/testsuite-support/testpoint.cpp</a></li>
 <li>Testcase: <a class="el" href="../../d9/d75/samples_2testsuite-support_2tests_2test_testpoint_8py-example.html">samples/testsuite-support/tests/test_testpoint.py</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md124"></a>
+<h3><a class="anchor" id="autotoc_md127"></a>
 Logs capture</h3>
 <p >Testsuite can be used to test logs written by service. To achieve this the testsuite starts a simple logs capture TCP server and tells the service to replicate logs to it on per test basis.</p>
 <p >Example usage: </p><div class="fragment"><div class="line"><span class="keyword">async def </span>test_select(service_client):</div>
@@ -325,7 +325,7 @@ Logs capture</h3>
 <li>C++ code: <a class="el" href="../../d5/dfa/samples_2testsuite-support_2logcapture_8cpp-example.html">samples/testsuite-support/logcapture.cpp</a></li>
 <li>Testcase: <a class="el" href="../../d1/d98/samples_2testsuite-support_2tests_2test_logcapture_8py-example.html">samples/testsuite-support/tests/test_logcapture.py</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md125"></a>
+<h3><a class="anchor" id="autotoc_md128"></a>
 Testsuite tasks</h3>
 <p >Testsuite tasks facility allows to register a custom function and call it by name from testsuite. It's useful for testing components that perform periodic job not related to its own HTTP handler.</p>
 <p >You can use <code><a class="el" href="../../dd/dc0/classtestsuite_1_1TestsuiteTasks.html" title="Testsuite tasks support.">testsuite::TestsuiteTasks</a></code> to register your own task:</p>
@@ -352,7 +352,7 @@ Testsuite tasks</h3>
 <li>C++ code: <a class="el" href="../../dc/dba/samples_2testsuite-support_2tasks_8cpp-example.html">samples/testsuite-support/tasks.cpp</a></li>
 <li>Testcase: <a class="el" href="../../d1/d57/samples_2testsuite-support_2tests_2test_tasks_8py-example.html">samples/testsuite-support/tests/test_tasks.py</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md126"></a>
+<h3><a class="anchor" id="autotoc_md129"></a>
 Metrics</h3>
 <p >Testsuite provides access to userver metrics, see <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html#tutorial_metrics">tutorial on configuration</a>. It allows to:</p>
 <ul>

@@ -84,11 +84,11 @@ $(function() {
   <div class="headertitle"><div class="title">Writing your first HTTP server </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md281"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md284"></a>
 Before you start</h1>
 <p >Make sure that you can compile and run core tests as described at <a class="el" href="../../d1/d03/md_en_userver_tutorial_build.html">Configure and Build</a>.</p>
 <p >Note that there is a ready to use opensource <a href="https://github.com/userver-framework/service_template">service template</a> to ease the development of your userver based services. The template already has a preconfigured CI, build and install scripts, testsuite and unit-tests setups.</p>
-<h1><a class="anchor" id="autotoc_md282"></a>
+<h1><a class="anchor" id="autotoc_md285"></a>
 Step by step guide</h1>
 <p >Typical HTTP server application in userver consists of the following parts:</p><ul>
 <li>HTTP handler component - main logic of your application</li>
@@ -97,7 +97,7 @@ Step by step guide</h1>
 <li>int main() - startup code</li>
 </ul>
 <p >Let's write a simple server that responds with "Hello world!\n" on every request to <code>/hello</code> URL.</p>
-<h2><a class="anchor" id="autotoc_md283"></a>
+<h2><a class="anchor" id="autotoc_md286"></a>
 HTTP handler component</h2>
 <p >HTTP handlers must derive from <code><a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers.">server::handlers::HttpHandlerBase</a></code> and have a name, that is obtainable at compile time via <code>kName</code> variable and is obtainable at runtime via <code>HandlerName()</code>.</p>
 <p >The primary functionality of the handler should be located in <code>HandleRequestThrow</code> function. Return value of this function is the HTTP response body. If an exception <code>exc</code> derived from <code><a class="el" href="../../d7/d7f/classserver_1_1handlers_1_1CustomHandlerException.html" title="Base class for handler exceptions.">server::handlers::CustomHandlerException</a></code> is thrown from the function then the HTTP response code will be set to <code>exc.GetCode()</code> and <code>exc.GetExternalErrorBody()</code> would be used for HTTP response body. Otherwise if the an exception <code>exc</code> derived from <code>std::exception</code> is thrown from the function then the HTTP response code will be set to <code>500</code>.</p>
@@ -124,7 +124,7 @@ HTTP handler component</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace samples::hello</span></div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd><code>Handle*</code> functions are invoked concurrently on the same instance of the handler class. Use <a class="el" href="../../d1/d6b/md_en_userver_synchronization.html">synchronization primitives</a> or do not modify shared data in <code>Handle*</code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md284"></a>
+<h2><a class="anchor" id="autotoc_md287"></a>
 Static config</h2>
 <p >Now we have to configure the service by providing <code>coro_pool</code>, <code>task_processors</code> and <code>default_task_processor</code> options for the <a class="el" href="../../dc/d21/classcomponents_1_1ManagerControllerComponent.html" title="Component that prepares the engine internals and starts all the other components.">components::ManagerControllerComponent</a> and configuring each component in <code>components</code> section:</p>
 <div class="fragment"><div class="line"># yaml</div>
@@ -165,16 +165,13 @@ Static config</h2>
 <div class="line">            fs-cache-path: &#39;&#39;</div>
 <div class="line">        dynamic-config-fallbacks:            # Load options from file and push them into the dynamic config storage.</div>
 <div class="line">            fallback-path: /etc/hello_service/dynamic_config_fallback.json</div>
-<div class="line">        manager-controller:</div>
-<div class="line">        statistics-storage:</div>
-<div class="line">        auth-checker-settings:</div>
 <div class="line"> </div>
 <div class="line">        handler-hello-sample:             # Finally! Our handler.</div>
 <div class="line">            path: /hello                  # Registering handler by URL &#39;/hello&#39;.</div>
 <div class="line">            method: GET,POST              # It will only reply to GET (HEAD) and POST requests.</div>
 <div class="line">            task_processor: main-task-processor  # Run it on CPU bound task processor</div>
 </div><!-- fragment --><p >Note that all the <a class="el" href="../../dd/d1c/group__userver__components.html">components</a> and <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">handlers</a> have their static options additionally described in docs.</p>
-<h2><a class="anchor" id="autotoc_md285"></a>
+<h2><a class="anchor" id="autotoc_md288"></a>
 Dynamic config</h2>
 <p >We are not planning to get new dynamic config values in this sample. Because of that we just write the defaults to the fallback file of the <code><a class="el" href="../../d8/d9c/classcomponents_1_1DynamicConfigFallbacks.html" title="Component that setup runtime configs based on fallbacks from file.">components::DynamicConfigFallbacks</a></code> component.</p>
 <p >All the values are described in a separate section <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html">Dynamic configs</a> .</p>
@@ -202,7 +199,7 @@ Dynamic config</h2>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >A production ready service would dynamically retrieve the above options at runtime from a configuration service. See <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">Writing your own configs server</a> for insights on how to change the above options on the fly, without restarting the service.</p>
-<h2><a class="anchor" id="autotoc_md286"></a>
+<h2><a class="anchor" id="autotoc_md289"></a>
 int main()</h2>
 <p >Finally, after writing down the dynamic config values into file at <code>dynamic-config-fallbacks.fallback-path</code>, we add our component to the <code><a class="el" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList()</a></code>, and start the server with static configuration file passed from command line.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
@@ -210,7 +207,7 @@ int main()</h2>
 <div class="line">      <a class="code hl_function" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList</a>().Append&lt;samples::hello::Hello&gt;();</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>(argc, argv, component_list);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md287"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md290"></a>
 Build</h2>
 <p >To build the sample, execute the following build steps at the userver root directory: </p><div class="fragment"><div class="line">mkdir build_release</div>
 <div class="line">cd build_release</div>
@@ -219,14 +216,14 @@ Build</h2>
 </div><!-- fragment --><p >Start the server by running <code>./samples/hello_service/userver-samples-hello_service</code> (do not forget to prepare the configuration files!). Now you can send a request to your server from another terminal: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl 127.0.0.1:8080/hello</div>
 <div class="line">Hello world!</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md288"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md291"></a>
 Functional testing</h2>
 <p ><a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">Functional tests</a> for the service could be implemented using the testsuite in the following way:</p>
 <div class="fragment"><div class="line"><span class="keyword">async def </span>test_ping(service_client):</div>
 <div class="line">    response = await service_client.get(<span class="stringliteral">&#39;/hello&#39;</span>)</div>
 <div class="line">    <span class="keyword">assert</span> response.status == 200</div>
 <div class="line">    <span class="keyword">assert</span> response.content == b<span class="stringliteral">&#39;Hello world!\n&#39;</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md289"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md292"></a>
 Full sources</h1>
 <p >See the full example at:</p><ul>
 <li><a class="el" href="../../da/de2/samples_2hello_service_2hello_service_8cpp-example.html">samples/hello_service/hello_service.cpp</a></li>

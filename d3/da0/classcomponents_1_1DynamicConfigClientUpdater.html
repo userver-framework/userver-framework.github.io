@@ -255,17 +255,18 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Na
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Component that does a periodic update of runtime configs. </p>
-<h2><a class="anchor" id="autotoc_md422"></a>
+<h2><a class="anchor" id="autotoc_md425"></a>
 Optional update event deduplication</h2>
 <p >Config update types to deduplicate. If enabled, JSON of the whole config is compared to the previous one; if same, no config update event is sent to the subscribers of <a class="el" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">dynamic_config::Source</a> (<code>OnConfigUpdate</code> functions).</p>
-<p ><code>deduplicate-update-types</code> static config option specifies the update types of the config cache, for which deduplication should be performed. Possible values:</p><ul>
+<p ><code>deduplicate-update-types</code> static config option specifies the update types of the config cache, for which event deduplication should be performed. Possible values:</p><ul>
 <li><code>none</code> (the default)</li>
 <li><code>only-full</code></li>
 <li><code>only-incremental</code></li>
 <li><code>full-and-incremental</code></li>
 </ul>
+<p >Full updates will always send an event unless deduplicated. Incremental updates may send an extra event for some config service implementations.</p>
 <p >Note: This is not a silver bullet against extra events, because the events will be sent to every dynamic config subscriber if <em>any</em> part of the config has updated, not if the interesting part has updated.</p>
-<h2><a class="anchor" id="autotoc_md423"></a>
+<h2><a class="anchor" id="autotoc_md426"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -279,10 +280,10 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">fs-task-processor   </td><td class="markdownTableBodyNone">name of the task processor to run the blocking file write operations   </td><td class="markdownTableBodyNone">-    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">deduplicate-update-types   </td><td class="markdownTableBodyNone">update types for best-effort update event deduplication, see above   </td><td class="markdownTableBodyNone"><code>none</code>   </td></tr>
+<td class="markdownTableBodyNone">deduplicate-update-types   </td><td class="markdownTableBodyNone">update types for best-effort update event deduplication, see above   </td><td class="markdownTableBodyNone"><code>full-and-incremental</code>   </td></tr>
 </table>
 <p >See also the options for <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.</p>
-<h2><a class="anchor" id="autotoc_md424"></a>
+<h2><a class="anchor" id="autotoc_md427"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    dynamic-config-client-updater:</div>
@@ -302,7 +303,7 @@ Static configuration example:</h2>
 <div class="line">      additional-cleanup-interval: 5m</div>
 <div class="line">      <a class="code hl_namespace" href="../../d3/d56/namespacetestsuite.html" title="Testsuite integration.">testsuite</a>-force-periodic-update: <span class="keyword">true</span></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00067">67</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae56951facbd6675405d9fa3583e4cd8c" name="ae56951facbd6675405d9fa3583e4cd8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae56951facbd6675405d9fa3583e4cd8c">&#9670;&nbsp;</a></span>Update()</h2>
@@ -384,7 +385,7 @@ Static configuration example:</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html#l00073">73</a> of file <a class="el" href="../../db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp_source.html">component.hpp</a>.</p>
 
 </div>
 </div>

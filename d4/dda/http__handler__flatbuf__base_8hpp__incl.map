@@ -1,52 +1,52 @@
 <map id="userver/server/handlers/http_handler_flatbuf_base.hpp" name="userver/server/handlers/http_handler_flatbuf_base.hpp">
-<area shape="rect" id="node1" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="3253,5,3412,61"/>
-<area shape="rect" id="node2" title=" " alt="" coords="3067,571,3150,597"/>
-<area shape="rect" id="node3" title=" " alt="" coords="3856,117,4009,143"/>
-<area shape="rect" id="node4" href="$d4/df6/http__handler__base_8hpp.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="1823,109,1981,151"/>
-<area shape="rect" id="node46" href="$da/dfa/http__error_8hpp.html" title="Get http status code mapped to generic handler error code." alt="" coords="30,288,161,329"/>
-<area shape="rect" id="node47" href="$da/dce/utils_2log_8hpp.html" title="Algorithms to aid logging." alt="" coords="3543,206,3682,233"/>
-<area shape="rect" id="node48" href="$d2/d67/schema_8hpp.html" title="JSON Schema&#45;like type definition." alt="" coords="2913,385,3051,426"/>
-<area shape="rect" id="node5" title=" " alt="" coords="2293,489,2359,515"/>
-<area shape="rect" id="node6" title=" " alt="" coords="1016,571,1071,597"/>
-<area shape="rect" id="node7" title=" " alt="" coords="2383,489,2442,515"/>
-<area shape="rect" id="node8" href="$d2/d2e/source_8hpp.html" title="A client for easy dynamic config fetching in components." alt="" coords="3126,288,3286,329"/>
-<area shape="rect" id="node15" href="$d5/d37/level_8hpp.html" title="Log levels." alt="" coords="2721,392,2888,419"/>
-<area shape="rect" id="node16" href="$d4/ddc/entry_8hpp_source.html" title=" " alt="" coords="3311,385,3461,426"/>
-<area shape="rect" id="node18" href="$d6/dd2/token__bucket_8hpp.html" title=" " alt="" coords="1108,199,1237,240"/>
-<area shape="rect" id="node21" href="$da/dff/auth__checker__base_8hpp_source.html" title=" " alt="" coords="1980,199,2173,240"/>
-<area shape="rect" id="node25" href="$d4/d07/core_2include_2userver_2server_2handlers_2exceptions_8hpp.html" title="Helpers for throwing exceptions." alt="" coords="300,385,459,426"/>
-<area shape="rect" id="node30" href="$d2/d45/http__request_8hpp.html" title="HTTP Request data." alt="" coords="1329,288,1459,329"/>
-<area shape="rect" id="node35" href="$db/d6b/http__response_8hpp.html" title="HTTP Response data." alt="" coords="883,385,1017,426"/>
-<area shape="rect" id="node40" href="$de/db6/formatted__error__data_8hpp_source.html" title=" " alt="" coords="689,385,859,426"/>
-<area shape="rect" id="node41" href="$df/dd5/handler__base_8hpp.html" title="Base class for the request handlers." alt="" coords="1823,288,1981,329"/>
-<area shape="rect" id="node45" href="$d1/d70/request__base_8hpp_source.html" title=" " alt="" coords="1659,385,1811,426"/>
-<area shape="rect" id="node9" title=" " alt="" coords="1975,571,2063,597"/>
-<area shape="rect" id="node10" title=" " alt="" coords="3690,571,3743,597"/>
-<area shape="rect" id="node11" href="$d4/de4/async__event__source_8hpp.html" title="The read&#45;only side of an event channel. Events are delivered to listeners in a strict FIFO order." alt="" coords="3523,385,3694,426"/>
-<area shape="rect" id="node13" href="$df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs." alt="" coords="3126,385,3286,426"/>
-<area shape="rect" id="node12" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="3456,481,3628,523"/>
-<area shape="rect" id="node14" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="3147,481,3265,523"/>
-<area shape="rect" id="node17" href="$dc/d7d/json__fwd_8hpp.html" title="Forward declarations of formats::json types, formats::parse::To and formats::serialize::To." alt="" coords="3290,481,3431,523"/>
-<area shape="rect" id="node19" title=" " alt="" coords="1142,295,1203,322"/>
-<area shape="rect" id="node20" title=" " alt="" coords="1633,489,1694,515"/>
-<area shape="rect" id="node22" title=" " alt="" coords="2466,489,2535,515"/>
-<area shape="rect" id="node23" href="$d8/d40/user__auth__info_8hpp_source.html" title=" " alt="" coords="2203,288,2339,329"/>
-<area shape="rect" id="node24" href="$dc/dbf/request__context_8hpp.html" title="Stores request&#45;specific data during request processing." alt="" coords="2291,385,2443,426"/>
-<area shape="rect" id="node26" title=" " alt="" coords="5,571,84,597"/>
-<area shape="rect" id="node27" href="$d5/db8/json_8hpp.html" title="Include&#45;all header for JSON support." alt="" coords="184,489,351,515"/>
-<area shape="rect" id="node28" href="$d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="928,489,1087,515"/>
-<area shape="rect" id="node29" href="$d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="1309,481,1431,523"/>
-<area shape="rect" id="node31" title=" " alt="" coords="1719,489,1829,515"/>
-<area shape="rect" id="node32" href="$d0/d14/log__helper__fwd_8hpp.html" title=" " alt="" coords="1243,385,1374,426"/>
-<area shape="rect" id="node33" href="$db/d3b/form__data__arg_8hpp.html" title="Argument of a multipart/form&#45;data request." alt="" coords="1449,385,1584,426"/>
-<area shape="rect" id="node34" href="$dc/d44/http__method_8hpp.html" title="List of HTTP methods." alt="" coords="534,385,665,426"/>
-<area shape="rect" id="node37" href="$dd/d42/projecting__view_8hpp.html" title="View that applies projection on iterator dereference." alt="" coords="1455,481,1608,523"/>
-<area shape="rect" id="node38" href="$d1/d46/str__icase_8hpp.html" title="Case insensitive ASCII comparators and hashers." alt="" coords="1111,489,1285,515"/>
-<area shape="rect" id="node36" href="$d8/ddc/content__type_8hpp.html" title="Content&#45;Type representation." alt="" coords="714,481,853,523"/>
-<area shape="rect" id="node39" href="$d0/d6f/http__status_8hpp.html" title="HTTP status codes." alt="" coords="426,489,538,515"/>
-<area shape="rect" id="node42" href="$da/d11/loggable__component__base_8hpp.html" title="Contains components::LoggableComponentBase declaration and forward declarations of components::Compon..." alt="" coords="1836,377,1981,433"/>
-<area shape="rect" id="node43" href="$d1/dcf/handler__config_8hpp_source.html" title=" " alt="" coords="2108,385,2267,426"/>
-<area shape="rect" id="node44" title=" " alt="" coords="2610,489,2671,515"/>
-<area shape="rect" id="node49" title=" " alt="" coords="2746,489,2850,515"/>
-<area shape="rect" id="node50" href="$d1/d36/yaml__fwd_8hpp.html" title="Forward declarations of formats::yaml types, formats::parse::To and formats::serialize::To." alt="" coords="2875,481,3020,523"/>
+<area shape="rect" id="node1" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="2275,5,2434,61"/>
+<area shape="rect" id="node2" title=" " alt="" coords="1580,578,1663,605"/>
+<area shape="rect" id="node3" title=" " alt="" coords="2971,117,3125,143"/>
+<area shape="rect" id="node4" href="$d4/df6/http__handler__base_8hpp.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="1901,109,2059,151"/>
+<area shape="rect" id="node46" href="$da/dfa/http__error_8hpp.html" title="Get http status code mapped to generic handler error code." alt="" coords="87,288,217,329"/>
+<area shape="rect" id="node47" href="$da/dce/utils_2log_8hpp.html" title="Algorithms to aid logging." alt="" coords="3323,206,3461,233"/>
+<area shape="rect" id="node48" href="$d2/d67/schema_8hpp.html" title="JSON Schema&#45;like type definition." alt="" coords="2656,385,2795,426"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1163,489,1229,515"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1049,660,1103,687"/>
+<area shape="rect" id="node7" title=" " alt="" coords="2939,489,2997,515"/>
+<area shape="rect" id="node8" href="$d2/d2e/source_8hpp.html" title="A client for easy dynamic config fetching in components." alt="" coords="3491,288,3651,329"/>
+<area shape="rect" id="node15" href="$d5/d37/level_8hpp.html" title="Log levels." alt="" coords="434,392,601,419"/>
+<area shape="rect" id="node16" href="$d4/ddc/entry_8hpp_source.html" title=" " alt="" coords="3211,385,3362,426"/>
+<area shape="rect" id="node18" href="$d6/dd2/token__bucket_8hpp.html" title=" " alt="" coords="2327,199,2457,240"/>
+<area shape="rect" id="node21" href="$da/dff/auth__checker__base_8hpp_source.html" title=" " alt="" coords="962,199,1155,240"/>
+<area shape="rect" id="node25" href="$d4/d07/core_2include_2userver_2server_2handlers_2exceptions_8hpp.html" title="Helpers for throwing exceptions." alt="" coords="199,385,358,426"/>
+<area shape="rect" id="node30" href="$d2/d45/http__request_8hpp.html" title="HTTP Request data." alt="" coords="1915,288,2045,329"/>
+<area shape="rect" id="node35" href="$db/d6b/http__response_8hpp.html" title="HTTP Response data." alt="" coords="2069,385,2203,426"/>
+<area shape="rect" id="node40" href="$de/db6/formatted__error__data_8hpp_source.html" title=" " alt="" coords="727,385,897,426"/>
+<area shape="rect" id="node41" href="$df/dd5/handler__base_8hpp.html" title="Base class for the request handlers." alt="" coords="1338,288,1497,329"/>
+<area shape="rect" id="node45" href="$d1/d70/request__base_8hpp_source.html" title=" " alt="" coords="2429,385,2581,426"/>
+<area shape="rect" id="node9" title=" " alt="" coords="2224,660,2312,687"/>
+<area shape="rect" id="node10" title=" " alt="" coords="3552,578,3605,605"/>
+<area shape="rect" id="node11" href="$d4/de4/async__event__source_8hpp.html" title="The read&#45;only side of an event channel. Events are delivered to listeners in a strict FIFO order." alt="" coords="3485,385,3656,426"/>
+<area shape="rect" id="node13" href="$df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs." alt="" coords="3027,385,3187,426"/>
+<area shape="rect" id="node12" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="3382,481,3554,523"/>
+<area shape="rect" id="node14" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="3073,481,3191,523"/>
+<area shape="rect" id="node17" href="$dc/d7d/json__fwd_8hpp.html" title="Forward declarations of formats::json types, formats::parse::To and formats::serialize::To." alt="" coords="3216,481,3357,523"/>
+<area shape="rect" id="node19" title=" " alt="" coords="2429,295,2491,322"/>
+<area shape="rect" id="node20" title=" " alt="" coords="2360,489,2421,515"/>
+<area shape="rect" id="node22" title=" " alt="" coords="2496,489,2565,515"/>
+<area shape="rect" id="node23" href="$d8/d40/user__auth__info_8hpp_source.html" title=" " alt="" coords="972,288,1108,329"/>
+<area shape="rect" id="node24" href="$dc/dbf/request__context_8hpp.html" title="Stores request&#45;specific data during request processing." alt="" coords="1023,385,1175,426"/>
+<area shape="rect" id="node26" title=" " alt="" coords="122,578,201,605"/>
+<area shape="rect" id="node27" href="$d5/db8/json_8hpp.html" title="Include&#45;all header for JSON support." alt="" coords="199,489,366,515"/>
+<area shape="rect" id="node28" href="$d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="1873,578,2031,605"/>
+<area shape="rect" id="node29" href="$d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="966,481,1087,523"/>
+<area shape="rect" id="node31" title=" " alt="" coords="2225,489,2335,515"/>
+<area shape="rect" id="node32" href="$d0/d14/log__helper__fwd_8hpp.html" title=" " alt="" coords="1915,385,2045,426"/>
+<area shape="rect" id="node33" href="$db/d3b/form__data__arg_8hpp.html" title="Argument of a multipart/form&#45;data request." alt="" coords="1705,385,1839,426"/>
+<area shape="rect" id="node34" href="$dc/d44/http__method_8hpp.html" title="List of HTTP methods." alt="" coords="1355,571,1485,612"/>
+<area shape="rect" id="node37" href="$d1/d46/str__icase_8hpp.html" title="Case insensitive ASCII comparators and hashers." alt="" coords="2055,578,2230,605"/>
+<area shape="rect" id="node38" href="$dd/d42/projecting__view_8hpp.html" title="View that applies projection on iterator dereference." alt="" coords="1545,481,1698,523"/>
+<area shape="rect" id="node36" href="$d8/ddc/content__type_8hpp.html" title="Content&#45;Type representation." alt="" coords="1773,481,1912,523"/>
+<area shape="rect" id="node39" href="$d0/d6f/http__status_8hpp.html" title="HTTP status codes." alt="" coords="829,489,941,515"/>
+<area shape="rect" id="node42" href="$da/d11/loggable__component__base_8hpp.html" title="Contains components::LoggableComponentBase declaration and forward declarations of components::Compon..." alt="" coords="1433,377,1578,433"/>
+<area shape="rect" id="node43" href="$d1/dcf/handler__config_8hpp_source.html" title=" " alt="" coords="1250,385,1409,426"/>
+<area shape="rect" id="node44" title=" " alt="" coords="2037,489,2099,515"/>
+<area shape="rect" id="node49" title=" " alt="" coords="2640,489,2744,515"/>
+<area shape="rect" id="node50" href="$d1/d36/yaml__fwd_8hpp.html" title="Forward declarations of formats::yaml types, formats::parse::To and formats::serialize::To." alt="" coords="2769,481,2914,523"/>
 </map>

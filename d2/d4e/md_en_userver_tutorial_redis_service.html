@@ -84,10 +84,10 @@ $(function() {
   <div class="headertitle"><div class="title">Redis service </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md351"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md354"></a>
 Before you start</h1>
 <p >Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md352"></a>
+<h1><a class="anchor" id="autotoc_md355"></a>
 Step by step guide</h1>
 <p >Microservices that have state often work with database to store their data and replicate that state across instances of the microservice. In this tutorial we will write a service that is a simple key-value storage on top of Redis database. The service would have the following Rest API:</p>
 <ul>
@@ -95,7 +95,7 @@ Step by step guide</h1>
 <li>HTTP GET by path <code>/v1/key-value</code> with query parameter <code>key</code> returns the value if it exists or <code>404 Not Found</code> if it is missing</li>
 <li>HTTP DELETE by path <code>/v1/key-value</code> with query parameter <code>key</code> deletes the key if it exists and returns number of deleted keys (cannot be more than 1, since keys are unique in Redis database)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md353"></a>
+<h2><a class="anchor" id="autotoc_md356"></a>
 HTTP handler component</h2>
 <p >Like in <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> we create a component for handling HTTP requests:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server.">userver/components/minimal_server_component_list.hpp</a>&gt;</span></div>
@@ -131,7 +131,7 @@ HTTP handler component</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace samples::redis</span></div>
 </div><!-- fragment --><p >Note that the component holds a storages::redis::ClientPtr - a client to the Redis database. That client is thread safe, you can use it concurrently from different threads and tasks.</p>
-<h2><a class="anchor" id="autotoc_md354"></a>
+<h2><a class="anchor" id="autotoc_md357"></a>
 Initializing the database</h2>
 <p >To access the database from our new component we need to find the Redis component and request a client to a specific cluster by its name. After that we are ready to make requests.</p>
 <div class="fragment"><div class="line">KeyValue::KeyValue(<span class="keyword">const</span> <a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp; config,</div>
@@ -140,7 +140,7 @@ Initializing the database</h2>
 <div class="line">      redis_client_{</div>
 <div class="line">          context.FindComponent&lt;<a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::Redis&gt;(<span class="stringliteral">&quot;key-value-database&quot;</span>)</div>
 <div class="line">              .GetClient(<span class="stringliteral">&quot;taxi-tmp&quot;</span>)} {}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md355"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md358"></a>
 KeyValue::HandleRequestThrow</h2>
 <p >In this sample we use a single handler to deal with all the HTTP methods. The KeyValue::HandleRequestThrow member function mostly dispatches the request to one of the member functions that actually implement the key-value storage logic:</p>
 <div class="fragment"><div class="line">std::string KeyValue::HandleRequestThrow(</div>
@@ -165,7 +165,7 @@ KeyValue::HandleRequestThrow</h2>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd><code>Handle*</code> functions are invoked concurrently on the same instance of the handler class. In this sample the KeyValue component only uses the thread safe DB client. In more complex cases <a class="el" href="../../d1/d6b/md_en_userver_synchronization.html">synchronization primitives</a> should be used or data must not be mutated.</dd></dl>
-<h2><a class="anchor" id="autotoc_md356"></a>
+<h2><a class="anchor" id="autotoc_md359"></a>
 KeyValue::GetValue</h2>
 <p >Executing a query to the Redis database is as simple as calling the corresponding method of storages::redis::ClientPtr.</p>
 <p >Note that some methods return an optional result, which must be checked. Here it can indicate a missing key value.</p>
@@ -178,7 +178,7 @@ KeyValue::GetValue</h2>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordflow">return</span> *result;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md357"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md360"></a>
 KeyValue::PostValue</h2>
 <p >Here we use storages::redis::Client::SetIfNotExist() to ensure not to change already existing keys.</p>
 <div class="fragment"><div class="line">std::string KeyValue::PostValue(</div>
@@ -194,14 +194,14 @@ KeyValue::PostValue</h2>
 <div class="line">  request.<a class="code hl_function" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html#a3e4903d158a34e717668af618e56af92" title="Set the response status code.">SetResponseStatus</a>(server::http::HttpStatus::kCreated);</div>
 <div class="line">  <span class="keywordflow">return</span> std::string{value};</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md358"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md361"></a>
 KeyValue::DeleteValue</h2>
 <p >Note that mutating queries are automatically executed on a master instance.</p>
 <div class="fragment"><div class="line">std::string KeyValue::DeleteValue(std::string_view key)<span class="keyword"> const </span>{</div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> result = redis_client_-&gt;Del(std::string{key}, redis_cc_).Get();</div>
 <div class="line">  <span class="keywordflow">return</span> std::to_string(result);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md359"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md362"></a>
 Static config</h2>
 <p >Static configuration of service is quite close to the configuration from <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> except for the handler and DB:</p>
 <div class="fragment"><div class="line"># yaml</div>
@@ -232,12 +232,12 @@ Static config</h2>
 <div class="line"> </div>
 <div class="line">        server:</div>
 <div class="line">            # ...</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md360"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md363"></a>
 Dynamic config</h2>
 <p >We are not planning to get new dynamic config values in this sample. Because of that we just write the defaults to the fallback file of the <code><a class="el" href="../../d8/d9c/classcomponents_1_1DynamicConfigFallbacks.html" title="Component that setup runtime configs based on fallbacks from file.">components::DynamicConfigFallbacks</a></code> component: <a class="el" href="../../d8/d13/samples_2redis_service_2dynamic_config_fallback_8json-example.html">samples/redis_service/dynamic_config_fallback.json</a></p>
 <p >All the values are described in a separate section <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html">Dynamic configs</a> .</p>
 <p >A production ready service would dynamically retrieve the above options at runtime from a configuration service. See <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">Writing your own configs server</a> for insights on how to change the above options on the fly, without restarting the service.</p>
-<h2><a class="anchor" id="autotoc_md361"></a>
+<h2><a class="anchor" id="autotoc_md364"></a>
 int main()</h2>
 <p >Finally, after writing down the dynamic config values into file at <code>dynamic-config-fallbacks.fallback-path</code>, we add our component to the <a class="el" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList()</a>, and start the server with static config <code>kStaticConfig</code>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
@@ -249,7 +249,7 @@ int main()</h2>
 <div class="line">          .Append&lt;components::TestsuiteSupport&gt;();</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>(argc, argv, component_list);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md362"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md365"></a>
 Build</h2>
 <p >To build the sample, execute the following build steps at the userver root directory:</p>
 <div class="fragment"><div class="line">mkdir build_release</div>
@@ -282,7 +282,7 @@ Build</h2>
 <div class="line">Content-Length: 1</div>
 <div class="line"> </div>
 <div class="line">1</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md363"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md366"></a>
 Functional testing</h2>
 <p ><a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">Functional tests</a> for the service could be implemented using the testsuite. To do that you have to:</p>
 <ul>
@@ -317,7 +317,7 @@ Functional testing</h2>
 <div class="line">    <span class="keyword">assert</span> response.content == b<span class="stringliteral">&#39;world&#39;</span></div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md364"></a>
+<h1><a class="anchor" id="autotoc_md367"></a>
 Full sources</h1>
 <p >See the full example:</p><ul>
 <li><a class="el" href="../../d0/d6c/samples_2redis_service_2redis_service_8cpp-example.html">samples/redis_service/redis_service.cpp</a></li>

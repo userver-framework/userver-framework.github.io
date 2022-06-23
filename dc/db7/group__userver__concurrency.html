@@ -203,10 +203,10 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf51ba47af7fc25b21c86e2603f0d7f55"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gaf51ba47af7fc25b21c86e2603f0d7f55">utils::AtomicMax</a> (std::atomic&lt; T &gt; &amp;atomic, T value)</td></tr>
 <tr class="memdesc:gaf51ba47af7fc25b21c86e2603f0d7f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concurrently safe sets <code>atomic</code> to a <code>value</code> if <code>value</code> is greater.  <a href="../../dc/db7/group__userver__concurrency.html#gaf51ba47af7fc25b21c86e2603f0d7f55">More...</a><br /></td></tr>
 <tr class="separator:gaf51ba47af7fc25b21c86e2603f0d7f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe29f85e5a5dd200efb8664f32e5defd"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
-<tr class="memitem:gafe29f85e5a5dd200efb8664f32e5defd"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gafe29f85e5a5dd200efb8664f32e5defd">engine::WaitAny</a> (Container &amp;tasks)</td></tr>
-<tr class="memdesc:gafe29f85e5a5dd200efb8664f32e5defd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the completion of any of the specified tasks or the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#gafe29f85e5a5dd200efb8664f32e5defd">More...</a><br /></td></tr>
-<tr class="separator:gafe29f85e5a5dd200efb8664f32e5defd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2">engine::WaitAny</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the completion of any of the specified tasks or the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2">More...</a><br /></td></tr>
+<tr class="separator:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaef9a6bb83cc055693bd116a503434eeb"><td class="memTemplParams" colspan="2">template&lt;typename Function , typename... Args&gt; </td></tr>
 <tr class="memitem:gaef9a6bb83cc055693bd116a503434eeb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gaef9a6bb83cc055693bd116a503434eeb">utils::CriticalAsync</a> (engine::TaskProcessor &amp;task_processor, std::string name, Function &amp;&amp;f, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:gaef9a6bb83cc055693bd116a503434eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1106,18 +1106,18 @@ template&lt;typename Function , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="gafe29f85e5a5dd200efb8664f32e5defd" name="gafe29f85e5a5dd200efb8664f32e5defd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe29f85e5a5dd200efb8664f32e5defd">&#9670;&nbsp;</a></span>WaitAny()</h2>
+<a id="ga6fc06edbfecd5d58598fb3880ae9edb2" name="ga6fc06edbfecd5d58598fb3880ae9edb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6fc06edbfecd5d58598fb3880ae9edb2">&#9670;&nbsp;</a></span>WaitAny()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container &gt; </div>
+template&lt;typename... Tasks&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::optional&lt; std::size_t &gt; engine::WaitAny </td>
           <td>(</td>
-          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramtype">Tasks &amp;...&#160;</td>
           <td class="paramname"><em>tasks</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1146,12 +1146,18 @@ template&lt;typename Container &gt; </div>
 <div class="line">    <span class="keywordflow">return</span> std::string{<span class="stringliteral">&quot;abc&quot;</span>};</div>
 <div class="line">  });</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> task_idx_opt = <a class="code hl_function" href="../../dc/db7/group__userver__concurrency.html#gafe29f85e5a5dd200efb8664f32e5defd" title="Waits for the completion of any of the specified tasks or the cancellation of the caller.">engine::WaitAny</a>(task0, task1);</div>
+<div class="line">  <span class="keyword">auto</span> task_idx_opt = <a class="code hl_function" href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2" title="Waits for the completion of any of the specified tasks or the cancellation of the caller.">engine::WaitAny</a>(task0, task1);</div>
 <div class="line">  ASSERT_TRUE(task_idx_opt);</div>
 <div class="line">  EXPECT_EQ(*task_idx_opt, 0);</div>
-</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>the index of the completed task, or <code>std::nullopt</code> if there are no completed tasks (possible if current task was cancelled). </dd></dl>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>either a single container, or a pack of future-like elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index of the completed task, or <code>std::nullopt</code> if there are no completed tasks (possible if current task was cancelled). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../d2/d1c/wait__any_8hpp_source.html">wait_any.hpp</a>.</p>
 
 </div>
 </div>

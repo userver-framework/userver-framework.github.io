@@ -1,50 +1,52 @@
 <map id="userver/storages/redis/client.hpp" name="userver/storages/redis/client.hpp">
-<area shape="rect" id="node1" title="Redis client." alt="" coords="1105,5,1255,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="24,549,85,575"/>
-<area shape="rect" id="node3" title=" " alt="" coords="2833,549,2903,575"/>
-<area shape="rect" id="node4" title=" " alt="" coords="1223,459,1278,486"/>
-<area shape="rect" id="node5" href="$dd/d3c/base_8hpp_source.html" title=" " alt="" coords="733,363,883,404"/>
-<area shape="rect" id="node29" href="$d3/dc1/wait__connected__mode_8hpp_source.html" title=" " alt="" coords="158,363,367,404"/>
-<area shape="rect" id="node30" href="$d1/d01/client__fwd_8hpp_source.html" title=" " alt="" coords="2971,95,3122,136"/>
-<area shape="rect" id="node31" href="$d6/ddc/command__options_8hpp_source.html" title=" " alt="" coords="929,184,1087,225"/>
-<area shape="rect" id="node36" href="$d7/d98/redis_2include_2userver_2storages_2redis_2request_8hpp_source.html" title=" " alt="" coords="2158,184,2309,225"/>
-<area shape="rect" id="node46" href="$da/df5/request__eval_8hpp_source.html" title=" " alt="" coords="1585,95,1735,136"/>
-<area shape="rect" id="node48" href="$db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp.html" title=" " alt="" coords="1162,95,1313,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="840,459,901,486"/>
-<area shape="rect" id="node7" title=" " alt="" coords="1009,727,1076,754"/>
-<area shape="rect" id="node8" title=" " alt="" coords="1364,727,1423,754"/>
-<area shape="rect" id="node9" href="$d6/db7/redis__control_8hpp_source.html" title=" " alt="" coords="187,452,338,493"/>
-<area shape="rect" id="node10" href="$d4/dd3/shared_2include_2userver_2utils_2strong__typedef_8hpp.html" title="Strong typedef for a type T." alt="" coords="581,452,715,493"/>
-<area shape="rect" id="node24" href="$d0/d28/redis_2include_2userver_2storages_2redis_2impl_2types_8hpp_source.html" title=" " alt="" coords="1795,452,1946,493"/>
-<area shape="rect" id="node11" title=" " alt="" coords="1457,549,1535,575"/>
-<area shape="rect" id="node12" title=" " alt="" coords="446,727,506,754"/>
-<area shape="rect" id="node13" title=" " alt="" coords="647,809,729,836"/>
-<area shape="rect" id="node14" title=" " alt="" coords="1615,638,1668,665"/>
-<area shape="rect" id="node15" title=" " alt="" coords="403,549,496,575"/>
-<area shape="rect" id="node16" title=" " alt="" coords="520,541,667,583"/>
-<area shape="rect" id="node17" href="$d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection." alt="" coords="161,541,327,583"/>
-<area shape="rect" id="node20" href="$d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="562,638,713,665"/>
-<area shape="rect" id="node22" href="$d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="849,720,970,761"/>
-<area shape="rect" id="node23" href="$db/d12/underlying__value_8hpp.html" title=" " alt="" coords="669,720,825,761"/>
-<area shape="rect" id="node18" href="$d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="57,631,207,672"/>
-<area shape="rect" id="node19" href="$d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="281,631,447,672"/>
-<area shape="rect" id="node21" title=" " alt="" coords="530,727,593,754"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1843,549,1898,575"/>
-<area shape="rect" id="node26" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="2017,541,2135,583"/>
-<area shape="rect" id="node27" title=" " alt="" coords="2087,638,2153,665"/>
-<area shape="rect" id="node28" title=" " alt="" coords="2017,638,2063,665"/>
-<area shape="rect" id="node32" href="$da/d8c/impl_2command__options_8hpp_source.html" title=" " alt="" coords="850,273,1035,315"/>
-<area shape="rect" id="node33" href="$d3/d75/redis_2include_2userver_2storages_2redis_2impl_2exception_8hpp.html" title="redis&#45;specific exceptions" alt="" coords="2163,452,2314,493"/>
-<area shape="rect" id="node35" href="$d3/d6d/scan__tag_8hpp_source.html" title=" " alt="" coords="2451,363,2602,404"/>
-<area shape="rect" id="node34" title=" " alt="" coords="2199,549,2278,575"/>
-<area shape="rect" id="node37" title=" " alt="" coords="2098,281,2209,307"/>
-<area shape="rect" id="node38" title=" " alt="" coords="1969,281,2073,307"/>
-<area shape="rect" id="node39" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="2521,273,2693,315"/>
-<area shape="rect" id="node40" href="$d9/dd6/reply__types_8hpp_source.html" title=" " alt="" coords="1642,273,1793,315"/>
-<area shape="rect" id="node45" href="$db/d81/request__data__base_8hpp_source.html" title=" " alt="" coords="2233,273,2394,315"/>
-<area shape="rect" id="node41" href="$d8/d9c/expire__reply_8hpp_source.html" title=" " alt="" coords="1743,363,1921,404"/>
-<area shape="rect" id="node42" href="$d6/d19/ttl__reply_8hpp_source.html" title=" " alt="" coords="2047,363,2201,404"/>
-<area shape="rect" id="node43" href="$dc/d6f/key__type_8hpp_source.html" title=" " alt="" coords="1314,363,1465,404"/>
-<area shape="rect" id="node44" href="$d6/ded/reply__fwd_8hpp_source.html" title=" " alt="" coords="2277,363,2427,404"/>
-<area shape="rect" id="node47" href="$d1/daf/parse__reply_8hpp_source.html" title=" " alt="" coords="1585,184,1735,225"/>
+<area shape="rect" id="node1" title="Redis client." alt="" coords="2243,5,2393,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="2510,899,2571,925"/>
+<area shape="rect" id="node3" title=" " alt="" coords="3274,727,3343,754"/>
+<area shape="rect" id="node4" title=" " alt="" coords="2027,549,2081,575"/>
+<area shape="rect" id="node5" href="$dd/d3c/base_8hpp_source.html" title=" " alt="" coords="1501,452,1652,493"/>
+<area shape="rect" id="node31" href="$d3/dc1/wait__connected__mode_8hpp_source.html" title=" " alt="" coords="1216,452,1425,493"/>
+<area shape="rect" id="node32" href="$d1/d01/client__fwd_8hpp_source.html" title=" " alt="" coords="3448,184,3599,225"/>
+<area shape="rect" id="node33" href="$d6/ddc/command__options_8hpp_source.html" title=" " alt="" coords="1637,273,1794,315"/>
+<area shape="rect" id="node38" href="$d7/d98/redis_2include_2userver_2storages_2redis_2request_8hpp_source.html" title=" " alt="" coords="2391,184,2541,225"/>
+<area shape="rect" id="node48" href="$da/df5/request__eval_8hpp_source.html" title=" " alt="" coords="2187,95,2337,136"/>
+<area shape="rect" id="node50" href="$db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp.html" title=" " alt="" coords="2413,95,2564,136"/>
+<area shape="rect" id="node6" title=" " alt="" coords="2578,817,2639,843"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1175,817,1242,843"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1959,817,2018,843"/>
+<area shape="rect" id="node9" href="$d6/db7/redis__control_8hpp_source.html" title=" " alt="" coords="1373,541,1524,583"/>
+<area shape="rect" id="node10" href="$d4/dd3/shared_2include_2userver_2utils_2strong__typedef_8hpp.html" title="Strong typedef for a type T." alt="" coords="811,541,945,583"/>
+<area shape="rect" id="node24" href="$d0/d28/redis_2include_2userver_2storages_2redis_2impl_2types_8hpp_source.html" title=" " alt="" coords="2575,541,2725,583"/>
+<area shape="rect" id="node11" title=" " alt="" coords="1445,638,1524,665"/>
+<area shape="rect" id="node12" title=" " alt="" coords="705,817,765,843"/>
+<area shape="rect" id="node13" title=" " alt="" coords="541,899,623,925"/>
+<area shape="rect" id="node14" title=" " alt="" coords="754,638,807,665"/>
+<area shape="rect" id="node15" title=" " alt="" coords="831,638,925,665"/>
+<area shape="rect" id="node16" title=" " alt="" coords="949,631,1095,672"/>
+<area shape="rect" id="node17" href="$d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection." alt="" coords="360,631,527,672"/>
+<area shape="rect" id="node20" href="$d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="773,727,924,754"/>
+<area shape="rect" id="node22" href="$d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="521,809,643,851"/>
+<area shape="rect" id="node23" href="$db/d12/underlying__value_8hpp.html" title=" " alt="" coords="27,720,183,761"/>
+<area shape="rect" id="node18" href="$d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="258,720,407,761"/>
+<area shape="rect" id="node19" href="$d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="482,720,647,761"/>
+<area shape="rect" id="node21" title=" " alt="" coords="841,817,904,843"/>
+<area shape="rect" id="node25" title=" " alt="" coords="2576,727,2631,754"/>
+<area shape="rect" id="node26" href="$db/ddf/future_8hpp.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise" alt="" coords="2796,638,2965,665"/>
+<area shape="rect" id="node27" title=" " alt="" coords="2664,817,2743,843"/>
+<area shape="rect" id="node28" href="$d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="2935,817,3119,843"/>
+<area shape="rect" id="node29" href="$d0/dd6/future__status_8hpp.html" title="std::future state extended with &quot;cancelled&quot; state" alt="" coords="2767,809,2911,851"/>
+<area shape="rect" id="node30" href="$de/d5c/future__state_8hpp_source.html" title=" " alt="" coords="2757,720,2892,761"/>
+<area shape="rect" id="node34" href="$da/d8c/impl_2command__options_8hpp_source.html" title=" " alt="" coords="1456,363,1641,404"/>
+<area shape="rect" id="node35" href="$d3/d75/redis_2include_2userver_2storages_2redis_2impl_2exception_8hpp.html" title="redis&#45;specific exceptions" alt="" coords="2848,541,2999,583"/>
+<area shape="rect" id="node37" href="$d3/d6d/scan__tag_8hpp_source.html" title=" " alt="" coords="1829,452,1980,493"/>
+<area shape="rect" id="node36" title=" " alt="" coords="2641,638,2720,665"/>
+<area shape="rect" id="node39" title=" " alt="" coords="1920,370,2031,397"/>
+<area shape="rect" id="node40" title=" " alt="" coords="2599,370,2703,397"/>
+<area shape="rect" id="node41" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="2441,273,2613,315"/>
+<area shape="rect" id="node42" href="$d9/dd6/reply__types_8hpp_source.html" title=" " alt="" coords="2259,363,2409,404"/>
+<area shape="rect" id="node47" href="$db/d81/request__data__base_8hpp_source.html" title=" " alt="" coords="2204,273,2365,315"/>
+<area shape="rect" id="node43" href="$d8/d9c/expire__reply_8hpp_source.html" title=" " alt="" coords="2434,452,2613,493"/>
+<area shape="rect" id="node44" href="$d6/d19/ttl__reply_8hpp_source.html" title=" " alt="" coords="2789,452,2943,493"/>
+<area shape="rect" id="node45" href="$dc/d6f/key__type_8hpp_source.html" title=" " alt="" coords="2208,452,2359,493"/>
+<area shape="rect" id="node46" href="$d6/ded/reply__fwd_8hpp_source.html" title=" " alt="" coords="3019,452,3169,493"/>
+<area shape="rect" id="node49" href="$d1/daf/parse__reply_8hpp_source.html" title=" " alt="" coords="2029,273,2180,315"/>
 </map>

@@ -84,7 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">The Basics </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md139"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md142"></a>
 Restrictions</h1>
 <p >Usage of <code>catch (...)</code> without <code>throw;</code> <b>should be avoided</b> as the framework may use exceptions not derived from <code>std::exception</code> to manage some resources. Usage of <code>catch</code> with explicit exception type specification (like <code>std::exception</code> or <code>std::runtime_error</code>) is fine without <code>throw;</code>.</p>
 <p >The use of synchronization primitives or IO operations of the C++ standard library and libc in the context of coroutine <b>should be avoided</b>.</p>
@@ -120,7 +120,7 @@ Restrictions</h1>
 <p >An overview of the main synchronization mechanisms is available <a class="el" href="../../d1/d6b/md_en_userver_synchronization.html">on a separate page</a>.</p>
 <hr  />
 <p> ⚠️🐙❗ If you want to run code that uses standard synchronization primitives (for example, code from a third-party library), then this code should be run in a separate <code>engine::TaskProcessor</code> to avoid starvation of main task processors. </p><hr  />
-<h1><a class="anchor" id="autotoc_md140"></a>
+<h1><a class="anchor" id="autotoc_md143"></a>
 Tasks</h1>
 <p >The asynchronous <b>task</b> (<code><a class="el" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">engine::Task</a></code>, <code><a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">engine::TaskWithResult</a></code>) can return a result (possibly in form of an exception) or return nothing. In any case, the task has the semantics of future, i.e. you can wait for it and get the result from it.</p>
 <p >To create a task call the <code><a class="el" href="../../dc/db7/group__userver__concurrency.html#gac91f56844690ea79c568cb3b43ba98a5">utils::Async</a></code> function. It accepts the name of a task, the user-defined function to execute, and the arguments of the user-defined function:</p>
@@ -128,7 +128,7 @@ Tasks</h1>
 <div class="line">auto task = utils::Async(&quot;my_job&quot;, &amp;func, arg1, arg2);</div>
 <div class="line">// do something ...</div>
 <div class="line">auto result = task.Get();</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md141"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md144"></a>
 Waiting</h1>
 <p >The code inside the coroutine may want to wait for an external event - a response from the database, a response from the HTTP client, the arrival of a certain time. If a coroutine wants to wait, it tells the engine that it wants to suspend its execution, and another coroutine starts executing on the current thread of the operating system instead. As a result, the thread is not idle, but reused by other users. After an external event occurs, the coroutine will be scheduled and executed.</p>
 <div class="fragment"><div class="line">cpp</div>
@@ -136,7 +136,7 @@ Waiting</h1>
 <div class="line">engine::SleepFor(std::chrono::seconds(60)); // voluntarily giving the current thread to other coroutines</div>
 <div class="line">g(); // The thread has returned to us</div>
 </div><!-- fragment --><p ><a class="anchor" id="task_cancellation_intro"></a></p>
-<h1><a class="anchor" id="autotoc_md142"></a>
+<h1><a class="anchor" id="autotoc_md145"></a>
 Task cancellation</h1>
 <p >Task can be notified that it needs to discard its progress and finish early. Cancelling a task restricts the execution of blocking operations in that task.</p>
 <p >To cancel a task, just call the <code><a class="el" href="../../d8/d7c/classengine_1_1Task.html#a7571e37ab539ef8cea8c29b69a604779" title="Queues task cancellation request.">engine::Task::RequestCancel()</a></code> or <code><a class="el" href="../../d8/d7c/classengine_1_1Task.html#a96cf988764c95fc158d9a3cf55ffe607" title="Cancels the task and suspends execution until it is finished. Can be called from coroutine context on...">engine::Task::SyncCancel()</a></code> method. It cancels only a single task and does not affect the subtasks that were created by the canceled task. The framework typically reports a wait interrupt either by using a return code (for example, <code>CvStatus</code> for <code><a class="el" href="../../d3/d5d/classengine_1_1ConditionVariable.html#aae663b5b5865e24e5c3aff2a87e954c2">engine::ConditionVariable::Wait</a></code>), or by throwing a module-specific exception (<code>WaitInterruptedException</code> for <code><a class="el" href="../../d8/d7c/classengine_1_1Task.html#a36a919b59746cb2603e7b189c4ac619d" title="Suspends execution until the task finishes or caller is cancelled. Can be called from coroutine conte...">engine::Task::Wait</a></code>).</p>

@@ -50,6 +50,7 @@ var searchData=
   ['projectingview_47',['ProjectingView',['../dc/d4e/classutils_1_1ProjectingView.html',1,'utils']]],
   ['projection_48',['Projection',['../d4/d00/classstorages_1_1mongo_1_1options_1_1Projection.html',1,'storages::mongo::options']]],
   ['promise_49',['Promise',['../d9/d2e/classengine_1_1Promise.html',1,'engine']]],
-  ['promise_3c_20void_20_3e_50',['Promise&lt; void &gt;',['../de/df2/classengine_1_1Promise_3_01void_01_4.html',1,'engine']]],
-  ['publickey_51',['PublicKey',['../d5/d1f/classcrypto_1_1PublicKey.html',1,'crypto']]]
+  ['promise_3c_20replyptr_20_3e_50',['Promise&lt; ReplyPtr &gt;',['../d9/d2e/classengine_1_1Promise.html',1,'engine']]],
+  ['promise_3c_20void_20_3e_51',['Promise&lt; void &gt;',['../de/df2/classengine_1_1Promise_3_01void_01_4.html',1,'engine']]],
+  ['publickey_52',['PublicKey',['../d5/d1f/classcrypto_1_1PublicKey.html',1,'crypto']]]
 ];

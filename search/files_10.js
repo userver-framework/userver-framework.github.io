@@ -12,10 +12,11 @@ var searchData=
   ['request_5fcontext_2ehpp_9',['request_context.hpp',['../dc/dbf/request__context_8hpp.html',1,'']]],
   ['resolver_2ehpp_10',['resolver.hpp',['../dc/da6/resolver_8hpp.html',1,'']]],
   ['response_2ehpp_11',['response.hpp',['../db/da4/response_8hpp.html',1,'']]],
-  ['result_5fset_2ehpp_12',['result_set.hpp',['../de/d1d/result__set_8hpp.html',1,'']]],
-  ['result_5fstore_2ehpp_13',['result_store.hpp',['../d8/df1/result__store_8hpp.html',1,'']]],
-  ['rpc_2ehpp_14',['rpc.hpp',['../db/df8/client_2rpc_8hpp.html',1,'(Global Namespace)'],['../dd/de8/server_2rpc_8hpp.html',1,'(Global Namespace)']]],
-  ['run_2ehpp_15',['run.hpp',['../da/d51/run_8hpp.html',1,'']]],
-  ['run_5fin_5fcoro_2ehpp_16',['run_in_coro.hpp',['../d4/d8a/run__in__coro_8hpp.html',1,'']]],
-  ['run_5fstandalone_2ehpp_17',['run_standalone.hpp',['../df/dc0/run__standalone_8hpp.html',1,'']]]
+  ['response_5ffuture_2ehpp_12',['response_future.hpp',['../d2/de8/response__future_8hpp.html',1,'']]],
+  ['result_5fset_2ehpp_13',['result_set.hpp',['../de/d1d/result__set_8hpp.html',1,'']]],
+  ['result_5fstore_2ehpp_14',['result_store.hpp',['../d8/df1/result__store_8hpp.html',1,'']]],
+  ['rpc_2ehpp_15',['rpc.hpp',['../db/df8/client_2rpc_8hpp.html',1,'(Global Namespace)'],['../dd/de8/server_2rpc_8hpp.html',1,'(Global Namespace)']]],
+  ['run_2ehpp_16',['run.hpp',['../da/d51/run_8hpp.html',1,'']]],
+  ['run_5fin_5fcoro_2ehpp_17',['run_in_coro.hpp',['../d4/d8a/run__in__coro_8hpp.html',1,'']]],
+  ['run_5fstandalone_2ehpp_18',['run_standalone.hpp',['../df/dc0/run__standalone_8hpp.html',1,'']]]
 ];

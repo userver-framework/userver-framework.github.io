@@ -99,27 +99,31 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74e21fc67f5d1192e1e1cd4d269ba15f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a74e21fc67f5d1192e1e1cd4d269ba15f">SingleProducerSide</a> (<a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">GenericQueue</a> &amp;queue)</td></tr>
-<tr class="separator:a74e21fc67f5d1192e1e1cd4d269ba15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c5842f8fd4766c1432c8848263d92c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a68c5842f8fd4766c1432c8848263d92c">SingleProducerSide</a> (<a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">GenericQueue</a> &amp;queue, std::size_t capacity)</td></tr>
+<tr class="separator:a68c5842f8fd4766c1432c8848263d92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28caaf3f8f987d81141f405217cc6694"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a28caaf3f8f987d81141f405217cc6694">Push</a> (ProducerToken &amp;token, T &amp;&amp;value, <a class="el" href="../../de/d6a/classengine_1_1Deadline.html">engine::Deadline</a> deadline)</td></tr>
 <tr class="separator:a28caaf3f8f987d81141f405217cc6694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a482bf3fcd02981cd9b81ce403fd221b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a482bf3fcd02981cd9b81ce403fd221b3">PushNoblock</a> (ProducerToken &amp;token, T &amp;&amp;value)</td></tr>
 <tr class="separator:a482bf3fcd02981cd9b81ce403fd221b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a689ae4cf953d6dd570dfa4770a7d5d12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a689ae4cf953d6dd570dfa4770a7d5d12">OnElementPopped</a> ()</td></tr>
 <tr class="separator:a689ae4cf953d6dd570dfa4770a7d5d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5518334c68c335c5f8f36dcd82e7c797"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a5518334c68c335c5f8f36dcd82e7c797">DecreaseCapacity</a> (std::size_t count)</td></tr>
-<tr class="separator:a5518334c68c335c5f8f36dcd82e7c797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad3c9ac14261470b1910946092c8b80a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#aad3c9ac14261470b1910946092c8b80a">IncreaseCapacity</a> (std::size_t count)</td></tr>
-<tr class="separator:aad3c9ac14261470b1910946092c8b80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2471d480546f0a29842d99d647f1e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#aff2471d480546f0a29842d99d647f1e0">StopBlockingOnPush</a> ()</td></tr>
+<tr class="separator:aff2471d480546f0a29842d99d647f1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5299d9fb7a949f951b096283a0e486d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#ad5299d9fb7a949f951b096283a0e486d">ResumeBlockingOnPush</a> ()</td></tr>
+<tr class="separator:ad5299d9fb7a949f951b096283a0e486d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e24a4378e0186bf7063cc987f8e8b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a80e24a4378e0186bf7063cc987f8e8b4">SetSoftMaxSize</a> (std::size_t new_capacity)</td></tr>
+<tr class="separator:a80e24a4378e0186bf7063cc987f8e8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103615e9a1f2ff5d5a7032ab795dcc29"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d27/classconcurrent_1_1GenericQueue_1_1SingleProducerSide.html#a103615e9a1f2ff5d5a7032ab795dcc29">GetSoftMaxSize</a> () const noexcept</td></tr>
+<tr class="separator:a103615e9a1f2ff5d5a7032ab795dcc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool MultipleProducer, bool MultipleConsumer&gt;<br />
 class concurrent::GenericQueue&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide</div><p >Single producer ProducerSide implementation. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00249">249</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00234">234</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a74e21fc67f5d1192e1e1cd4d269ba15f" name="a74e21fc67f5d1192e1e1cd4d269ba15f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74e21fc67f5d1192e1e1cd4d269ba15f">&#9670;&nbsp;</a></span>SingleProducerSide()</h2>
+<a id="a68c5842f8fd4766c1432c8848263d92c" name="a68c5842f8fd4766c1432c8848263d92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c5842f8fd4766c1432c8848263d92c">&#9670;&nbsp;</a></span>SingleProducerSide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,8 +137,18 @@ template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
           <td class="memname"><a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::SingleProducerSide </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">GenericQueue</a> &amp;&#160;</td>
-          <td class="paramname"><em>queue</em></td><td>)</td>
+          <td class="paramname"><em>queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>capacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -144,13 +158,13 @@ template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00251">251</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00236">236</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5518334c68c335c5f8f36dcd82e7c797" name="a5518334c68c335c5f8f36dcd82e7c797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5518334c68c335c5f8f36dcd82e7c797">&#9670;&nbsp;</a></span>DecreaseCapacity()</h2>
+<a id="a103615e9a1f2ff5d5a7032ab795dcc29" name="a103615e9a1f2ff5d5a7032ab795dcc29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103615e9a1f2ff5d5a7032ab795dcc29">&#9670;&nbsp;</a></span>GetSoftMaxSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,51 +175,20 @@ template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::DecreaseCapacity </td>
+          <td class="memname">std::size_t <a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::GetSoftMaxSize </td>
           <td>(</td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>count</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00275">275</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aad3c9ac14261470b1910946092c8b80a" name="aad3c9ac14261470b1910946092c8b80a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad3c9ac14261470b1910946092c8b80a">&#9670;&nbsp;</a></span>IncreaseCapacity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::IncreaseCapacity </td>
-          <td>(</td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>count</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00277">277</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00272">272</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +217,7 @@ template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00270">270</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00255">255</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +264,7 @@ template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
 </div><div class="memdoc">
 <p >Blocks if there is a consumer to Pop the current value and task shouldn't cancel and queue if full </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00256">256</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00241">241</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +304,95 @@ template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00266">266</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00251">251</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad5299d9fb7a949f951b096283a0e486d" name="ad5299d9fb7a949f951b096283a0e486d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5299d9fb7a949f951b096283a0e486d">&#9670;&nbsp;</a></span>ResumeBlockingOnPush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::ResumeBlockingOnPush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00265">265</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a80e24a4378e0186bf7063cc987f8e8b4" name="a80e24a4378e0186bf7063cc987f8e8b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e24a4378e0186bf7063cc987f8e8b4">&#9670;&nbsp;</a></span>SetSoftMaxSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::SetSoftMaxSize </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>new_capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00267">267</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aff2471d480546f0a29842d99d647f1e0" name="aff2471d480546f0a29842d99d647f1e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2471d480546f0a29842d99d647f1e0">&#9670;&nbsp;</a></span>StopBlockingOnPush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool MultipleProducer, bool MultipleConsumer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d8/d97/classconcurrent_1_1GenericQueue.html">concurrent::GenericQueue</a>&lt; T, MultipleProducer, MultipleConsumer &gt;::SingleProducerSide::StopBlockingOnPush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/ded/queue_8hpp_source.html#l00260">260</a> of file <a class="el" href="../../d7/ded/queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>
