@@ -9,7 +9,7 @@
 <meta property="og:image" content="../../logo_in_circle.png"/>
 <meta property="og:image:alt" content="userver logo"/>
 <link rel="icon" href="../../favicon.svg">
-<title>userver: Controlling DNS</title>
+<title>userver: Security Changelog</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <link rel="stylesheet" href="../../doxygen-like.css">
@@ -81,64 +81,15 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">Controlling DNS </div></div>
+  <div class="headertitle"><div class="title">Security Changelog </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >If your service has a <a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a> configured, then you may force hosts reload from cache and wipe DNS caches. The feature is useful to apply DNS changes faster.</p>
-<h1><a class="anchor" id="autotoc_md106"></a>
-Commands</h1>
-<p ><a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a> provides the following REST API: </p><div class="fragment"><div class="line">POST /service/dnsclient/reload_hosts</div>
-<div class="line">POST /service/dnsclient/flush_cache?name={some name}</div>
-<div class="line">POST /service/dnsclient/flush_cache_full</div>
-</div><!-- fragment --><p> Note that the <a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/dnsclient/</code> handle path.</p>
-<h1><a class="anchor" id="autotoc_md107"></a>
-Examples:</h1>
-<h2><a class="anchor" id="autotoc_md108"></a>
-Reload hosts file</h2>
-<div class="fragment"><div class="line">bash</div>
-<div class="line">$ curl -X POST http://localhost:8085/service/dnsclient/reload_hosts -i</div>
-<div class="line">HTTP/1.1 200 OK</div>
-<div class="line">Date: Thu, 02 Dec 2021 15:27:49 UTC</div>
-<div class="line">Content-Type: text/html; charset=utf-8</div>
-<div class="line">X-YaRequestId: e952064e60454c19950a534799837479</div>
-<div class="line">X-YaSpanId: 2e67da42409d2f2a</div>
-<div class="line">X-YaTraceId: 6e45cff5d60b4ca2b399d39b8d093351</div>
-<div class="line">Server: sample-production-service 1.0</div>
-<div class="line">Connection: keep-alive</div>
-<div class="line">Content-Length: 2</div>
-<div class="line"> </div>
-<div class="line">OK</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md109"></a>
-Rediscover the ya.ru DNS records</h2>
-<div class="fragment"><div class="line">bash</div>
-<div class="line">$ curl -X POST http://localhost:8085/service/dnsclient/flush_cache?name=ya.ru -i</div>
-<div class="line">HTTP/1.1 200 OK</div>
-<div class="line">Date: Thu, 02 Dec 2021 15:29:20 UTC</div>
-<div class="line">Content-Type: text/html; charset=utf-8</div>
-<div class="line">X-YaRequestId: 6bfa28dd4ee74d18ab49d871b78426bf</div>
-<div class="line">X-YaSpanId: 6f886740835e81bf</div>
-<div class="line">X-YaTraceId: ffc2a2128d4c439891bd3b76ad77f80b</div>
-<div class="line">Server: sample-production-service 1.0</div>
-<div class="line">Connection: keep-alive</div>
-<div class="line">Content-Length: 2</div>
-<div class="line"> </div>
-<div class="line">OK</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md110"></a>
-Rediscover all the DNS records</h2>
-<div class="fragment"><div class="line">bash</div>
-<div class="line">$ curl -X POST http://localhost:8085/service/dnsclient/flush_cache_full -i</div>
-<div class="line">HTTP/1.1 200 OK</div>
-<div class="line">Date: Thu, 02 Dec 2021 15:30:44 UTC</div>
-<div class="line">Content-Type: text/html; charset=utf-8</div>
-<div class="line">X-YaRequestId: 79fc8ca39ac5475ab7be72ff5b9fecf2</div>
-<div class="line">X-YaSpanId: dd8ab87efa690283</div>
-<div class="line">X-YaTraceId: 2df06ec8be4a4dbdb66d4af78d4eba83</div>
-<div class="line">Server: sample-production-service 1.0</div>
-<div class="line">Connection: keep-alive</div>
-<div class="line">Content-Length: 2</div>
-<div class="line"> </div>
-<div class="line">OK</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="textblock"><h1><a class="anchor" id="autotoc_md215"></a>
+Fixed in beta</h1>
+<h2><a class="anchor" id="autotoc_md216"></a>
+Hashing algorithm was vulnerable to HasDOS</h2>
+<p >Fixed in: <a href="https://github.com/userver-framework/userver/commit/42059b6319661583b3080cab9b595d4f8ac48128">https://github.com/userver-framework/userver/commit/42059b6319661583b3080cab9b595d4f8ac48128</a> Credits: Ivan Trofimov </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

@@ -84,9 +84,9 @@ $(function() {
   <div class="headertitle"><div class="title">Unit Tests and Benchmarks </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md231"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md242"></a>
 Unit tests (googletest)</h1>
-<h2><a class="anchor" id="autotoc_md232"></a>
+<h2><a class="anchor" id="autotoc_md243"></a>
 Getting started</h2>
 <p >All userver test helpers live in <code>utest</code> CMake target:</p>
 <div class="fragment"><div class="line">target_link_libraries(your-test-target PRIVATE utest)</div>
@@ -113,7 +113,7 @@ Getting started</h2>
 </ul>
 <p >As usual, gmock is available in <code>&lt;gmock/gmock.h&gt;</code>.</p>
 <p >See also <a class="el" href="../../df/d72/structutest_1_1PrintTestName.html" title="Test name printer for parameterized tests written in gtest.">utest::PrintTestName</a> for info on how to simplify writing parametrized tests and <a href="https://google.github.io/googletest/">official gtest documentation</a>.</p>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md244"></a>
 Coroutine environment</h2>
 <p >To test code that uses coroutine environment (e.g. creates tasks or uses synchronization primitives), use <code>UTEST</code> instead of <code>TEST</code> in the test header:</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="../../d1/db2/group__userver__utest.html#ga99fe29774caf35ceab2a40b72b230ec7" title="An equivalent of the gtest macro TEST that starts the test body as a coroutine task.">UTEST</a>(Semaphore, PassAcrossCoroutines) {</div>
@@ -137,7 +137,7 @@ Coroutine environment</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p >The specified thread count is available in <code>U</code>-tests as <code>GetThreadCount()</code> method.</p>
 <p >For DEATH-tests (when testing aborts or assertion fails) use <code>UTEST_DEATH</code>. It configures gtest-DEATH-checks to work in multithreaded environment. Also it disables using of <code>ev_default_loop</code> and catching of <code>SIGCHLD</code> signal to work with gtest's <code>waitpid()</code> calls.</p>
-<h2><a class="anchor" id="autotoc_md234"></a>
+<h2><a class="anchor" id="autotoc_md245"></a>
 Exception assertions</h2>
 <p >Standard gtest exception assertions provide poor error messages. Their equivalents with proper diagnostics are available in <code>&lt;<a class="el" href="../../dc/dc9/utest_8hpp.html" title="Versions of gtest macros that run tests in a coroutine environment.">userver/utest/utest.hpp</a>&gt;</code>:</p>
 <ul>
@@ -160,7 +160,7 @@ Exception assertions</h2>
 <div class="line">  <a class="code hl_define" href="../../d1/db2/group__userver__utest.html#gafdf4f737b3561621eff19fb93f9c27fd">UEXPECT_NO_THROW</a>(NonThrowingFunction());</div>
 <div class="line">}</div>
 </div><!-- fragment --><p ><a class="anchor" id="utest-mocked-time"></a></p>
-<h2><a class="anchor" id="autotoc_md235"></a>
+<h2><a class="anchor" id="autotoc_md246"></a>
 Mocked time</h2>
 <ul>
 <li>To mock time, use <code><a class="el" href="../../db/dec/namespaceutils_1_1datetime.html#a55c8fa2daccb0874282e200e656e005f" title="std::chrono::system_clock::now() that could be mocked">utils::datetime::Now()</a></code> and <code><a class="el" href="../../db/dec/namespaceutils_1_1datetime.html#a3d0759f3f40236ccfde604792a492dfe" title="std::chrono::steady_clock::now() that could be mocked">utils::datetime::SteadyNow()</a></code> from <code>&lt;<a class="el" href="../../d7/d4a/datetime_8hpp.html" title="Date and Time related converters.">userver/utils/datetime.hpp</a>&gt;</code> instead of <code>std::chrono::system_clock::now()</code> and <code>std::chrono::steady_clock::now()</code>, respectively</li>
@@ -194,7 +194,7 @@ Mocked time</h2>
 <div class="line">  EXPECT_EQ(timer.NextLoop(), 24h - 9001s);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p ><a class="anchor" id="utest-dynamic-config"></a></p>
-<h2><a class="anchor" id="autotoc_md236"></a>
+<h2><a class="anchor" id="autotoc_md247"></a>
 Mocked dynamic config</h2>
 <p >You can fill dynamic config with custom config values using <code><a class="el" href="../../d6/dec/classdynamic__config_1_1StorageMock.html" title="Backing storage for dynamic_config::Source in tests and benchmarks.">dynamic_config::StorageMock</a></code>.</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>DummyClient;</div>
@@ -248,15 +248,15 @@ Mocked dynamic config</h2>
 <div class="line">  MyHelper(config_storage.GetSnapshot());</div>
 <div class="line">  MyClient client{config_storage.GetSource()};</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md237"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md248"></a>
 Benchmarks (google-benchmark)</h1>
-<h2><a class="anchor" id="autotoc_md238"></a>
+<h2><a class="anchor" id="autotoc_md249"></a>
 Getting started</h2>
 <p >All userver benchmark helpers live in <code>ubench</code> CMake target:</p>
 <div class="fragment"><div class="line">target_link_libraries(your-bench-target PRIVATE ubench)</div>
 </div><!-- fragment --><p >As usual, google-benchmark is available in <code>&lt;benchmark/benchmark.h&gt;</code>.</p>
 <p >See also official google-benchmark <a href="https://github.com/google/benchmark/blob/main/README.md">documentation</a>.</p>
-<h2><a class="anchor" id="autotoc_md239"></a>
+<h2><a class="anchor" id="autotoc_md250"></a>
 Coroutine environment</h2>
 <p >Use <code><a class="el" href="../../dc/d3f/namespaceengine.html#a5b808a81d43d062275ca56dc09980277" title="Runs a payload in a temporary coroutine engine instance.">engine::RunStandalone</a></code> to run parts of your benchmark in a coroutine environment:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> semaphore_lock(benchmark::State&amp; state) {</div>
@@ -275,7 +275,7 @@ Coroutine environment</h2>
 <div class="line">  });</div>
 <div class="line">}</div>
 <div class="line">BENCHMARK(semaphore_lock);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md240"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md251"></a>
 Mocked dynamic config</h2>
 <p >See the <a class="el" href="../../d8/d06/md_en_userver_testing.html#utest-dynamic-config">equivalent utest section</a>.</p>
 <p >Default dynamic configs are available in <code>&lt;<a class="el" href="../../d6/dc6/benchmark__helpers_8hpp_source.html">userver/dynamic_config/benchmark_helpers.hpp</a>&gt;</code>. </p>

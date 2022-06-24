@@ -104,10 +104,10 @@ $(function() {
 <li>Functional testing</li>
 </ul>
 <p >This tutorial shows a configuration of a typical production ready service.</p>
-<h1><a class="anchor" id="autotoc_md336"></a>
+<h1><a class="anchor" id="autotoc_md347"></a>
 Before you start</h1>
 <p >Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md337"></a>
+<h1><a class="anchor" id="autotoc_md348"></a>
 int main</h1>
 <p ><a class="el" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a> initializes and starts the component system with the provided command line arguments:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d1/d1c/common__component__list_8hpp.html" title="Returns the most common list of components with runtime config updates and HTTP client.">userver/components/common_component_list.hpp</a>&gt;</span></div>
@@ -134,11 +134,11 @@ int main</h1>
 </div><!-- fragment --><p >A path to the static config file should be passed from a command line to start the service:</p>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">./samples/userver-samples-production_service --config /etc/production-service/static_config.yaml</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md338"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md349"></a>
 Static config</h1>
 <p >Full static config could be seen at <a class="el" href="../../df/d22/samples_2production_service_2static_config_8yaml-example.html">samples/production_service/static_config.yaml</a></p>
 <p >Important parts are described down below.</p>
-<h2><a class="anchor" id="autotoc_md339"></a>
+<h2><a class="anchor" id="autotoc_md350"></a>
 Variables</h2>
 <p >Static configs tend to become quite big, so it is a good idea to move changing parts of it into variables. To do that, declare a <code>config_vars</code> field in the static config and point it to a file with variables.</p>
 <div class="fragment"><div class="line"># yaml</div>
@@ -150,7 +150,7 @@ Variables</h2>
 <div class="line">            fs-task-processor: fs-task-processor</div>
 <div class="line">            user-agent: $server-name</div>
 <div class="line">            user-agent#fallback: &#39;userver-based-service 1.0&#39;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md340"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md351"></a>
 Task processors</h2>
 <p >A good practice is to have at least 3 different task processors:</p>
 <div class="fragment"><div class="line">    # yaml</div>
@@ -172,7 +172,7 @@ Task processors</h2>
 <div class="line">        threads#fallback: 2</div>
 </div><!-- fragment --><p >Moving blocking operations into a separate task processor improves responsiveness and CPU usage of your service. Monitor task processor helps to get statistics and diagnostics from server under heavy load or from a server with a deadlocked threads in the main task processor.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This setup is for an abstract service on an abstract 8 core machine. Benchmark your service on your hardware and hand-tune the thread numbers to get optimal performance.</dd></dl>
-<h2><a class="anchor" id="autotoc_md341"></a>
+<h2><a class="anchor" id="autotoc_md352"></a>
 Listeners/Monitors</h2>
 <p >Note the <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a> configuration:</p>
 <div class="fragment"><div class="line">        # yaml</div>
@@ -202,7 +202,7 @@ Listeners/Monitors</h2>
 <div class="line">            server-name: $server-name</div>
 </div><!-- fragment --><p >In this example we have two listeners. it is done to separate clients and utility/diagnostic handlers to listen on different ports or even interfaces.</p>
 <p ><a class="anchor" id="sample_prod_service_utility_handlers"></a></p>
-<h2><a class="anchor" id="autotoc_md342"></a>
+<h2><a class="anchor" id="autotoc_md353"></a>
 Utility handlers</h2>
 <p >Your server has the following utility handlers:</p><ul>
 <li>to <a class="el" href="../../dd/d84/md_en_userver_requests_in_flight.html">inspect in-flight request</a> - <a class="el" href="../../d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in-flight requests.">server::handlers::InspectRequests</a></li>
@@ -243,7 +243,7 @@ Utility handlers</h2>
 <div class="line"> </div>
 <div class="line">$ curl -X PUT &#39;http://localhost:8085/service/log-level/warning&#39;</div>
 <div class="line">{&quot;init-log-level&quot;:&quot;info&quot;,&quot;current-log-level&quot;:&quot;warning&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md343"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md354"></a>
 Ping</h2>
 <p >This is a <a class="el" href="../../d7/d6d/classserver_1_1handlers_1_1Ping.html" title="Handler that returns HTTP 200 if the service is OK and able to process requests.">server::handlers::Ping</a> handle that returns 200 if the service is OK, 500 otherwise. Useful for balancers, that would stop sending traffic to the server if it responds with codes other than 200.</p>
 <div class="fragment"><div class="line">        # yaml</div>
@@ -264,7 +264,7 @@ Ping</h2>
 <div class="line">X-YaTraceId: 4d7f8aa03e2d4e4d80a92a3ccecfbe6d</div>
 <div class="line">Connection: keep-alive</div>
 <div class="line">Content-Length: 0</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md344"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md355"></a>
 Dynamic configs</h2>
 <p >Here's a configuration of a dynamic config related components <a class="el" href="../../d8/d1f/classcomponents_1_1DynamicConfigClient.html" title="Component that starts a clients::dynamic_config::Client client.">components::DynamicConfigClient</a>, <a class="el" href="../../dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the runtime config.">components::DynamicConfig</a>, <a class="el" href="../../d3/da0/classcomponents_1_1DynamicConfigClientUpdater.html" title="Component that does a periodic update of runtime configs.">components::DynamicConfigClientUpdater</a>.</p>
 <p >Service starts with dynamic config values from <code>dynamic-config.fs-cache-path</code> file or from <code>dynamic-config-client-updater.fallback-path</code> file. Service updates dynamic values from a <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">configs service</a>.</p>
@@ -284,7 +284,7 @@ Dynamic configs</h2>
 <div class="line">            load-only-my-values: true</div>
 <div class="line">            store-enabled: true</div>
 <div class="line">            update-interval: 5s</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md345"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md356"></a>
 Congestion Control</h2>
 <p ><a class="el" href="../../de/dac/classcongestion__control_1_1Component.html" title="Component to limit too active requests, also known as CC.">congestion_control::Component</a> limits the active requests count. In case of overload it responds with HTTP 429 codes to some requests, allowing your service to properly process handle the rest.</p>
 <p >All the significant parts of the component are configured by dynamic config options <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_RPS_CCONTROL">USERVER_RPS_CCONTROL</a> and <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_RPS_CCONTROL_ENABLED">USERVER_RPS_CCONTROL_ENABLED</a></p>
@@ -294,7 +294,7 @@ Congestion Control</h2>
 <div class="line">            load-enabled: true</div>
 </div><!-- fragment --><p >It is a good idea to disable it in unit tests to avoid getting HTTP 429 on an overloaded CI server.</p>
 <p ><a class="anchor" id="tutorial_metrics"></a></p>
-<h2><a class="anchor" id="autotoc_md346"></a>
+<h2><a class="anchor" id="autotoc_md357"></a>
 Metrics</h2>
 <p >Metrics is a convenient way to monitor the health of your service.</p>
 <p >Typical setup of <a class="el" href="../../df/df4/classcomponents_1_1SystemStatisticsCollector.html" title="Component for system resource usage statistics collection.">components::SystemStatisticsCollector</a> and <a class="el" href="../../d8/daf/classcomponents_1_1StatisticsStorage.html" title="Component that keeps a utils::statistics::Storage storage for metrics.">components::StatisticsStorage</a> is quite trivial:</p>
@@ -302,7 +302,7 @@ Metrics</h2>
 <div class="line">        system-statistics-collector:</div>
 <div class="line">            fs-task-processor: fs-task-processor</div>
 </div><!-- fragment --><p >With such setup you could poll the metrics from handler <a class="el" href="../../dc/d10/classserver_1_1handlers_1_1ServerMonitor.html" title="Handler that returns statistics data.">server::handlers::ServerMonitor</a> that we've configured in <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html#sample_prod_service_utility_handlers">previous section</a>. However a much more mature approach is to write a component that pushes the metrics directly into the remote metrics aggregation service or to write a handle that provides the metrics in the native aggregation service format.</p>
-<h2><a class="anchor" id="autotoc_md347"></a>
+<h2><a class="anchor" id="autotoc_md358"></a>
 Secdist - secrets distributor</h2>
 <p >Storing sensitive data aside from the configs is a good practice that allows you to set different access rights for the two files.</p>
 <p ><a class="el" href="../../da/dc7/classcomponents_1_1Secdist.html" title="Component that stores security related data (keys, passwords, ...).">components::Secdist</a> configuration is straightforward:</p>
@@ -311,15 +311,15 @@ Secdist - secrets distributor</h2>
 <div class="line">            config: $secdist-path</div>
 </div><!-- fragment --><p >Refer to the <a class="el" href="../../de/d15/classstorages_1_1secdist_1_1SecdistConfig.html" title="Client to retrieve credentials from the components::Secdist.">storages::secdist::SecdistConfig</a> config for more information on the data retrieval.</p>
 <p ><a class="anchor" id="prod_service_testsuite_related_components"></a></p>
-<h2><a class="anchor" id="autotoc_md348"></a>
+<h2><a class="anchor" id="autotoc_md359"></a>
 Testsuite related components</h2>
 <p ><a class="el" href="../../d5/ded/classserver_1_1handlers_1_1TestsControl.html" title="Handler that allows to control the behavior of server from tests.">server::handlers::TestsControl</a> is a handle that allows controlling the service from test environments. That handle is used by the testsuite from <a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">functional tests</a> to mock time, invalidate caches, testpoints and many other things. This component should be disabled in production environments.</p>
 <p ><a class="el" href="../../d9/de2/classcomponents_1_1TestsuiteSupport.html" title="Testsuite support component.">components::TestsuiteSupport</a> is a lightweight storage to keep minor testsuite data. This component is required by many high-level components and it is safe to use this component in production environments.</p>
-<h1><a class="anchor" id="autotoc_md349"></a>
+<h1><a class="anchor" id="autotoc_md360"></a>
 Dynamic config</h1>
 <p >Initial values of the dynamic config could be seen at <a class="el" href="../../d7/ddc/samples_2production_service_2dynamic_config_fallback_8json-example.html">samples/production_service/dynamic_config_fallback.json</a></p>
 <p >Those are described in details at <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html">Dynamic configs</a> .</p>
-<h2><a class="anchor" id="autotoc_md350"></a>
+<h2><a class="anchor" id="autotoc_md361"></a>
 Build</h2>
 <p >This sample requires <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">configs service</a>, so we build and start one from our previous tutorials.</p>
 <div class="fragment"><div class="line">bash</div>
@@ -333,12 +333,12 @@ Build</h2>
 <div class="line">make userver-samples-production_service</div>
 <div class="line">python3 ../samples/tests/prepare_production_configs.py</div>
 <div class="line">./samples/userver-samples-production_service --config /tmp/userver/production_service/static_config.yaml</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md351"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md362"></a>
 Functional testing</h2>
 <p ><a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">Functional tests</a> are used to make sure that the service is working fine and implements the required functionality. A recommended practice is to build the service in Debug and Release modes and tests both of them, then deploy the Release build to the production, "disabling all the tests related handlers".</p>
 <p >Debug builds of the userver provide numerous assertions that validate the framework usage and help to detect bugs at early stages.</p>
 <p >Typical functional tests for a service consist of a <code>conftest.py</code> file with mocks+configs for the sereffectivelyvice and a bunch of <code>test_*.py</code> files with actual tests. Such approach allows to reuse mocks and configurations in different tests.</p>
-<h1><a class="anchor" id="autotoc_md352"></a>
+<h1><a class="anchor" id="autotoc_md363"></a>
 Full sources</h1>
 <p >See the full example at</p><ul>
 <li><a class="el" href="../../d8/d8a/samples_2production_service_2production_service_8cpp-example.html">samples/production_service/production_service.cpp</a></li>

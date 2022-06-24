@@ -86,7 +86,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p >Here you can find the description of dynamic configs - options that can be changed at run-time without stopping the service.</p>
 <p >For an information on how to write a service that distributes dynamic configs see <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">Writing your own configs server</a>.</p>
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md40"></a>
 Adding and using your own dynamic configs</h1>
 <p >Dynamic config values could be obtained via the <a class="el" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">dynamic_config::Source</a> client that could be retrieved from <a class="el" href="../../dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the runtime config.">components::DynamicConfig</a>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d2e/core_2include_2userver_2components_2component_8hpp.html" title="Convinience header that provides all the types for component implementation (components::ComponentCon...">userver/components/component.hpp</a>&gt;</span></div>
@@ -130,7 +130,7 @@ Adding and using your own dynamic configs</h1>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace myservice::smth</span></div>
 </div><!-- fragment --><p ><a class="anchor" id="HTTP_CLIENT_CONNECT_THROTTLE"></a></p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md41"></a>
 HTTP_CLIENT_CONNECT_THROTTLE</h1>
 <p >Token bucket throttling options for new connections (socket(3)).</p><ul>
 <li><code>*-limit</code> - token bucket size, set to <code>0</code> to disable the limit</li>
@@ -174,7 +174,7 @@ HTTP_CLIENT_CONNECT_THROTTLE</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a>, affects the behavior of <a class="el" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a> and all the clients that use it.</p>
 <p ><a class="anchor" id="HTTP_CLIENT_CONNECTION_POOL_SIZE"></a></p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md42"></a>
 HTTP_CLIENT_CONNECTION_POOL_SIZE</h1>
 <p >Open connections pool size for curl (CURLMOPT_MAXCONNECTS). <code>-1</code> means "detect by multiplying easy handles count on 4".</p>
 <div class="fragment"><div class="line">schema:</div>
@@ -182,7 +182,7 @@ HTTP_CLIENT_CONNECTION_POOL_SIZE</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">5000</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a>, affects the behavior of <a class="el" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a> and all the clients that use it.</p>
 <p ><a class="anchor" id="HTTP_CLIENT_ENFORCE_TASK_DEADLINE"></a></p>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 HTTP_CLIENT_ENFORCE_TASK_DEADLINE</h1>
 <p >Dynamic config that controls task deadline across multiple services.</p>
 <p >For example, service <code>A</code> starts a task with some deadline that goes to service <code>B</code>, <code>B</code> goes into <code>C</code>, <code>C</code> goes to <code>D</code>: A-&gt;B-&gt;C-&gt;D. With the deadlines enabled, service <code>C</code> could detect that the deadline happened and there's no need to go to service <code>D</code>.</p>
@@ -207,7 +207,7 @@ HTTP_CLIENT_ENFORCE_TASK_DEADLINE</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a>, affects the behavior of <a class="el" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a> and all the clients that use it.</p>
 <p ><a class="anchor" id="MONGO_DEFAULT_MAX_TIME_MS"></a></p>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 MONGO_DEFAULT_MAX_TIME_MS</h1>
 <p >Dynamic config that controls default $maxTimeMS for mongo requests (0 - disables default timeout).</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -217,7 +217,7 @@ MONGO_DEFAULT_MAX_TIME_MS</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">200</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d0/dda/classcomponents_1_1Mongo.html" title="MongoDB client component.">components::Mongo</a>, <a class="el" href="../../d2/d4a/classcomponents_1_1MultiMongo.html" title="Dynamically configurable MongoDB client component.">components::MultiMongo</a>.</p>
 <p ><a class="anchor" id="POSTGRES_DEFAULT_COMMAND_CONTROL"></a></p>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 POSTGRES_DEFAULT_COMMAND_CONTROL</h1>
 <p >Dynamic config that controls default network and statement timeouts. Overrides the built-in timeouts from <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html#abd1859637d5d430e30cc1417d4b11c98" title="Default command control.">components::Postgres::kDefaultCommandControl</a>, but could be overridden by <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_HANDLERS_COMMAND_CONTROL">POSTGRES_HANDLERS_COMMAND_CONTROL</a>, <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_QUERIES_COMMAND_CONTROL">POSTGRES_QUERIES_COMMAND_CONTROL</a> and <a class="el" href="../../d2/dcb/structstorages_1_1postgres_1_1CommandControl.html">storages::postgres::CommandControl</a>.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -237,7 +237,7 @@ POSTGRES_DEFAULT_COMMAND_CONTROL</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>.</p>
 <p ><a class="anchor" id="POSTGRES_HANDLERS_COMMAND_CONTROL"></a></p>
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 POSTGRES_HANDLERS_COMMAND_CONTROL</h1>
 <p >Dynamic config that controls per-handle statement and network timeouts. Overrides <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_DEFAULT_COMMAND_CONTROL">POSTGRES_DEFAULT_COMMAND_CONTROL</a> and built-in timeouts from <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html#abd1859637d5d430e30cc1417d4b11c98" title="Default command control.">components::Postgres::kDefaultCommandControl</a>, but may be overridden by <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_QUERIES_COMMAND_CONTROL">POSTGRES_QUERIES_COMMAND_CONTROL</a> and <a class="el" href="../../d2/dcb/structstorages_1_1postgres_1_1CommandControl.html">storages::postgres::CommandControl</a>.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -276,7 +276,7 @@ POSTGRES_HANDLERS_COMMAND_CONTROL</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>.</p>
 <p ><a class="anchor" id="POSTGRES_QUERIES_COMMAND_CONTROL"></a></p>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md47"></a>
 POSTGRES_QUERIES_COMMAND_CONTROL</h1>
 <p >Dynamic config that controls per-query/per-transaction statement and network timeouts, if those were not explicitly set via <a class="el" href="../../d2/dcb/structstorages_1_1postgres_1_1CommandControl.html">storages::postgres::CommandControl</a>. Overrides the <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_HANDLERS_COMMAND_CONTROL">POSTGRES_HANDLERS_COMMAND_CONTROL</a>, <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_QUERIES_COMMAND_CONTROL">POSTGRES_QUERIES_COMMAND_CONTROL</a>, <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#POSTGRES_DEFAULT_COMMAND_CONTROL">POSTGRES_DEFAULT_COMMAND_CONTROL</a>, and built-in timeouts from <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html#abd1859637d5d430e30cc1417d4b11c98" title="Default command control.">components::Postgres::kDefaultCommandControl</a>.</p>
 <p >Transaction timeouts in POSTGRES_QUERIES_COMMAND_CONTROL override the per-query timeouts in POSTGRES_QUERIES_COMMAND_CONTROL, so the latter are ignored if transaction timeouts are set.</p>
@@ -308,7 +308,7 @@ POSTGRES_QUERIES_COMMAND_CONTROL</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>.</p>
 <p ><a class="anchor" id="POSTGRES_CONNECTION_POOL_SETTINGS"></a></p>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 POSTGRES_CONNECTION_POOL_SETTINGS</h1>
 <p >Dynamic config that controls connection pool settings of PostgreSQL driver.</p>
 <p >Take note that it overrides the static configuration values of the service!</p>
@@ -349,7 +349,7 @@ POSTGRES_CONNECTION_POOL_SETTINGS</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>.</p>
 <p ><a class="anchor" id="POSTGRES_STATEMENT_METRICS_SETTINGS"></a></p>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 POSTGRES_STATEMENT_METRICS_SETTINGS</h1>
 <p >Dynamic config that controls statement metrics settings for specific service. <code>max_statement_metrics == 0</code> disables metrics export.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -372,7 +372,7 @@ POSTGRES_STATEMENT_METRICS_SETTINGS</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>.</p>
 <p ><a class="anchor" id="USERVER_CACHES"></a></p>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
 USERVER_CACHES</h1>
 <p >Cache update dynamic parameters.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -405,7 +405,7 @@ USERVER_CACHES</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by all the caches derived from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.</p>
 <p ><a class="anchor" id="USERVER_CHECK_AUTH_IN_HANDLERS"></a></p>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md51"></a>
 USERVER_CHECK_AUTH_IN_HANDLERS</h1>
 <p >Controls whether authentication checks are performed in handlers.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -414,7 +414,7 @@ USERVER_CHECK_AUTH_IN_HANDLERS</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">true</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a>.</p>
 <p ><a class="anchor" id="USERVER_CANCEL_HANDLE_REQUEST_BY_DEADLINE"></a></p>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md52"></a>
 USERVER_CANCEL_HANDLE_REQUEST_BY_DEADLINE</h1>
 <p >Controls whether the http request task should be cancelled when the deadline received from the client is reached.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -423,7 +423,7 @@ USERVER_CANCEL_HANDLE_REQUEST_BY_DEADLINE</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">true</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a>.</p>
 <p ><a class="anchor" id="USERVER_DUMPS"></a></p>
-<h1><a class="anchor" id="autotoc_md45"></a>
+<h1><a class="anchor" id="autotoc_md53"></a>
 USERVER_DUMPS</h1>
 <p >Dynamic dump configuration. If the options are set for some dump then those options override the static configuration.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -449,7 +449,7 @@ USERVER_DUMPS</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d8/d4c/classdump_1_1Dumper.html" title="Manages dumps of a cache-like component.">dump::Dumper</a>, especially by all the caches derived from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.</p>
 <p ><a class="anchor" id="USERVER_HTTP_PROXY"></a></p>
-<h1><a class="anchor" id="autotoc_md46"></a>
+<h1><a class="anchor" id="autotoc_md54"></a>
 USERVER_HTTP_PROXY</h1>
 <p >Proxy for all the HTTP and HTTPS clients. Empty string disables proxy usage.</p>
 <p >Proxy string may be prefixed with <code>[scheme]://</code> to specify which kind of proxy is used. Schemes match the <a href="https://curl.se/libcurl/c/CURLOPT_PROXY.html">libcurl supported ones</a>. A proxy host string can also embed user and password.</p>
@@ -459,7 +459,7 @@ USERVER_HTTP_PROXY</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">localhost:8090</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a>, affects the behavior of <a class="el" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a> and all the clients that use it.</p>
 <p ><a class="anchor" id="USERVER_LOG_REQUEST"></a></p>
-<h1><a class="anchor" id="autotoc_md47"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 USERVER_LOG_REQUEST</h1>
 <p >Controls HTTP requests and responses logging.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -468,7 +468,7 @@ USERVER_LOG_REQUEST</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">false</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a>.</p>
 <p ><a class="anchor" id="USERVER_LOG_REQUEST_HEADERS"></a></p>
-<h1><a class="anchor" id="autotoc_md48"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 USERVER_LOG_REQUEST_HEADERS</h1>
 <p >Controls whether the logging of HTTP headers in handlers is performed.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -477,7 +477,7 @@ USERVER_LOG_REQUEST_HEADERS</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">false</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a>.</p>
 <p ><a class="anchor" id="USERVER_LRU_CACHES"></a></p>
-<h1><a class="anchor" id="autotoc_md49"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 USERVER_LRU_CACHES</h1>
 <p >Dynamic config for controlling size and cache entry lifetime of the LRU based caches.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -510,7 +510,7 @@ USERVER_LRU_CACHES</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by all the caches derived from <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a>.</p>
 <p ><a class="anchor" id="USERVER_NO_LOG_SPANS"></a></p>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 USERVER_NO_LOG_SPANS</h1>
 <p >Prefixes or full names of <a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a> instances to not log.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -541,7 +541,7 @@ USERVER_NO_LOG_SPANS</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../d0/d7a/classcomponents_1_1LoggingConfigurator.html" title="Helper component to configure logging.">components::LoggingConfigurator</a> and all the logging facilities.</p>
 <p ><a class="anchor" id="USERVER_RPS_CCONTROL"></a></p>
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md59"></a>
 USERVER_RPS_CCONTROL</h1>
 <p >Dynamic config for <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a> congestion control.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -623,7 +623,7 @@ USERVER_RPS_CCONTROL</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../de/dac/classcongestion__control_1_1Component.html" title="Component to limit too active requests, also known as CC.">congestion_control::Component</a>.</p>
 <p ><a class="anchor" id="USERVER_RPS_CCONTROL_ENABLED"></a></p>
-<h1><a class="anchor" id="autotoc_md52"></a>
+<h1><a class="anchor" id="autotoc_md60"></a>
 USERVER_RPS_CCONTROL_ENABLED</h1>
 <p >Controls whether congestion control limiting of RPS is performed (if main task processor is overloaded, then the server starts rejecting some requests).</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -632,7 +632,7 @@ USERVER_RPS_CCONTROL_ENABLED</h1>
 </div><!-- fragment --><p ><b>Example:</b> </p><div class="fragment"><div class="line">true</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../de/dac/classcongestion__control_1_1Component.html" title="Component to limit too active requests, also known as CC.">congestion_control::Component</a>.</p>
 <p ><a class="anchor" id="USERVER_TASK_PROCESSOR_PROFILER_DEBUG"></a></p>
-<h1><a class="anchor" id="autotoc_md53"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 USERVER_TASK_PROCESSOR_PROFILER_DEBUG</h1>
 <p >Dynamic config for profiling the coroutine based engine of userver. Dictionary key names are the names of engine::TaskProcessor.</p>
 <div class="fragment"><div class="line">yaml</div>
@@ -673,7 +673,7 @@ USERVER_TASK_PROCESSOR_PROFILER_DEBUG</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p >Used by <a class="el" href="../../dc/d21/classcomponents_1_1ManagerControllerComponent.html" title="Component that prepares the engine internals and starts all the other components.">components::ManagerControllerComponent</a>.</p>
 <p ><a class="anchor" id="USERVER_TASK_PROCESSOR_QOS"></a></p>
-<h1><a class="anchor" id="autotoc_md54"></a>
+<h1><a class="anchor" id="autotoc_md62"></a>
 USERVER_TASK_PROCESSOR_QOS</h1>
 <p >Controls engine::TaskProcessor quality of service dynamic config.</p>
 <div class="fragment"><div class="line">yaml</div>

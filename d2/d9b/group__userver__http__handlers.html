@@ -142,14 +142,14 @@ Classes</h2></td></tr>
 <p >Handlers are <a class="el" href="../../dd/d1c/group__userver__components.html">components</a> that could be used by <a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a> to process the incoming requests. </p>
 <p >All the HTTP handlers derive from <a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers.">server::handlers::HttpHandlerBase</a> and override its methods to provide functionality.</p>
 <p >See <a class="el" href="../../dd/d1c/group__userver__components.html">Userver Components</a> for more information on how to register components.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Configuration</h2>
 <p >All the handlers inherit configuration options from their base classes:</p><ul>
 <li><a class="el" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers.">server::handlers::HandlerBase</a></li>
 <li><a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers.">server::handlers::HttpHandlerBase</a></li>
 </ul>
 <p >All the components, including handlers, also have the <a class="el" href="../../dd/d1c/group__userver__components.html">load-enabled</a> option.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Static configuration example:</h2>
 <p >Here's an example of the full config for the <a class="el" href="../../d7/d6d/classserver_1_1handlers_1_1Ping.html" title="Handler that returns HTTP 200 if the service is OK and able to process requests.">server::handlers::Ping</a> handle. </p><div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    handler-ping:</div>

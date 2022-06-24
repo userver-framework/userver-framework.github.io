@@ -84,12 +84,12 @@ $(function() {
   <div class="headertitle"><div class="title">Logging and Tracing </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md162"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md170"></a>
 Logging</h1>
 <p >Modern applications use logging a lot for debugging and diagnosing a running production service. Usually logs are harvested, indexed and stored in a separate service for further investigation.</p>
 <p >The userver framework addresses modern logging requirements and provides multiple facilities for efficient work with logs, including <a class="el" href="../../d0/d61/md_en_userver_log_level_running_service.html">Changing the log level at runtime</a>.</p>
 <p >Below are the intruductions to main developer logging facilities.</p>
-<h2><a class="anchor" id="autotoc_md163"></a>
+<h2><a class="anchor" id="autotoc_md171"></a>
 Log level</h2>
 <p >Macros are used for logging:</p>
 <div class="fragment"><div class="line">  <a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#a9d0a09bf4292af456e282867b32d7d5e" title="Evaluates a message and logs it to the default logger if its level is below or equal to logging::Leve...">LOG_DEBUG</a>() &lt;&lt; <span class="stringliteral">&quot;Some debug info, not logged by default in production&quot;</span>;</div>
@@ -100,7 +100,7 @@ Log level</h2>
 <p >Sometimes it is useful to set the logging level of a given log entry dynamically:</p>
 <div class="fragment"><div class="line">  <a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">logging::Level</a> level = flag ? logging::Level::kDebug : logging::Level::kInfo;</div>
 <div class="line">  <a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#ac7287b93a2311534ceb8ec2fd19ca39e" title="If lvl matches the verbosity then builds a stream and evaluates a message for the default logger.">LOG</a>(level) &lt;&lt; <span class="stringliteral">&quot;some text&quot;</span>;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md164"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md172"></a>
 Filter to the log level</h2>
 <p >Not all logs get into the log file, but only those that are not lower than the logger's log level. The logger log level is set in static config (see <a class="el" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a>).</p>
 <p >The log level can be changed in the static config for a particular handle. In this case, the log level of the logger is changed only for the request handling task of the handle and for all the subtasks:</p>
@@ -109,13 +109,13 @@ Filter to the log level</h2>
 <div class="line">    components:</div>
 <div class="line">      handler-ping:</div>
 <div class="line">        log-level: WARNING</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md165"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md173"></a>
 Dynamic change of the logging level</h2>
 <p >The logging <code>level</code> that was set in the static config of the <a class="el" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a> component for the entire service can be changed on the fly. See <a class="el" href="../../d0/d61/md_en_userver_log_level_running_service.html">Changing the log level at runtime</a> for more info.</p>
-<h2><a class="anchor" id="autotoc_md166"></a>
+<h2><a class="anchor" id="autotoc_md174"></a>
 Limit log length of the requests and responses</h2>
 <p >For per-handle limiting of the request body or response data logging you can use the <code>request_body_size_log_limit</code> and <code>response_data_size_log_limit</code> static options of the handler (see <a class="el" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers.">server::handlers::HandlerBase</a>). Or you could override the <a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html#a069b15f186552632c0ed55d32803ab8d" title="Override it if you need a custom request body logging.">server::handlers::HttpHandlerBase::GetRequestBodyForLogging</a> and <a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html#a1e3bfb0dc81fc1beaac5eeaafb25c003" title="Override it if you need a custom response data logging.">server::handlers::HttpHandlerBase::GetResponseDataForLogging</a> functions.</p>
-<h2><a class="anchor" id="autotoc_md167"></a>
+<h2><a class="anchor" id="autotoc_md175"></a>
 Limiting the log frequency</h2>
 <p >If some line of code generates too many logs and a small number of them is enough, then <code>LOG_*</code> should be replaced with <code>LOG_LIMITED_*</code>. For example, <code><a class="el" href="../../df/d72/logging_2log_8hpp.html#ac7287b93a2311534ceb8ec2fd19ca39e" title="If lvl matches the verbosity then builds a stream and evaluates a message for the default logger.">LOG(lvl)</a></code> should be replaced with <code><a class="el" href="../../df/d72/logging_2log_8hpp.html#a7cfb53670165dc6ca29dbe2d28b3633b" title="If lvl matches the verbosity then builds a stream and evaluates a message for the default logger....">LOG_LIMITED(lvl)</a></code>; <code><a class="el" href="../../df/d72/logging_2log_8hpp.html#a9d0a09bf4292af456e282867b32d7d5e" title="Evaluates a message and logs it to the default logger if its level is below or equal to logging::Leve...">LOG_DEBUG()</a></code> should be replaced with <code><a class="el" href="../../df/d72/logging_2log_8hpp.html#a8afc2c936c61281a048ba2f386990604" title="Evaluates a message and logs it to the default logger if the log message does not occur too often and...">LOG_LIMITED_DEBUG()</a></code>, etc.</p>
 <p >In this case, the log message is written only if the message index is a power of two. The counter is reset every second.</p>
@@ -136,20 +136,20 @@ Limiting the log frequency</h2>
 <li>If the <code>template</code> function logs via <code>LOG_LIMITED_X</code>, then each specialization of the function template has a separate counter</li>
 <li>If the same function with loging via <code>LOG_LIMITED_X</code> is called in different places, then all its calls use the same counter</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md168"></a>
+<h2><a class="anchor" id="autotoc_md176"></a>
 Tags</h2>
 <p >If you want to add tags to as single log record, then you can create an object of type <code><a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">logging::LogExtra</a></code>, add the necessary tags to it and output the <code>LogExtra</code> object to the log:</p>
 <div class="fragment"><div class="line">  <a class="code hl_class" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">logging::LogExtra</a> log_extra;</div>
 <div class="line">  log_extra.<a class="code hl_function" href="../../d3/df8/classlogging_1_1LogExtra.html#a9096585ca34496f56a977b1375e1976e" title="Adds a single key-value pair.">Extend</a>(<span class="stringliteral">&quot;key&quot;</span>, <span class="stringliteral">&quot;value&quot;</span>);</div>
 <div class="line">  <a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#a87d766158e3857c6aedba65e63f24d05" title="Evaluates a message and logs it to the default logger if its level is below or equal to logging::Leve...">LOG_INFO</a>() &lt;&lt; log_extra &lt;&lt; <span class="stringliteral">&quot;message&quot;</span>;</div>
 </div><!-- fragment --><p >If the same fields must be added to each log in a code block, it is recommended to use <code><a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a></code>, which implicitly adds tags to the log.</p>
-<h2><a class="anchor" id="autotoc_md169"></a>
+<h2><a class="anchor" id="autotoc_md177"></a>
 Stacktrace</h2>
 <p >Sometimes it is useful to write a full stacktrace to the log. Typical use case is for logging a "never should happen happened" situation. Use <code><a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html#ae5c0ac15a20cf227500b750d8995d9ab" title="Creates a LogExtra with current thread&#39;s stacktrace, uses cache for faster stacktrace symbolization.">logging::LogExtra::Stacktrace()</a></code> for such cases:</p>
 <div class="fragment"><div class="line">  <a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#aa14f3fd56b4112420dd49c2ebf8276f1" title="Evaluates a message and logs it to the default logger if its level is below or equal to logging::Leve...">LOG_ERROR</a>() &lt;&lt; <span class="stringliteral">&quot;Deadlock in ABC identified&quot;</span></div>
 <div class="line">              &lt;&lt; <a class="code hl_function" href="../../d3/df8/classlogging_1_1LogExtra.html#ae5c0ac15a20cf227500b750d8995d9ab" title="Creates a LogExtra with current thread&#39;s stacktrace, uses cache for faster stacktrace symbolization.">logging::LogExtra::Stacktrace</a>();</div>
 </div><!-- fragment --><p >Important: getting a text representation of a stacktrace is an <b>expensive operation</b>. In addition, the stacktrace itself increases the log record size several times. Therefore, you do not need to use a stack trace for all errors. Use it only when it is 100% useful for diagnostics and other diagnostic tools are ineffective.</p>
-<h2><a class="anchor" id="autotoc_md170"></a>
+<h2><a class="anchor" id="autotoc_md178"></a>
 Additional loggers</h2>
 <p >You can create any number of additional loggers. All you need is to add them to your <code>logging.loggers</code> section of the static config (see <a class="el" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a> for an example)</p>
 <p >After that, you can get a logger in the code like this:</p>
@@ -159,11 +159,11 @@ Additional loggers</h2>
 </div><!-- fragment --><p >To write to such a logger, it is convenient to use <code>LOG_XXX_TO</code>, for example:</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#ab345e5b461f76a41066557aa101c7074" title="Evaluates a message and logs it to the logger if its level is below or equal to logging::Level::kInfo...">LOG_INFO_TO</a>(my_logger) &lt;&lt; <span class="stringliteral">&quot;Look, I am a new logger!&quot;</span>;</div>
 </div><!-- fragment --><p >Note: do not forget to configure the logrotate for your new log file!</p>
-<h1><a class="anchor" id="autotoc_md171"></a>
+<h1><a class="anchor" id="autotoc_md179"></a>
 Tracing</h1>
 <p >The userver implements a request tracing mechanism that is compatible with the <a href="https://opentelemetry.io/docs/">opentelemetry</a> standard.</p>
 <p >It allows you to save dependencies between tasks, between requests through several services, thereby building a trace of requests and interactions. It can be used to identify slow query stages, bottlenecks, sequential queries, etc.</p>
-<h2><a class="anchor" id="autotoc_md172"></a>
+<h2><a class="anchor" id="autotoc_md180"></a>
 tracing::Span</h2>
 <p >When processing a request, you can create a <code>tracking::Span</code> object that measures the execution time of the current code block (technically, the time between its constructor and destructor) and stores the resulting time in the log:</p>
 <p >Example log <code><a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a> span("cache_invalidate")</code>:</p>
@@ -171,7 +171,7 @@ tracing::Span</h2>
 </div><!-- fragment --><p >Log record example for some <code>POST /v1/upload</code> handle:</p>
 <div class="fragment"><div class="line">tskv  timestamp=2020-08-13T15:30:52.507493  level=INFO  module=~Impl ( userver/core/src/tracing/span.cpp:139 )  task_id=7F110B765400  thread_id=0x00007F115BDEE700  text= stopwatch_name=http/handler-v1_upload-post  total_time=36.393694  span_ref_type=child stopwatch_units=ms  start_timestamp=1597321852.471086 meta_type=/v1/upload  _type=response  method=POST body={&quot;status&quot;:&quot;ok&quot;}  uri=/v1/upload?provider_id=driver-metrics http_handle_request_time=36.277501  http_serialize_response_data_time=0.003394  tags_cache_mapping_time=0.018781  find_service_time=21.702876 http_parse_request_data_time=0.053233 http_check_auth_time=0.029809 http_check_ratelimit_time=0.000118  entities_cache_mapping_time=0.01037 register_request_time=0.819509  log_to_yt_time=0.047565 save_request_result_time=1.523389 upload_queries_time=5.179371  commit_time=4.11817 link=48e0029fc25e460880529b9d300967df parent_link=b1377a1b20384fe292fd77cb96b30121  source_service=driver-metrics entity_type=udid  merge_policy=append provider_name=driver-metrics  tags_count_append=3 meta_code=200 trace_id=2f6bf12265934260876a236c373b37dc span_id=8f828566189db0d0  parent_id=fdae1985431a6a57</div>
 </div><!-- fragment --><p ><code><a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a></code> can only be created on stack. Currently, the ability to create <code><a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a></code> as a member of a class whose objects can be passed between tasks is not supported.</p>
-<h2><a class="anchor" id="autotoc_md173"></a>
+<h2><a class="anchor" id="autotoc_md181"></a>
 Tags</h2>
 <p >In addition to <code>trace_id</code>, <code>span_id</code>, <code>parent_id</code> and other tags specific to opentracing, the <code><a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a></code> class can store arbitrary custom tags. To do this, Span implicitly contains LogExtra. You can add tags like this:</p>
 <div class="fragment"><div class="line">    <a class="code hl_class" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a> span(<span class="stringliteral">&quot;big block&quot;</span>);</div>
@@ -180,7 +180,7 @@ Tags</h2>
 <div class="line">                      <span class="stringliteral">&quot;it is not possible to change this tag value in subspan&quot;</span>);</div>
 <div class="line">    span.AddNonInheritableTag(<span class="stringliteral">&quot;local&quot;</span>, <span class="stringliteral">&quot;this tag is not visible in subspans&quot;</span>);</div>
 </div><!-- fragment --><p >Unlike simple <code>LogExtra</code>, tags from <code>Span</code> are automatically logged when using <code>LOG_XXX()</code>. If you create a <code>Span</code>, and you already have a <code>Span</code>, then <code>LogExtra</code> is copied from the old one to the new one (except for the tags added via <code>AddNonInheritableTag</code>).</p>
-<h2><a class="anchor" id="autotoc_md174"></a>
+<h2><a class="anchor" id="autotoc_md182"></a>
 Built-in tag semantics</h2>
 <ul>
 <li><code>TraceId</code> propagates both to sub-spans within a single service, and from client to server</li>
@@ -192,7 +192,7 @@ Built-in tag semantics</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md175"></a>
+<h2><a class="anchor" id="autotoc_md183"></a>
 Span hierarchy and logging</h2>
 <p >All logs in the current task are implicitly linked to the current <code>Span</code> for the user, and tags of this <code>Span</code> are added to them (trace_id, span_id, etc.). All <code>Span</code> in the current task are implicitly stacked, and if there are several similar <code>Span</code>, the last created One (i.e., located at the top of the <code>Span</code> stack of the current task) will be used for logging.</p>
 <div class="fragment"><div class="line">    <a class="code hl_class" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a> span(<span class="stringliteral">&quot;big block&quot;</span>);</div>
@@ -209,13 +209,13 @@ Span hierarchy and logging</h2>
 <div class="line">    <a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#a87d766158e3857c6aedba65e63f24d05" title="Evaluates a message and logs it to the default logger if its level is below or equal to logging::Leve...">LOG_INFO</a>() &lt;&lt; <span class="stringliteral">&quot;After request&quot;</span>;  <span class="comment">// logs &quot;city&quot;, no &quot;request_id&quot;</span></div>
 </div><!-- fragment --><p >If you want to get the current <code>Span</code> (for example, you want to write something to <code>LogExtra</code>, but do not want to create an additional <code>Span</code>), then you can use the following approach:</p>
 <div class="fragment"><div class="line">    <a class="code hl_function" href="../../d7/d1a/classtracing_1_1Span.html#aba13e9517b52eecb30cd30320f82b32d" title="Returns the Span of the current task.">tracing::Span::CurrentSpan</a>().<a class="code hl_function" href="../../d7/d1a/classtracing_1_1Span.html#a6fd6cdf27349f68ee5995b8db7e511bc">AddTag</a>(<span class="stringliteral">&quot;key&quot;</span>, <span class="stringliteral">&quot;value&quot;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md176"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md184"></a>
 Creating a Span</h2>
 <p >A <code>Span</code> is automatically created for each request, handled by the <a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers.">server::handlers::HttpHandlerBase</a> inherited handles. <code>trace_id</code>, <code>parent_id</code> and <code>link</code> are automatically populated for the request headers (if any).</p>
 <p >Cache handlers do not have a parent Span, so a Span without a parent is automatically created for them, with a new <code>trace_id</code> for each update. The situation is similar for all <a class="el" href="../../d6/d10/classutils_1_1PeriodicTask.html" title="Task that periodically runs a user callback.">utils::PeriodicTask</a>.</p>
 <p >When creating a new task via <code><a class="el" href="../../dc/db7/group__userver__concurrency.html#gac91f56844690ea79c568cb3b43ba98a5">utils::Async</a></code>, a new <code>Span</code> is created and linked with the current <code>Span</code> of the current task.</p>
 <p >DB drivers and the <a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a> automatically create a Span for each request to trace them.</p>
-<h2><a class="anchor" id="autotoc_md177"></a>
+<h2><a class="anchor" id="autotoc_md185"></a>
 Linking service requests</h2>
 <p >The HTTP client sends the current link/span_id/trace_id values in each request to the server, they do not need to be specified.</p>
 <p >When the HTTP server handles the request, it extracts data from the request headers and puts them in the Span.</p>
@@ -223,7 +223,7 @@ Linking service requests</h2>
 <div class="fragment"><div class="line">X-YaRequestId</div>
 <div class="line">X-YaSpanId</div>
 <div class="line">X-YaTraceId</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md178"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md186"></a>
 Selectively disabling Span logging</h2>
 <p >Using the server dynamic config <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_NO_LOG_SPANS">USERVER_NO_LOG_SPANS</a>, you can set names and prefixes of Span names that do not need to be logged. If the span is not logged, then the ScopeTime of this span and any custom tags attached to the span via the methods of the <code>Add*Tag*()</code> are not put into the logs.</p>
 <p >For example, this is how you can disable logging of all Span for MongoDB (that is, all Span with <code>stopwatch_name</code> starting with <code>mongo</code>) and <code>Span</code> with <code>stopwatch_name=test</code>:</p>

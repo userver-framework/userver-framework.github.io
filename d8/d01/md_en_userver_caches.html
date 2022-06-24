@@ -87,7 +87,7 @@ $(function() {
 <div class="textblock"><p >A cache in userver is a <a class="el" href="../../d2/d66/md_en_userver_component_system.html">component</a> that periodically polls an external resource and caches its response. Strictly speaking, the cache component is a shadow replica of some resource (database tables, mongo collections, etc.). The use of the cache is that the user receives the current data snapshot and works with that snapshot without waiting for updates. Cache updates occur asynchronously in the background and do not block users from working with the cache.</p>
 <p >As a result, the user usually works with slightly outdated data, but at the same time always has an instant access to some version of the data.</p>
 <p >Caches usually inherit from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a> or <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a>. Sections below describe the features of <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>. For information on <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a> refer to <a class="el" href="../../d3/d0c/md_en_userver_lru_cache.html">Least Recently Used (LRU) Caches and expirable LRU caches</a>.</p>
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="autotoc_md78"></a>
 Update Modes</h1>
 <p >Caches have two update modes:</p><ul>
 <li>Full update. In this mode, the cache requests its full state from an external resource.</li>
@@ -106,7 +106,7 @@ Update Modes</h1>
 <div class="line">    # Can be only-full, only-incremental, full-and-incremental</div>
 <div class="line">    update-types: only-full</div>
 <div class="line">    update-interval: 180s</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md71"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
 Update intervals</h2>
 <p ><code>update-interval</code> is the time interval between the <code>Update</code> calls. In particular this means:</p><ul>
 <li><code>Update</code> is not called concurrently</li>
@@ -114,7 +114,7 @@ Update intervals</h2>
 </ul>
 <p ><code>full-update-interval</code> is the minimum interval between <code>full</code> updates in <code>full-and-incremental</code> cache. With each update, the cache checks if <code>full-update-interval</code> of the time has passed since the previous <code>full</code> update, and if it has passed, the current update will be <code>full</code>.</p>
 <p ><code>update-jitter</code> describes the spread in the delay between cache updates. It is especially useful in the case of heavy caches, which significantly load the database/remote with their updates. Adding a random delay spreads the cache updates of various instances over time, thereby removing the peak load on the database/remote.</p>
-<h1><a class="anchor" id="autotoc_md72"></a>
+<h1><a class="anchor" id="autotoc_md80"></a>
 Fault Tolerance</h1>
 <p >The user can get the current cache snapshot regardless of the current state of the database/remote from which the cache is being poured, provided that at least once the cache update worked correctly. The user is working with a local copy, which may be slightly behind the original in time. In case of problems with the database/remote the cache update may finish with an error (i.e. the <code>Update</code> method will throw an exception), leaving the local cache unchanged.</p>
 <p >By default, the first cache update must be completed successfully to set the initial value. If the first update fails with an error, i.e. the update throws an exception, then this leads to an exception in the cache component constructor and to the service shutdown. There are two ways to change this behavior:</p><ol type="1">
@@ -128,7 +128,7 @@ Fault Tolerance</h1>
 </div><!-- fragment --></li>
 </ol>
 <p >If the "cache has no data" situation is normal for you and you want to handle it yourself, you can override the <code>MayReturnNull()</code> method in the cache so that it returns <code>true</code> (by default <code>false</code>). In this case, instead of an exception, you will get an empty smart pointer (<code>nullptr</code>).</p>
-<h1><a class="anchor" id="autotoc_md73"></a>
+<h1><a class="anchor" id="autotoc_md81"></a>
 Access synchronization, versioning, memory consumption</h1>
 <p >Cache implementation does not block numerous concurrent cache readers while doing a background cache update. In case of time consuming work with cache data, users may encounter the fact that different readers work with different versions of the data. As a result, more than two versions of the cache data can coexist at the same time. Memory and other resources of old data versions are released either when updating the cache or when the background garbage collector collects the garbage. The frequency of garbage collection is regulated via the <code>additional-cleanup-interval</code> parameter.</p>
 <p >The total amount of memory for the cache can be approximately calculated by the formula: </p><div class="fragment"><div class="line">Total cache memory = cache data memory * ([user time / update interval] + 1)</div>
@@ -139,22 +139,22 @@ Access synchronization, versioning, memory consumption</h1>
 </ul>
 <p >For example, if the cache data occupies 1 GB, the cache is updated every 4 seconds, and the handle works for 9 seconds, then the total memory consumption of the cache is <code>1 GB * ([9/4]+1) = 4 GB</code>.</p>
 <p >A commonly used technique to solve the problem of excessive memory consumption for large caches is splitting the cache into chunks.</p>
-<h1><a class="anchor" id="autotoc_md74"></a>
+<h1><a class="anchor" id="autotoc_md82"></a>
 Heavy Caches</h1>
 <p >Updating caches can significantly load the CPU, for example, when parsing data from a database. If such a load lasts for a significant time without context switches (several tens of milliseconds), then this may negatively affect the timings of the service. Sometimes a similar problem occurs not only when forming a new cache snapshot, but also in the callback of a cache subscription, for example, when forming an additional cache index. There are several ways to solve this problem.</p>
 <p ><b>The first option</b>. Increase the number of CPU cores. The more cores you have in the service, the less CPU fraction is used by caches and the better is the efficiency of the service. On the contrary, when splitting a cluster into small containers with a small number of cores, the number of cache instances in the cluster increases, which is why the consumed by caches CPU fraction increases.</p>
 <p ><b>The second option</b>. Add context switching. If you call <a class="el" href="../../dc/d3f/namespaceengine.html#a142b0ca27e383ae38f52cac01692a8d0" title="Suspends execution for a brief period of time, possibly allowing other tasks to execute.">engine::Yield()</a> every 1-2ms, then the framework engine has time to execute the other ready for execution coroutines and the queue of ready coroutines does not grow to undesirable values. To simplify working with <a class="el" href="../../dc/d3f/namespaceengine.html#a142b0ca27e383ae38f52cac01692a8d0" title="Suspends execution for a brief period of time, possibly allowing other tasks to execute.">engine::Yield</a>, it is recommended to use <a class="el" href="../../d9/df3/classutils_1_1CpuRelax.html">utils::CpuRelax</a> rather than calling <a class="el" href="../../dc/d3f/namespaceengine.html#a142b0ca27e383ae38f52cac01692a8d0" title="Suspends execution for a brief period of time, possibly allowing other tasks to execute.">engine::Yield()</a> manually.</p>
-<h1><a class="anchor" id="autotoc_md75"></a>
+<h1><a class="anchor" id="autotoc_md83"></a>
 Specializations for DB</h1>
 <p >The cache is implemented by inheriting from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>. There are specializations for databases:</p><ul>
 <li>MongoCache</li>
 <li><a class="el" href="../../d9/dde/pg_cache.html">Caching Component for PostgreSQL</a></li>
 </ul>
 <p >To write your own cache, you need to override the <a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aeedbce6882ed3f9e32ad663be728fe50" title="Forces a cache update of specified type.">cache::CacheUpdateTrait::Update</a>, implement Full and Incremental updates. In Update(), don't forget to put down metrics for the <code>stats_scope</code> object, describing how many objects were read, how many parsing errors there were, and how many elements are in the final cache.</p>
-<h1><a class="anchor" id="autotoc_md76"></a>
+<h1><a class="anchor" id="autotoc_md84"></a>
 Parallel loading</h1>
 <p >Cache components, like other components, are loaded in parallel. This allows you to speed up the loading of the service in the case of numerous heavy caches.</p>
-<h1><a class="anchor" id="autotoc_md77"></a>
+<h1><a class="anchor" id="autotoc_md85"></a>
 Metrics</h1>
 <p >Each cache automatically collects metrics: </p><div class="fragment"><div class="line">...</div>
 <div class="line">cache.simple-dumped-cache.dump.is-loaded-from-dump 1</div>
