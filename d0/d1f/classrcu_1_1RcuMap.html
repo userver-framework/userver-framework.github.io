@@ -203,7 +203,7 @@ const ValuePtr&#160;</td><td class="memItemRight" valign="bottom"><b>Get</b> (co
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Key, typename Value&gt;<br />
 class rcu::RcuMap&lt; Key, Value &gt;</div><p >Map-like structure allowing RCU keyset updates. </p>
 <p >Only keyset changes are thread-safe in scope of this class. Values are stored in <code>shared_ptr</code>s and are not copied during keyset change. The map itself is implemented as <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable</a>, so every keyset change (e.g. insert or erase) triggers the whole map copying. </p><dl class="section note"><dt>Note</dt><dd>No synchronization is provided for value access, it must be implemented by Value when necessary.</dd></dl>
-<h2><a class="anchor" id="autotoc_md452"></a>
+<h2><a class="anchor" id="autotoc_md453"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="keyword">struct </span>Data {</div>
 <div class="line">    <span class="comment">// Access to RcuMap content must be synchronized via std::atomic</span></div>

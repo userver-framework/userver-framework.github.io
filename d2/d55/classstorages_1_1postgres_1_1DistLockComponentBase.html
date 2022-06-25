@@ -183,7 +183,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>StopDistLock</b> ()</
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d9d/classdist__lock_1_1DistLockedTask.html">dist_lock::DistLockedTask</a> </dd>
 <dd>
 locked_periodiccomponents::PgLockedPeriodic</dd></dl>
-<h2><a class="anchor" id="autotoc_md510"></a>
+<h2><a class="anchor" id="autotoc_md511"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">example-distlock:</div>
 <div class="line">    cluster: postgresql-service</div>
@@ -192,7 +192,7 @@ Static configuration example:</h2>
 <div class="line">    pg-timeout: 1s</div>
 <div class="line">    lock-ttl: 10s</div>
 <div class="line">    autostart: true</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md511"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md512"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -214,7 +214,7 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">task-processor   </td><td class="markdownTableBodyNone">the name of the TaskProcessor for running DoWork   </td><td class="markdownTableBodyNone">main-task-processor   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md512"></a>
+<h2><a class="anchor" id="autotoc_md513"></a>
 Migration example</h2>
 <p >You have to create a SQL table for distlocks. An example of the migration script is as following:</p>
 <div class="fragment"><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> service.distlocks</div>
@@ -249,7 +249,7 @@ Migration example</h2>
 </table>
 </div><div class="memdoc">
 <p >Override this function with anything that must be done under the pg lock.</p>
-<h2><a class="anchor" id="autotoc_md513"></a>
+<h2><a class="anchor" id="autotoc_md514"></a>
 Example implementation</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> MyDistLockComponent::DoWork()</div>
 <div class="line">{</div>

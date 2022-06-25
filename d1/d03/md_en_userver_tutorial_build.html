@@ -284,7 +284,14 @@ MacOS</h2>
 Other POSIX based platforms</h2>
 <p >🐙 <b>userver</b> works well on modern POSIX platforms. Follow the cmake hints for the installation of required packets and experiment with the CMake options.</p>
 <p >Feel free to provide a PR with instructions for your favorite platform at <a href="https://github.com/userver-framework/userver">https://github.com/userver-framework/userver</a>.</p>
-<h1><a class="anchor" id="autotoc_md265"></a>
+<h2><a class="anchor" id="autotoc_md265"></a>
+Docker</h2>
+<p >🐙 <b>userver</b> will be build in docker, now support:</p><ul>
+<li>build and start all tests userver: <code>docker-compose run --rm userver-tests</code></li>
+<li>build service from sample (now guaranteed work <code>hello_service</code>): <code>docker-compose run --rm userver-service-sample</code> or <code>SERVICE_NAME=hello_service docker-compose run --rm userver-service-sample</code></li>
+<li>execute commands in userver dev environment <code>docker-compose run --rm userver-debian bash</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md266"></a>
 Run framework tests</h1>
 <p >To run tests and make sure that the framework works fine use the following command: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">cd build_release</div>
