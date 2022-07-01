@@ -89,21 +89,28 @@ $(function() {
 <div class="line"><span class="lineno">    3</span><span class="comment"># /// [psql prepare]</span></div>
 <div class="line"><span class="lineno">    4</span><span class="keyword">from</span> testsuite.databases.pgsql <span class="keyword">import</span> discover</div>
 <div class="line"><span class="lineno">    5</span> </div>
-<div class="line"><span class="lineno">    6</span> </div>
-<div class="line"><span class="lineno">    7</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
-<div class="line"><span class="lineno">    8</span><span class="keyword">def </span>pgsql_local(service_source_dir, pgsql_local_create):</div>
-<div class="line"><span class="lineno">    9</span>    databases = discover.find_schemas(</div>
-<div class="line"><span class="lineno">   10</span>        <span class="stringliteral">&#39;admin&#39;</span>, [service_source_dir.joinpath(<span class="stringliteral">&#39;schemas/postgresql&#39;</span>)],</div>
-<div class="line"><span class="lineno">   11</span>    )</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> pgsql_local_create(list(databases.values()))</div>
-<div class="line"><span class="lineno">   13</span>    <span class="comment"># /// [psql prepare]</span></div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span><span class="comment"># /// [client_deps]</span></div>
-<div class="line"><span class="lineno">   17</span><span class="preprocessor">@pytest.fixture</span></div>
-<div class="line"><span class="lineno">   18</span><span class="keyword">def </span>client_deps(pgsql):</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">pass</span></div>
-<div class="line"><span class="lineno">   20</span>    <span class="comment"># /// [client_deps]</span></div>
+<div class="line"><span class="lineno">    6</span>pytest_plugins = [</div>
+<div class="line"><span class="lineno">    7</span>    <span class="stringliteral">&#39;pytest_userver.plugins&#39;</span>,</div>
+<div class="line"><span class="lineno">    8</span>    <span class="stringliteral">&#39;pytest_userver.plugins.samples&#39;</span>,</div>
+<div class="line"><span class="lineno">    9</span>    <span class="comment"># Database related plugins</span></div>
+<div class="line"><span class="lineno">   10</span>    <span class="stringliteral">&#39;testsuite.databases.pgsql.pytest_plugin&#39;</span>,</div>
+<div class="line"><span class="lineno">   11</span>]</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
+<div class="line"><span class="lineno">   15</span><span class="keyword">def </span>pgsql_local(service_source_dir, pgsql_local_create):</div>
+<div class="line"><span class="lineno">   16</span>    databases = discover.find_schemas(</div>
+<div class="line"><span class="lineno">   17</span>        <span class="stringliteral">&#39;admin&#39;</span>, [service_source_dir.joinpath(<span class="stringliteral">&#39;schemas/postgresql&#39;</span>)],</div>
+<div class="line"><span class="lineno">   18</span>    )</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> pgsql_local_create(list(databases.values()))</div>
+<div class="line"><span class="lineno">   20</span>    <span class="comment"># /// [psql prepare]</span></div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span><span class="comment"># /// [client_deps]</span></div>
+<div class="line"><span class="lineno">   24</span><span class="preprocessor">@pytest.fixture</span></div>
+<div class="line"><span class="lineno">   25</span><span class="keyword">def </span>client_deps(pgsql):</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">pass</span></div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment"># /// [client_deps]</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

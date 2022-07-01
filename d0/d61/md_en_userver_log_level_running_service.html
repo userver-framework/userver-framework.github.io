@@ -88,50 +88,139 @@ $(function() {
 <blockquote class="doxtable">
 <p >&zwj;Note that writing down the debug or trace logs can significantly affect the performance of the service. In addition to the overhead of writing down more log records, C++ debug symbols may be loaded from the disk to report stack traces. Such IO could lead to significant and unpredictable delays in task processing. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md159"></a>
+<p>For a more granular logging <a class="el" href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging.">server::handlers::DynamicDebugLog</a> provides a way to enable logging per source file and line basis.</p>
+<h1><a class="anchor" id="autotoc_md161"></a>
+Logging specific locations</h1>
+<p ><a class="el" href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging.">server::handlers::DynamicDebugLog</a> provides the following REST API: </p><div class="fragment"><div class="line">GET /service/log/dynamic-debug</div>
+<div class="line">PUT /service/log/dynamic-debug?location=LOCATION_FROM_GET</div>
+<div class="line">DELETE /service/log/dynamic-debug?location=LOCATION_FROM_GET</div>
+</div><!-- fragment --><p >Note that the <a class="el" href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging.">server::handlers::DynamicDebugLog</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/log/dynamic-debug</code> handle path.</p>
+<h2><a class="anchor" id="autotoc_md162"></a>
+Examples:</h2>
+<h3><a class="anchor" id="autotoc_md163"></a>
+Get dynamic debug locations</h3>
+<div class="fragment"><div class="line">bash</div>
+<div class="line">$ curl -X GET &#39;http://127.0.0.1:1188/service/log/dynamic-debug&#39;</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:208  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:217  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:230  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:239  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:384  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:456  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:461  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:464  0</div>
+<div class="line">core/src/cache/cache_config.cpp:151 0</div>
+<div class="line">core/src/cache/cache_config.cpp:194 0</div>
+<div class="line">...</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md164"></a>
+Enable dynamic debug for a location</h3>
+<div class="fragment"><div class="line">bash</div>
+<div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log/dynamic-debug?location=core/src/cache/cache_config.cpp:151&#39;</div>
+<div class="line">OK</div>
+<div class="line">$ curl -X GET &#39;http://127.0.0.1:1188/service/log/dynamic-debug&#39;</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:208  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:217  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:230  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:239  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:384  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:456  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:461  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:464  0</div>
+<div class="line">core/src/cache/cache_config.cpp:151 1</div>
+<div class="line">core/src/cache/cache_config.cpp:194 0</div>
+<div class="line">...</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md165"></a>
+Enable dynamic debug for a whole file</h3>
+<div class="fragment"><div class="line">bash</div>
+<div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log/dynamic-debug?location=core/src/cache/cache_config.cpp&#39;</div>
+<div class="line">OK</div>
+<div class="line">$ curl -X GET &#39;http://127.0.0.1:1188/service/log/dynamic-debug&#39;</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:208  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:217  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:230  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:239  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:384  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:456  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:461  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:464  0</div>
+<div class="line">core/src/cache/cache_config.cpp:151 1</div>
+<div class="line">core/src/cache/cache_config.cpp:194 1</div>
+<div class="line">...</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md166"></a>
+Remove dynamic debug for a whole file</h3>
+<div class="fragment"><div class="line">bash</div>
+<div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log/dynamic-debug?location=core/include/userver/rcu/rcu.hpp&#39;</div>
+<div class="line">OK</div>
+<div class="line">$ curl -X GET &#39;http://127.0.0.1:1188/service/log/dynamic-debug&#39;</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:208  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:217  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:230  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:239  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:384  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:456  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:461  1</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:464  1</div>
+<div class="line">core/src/cache/cache_config.cpp:151 0</div>
+<div class="line">core/src/cache/cache_config.cpp:194 0</div>
+<div class="line">...</div>
+<div class="line">$ curl -X DELETE &#39;http://127.0.0.1:1188/service/log/dynamic-debug?location=core/include/userver/rcu/rcu.hpp&#39;</div>
+<div class="line">OK</div>
+<div class="line">$ curl -X GET &#39;http://127.0.0.1:1188/service/log/dynamic-debug&#39;</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:208  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:217  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:230  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:239  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:384  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:456  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:461  0</div>
+<div class="line">core/include/userver/rcu/rcu.hpp:464  0</div>
+<div class="line">core/src/cache/cache_config.cpp:151 0</div>
+<div class="line">core/src/cache/cache_config.cpp:194 0</div>
+<div class="line">...</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md167"></a>
 Commands for default logger</h1>
 <p ><a class="el" href="../../da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers.">server::handlers::LogLevel</a> provides the following REST API: </p><div class="fragment"><div class="line">GET /service/log-level/</div>
 <div class="line">PUT /service/log-level/{level} (possible values {level}: trace, debug, info, warning, error, critical, none)</div>
 <div class="line">PUT /service/log-level/reset</div>
 </div><!-- fragment --><p> Note that the <a class="el" href="../../da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers.">server::handlers::LogLevel</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration and ideas on how to change the <code>/service/log-level/</code> handle path.</p>
-<h1><a class="anchor" id="autotoc_md160"></a>
-Examples:</h1>
-<h2><a class="anchor" id="autotoc_md161"></a>
-Get the current log-level</h2>
+<h2><a class="anchor" id="autotoc_md168"></a>
+Examples:</h2>
+<h3><a class="anchor" id="autotoc_md169"></a>
+Get the current log-level</h3>
 <p >Note that <code>/</code> is important at the end, without it you may get a response from other handler.</p>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/&#39;</div>
 <div class="line">{&quot;current-log-level&quot;:&quot;info&quot;,&quot;init-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md162"></a>
-Set log-level to debug</h2>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md170"></a>
+Set log-level to debug</h3>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log-level/debug&#39;</div>
 <div class="line">{&quot;current-log-level&quot;:&quot;debug&quot;,&quot;init-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md163"></a>
-Restore the default log-level</h2>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md171"></a>
+Restore the default log-level</h3>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl -X PUT &#39;http://127.0.0.1:1188/service/log-level/reset&#39;</div>
 <div class="line">{&quot;current-log-level&quot;:&quot;info&quot;,&quot;init-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md164"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md172"></a>
 Commands for custom loggers</h1>
 <div class="fragment"><div class="line">GET /service/log-level/?logger={logger}</div>
 <div class="line">PUT /service/log-level/{level}?logger={logger} (possible values {level}: trace, debug, info, warning, error, critical, none)</div>
 <div class="line">PUT /service/log-level/reset?logger={logger}</div>
 </div><!-- fragment --><p> Note that the <a class="el" href="../../da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controlls logging levels of all the loggers.">server::handlers::LogLevel</a> handler lives at the separate <code>components.server.listener-monitor</code> address, so you have to request them using the <code>listener-monitor</code> credentials. See <a class="el" href="../../d6/d08/md_en_userver_tutorial_production_service.html">Production configs and best practices</a> for more info on configuration.</p>
-<h1><a class="anchor" id="autotoc_md165"></a>
-Examples:</h1>
-<h2><a class="anchor" id="autotoc_md166"></a>
-Get the current log-level of the access logger</h2>
+<h2><a class="anchor" id="autotoc_md173"></a>
+Examples:</h2>
+<h3><a class="anchor" id="autotoc_md174"></a>
+Get the current log-level of the access logger</h3>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/?logger=access&#39; </div>
 <div class="line">{&quot;init-log-level&quot;:&quot;info&quot;,&quot;current-log-level&quot;:&quot;info&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md167"></a>
-Set the log level of the access logger to debug</h2>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md175"></a>
+Set the log level of the access logger to debug</h3>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/debug?logger=access&#39; -X PUT</div>
 <div class="line">{&quot;init-log-level&quot;:&quot;info&quot;,&quot;current-log-level&quot;:&quot;debug&quot;}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md168"></a>
-Reset the current log level of the access logger</h2>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md176"></a>
+Reset the current log level of the access logger</h3>
 <div class="fragment"><div class="line">bash</div>
 <div class="line">$ curl &#39;http://127.0.0.1:1188/service/log-level/reset?logger=access&#39; -X PUT</div>
 <div class="line">{&quot;init-log-level&quot;:&quot;info&quot;,&quot;current-log-level&quot;:&quot;info&quot;}</div>

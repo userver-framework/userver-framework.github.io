@@ -263,14 +263,14 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetMet
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Handler that controlls logging levels of all the loggers. </p>
 <p >The component has no service configuration except the <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">common handler options</a>.</p>
-<h2><a class="anchor" id="autotoc_md468"></a>
+<h2><a class="anchor" id="autotoc_md488"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    handler-log-level:</div>
 <div class="line">        path: /service/log-level/{level}</div>
 <div class="line">        method: GET,PUT</div>
 <div class="line">        task_processor: monitor-task-processor</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md469"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md489"></a>
 Scheme</h2>
 <p >For the GET and PUT requests this handler returns the following JSON: </p><div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="stringliteral">&quot;init-log-level&quot;</span>: &lt;log level on service start&gt;,</div>
@@ -278,12 +278,9 @@ Scheme</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p >Particular logger name could be specified by an optional <code>logger</code> query argument. Default logger is used, if no <code>logger</code> was provided.</p>
 <p >PUT request changes the logger level to the value specified in the <code>level</code> query argument. Set it to the <code>reset</code> value, to reset the logger level to the initial values.</p>
-<p >\bExample:</p>
-<p >Reset logger with name <code>foo</code> to the initial log level:</p><ul>
-<li>PUT path-to-hanlder-from-config/info?logger=foo </li>
-</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d61/md_en_userver_log_level_running_service.html">Changing the log level at runtime</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d01/log__level_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../d0/d01/log__level_8hpp_source.html">log_level.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d01/log__level_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../d0/d01/log__level_8hpp_source.html">log_level.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a06dc6a8c6a4e9253ef5f46a7fb586887" name="a06dc6a8c6a4e9253ef5f46a7fb586887"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06dc6a8c6a4e9253ef5f46a7fb586887">&#9670;&nbsp;</a></span>HandleRequestThrow()</h2>
@@ -344,7 +341,7 @@ Scheme</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d01/log__level_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../d0/d01/log__level_8hpp_source.html">log_level.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d01/log__level_8hpp_source.html#l00054">54</a> of file <a class="el" href="../../d0/d01/log__level_8hpp_source.html">log_level.hpp</a>.</p>
 
 </div>
 </div>

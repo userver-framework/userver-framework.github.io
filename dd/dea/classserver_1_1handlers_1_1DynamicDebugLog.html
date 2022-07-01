@@ -94,7 +94,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Handler for specific log lines enabling/disabling.  
+<p>Handler for forcing specific lines logging. Feature also known as dynamic debug logging.  
  <a href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html">userver/server/handlers/dynamic_debug_log.hpp</a>&gt;</code></p>
@@ -105,7 +105,7 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d2/d50/classserver_1_1handlers_1_1DynamicDebugLog__inherit__graph.png" border="0" usemap="#aserver_1_1handlers_1_1DynamicDebugLog_inherit__map" alt="Inheritance graph"/></div>
 <map name="aserver_1_1handlers_1_1DynamicDebugLog_inherit__map" id="aserver_1_1handlers_1_1DynamicDebugLog_inherit__map">
-<area shape="rect" title="Handler for specific log lines enabling/disabling." alt="" coords="43,304,218,345"/>
+<area shape="rect" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="43,304,218,345"/>
 <area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="19,229,242,256"/>
 <area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="31,155,230,181"/>
 <area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,256,107"/>
@@ -119,7 +119,7 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d3/dfe/classserver_1_1handlers_1_1DynamicDebugLog__coll__graph.png" border="0" usemap="#aserver_1_1handlers_1_1DynamicDebugLog_coll__map" alt="Collaboration graph"/></div>
 <map name="aserver_1_1handlers_1_1DynamicDebugLog_coll__map" id="aserver_1_1handlers_1_1DynamicDebugLog_coll__map">
-<area shape="rect" title="Handler for specific log lines enabling/disabling." alt="" coords="143,337,318,379"/>
+<area shape="rect" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="143,337,318,379"/>
 <area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="23,248,246,275"/>
 <area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="31,165,230,191"/>
 <area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,81,256,108"/>
@@ -260,12 +260,34 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetMet
 <tr class="separator:af4ff3b38ab2bcf71d7a0d8d7702bcc45 inherit pro_methods_classserver_1_1handlers_1_1HttpHandlerBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Handler for specific log lines enabling/disabling. </p>
+<div class="textblock"><p >Handler for forcing specific lines logging. Feature also known as dynamic debug logging. </p>
 <p >The component has no service configuration except the <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">common handler options</a>.</p>
-<h2><a class="anchor" id="autotoc_md458"></a>
+<h2><a class="anchor" id="autotoc_md474"></a>
 Static configuration example:</h2>
-<div class="fragment"></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html">dynamic_debug_log.hpp</a>.</p>
+<div class="fragment"><div class="line">    handler-dynamic-debug-log:</div>
+<div class="line">        path: /service/log/dynamic-debug</div>
+<div class="line">        method: GET,PUT,DELETE</div>
+<div class="line">        task_processor: monitor-task-processor</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md475"></a>
+Scheme</h2>
+<p ><code>GET</code> request shows information about available locations and forced loggings. <code>PUT</code> adds forced logging for a particular location. <code>DELETE</code> request removes forced logging from a location.</p>
+<h3><a class="anchor" id="autotoc_md476"></a>
+GET</h3>
+<p >For the <code>GET</code> requests this handler returns a list of all the known logging locations tab separated from a on/off value of logging: </p><div class="fragment"><div class="line">project/src/some.cpp:13     0</div>
+<div class="line">project/src/some.cpp:23     0</div>
+<div class="line">project/src/some.cpp:42     1</div>
+<div class="line">project/src/some.cpp:113    0</div>
+<div class="line">userver/core/src/server/server.cpp:131    0</div>
+</div><!-- fragment --><p >In the above sample <code>1</code> means that logging was enabled via this handler and that logger would write logs even if the logger level tells not to do that. <code>0</code> means that the log will be written down only if the logger level tells to do that.</p>
+<h3><a class="anchor" id="autotoc_md477"></a>
+PUT</h3>
+<p ><code>PUT</code> request enables logging for the location specified in a <code>location=</code> argument in URL. <code>PUT</code> request should have a <code>location=</code> argument in URL with a location from the <code>GET</code> request or with a location without line number, to enable logging for the whole file.</p>
+<h3><a class="anchor" id="autotoc_md478"></a>
+DELETE</h3>
+<p ><code>DELETE</code> request removes the forced logging from location. Location should be specified in the <code>location=</code> argument in URL.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d61/md_en_userver_log_level_running_service.html">Changing the log level at runtime</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html">dynamic_debug_log.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7b3b14e1a3659ffc4659d6d192330569" name="a7b3b14e1a3659ffc4659d6d192330569"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b3b14e1a3659ffc4659d6d192330569">&#9670;&nbsp;</a></span>HandleRequestThrow()</h2>
@@ -326,7 +348,7 @@ Static configuration example:</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html">dynamic_debug_log.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html#l00068">68</a> of file <a class="el" href="../../d6/dc0/dynamic__debug__log_8hpp_source.html">dynamic_debug_log.hpp</a>.</p>
 
 </div>
 </div>

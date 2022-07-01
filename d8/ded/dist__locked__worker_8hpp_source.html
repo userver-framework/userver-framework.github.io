@@ -133,26 +133,30 @@ $(function() {
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a22da82d3c0dd477df5f419563610bfe7">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a22da82d3c0dd477df5f419563610bfe7">Stop</a>();</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a628dd79a2f16af07cadb2b486b321be3">   69</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a628dd79a2f16af07cadb2b486b321be3">IsRunning</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a3cd01cafa492885356cc4eb893d3fc4f">   73</a></span>  std::optional&lt;std::chrono::steady_clock::duration&gt; <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a3cd01cafa492885356cc4eb893d3fc4f">GetLockedDuration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a2dc887823b9c594d1d738316666f2cab">   70</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a2dc887823b9c594d1d738316666f2cab">RunOnce</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a628dd79a2f16af07cadb2b486b321be3">   73</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a628dd79a2f16af07cadb2b486b321be3">IsRunning</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#ab5f94cf68d26ce6125298c450782654d">   76</a></span>  <span class="keyword">const</span> <a class="code hl_struct" href="../../d2/de5/structdist__lock_1_1Statistics.html">Statistics</a>&amp; <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#ab5f94cf68d26ce6125298c450782654d" title="Returns lock acquisition statistics.">GetStatistics</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a62f07bd9b35aefe9fc64298fe541d862">   79</a></span>  <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a62f07bd9b35aefe9fc64298fe541d862" title="Return formatted statistics JSON.">GetStatisticsJson</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  std::shared_ptr&lt;impl::Locker&gt; locker_ptr_;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../d0/da4/classengine_1_1Mutex.html" title="std::mutex replacement for asynchronous tasks">engine::Mutex</a> locker_task_mutex_;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_class" href="../../db/d80/classengine_1_1TaskWithResult.html">engine::TaskWithResult&lt;void&gt;</a> locker_task_;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  engine::TaskProcessor* <span class="keyword">const</span> task_processor_;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a3cd01cafa492885356cc4eb893d3fc4f">   77</a></span>  std::optional&lt;std::chrono::steady_clock::duration&gt; <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a3cd01cafa492885356cc4eb893d3fc4f">GetLockedDuration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#ab5f94cf68d26ce6125298c450782654d">   80</a></span>  <span class="keyword">const</span> <a class="code hl_struct" href="../../d2/de5/structdist__lock_1_1Statistics.html">Statistics</a>&amp; <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#ab5f94cf68d26ce6125298c450782654d" title="Returns lock acquisition statistics.">GetStatistics</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a62f07bd9b35aefe9fc64298fe541d862">   83</a></span>  <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> <a class="code hl_function" href="../../d4/d24/classdist__lock_1_1DistLockedWorker.html#a62f07bd9b35aefe9fc64298fe541d862" title="Return formatted statistics JSON.">GetStatisticsJson</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  engine::TaskProcessor&amp; GetTaskProcessor() const noexcept;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::shared_ptr&lt;impl::Locker&gt; locker_ptr_;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}  <span class="comment">// namespace dist_lock</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  mutable <a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>::Mutex locker_task_mutex_;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>::TaskWithResult&lt;<span class="keywordtype">void</span>&gt; locker_task_;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">engine</a>::TaskProcessor* const task_processor_;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}  <span class="comment">// namespace dist_lock</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

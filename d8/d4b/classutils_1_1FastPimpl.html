@@ -123,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, std::size_t Size, std::size_t Alignment, bool Strict = false&gt;<br />
 class utils::FastPimpl&lt; T, Size, Alignment, Strict &gt;</div><p >Implements pimpl idiom without dynamic memory allocation. </p>
 <p ><a class="el" href="../../d8/d4b/classutils_1_1FastPimpl.html" title="Implements pimpl idiom without dynamic memory allocation.">FastPimpl</a> doesn't require either memory allocation or indirect memory access. But you have to manually set object size when you instantiate <a class="el" href="../../d8/d4b/classutils_1_1FastPimpl.html" title="Implements pimpl idiom without dynamic memory allocation.">FastPimpl</a>.</p>
-<h2><a class="anchor" id="autotoc_md390"></a>
+<h2><a class="anchor" id="autotoc_md406"></a>
 Example usage:</h2>
 <p >Take your class with pimpl via smart pointer and replace the smart pointer with utils::FastPimpl&lt;Impl, Size, Alignment&gt; </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
@@ -142,7 +142,7 @@ Example usage:</h2>
 <div class="line">  Widget&amp; operator=(<span class="keyword">const</span> Widget&amp; other);</div>
 <div class="line">  ~Widget();</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">int</span> DoSomething(<span class="keywordtype">short</span> param) <span class="keyword">const</span>;</div>
+<div class="line">  <span class="keywordtype">int</span> DoSomething(<span class="keywordtype">short</span> param);</div>
 <div class="line"> </div>
 <div class="line"> <span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">struct </span>Impl;</div>
@@ -177,7 +177,7 @@ Example usage:</h2>
 <div class="line">Widget&amp; Widget::operator=(<span class="keyword">const</span> Widget&amp; other) = <span class="keywordflow">default</span>;</div>
 <div class="line">Widget::~Widget() = <span class="keywordflow">default</span>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> Widget::DoSomething(<span class="keywordtype">short</span> param)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pimpl_-&gt;Do(param); }</div>
+<div class="line"><span class="keywordtype">int</span> Widget::DoSomething(<span class="keywordtype">short</span> param) { <span class="keywordflow">return</span> pimpl_-&gt;Do(param); }</div>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace sample</span></div>
 </div><!-- fragment --><p >Done! Now you can use the header without exposing the implementation details: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;widget_fast_pimpl_test.hpp&quot;</span>  <span class="comment">// sample::Widget</span></div>

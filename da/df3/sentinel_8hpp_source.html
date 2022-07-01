@@ -277,21 +277,22 @@ $(function() {
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordtype">size_t</span> GetPublishShard(PubShard policy);</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordtype">void</span> CheckRenameParams(<span class="keyword">const</span> std::string&amp; key, <span class="keyword">const</span> std::string&amp; newkey);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">friend</span> <span class="keyword">class </span>Transaction;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  std::shared_ptr&lt;ThreadPools&gt; thread_pools_;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  std::unique_ptr&lt;engine::ev::ThreadControl&gt; sentinel_thread_control_;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <a class="code hl_struct" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> secdist_default_command_control_;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <a class="code hl_class" href="../../d2/dbd/classutils_1_1SwappingSmart.html">utils::SwappingSmart&lt;CommandControl&gt;</a> config_default_command_control_;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  std::atomic_int publish_shard_{0};</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <a class="code hl_struct" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> testsuite_redis_control_;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>};</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}  <span class="comment">// namespace redis</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordtype">void</span> CheckRenameParams(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                         <span class="keyword">const</span> std::string&amp; newkey) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keyword">friend</span> <span class="keyword">class </span>Transaction;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  std::shared_ptr&lt;ThreadPools&gt; thread_pools_;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  std::unique_ptr&lt;engine::ev::ThreadControl&gt; sentinel_thread_control_;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <a class="code hl_struct" href="../../d2/ded/structredis_1_1CommandControl.html">CommandControl</a> secdist_default_command_control_;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <a class="code hl_class" href="../../d2/dbd/classutils_1_1SwappingSmart.html">utils::SwappingSmart&lt;CommandControl&gt;</a> config_default_command_control_;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  std::atomic_int publish_shard_{0};</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <a class="code hl_struct" href="../../d4/dfe/structtestsuite_1_1RedisControl.html">testsuite::RedisControl</a> testsuite_redis_control_;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>};</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}  <span class="comment">// namespace redis</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

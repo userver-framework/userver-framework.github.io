@@ -167,6 +167,9 @@ static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a892089bee12f7906fc76cb2d72debf46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html#a892089bee12f7906fc76cb2d72debf46">DoWork</a> ()=0</td></tr>
 <tr class="separator:a892089bee12f7906fc76cb2d72debf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a220bf3b3b149b47907cf43ec1d7b41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html#a3a220bf3b3b149b47907cf43ec1d7b41">DoWorkTestsuite</a> ()</td></tr>
+<tr class="memdesc:a3a220bf3b3b149b47907cf43ec1d7b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this function to provide custom testsuite handler.  <a href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html#a3a220bf3b3b149b47907cf43ec1d7b41">More...</a><br /></td></tr>
+<tr class="separator:a3a220bf3b3b149b47907cf43ec1d7b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82ad49041dbb1a281b5d704b842e7610"><td class="memItemLeft" align="right" valign="top"><a id="a82ad49041dbb1a281b5d704b842e7610" name="a82ad49041dbb1a281b5d704b842e7610"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>AutostartDistLock</b> ()</td></tr>
 <tr class="memdesc:a82ad49041dbb1a281b5d704b842e7610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Must be called in ctr. <br /></td></tr>
@@ -183,7 +186,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>StopDistLock</b> ()</
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d9d/classdist__lock_1_1DistLockedTask.html">dist_lock::DistLockedTask</a> </dd>
 <dd>
 locked_periodiccomponents::PgLockedPeriodic</dd></dl>
-<h2><a class="anchor" id="autotoc_md511"></a>
+<h2><a class="anchor" id="autotoc_md531"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">example-distlock:</div>
 <div class="line">    cluster: postgresql-service</div>
@@ -192,7 +195,7 @@ Static configuration example:</h2>
 <div class="line">    pg-timeout: 1s</div>
 <div class="line">    lock-ttl: 10s</div>
 <div class="line">    autostart: true</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md512"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md532"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -212,9 +215,11 @@ Static options:</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">autostart   </td><td class="markdownTableBodyNone">if true, start automatically after component load   </td><td class="markdownTableBodyNone">true    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">task-processor   </td><td class="markdownTableBodyNone">the name of the TaskProcessor for running DoWork   </td><td class="markdownTableBodyNone">main-task-processor   </td></tr>
+<td class="markdownTableBodyNone">task-processor   </td><td class="markdownTableBodyNone">the name of the TaskProcessor for running DoWork   </td><td class="markdownTableBodyNone">main-task-processor    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">testsuite-support   </td><td class="markdownTableBodyNone">Enable testsuite support   </td><td class="markdownTableBodyNone">false   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md513"></a>
+<h2><a class="anchor" id="autotoc_md533"></a>
 Migration example</h2>
 <p >You have to create a SQL table for distlocks. An example of the migration script is as following:</p>
 <div class="fragment"><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> service.distlocks</div>
@@ -224,7 +229,7 @@ Migration example</h2>
 <div class="line">    expiration_time TIMESTAMPTZ</div>
 <div class="line">);</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp_source.html#l00071">71</a> of file <a class="el" href="../../dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp_source.html">dist_lock_component_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp_source.html#l00072">72</a> of file <a class="el" href="../../dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp_source.html">dist_lock_component_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a892089bee12f7906fc76cb2d72debf46" name="a892089bee12f7906fc76cb2d72debf46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a892089bee12f7906fc76cb2d72debf46">&#9670;&nbsp;</a></span>DoWork()</h2>
@@ -249,7 +254,7 @@ Migration example</h2>
 </table>
 </div><div class="memdoc">
 <p >Override this function with anything that must be done under the pg lock.</p>
-<h2><a class="anchor" id="autotoc_md514"></a>
+<h2><a class="anchor" id="autotoc_md534"></a>
 Example implementation</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> MyDistLockComponent::DoWork()</div>
 <div class="line">{</div>
@@ -268,6 +273,35 @@ Example implementation</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd><code>DoWork</code> must honour task cancellation and stop ASAP when it is cancelled, otherwise brain split is possible (IOW, two different users do work assuming both of them hold the lock, which is not true). </dd></dl>
+
+</div>
+</div>
+<a id="a3a220bf3b3b149b47907cf43ec1d7b41" name="a3a220bf3b3b149b47907cf43ec1d7b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a220bf3b3b149b47907cf43ec1d7b41">&#9670;&nbsp;</a></span>DoWorkTestsuite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void storages::postgres::DistLockComponentBase::DoWorkTestsuite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Override this function to provide custom testsuite handler. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp_source.html#l00113">113</a> of file <a class="el" href="../../dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp_source.html">dist_lock_component_base.hpp</a>.</p>
 
 </div>
 </div>

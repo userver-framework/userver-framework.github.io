@@ -98,38 +98,33 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="../../d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection.">userver/formats/common/meta.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers.">userver/formats/parse/to.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>USERVER_NAMESPACE_BEGIN</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">formats::parse</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>detail {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>boost::uuids::uuid ParseString(std::string <span class="keyword">const</span>&amp; str);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}  <span class="comment">// namespace detail</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d9/d14/namespaceformats_1_1parse.html#a0bcef7377c105a53367fa344d69dd438">   33</a></span>std::enable_if_t&lt;common::kIsFormatValue&lt;Value&gt;, boost::uuids::uuid&gt; Parse(</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> Value&amp; value, <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To&lt;boost::uuids::uuid&gt;</a>) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  std::optional&lt;std::string&gt; str;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    str = value.template As&lt;std::string&gt;();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> detail::ParseString(*str);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!!str) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">throw</span> <span class="keyword">typename</span> Value::ParseException(</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>          <span class="stringliteral">&quot;&#39;&quot;</span> + *str + <span class="stringliteral">&quot;&#39; cannot be parsed to `boost::uuids::uuid`&quot;</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keywordflow">throw</span> <span class="keyword">typename</span> Value::ParseException(</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          <span class="stringliteral">&quot;Only strings can be parsed as boost uuid&quot;</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace formats::parse</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="../../d9/d69/boost__uuid4_8hpp.html" title="Generates UUID.">userver/utils/boost_uuid4.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>USERVER_NAMESPACE_BEGIN</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">formats::parse</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d9/d14/namespaceformats_1_1parse.html#a0bcef7377c105a53367fa344d69dd438">   28</a></span>std::enable_if_t&lt;common::kIsFormatValue&lt;Value&gt;, boost::uuids::uuid&gt; Parse(</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> Value&amp; value, <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To&lt;boost::uuids::uuid&gt;</a>) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  std::optional&lt;std::string&gt; str;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    str = value.template As&lt;std::string&gt;();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a556890c248bcb1f7b07757a785032829" title="Parse string into boost::uuids::uuid.">utils::BoostUuidFromString</a>(*str);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (!!str) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keywordflow">throw</span> <span class="keyword">typename</span> Value::ParseException(</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>          <span class="stringliteral">&quot;&#39;&quot;</span> + *str + <span class="stringliteral">&quot;&#39; cannot be parsed to `boost::uuids::uuid`&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordflow">throw</span> <span class="keyword">typename</span> Value::ParseException(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          <span class="stringliteral">&quot;Only strings can be parsed as boost uuid&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}  <span class="comment">// namespace formats::parse</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

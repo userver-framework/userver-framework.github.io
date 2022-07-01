@@ -84,32 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">samples/testsuite-support/metrics.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d1/d58/http__handler__json__base_8hpp.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J...">userver/server/handlers/http_handler_json_base.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d4/d36/using__namespace__userver_8hpp.html" title="For samples and snippets only! Has a using namespace USERVER_NAMESPACE; if the USERVER_NAMESPACE is n...">userver/utest/using_namespace_userver.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;userver/utils/statistics/metrics_storage_fwd.hpp&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>tests::handlers {</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>Metrics final : <span class="keyword">public</span> userver::server::handlers::HttpHandlerJsonBase {</div>
-<div class="line"> <span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;handler-metrics&quot;</span>;</div>
-<div class="line"> </div>
-<div class="line">  Metrics(<span class="keyword">const</span> userver::components::ComponentConfig&amp;,</div>
-<div class="line">          <span class="keyword">const</span> userver::components::ComponentContext&amp;);</div>
-<div class="line"> </div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> HandleRequestJsonThrow(</div>
-<div class="line">      <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html" title="HTTP Request data.">server::http::HttpRequest</a>&amp; request,</div>
-<div class="line">      <span class="keyword">const</span> <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>&amp; request_body,</div>
-<div class="line">      <a id="_a2" name="_a2"></a><a class="code hl_class" href="../../de/df6/classserver_1_1request_1_1RequestContext.html" title="Stores request-specific data during request processing.">server::request::RequestContext</a>&amp; context) <span class="keyword">const override</span>;</div>
-<div class="line"> </div>
-<div class="line"> <span class="keyword">private</span>:</div>
-<div class="line">  utils::statistics::MetricsStoragePtr metrics_;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line">}  <span class="comment">// namespace tests::handlers</span></div>
-</div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>

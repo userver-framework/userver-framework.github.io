@@ -86,30 +86,37 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><span class="lineno">    1</span><span class="keyword">import</span> pytest</div>
 <div class="line"><span class="lineno">    2</span> </div>
-<div class="line"><span class="lineno">    3</span><span class="comment"># /// [mongodb settings]</span></div>
-<div class="line"><span class="lineno">    4</span>MONGO_COLLECTIONS = {</div>
-<div class="line"><span class="lineno">    5</span>    <span class="stringliteral">&#39;translations&#39;</span>: {</div>
-<div class="line"><span class="lineno">    6</span>        <span class="stringliteral">&#39;settings&#39;</span>: {</div>
-<div class="line"><span class="lineno">    7</span>            <span class="stringliteral">&#39;collection&#39;</span>: <span class="stringliteral">&#39;translations&#39;</span>,</div>
-<div class="line"><span class="lineno">    8</span>            <span class="stringliteral">&#39;connection&#39;</span>: <span class="stringliteral">&#39;admin&#39;</span>,</div>
-<div class="line"><span class="lineno">    9</span>            <span class="stringliteral">&#39;database&#39;</span>: <span class="stringliteral">&#39;admin&#39;</span>,</div>
-<div class="line"><span class="lineno">   10</span>        },</div>
-<div class="line"><span class="lineno">   11</span>        <span class="stringliteral">&#39;indexes&#39;</span>: [],</div>
-<div class="line"><span class="lineno">   12</span>    },</div>
-<div class="line"><span class="lineno">   13</span>}</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
-<div class="line"><span class="lineno">   17</span><span class="keyword">def </span>mongodb_settings():</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> MONGO_COLLECTIONS</div>
-<div class="line"><span class="lineno">   19</span>    <span class="comment"># /// [mongodb settings]</span></div>
-<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">    3</span>pytest_plugins = [</div>
+<div class="line"><span class="lineno">    4</span>    <span class="stringliteral">&#39;pytest_userver.plugins&#39;</span>,</div>
+<div class="line"><span class="lineno">    5</span>    <span class="stringliteral">&#39;pytest_userver.plugins.samples&#39;</span>,</div>
+<div class="line"><span class="lineno">    6</span>    <span class="comment"># Database related plugins</span></div>
+<div class="line"><span class="lineno">    7</span>    <span class="stringliteral">&#39;testsuite.databases.mongo.pytest_plugin&#39;</span>,</div>
+<div class="line"><span class="lineno">    8</span>]</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span><span class="comment"># /// [mongodb settings]</span></div>
+<div class="line"><span class="lineno">   11</span>MONGO_COLLECTIONS = {</div>
+<div class="line"><span class="lineno">   12</span>    <span class="stringliteral">&#39;translations&#39;</span>: {</div>
+<div class="line"><span class="lineno">   13</span>        <span class="stringliteral">&#39;settings&#39;</span>: {</div>
+<div class="line"><span class="lineno">   14</span>            <span class="stringliteral">&#39;collection&#39;</span>: <span class="stringliteral">&#39;translations&#39;</span>,</div>
+<div class="line"><span class="lineno">   15</span>            <span class="stringliteral">&#39;connection&#39;</span>: <span class="stringliteral">&#39;admin&#39;</span>,</div>
+<div class="line"><span class="lineno">   16</span>            <span class="stringliteral">&#39;database&#39;</span>: <span class="stringliteral">&#39;admin&#39;</span>,</div>
+<div class="line"><span class="lineno">   17</span>        },</div>
+<div class="line"><span class="lineno">   18</span>        <span class="stringliteral">&#39;indexes&#39;</span>: [],</div>
+<div class="line"><span class="lineno">   19</span>    },</div>
+<div class="line"><span class="lineno">   20</span>}</div>
 <div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span><span class="comment"># /// [require mongodb]</span></div>
-<div class="line"><span class="lineno">   23</span><span class="preprocessor">@pytest.fixture</span></div>
-<div class="line"><span class="lineno">   24</span><span class="keyword">def </span>client_deps(mongodb):</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">pass</span></div>
-<div class="line"><span class="lineno">   26</span>    <span class="comment"># /// [require mongodb]</span></div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
+<div class="line"><span class="lineno">   24</span><span class="keyword">def </span>mongodb_settings():</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> MONGO_COLLECTIONS</div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment"># /// [mongodb settings]</span></div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span><span class="comment"># /// [require mongodb]</span></div>
+<div class="line"><span class="lineno">   30</span><span class="preprocessor">@pytest.fixture</span></div>
+<div class="line"><span class="lineno">   31</span><span class="keyword">def </span>client_deps(mongodb):</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">pass</span></div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment"># /// [require mongodb]</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

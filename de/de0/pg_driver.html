@@ -84,7 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">uPg Driver </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >µserver provides access to PostgreSQL database servers via <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>. The uPg driver is asynchronous, it suspends current coroutine for carrying out network I/O.</p>
+<div class="textblock"><p >🐙 <b>userver</b> provides access to PostgreSQL database servers via <a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html" title="PosgreSQL client component.">components::Postgres</a>. The uPg driver is asynchronous, it suspends current coroutine for carrying out network I/O.</p>
 <h1><a class="anchor" id="features"></a>
 Features</h1>
 <ul>
@@ -93,10 +93,13 @@ Features</h1>
 <li>Connection pooling;</li>
 <li>Automatic PgaaS topology discovery;</li>
 <li>Selecting query target (master/slave);</li>
-<li>Connection failover (TODO)</li>
+<li>Connection failover</li>
 <li>Transaction support;</li>
 <li>Variadic template query parameter passing;</li>
 <li>Query result extraction to C++ types;</li>
+<li>Binary protocol usage for communication;</li>
+<li>Portals for effective background cache updates;</li>
+<li>Queries pipelining;</li>
 <li>Mapping PostgreSQL user types to C++ types.</li>
 </ul>
 <h1><a class="anchor" id="toc"></a>

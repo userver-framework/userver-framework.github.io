@@ -112,6 +112,11 @@ $(function() {
 <div class="line"><span class="lineno">   26</span>    <span class="keyword">async</span> <span class="keyword">with</span> service_client.spawn_task(<span class="stringliteral">&#39;sample-task&#39;</span>):</div>
 <div class="line"><span class="lineno">   27</span>        await task_action.wait_call()</div>
 <div class="line"><span class="lineno">   28</span>    <span class="comment"># /// [spawn_task]</span></div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span><span class="keyword">async def </span>test_list_tasks(service_client):</div>
+<div class="line"><span class="lineno">   32</span>    tasks = await service_client.list_tasks()</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keyword">assert</span> <span class="stringliteral">&#39;sample-task&#39;</span> <span class="keywordflow">in</span> tasks</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

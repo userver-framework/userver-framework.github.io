@@ -86,7 +86,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p >The redis asynchronous driver provides an interface to work with Redis standalone instances, as well as Redis Sentinels and Clusters.</p>
 <p >Take note that Redis is not able to guarantee a strong consistency. It is possible for Redis to lose writes that were acknowledged, and vice versa.</p>
-<h1><a class="anchor" id="autotoc_md205"></a>
+<h1><a class="anchor" id="autotoc_md217"></a>
 Main features</h1>
 <ul>
 <li>Convenient methods for Redis commands returning proper C++ types;</li>
@@ -94,7 +94,7 @@ Main features</h1>
 <li>Support for different strategies of choosing the most suitable Redis instance;</li>
 <li>Request timeouts management with transparent retries.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md206"></a>
+<h1><a class="anchor" id="autotoc_md218"></a>
 Metrics</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -117,7 +117,7 @@ Metrics</h1>
 <td class="markdownTableBodyNone">redis.errors   </td><td class="markdownTableBodyNone">counter of failed requests   </td></tr>
 </table>
 <p >See <a class="el" href="../../dc/d6a/md_en_userver_service_monitor.html">Service statistics</a> for info on how to get the metrics.</p>
-<h1><a class="anchor" id="autotoc_md207"></a>
+<h1><a class="anchor" id="autotoc_md219"></a>
 Usage</h1>
 <p >To use Redis you must add the component <a class="el" href="../../d6/dd0/classcomponents_1_1Redis.html" title="Redis client component.">components::Redis</a> and configure it according to the documentation. After that you can make requests via <a class="el" href="../../d4/da0/classstorages_1_1redis_1_1Client.html" title="Redis client.">storages::redis::Client</a>:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> RedisClientSampleUsage(<a class="code hl_class" href="../../d4/da0/classstorages_1_1redis_1_1Client.html" title="Redis client.">storages::redis::Client</a>&amp; client) {</div>
@@ -127,7 +127,7 @@ Usage</h1>
 <div class="line"> </div>
 <div class="line">  EXPECT_EQ(length, 2);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md208"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md220"></a>
 Timeouts</h2>
 <p >Request timeout can be set for a single request via <a class="el" href="../../d2/ded/structredis_1_1CommandControl.html">redis::CommandControl</a> argument.</p>
 <p >Dynamic option REDIS_DEFAULT_COMMAND_CONTROL can be used to set default values.</p>

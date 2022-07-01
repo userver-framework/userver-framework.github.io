@@ -15,6 +15,8 @@ var searchData=
   ['postgres_5ffwd_2ehpp_12',['postgres_fwd.hpp',['../d9/d34/postgres__fwd_8hpp.html',1,'']]],
   ['private_5fkey_2ehpp_13',['private_key.hpp',['../d4/d2b/private__key_8hpp.html',1,'']]],
   ['process_5fstarter_2ehpp_14',['process_starter.hpp',['../d1/d12/components_2process__starter_8hpp.html',1,'(Global Namespace)'],['../d9/d32/engine_2subprocess_2process__starter_8hpp.html',1,'(Global Namespace)']]],
-  ['projecting_5fview_2ehpp_15',['projecting_view.hpp',['../dd/d42/projecting__view_8hpp.html',1,'']]],
-  ['public_5fkey_2ehpp_16',['public_key.hpp',['../dc/d0a/public__key_8hpp.html',1,'']]]
+  ['processor_2ehpp_15',['processor.hpp',['../d9/d5e/processor_8hpp.html',1,'']]],
+  ['processor_5fmock_2ehpp_16',['processor_mock.hpp',['../d7/d5c/processor__mock_8hpp.html',1,'']]],
+  ['projecting_5fview_2ehpp_17',['projecting_view.hpp',['../dd/d42/projecting__view_8hpp.html',1,'']]],
+  ['public_5fkey_2ehpp_18',['public_key.hpp',['../dc/d0a/public__key_8hpp.html',1,'']]]
 ];

@@ -84,17 +84,17 @@ $(function() {
   <div class="headertitle"><div class="title">MongoDB service </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md321"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md337"></a>
 Before you start</h1>
 <p >Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md322"></a>
+<h1><a class="anchor" id="autotoc_md338"></a>
 Step by step guide</h1>
 <p >In this tutorial we will write a service that stores history of translation changes and returns the most recent translations. MongoDB would be used as a database. The service would have the following Rest API:</p>
 <ul>
 <li>HTTP PATCH by path '/v1/translations' with query parameters 'key', 'lang' and 'value' updates a translation.</li>
 <li>HTTP GET by path '/v1/translations' with query parameter 'last_update' returns unique translations that were added after the 'last_update'.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md323"></a>
+<h2><a class="anchor" id="autotoc_md339"></a>
 HTTP handler component</h2>
 <p >Like in <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> we create a component for handling HTTP requests:</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>samples::mongodb {</div>
@@ -128,7 +128,7 @@ HTTP handler component</h2>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace samples::mongodb</span></div>
 </div><!-- fragment --><p >Note that the component holds a storages::mongo::PoolPtr - a client to the Mongo. That client is thread safe, you can use it concurrently from different threads and tasks.</p>
-<h2><a class="anchor" id="autotoc_md324"></a>
+<h2><a class="anchor" id="autotoc_md340"></a>
 Translations::InsertNew</h2>
 <p >In the <code>Translations::InsertNew</code> function we get the request arguments and form a BSON document for insertion.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Translations::InsertNew(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html" title="HTTP Request data.">server::http::HttpRequest</a>&amp; request)<span class="keyword"> const </span>{</div>
@@ -142,7 +142,7 @@ Translations::InsertNew</h2>
 <div class="line">  request.<a class="code hl_function" href="../../d3/d44/classserver_1_1http_1_1HttpRequest.html#a3e4903d158a34e717668af618e56af92" title="Set the response status code.">SetResponseStatus</a>(server::http::HttpStatus::kCreated);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >There are different ways to form a document, see <a class="el" href="../../db/dd7/md_en_userver_formats.html">Formats (JSON, YAML, BSON, ...)</a>.</p>
-<h2><a class="anchor" id="autotoc_md325"></a>
+<h2><a class="anchor" id="autotoc_md341"></a>
 Translations::ReturnDiff</h2>
 <p >MongoDB queries are just BSON documents. Each mongo document has an implicit <code>_id</code> field that stores the document creation time. Knowing that, we can use <a class="el" href="../../d9/d41/classformats_1_1bson_1_1Oid.html#a1abac9e039d298c349018ad556937210">formats::bson::Oid::MakeMinimalFor()</a> to find all the documents that were added after <code>update_time</code>. Query sorts the documents by modification times (by <code>_id</code>), so when the results are written into <a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> latter writes rewrite previous data for the same key.</p>
 <div class="fragment"><div class="line">std::string Translations::ReturnDiff(</div>
@@ -183,7 +183,7 @@ Translations::ReturnDiff</h2>
 <div class="line">  <span class="keywordflow">return</span> ToString(vb.<a class="code hl_function" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a078ae0edbffa37a654914629000680ad" title="Take out the resulting Value object. After calling this method the object is in unspecified (but vali...">ExtractValue</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >See <a class="el" href="../../d3/d51/md_en_userver_mongodb.html">MongoDB</a> for MongoDB hints and more usage samples.</p>
-<h2><a class="anchor" id="autotoc_md326"></a>
+<h2><a class="anchor" id="autotoc_md342"></a>
 Static config</h2>
 <p >Static configuration of service is quite close to the configuration from <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> except for the handler and DB:</p>
 <div class="fragment"><div class="line"># yaml</div>
@@ -200,12 +200,12 @@ Static config</h2>
 <div class="line">        server:</div>
 <div class="line">            # ...</div>
 </div><!-- fragment --><p >There are more static options for the MongoDB component configuration, all of them are described at <a class="el" href="../../d0/dda/classcomponents_1_1Mongo.html" title="MongoDB client component.">components::Mongo</a>.</p>
-<h2><a class="anchor" id="autotoc_md327"></a>
+<h2><a class="anchor" id="autotoc_md343"></a>
 Dynamic config</h2>
 <p >We are not planning to get new dynamic config values in this sample. Because of that we just write the defaults to the fallback file of the <code><a class="el" href="../../d8/d9c/classcomponents_1_1DynamicConfigFallbacks.html" title="Component that setup runtime configs based on fallbacks from file.">components::DynamicConfigFallbacks</a></code> component: <a class="el" href="../../d0/d78/samples_2mongo_service_2dynamic_config_fallback_8json-example.html">samples/mongo_service/dynamic_config_fallback.json</a></p>
 <p >All the values are described in a separate section <a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html">Dynamic configs</a> .</p>
 <p >A production ready service would dynamically retrieve the above options at runtime from a configuration service. See <a class="el" href="../../dd/d69/md_en_userver_tutorial_config_service.html">Writing your own configs server</a> for insights on how to change the above options on the fly, without restarting the service.</p>
-<h2><a class="anchor" id="autotoc_md328"></a>
+<h2><a class="anchor" id="autotoc_md344"></a>
 int main()</h2>
 <p >Finally, after writing down the dynamic config values into file at <code>dynamic-config-fallbacks.fallback-path</code>, we add our component to the <a class="el" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList()</a>, and start the server with static configuration <code>kStaticConfig</code>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
@@ -214,7 +214,7 @@ int main()</h2>
 <div class="line">                                  .Append&lt;samples::mongodb::Translations&gt;();</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a40294f3ed93c7f13cb2c814d70134820">utils::DaemonMain</a>(argc, argv, component_list);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md329"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md345"></a>
 Build</h2>
 <p >To build the sample, execute the following build steps at the userver root directory: </p><div class="fragment"><div class="line">mkdir build_release</div>
 <div class="line">cd build_release</div>
@@ -236,7 +236,7 @@ Build</h2>
 <div class="line">  },</div>
 <div class="line">  &quot;update_time&quot;: &quot;2021-12-20T10:17:37.249767773+00:00&quot;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md330"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md346"></a>
 Functional testing</h2>
 <p ><a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">Functional tests</a> for the service could be implemented using the testsuite. To do that you have to:</p>
 <ul>
@@ -282,7 +282,7 @@ Functional testing</h2>
 <div class="line">    }</div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md331"></a>
+<h1><a class="anchor" id="autotoc_md347"></a>
 Full sources</h1>
 <p >See the full example:</p><ul>
 <li><a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html">samples/mongo_service/mongo_service.cpp</a></li>

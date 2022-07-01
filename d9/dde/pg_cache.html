@@ -84,9 +84,26 @@ $(function() {
   <div class="headertitle"><div class="title">Caching Component for PostgreSQL </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="pg_cc_configuration"></a>
+<div class="textblock"><p >A typical <a class="el" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache</a> usage consists of trait definition:</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>PostgresTrivialPolicy {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;my-pg-cache&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">using </span>ValueType = MyStructure;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kKeyMember = &amp;MyStructure::id;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kQuery = <span class="stringliteral">&quot;SELECT a, b, updated FROM test.data&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kUpdatedField = <span class="stringliteral">&quot;updated&quot;</span>;</div>
+<div class="line">  <span class="keyword">using </span>UpdatedFieldType = <a class="code hl_typedef" href="../../de/d6d/namespacestorages_1_1postgres.html#a69c43f80d0b6eec8f2205796e60fcc3e" title="Corresponds to TIMESTAMP WITH TIME ZONE (value in absolute time (no TZ offset)). Time zones are appli...">storages::postgres::TimePointTz</a>;</div>
+<div class="line">};</div>
+</div><!-- fragment --><p >and registration of the component in <a class="el" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">components::ComponentList</a>:</p>
+<div class="fragment"><div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList</a>()</div>
+<div class="line">      .Append&lt;<a class="code hl_class" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache&lt;example::PostgresTrivialPolicy&gt;</a>&gt;();</div>
+</div><!-- fragment --><p >See <a class="el" href="../../d8/d01/md_en_userver_caches.html">Basics of Caches</a> for introduction into caches.</p>
+<h1><a class="anchor" id="pg_cc_configuration"></a>
 Configuration</h1>
-<p >PostgreSQL component name must be specified in <code>pgcomponent</code> configuration parameter.</p>
+<p ><a class="el" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache</a> static configuration file should have a PostgreSQL component name specified in <code>pgcomponent</code> configuration parameter.</p>
 <p >Optionally the operation timeouts for cache loading can be specified.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -102,7 +119,7 @@ Configuration</h1>
 </table>
 <h1><a class="anchor" id="pg_cc_cache_policy"></a>
 Cache policy</h1>
-<p >Cache policy is the template argument of component. Please see the following code snippet for documentation.</p>
+<p >Cache policy is the template argument of <a class="el" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache</a> component. Please see the following code snippet for documentation.</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>example {</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>MyStructure {</div>
@@ -279,7 +296,7 @@ Forward Declaration</h1>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>caches {</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using </span>MyCache1 = <a class="code hl_class" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL derived from components::CachingComponentBase.">components::PostgreCache&lt;example::PostgresExamplePolicy&gt;</a>;</div>
+<div class="line"><span class="keyword">using </span>MyCache1 = <a class="code hl_class" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache&lt;example::PostgresExamplePolicy&gt;</a>;</div>
 <div class="line"><span class="keyword">using </span>MyCache1Data = std::shared_ptr&lt;const example::MyStructure&gt;;</div>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace caches</span></div>

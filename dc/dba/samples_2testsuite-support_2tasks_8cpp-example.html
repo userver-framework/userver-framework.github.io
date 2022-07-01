@@ -84,34 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">samples/testsuite-support/tasks.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d2/dbd/tasks_8hpp.html" title="Testsuite tasks support.">tasks.hpp</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../db/d8f/component__context_8hpp.html" title="Class to retrieve other components.">userver/components/component_context.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp.html" title="Builder for JSON.">userver/formats/json/value_builder.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d2/dbd/tasks_8hpp.html" title="Testsuite tasks support.">userver/testsuite/tasks.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon...">userver/testsuite/testpoint.hpp</a>&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>tests::handlers {</div>
-<div class="line"> </div>
-<div class="line">TasksSample::TasksSample(<span class="keyword">const</span> userver::components::ComponentConfig&amp; config,</div>
-<div class="line">                         <span class="keyword">const</span> userver::components::ComponentContext&amp; context)</div>
-<div class="line">    : userver::components::LoggableComponentBase(config, context) {</div>
-<div class="line">  <span class="keyword">auto</span>&amp; testsuite_tasks = <a id="a0" name="a0"></a><a class="code hl_function" href="../../d3/d56/namespacetestsuite.html#a66b38b3d8afe9b7f27f89451165da6db" title="Get reference to TestsuiteTasks instance.">userver::testsuite::GetTestsuiteTasks</a>(context);</div>
-<div class="line">  <span class="comment">// Only register task for testsuite environment</span></div>
-<div class="line">  <span class="keywordflow">if</span> (testsuite_tasks.IsEnabled()) {</div>
-<div class="line">    testsuite_tasks.RegisterTask(<span class="stringliteral">&quot;sample-task&quot;</span>, [] {</div>
-<div class="line">      <a id="a1" name="a1"></a><a class="code hl_define" href="../../d9/d1d/testpoint_8hpp.html#a8a6d27a839e4327f705ac8d965e4b6e8" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon...">TESTPOINT</a>(<span class="stringliteral">&quot;sample-task/action&quot;</span>, [] {</div>
-<div class="line">        userver::formats::json::ValueBuilder builder;</div>
-<div class="line">        <span class="keywordflow">return</span> builder.ExtractValue();</div>
-<div class="line">      }());</div>
-<div class="line">    });</div>
-<div class="line">  } <span class="keywordflow">else</span> {</div>
-<div class="line">    <span class="comment">// Proudction code goes here</span></div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">}  <span class="comment">// namespace tests::handlers</span></div>
-</div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>

@@ -42,5 +42,6 @@ var searchData=
   ['string_5ftypes_2ehpp_39',['string_types.hpp',['../d2/d32/string__types_8hpp.html',1,'']]],
   ['strong_5ftypedef_2ehpp_40',['strong_typedef.hpp',['../d7/da7/postgresql_2include_2userver_2storages_2postgres_2io_2strong__typedef_8hpp.html',1,'(Global Namespace)'],['../d4/dd3/shared_2include_2userver_2utils_2strong__typedef_8hpp.html',1,'(Global Namespace)']]],
   ['subscribe_5fclient_2ehpp_41',['subscribe_client.hpp',['../dd/dfe/subscribe__client_8hpp.html',1,'']]],
-  ['system_5fstatistics_5fcollector_2ehpp_42',['system_statistics_collector.hpp',['../db/d5f/system__statistics__collector_8hpp.html',1,'']]]
+  ['subscriber_2ehpp_42',['subscriber.hpp',['../d8/df0/subscriber_8hpp.html',1,'']]],
+  ['system_5fstatistics_5fcollector_2ehpp_43',['system_statistics_collector.hpp',['../db/d5f/system__statistics__collector_8hpp.html',1,'']]]
 ];

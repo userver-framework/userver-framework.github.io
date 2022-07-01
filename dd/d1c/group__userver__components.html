@@ -162,6 +162,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da4/classcomponents_1_1Logging.html">components::Logging</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging component  <a href="../../d4/da4/classcomponents_1_1Logging.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html">os_signals::ProcessorComponent</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A storage for <a class="el" href="../../d1/d6c/classos__signals_1_1Processor.html" title="A manager that allows to subscribe to OS signals, example: SIGUSR1, SIGUSR2.">Processor</a> listeners signals.  <a href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0b/classcomponents_1_1Server.html">components::Server</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Component that listens for incomming requests, manages incomming connections and passes the requests to the appropriate handler.  <a href="../../d0/d0b/classcomponents_1_1Server.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,7 +175,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handlers that controls the DNS client.  <a href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html">server::handlers::DynamicDebugLog</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for specific log lines enabling/disabling.  <a href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for forcing specific lines logging. Feature also known as dynamic debug logging.  <a href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html">server::handlers::HttpHandlerBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all the <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">Userver HTTP Handlers</a>.  <a href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html#details">More...</a><br /></td></tr>
@@ -223,7 +226,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for mongo-based distlock worker components.  <a href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d8d/classcomponents_1_1PostgreCache.html">components::PostgreCache&lt; PostgreCachePolicy &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caching component for PostgreSQL derived from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.  <a href="../../d2/d8d/classcomponents_1_1PostgreCache.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caching component for PostgreSQL. See <a class="el" href="../../d9/dde/pg_cache.html">Caching Component for PostgreSQL</a>.  <a href="../../d2/d8d/classcomponents_1_1PostgreCache.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d92/classcomponents_1_1Postgres.html">components::Postgres</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PosgreSQL client component.  <a href="../../d1/d92/classcomponents_1_1Postgres.html#details">More...</a><br /></td></tr>
@@ -287,6 +290,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a> (default and "http-client-statistics")</li>
 <li><a class="el" href="../../d8/d1f/classcomponents_1_1DynamicConfigClient.html" title="Component that starts a clients::dynamic_config::Client client.">components::DynamicConfigClient</a></li>
 <li><a class="el" href="../../d3/da0/classcomponents_1_1DynamicConfigClientUpdater.html" title="Component that does a periodic update of runtime configs.">components::DynamicConfigClientUpdater</a></li>
+<li><a class="el" href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html" title="A storage for Processor listeners signals.">os_signals::ProcessorComponent</a></li>
 <li><a class="el" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a></li>
 <li><a class="el" href="../../d4/d23/classcomponents_1_1Tracer.html" title="Component that initializes the request tracing facilities.">components::Tracer</a></li>
 <li><a class="el" href="../../dc/d21/classcomponents_1_1ManagerControllerComponent.html" title="Component that prepares the engine internals and starts all the other components.">components::ManagerControllerComponent</a></li>
@@ -318,7 +322,7 @@ Functions</h2></td></tr>
 <p >The list contains:</p><ul>
 <li><a class="el" href="../../d0/d0b/classcomponents_1_1Server.html" title="Component that listens for incomming requests, manages incomming connections and passes the requests ...">components::Server</a></li>
 <li><a class="el" href="../../d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client.">server::handlers::DnsClientControl</a></li>
-<li><a class="el" href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for specific log lines enabling/disabling.">server::handlers::DynamicDebugLog</a></li>
+<li><a class="el" href="../../dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging.">server::handlers::DynamicDebugLog</a></li>
 <li>server::handlers::ImplicitOptionsHttpHandler</li>
 <li><a class="el" href="../../d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in-flight requests.">server::handlers::InspectRequests</a></li>
 <li><a class="el" href="../../d2/d34/classserver_1_1handlers_1_1Jemalloc.html" title="Handler that controlls the jemalloc allocator.">server::handlers::Jemalloc</a></li>
@@ -351,6 +355,7 @@ Functions</h2></td></tr>
 
 <p>Returns a list of components to do basic logging, component initialization and configuration. </p>
 <p >The list contains:</p><ul>
+<li><a class="el" href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html" title="A storage for Processor listeners signals.">os_signals::ProcessorComponent</a></li>
 <li><a class="el" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a></li>
 <li><a class="el" href="../../d4/d23/classcomponents_1_1Tracer.html" title="Component that initializes the request tracing facilities.">components::Tracer</a></li>
 <li><a class="el" href="../../dc/d21/classcomponents_1_1ManagerControllerComponent.html" title="Component that prepares the engine internals and starts all the other components.">components::ManagerControllerComponent</a></li>
@@ -388,7 +393,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="../../dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the runtime config.">components::DynamicConfig</a></li>
 <li>components::DynamicConfigFallbacksComponent </li>
 </ul>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#a18">samples/config_service/config_service.cpp</a>, <a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html#a10">samples/flatbuf_service/flatbuf_service.cpp</a>, <a class="el" href="../../db/de5/samples_2grpc_service_2grpc_service_8cpp-example.html#a15">samples/grpc_service/grpc_service.cpp</a>, <a class="el" href="../../da/de2/samples_2hello_service_2hello_service_8cpp-example.html#a3">samples/hello_service/hello_service.cpp</a>, <a class="el" href="../../d3/db5/samples_2http_caching_2http_caching_8cpp-example.html#a20">samples/http_caching/http_caching.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#a20">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../dd/dd2/samples_2postgres_service_2postgres_service_8cpp-example.html#a22">samples/postgres_service/postgres_service.cpp</a>, and <a class="el" href="../../d0/d6c/samples_2redis_service_2redis_service_8cpp-example.html#a10">samples/redis_service/redis_service.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d26/samples_2config_service_2config_service_8cpp-example.html#a18">samples/config_service/config_service.cpp</a>, <a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html#a10">samples/flatbuf_service/flatbuf_service.cpp</a>, <a class="el" href="../../db/de5/samples_2grpc_service_2grpc_service_8cpp-example.html#a15">samples/grpc_service/grpc_service.cpp</a>, <a class="el" href="../../da/de2/samples_2hello_service_2hello_service_8cpp-example.html#a3">samples/hello_service/hello_service.cpp</a>, <a class="el" href="../../d3/db5/samples_2http_caching_2http_caching_8cpp-example.html#a22">samples/http_caching/http_caching.cpp</a>, <a class="el" href="../../d0/d43/samples_2mongo_service_2mongo_service_8cpp-example.html#a20">samples/mongo_service/mongo_service.cpp</a>, <a class="el" href="../../dd/dd2/samples_2postgres_service_2postgres_service_8cpp-example.html#a22">samples/postgres_service/postgres_service.cpp</a>, and <a class="el" href="../../d0/d6c/samples_2redis_service_2redis_service_8cpp-example.html#a10">samples/redis_service/redis_service.cpp</a>.</dd>
 </dl>
 
 </div>

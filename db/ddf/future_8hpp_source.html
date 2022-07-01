@@ -242,76 +242,70 @@ $(function() {
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="keywordtype">void</span> Future&lt;T&gt;::CheckValid()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordflow">if</span> (!state_) {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="comment">// TODO: TAXICOMMON-3186</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="comment">// NOLINTNEXTLINE(misc-taxi-coroutine-unsafe)</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">throw</span> std::future_error(std::future_errc::no_state);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>}</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a56849425381772c4fe408f7434ab007b">  237</a></span><a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a56849425381772c4fe408f7434ab007b" title="Creates a new asynchronous value store.">Promise&lt;T&gt;::Promise</a>() : state_(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::make_shared&lt;impl::FutureState&lt;T&gt;&gt;()) {}</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><a class="code hl_class" href="../../d9/d2e/classengine_1_1Promise.html" title="std::promise replacement for asynchronous tasks that works in pair with engine::Future">Promise&lt;T&gt;::~Promise</a>() {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keywordflow">if</span> (state_ &amp;&amp; !state_-&gt;IsReady()) {</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      state_-&gt;SetException(std::make_exception_ptr(</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>          <span class="comment">// TODO: TAXICOMMON-3186</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>          <span class="comment">// NOLINTNEXTLINE(misc-taxi-coroutine-unsafe)</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>          std::future_error(std::future_errc::broken_promise)));</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::future_error&amp;) {</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a745f97f2d0e2aeb41add75209f319d27" title="Assertion macro for that aborts execution in DEBUG builds with a message msg and does nothing in rele...">UASSERT_MSG</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Invalid promise usage&quot;</span>);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    }</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  }</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>}</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a70eab6f2622012a68684aa1a05c0fbdb">  254</a></span><a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;T&gt;</a> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a70eab6f2622012a68684aa1a05c0fbdb">Promise&lt;T&gt;::get_future</a>() {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;T&gt;</a>(state_);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">  259</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">Promise&lt;T&gt;::set_value</a>(<span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  state_-&gt;SetValue(value);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>}</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a8c1594cf2e647670f5f4937225ef5944">  264</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">Promise&lt;T&gt;::set_value</a>(T&amp;&amp; value) {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  state_-&gt;SetValue(std::move(value));</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a5a4da0da281a756120cac230fc71a019">  269</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a5a4da0da281a756120cac230fc71a019">Promise&lt;T&gt;::set_exception</a>(std::exception_ptr ex) {</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  state_-&gt;SetException(std::move(ex));</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a7f6ef7de2f61298b178dd08516b3dff4">  273</a></span><span class="keyword">inline</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a56849425381772c4fe408f7434ab007b" title="Creates a new asynchronous value store.">Promise&lt;void&gt;::Promise</a>()</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    : state_(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::make_shared&lt;impl::FutureState&lt;void&gt;&gt;()) {}</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keyword">inline</span> <a class="code hl_class" href="../../d9/d2e/classengine_1_1Promise.html" title="std::promise replacement for asynchronous tasks that works in pair with engine::Future">Promise&lt;void&gt;::~Promise</a>() {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordflow">if</span> (state_ &amp;&amp; !state_-&gt;IsReady()) {</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      state_-&gt;SetException(std::make_exception_ptr(</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>          <span class="comment">// TODO: TAXICOMMON-3186</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>          <span class="comment">// NOLINTNEXTLINE(misc-taxi-coroutine-unsafe)</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>          std::future_error(std::future_errc::broken_promise)));</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::future_error&amp;) {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a745f97f2d0e2aeb41add75209f319d27" title="Assertion macro for that aborts execution in DEBUG builds with a message msg and does nothing in rele...">UASSERT_MSG</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Invalid promise usage&quot;</span>);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  }</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>}</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a584f4250961dc7cf3a83ffd30bac9e7b">  289</a></span><span class="keyword">inline</span> <a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;void&gt;</a> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a70eab6f2622012a68684aa1a05c0fbdb">Promise&lt;void&gt;::get_future</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;void&gt;</a>(state_); }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">throw</span> std::future_error(std::future_errc::no_state);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a56849425381772c4fe408f7434ab007b">  235</a></span><a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a56849425381772c4fe408f7434ab007b" title="Creates a new asynchronous value store.">Promise&lt;T&gt;::Promise</a>() : state_(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::make_shared&lt;impl::FutureState&lt;T&gt;&gt;()) {}</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><a class="code hl_class" href="../../d9/d2e/classengine_1_1Promise.html" title="std::promise replacement for asynchronous tasks that works in pair with engine::Future">Promise&lt;T&gt;::~Promise</a>() {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="keywordflow">if</span> (state_ &amp;&amp; !state_-&gt;IsReady()) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      state_-&gt;SetException(std::make_exception_ptr(</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>          std::future_error(std::future_errc::broken_promise)));</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::future_error&amp;) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a745f97f2d0e2aeb41add75209f319d27" title="Assertion macro for that aborts execution in DEBUG builds with a message msg and does nothing in rele...">UASSERT_MSG</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Invalid promise usage&quot;</span>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>}</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a70eab6f2622012a68684aa1a05c0fbdb">  250</a></span><a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;T&gt;</a> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a70eab6f2622012a68684aa1a05c0fbdb">Promise&lt;T&gt;::get_future</a>() {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;T&gt;</a>(state_);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>}</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">  255</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">Promise&lt;T&gt;::set_value</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  state_-&gt;SetValue(value);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a8c1594cf2e647670f5f4937225ef5944">  260</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">Promise&lt;T&gt;::set_value</a>(T&amp;&amp; value) {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  state_-&gt;SetValue(std::move(value));</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="../../d9/d2e/classengine_1_1Promise.html#a5a4da0da281a756120cac230fc71a019">  265</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a5a4da0da281a756120cac230fc71a019">Promise&lt;T&gt;::set_exception</a>(std::exception_ptr ex) {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  state_-&gt;SetException(std::move(ex));</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>}</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a7f6ef7de2f61298b178dd08516b3dff4">  269</a></span><span class="keyword">inline</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a56849425381772c4fe408f7434ab007b" title="Creates a new asynchronous value store.">Promise&lt;void&gt;::Promise</a>()</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    : state_(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::make_shared&lt;impl::FutureState&lt;void&gt;&gt;()) {}</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keyword">inline</span> <a class="code hl_class" href="../../d9/d2e/classengine_1_1Promise.html" title="std::promise replacement for asynchronous tasks that works in pair with engine::Future">Promise&lt;void&gt;::~Promise</a>() {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordflow">if</span> (state_ &amp;&amp; !state_-&gt;IsReady()) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      state_-&gt;SetException(std::make_exception_ptr(</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>          std::future_error(std::future_errc::broken_promise)));</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::future_error&amp;) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a745f97f2d0e2aeb41add75209f319d27" title="Assertion macro for that aborts execution in DEBUG builds with a message msg and does nothing in rele...">UASSERT_MSG</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Invalid promise usage&quot;</span>);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>}</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a584f4250961dc7cf3a83ffd30bac9e7b">  283</a></span><span class="keyword">inline</span> <a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;void&gt;</a> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a70eab6f2622012a68684aa1a05c0fbdb">Promise&lt;void&gt;::get_future</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">Future&lt;void&gt;</a>(state_); }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a65183873adbb576088ef94e0054b7fee">  285</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">Promise&lt;void&gt;::set_value</a>() { state_-&gt;SetValue(); }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a15b8cee679258b181bb8244bd1bc568a">  287</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a5a4da0da281a756120cac230fc71a019">Promise&lt;void&gt;::set_exception</a>(std::exception_ptr ex) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  state_-&gt;SetException(std::move(ex));</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>}</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a65183873adbb576088ef94e0054b7fee">  291</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#afe9369eedca9868c41f689ff15799b98">Promise&lt;void&gt;::set_value</a>() { state_-&gt;SetValue(); }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}  <span class="comment">// namespace engine</span></div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="../../de/df2/classengine_1_1Promise_3_01void_01_4.html#a15b8cee679258b181bb8244bd1bc568a">  293</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d2e/classengine_1_1Promise.html#a5a4da0da281a756120cac230fc71a019">Promise&lt;void&gt;::set_exception</a>(std::exception_ptr ex) {</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  state_-&gt;SetException(std::move(ex));</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>}  <span class="comment">// namespace engine</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

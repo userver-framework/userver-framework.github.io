@@ -84,15 +84,15 @@ $(function() {
   <div class="headertitle"><div class="title">HTTP Flatbuf handler and requests </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md279"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md295"></a>
 Before you start</h1>
 <p >Make sure that you can compile and run core tests and read a basic example <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a>.</p>
-<h1><a class="anchor" id="autotoc_md280"></a>
+<h1><a class="anchor" id="autotoc_md296"></a>
 Step by step guide</h1>
 <p >JSON is a nice format, but it does not suit well for high-load applications.</p>
 <p >This tutorial shows you how to send and receive Flatbuffers over HTTP using userver.</p>
 <p >In this sample we use the <a class="el" href="../../d6/d17/samples_2flatbuf_service_2flatbuffer_schema_8fbs-example.html">samples/flatbuf_service/flatbuffer_schema.fbs</a> Flatbuffers scheme and compile it via the &lsquo;flatc --cpp --gen-object-api --filename-suffix &rsquo;.fbs' flatbuffer_schema.fbs` command.</p>
-<h2><a class="anchor" id="autotoc_md281"></a>
+<h2><a class="anchor" id="autotoc_md297"></a>
 HTTP Flatbuffer handler component</h2>
 <p >There are two ways to write a handler that deals with Flatbuffers:</p><ul>
 <li>We could do that by creating a component derived from <a class="el" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers.">server::handlers::HttpHandlerBase</a> as in the <a class="el" href="../../d9/d72/md_en_userver_tutorial_hello_service.html">Writing your first HTTP server</a> example. In that case we would need<ul>
@@ -132,7 +132,7 @@ HTTP Flatbuffer handler component</h2>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace samples::fbs_handle</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md282"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md298"></a>
 HTTP Flatbuffer request</h2>
 <p >A <a class="el" href="../../d5/dee/classclients_1_1http_1_1Client.html" title="HTTP client that returns a HTTP request builder from CreateRequest().">clients::http::Client</a> is needed to make HTTP requests. It could be obtained from the <a class="el" href="../../dd/d5a/classcomponents_1_1HttpClient.html" title="Component that manages clients::http::Client.">components::HttpClient</a> component.</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>FbsRequest final : <span class="keyword">public</span> <a class="code hl_class" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer.">components::LoggableComponentBase</a> {</div>
@@ -191,7 +191,7 @@ HTTP Flatbuffer request</h2>
 <div class="line">  <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a745f97f2d0e2aeb41add75209f319d27" title="Assertion macro for that aborts execution in DEBUG builds with a message msg and does nothing in rele...">UASSERT_MSG</a>(result.sum == 42, <span class="stringliteral">&quot;Sample should work well in tests&quot;</span>);</div>
 <div class="line">  <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a745f97f2d0e2aeb41add75209f319d27" title="Assertion macro for that aborts execution in DEBUG builds with a message msg and does nothing in rele...">UASSERT_MSG</a>(result.echo == payload.data, <span class="stringliteral">&quot;Sample should work well in tests&quot;</span>);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md283"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md299"></a>
 Build</h2>
 <p >To build the sample, execute the following build steps at the userver root directory: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">mkdir build_release</div>
@@ -222,7 +222,7 @@ Build</h2>
 <div class="line">&lt; Content-Length: 48</div>
 <div class="line">&lt;</div>
 <div class="line">* Connection #0 to host localhost left intact</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md284"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md300"></a>
 Functional testing</h2>
 <p >Naive <a class="el" href="../../d1/dd6/md_en_userver_functional_testing.html">functional tests</a> for the service could be implemented using the testsuite in the following way:</p>
 <div class="fragment"><div class="line"><span class="keyword">async def </span>test_flatbuf(service_client):</div>
@@ -232,7 +232,7 @@ Functional testing</h2>
 <div class="line">    )</div>
 <div class="line">    response = await service_client.post(<span class="stringliteral">&#39;/fbs&#39;</span>, data=body)</div>
 <div class="line">    <span class="keyword">assert</span> response.status == 200</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md285"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md301"></a>
 Full sources</h1>
 <p >See the full example:</p><ul>
 <li><a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html">samples/flatbuf_service/flatbuf_service.cpp</a></li>

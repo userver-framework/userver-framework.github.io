@@ -203,29 +203,31 @@ $(function() {
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="../../d8/da1/task_8hpp.html#a8fbfc85bb8394a60a97ad38cba8db928">  179</a></span>TaskProcessor&amp; <a class="code hl_function" href="../../d8/da1/task_8hpp.html#a8fbfc85bb8394a60a97ad38cba8db928" title="Returns reference to the task processor executing the caller.">GetTaskProcessor</a>();</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>ev::ThreadControl&amp; GetEventThread();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="../../d8/da1/task_8hpp.html#a08408d5215c89b31439168ff71ec72ed">  183</a></span>TaskProcessor* <a class="code hl_function" href="../../d8/da1/task_8hpp.html#a08408d5215c89b31439168ff71ec72ed">GetTaskProcessorOptional</a>() noexcept;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keywordtype">void</span> AccountSpuriousWakeup();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>ev::ThreadControl&amp; GetEventThread();</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="../../d8/da1/task_8hpp.html#a142508a2a7040a5f08ee6016d29f6585">  190</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="../../d8/da1/task_8hpp.html#a142508a2a7040a5f08ee6016d29f6585" title="Returns task coroutine stack size.">GetStackSize</a>();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}  <span class="comment">// namespace current_task</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e">  195</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e" title="Suspends execution until the task finishes or after the specified timeout or until caller is cancelle...">Task::WaitFor</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; duration) <span class="keyword">const</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  WaitUntil(<a class="code hl_function" href="../../de/d6a/classengine_1_1Deadline.html#a66be0304dfd971e3636a8b9c083cf47c" title="Converts duration to a Deadline.">Deadline::FromDuration</a>(duration));</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Clock, <span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10">  201</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10" title="Suspends execution until the task finishes or until the specified time point is reached or until call...">Task::WaitUntil</a>(<span class="keyword">const</span> std::chrono::time_point&lt;Clock, Duration&gt;&amp; until)</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keyword">const</span> <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  WaitUntil(<a class="code hl_function" href="../../de/d6a/classengine_1_1Deadline.html#a5e491909c3630a5968e13be5ccb36f68" title="Converts time point to a Deadline.">Deadline::FromTimePoint</a>(until));</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>}  <span class="comment">// namespace engine</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keywordtype">void</span> AccountSpuriousWakeup();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="../../d8/da1/task_8hpp.html#a142508a2a7040a5f08ee6016d29f6585">  194</a></span><span class="keywordtype">size_t</span> GetStackSize();</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}  <span class="comment">// namespace current_task</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>template &lt;typename Rep, typename Period&gt;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a4570fc751a4ae795ff291b07620b662e">  199</a></span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d8/d7c/classengine_1_1Task.html" title="Asynchronous task.">Task</a>::WaitFor(const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::chrono::duration&lt;Rep, Period&gt;&amp; duration) const</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    noexcept(false) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  WaitUntil(<a class="code hl_function" href="../../de/d6a/classengine_1_1Deadline.html#a66be0304dfd971e3636a8b9c083cf47c" title="Converts duration to a Deadline.">Deadline::FromDuration</a>(duration));</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Clock, <span class="keyword">typename</span> Duration&gt;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10">  205</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d7c/classengine_1_1Task.html#a09b40cc5efcf7357b246b169fc6abc10" title="Suspends execution until the task finishes or until the specified time point is reached or until call...">Task::WaitUntil</a>(<span class="keyword">const</span> std::chrono::time_point&lt;Clock, Duration&gt;&amp; until)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keyword">const</span> <span class="keyword">noexcept</span>(<span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  WaitUntil(<a class="code hl_function" href="../../de/d6a/classengine_1_1Deadline.html#a5e491909c3630a5968e13be5ccb36f68" title="Converts time point to a Deadline.">Deadline::FromTimePoint</a>(until));</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}  <span class="comment">// namespace engine</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

@@ -255,7 +255,7 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Na
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Component that does a periodic update of runtime configs. </p>
-<h2><a class="anchor" id="autotoc_md437"></a>
+<h2><a class="anchor" id="autotoc_md453"></a>
 Optional update event deduplication</h2>
 <p >Config update types to deduplicate. If enabled, JSON of the whole config is compared to the previous one; if same, no config update event is sent to the subscribers of <a class="el" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">dynamic_config::Source</a> (<code>OnConfigUpdate</code> functions).</p>
 <p ><code>deduplicate-update-types</code> static config option specifies the update types of the config cache, for which event deduplication should be performed. Possible values:</p><ul>
@@ -266,7 +266,7 @@ Optional update event deduplication</h2>
 </ul>
 <p >Full updates will always send an event unless deduplicated. Incremental updates may send an extra event for some config service implementations.</p>
 <p >Note: This is not a silver bullet against extra events, because the events will be sent to every dynamic config subscriber if <em>any</em> part of the config has updated, not if the interesting part has updated.</p>
-<h2><a class="anchor" id="autotoc_md438"></a>
+<h2><a class="anchor" id="autotoc_md454"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -283,7 +283,7 @@ Static options:</h2>
 <td class="markdownTableBodyNone">deduplicate-update-types   </td><td class="markdownTableBodyNone">update types for best-effort update event deduplication, see above   </td><td class="markdownTableBodyNone"><code>full-and-incremental</code>   </td></tr>
 </table>
 <p >See also the options for <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.</p>
-<h2><a class="anchor" id="autotoc_md439"></a>
+<h2><a class="anchor" id="autotoc_md455"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    dynamic-config-client-updater:</div>

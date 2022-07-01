@@ -146,15 +146,36 @@ Heavy Caches</h1>
 <p ><b>The second option</b>. Add context switching. If you call <a class="el" href="../../dc/d3f/namespaceengine.html#a142b0ca27e383ae38f52cac01692a8d0" title="Suspends execution for a brief period of time, possibly allowing other tasks to execute.">engine::Yield()</a> every 1-2ms, then the framework engine has time to execute the other ready for execution coroutines and the queue of ready coroutines does not grow to undesirable values. To simplify working with <a class="el" href="../../dc/d3f/namespaceengine.html#a142b0ca27e383ae38f52cac01692a8d0" title="Suspends execution for a brief period of time, possibly allowing other tasks to execute.">engine::Yield</a>, it is recommended to use <a class="el" href="../../d9/df3/classutils_1_1CpuRelax.html">utils::CpuRelax</a> rather than calling <a class="el" href="../../dc/d3f/namespaceengine.html#a142b0ca27e383ae38f52cac01692a8d0" title="Suspends execution for a brief period of time, possibly allowing other tasks to execute.">engine::Yield()</a> manually.</p>
 <h1><a class="anchor" id="autotoc_md83"></a>
 Specializations for DB</h1>
-<p >The cache is implemented by inheriting from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>. There are specializations for databases:</p><ul>
-<li>MongoCache</li>
-<li><a class="el" href="../../d9/dde/pg_cache.html">Caching Component for PostgreSQL</a></li>
+<p >Caches over DB are caching components that use a trait structure as a template argument for customization. Such componenets are:</p>
+<ul>
+<li><a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html" title="Base class for all caches polling mongo collection">components::MongoCache</a></li>
+<li><a class="el" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache</a></li>
 </ul>
-<p >To write your own cache, you need to override the <a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aeedbce6882ed3f9e32ad663be728fe50" title="Forces a cache update of specified type.">cache::CacheUpdateTrait::Update</a>, implement Full and Incremental updates. In Update(), don't forget to put down metrics for the <code>stats_scope</code> object, describing how many objects were read, how many parsing errors there were, and how many elements are in the final cache.</p>
+<p >A typical case of cache usage consists of trait structure definition:</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>PostgresTrivialPolicy {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;my-pg-cache&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">using </span>ValueType = MyStructure;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kKeyMember = &amp;MyStructure::id;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kQuery = <span class="stringliteral">&quot;SELECT a, b, updated FROM test.data&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kUpdatedField = <span class="stringliteral">&quot;updated&quot;</span>;</div>
+<div class="line">  <span class="keyword">using </span>UpdatedFieldType = <a class="code hl_typedef" href="../../de/d6d/namespacestorages_1_1postgres.html#a69c43f80d0b6eec8f2205796e60fcc3e" title="Corresponds to TIMESTAMP WITH TIME ZONE (value in absolute time (no TZ offset)). Time zones are appli...">storages::postgres::TimePointTz</a>;</div>
+<div class="line">};</div>
+</div><!-- fragment --><p >and registration of the caching component in <a class="el" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">components::ComponentList</a>:</p>
+<div class="fragment"><div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="../../dd/d1c/group__userver__components.html#ga44510c5120b67bd36f0ff9f845c68280" title="Returns a list of components to start a basic HTTP server.">components::MinimalServerComponentList</a>()</div>
+<div class="line">      .Append&lt;<a class="code hl_class" href="../../d2/d8d/classcomponents_1_1PostgreCache.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL.">components::PostgreCache&lt;example::PostgresTrivialPolicy&gt;</a>&gt;();</div>
+</div><!-- fragment --><p >The DB caches are simple to use and quite poverfull.</p>
 <h1><a class="anchor" id="autotoc_md84"></a>
+Writing a cache</h1>
+<p >To write your own cache using only the <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a> base class, you need to override the <a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aeedbce6882ed3f9e32ad663be728fe50" title="Forces a cache update of specified type.">cache::CacheUpdateTrait::Update</a>, implement Full and Incremental updates. In Update(), don't forget to put down metrics for the <code>stats_scope</code> object, describing how many objects were read, how many parsing errors there were, and how many elements are in the final cache.</p>
+<p >See <a class="el" href="../../d7/d8e/md_en_userver_tutorial_http_caching.html">Pre-caching data from HTTP remote</a> for a detailed introduction.</p>
+<h1><a class="anchor" id="autotoc_md85"></a>
 Parallel loading</h1>
 <p >Cache components, like other components, are loaded in parallel. This allows you to speed up the loading of the service in the case of numerous heavy caches.</p>
-<h1><a class="anchor" id="autotoc_md85"></a>
+<h1><a class="anchor" id="autotoc_md86"></a>
 Metrics</h1>
 <p >Each cache automatically collects metrics: </p><div class="fragment"><div class="line">...</div>
 <div class="line">cache.simple-dumped-cache.dump.is-loaded-from-dump 1</div>

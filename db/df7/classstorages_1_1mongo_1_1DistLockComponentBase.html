@@ -167,6 +167,9 @@ static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a96d93e09038ee6afca3d1c7f3d2582fd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#a96d93e09038ee6afca3d1c7f3d2582fd">DoWork</a> ()=0</td></tr>
 <tr class="separator:a96d93e09038ee6afca3d1c7f3d2582fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2efaafa74d68e2215c3938b03ede10a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#ad2efaafa74d68e2215c3938b03ede10a">DoWorkTestsuite</a> ()</td></tr>
+<tr class="memdesc:ad2efaafa74d68e2215c3938b03ede10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this function to provide custom testsuite handler.  <a href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#ad2efaafa74d68e2215c3938b03ede10a">More...</a><br /></td></tr>
+<tr class="separator:ad2efaafa74d68e2215c3938b03ede10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7426693afc3c3a8eb856379d9bc6d18"><td class="memItemLeft" align="right" valign="top"><a id="af7426693afc3c3a8eb856379d9bc6d18" name="af7426693afc3c3a8eb856379d9bc6d18"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
 <tr class="memdesc:af7426693afc3c3a8eb856379d9bc6d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Must be called in constructor. <br /></td></tr>
@@ -180,16 +183,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
 <div class="textblock"><p >Base class for mongo-based distlock worker components. </p>
 <p >A component that implements a distlock with lock in Mongo. Inherit from <a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html" title="Base class for mongo-based distlock worker components.">DistLockComponentBase</a> and implement <a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#a96d93e09038ee6afca3d1c7f3d2582fd">DoWork()</a>. Lock options are configured in static config.</p>
 <p >Mongo might not perform well on a high load, so you might want to use postgres-based distlock <a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html" title="Base class for postgres-based distlock worker components.">storages::postgres::DistLockComponentBase</a> instead. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d55/classstorages_1_1postgres_1_1DistLockComponentBase.html" title="Base class for postgres-based distlock worker components.">storages::postgres::DistLockComponentBase</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md500"></a>
+<h2><a class="anchor" id="autotoc_md520"></a>
 Cancellation checks</h2>
 <p >Functions <a class="el" href="../../db/df2/cancel_8hpp.html#aed8fc1cdfd588f3973f5c9bc503c9986">engine::current_task::ShouldCancel()</a>, <a class="el" href="../../dc/d3f/namespaceengine.html#a19462f750672c6fa7f5f690c2575b9f6">engine::InterruptibleSleepFor()</a>, <a class="el" href="../../dc/d3f/namespaceengine.html#a76ed2a2c05f7445c5a944dd4fbe31b82">engine::InterruptibleSleepUntil()</a> and <a class="el" href="../../db/df2/cancel_8hpp.html#a8d5e89aac1226c90d4f8e0826ea68256" title="Throws an exception if a cancellation request for this task is pending.">engine::current_task::CancellationPoint()</a> check for task cancellation. Overriden <a class="el" href="../../db/df7/classstorages_1_1mongo_1_1DistLockComponentBase.html#a96d93e09038ee6afca3d1c7f3d2582fd">DistLockComponentBase::DoWork</a> must use the above functions to honour task cancellation and stop ASAP when it is cancelled.</p>
-<h2><a class="anchor" id="autotoc_md501"></a>
+<h2><a class="anchor" id="autotoc_md521"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">example-distlock:</div>
 <div class="line">    lockname: master</div>
 <div class="line">    mongo-timeout: 1s</div>
 <div class="line">    lock-ttl: 10s</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md502"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md522"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -203,10 +206,12 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">restart-delay   </td><td class="markdownTableBodyNone">how much time to wait after failed task restart   </td><td class="markdownTableBodyNone">100ms    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">task-processor   </td><td class="markdownTableBodyNone">the name of the TaskProcessor for running DoWork   </td><td class="markdownTableBodyNone">main-task-processor   </td></tr>
+<td class="markdownTableBodyNone">task-processor   </td><td class="markdownTableBodyNone">the name of the TaskProcessor for running DoWork   </td><td class="markdownTableBodyNone">main-task-processor    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">testsuite-support   </td><td class="markdownTableBodyNone">Enable testsuite support   </td><td class="markdownTableBodyNone">false   </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp_source.html">dist_lock_component_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp_source.html">dist_lock_component_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a96d93e09038ee6afca3d1c7f3d2582fd" name="a96d93e09038ee6afca3d1c7f3d2582fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96d93e09038ee6afca3d1c7f3d2582fd">&#9670;&nbsp;</a></span>DoWork()</h2>
@@ -231,7 +236,7 @@ Static options:</h2>
 </table>
 </div><div class="memdoc">
 <p >Override this function with anything that must be done under the mongo lock.</p>
-<h2><a class="anchor" id="autotoc_md503"></a>
+<h2><a class="anchor" id="autotoc_md523"></a>
 Example implementation</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> MyDistLockComponent::DoWork()</div>
 <div class="line">{</div>
@@ -250,6 +255,35 @@ Example implementation</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd><code>DoWork</code> must honour task cancellation and stop ASAP when it is cancelled, otherwise brain split is possible (IOW, two different users do work assuming both of them hold the lock, which is not true). </dd></dl>
+
+</div>
+</div>
+<a id="ad2efaafa74d68e2215c3938b03ede10a" name="ad2efaafa74d68e2215c3938b03ede10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2efaafa74d68e2215c3938b03ede10a">&#9670;&nbsp;</a></span>DoWorkTestsuite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void storages::mongo::DistLockComponentBase::DoWorkTestsuite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Override this function to provide custom testsuite handler. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp_source.html#l00102">102</a> of file <a class="el" href="../../d5/d93/mongo_2include_2userver_2storages_2mongo_2dist__lock__component__base_8hpp_source.html">dist_lock_component_base.hpp</a>.</p>
 
 </div>
 </div>
