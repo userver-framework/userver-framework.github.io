@@ -88,36 +88,57 @@ $(function() {
   <div class="headertitle"><div class="title">temp_file.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d3/d94/temp__file_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../d3/d94/temp__file_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/fs/blocking/temp_file.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief fs::blocking::TempFile</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/dcb/namespacefs_1_1blocking.html" title="blocking function and classes to work with filesystem">fs::blocking</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> fs::<a class="code hl_namespace" href="../../d5/d8f/namespacefs.html" title="filesystem support">blocking</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a> final {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// @ingroup userver_containers</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">///</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// @brief A unique temporary file. The file is deleted when the `TempFile`</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// object is destroyed.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// @note The file has permissions=0600. Any newly created parent directories</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// have permissions=0700.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// @note The newly created file is immediately opened with read-write</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// permissions. The file descriptor can be accessed using `File`.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html">   21</a></span><span class="keyword">class</span> TempFile <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a727ee75a7254763e4f4a033ccf3770d1">   25</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a> <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a727ee75a7254763e4f4a033ccf3770d1" title="Create the file at the default path for temporary files.">Create</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">/// @brief Create the file at the default path for temporary files</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">/// @throws std::runtime_error</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a727ee75a7254763e4f4a033ccf3770d1">   25</a></span>  <span class="keyword">static</span> TempFile <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a727ee75a7254763e4f4a033ccf3770d1" title="Create the file at the default path for temporary files.">Create</a>();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a3131778e7fd5c325030533c33496288c">   32</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a> <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a3131778e7fd5c325030533c33496288c" title="Create the file at the specified path.">Create</a>(std::string_view parent_path,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">/// @brief Create the file at the specified path</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="comment">/// @param parent_path The directory where the temporary file will be created</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="comment">/// @param name_prefix File name prefix, a random string will be added</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">/// after the prefix</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">/// @throws std::runtime_error</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a3131778e7fd5c325030533c33496288c">   32</a></span>  <span class="keyword">static</span> TempFile <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a3131778e7fd5c325030533c33496288c" title="Create the file at the specified path.">Create</a>(std::string_view parent_path,</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                         std::string_view name_prefix);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>(<a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>&amp; operator=(<a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">~TempFile</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  TempFile() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  TempFile(TempFile&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  TempFile&amp; operator=(TempFile&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  ~TempFile();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a791a39b16f8b867e3a3f80a0b33006a5">   41</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a> <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a791a39b16f8b867e3a3f80a0b33006a5" title="Take ownership of an existing file.">Adopt</a>(std::string path);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">/// Take ownership of an existing file</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a791a39b16f8b867e3a3f80a0b33006a5">   41</a></span>  <span class="keyword">static</span> TempFile <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a791a39b16f8b867e3a3f80a0b33006a5" title="Take ownership of an existing file.">Adopt</a>(std::string path);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">/// The file path</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a9d550369d55fdc896a608de2a8695783">   44</a></span>  <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a9d550369d55fdc896a608de2a8695783" title="The file path.">GetPath</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">/// @brief Remove the file early</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">/// @throws std::runtime_error</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a19df73147b2f572ba04dfcc0bb3456e9">   48</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html#a19df73147b2f572ba04dfcc0bb3456e9" title="Remove the file early.">Remove</a>() &amp;&amp;;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>(std::string&amp;&amp; path);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">explicit</span> TempFile(std::string&amp;&amp; path);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  std::string path_;</div>
@@ -131,7 +152,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:50:01 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -238,14 +259,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

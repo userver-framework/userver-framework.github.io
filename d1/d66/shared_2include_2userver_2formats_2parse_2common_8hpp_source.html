@@ -88,26 +88,32 @@ $(function() {
   <div class="headertitle"><div class="title">common.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d1/d66/shared_2include_2userver_2formats_2parse_2common_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../d1/d66/shared_2include_2userver_2formats_2parse_2common_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/formats/parse/common.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Parsers and converters for std::chrono::seconds,</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// std::chrono::system_clock::time_point and integral types</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ingroup userver_formats_parse</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">chrono</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdint</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">limits</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;fmt/format.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">fmt</span><span class="preprocessor">/</span><span class="preprocessor">format</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="../../d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection.">userver/formats/common/meta.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers.">userver/formats/parse/to.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="../../d7/d4a/datetime_8hpp.html" title="Date and Time related converters.">userver/utils/datetime.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="../../dd/d10/from__string__saturating_8hpp.html" title="Saturating converters from strings to time points.">userver/utils/datetime/from_string_saturating.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts.">userver/utils/meta.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="../../dc/dff/string__to__duration_8hpp.html" title="Converts strings like &quot;10s&quot;, &quot;5d&quot;, &quot;1h&quot; to durations.">userver/utils/string_to_duration.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">common</span><span class="preprocessor">/</span><span class="preprocessor">meta</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">parse</span><span class="preprocessor">/</span><span class="preprocessor">to</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">datetime</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">datetime</span><span class="preprocessor">/</span><span class="preprocessor">from_string_saturating</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">meta</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">string_to_duration</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">formats::parse</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span>impl {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// Generic parsers and converters</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace</span> impl {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Value&gt;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> CheckInBounds(<span class="keyword">const</span> Value&amp; value, T x, T min, T max) {</div>
@@ -120,9 +126,9 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">float</span> NarrowToFloat(<span class="keywordtype">double</span> x, <span class="keyword">const</span> Value&amp; value) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  CheckInBounds&lt;double&gt;(value, x, std::numeric_limits&lt;float&gt;::lowest(),</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                        std::numeric_limits&lt;float&gt;::max());</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(x);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  CheckInBounds&lt;<span class="keywordtype">double</span>&gt;(value, x, std::numeric_limits&lt;<span class="keywordtype">float</span>&gt;::lowest(),</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                        std::numeric_limits&lt;<span class="keywordtype">float</span>&gt;::max());</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;<span class="keywordtype">float</span>&gt;(x);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Dst, <span class="keyword">typename</span> Value, <span class="keyword">typename</span> Src&gt;</div>
@@ -134,12 +140,12 @@ $(function() {
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  CheckInBounds&lt;Src&gt;(value, x, std::numeric_limits&lt;Dst&gt;::min(),</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                     std::numeric_limits&lt;Dst&gt;::max());</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Dst<span class="keyword">&gt;</span>(x);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;Dst&gt;(x);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>std::chrono::seconds ToSeconds(<span class="keyword">const</span> std::string&amp; data, <span class="keyword">const</span> Value&amp; value) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> <span class="keyword">auto</span> ms = <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a8f770510a34025f4aec3dfe0a64564ad" title="Converts strings like &quot;10s&quot;, &quot;5d&quot;, &quot;1h&quot; to durations.">utils::StringToDuration</a>(data);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> <span class="keyword">auto</span> ms = <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a><a class="code hl_function" href="../../d6/d84/namespaceutils.html#a8f770510a34025f4aec3dfe0a64564ad" title="Converts strings like &quot;10s&quot;, &quot;5d&quot;, &quot;1h&quot; to durations.">::</a><a class="code hl_function" href="../../d6/d84/namespaceutils.html#a8f770510a34025f4aec3dfe0a64564ad" title="Converts strings like &quot;10s&quot;, &quot;5d&quot;, &quot;1h&quot; to durations.">StringToDuration</a>(data);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> converted = std::chrono::duration_cast&lt;std::chrono::seconds&gt;(ms);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordflow">if</span> (converted != ms) {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">throw</span> <span class="keyword">typename</span> Value::ParseException(</div>
@@ -153,53 +159,53 @@ $(function() {
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}  <span class="comment">// namespace impl</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">float</span> Parse(<span class="keyword">const</span> Value&amp; value, To&lt;float&gt;) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordflow">return</span> impl::NarrowToFloat(value.template As&lt;double&gt;(), value);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">float</span> Parse(<span class="keyword">const</span> Value&amp; value, <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<span class="keywordtype">float</span>&gt;) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordflow">return</span> impl::NarrowToFloat(value.<span class="keyword">template</span> As&lt;<span class="keywordtype">double</span>&gt;(), value);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value, <span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>std::enable_if_t&lt;common::kIsFormatValue&lt;Value&gt; &amp;&amp; meta::kIsInteger&lt;T&gt;, T&gt; Parse(</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> Value&amp; value, To&lt;T&gt;) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">using </span>IntT = std::conditional_t&lt;std::is_signed&lt;T&gt;::value, int64_t, uint64_t&gt;;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">return</span> impl::NarrowToInt&lt;T&gt;(value.template As&lt;IntT&gt;(), value);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">using</span> IntT = std::conditional_t&lt;std::is_signed&lt;T&gt;::value, int64_t, uint64_t&gt;;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">return</span> impl::NarrowToInt&lt;T&gt;(value.<span class="keyword">template</span> As&lt;IntT&gt;(), value);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value, <span class="keyword">typename</span> Period&gt;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>std::enable_if_t&lt;common::kIsFormatValue&lt;Value&gt;,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                 std::chrono::duration&lt;double, Period&gt;&gt;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>Parse(<span class="keyword">const</span> Value&amp; n, To&lt;std::chrono::duration&lt;double, Period&gt;&gt;) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> std::chrono::duration&lt;double, Period&gt;(n.template As&lt;double&gt;());</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                 std::chrono::duration&lt;<span class="keywordtype">double</span>, Period&gt;&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>Parse(<span class="keyword">const</span> Value&amp; n, To&lt;std::chrono::duration&lt;<span class="keywordtype">double</span>, Period&gt;&gt;) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> std::chrono::duration&lt;<span class="keywordtype">double</span>, Period&gt;(n.<span class="keyword">template</span> As&lt;<span class="keywordtype">double</span>&gt;());</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>std::enable_if_t&lt;common::kIsFormatValue&lt;Value&gt;, std::chrono::seconds&gt; Parse(</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">const</span> Value&amp; n, To&lt;std::chrono::seconds&gt;) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">return</span> n.IsInt64() ? std::chrono::seconds{n.template As&lt;int64_t&gt;()}</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                     : impl::ToSeconds(n.template As&lt;std::string&gt;(), n);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">return</span> n.IsInt64() ? std::chrono::seconds{n.<span class="keyword">template</span> As&lt;int64_t&gt;()}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                     : impl::ToSeconds(n.<span class="keyword">template</span> As&lt;std::string&gt;(), n);</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Value&gt;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>std::chrono::system_clock::time_point Parse(</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">const</span> Value&amp; n, To&lt;std::chrono::system_clock::time_point&gt;) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#aa9590e7fc394477ec3d1320ee5644a7b" title="Converts strings like &quot;2012-12-12T00:00:00&quot; to std::chrono::system_clock::time_point in UTC timezone ...">utils::datetime::FromRfc3339StringSaturating</a>(</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      n.template As&lt;std::string&gt;());</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">const</span> Value&amp; n, <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;std::chrono::system_clock::time_point&gt;) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">return</span> <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a><a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#aa9590e7fc394477ec3d1320ee5644a7b" title="Converts strings like &quot;2012-12-12T00:00:00&quot; to std::chrono::system_clock::time_point in UTC timezone ...">::</a><a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a><a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#aa9590e7fc394477ec3d1320ee5644a7b" title="Converts strings like &quot;2012-12-12T00:00:00&quot; to std::chrono::system_clock::time_point in UTC timezone ...">::</a><a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#aa9590e7fc394477ec3d1320ee5644a7b" title="Converts strings like &quot;2012-12-12T00:00:00&quot; to std::chrono::system_clock::time_point in UTC timezone ...">FromRfc3339StringSaturating</a><a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#aa9590e7fc394477ec3d1320ee5644a7b" title="Converts strings like &quot;2012-12-12T00:00:00&quot; to std::chrono::system_clock::time_point in UTC timezone ...">(</a></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      n.<span class="keyword">template</span> As&lt;std::string&gt;()<a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#aa9590e7fc394477ec3d1320ee5644a7b" title="Converts strings like &quot;2012-12-12T00:00:00&quot; to std::chrono::system_clock::time_point in UTC timezone ...">)</a>;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Value&gt;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">float</span> Convert(<span class="keyword">const</span> Value&amp; value, To&lt;float&gt;) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordflow">return</span> impl::NarrowToFloat(value.template ConvertTo&lt;double&gt;(), value);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">float</span> Convert(<span class="keyword">const</span> Value&amp; value, <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;<span class="keywordtype">float</span>&gt;) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordflow">return</span> impl::NarrowToFloat(value.<span class="keyword">template</span> ConvertTo&lt;<span class="keywordtype">double</span>&gt;(), value);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value, <span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>std::enable_if_t&lt;meta::kIsInteger&lt;T&gt;, T&gt; Convert(<span class="keyword">const</span> Value&amp; value, To&lt;T&gt;) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">using </span>IntT = std::conditional_t&lt;std::is_signed&lt;T&gt;::value, int64_t, uint64_t&gt;;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">return</span> impl::NarrowToInt&lt;T&gt;(value.template ConvertTo&lt;IntT&gt;(), value);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">using</span> IntT = std::conditional_t&lt;std::is_signed&lt;T&gt;::value, int64_t, uint64_t&gt;;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">return</span> impl::NarrowToInt&lt;T&gt;(value.<span class="keyword">template</span> ConvertTo&lt;IntT&gt;(), value);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>std::chrono::seconds Convert(<span class="keyword">const</span> Value&amp; n, To&lt;std::chrono::seconds&gt;) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">return</span> n.IsInt64() ? std::chrono::seconds{n.template ConvertTo&lt;int64_t&gt;()}</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                     : impl::ToSeconds(n.template ConvertTo&lt;std::string&gt;(), n);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>std::chrono::seconds Convert(<span class="keyword">const</span> Value&amp; n, <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;std::chrono::seconds&gt;) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">return</span> n.IsInt64() ? std::chrono::seconds{n.<span class="keyword">template</span> ConvertTo&lt;int64_t&gt;()}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                     : impl::ToSeconds(n.<span class="keyword">template</span> ConvertTo&lt;std::string&gt;(), n);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}  <span class="comment">// namespace formats::parse</span></div>
@@ -210,7 +216,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:49:39 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -317,14 +323,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

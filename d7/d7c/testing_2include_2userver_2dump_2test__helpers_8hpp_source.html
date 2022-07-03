@@ -88,39 +88,44 @@ $(function() {
   <div class="headertitle"><div class="title">test_helpers.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">utility</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="../../dc/dc9/utest_8hpp.html" title="Versions of gtest macros that run tests in a coroutine environment.">userver/utest/utest.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="../../d4/db6/fast__scope__guard_8hpp.html" title="a helper class to perform actions on scope exit">userver/utils/fast_scope_guard.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utest</span><span class="preprocessor">/</span><span class="preprocessor">utest</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">fast_scope_guard</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;userver/dump/operations_mock.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">dump</span><span class="preprocessor">/</span><span class="preprocessor">operations_mock</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/d72/namespacedump.html" title="Dumping of cache-like components.">dump</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d8/d72/namespacedump.html" title="Dumping of cache-like components.">dump</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// Converts to binary using `Write(Writer&amp;, const T&amp;)`</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6">   16</a></span>std::string <a class="code hl_function" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6" title="Converts to binary using Write(Writer&amp;, const T&amp;)">ToBinary</a>(<span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_class" href="../../df/d9f/classdump_1_1MockWriter.html" title="A Writer that appends to a string buffer (used in tests)">MockWriter</a> writer;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  writer.<a class="code hl_function" href="../../df/d09/classdump_1_1Writer.html#aeeb74bbbca334d00f396c6865f79fd82" title="Writes binary data.">Write</a>(value);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>std::string <a class="code hl_function" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6" title="Converts to binary using Write(Writer&amp;, const T&amp;)">ToBinary</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  MockWriter writer;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  writer.Write(value);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordflow">return</span> std::move(writer).Extract();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// Converts from binary using `Read(Reader&amp;, To&lt;T&gt;)`</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed">   24</a></span>T <a class="code hl_function" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed" title="Converts from binary using Read(Reader&amp;, To&lt;T&gt;)">FromBinary</a>(std::string data) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_class" href="../../de/d3d/classdump_1_1MockReader.html" title="A Reader that reads from a string buffer (used in tests)">MockReader</a> reader(std::move(data));</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  T value = reader.<a class="code hl_function" href="../../d2/d03/classdump_1_1Reader.html#aa50754192ec845b898e1b92827f51c2f" title="Reads binary data.">Read</a>&lt;T&gt;();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  reader.<a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>T <a class="code hl_function" href="../../d8/d72/namespacedump.html#a2aa2a0bf84718b46857367fbab3267ed" title="Converts from binary using Read(Reader&amp;, To&lt;T&gt;)">FromBinary</a>(std::string data) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  MockReader reader(std::move(data));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  T value = reader.Read&lt;T&gt;();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  reader<a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">.</a><a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a><a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">(</a><a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">)</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">return</span> value;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// Write a value to a cache dump and immediately read it back. If `Write` and</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// `Read` are implemented correctly, the result should be equal to the original</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// value.</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a7c12be26fdae1224e898a87d9db9945e">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d72/namespacedump.html#a7c12be26fdae1224e898a87d9db9945e">TestWriteReadCycle</a>(<span class="keyword">const</span> T&amp; original) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="../../de/d3d/classdump_1_1MockReader.html" title="A Reader that reads from a string buffer (used in tests)">MockReader</a> reader(<a class="code hl_function" href="../../d8/d72/namespacedump.html#a0caed4c0fe1444f1ce57de2871aac0f6" title="Converts to binary using Write(Writer&amp;, const T&amp;)">dump::ToBinary</a>(original));</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  T after_cycle = reader.<a class="code hl_function" href="../../d2/d03/classdump_1_1Reader.html#aa50754192ec845b898e1b92827f51c2f" title="Reads binary data.">Read</a>&lt;T&gt;();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  reader.<a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d72/namespacedump.html#a7c12be26fdae1224e898a87d9db9945e">TestWriteReadCycle</a>(<span class="keyword">const</span> T&amp; original) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  MockReader reader(<a class="code hl_namespace" href="../../d8/d72/namespacedump.html" title="Dumping of cache-like components.">dump</a>::ToBinary(original));</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  T after_cycle = reader.Read&lt;T&gt;();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  reader<a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">.</a><a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">Finish</a><a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">(</a><a class="code hl_function" href="../../de/d3d/classdump_1_1MockReader.html#a903982cb65496dbe50cd4e65b9db5938" title="Must be called once all data has been read.">)</a>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  EXPECT_EQ(after_cycle, original);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
@@ -132,7 +137,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:45:36 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -239,14 +244,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

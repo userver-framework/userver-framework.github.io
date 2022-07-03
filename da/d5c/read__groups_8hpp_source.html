@@ -88,17 +88,23 @@ $(function() {
   <div class="headertitle"><div class="title">read_groups.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../da/d5c/read__groups_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../da/d5c/read__groups_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/hostinfo/blocking/read_groups.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief hostinfo::blocking::ReadConductorGroups</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d4/d76/namespacehostinfo_1_1blocking.html" title="Blocking functions for getting information about hosts.">hostinfo::blocking</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// Blocking functions for getting information about hosts</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace</span> hostinfo::<a class="code hl_namespace" href="../../d7/d9e/namespacehostinfo.html" title="Information about current host.">blocking</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7">   17</a></span>std::vector&lt;std::string&gt; <a class="code hl_function" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7" title="Reads Conductor groups from conductor-hostinfo file.">ReadConductorGroups</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// @brief Reads Conductor groups from conductor-hostinfo file.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// @throw `std::runtime_error` if file cannot be read.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// @warning This is a blocking function.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7">   17</a></span><a class="code hl_function" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7" title="Reads Conductor groups from conductor-hostinfo file.">std</a>::<a class="code hl_function" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7" title="Reads Conductor groups from conductor-hostinfo file.">vector</a>&lt;<a class="code hl_function" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7" title="Reads Conductor groups from conductor-hostinfo file.">std</a>::<a class="code hl_function" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7" title="Reads Conductor groups from conductor-hostinfo file.">string</a>&gt; <a class="code hl_function" href="../../d4/d76/namespacehostinfo_1_1blocking.html#af6c6f22d31d250ed3db449d3e70d1da7" title="Reads Conductor groups from conductor-hostinfo file.">ReadConductorGroups</a>();</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}  <span class="comment">// namespace hostinfo::blocking</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
@@ -108,7 +114,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:50:06 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -215,14 +221,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

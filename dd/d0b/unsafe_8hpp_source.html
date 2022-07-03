@@ -88,23 +88,34 @@ $(function() {
   <div class="headertitle"><div class="title">unsafe.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;userver/dump/operations.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">dump</span><span class="preprocessor">/</span><span class="preprocessor">operations</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/d72/namespacedump.html" title="Dumping of cache-like components.">dump</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d8/d72/namespacedump.html" title="Dumping of cache-like components.">dump</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#af9173381c67f2b8bda29dc5039078086">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d72/namespacedump.html#af9173381c67f2b8bda29dc5039078086" title="Writes a non-size-prefixed std::string_view">WriteStringViewUnsafe</a>(<a class="code hl_class" href="../../df/d09/classdump_1_1Writer.html" title="A general interface for binary data output.">Writer</a>&amp; writer, std::string_view value);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// @brief Writes a non-size-prefixed `std::string_view`</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// @note `writer.Write(str)` should normally be used instead to write strings</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_friend" href="../../df/d09/classdump_1_1Writer.html#a7e315eb846065480603ee4e51fca772b" title="Writes a non-size-prefixed std::string_view">WriteStringViewUnsafe</a>(<a class="code hl_class" href="../../df/d09/classdump_1_1Writer.html" title="A general interface for binary data output.">Writer</a>&amp; writer, std::string_view value);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360">   17</a></span>std::string_view <a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">ReadStringViewUnsafe</a>(<a class="code hl_class" href="../../d2/d03/classdump_1_1Reader.html" title="A general interface for binary data input.">Reader</a>&amp; reader);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// @brief Reads a `std::string_view`</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// @warning The `string_view` will be invalidated on the next `Read` operation</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">std</a>::<a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">string_view</a> <a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">ReadStringViewUnsafe</a>(<a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">Reader</a>&amp; <a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">reader</a>);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a">   22</a></span>std::string_view <a class="code hl_function" href="../../d8/d72/namespacedump.html#ad92268249ec62c0f60ff829ec68d4360" title="Reads a std::string_view">ReadStringViewUnsafe</a>(<a class="code hl_class" href="../../d2/d03/classdump_1_1Reader.html" title="A general interface for binary data input.">Reader</a>&amp; reader, std::size_t size);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// @brief Reads a non-size-prefixed `std::string_view`</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// @note The caller must somehow know the string size in advance</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// @warning The `string_view` will be invalidated on the next `Read` operation</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">std</a>::<a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">string_view</a> <a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">ReadStringViewUnsafe</a>(<a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">Reader</a>&amp; <a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">reader</a>, <a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">std</a>::<a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">size_t</a> <a class="code hl_function" href="../../d8/d72/namespacedump.html#a2fc8cadde5b5c622102103ff8d667e6a" title="Reads a non-size-prefixed std::string_view">size</a>);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d8/d72/namespacedump.html#a3612536a1962a1698d7bd9a0ce38ce20">   28</a></span>std::string_view <a class="code hl_function" href="../../d8/d72/namespacedump.html#a3612536a1962a1698d7bd9a0ce38ce20" title="Reads a std::string_view">ReadUnsafeAtMost</a>(<a class="code hl_class" href="../../d2/d03/classdump_1_1Reader.html" title="A general interface for binary data input.">Reader</a>&amp; reader, std::size_t max_size);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// @brief Reads a `std::string_view`</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// @note Normally, exactly `max_size` bytes is returned. On end-of-file,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/// the amount of bytes returned can be less than `max_size`.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// @warning The `string_view` will be invalidated on the next `Read` operation</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">std</a>::<a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">string_view</a> <a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">ReadUnsafeAtMost</a>(<a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">Reader</a>&amp; <a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">reader</a>, <a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">std</a>::<a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">size_t</a> <a class="code hl_friend" href="../../d2/d03/classdump_1_1Reader.html#a5d5e7459e6d441b4b6cac4e32a1b686f" title="Reads a std::string_view">max_size</a>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}  <span class="comment">// namespace dump</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
@@ -114,7 +125,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:45:28 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -221,14 +232,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

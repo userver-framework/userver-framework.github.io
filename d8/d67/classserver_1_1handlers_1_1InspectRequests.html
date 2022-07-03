@@ -105,12 +105,12 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d1/d16/classserver_1_1handlers_1_1InspectRequests__inherit__graph.png" border="0" usemap="#aserver_1_1handlers_1_1InspectRequests_inherit__map" alt="Inheritance graph"/></div>
 <map name="aserver_1_1handlers_1_1InspectRequests_inherit__map" id="aserver_1_1handlers_1_1InspectRequests_inherit__map">
-<area shape="rect" title="Handler that returns information about all in&#45;flight requests." alt="" coords="47,393,214,435"/>
-<area shape="rect" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J..." alt="" coords="34,304,227,345"/>
-<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="19,229,242,256"/>
-<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="31,155,230,181"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,256,107"/>
-<area shape="rect" title=" " alt="" coords="15,5,246,32"/>
+<area shape="rect" title="Handler that returns information about all in&#45;flight requests." alt="" coords="52,393,235,435"/>
+<area shape="rect" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J..." alt="" coords="36,304,251,345"/>
+<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="20,229,267,256"/>
+<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="34,155,253,181"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,281,107"/>
+<area shape="rect" title=" " alt="" coords="16,5,271,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -120,14 +120,14 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../de/d87/classserver_1_1handlers_1_1InspectRequests__coll__graph.png" border="0" usemap="#aserver_1_1handlers_1_1InspectRequests_coll__map" alt="Collaboration graph"/></div>
 <map name="aserver_1_1handlers_1_1InspectRequests_coll__map" id="aserver_1_1handlers_1_1InspectRequests_coll__map">
-<area shape="rect" title="Handler that returns information about all in&#45;flight requests." alt="" coords="157,428,323,469"/>
-<area shape="rect" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J..." alt="" coords="55,324,249,365"/>
-<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="19,241,242,267"/>
-<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="31,157,230,184"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,81,256,108"/>
-<area shape="rect" title=" " alt="" coords="15,5,246,32"/>
-<area shape="rect" title=" " alt="" coords="281,331,396,358"/>
-<area shape="rect" title=" " alt="" coords="267,233,419,275"/>
+<area shape="rect" title="Handler that returns information about all in&#45;flight requests." alt="" coords="171,428,353,469"/>
+<area shape="rect" href="../../da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J..." alt="" coords="59,324,273,365"/>
+<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="20,241,267,267"/>
+<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="34,157,253,184"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,81,281,108"/>
+<area shape="rect" title=" " alt="" coords="16,5,271,32"/>
+<area shape="rect" title=" " alt="" coords="307,331,433,358"/>
+<area shape="rect" title=" " alt="" coords="291,233,457,275"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -375,7 +375,7 @@ Scheme</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -482,14 +482,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

@@ -88,80 +88,104 @@ $(function() {
   <div class="headertitle"><div class="title">source.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d2/d2e/source_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../d2/d2e/source_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/dynamic_config/source.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief dynamic_config::Source</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">utility</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="../../d4/de4/async__event__source_8hpp.html" title="The read-only side of an event channel. Events are delivered to listeners in a strict FIFO order.">userver/concurrent/async_event_source.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs.">userver/dynamic_config/snapshot.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">concurrent</span><span class="preprocessor">/</span><span class="preprocessor">async_event_source</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">dynamic_config</span><span class="preprocessor">/</span><span class="preprocessor">snapshot</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>dynamic_config {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace</span> dynamic_config {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// Owns a snapshot of a config variable. You may use operator* or operator-&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// to access the config variable.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">///</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// `VariableSnapshotPtr` in only intended to be used locally. Don&#39;t store it</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// as a class member or pass it between functions. Use `Snapshot` for that</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// purpose.</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Key&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a> final {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">   23</a></span><span class="keyword">class</span> VariableSnapshotPtr <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a>(<a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a>&amp; operator=(<a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  VariableSnapshotPtr(VariableSnapshotPtr&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  VariableSnapshotPtr&amp; operator=(VariableSnapshotPtr&amp;&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a" title="Get the type of a config variable, given its key.">VariableOfKey&lt;Key&gt;</a>&amp; operator*() <span class="keyword">const</span>&amp; { <span class="keywordflow">return</span> variable_; }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a" title="Get the type of a config variable, given its key.">VariableOfKey&lt;Key&gt;</a>&amp; operator*() &amp;&amp; { ReportMisuse(); }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">const</span> VariableOfKey&lt;Key&gt;&amp; operator*() <span class="keyword">const</span>&amp; { <span class="keywordflow">return</span> variable_; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">const</span> VariableOfKey&lt;Key&gt;&amp; operator*() &amp;&amp; { ReportMisuse(); }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a" title="Get the type of a config variable, given its key.">VariableOfKey&lt;Key&gt;</a>* operator-&gt;() <span class="keyword">const</span>&amp; { <span class="keywordflow">return</span> &amp;variable_; }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a" title="Get the type of a config variable, given its key.">VariableOfKey&lt;Key&gt;</a>* operator-&gt;() &amp;&amp; { ReportMisuse(); }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> VariableOfKey&lt;Key&gt;* operator-&gt;() <span class="keyword">const</span>&amp; { <span class="keywordflow">return</span> &amp;variable_; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">const</span> VariableOfKey&lt;Key&gt;* operator-&gt;() &amp;&amp; { ReportMisuse(); }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  [[noreturn]] <span class="keyword">static</span> <span class="keywordtype">void</span> ReportMisuse() {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">static_assert</span>(!<span class="keyword">sizeof</span>(<a class="code hl_struct" href="../../dc/d03/structdynamic__config_1_1Key.html" title="A config key is a unique identifier for a config variable.">Key</a>), <span class="stringliteral">&quot;keep the pointer before using, please&quot;</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">static_assert</span>(!<span class="keyword">sizeof</span>(Key), <span class="stringliteral">&quot;keep the pointer before using, please&quot;</span>);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a>(<a class="code hl_class" href="../../de/d96/classdynamic__config_1_1Snapshot.html" title="The storage for a snapshot of configs.">Snapshot</a>&amp;&amp; snapshot, <a class="code hl_struct" href="../../dc/d03/structdynamic__config_1_1Key.html" title="A config key is a unique identifier for a config variable.">Key</a> key)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">explicit</span> VariableSnapshotPtr(Snapshot&amp;&amp; snapshot, Key key)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      : snapshot_(std::move(snapshot)), variable_(snapshot_[key]) {}</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// for the constructor</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">Source</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">friend</span> <span class="keyword">class</span> Source;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_class" href="../../de/d96/classdynamic__config_1_1Snapshot.html" title="The storage for a snapshot of configs.">Snapshot</a> snapshot_;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="../../df/d22/snapshot_8hpp.html#ade87509cf85abd2ad5bc7b058c1c059a" title="Get the type of a config variable, given its key.">VariableOfKey&lt;Key&gt;</a>&amp; variable_;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  Snapshot snapshot_;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">const</span> VariableOfKey&lt;Key&gt;&amp; variable_;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// clang-format off</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/// @ingroup userver_clients</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">///</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">/// @brief A client for easy dynamic config fetching in components.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">///</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/// After construction, dynamic_config::Source</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/// can be copied around and passed to clients or child helper classes.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">///</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">/// Usually retrieved from components::DynamicConfig component.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">///</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">/// Typical usage:</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/// @snippet components/component_sample_test.cpp  Sample user component runtime config source</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d1/d22/classdynamic__config_1_1Source.html">   64</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">Source</a> final {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d1/d22/classdynamic__config_1_1Source.html">   64</a></span><span class="keyword">class</span> Source <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">using </span><a class="code hl_class" href="../../dc/d11/classconcurrent_1_1AsyncEventSource.html" title="The read-only side of an event channel. Events are delivered to listeners in a strict FIFO order.">EventSource</a> = <a class="code hl_class" href="../../dc/d11/classconcurrent_1_1AsyncEventSource.html" title="The read-only side of an event channel. Events are delivered to listeners in a strict FIFO order.">concurrent::AsyncEventSource&lt;const Snapshot&amp;&gt;</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">using</span> EventSource = <a class="code hl_namespace" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::AsyncEventSource&lt;<span class="keyword">const</span> Snapshot&amp;&gt;;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="comment">/// For internal use only. Obtain using components::DynamicConfig or</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">/// dynamic_config::StorageMock instead.</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d1/d22/classdynamic__config_1_1Source.html#a069119a6a03afb2773fcb1ae68a43203">   70</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d1/d22/classdynamic__config_1_1Source.html#a069119a6a03afb2773fcb1ae68a43203">Source</a>(impl::StorageData&amp; storage);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">// trivially copyable</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_function" href="../../d1/d22/classdynamic__config_1_1Source.html#a069119a6a03afb2773fcb1ae68a43203">Source</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">Source</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_class" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">Source</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">Source</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  Source(<span class="keyword">const</span> Source&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  Source&amp; operator=(<span class="keyword">const</span> Source&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_class" href="../../de/d96/classdynamic__config_1_1Snapshot.html" title="The storage for a snapshot of configs.">Snapshot</a> GetSnapshot() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  Snapshot GetSnapshot() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Key&gt;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr&lt;Key&gt;</a> GetSnapshot(<a class="code hl_struct" href="../../dc/d03/structdynamic__config_1_1Key.html" title="A config key is a unique identifier for a config variable.">Key</a> key)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/df5/classdynamic__config_1_1VariableSnapshotPtr.html">VariableSnapshotPtr</a>{GetSnapshot(), key};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  VariableSnapshotPtr&lt;Key&gt; GetSnapshot(Key key) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> VariableSnapshotPtr{GetSnapshot(), key};</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Key&gt;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  VariableOfKey&lt;Key&gt; GetCopy(Key key)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  VariableOfKey&lt;Key&gt; GetCopy(Key key) <span class="keyword">const</span> {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keyword">auto</span> snapshot = GetSnapshot();</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> snapshot[key];</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">/// Subscribes to dynamic-config updates using a member function, named</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="comment">/// `OnConfigUpdate` by convention. Also immediately invokes the function with</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="comment">/// the current config snapshot.</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class&gt;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d1/d22/classdynamic__config_1_1Source.html#ad7ed3eb0541b0252e20b7719a3dcb3bc">   93</a></span>  <a class="code hl_class" href="../../dd/de6/classconcurrent_1_1AsyncEventSubscriberScope.html" title="Manages the subscription to events from an AsyncEventSource.">concurrent::AsyncEventSubscriberScope</a> <a class="code hl_function" href="../../d1/d22/classdynamic__config_1_1Source.html#ad7ed3eb0541b0252e20b7719a3dcb3bc">UpdateAndListen</a>(</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d1/d22/classdynamic__config_1_1Source.html#ad7ed3eb0541b0252e20b7719a3dcb3bc">   93</a></span>  <a class="code hl_namespace" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::AsyncEventSubscriberScope <a class="code hl_function" href="../../d1/d22/classdynamic__config_1_1Source.html#ad7ed3eb0541b0252e20b7719a3dcb3bc">UpdateAndListen</a>(</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      Class* obj, std::string_view name,</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordtype">void</span> (Class::*func)(<span class="keyword">const</span> <a class="code hl_class" href="../../de/d96/classdynamic__config_1_1Snapshot.html" title="The storage for a snapshot of configs.">dynamic_config::Snapshot</a>&amp; config)) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordtype">void</span> (Class::*func)(<span class="keyword">const</span> dynamic_config::Snapshot&amp; config)) {</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> DoUpdateAndListen(</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_class" href="../../d8/dd3/classconcurrent_1_1FunctionId.html">concurrent::FunctionId</a>(obj), name,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        [obj, func](<span class="keyword">const</span> <a class="code hl_class" href="../../de/d96/classdynamic__config_1_1Snapshot.html" title="The storage for a snapshot of configs.">dynamic_config::Snapshot</a>&amp; config) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        concurrent::FunctionId(obj), name,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        [obj, func](<span class="keyword">const</span> dynamic_config::Snapshot&amp; config) {</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          (obj-&gt;*func)(config);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        });</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
@@ -169,8 +193,8 @@ $(function() {
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  EventSource&amp; GetEventChannel();</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <a class="code hl_class" href="../../dd/de6/classconcurrent_1_1AsyncEventSubscriberScope.html" title="Manages the subscription to events from an AsyncEventSource.">concurrent::AsyncEventSubscriberScope</a> DoUpdateAndListen(</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <a class="code hl_class" href="../../d8/dd3/classconcurrent_1_1FunctionId.html">concurrent::FunctionId</a> <span class="keywordtype">id</span>, std::string_view name,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <a class="code hl_namespace" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::AsyncEventSubscriberScope DoUpdateAndListen(</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <a class="code hl_namespace" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::FunctionId id, std::string_view name,</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      EventSource::Function&amp;&amp; func);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  impl::StorageData* storage_;</div>
@@ -184,7 +208,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:45:38 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -291,14 +315,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

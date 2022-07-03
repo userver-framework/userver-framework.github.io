@@ -88,25 +88,33 @@ $(function() {
   <div class="headertitle"><div class="title">local_stats.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">chrono</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstddef</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">clients::http</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace</span> clients::<a class="code hl_namespace" href="../../df/d66/namespaceclients_1_1http.html" title="HTTP client helpers.">http</a> {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html" title="Represents all the local timings and statistics.">LocalStats</a> final {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">using </span>duration = std::chrono::steady_clock::time_point::duration;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// Represents all the local timings and statistics</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct</span> LocalStats <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">using</span> duration = std::chrono::steady_clock::time_point::duration;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  duration time_to_connect{};</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a62f088062e018b971323d862c882ad39">   17</a></span>  duration <a class="code hl_variable" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a62f088062e018b971323d862c882ad39" title="total time">time_to_process</a>{};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="comment">/// total time</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_variable" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a62f088062e018b971323d862c882ad39" title="total time">duration</a> <a class="code hl_variable" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a62f088062e018b971323d862c882ad39" title="total time">time_to_process</a>{};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">size_t</span> open_socket_count = 0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  size_t open_socket_count = 0;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a24d468a918652aa15fb3aec12bdbbaaf">   27</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a24d468a918652aa15fb3aec12bdbbaaf">retries_count</a> = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="comment">/// returns 0 based retires count. In other words:</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="comment">///   0 - the very first request succeeded</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">///   1 - made 1 retry</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">///   2 - made 2 retries</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">///   ...</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">///</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_variable" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a24d468a918652aa15fb3aec12bdbbaaf">size_t</a> <a class="code hl_variable" href="../../dd/dd6/structclients_1_1http_1_1LocalStats.html#a24d468a918652aa15fb3aec12bdbbaaf">retries_count</a> = 0;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}  <span class="comment">// namespace clients::http</span></div>
@@ -117,7 +125,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:44:41 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -224,14 +232,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

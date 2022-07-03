@@ -1,52 +1,52 @@
 <map id="userver/utils/periodic_task.hpp" name="userver/utils/periodic_task.hpp">
-<area shape="rect" id="node1" title="Task that periodically runs a user callback." alt="" coords="1799,5,1942,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="1987,795,2048,821"/>
-<area shape="rect" id="node3" title=" " alt="" coords="795,459,874,486"/>
-<area shape="rect" id="node4" title=" " alt="" coords="2776,459,2843,486"/>
-<area shape="rect" id="node5" title=" " alt="" coords="2382,720,2437,747"/>
-<area shape="rect" id="node6" href="$db/d39/condition__variable_8hpp.html" title="std::condition_variable replacement for asynchronous tasks" alt="" coords="391,259,553,300"/>
-<area shape="rect" id="node9" href="$d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="455,720,639,747"/>
-<area shape="rect" id="node26" href="$d9/dad/single__consumer__event_8hpp.html" title="Event for a single awaiter, multiple signal coroutines." alt="" coords="1485,355,1635,397"/>
-<area shape="rect" id="node27" href="$d2/dcd/task__with__result_8hpp.html" title=" " alt="" coords="899,259,1045,300"/>
-<area shape="rect" id="node30" href="$d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="2593,459,2751,486"/>
-<area shape="rect" id="node33" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="1803,95,1938,121"/>
-<area shape="rect" id="node40" href="$d0/d67/periodic__task__control_8hpp.html" title="Periodic task control interface for testsuite." alt="" coords="2248,169,2416,211"/>
-<area shape="rect" id="node44" href="$d8/d23/tracing_2span_8hpp.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st..." alt="" coords="2421,266,2587,293"/>
-<area shape="rect" id="node50" href="$db/db5/flags_8hpp.html" title="Types that provide flags interface to enums." alt="" coords="1659,363,1810,389"/>
-<area shape="rect" id="node7" title=" " alt="" coords="1187,459,1256,486"/>
-<area shape="rect" id="node8" href="$df/de5/condition__variable__status_8hpp.html" title="std::condition_variable state extended with &quot;cancelled&quot; state" alt="" coords="245,452,408,493"/>
-<area shape="rect" id="node10" href="$d6/d54/condition__variable__any_8hpp_source.html" title=" " alt="" coords="405,348,539,404"/>
-<area shape="rect" id="node24" href="$d8/da6/mutex_8hpp.html" title="std::mutex replacement for asynchronous tasks" alt="" coords="1937,363,2109,389"/>
-<area shape="rect" id="node11" title=" " alt="" coords="2055,459,2113,486"/>
-<area shape="rect" id="node12" href="$d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="1709,452,1843,493"/>
-<area shape="rect" id="node16" href="$d8/da1/task_8hpp.html" title="Asynchronous task." alt="" coords="533,452,669,493"/>
-<area shape="rect" id="node13" href="$d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values." alt="" coords="2189,549,2371,575"/>
-<area shape="rect" id="node14" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="1779,541,1898,583"/>
-<area shape="rect" id="node15" title=" " alt="" coords="1579,638,1661,665"/>
-<area shape="rect" id="node17" title=" " alt="" coords="915,541,1082,583"/>
-<area shape="rect" id="node18" href="$d9/d27/core_2include_2userver_2engine_2exception_8hpp.html" title="Coroutine engine exceptions." alt="" coords="267,549,459,575"/>
-<area shape="rect" id="node20" href="$db/df2/cancel_8hpp.html" title="Task cancellation helpers." alt="" coords="584,631,720,672"/>
-<area shape="rect" id="node21" href="$dc/db0/context__accessor_8hpp_source.html" title=" " alt="" coords="635,541,789,583"/>
-<area shape="rect" id="node22" href="$d8/d03/task__processor__fwd_8hpp.html" title=" " alt="" coords="1303,541,1471,583"/>
-<area shape="rect" id="node23" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="1106,541,1278,583"/>
-<area shape="rect" id="node19" title=" " alt="" coords="259,638,338,665"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1868,459,1929,486"/>
-<area shape="rect" id="node28" href="$d5/df2/task__context__holder_8hpp.html" title="engine::Task implementation hiding helpers" alt="" coords="717,355,883,397"/>
-<area shape="rect" id="node32" href="$d9/d1c/wrapped__call_8hpp.html" title="std::packaged_task replacement with noncopyable types support" alt="" coords="1061,355,1187,397"/>
-<area shape="rect" id="node29" href="$d8/d72/wrapped__call__base_8hpp_source.html" title=" " alt="" coords="1000,452,1163,493"/>
-<area shape="rect" id="node31" title=" " alt="" coords="2800,549,2888,575"/>
-<area shape="rect" id="node34" title=" " alt="" coords="1650,177,1710,203"/>
-<area shape="rect" id="node35" title=" " alt="" coords="1734,177,1773,203"/>
-<area shape="rect" id="node36" title=" " alt="" coords="2139,266,2243,293"/>
-<area shape="rect" id="node37" href="$d4/dbb/engine_2async_8hpp.html" title="TaskWithResult creation helpers." alt="" coords="1039,177,1209,203"/>
-<area shape="rect" id="node38" href="$df/d72/logging_2log_8hpp.html" title="Logging helpers." alt="" coords="2185,363,2341,389"/>
-<area shape="rect" id="node39" href="$de/d25/wait__token__storage_8hpp_source.html" title=" " alt="" coords="1849,169,2013,211"/>
-<area shape="rect" id="node41" title=" " alt="" coords="2867,459,2978,486"/>
-<area shape="rect" id="node42" title=" " alt="" coords="2611,266,2669,293"/>
-<area shape="rect" id="node43" href="$da/d0e/variable_8hpp_source.html" title=" " alt="" coords="2267,259,2397,300"/>
-<area shape="rect" id="node45" href="$d6/def/log__extra_8hpp.html" title="Extra tskv fields storage." alt="" coords="2296,452,2427,493"/>
-<area shape="rect" id="node47" href="$d4/d54/scope__time_8hpp.html" title="Type to measure execution time of a scope." alt="" coords="2416,355,2563,397"/>
-<area shape="rect" id="node48" href="$dc/d90/tracer__fwd_8hpp_source.html" title=" " alt="" coords="1263,355,1409,397"/>
-<area shape="rect" id="node49" href="$d1/d54/internal__tag__fwd_8hpp.html" title=" " alt="" coords="2688,355,2827,397"/>
-<area shape="rect" id="node46" title=" " alt="" coords="1658,549,1755,575"/>
+<area shape="rect" id="node1" title="Task that periodically runs a user callback." alt="" coords="1918,5,2077,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="2100,795,2167,821"/>
+<area shape="rect" id="node3" title=" " alt="" coords="833,459,919,486"/>
+<area shape="rect" id="node4" title=" " alt="" coords="2943,459,3017,486"/>
+<area shape="rect" id="node5" title=" " alt="" coords="2520,720,2579,747"/>
+<area shape="rect" id="node6" href="$db/d39/condition__variable_8hpp.html" title="std::condition_variable replacement for asynchronous tasks" alt="" coords="407,259,590,300"/>
+<area shape="rect" id="node9" href="$d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="465,720,671,747"/>
+<area shape="rect" id="node26" href="$d9/dad/single__consumer__event_8hpp.html" title="Event for a single awaiter, multiple signal coroutines." alt="" coords="1567,355,1732,397"/>
+<area shape="rect" id="node27" href="$d2/dcd/task__with__result_8hpp.html" title=" " alt="" coords="945,259,1106,300"/>
+<area shape="rect" id="node30" href="$d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="2743,459,2918,486"/>
+<area shape="rect" id="node33" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="1924,95,2071,121"/>
+<area shape="rect" id="node40" href="$d0/d67/periodic__task__control_8hpp.html" title="Periodic task control interface for testsuite." alt="" coords="2394,169,2582,211"/>
+<area shape="rect" id="node44" href="$d8/d23/tracing_2span_8hpp.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st..." alt="" coords="2585,266,2767,293"/>
+<area shape="rect" id="node50" href="$db/db5/flags_8hpp.html" title="Types that provide flags interface to enums." alt="" coords="1757,363,1923,389"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1248,459,1325,486"/>
+<area shape="rect" id="node8" href="$df/de5/condition__variable__status_8hpp.html" title="std::condition_variable state extended with &quot;cancelled&quot; state" alt="" coords="246,452,429,493"/>
+<area shape="rect" id="node10" href="$d6/d54/condition__variable__any_8hpp_source.html" title=" " alt="" coords="423,348,575,404"/>
+<area shape="rect" id="node24" href="$d8/da6/mutex_8hpp.html" title="std::mutex replacement for asynchronous tasks" alt="" coords="2050,363,2243,389"/>
+<area shape="rect" id="node11" title=" " alt="" coords="2171,459,2235,486"/>
+<area shape="rect" id="node12" href="$d9/db5/wait__list__fwd_8hpp_source.html" title=" " alt="" coords="1803,452,1955,493"/>
+<area shape="rect" id="node16" href="$d8/da1/task_8hpp.html" title="Asynchronous task." alt="" coords="555,452,706,493"/>
+<area shape="rect" id="node13" href="$d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values." alt="" coords="2309,549,2512,575"/>
+<area shape="rect" id="node14" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="1885,541,2017,583"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1666,638,1758,665"/>
+<area shape="rect" id="node17" title=" " alt="" coords="949,541,1136,583"/>
+<area shape="rect" id="node18" href="$d9/d27/core_2include_2userver_2engine_2exception_8hpp.html" title="Coroutine engine exceptions." alt="" coords="265,549,479,575"/>
+<area shape="rect" id="node20" href="$db/df2/cancel_8hpp.html" title="Task cancellation helpers." alt="" coords="606,631,757,672"/>
+<area shape="rect" id="node21" href="$dc/db0/context__accessor_8hpp_source.html" title=" " alt="" coords="657,541,823,583"/>
+<area shape="rect" id="node22" href="$d8/d03/task__processor__fwd_8hpp.html" title=" " alt="" coords="1375,541,1558,583"/>
+<area shape="rect" id="node23" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="1161,541,1351,583"/>
+<area shape="rect" id="node19" title=" " alt="" coords="262,638,349,665"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1979,459,2045,486"/>
+<area shape="rect" id="node28" href="$d5/df2/task__context__holder_8hpp.html" title="engine::Task implementation hiding helpers" alt="" coords="751,355,937,397"/>
+<area shape="rect" id="node32" href="$d9/d1c/wrapped__call_8hpp.html" title="std::packaged_task replacement with noncopyable types support" alt="" coords="1114,355,1254,397"/>
+<area shape="rect" id="node29" href="$d8/d72/wrapped__call__base_8hpp_source.html" title=" " alt="" coords="1045,452,1224,493"/>
+<area shape="rect" id="node31" title=" " alt="" coords="2969,549,3066,575"/>
+<area shape="rect" id="node34" title=" " alt="" coords="1763,177,1829,203"/>
+<area shape="rect" id="node35" title=" " alt="" coords="1853,177,1896,203"/>
+<area shape="rect" id="node36" title=" " alt="" coords="2277,266,2392,293"/>
+<area shape="rect" id="node37" href="$d4/dbb/engine_2async_8hpp.html" title="TaskWithResult creation helpers." alt="" coords="1089,177,1279,203"/>
+<area shape="rect" id="node38" href="$df/d72/logging_2log_8hpp.html" title="Logging helpers." alt="" coords="2319,363,2494,389"/>
+<area shape="rect" id="node39" href="$de/d25/wait__token__storage_8hpp_source.html" title=" " alt="" coords="1971,169,2152,211"/>
+<area shape="rect" id="node41" title=" " alt="" coords="3042,459,3166,486"/>
+<area shape="rect" id="node42" title=" " alt="" coords="2791,266,2854,293"/>
+<area shape="rect" id="node43" href="$da/d0e/variable_8hpp_source.html" title=" " alt="" coords="2416,259,2560,300"/>
+<area shape="rect" id="node45" href="$d6/def/log__extra_8hpp.html" title="Extra tskv fields storage." alt="" coords="2429,452,2576,493"/>
+<area shape="rect" id="node47" href="$d4/d54/scope__time_8hpp.html" title="Type to measure execution time of a scope." alt="" coords="2569,355,2732,397"/>
+<area shape="rect" id="node48" href="$dc/d90/tracer__fwd_8hpp_source.html" title=" " alt="" coords="1329,355,1492,397"/>
+<area shape="rect" id="node49" href="$d1/d54/internal__tag__fwd_8hpp.html" title=" " alt="" coords="2857,355,3015,397"/>
+<area shape="rect" id="node46" title=" " alt="" coords="1750,549,1861,575"/>
 </map>

@@ -88,55 +88,56 @@ $(function() {
   <div class="headertitle"><div class="title">service_worker_impl.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">exception</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">functional</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">utility</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;grpcpp/completion_queue.h&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;grpcpp/impl/service_type.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;grpcpp/server_context.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">grpcpp</span><span class="preprocessor">/</span><span class="preprocessor">completion_queue</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">grpcpp</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">service_type</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">grpcpp</span><span class="preprocessor">/</span><span class="preprocessor">server_context</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="../../d4/dbb/engine_2async_8hpp.html" title="TaskWithResult creation helpers.">userver/engine/async.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d03/task__processor__fwd_8hpp.html">userver/engine/task/task_processor_fwd.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="../../d0/d02/in__place__span_8hpp.html" title="Avoids an extra allocation by storing tracing::Span data in-place.">userver/tracing/in_place_span.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d23/tracing_2span_8hpp.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">userver/tracing/span.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT.">userver/utils/assert.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="../../d4/db6/fast__scope__guard_8hpp.html" title="a helper class to perform actions on scope exit">userver/utils/fast_scope_guard.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;userver/utils/impl/wait_token_storage.hpp&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="../../d3/d89/lazy__prvalue_8hpp.html" title="Can be used with various emplace functions to allow in-place constructing a non-movable value using a...">userver/utils/lazy_prvalue.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">engine</span><span class="preprocessor">/</span><span class="preprocessor">async</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">engine</span><span class="preprocessor">/</span><span class="preprocessor">task</span><span class="preprocessor">/</span><span class="preprocessor">task_processor_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">tracing</span><span class="preprocessor">/</span><span class="preprocessor">in_place_span</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">tracing</span><span class="preprocessor">/</span><span class="preprocessor">span</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">assert</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">fast_scope_guard</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">wait_token_storage</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">lazy_prvalue</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;userver/ugrpc/impl/async_method_invocation.hpp&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;userver/ugrpc/impl/static_metadata.hpp&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;userver/ugrpc/impl/statistics.hpp&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;userver/ugrpc/impl/statistics_scope.hpp&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;userver/ugrpc/server/impl/async_service.hpp&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;userver/ugrpc/server/impl/call_traits.hpp&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;userver/ugrpc/server/impl/service_worker.hpp&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;<a class="code" href="../../dd/de8/server_2rpc_8hpp.html" title="Classes representing an incoming RPC.">userver/ugrpc/server/rpc.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;<a class="code" href="../../df/da9/service__base_8hpp.html" title="The type-erased base class for all gRPC service implementations.">userver/ugrpc/server/service_base.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;userver/utils/statistics/entry.hpp&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">async_method_invocation</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">static_metadata</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">statistics_scope</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">server</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">async_service</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">server</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">call_traits</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">server</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">service_worker</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">server</span><span class="preprocessor">/</span><span class="preprocessor">rpc</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">server</span><span class="preprocessor">/</span><span class="preprocessor">service_base</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">/</span><span class="preprocessor">entry</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace </span>ugrpc::server::impl {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace</span> ugrpc::<a class="code hl_namespace" href="../../db/dfe/namespaceugrpc_1_1server.html" title="Server-side utilities.">server</a>::impl {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> ReportHandlerError(<span class="keyword">const</span> std::exception&amp; ex, std::string_view call_name,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                        <a class="code hl_class" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a>&amp; span) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                        <a class="code hl_namespace" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::Span&amp; span) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> ReportNetworkError(<span class="keyword">const</span> RpcInterruptedError&amp; ex,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> ReportNetworkError(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/dd9/classugrpc_1_1server_1_1RpcInterruptedError.html" title="RPC failed without a status. This means that either the call got cancelled using TryCancel,...">RpcInterruptedError</a>&amp; ex,</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                        std::string_view call_name,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        <a class="code hl_class" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a>&amp; span) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        <a class="code hl_namespace" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::Span&amp; span) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> SetupSpan(std::optional&lt;tracing::InPlaceSpan&gt;&amp; span_holder,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> SetupSpan(std::optional&lt;<a class="code hl_namespace" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::InPlaceSpan&gt;&amp; span_holder,</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>               grpc::ServerContext&amp; context, std::string_view call_name);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/// Per-gRPC-service data</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> GrpcppService&gt;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">struct </span>ServiceData final {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">struct</span> ServiceData <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  ServiceData(<span class="keyword">const</span> ServiceSettings&amp; settings,</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>              <span class="keyword">const</span> ugrpc::impl::StaticServiceMetadata&amp; metadata)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      : settings(settings), metadata(metadata) {</div>
@@ -147,13 +148,14 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> ServiceSettings settings;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> ugrpc::impl::StaticServiceMetadata metadata;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  AsyncService&lt;GrpcppService&gt; async_service{metadata.method_count};</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  utils::impl::WaitTokenStorage wait_tokens;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::impl::WaitTokenStorage wait_tokens;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  ugrpc::impl::ServiceStatistics statistics{metadata};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_class" href="../../d9/d52/classutils_1_1statistics_1_1Entry.html">utils::statistics::Entry</a> statistics_holder;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Entry statistics_holder;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/// Per-gRPC-method data</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> GrpcppService, <span class="keyword">typename</span> CallTraits&gt;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">struct </span>MethodData final {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">struct</span> MethodData <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  ServiceData&lt;GrpcppService&gt;&amp; service_data;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">const</span> std::size_t method_id{};</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">typename</span> CallTraits::ServiceBase&amp; service;</div>
@@ -166,7 +168,7 @@ $(function() {
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> GrpcppService, <span class="keyword">typename</span> CallTraits&gt;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">class </span>CallData final {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">class</span> CallData <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">explicit</span> CallData(<span class="keyword">const</span> MethodData&lt;GrpcppService, CallTraits&gt;&amp; method_data)</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      : wait_token_(method_data.service_data.wait_tokens.GetToken()),</div>
@@ -176,7 +178,7 @@ $(function() {
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// the request for an incoming RPC must be performed synchronously</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">auto</span>&amp; queue = method_data_.service_data.settings.queue;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    method_data_.service_data.async_service.template Prepare&lt;CallTraits&gt;(</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    method_data_.service_data.async_service.<span class="keyword">template</span> Prepare&lt;CallTraits&gt;(</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        method_data_.method_id, context_, initial_request_, raw_responder_,</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        queue, queue, prepare_.GetTag());</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
@@ -196,16 +198,16 @@ $(function() {
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> ListenAsync(<span class="keyword">const</span> MethodData&lt;GrpcppService, CallTraits&gt;&amp; data) {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// The new CallData is constructed synchronously and starts keeping</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// &#39;reactor&#39; alive using its &#39;wait_token_&#39;.</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_function" href="../../dc/d3f/namespaceengine.html#ab9a61172375ceadb8d9692eebfff304b" title="Runs an asynchronous function call that will start regardless of cancellations using specified task p...">engine::CriticalAsyncNoSpan</a>(</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    engine::CriticalAsyncNoSpan(</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        data.service_data.settings.task_processor,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_class" href="../../dd/dd6/classutils_1_1LazyPrvalue.html" title="Can be used with various emplace functions to allow in-place constructing a non-movable value using a...">utils::LazyPrvalue</a>([&amp;] { return CallData(data); }))</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::LazyPrvalue([&amp;] { <span class="keywordflow">return</span> CallData(data); }))</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        .Detach();</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">using </span>InitialRequest = <span class="keyword">typename</span> CallTraits::InitialRequest;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">using </span>RawCall = <span class="keyword">typename</span> CallTraits::RawCall;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">using </span>Call = <span class="keyword">typename</span> CallTraits::Call;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">using</span> InitialRequest = <span class="keyword">typename</span> CallTraits::InitialRequest;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">using</span> RawCall = <span class="keyword">typename</span> CallTraits::RawCall;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">using</span> Call = <span class="keyword">typename</span> CallTraits::Call;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> HandleRpc() {</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keyword">const</span> <span class="keyword">auto</span> call_name = method_data_.call_name;</div>
@@ -213,7 +215,7 @@ $(function() {
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">const</span> <span class="keyword">auto</span> service_method = method_data_.service_method;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    SetupSpan(span_, context_, call_name);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="../../d0/d34/classutils_1_1FastScopeGuard.html" title="a helper class to perform actions on scope exit">utils::FastScopeGuard</a> destroy_span([&amp;]() <span class="keyword">noexcept</span> { span_.reset(); });</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastScopeGuard destroy_span([&amp;]() <span class="keyword">noexcept</span> { span_.reset(); });</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    ugrpc::impl::RpcStatisticsScope statistics_scope(method_data_.statistics);</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    Call responder(context_, call_name, raw_responder_, statistics_scope);</div>
@@ -224,7 +226,7 @@ $(function() {
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        (service.*service_method)(responder, std::move(initial_request_));</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> RpcInterruptedError&amp; ex) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="../../d0/dd9/classugrpc_1_1server_1_1RpcInterruptedError.html" title="RPC failed without a status. This means that either the call got cancelled using TryCancel,...">RpcInterruptedError</a>&amp; ex) {</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      ReportNetworkError(ex, call_name, span_-&gt;Get());</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      statistics_scope.OnNetworkError();</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; ex) {</div>
@@ -234,7 +236,7 @@ $(function() {
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// &#39;wait_token_&#39; must be the first field, because its lifetime keeps</span></div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">// ServiceData alive during server shutdown.</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keyword">const</span> utils::impl::WaitTokenStorage::Token wait_token_;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keyword">const</span> <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::impl::WaitTokenStorage::Token wait_token_;</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  MethodData&lt;GrpcppService, CallTraits&gt; method_data_;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
@@ -242,11 +244,11 @@ $(function() {
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  InitialRequest initial_request_{};</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  RawCall raw_responder_{&amp;context_};</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  AsyncMethodInvocation prepare_{};</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  std::optional&lt;tracing::InPlaceSpan&gt; span_{};</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  std::optional&lt;<a class="code hl_namespace" href="../../d2/de2/namespacetracing.html" title="Opentracing support.">tracing</a>::InPlaceSpan&gt; span_{};</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>};</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> GrpcppService&gt;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">class </span>ServiceWorkerImpl final : <span class="keyword">public</span> ServiceWorker {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">class</span> ServiceWorkerImpl <span class="keyword">final</span> : <span class="keyword">public</span> ServiceWorker {</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Service, <span class="keyword">typename</span>... ServiceMethods&gt;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  ServiceWorkerImpl(ServiceSettings&amp;&amp; settings,</div>
@@ -261,21 +263,21 @@ $(function() {
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    };</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  ~ServiceWorkerImpl()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  ~ServiceWorkerImpl() <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    service_data_.wait_tokens.WaitForAllTokens();</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  }</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  grpc::Service&amp; GetService()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> service_data_.async_service; }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  grpc::Service&amp; GetService() <span class="keyword">override</span> { <span class="keywordflow">return</span> service_data_.async_service; }</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keyword">const</span> ugrpc::impl::StaticServiceMetadata&amp; GetMetadata()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keyword">const</span> ugrpc::impl::StaticServiceMetadata&amp; GetMetadata() <span class="keyword">const</span> <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">return</span> service_data_.metadata;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  }</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordtype">void</span> Start()<span class="keyword"> override </span>{ start_(); }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordtype">void</span> Start() <span class="keyword">override</span> { start_(); }</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  ServiceData&lt;GrpcppService&gt; service_data_;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  std::function&lt;void()&gt; start_;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  std::function&lt;<span class="keywordtype">void</span>()&gt; start_;</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>};</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">// Called from &#39;MakeWorker&#39; of code-generated service base classes</span></div>
@@ -298,7 +300,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:47:38 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -405,14 +407,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

@@ -1,52 +1,52 @@
 <map id="userver/storages/mongo/component.hpp" name="userver/storages/mongo/component.hpp">
-<area shape="rect" id="node1" title="MongoDB client component." alt="" coords="1947,5,2109,47"/>
-<area shape="rect" id="node2" href="$da/d11/loggable__component__base_8hpp.html" title="Contains components::LoggableComponentBase declaration and forward declarations of components::Compon..." alt="" coords="2209,184,2354,240"/>
-<area shape="rect" id="node6" href="$d4/de4/async__event__source_8hpp.html" title="The read&#45;only side of an event channel. Events are delivered to listeners in a strict FIFO order." alt="" coords="660,377,831,419"/>
-<area shape="rect" id="node13" href="$df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs." alt="" coords="104,377,264,419"/>
-<area shape="rect" id="node23" href="$d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non&#45;mutable JSON value representation." alt="" coords="1717,288,1859,329"/>
-<area shape="rect" id="node39" href="$d2/de5/multi__mongo_8hpp_source.html" title=" " alt="" coords="2923,95,3085,136"/>
-<area shape="rect" id="node43" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="2649,191,2812,233"/>
-<area shape="rect" id="node47" href="$dd/d60/core_2include_2userver_2storages_2secdist_2component_8hpp.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="1973,95,2139,136"/>
-<area shape="rect" id="node49" href="$d4/ddc/entry_8hpp_source.html" title=" " alt="" coords="485,377,635,419"/>
-<area shape="rect" id="node3" href="$d7/d47/component__fwd_8hpp.html" title="Forward declarations for components::ComponentContext and components::ComponentConfig; function compo..." alt="" coords="2671,377,2814,419"/>
-<area shape="rect" id="node5" href="$d2/d61/component__base_8hpp_source.html" title=" " alt="" coords="2200,288,2379,329"/>
-<area shape="rect" id="node4" title=" " alt="" coords="2555,474,2610,501"/>
-<area shape="rect" id="node7" title=" " alt="" coords="946,563,1011,590"/>
-<area shape="rect" id="node8" title=" " alt="" coords="1007,474,1086,501"/>
-<area shape="rect" id="node9" title=" " alt="" coords="1111,474,1199,501"/>
-<area shape="rect" id="node10" title=" " alt="" coords="483,563,551,590"/>
-<area shape="rect" id="node11" title=" " alt="" coords="765,563,819,590"/>
-<area shape="rect" id="node12" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="811,467,983,508"/>
-<area shape="rect" id="node14" title=" " alt="" coords="1848,645,1931,672"/>
-<area shape="rect" id="node15" href="$d8/d20/impl_2snapshot_8hpp_source.html" title=" " alt="" coords="165,467,325,508"/>
-<area shape="rect" id="node21" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="401,467,519,508"/>
-<area shape="rect" id="node16" title=" " alt="" coords="576,563,619,590"/>
-<area shape="rect" id="node17" title=" " alt="" coords="278,563,357,590"/>
-<area shape="rect" id="node18" title=" " alt="" coords="843,563,922,590"/>
-<area shape="rect" id="node19" title=" " alt="" coords="913,645,972,672"/>
-<area shape="rect" id="node20" href="$d0/dfa/dynamic__config_2fwd_8hpp.html" title="Forward declarations of dynamic_config classes." alt="" coords="93,556,253,597"/>
-<area shape="rect" id="node22" title=" " alt="" coords="643,563,690,590"/>
-<area shape="rect" id="node24" href="$dd/d14/items_8hpp_source.html" title=" " alt="" coords="1997,377,2163,419"/>
-<area shape="rect" id="node26" href="$d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection." alt="" coords="1651,467,1818,508"/>
-<area shape="rect" id="node31" href="$d2/d56/shared_2include_2userver_2formats_2json_2exception_8hpp.html" title="Exception classes for JSON module." alt="" coords="1556,377,1697,419"/>
-<area shape="rect" id="node33" href="$dc/d86/shared_2include_2userver_2formats_2json_2impl_2types_8hpp_source.html" title=" " alt="" coords="2188,377,2329,419"/>
-<area shape="rect" id="node35" href="$d7/db4/shared_2include_2userver_2formats_2json_2iterator_8hpp.html" title="Iterator for formats::json::Value" alt="" coords="2353,377,2495,419"/>
-<area shape="rect" id="node36" href="$d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html" title="Parsers and serializers to/from string and stream." alt="" coords="956,377,1097,419"/>
-<area shape="rect" id="node37" href="$d3/d3f/string__builder__fwd_8hpp.html" title="Forward declaration of formats::json::StringBuilder." alt="" coords="1325,377,1481,419"/>
-<area shape="rect" id="node38" href="$d1/d66/shared_2include_2userver_2formats_2parse_2common_8hpp.html" title="Parsers and converters for std::chrono::seconds, std::chrono::system_clock::time_point and integral t..." alt="" coords="1772,377,1921,419"/>
-<area shape="rect" id="node25" title=" " alt="" coords="2123,645,2186,672"/>
-<area shape="rect" id="node27" href="$d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="1539,556,1688,597"/>
-<area shape="rect" id="node28" href="$d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="1121,556,1287,597"/>
-<area shape="rect" id="node29" href="$d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="1814,563,1965,590"/>
-<area shape="rect" id="node30" title=" " alt="" coords="1471,645,1531,672"/>
-<area shape="rect" id="node32" title=" " alt="" coords="1375,474,1454,501"/>
-<area shape="rect" id="node34" title=" " alt="" coords="3156,474,3225,501"/>
-<area shape="rect" id="node40" title=" " alt="" coords="3362,199,3473,225"/>
-<area shape="rect" id="node41" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="2454,295,2589,322"/>
-<area shape="rect" id="node42" href="$dd/ddf/swappingsmart_8hpp_source.html" title=" " alt="" coords="3076,199,3287,225"/>
-<area shape="rect" id="node46" href="$d8/d6c/pool__config_8hpp.html" title="MongoDB connection pool configuration." alt="" coords="2821,288,2984,329"/>
-<area shape="rect" id="node44" href="$d9/dfe/resolver__fwd_8hpp_source.html" title=" " alt="" coords="2665,288,2797,329"/>
-<area shape="rect" id="node45" href="$d4/db6/collection_8hpp.html" title="MongoDB collection handle, the main way to operate with MongoDB." alt="" coords="2991,377,3153,419"/>
-<area shape="rect" id="node48" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="1077,191,1243,233"/>
-<area shape="rect" id="node50" href="$dc/d7d/json__fwd_8hpp.html" title="Forward declarations of formats::json types, formats::parse::To and formats::serialize::To." alt="" coords="645,467,787,508"/>
+<area shape="rect" id="node1" title="MongoDB client component." alt="" coords="1891,5,2071,47"/>
+<area shape="rect" id="node2" href="$da/d11/loggable__component__base_8hpp.html" title="Contains components::LoggableComponentBase declaration and forward declarations of components::Compon..." alt="" coords="2363,184,2525,240"/>
+<area shape="rect" id="node6" href="$d4/de4/async__event__source_8hpp.html" title="The read&#45;only side of an event channel. Events are delivered to listeners in a strict FIFO order." alt="" coords="717,377,904,419"/>
+<area shape="rect" id="node13" href="$df/d22/snapshot_8hpp.html" title="The storage for a snapshot of configs." alt="" coords="69,377,246,419"/>
+<area shape="rect" id="node23" href="$d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non&#45;mutable JSON value representation." alt="" coords="1821,288,1979,329"/>
+<area shape="rect" id="node39" href="$d2/de5/multi__mongo_8hpp_source.html" title=" " alt="" coords="3121,95,3301,136"/>
+<area shape="rect" id="node43" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="2830,191,3010,233"/>
+<area shape="rect" id="node47" href="$dd/d60/core_2include_2userver_2storages_2secdist_2component_8hpp.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="2120,95,2301,136"/>
+<area shape="rect" id="node49" href="$d4/ddc/entry_8hpp_source.html" title=" " alt="" coords="526,377,693,419"/>
+<area shape="rect" id="node3" href="$d7/d47/component__fwd_8hpp.html" title="Forward declarations for components::ComponentContext and components::ComponentConfig; function compo..." alt="" coords="2861,377,3019,419"/>
+<area shape="rect" id="node5" href="$d2/d61/component__base_8hpp_source.html" title=" " alt="" coords="2353,288,2551,329"/>
+<area shape="rect" id="node4" title=" " alt="" coords="2744,474,2803,501"/>
+<area shape="rect" id="node7" title=" " alt="" coords="999,563,1070,590"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1079,474,1166,501"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1190,474,1287,501"/>
+<area shape="rect" id="node10" title=" " alt="" coords="509,563,585,590"/>
+<area shape="rect" id="node11" title=" " alt="" coords="805,563,865,590"/>
+<area shape="rect" id="node12" href="$de/d1f/clang__format__workarounds_8hpp_source.html" title=" " alt="" coords="865,467,1055,508"/>
+<area shape="rect" id="node14" title=" " alt="" coords="1974,645,2066,672"/>
+<area shape="rect" id="node15" href="$d8/d20/impl_2snapshot_8hpp_source.html" title=" " alt="" coords="171,467,349,508"/>
+<area shape="rect" id="node21" href="$d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation." alt="" coords="425,467,557,508"/>
+<area shape="rect" id="node16" title=" " alt="" coords="609,563,655,590"/>
+<area shape="rect" id="node17" title=" " alt="" coords="295,563,382,590"/>
+<area shape="rect" id="node18" title=" " alt="" coords="889,563,975,590"/>
+<area shape="rect" id="node19" title=" " alt="" coords="975,645,1038,672"/>
+<area shape="rect" id="node20" href="$d0/dfa/dynamic__config_2fwd_8hpp.html" title="Forward declarations of dynamic_config classes." alt="" coords="94,556,271,597"/>
+<area shape="rect" id="node22" title=" " alt="" coords="679,563,729,590"/>
+<area shape="rect" id="node24" href="$dd/d14/items_8hpp_source.html" title=" " alt="" coords="2136,377,2323,419"/>
+<area shape="rect" id="node26" href="$d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection." alt="" coords="1763,467,1949,508"/>
+<area shape="rect" id="node31" href="$d2/d56/shared_2include_2userver_2formats_2json_2exception_8hpp.html" title="Exception classes for JSON module." alt="" coords="1661,377,1819,419"/>
+<area shape="rect" id="node33" href="$dc/d86/shared_2include_2userver_2formats_2json_2impl_2types_8hpp_source.html" title=" " alt="" coords="2347,377,2504,419"/>
+<area shape="rect" id="node35" href="$d7/db4/shared_2include_2userver_2formats_2json_2iterator_8hpp.html" title="Iterator for formats::json::Value" alt="" coords="2528,377,2685,419"/>
+<area shape="rect" id="node36" href="$d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html" title="Parsers and serializers to/from string and stream." alt="" coords="1029,377,1187,419"/>
+<area shape="rect" id="node37" href="$d3/d3f/string__builder__fwd_8hpp.html" title="Forward declaration of formats::json::StringBuilder." alt="" coords="1413,377,1587,419"/>
+<area shape="rect" id="node38" href="$d1/d66/shared_2include_2userver_2formats_2parse_2common_8hpp.html" title="Parsers and converters for std::chrono::seconds, std::chrono::system_clock::time_point and integral t..." alt="" coords="1894,377,2061,419"/>
+<area shape="rect" id="node25" title=" " alt="" coords="2259,645,2330,672"/>
+<area shape="rect" id="node27" href="$d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="1642,556,1809,597"/>
+<area shape="rect" id="node28" href="$d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="1187,556,1373,597"/>
+<area shape="rect" id="node29" href="$d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="1935,563,2105,590"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1572,645,1636,672"/>
+<area shape="rect" id="node32" title=" " alt="" coords="1465,474,1551,501"/>
+<area shape="rect" id="node34" title=" " alt="" coords="3375,474,3452,501"/>
+<area shape="rect" id="node40" title=" " alt="" coords="3593,199,3717,225"/>
+<area shape="rect" id="node41" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="2625,295,2772,322"/>
+<area shape="rect" id="node42" href="$dd/ddf/swappingsmart_8hpp_source.html" title=" " alt="" coords="3283,199,3517,225"/>
+<area shape="rect" id="node46" href="$d8/d6c/pool__config_8hpp.html" title="MongoDB connection pool configuration." alt="" coords="3017,288,3197,329"/>
+<area shape="rect" id="node44" href="$d9/dfe/resolver__fwd_8hpp_source.html" title=" " alt="" coords="2847,288,2993,329"/>
+<area shape="rect" id="node45" href="$d4/db6/collection_8hpp.html" title="MongoDB collection handle, the main way to operate with MongoDB." alt="" coords="3195,377,3375,419"/>
+<area shape="rect" id="node48" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="1159,191,1340,233"/>
+<area shape="rect" id="node50" href="$dc/d7d/json__fwd_8hpp.html" title="Forward declarations of formats::json types, formats::parse::To and formats::serialize::To." alt="" coords="683,467,840,508"/>
 </map>

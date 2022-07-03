@@ -88,22 +88,22 @@ $(function() {
   <div class="headertitle"><div class="title">statistics.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstddef</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="../../db/d91/relaxed__counter_8hpp.html" title="Atomic counter of type T with relaxed memory ordering.">userver/utils/statistics/relaxed_counter.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">/</span><span class="preprocessor">relaxed_counter</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../da/d4a/namespacedist__lock.html" title="Distributed locking.">dist_lock</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../da/d4a/namespacedist__lock.html" title="Distributed locking.">dist_lock</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d2/de5/structdist__lock_1_1Statistics.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d2/de5/structdist__lock_1_1Statistics.html">Statistics</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_class" href="../../d9/d48/classutils_1_1statistics_1_1RelaxedCounter.html">utils::statistics::RelaxedCounter&lt;size_t&gt;</a> lock_successes{0};</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <a class="code hl_class" href="../../d9/d48/classutils_1_1statistics_1_1RelaxedCounter.html">utils::statistics::RelaxedCounter&lt;size_t&gt;</a> lock_failures{0};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_class" href="../../d9/d48/classutils_1_1statistics_1_1RelaxedCounter.html">utils::statistics::RelaxedCounter&lt;size_t&gt;</a> watchdog_triggers{0};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_class" href="../../d9/d48/classutils_1_1statistics_1_1RelaxedCounter.html">utils::statistics::RelaxedCounter&lt;size_t&gt;</a> brain_splits{0};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="../../d9/d48/classutils_1_1statistics_1_1RelaxedCounter.html">utils::statistics::RelaxedCounter&lt;size_t&gt;</a> task_failures{0};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct</span> <a class="code hl_struct" href="../../d2/de5/structdist__lock_1_1Statistics.html">Statistics</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  utils::statistics::RelaxedCounter&lt;size_t&gt; lock_successes{0};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  utils::statistics::RelaxedCounter&lt;size_t&gt; lock_failures{0};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  utils::statistics::RelaxedCounter&lt;size_t&gt; watchdog_triggers{0};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  utils::statistics::RelaxedCounter&lt;size_t&gt; brain_splits{0};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  utils::statistics::RelaxedCounter&lt;size_t&gt; task_failures{0};</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}  <span class="comment">// namespace dist_lock</span></div>
@@ -114,7 +114,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:45:19 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -221,14 +221,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

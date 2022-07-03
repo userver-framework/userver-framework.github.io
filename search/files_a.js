@@ -5,7 +5,7 @@ var searchData=
   ['level_2ehpp_2',['level.hpp',['../d5/d37/level_8hpp.html',1,'']]],
   ['level_5fserialization_2ehpp_3',['level_serialization.hpp',['../d2/db3/level__serialization_8hpp.html',1,'']]],
   ['local_5fvariable_2ehpp_4',['local_variable.hpp',['../dd/d05/local__variable_8hpp.html',1,'']]],
-  ['log_2ehpp_5',['log.hpp',['../df/d72/logging_2log_8hpp.html',1,'(Global Namespace)'],['../da/dce/utils_2log_8hpp.html',1,'(Global Namespace)']]],
+  ['log_2ehpp_5',['log.hpp',['../da/dce/utils_2log_8hpp.html',1,'(Global Namespace)'],['../df/d72/logging_2log_8hpp.html',1,'(Global Namespace)']]],
   ['log_5fextra_2ehpp_6',['log_extra.hpp',['../d6/def/log__extra_8hpp.html',1,'']]],
   ['log_5ffilepath_2ehpp_7',['log_filepath.hpp',['../d4/dc3/log__filepath_8hpp.html',1,'']]],
   ['log_5fhelper_2ehpp_8',['log_helper.hpp',['../db/d94/log__helper_8hpp.html',1,'']]],

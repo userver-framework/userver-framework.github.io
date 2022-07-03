@@ -88,32 +88,32 @@ $(function() {
   <div class="headertitle"><div class="title">thread_pools.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>engine::ev {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>ThreadPool;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace</span> engine::<a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">ev</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class</span> ThreadPool;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}  <span class="comment">// namespace engine::ev</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>redis {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> redis {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d1/d86/classredis_1_1ThreadPools.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class</span> <a class="code hl_class" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_class" href="../../d1/d86/classredis_1_1ThreadPools.html">ThreadPools</a>(<span class="keywordtype">size_t</span> sentinel_thread_pool_size, <span class="keywordtype">size_t</span> redis_thread_pool_size);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="../../d1/d86/classredis_1_1ThreadPools.html">~ThreadPools</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  ThreadPools(size_t sentinel_thread_pool_size, size_t redis_thread_pool_size);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  ~ThreadPools();</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  engine::ev::ThreadPool&amp; GetSentinelThreadPool() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> std::shared_ptr&lt;engine::ev::ThreadPool&gt;&amp; GetRedisThreadPool() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  engine::<a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">ev</a>::ThreadPool&amp; GetSentinelThreadPool() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> std::shared_ptr&lt;engine::<a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">ev</a>::ThreadPool&gt;&amp; GetRedisThreadPool() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="comment">// Sentinel and Redis should use separate thread pools to avoid deadlocks.</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">// Sentinel waits synchronously while Redis starts and stops watchers in</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">// Connect()/Disconnect().</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  std::unique_ptr&lt;engine::ev::ThreadPool&gt; sentinel_thread_pool_;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::shared_ptr&lt;engine::ev::ThreadPool&gt; redis_thread_pool_;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::shared_ptr&lt;engine::<a class="code hl_namespace" href="../../dc/d3f/namespaceengine.html" title="Asynchronous engine primitives.">ev</a>::ThreadPool&gt; redis_thread_pool_;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}  <span class="comment">// namespace redis</span></div>
@@ -124,7 +124,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:48:56 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -231,14 +231,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

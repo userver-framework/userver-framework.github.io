@@ -1,43 +1,43 @@
 <map id="userver/engine/single_use_event.hpp" name="userver/engine/single_use_event.hpp">
-<area shape="rect" id="node1" title="A single&#45;producer, single&#45;consumer event." alt="" coords="1581,5,1727,47"/>
-<area shape="rect" id="node2" href="$d4/d6d/async__method__invocation_8hpp_source.html" title=" " alt="" coords="465,95,667,136"/>
-<area shape="rect" id="node13" href="$d2/d90/queue__runner_8hpp_source.html" title=" " alt="" coords="1589,95,1719,136"/>
-<area shape="rect" id="node14" href="$de/d25/wait__token__storage_8hpp_source.html" title=" " alt="" coords="2661,95,2825,136"/>
-<area shape="rect" id="node3" href="$d7/d8b/client_2impl_2async__methods_8hpp_source.html" title=" " alt="" coords="550,184,721,225"/>
-<area shape="rect" id="node6" href="$d7/d68/server_2impl_2async__methods_8hpp_source.html" title=" " alt="" coords="291,184,462,225"/>
-<area shape="rect" id="node10" href="$db/d93/service__worker__impl_8hpp_source.html" title=" " alt="" coords="156,556,299,612"/>
-<area shape="rect" id="node4" href="$db/df8/client_2rpc_8hpp.html" title="Classes representing an outgoing RPC." alt="" coords="575,273,711,315"/>
-<area shape="rect" id="node5" href="$d8/d5f/client_2impl_2codegen__declarations_8hpp_source.html" title=" " alt="" coords="545,363,750,404"/>
-<area shape="rect" id="node7" href="$dd/de8/server_2rpc_8hpp.html" title="Classes representing an incoming RPC." alt="" coords="227,273,369,315"/>
-<area shape="rect" id="node8" href="$d8/d55/call__traits_8hpp_source.html" title=" " alt="" coords="38,363,179,404"/>
-<area shape="rect" id="node12" href="$df/d2b/server_2impl_2codegen__declarations_8hpp_source.html" title=" " alt="" coords="265,363,470,404"/>
-<area shape="rect" id="node9" href="$d4/dad/async__service_8hpp_source.html" title=" " alt="" coords="27,459,190,501"/>
-<area shape="rect" id="node11" href="$d1/dac/server_2impl_2codegen__definitions_8hpp_source.html" title=" " alt="" coords="130,660,325,701"/>
-<area shape="rect" id="node15" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="2667,273,2820,315"/>
-<area shape="rect" id="node19" href="$d8/de1/expirable__lru__cache_8hpp.html" title="Class for expirable LRU cache. Use cache::LruMap for not expirable LRU Cache." alt="" coords="3237,184,3397,225"/>
-<area shape="rect" id="node21" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="1933,191,2068,218"/>
-<area shape="rect" id="node16" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="2667,363,2803,404"/>
-<area shape="rect" id="node17" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL." alt="" coords="2827,363,2974,404"/>
-<area shape="rect" id="node18" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="2998,363,3161,404"/>
-<area shape="rect" id="node20" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="3236,273,3400,315"/>
-<area shape="rect" id="node22" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="2107,363,2241,404"/>
-<area shape="rect" id="node24" href="$de/d04/environment__variables_8hpp_source.html" title=" " alt="" coords="2233,273,2414,315"/>
-<area shape="rect" id="node27" href="$d1/d0d/rcu__map_8hpp.html" title="Map&#45;like structure allowing RCU keyset updates." alt="" coords="2464,281,2631,307"/>
-<area shape="rect" id="node29" href="$d2/de5/multi__mongo_8hpp_source.html" title=" " alt="" coords="774,363,937,404"/>
-<area shape="rect" id="node31" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="958,273,1121,315"/>
-<area shape="rect" id="node33" href="$d9/d02/postgresql_2include_2userver_2storages_2postgres_2dist__lock__strategy_8hpp.html" title="Postgres distributed locking strategy." alt="" coords="1250,273,1423,315"/>
-<area shape="rect" id="node35" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="1486,273,1651,315"/>
-<area shape="rect" id="node38" href="$d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon..." alt="" coords="1707,281,1905,307"/>
-<area shape="rect" id="node39" href="$dd/d64/periodic__task_8hpp.html" title="Task that periodically runs a user callback." alt="" coords="1929,273,2072,315"/>
-<area shape="rect" id="node23" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="2107,459,2241,501"/>
-<area shape="rect" id="node25" href="$d9/d32/engine_2subprocess_2process__starter_8hpp.html" title="Creates a new OS subprocess and executes a command in it." alt="" coords="2265,363,2443,404"/>
-<area shape="rect" id="node26" href="$d1/d12/components_2process__starter_8hpp.html" title="Component for getting the engine::subprocess::ProcessStarter." alt="" coords="2284,459,2424,501"/>
-<area shape="rect" id="node28" href="$db/dea/destination__statistics_8hpp_source.html" title=" " alt="" coords="2468,363,2643,404"/>
-<area shape="rect" id="node30" href="$d1/dd7/mongo_2include_2userver_2storages_2mongo_2component_8hpp.html" title="MongoDB client component." alt="" coords="893,459,1055,501"/>
-<area shape="rect" id="node32" href="$d2/d86/mongo_8hpp.html" title="Include&#45;all header for MongoDB client." alt="" coords="1011,370,1198,397"/>
-<area shape="rect" id="node34" href="$dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="1223,363,1432,404"/>
-<area shape="rect" id="node36" href="$dd/d60/core_2include_2userver_2storages_2secdist_2component_8hpp.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="1457,363,1622,404"/>
-<area shape="rect" id="node37" href="$da/db3/auth__checker__settings__component_8hpp.html" title="Component that loads auth configuration settings from a components::Secdist componenet if the latter ..." alt="" coords="1446,452,1633,508"/>
-<area shape="rect" id="node40" href="$dc/d2e/core_2include_2userver_2logging_2component_8hpp.html" title="Logging component" alt="" coords="1646,370,1849,397"/>
-<area shape="rect" id="node41" href="$db/d5f/system__statistics__collector_8hpp.html" title="Component for system resource usage statistics collection." alt="" coords="1873,363,2083,404"/>
+<area shape="rect" id="node1" title="A single&#45;producer, single&#45;consumer event." alt="" coords="1715,5,1878,47"/>
+<area shape="rect" id="node2" href="$d4/d6d/async__method__invocation_8hpp_source.html" title=" " alt="" coords="497,95,721,136"/>
+<area shape="rect" id="node13" href="$d2/d90/queue__runner_8hpp_source.html" title=" " alt="" coords="1725,95,1869,136"/>
+<area shape="rect" id="node14" href="$de/d25/wait__token__storage_8hpp_source.html" title=" " alt="" coords="2897,95,3078,136"/>
+<area shape="rect" id="node3" href="$d7/d8b/client_2impl_2async__methods_8hpp_source.html" title=" " alt="" coords="590,184,779,225"/>
+<area shape="rect" id="node6" href="$d7/d68/server_2impl_2async__methods_8hpp_source.html" title=" " alt="" coords="311,184,501,225"/>
+<area shape="rect" id="node10" href="$db/d93/service__worker__impl_8hpp_source.html" title=" " alt="" coords="165,556,322,612"/>
+<area shape="rect" id="node4" href="$db/df8/client_2rpc_8hpp.html" title="Classes representing an outgoing RPC." alt="" coords="619,273,769,315"/>
+<area shape="rect" id="node5" href="$d8/d5f/client_2impl_2codegen__declarations_8hpp_source.html" title=" " alt="" coords="585,363,814,404"/>
+<area shape="rect" id="node7" href="$dd/de8/server_2rpc_8hpp.html" title="Classes representing an incoming RPC." alt="" coords="241,273,397,315"/>
+<area shape="rect" id="node8" href="$d8/d55/call__traits_8hpp_source.html" title=" " alt="" coords="39,363,195,404"/>
+<area shape="rect" id="node12" href="$df/d2b/server_2impl_2codegen__declarations_8hpp_source.html" title=" " alt="" coords="281,363,510,404"/>
+<area shape="rect" id="node9" href="$d4/dad/async__service_8hpp_source.html" title=" " alt="" coords="27,459,206,501"/>
+<area shape="rect" id="node11" href="$d1/dac/server_2impl_2codegen__definitions_8hpp_source.html" title=" " alt="" coords="135,660,352,701"/>
+<area shape="rect" id="node15" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="2903,273,3071,315"/>
+<area shape="rect" id="node19" href="$d8/de1/expirable__lru__cache_8hpp.html" title="Class for expirable LRU cache. Use cache::LruMap for not expirable LRU Cache." alt="" coords="3515,184,3694,225"/>
+<area shape="rect" id="node21" href="$d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer." alt="" coords="2106,191,2253,218"/>
+<area shape="rect" id="node16" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="2904,363,3052,404"/>
+<area shape="rect" id="node17" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL." alt="" coords="3076,363,3235,404"/>
+<area shape="rect" id="node18" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="3259,363,3441,404"/>
+<area shape="rect" id="node20" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="3515,273,3694,315"/>
+<area shape="rect" id="node22" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="2295,363,2443,404"/>
+<area shape="rect" id="node24" href="$de/d04/environment__variables_8hpp_source.html" title=" " alt="" coords="2429,273,2633,315"/>
+<area shape="rect" id="node27" href="$d1/d0d/rcu__map_8hpp.html" title="Map&#45;like structure allowing RCU keyset updates." alt="" coords="2683,281,2865,307"/>
+<area shape="rect" id="node29" href="$d2/de5/multi__mongo_8hpp_source.html" title=" " alt="" coords="839,363,1019,404"/>
+<area shape="rect" id="node31" href="$d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html" title="MongoDB client pool." alt="" coords="1037,273,1217,315"/>
+<area shape="rect" id="node33" href="$d9/d02/postgresql_2include_2userver_2storages_2postgres_2dist__lock__strategy_8hpp.html" title="Postgres distributed locking strategy." alt="" coords="1356,273,1547,315"/>
+<area shape="rect" id="node35" href="$dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist." alt="" coords="1614,273,1795,315"/>
+<area shape="rect" id="node38" href="$d9/d1d/testpoint_8hpp.html" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon..." alt="" coords="1853,281,2076,307"/>
+<area shape="rect" id="node39" href="$dd/d64/periodic__task_8hpp.html" title="Task that periodically runs a user callback." alt="" coords="2100,273,2259,315"/>
+<area shape="rect" id="node23" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="2295,459,2443,501"/>
+<area shape="rect" id="node25" href="$d9/d32/engine_2subprocess_2process__starter_8hpp.html" title="Creates a new OS subprocess and executes a command in it." alt="" coords="2467,363,2663,404"/>
+<area shape="rect" id="node26" href="$d1/d12/components_2process__starter_8hpp.html" title="Component for getting the engine::subprocess::ProcessStarter." alt="" coords="2487,459,2642,501"/>
+<area shape="rect" id="node28" href="$db/dea/destination__statistics_8hpp_source.html" title=" " alt="" coords="2687,363,2880,404"/>
+<area shape="rect" id="node30" href="$d1/dd7/mongo_2include_2userver_2storages_2mongo_2component_8hpp.html" title="MongoDB client component." alt="" coords="967,459,1147,501"/>
+<area shape="rect" id="node32" href="$d2/d86/mongo_8hpp.html" title="Include&#45;all header for MongoDB client." alt="" coords="1094,370,1302,397"/>
+<area shape="rect" id="node34" href="$dc/d89/postgresql_2include_2userver_2storages_2postgres_2dist__lock__component__base_8hpp.html" title="Base class for postgres&#45;based distlock worker components." alt="" coords="1327,363,1557,404"/>
+<area shape="rect" id="node36" href="$dd/d60/core_2include_2userver_2storages_2secdist_2component_8hpp.html" title="Component that stores security related data (keys, passwords, ...)." alt="" coords="1582,363,1763,404"/>
+<area shape="rect" id="node37" href="$da/db3/auth__checker__settings__component_8hpp.html" title="Component that loads auth configuration settings from a components::Secdist componenet if the latter ..." alt="" coords="1571,452,1775,508"/>
+<area shape="rect" id="node40" href="$dc/d2e/core_2include_2userver_2logging_2component_8hpp.html" title="Logging component" alt="" coords="1788,370,2016,397"/>
+<area shape="rect" id="node41" href="$db/d5f/system__statistics__collector_8hpp.html" title="Component for system resource usage statistics collection." alt="" coords="2040,363,2271,404"/>
 </map>

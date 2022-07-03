@@ -109,20 +109,20 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d5/d6b/write__to__stream_8hpp__incl.png" border="0" usemap="#auserver_2formats_2serialize_2write__to__stream_8hpp" alt=""/></div>
 <map name="auserver_2formats_2serialize_2write__to__stream_8hpp" id="auserver_2formats_2serialize_2write__to__stream_8hpp">
-<area shape="rect" title="Common WriteToStream functions for SAX serializers." alt="" coords="171,5,337,47"/>
-<area shape="rect" title=" " alt="" coords="5,102,52,129"/>
-<area shape="rect" title=" " alt="" coords="127,281,194,307"/>
-<area shape="rect" title=" " alt="" coords="370,363,453,389"/>
-<area shape="rect" title=" " alt="" coords="199,102,309,129"/>
-<area shape="rect" title=" " alt="" coords="334,102,395,129"/>
-<area shape="rect" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="372,191,523,218"/>
-<area shape="rect" href="../../d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection." alt="" coords="600,95,767,136"/>
-<area shape="rect" title=" " alt="" coords="499,281,559,307"/>
-<area shape="rect" title=" " alt="" coords="583,281,645,307"/>
-<area shape="rect" title=" " alt="" coords="218,281,277,307"/>
-<area shape="rect" href="../../d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="301,273,423,315"/>
-<area shape="rect" href="../../d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="721,184,870,225"/>
-<area shape="rect" href="../../d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="894,184,1059,225"/>
+<area shape="rect" title="Common WriteToStream functions for SAX serializers." alt="" coords="175,5,361,47"/>
+<area shape="rect" title=" " alt="" coords="5,102,56,129"/>
+<area shape="rect" title=" " alt="" coords="131,281,205,307"/>
+<area shape="rect" title=" " alt="" coords="390,363,482,389"/>
+<area shape="rect" title=" " alt="" coords="206,102,330,129"/>
+<area shape="rect" title=" " alt="" coords="354,102,422,129"/>
+<area shape="rect" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="390,191,559,218"/>
+<area shape="rect" href="../../d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection." alt="" coords="631,95,817,136"/>
+<area shape="rect" title=" " alt="" coords="527,281,591,307"/>
+<area shape="rect" title=" " alt="" coords="615,281,686,307"/>
+<area shape="rect" title=" " alt="" coords="230,281,293,307"/>
+<area shape="rect" href="../../d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="317,273,451,315"/>
+<area shape="rect" href="../../d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers." alt="" coords="762,184,929,225"/>
+<area shape="rect" href="../../d9/df6/shared_2include_2userver_2formats_2serialize_2to_8hpp.html" title="Helper for serializers." alt="" coords="953,184,1138,225"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -132,9 +132,9 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d3/db7/write__to__stream_8hpp__dep__incl.png" border="0" usemap="#auserver_2formats_2serialize_2write__to__stream_8hppdep" alt=""/></div>
 <map name="auserver_2formats_2serialize_2write__to__stream_8hppdep" id="auserver_2formats_2serialize_2write__to__stream_8hppdep">
-<area shape="rect" title="Common WriteToStream functions for SAX serializers." alt="" coords="24,5,189,47"/>
-<area shape="rect" href="../../d6/da3/string__builder_8hpp.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo..." alt="" coords="36,95,177,136"/>
-<area shape="rect" href="../../df/db4/json__helpers_8hpp.html" title="Convenience functions to load and dump as JSON in classes derived from components::CachingComponentBa..." alt="" coords="5,184,208,211"/>
+<area shape="rect" title="Common WriteToStream functions for SAX serializers." alt="" coords="26,5,211,47"/>
+<area shape="rect" href="../../d6/da3/string__builder_8hpp.html" title="SAX like builder of JSON string. Use with extreme caution and only in performance critical part of yo..." alt="" coords="40,95,197,136"/>
+<area shape="rect" href="../../df/db4/json__helpers_8hpp.html" title="Convenience functions to load and dump as JSON in classes derived from components::CachingComponentBa..." alt="" coords="5,184,232,211"/>
 </map>
 </div>
 </div>
@@ -177,7 +177,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:50:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -284,14 +284,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

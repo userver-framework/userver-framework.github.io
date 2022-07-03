@@ -4,7 +4,7 @@ var searchData=
   ['range_5ftypes_2ehpp_1',['range_types.hpp',['../d5/d60/range__types_8hpp.html',1,'']]],
   ['rcu_2ehpp_2',['rcu.hpp',['../d7/d1b/rcu_8hpp.html',1,'']]],
   ['rcu_5fmap_2ehpp_3',['rcu_map.hpp',['../d1/d0d/rcu__map_8hpp.html',1,'']]],
-  ['read_2ehpp_4',['read.hpp',['../db/dee/core_2include_2userver_2fs_2read_8hpp.html',1,'(Global Namespace)'],['../d0/dfb/shared_2include_2userver_2fs_2blocking_2read_8hpp.html',1,'(Global Namespace)']]],
+  ['read_2ehpp_4',['read.hpp',['../d0/dfb/shared_2include_2userver_2fs_2blocking_2read_8hpp.html',1,'(Global Namespace)'],['../db/dee/core_2include_2userver_2fs_2read_8hpp.html',1,'(Global Namespace)']]],
   ['read_5fgroups_2ehpp_5',['read_groups.hpp',['../da/d5c/read__groups_8hpp.html',1,'']]],
   ['regex_2ehpp_6',['regex.hpp',['../d6/d6f/regex_8hpp.html',1,'']]],
   ['relaxed_5fcounter_2ehpp_7',['relaxed_counter.hpp',['../db/d91/relaxed__counter_8hpp.html',1,'']]],

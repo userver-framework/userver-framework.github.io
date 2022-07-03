@@ -88,63 +88,98 @@ $(function() {
   <div class="headertitle"><div class="title">server.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d4/d79/grpc_2include_2userver_2ugrpc_2server_2server_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../d4/d79/grpc_2include_2userver_2ugrpc_2server_2server_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/ugrpc/server/server.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief ugrpc::server::Server</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">functional</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;grpcpp/completion_queue.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;grpcpp/server_builder.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">grpcpp</span><span class="preprocessor">/</span><span class="preprocessor">completion_queue</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">grpcpp</span><span class="preprocessor">/</span><span class="preprocessor">server_builder</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d03/task__processor__fwd_8hpp.html">userver/engine/task/task_processor_fwd.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d37/level_8hpp.html" title="Log levels.">userver/logging/level.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation.">userver/utils/fast_pimpl.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d02/utils_2statistics_2fwd_8hpp.html" title="Forward declarations for statistics entities.">userver/utils/statistics/fwd.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="../../de/d41/yaml__config_2fwd_8hpp.html" title="Forward declarations of YamlConfig type and formats::parse::To.">userver/yaml_config/fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">engine</span><span class="preprocessor">/</span><span class="preprocessor">task</span><span class="preprocessor">/</span><span class="preprocessor">task_processor_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">logging</span><span class="preprocessor">/</span><span class="preprocessor">level</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">fast_pimpl</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">statistics</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">yaml_config</span><span class="preprocessor">/</span><span class="preprocessor">fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="../../df/da9/service__base_8hpp.html" title="The type-erased base class for all gRPC service implementations.">userver/ugrpc/server/service_base.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">ugrpc</span><span class="preprocessor">/</span><span class="preprocessor">server</span><span class="preprocessor">/</span><span class="preprocessor">service_base</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../db/dfe/namespaceugrpc_1_1server.html" title="Server-side utilities.">ugrpc::server</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace</span> ugrpc::<a class="code hl_namespace" href="../../db/dfe/namespaceugrpc_1_1server.html" title="Server-side utilities.">server</a> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html">   24</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html" title="Settings relating to the whole gRPC server.">ServerConfig</a> final {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#ab21fb533d593a591507184513a73cdba">   28</a></span>  std::optional&lt;int&gt; <a class="code hl_variable" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#ab21fb533d593a591507184513a73cdba">port</a>{};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// Settings relating to the whole gRPC server</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html">   24</a></span><span class="keyword">struct</span> ServerConfig <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">/// The port to listen to. If `0`, a free port will be picked automatically.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">/// If none, the ports have to be configured programmatically using</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">/// Server::WithServerBuilder.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#ab21fb533d593a591507184513a73cdba">   28</a></span>  std::optional&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#ab21fb533d593a591507184513a73cdba">port</a>{};</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#adb6b9bc96e9ef11ee8a06c1ede898792">   32</a></span>  <a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">logging::Level</a> <a class="code hl_variable" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#adb6b9bc96e9ef11ee8a06c1ede898792">native_log_level</a>{logging::Level::kError};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">/// The logging level override for the internal grpcpp library. Must be either</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">/// `kDebug`, `kInfo` or `kError`.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#adb6b9bc96e9ef11ee8a06c1ede898792">   32</a></span>  <a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> <a class="code hl_variable" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#adb6b9bc96e9ef11ee8a06c1ede898792">native_log_level</a>{<a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a>::kError};</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>ServerConfig Parse(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a>&amp; value,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                   <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To&lt;ServerConfig&gt;</a> to);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>ServerConfig Parse(<span class="keyword">const</span> <a class="code hl_namespace" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a>&amp; value,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                   formats::<a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;ServerConfig&gt; to);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/d55/classugrpc_1_1server_1_1Server.html" title="Manages the gRPC server.">Server</a> final {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/// @brief Manages the gRPC server</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">///</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/// All methods are thread-safe.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/// Usually retrieved from ugrpc::server::ServerComponent.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html">   42</a></span><span class="keyword">class</span> Server <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">using </span>SetupHook = std::function&lt;void(grpc::ServerBuilder&amp;)&gt;;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">using</span> SetupHook = std::function&lt;<span class="keywordtype">void</span>(grpc::ServerBuilder&amp;)&gt;;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a6e9e0242e94e7d38abc4e80306c23ad6">   47</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a6e9e0242e94e7d38abc4e80306c23ad6" title="Start building the server.">Server</a>(<a class="code hl_struct" href="../../d9/d53/structugrpc_1_1server_1_1ServerConfig.html" title="Settings relating to the whole gRPC server.">ServerConfig</a>&amp;&amp; config,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                  <a class="code hl_class" href="../../d5/d18/classutils_1_1statistics_1_1Storage.html">utils::statistics::Storage</a>&amp; statistics_storage);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">/// @brief Start building the server</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a6e9e0242e94e7d38abc4e80306c23ad6">   47</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a6e9e0242e94e7d38abc4e80306c23ad6" title="Start building the server.">Server</a>(ServerConfig&amp;&amp; config,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                  <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::statistics::Storage&amp; statistics_storage);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a6e9e0242e94e7d38abc4e80306c23ad6" title="Start building the server.">Server</a>(<a class="code hl_class" href="../../d9/d55/classugrpc_1_1server_1_1Server.html" title="Manages the gRPC server.">Server</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_class" href="../../d9/d55/classugrpc_1_1server_1_1Server.html" title="Manages the gRPC server.">Server</a>&amp; operator=(<a class="code hl_class" href="../../d9/d55/classugrpc_1_1server_1_1Server.html" title="Manages the gRPC server.">Server</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_class" href="../../d9/d55/classugrpc_1_1server_1_1Server.html" title="Manages the gRPC server.">~Server</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  Server(Server&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  Server&amp; operator=(Server&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  ~Server();</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">/// @brief Register a service implementation in the server. The user or the</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">/// component is responsible for keeping `service` alive at least until `Stop`</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">/// is called.</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac0bc274a6e2ea129eafeca11c8cdbe4a">   57</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac0bc274a6e2ea129eafeca11c8cdbe4a" title="Register a service implementation in the server. The user or the component is responsible for keeping...">AddService</a>(<a class="code hl_class" href="../../d7/d80/classugrpc_1_1server_1_1ServiceBase.html" title="The type-erased base class for all gRPC service implementations.">ServiceBase</a>&amp; service, engine::TaskProcessor&amp; task_processor);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">/// @brief For advanced configuration of the gRPC server</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="comment">/// @note The ServerBuilder must not be stored and used outside of `setup`.</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a7e14ffb038f99b590288e99afcfcbcc4">   61</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a7e14ffb038f99b590288e99afcfcbcc4" title="For advanced configuration of the gRPC server.">WithServerBuilder</a>(SetupHook&amp;&amp; setup);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a27370c47a613038795086864b1fcb71c">   67</a></span>  grpc::CompletionQueue&amp; <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a27370c47a613038795086864b1fcb71c">GetCompletionQueue</a>() noexcept;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">/// @returns the completion queue for clients</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">/// @note All RPCs are cancelled on &#39;Stop&#39;. If you need to perform requests</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="comment">/// after the server has been closed, create an ugrpc::client::QueueHolder -</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">/// usually no more than one instance per program.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a27370c47a613038795086864b1fcb71c">   67</a></span>  grpc::CompletionQueue&amp; <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a27370c47a613038795086864b1fcb71c">GetCompletionQueue</a>() <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">/// @brief Start accepting requests</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">/// @note Must be called at most once after all the services are registered</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#acb92be1ada322411ab2d095d973bec44">   71</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#acb92be1ada322411ab2d095d973bec44" title="Start accepting requests.">Start</a>();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac5febb9601e62e4ff9a2f9dab116fdba">   75</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac5febb9601e62e4ff9a2f9dab116fdba">GetPort</a>() const noexcept;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="comment">/// @returns The port assigned using `AddListeningPort`</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">/// @note Only available after &#39;Start&#39; has returned</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac5febb9601e62e4ff9a2f9dab116fdba">   75</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#ac5febb9601e62e4ff9a2f9dab116fdba">GetPort</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7">   80</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7" title="Stop accepting requests. Also destroys server statistics and closes the associated CompletionQueue.">Stop</a>() noexcept;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">/// @brief Stop accepting requests. Also destroys server statistics and closes</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">/// the associated CompletionQueue.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">/// @note Should be called at least once before the services are destroyed</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7">   80</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d55/classugrpc_1_1server_1_1Server.html#a31004deea8f49f100f23401f2dace9d7" title="Stop accepting requests. Also destroys server statistics and closes the associated CompletionQueue.">Stop</a>() <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> StopDebug() noexcept;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="comment">/// @cond</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="comment">/// Same as Stop, but:</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">/// - does not destroy server statistics</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="comment">/// - does not close the associated CompletionQueue</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">/// Stop must still be called. StopDebug is useful for testing.</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> StopDebug() <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">/// @endcond</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> private:</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  class Impl;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;Impl, 592, 8&gt; impl_;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">class</span> Impl;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  utils::FastPimpl&lt;Impl, 592, 8&gt; impl_;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}  <span class="comment">// namespace ugrpc::server</span></div>
@@ -155,7 +190,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:46:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -262,14 +297,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

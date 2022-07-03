@@ -6,7 +6,7 @@ var searchData=
   ['secdist_2ehpp_3',['secdist.hpp',['../dd/d27/secdist_8hpp.html',1,'']]],
   ['select_2ehpp_4',['select.hpp',['../d2/d84/select_8hpp.html',1,'']]],
   ['semaphore_2ehpp_5',['semaphore.hpp',['../d1/d5a/semaphore_8hpp.html',1,'']]],
-  ['serialize_2ehpp_6',['serialize.hpp',['../d2/d6e/shared_2include_2userver_2formats_2yaml_2serialize_8hpp.html',1,'(Global Namespace)'],['../d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html',1,'(Global Namespace)'],['../d6/de5/mongo_2include_2userver_2formats_2bson_2serialize_8hpp.html',1,'(Global Namespace)']]],
+  ['serialize_2ehpp_6',['serialize.hpp',['../d6/de5/mongo_2include_2userver_2formats_2bson_2serialize_8hpp.html',1,'(Global Namespace)'],['../d9/ddd/shared_2include_2userver_2formats_2json_2serialize_8hpp.html',1,'(Global Namespace)'],['../d2/d6e/shared_2include_2userver_2formats_2yaml_2serialize_8hpp.html',1,'(Global Namespace)']]],
   ['serialize_5fboost_5fvariant_2ehpp_7',['serialize_boost_variant.hpp',['../d8/de6/serialize__boost__variant_8hpp.html',1,'']]],
   ['serialize_5fduration_2ehpp_8',['serialize_duration.hpp',['../d2/d2a/serialize__duration_8hpp.html',1,'']]],
   ['serialize_5fvariant_2ehpp_9',['serialize_variant.hpp',['../df/d21/serialize__variant_8hpp.html',1,'']]],

@@ -88,31 +88,31 @@ $(function() {
   <div class="headertitle"><div class="title">exception.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdexcept</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;fmt/format.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">fmt</span><span class="preprocessor">/</span><span class="preprocessor">format</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d56/shared_2include_2userver_2formats_2json_2exception_8hpp.html" title="Exception classes for JSON module.">userver/formats/json/exception.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">json</span><span class="preprocessor">/</span><span class="preprocessor">exception</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d0/dc4/namespaceformats_1_1json_1_1parser.html" title="SAX parser tools.">formats::json::parser</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::<a class="code hl_namespace" href="../../d0/dc4/namespaceformats_1_1json_1_1parser.html" title="SAX parser tools.">parser</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d4/d84/classformats_1_1json_1_1Exception.html">formats::json::Exception</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">using </span>Exception::Exception;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class</span> <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> : <span class="keyword">public</span> formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::<a class="code hl_class" href="../../d4/d84/classformats_1_1json_1_1Exception.html">Exception</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">using</span> <a class="code hl_class" href="../../d4/d84/classformats_1_1json_1_1Exception.html">Exception</a>::Exception;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d2/d03/classformats_1_1json_1_1parser_1_1ParseError.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d03/classformats_1_1json_1_1parser_1_1ParseError.html">ParseError</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class</span> <a class="code hl_class" href="../../d2/d03/classformats_1_1json_1_1parser_1_1ParseError.html">ParseError</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_class" href="../../d2/d03/classformats_1_1json_1_1parser_1_1ParseError.html">ParseError</a>(<span class="keywordtype">size_t</span> pos, std::string_view path, std::string what)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      : <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a>(fmt::format(<span class="stringliteral">&quot;Parse error at pos {}, path &#39;{}&#39;: {}&quot;</span>, pos, path,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  ParseError(size_t pos, std::string_view path, std::string what)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      : BaseError(fmt::format(<span class="stringliteral">&quot;Parse error at pos {}, path &#39;{}&#39;: {}&quot;</span>, pos, path,</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                              what)) {}</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d7/da4/classformats_1_1json_1_1parser_1_1InternalParseError.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/da4/classformats_1_1json_1_1parser_1_1InternalParseError.html">InternalParseError</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">using </span>BaseError::BaseError;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class</span> <a class="code hl_class" href="../../d7/da4/classformats_1_1json_1_1parser_1_1InternalParseError.html">InternalParseError</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">using</span> <a class="code hl_class" href="../../de/d7c/classformats_1_1json_1_1parser_1_1BaseError.html">BaseError</a>::BaseError;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}  <span class="comment">// namespace formats::json::parser</span></div>
@@ -123,7 +123,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:50:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -230,14 +230,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

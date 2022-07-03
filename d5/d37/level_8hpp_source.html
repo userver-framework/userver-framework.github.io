@@ -88,17 +88,21 @@ $(function() {
   <div class="headertitle"><div class="title">level.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d5/d37/level_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../d5/d37/level_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/logging/level.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Log levels</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">optional</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// Logging macro and utilities</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0">   15</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// Log levels</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0">   15</a></span><span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  kTrace = 0,</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  kDebug = 1,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  kInfo = 2,</div>
@@ -108,17 +112,29 @@ $(function() {
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  kNone = 6</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kLevelMax = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Level::kNone);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kLevelMax = <span class="keyword">static_cast</span>&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a>::kNone);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// @brief Converts lowercase level name to a corresponding Level, throws</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/// std::runtime_error if no matching log level found.</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a40e491e8a1409f2189e98b54e5d6f1da">   29</a></span><a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> <a class="code hl_function" href="../../dd/d46/namespacelogging.html#a40e491e8a1409f2189e98b54e5d6f1da" title="Converts lowercase level name to a corresponding Level, throws std::runtime_error if no matching log ...">LevelFromString</a>(<span class="keyword">const</span> std::string&amp;);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// @brief Returns a string representation of logging level</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a400402e93a4a3237c8eefc2155543a8d">   32</a></span>std::string <a class="code hl_function" href="../../dd/d46/namespacelogging.html#a400402e93a4a3237c8eefc2155543a8d" title="Returns a string representation of logging level.">ToString</a>(<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> level);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a4afdecaae717a530f5b0658e5628b7f2">   36</a></span>std::optional&lt;Level&gt; <a class="code hl_function" href="../../dd/d46/namespacelogging.html#a4afdecaae717a530f5b0658e5628b7f2" title="Returns std::nullopt if level_name is std::nullopt, otherwaise behaves exactly like logging::LevelFro...">OptionalLevelFromString</a>(</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/// @brief Returns std::nullopt if level_name is std::nullopt, otherwaise</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/// behaves exactly like logging::LevelFromString.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a4afdecaae717a530f5b0658e5628b7f2">   36</a></span>std::optional&lt;<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a>&gt; <a class="code hl_function" href="../../dd/d46/namespacelogging.html#a4afdecaae717a530f5b0658e5628b7f2" title="Returns std::nullopt if level_name is std::nullopt, otherwaise behaves exactly like logging::LevelFro...">OptionalLevelFromString</a>(</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> std::optional&lt;std::string&gt;&amp; level_name);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/// @brief Returns true if the provided log level is greater or equal to</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/// the current log level. Note that this function does not deal with</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/// tracing::Span local log level, so the log may be actually disabled by the</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/// span.</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a7676ad7dc2706fc9280f278d5cb9f73b">   43</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/d46/namespacelogging.html#a7676ad7dc2706fc9280f278d5cb9f73b" title="Returns true if the provided log level is greater or equal to the current log level....">ShouldLogNospan</a>(<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> level) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/// @brief Returns true if the provided log level is greater or equal to</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/// the current log level and to the tracing::Span local log level. In other</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/// words, returns true if the log with `level` is logged.</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../dd/d46/namespacelogging.html#a3edac655bf7e6c52260fe9fc7f7a4a5e">   48</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/d46/namespacelogging.html#a3edac655bf7e6c52260fe9fc7f7a4a5e" title="Returns true if the provided log level is greater or equal to the current log level and to the tracin...">ShouldLog</a>(<a class="code hl_enumeration" href="../../dd/d46/namespacelogging.html#a8abd1b487f7bdf1885e888b553f653d0" title="Log levels.">Level</a> level) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace logging</span></div>
@@ -129,7 +145,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:46:02 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -236,14 +252,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

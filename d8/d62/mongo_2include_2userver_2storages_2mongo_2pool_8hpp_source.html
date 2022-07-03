@@ -88,41 +88,62 @@ $(function() {
   <div class="headertitle"><div class="title">pool.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../d8/d62/mongo_2include_2userver_2storages_2mongo_2pool_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/storages/mongo/pool.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief storages::mongo::Pool</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;userver/clients/dns/resolver_fwd.hpp&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="../../d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non-mutable JSON value representation.">userver/formats/json/value.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../d7/d1b/rcu_8hpp.html" title="Implementation of hazard pointer.">userver/rcu/rcu.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="../../d4/db6/collection_8hpp.html" title="MongoDB collection handle, the main way to operate with MongoDB.">userver/storages/mongo/collection.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d6c/pool__config_8hpp.html" title="MongoDB connection pool configuration.">userver/storages/mongo/pool_config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">clients</span><span class="preprocessor">/</span><span class="preprocessor">dns</span><span class="preprocessor">/</span><span class="preprocessor">resolver_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">json</span><span class="preprocessor">/</span><span class="preprocessor">value</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">rcu</span><span class="preprocessor">/</span><span class="preprocessor">rcu</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">storages</span><span class="preprocessor">/</span><span class="preprocessor">mongo</span><span class="preprocessor">/</span><span class="preprocessor">collection</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">storages</span><span class="preprocessor">/</span><span class="preprocessor">mongo</span><span class="preprocessor">/</span><span class="preprocessor">pool_config</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d3/db5/namespacestorages_1_1mongo.html" title="MongoDB client.">storages::mongo</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>impl {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>PoolImpl;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace</span> impl {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class</span> PoolImpl;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}  <span class="comment">// namespace impl</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>Config;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class</span> Config;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html" title="MongoDB client pool.">Pool</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// @ingroup userver_clients</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">///</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// @brief MongoDB client pool.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">///</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/// Use constructor only for tests, in production the pool should be retrieved</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/// from @ref userver_components &quot;the components&quot; via</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// components::Mongo::GetPool() or components::MultiMongo::GetPool().</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">///</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// ## Example usage:</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">///</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/// @snippet storages/mongo/collection_mongotest.hpp  Sample Mongo usage</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html">   36</a></span><span class="keyword">class</span> <a class="code hl_class" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html" title="MongoDB client pool.">Pool</a> {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#a21aef0e4c79dd91f3aa596606e2bc63f">   42</a></span>  <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#a21aef0e4c79dd91f3aa596606e2bc63f">Pool</a>(std::string <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; uri, <span class="keyword">const</span> <a class="code hl_class" href="../../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html" title="MongoDB connection pool configuration.">PoolConfig</a>&amp; pool_config,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>       <a class="code hl_class" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">clients::dns::Resolver</a>* dns_resolver, <span class="keyword">const</span> Config&amp; mongo_config);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_class" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html" title="MongoDB client pool.">~Pool</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">/// Client pool constructor</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">/// @param id pool identificaton string</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">/// @param uri database connection string</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="comment">/// @param config pool configuration</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#a21aef0e4c79dd91f3aa596606e2bc63f">   42</a></span>  <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#a21aef0e4c79dd91f3aa596606e2bc63f">Pool</a>(std::string id, <span class="keyword">const</span> std::string&amp; uri, <span class="keyword">const</span> <a class="code hl_class" href="../../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html" title="MongoDB connection pool configuration.">PoolConfig</a>&amp; pool_config,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>       clients::dns::Resolver* dns_resolver, <span class="keyword">const</span> Config&amp; mongo_config);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  ~Pool();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">/// Checks whether a collection exists</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#a8a2dc941719aaaa28fdb65532f96f2d4">   47</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#a8a2dc941719aaaa28fdb65532f96f2d4" title="Checks whether a collection exists.">HasCollection</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">/// Returns a handle for the specified collection</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ab6378d692e4c3ffa74715dfeff4e362b">   50</a></span>  <a class="code hl_class" href="../../db/d50/classstorages_1_1mongo_1_1Collection.html" title="MongoDB collection handle, the main way to operate with MongoDB.">Collection</a> <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ab6378d692e4c3ffa74715dfeff4e362b" title="Returns a handle for the specified collection.">GetCollection</a>(std::string name) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ae869b3a871666a7866ebbdec1a6294ca">   53</a></span>  <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ae869b3a871666a7866ebbdec1a6294ca" title="Returns pool statistics JSON.">GetStatistics</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">/// Returns pool statistics JSON</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ae869b3a871666a7866ebbdec1a6294ca">   53</a></span>  formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ae869b3a871666a7866ebbdec1a6294ca" title="Returns pool statistics JSON.">GetStatistics</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ac62e16847d04fc2725d8345a3a77a11c">   56</a></span>  <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ac62e16847d04fc2725d8345a3a77a11c" title="Returns verbose pool statistics JSON (with separate metrics for ops/RP/WC)">GetVerboseStatistics</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">/// Returns verbose pool statistics JSON (with separate metrics for ops/RP/WC)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ac62e16847d04fc2725d8345a3a77a11c">   56</a></span>  formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value <a class="code hl_function" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html#ac62e16847d04fc2725d8345a3a77a11c" title="Returns verbose pool statistics JSON (with separate metrics for ops/RP/WC)">GetVerboseStatistics</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> SetConfig(<span class="keyword">const</span> Config&amp; config);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
@@ -130,7 +151,7 @@ $(function() {
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  std::shared_ptr&lt;impl::PoolImpl&gt; impl_;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">using </span>PoolPtr = std::shared_ptr&lt;Pool&gt;;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">using</span> PoolPtr = std::shared_ptr&lt;<a class="code hl_class" href="../../d6/d08/classstorages_1_1mongo_1_1Pool.html" title="MongoDB client pool.">Pool</a>&gt;;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}  <span class="comment">// namespace storages::mongo</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
@@ -140,7 +161,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:47:58 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -247,14 +268,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

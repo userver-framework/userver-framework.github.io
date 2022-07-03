@@ -88,27 +88,38 @@ $(function() {
   <div class="headertitle"><div class="title">format_options.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../db/d7c/format__options_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../db/d7c/format__options_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/decimal64/format_options.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Structure storing format options for decimal</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">optional</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../da/d81/namespacedecimal64.html" title="Fixed-point decimal data type and related functions.">decimal64</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../da/d81/namespacedecimal64.html" title="Fixed-point decimal data type and related functions.">decimal64</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../de/d1b/structdecimal64_1_1FormatOptions.html" title="Parameters for flexible decimal formatting.">FormatOptions</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// @brief Parameters for flexible decimal formatting</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html">   14</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../de/d1b/structdecimal64_1_1FormatOptions.html" title="Parameters for flexible decimal formatting.">FormatOptions</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="comment">/// separator of fractional and integer parts</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a737e696a3ade0c671133b7a7c275ea22">   16</a></span>  std::string <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a737e696a3ade0c671133b7a7c275ea22" title="separator of fractional and integer parts">decimal_point</a> = <span class="stringliteral">&quot;.&quot;</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="comment">/// separator of groups in the integer part</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a548e6ff345554329544ccf6fe4cd0344">   19</a></span>  std::string <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a548e6ff345554329544ccf6fe4cd0344" title="separator of groups in the integer part">thousands_sep</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="comment">/// rule of grouping in the integer part</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="comment">/// https://en.cppreference.com/w/cpp/locale/numpunct/grouping</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a78af5e15ecaaf178555ef701a073049b">   23</a></span>  std::string <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a78af5e15ecaaf178555ef701a073049b">grouping</a>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">/// for negative numbers, the specified string will be inserted at beginning</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#ad47a7e6bf0ca3296051a205ec08700f0">   26</a></span>  std::string <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#ad47a7e6bf0ca3296051a205ec08700f0" title="for negative numbers, the specified string will be inserted at beginning">negative_sign</a> = <span class="stringliteral">&quot;-&quot;</span>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a7c9636fa2dd00e492f42f91524038b24">   30</a></span>  std::optional&lt;int&gt; <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a7c9636fa2dd00e492f42f91524038b24">precision</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="comment">/// maximum number of digits in the fractional part</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="comment">/// if `nullopt`, then the value is taken from the template argument</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a7c9636fa2dd00e492f42f91524038b24">   30</a></span>  std::optional&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#a7c9636fa2dd00e492f42f91524038b24">precision</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">/// if true, then the fractional part will have the maximum number of digits</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#aa786901263c4e811737a066c069f389d">   33</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../de/d1b/structdecimal64_1_1FormatOptions.html#aa786901263c4e811737a066c069f389d" title="if true, then the fractional part will have the maximum number of digits">is_fixed</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
@@ -120,7 +131,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:49:19 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -227,14 +238,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

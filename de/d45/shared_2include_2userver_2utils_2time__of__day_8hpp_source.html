@@ -88,66 +88,128 @@ $(function() {
   <div class="headertitle"><div class="title">time_of_day.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../de/d45/shared_2include_2userver_2utils_2time__of__day_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="../../de/d45/shared_2include_2userver_2utils_2time__of__day_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/utils/time_of_day.hpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief utils::datetime::TimeOfDay</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">algorithm</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">array</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">chrono</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;fmt/format.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">fmt</span><span class="preprocessor">/</span><span class="preprocessor">format</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span>LogHelper;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class</span> LogHelper;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">utils::datetime</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// @ingroup userver_containers</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">///</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// @brief A simple implementation of a &quot;time since midnight&quot; datatype.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">///</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// This type is time-zone ignorant.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">///</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/// Valid time range is from [00:00:00.0, 24:00:00.0)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">///</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// Available construction:</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">///</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// from duration (since midnight, the value will be normalized, e.g. 25:00 will</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/// become 01:00, 24:00 will become 00:00)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">///</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/// from string representation HH:MM[:SS[.s]], accepted range is from 00:00 to</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/// 24:00</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">///</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/// construction from int in form 1300 as a static member function</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">///</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/// Accessors:</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">///</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/// int Hours(); // hours since midnight</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/// int Minutes(); // minutes since midnight + Hours()</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/// int Seconds(); // seconds since midnight + Hours() + Minutes()</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/// int Subseconds(); // seconds fraction since</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">///                     midnight + Hours() + Minutes() + Seconds()</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">///</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">///</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/// Output:</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">///</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/// LOG(xxx) &lt;&lt; val</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">///</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/// Formatting:</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">///</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/// fmt::format(&quot;{}&quot;, val)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">///</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">/// Default format for hours and minutes is HH:MM, for seconds HH:MM:SS, for</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">/// subseconds HH:MM:SS.s with fractional part, but truncating trailing zeros.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">///</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/// Custom formatting:</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">///</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/// fmt:format(&quot;{:%H%M%S}&quot;, val); // will output HHMMSS without separators</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">///</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/// Format keys:</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/// %H 24-hour two-digit zero-padded hours</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/// %M two-digit zero-padded minutes</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">/// %S two-digit zero-padded seconds</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/// %% literal %</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html">   72</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html">   72</a></span><span class="keyword">class</span> TimeOfDay;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html">   75</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&lt;<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::chrono::duration&lt;Rep, Period&gt;&gt; {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html">   75</a></span><span class="keyword">class</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt; {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">using </span>DurationType = std::chrono::duration&lt;Rep, Period&gt;;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">using</span> DurationType = std::chrono::duration&lt;Rep, Period&gt;;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">constexpr</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>() <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>(DurationType) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">constexpr</span> TimeOfDay() <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> TimeOfDay(DurationType) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ORep, <span class="keyword">typename</span> OPeriod&gt;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>(std::chrono::duration&lt;ORep, OPeriod&gt;) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>(std::string_view);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> TimeOfDay(std::chrono::duration&lt;ORep, OPeriod&gt;) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> TimeOfDay(std::string_view);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d3/d69/namespacehttp.html#a289918b50f0647cebd4816c2326b7811">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="comment">//@{</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">/** @name Comparison operators */</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> TimeOfDay&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> TimeOfDay&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> TimeOfDay&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> TimeOfDay&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> TimeOfDay&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> TimeOfDay&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="comment">//@}</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">constexpr</span> std::chrono::hours Hours() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">constexpr</span> std::chrono::minutes Minutes() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">constexpr</span> std::chrono::seconds Seconds() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">constexpr</span> DurationType Subseconds() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="comment">//@{</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">/** @name Accessors */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="comment">/// @return Hours since midnight</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">constexpr</span> std::chrono::hours <a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">Hours</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">/// @return Minutes since midnight + Hours</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">constexpr</span> std::chrono::minutes <a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#acba60927506c67c4334c340dc3dc6758">Minutes</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">/// @return Seconds since midnight + Hours + Minutes</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">constexpr</span> std::chrono::seconds <a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a8a55ca464556ca89c7474133a9760fe6">Seconds</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="comment">/// @return Fractional part of seconds since midnight + Hours + Minutes +</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="comment">/// Seconds up to resolution</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">constexpr</span> DurationType <a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#abdc89910b106fcb5dd41678f9ed0a1b4">Subseconds</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">constexpr</span> DurationType SinceMidnight() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="comment">/// @return Underlying duration representation</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">constexpr</span> DurationType <a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#ae73dbf807182c9bebae6be586c822a6f">SinceMidnight</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="comment">//@}</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a> FromHHMMInt(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="comment">/// Create time of day from integer representation, e.g.1330 =&gt; 13:30</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> TimeOfDay <a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#aaf55e63466cf8e576c2070a9fc9f6834" title="Create time of day from integer representation, e.g.1330 =&gt; 13:30.">FromHHMMInt</a>(<span class="keywordtype">int</span>);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  DurationType since_midnight_;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">//@{</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">/** @name Duration arithmetic */</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> LDuration, <span class="keyword">typename</span> RDuration&gt;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">auto</span> operator-(<a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;LDuration&gt;</a> lhs, <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;RDuration&gt;</a> rhs) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">auto</span> operator-(TimeOfDay&lt;LDuration&gt; lhs, TimeOfDay&lt;RDuration&gt; rhs) {</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">return</span> lhs.SinceMidnight() - rhs.SinceMidnight();</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
@@ -162,15 +224,16 @@ $(function() {
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                              std::chrono::duration&lt;Rep, Period&gt; rhs) {</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordflow">return</span> TimeOfDay&lt;Duration&gt;{lhs.SinceMidnight() - rhs};</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">//@}</span></div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><a class="code hl_class" href="../../d0/d22/classlogging_1_1LogHelper.html">logging::LogHelper</a>&amp; <a class="code hl_function" href="../../da/d81/namespacedecimal64.html#abaeb6aaab82c159a834be4b11e4a5a08" title="Writes the Decimal to the ostream">operator&lt;&lt;</a>(<a class="code hl_class" href="../../d0/d22/classlogging_1_1LogHelper.html">logging::LogHelper</a>&amp; lh,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::LogHelper&amp; operator&lt;&lt;(<a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::LogHelper&amp; lh,</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                               TimeOfDay&lt;Duration&gt; value) {</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  lh &lt;&lt; fmt::to_string(value);</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keywordflow">return</span> lh;</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">namespace </span>detail {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">namespace</span> detail {</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> std::chrono::duration&lt;Rep, Period&gt; kTwentyFourHours =</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    std::chrono::duration_cast&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;(</div>
@@ -215,75 +278,75 @@ $(function() {
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ratio&gt;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">struct </span>HasMinutes : std::false_type {};</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">struct</span> HasMinutes : std::false_type {};</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">template</span> &lt;<span class="keywordtype">int</span>max_t Num, <span class="keywordtype">int</span>max_t Den&gt;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">struct </span>HasMinutes&lt;<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::ratio&lt;Num, Den&gt;&gt;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    : std::integral_constant&lt;bool, (Num &lt;= 60LL)&gt; {};</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">template</span> &lt;intmax_t Num, intmax_t Den&gt;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">struct</span> HasMinutes&lt;std::ratio&lt;Num, Den&gt;&gt;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    : std::integral_constant&lt;<span class="keywordtype">bool</span>, (Num &lt;= 60LL)&gt; {};</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>template &lt;typename Rep, typename Period&gt;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>struct HasMinutes&lt;std::chrono::duration&lt;Rep, Period&gt;&gt; : HasMinutes&lt;Period&gt; {};</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">struct</span> HasMinutes&lt;std::chrono::duration&lt;Rep, Period&gt;&gt; : HasMinutes&lt;Period&gt; {};</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>template &lt;typename Duration&gt;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>struct HasMinutes&lt;TimeOfDay&lt;Duration&gt;&gt; : HasMinutes&lt;Duration&gt; {};</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Duration&gt;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="keyword">struct</span> HasMinutes&lt;TimeOfDay&lt;Duration&gt;&gt; : HasMinutes&lt;Duration&gt; {};</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>template &lt;typename T&gt;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>constexpr inline bool kHasMinutes = HasMinutes&lt;T&gt;{};</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="keyword">constexpr</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> kHasMinutes = HasMinutes&lt;T&gt;{};</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>template &lt;typename Ratio&gt;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>struct HasSeconds : std::false_type {};</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ratio&gt;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keyword">struct</span> HasSeconds : std::false_type {};</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>template &lt;intmax_t Num, intmax_t Den&gt;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>struct HasSeconds&lt;std::ratio&lt;Num, Den&gt;&gt;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    : std::integral_constant&lt;bool, (Num == 1)&gt; {};</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keyword">template</span> &lt;intmax_t Num, intmax_t Den&gt;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="keyword">struct</span> HasSeconds&lt;std::ratio&lt;Num, Den&gt;&gt;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    : std::integral_constant&lt;<span class="keywordtype">bool</span>, (Num == 1)&gt; {};</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>template &lt;typename Rep, typename Period&gt;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>struct HasSeconds&lt;std::chrono::duration&lt;Rep, Period&gt;&gt; : HasSeconds&lt;Period&gt; {};</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">struct</span> HasSeconds&lt;std::chrono::duration&lt;Rep, Period&gt;&gt; : HasSeconds&lt;Period&gt; {};</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>template &lt;typename Duration&gt;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>struct HasSeconds&lt;TimeOfDay&lt;Duration&gt;&gt; : HasSeconds&lt;Duration&gt; {};</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Duration&gt;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keyword">struct</span> HasSeconds&lt;TimeOfDay&lt;Duration&gt;&gt; : HasSeconds&lt;Duration&gt; {};</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>template &lt;typename T&gt;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>constexpr inline bool kHasSeconds = HasSeconds&lt;T&gt;{};</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="keyword">constexpr</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> kHasSeconds = HasSeconds&lt;T&gt;{};</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>template &lt;typename Ratio&gt;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>struct HasSubseconds : std::false_type {};</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ratio&gt;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keyword">struct</span> HasSubseconds : std::false_type {};</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>template &lt;intmax_t Num, intmax_t Den&gt;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>struct HasSubseconds&lt;std::ratio&lt;Num, Den&gt;&gt;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    : std::integral_constant&lt;bool, (Den &gt; 1)&gt; {};</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">template</span> &lt;intmax_t Num, intmax_t Den&gt;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keyword">struct</span> HasSubseconds&lt;std::ratio&lt;Num, Den&gt;&gt;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    : std::integral_constant&lt;<span class="keywordtype">bool</span>, (Den &gt; 1)&gt; {};</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">struct </span>HasSubseconds&lt;<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::chrono::duration&lt;Rep, Period&gt;&gt;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">struct</span> HasSubseconds&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    : HasSubseconds&lt;Period&gt; {};</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="keyword">struct </span>HasSubseconds&lt;TimeOfDay&lt;Duration&gt;&gt; : HasSubseconds&lt;Duration&gt; {};</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="keyword">struct</span> HasSubseconds&lt;TimeOfDay&lt;Duration&gt;&gt; : HasSubseconds&lt;Duration&gt; {};</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="keyword">constexpr</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> kHasSubseconds = HasSubseconds&lt;T&gt;{};</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">class </span>TimeOfDayParser {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">class</span> TimeOfDayParser {</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keyword">using </span>DurationType = std::chrono::duration&lt;Rep, Period&gt;;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keyword">using</span> DurationType = std::chrono::duration&lt;Rep, Period&gt;;</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keyword">constexpr</span> DurationType operator()(std::string_view str) {</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c : str) {</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <span class="keywordflow">switch</span> (c) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;:&#39;</span>:</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">case</span> <span class="stringliteral">&#39;:&#39;</span>:</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>          <span class="keywordflow">if</span> (position_ &gt;= kSeconds)</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keywordflow">throw</span> std::runtime_error{</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                fmt::format(<span class="stringliteral">&quot;Extra colon in TimeOfDay string `{}`&quot;</span>, str)};</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>          AssignCurrentPosition(str);</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>          position_ = <span class="keyword">static_cast&lt;</span>TimePart<span class="keyword">&gt;</span>(position_ + 1);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>          position_ = <span class="keyword">static_cast</span>&lt;TimePart&gt;(position_ + 1);</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;.&#39;</span>:</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">case</span> <span class="stringliteral">&#39;.&#39;</span>:</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>          <span class="keywordflow">if</span> (position_ != kSeconds)</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <span class="keywordflow">throw</span> std::runtime_error{fmt::format(</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                <span class="stringliteral">&quot;Unexpected decimal point in TimeOfDay string `{}`&quot;</span>, str)};</div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>          AssignCurrentPosition(str);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>          position_ = <span class="keyword">static_cast&lt;</span>TimePart<span class="keyword">&gt;</span>(position_ + 1);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>          position_ = <span class="keyword">static_cast</span>&lt;TimePart&gt;(position_ + 1);</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>          <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">default</span>:</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>          <span class="keywordflow">if</span> (!std::isdigit(c))</div>
@@ -302,7 +365,7 @@ $(function() {
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                fmt::format(<span class="stringliteral">&quot;Too much digits in TimeOfDay string `{}`&quot;</span>, str)};</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>          }</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>          ++digit_count_;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>          current_number_ = current_number_ * 10 + (c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>          current_number_ = current_number_ * 10 + (c - <span class="stringliteral">&#39;0&#39;</span>);</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>          <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>      }</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    }</div>
@@ -389,9 +452,13 @@ $(function() {
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  std::size_t current_number_{0};</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>};</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">/// Format string used for format key `%H`, two-digit 24-hour left-padded by 0</span></div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kLongHourFormat = <span class="stringliteral">&quot;{0:0&gt;#2d}&quot;</span>;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">/// Format string used for minutes, key `%M`, no variations</span></div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kMinutesFormat = <span class="stringliteral">&quot;{1:0&gt;#2d}&quot;</span>;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="comment">/// Format string used for seconds, key `%S`, no variations</span></div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kSecondsFormat = <span class="stringliteral">&quot;{2:0&gt;#2d}&quot;</span>;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="comment">/// Format string for subseconds, keys not yet assigned</span></div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kSubsecondsFormat = <span class="stringliteral">&quot;{3}&quot;</span>;</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ratio&gt;</div>
@@ -421,18 +488,18 @@ $(function() {
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>}  <span class="comment">// namespace detail</span></div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="keyword">constexpr</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::TimeOfDay() noexcept</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="keyword">constexpr</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::TimeOfDay() <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    : since_midnight_{0} {}</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="keyword">constexpr</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::TimeOfDay(</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    DurationType d) noexcept</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    DurationType d) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    : since_midnight_{detail::NormalizeTimeOfDay&lt;Rep, Period&gt;(d)} {}</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">Rep</a>, <span class="keyword">typename</span> <a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">Period</a>&gt;</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ORep, <span class="keyword">typename</span> OPeriod&gt;</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="keyword">constexpr</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::TimeOfDay(</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    std::chrono::duration&lt;ORep, OPeriod&gt; d) noexcept</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    std::chrono::duration&lt;ORep, OPeriod&gt; d) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    : since_midnight_{detail::NormalizeTimeOfDay&lt;Rep, Period&gt;(d)} {}</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span> </div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
@@ -478,16 +545,16 @@ $(function() {
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span><span class="keyword">constexpr</span> std::chrono::hours</div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">  458</a></span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::Hours() const noexcept {</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">  458</a></span>TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">Hours</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>  <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::hours&gt;(since_midnight_);</div>
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>}</div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span> </div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="keyword">constexpr</span> std::chrono::minutes</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#acba60927506c67c4334c340dc3dc6758">  464</a></span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::Minutes() const noexcept {</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#acba60927506c67c4334c340dc3dc6758">  464</a></span>TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#acba60927506c67c4334c340dc3dc6758">Minutes</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (detail::kHasMinutes&lt;Period&gt;) {</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::minutes&gt;(since_midnight_) -</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>           std::chrono::duration_cast&lt;std::chrono::minutes&gt;(Hours());</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>           std::chrono::duration_cast&lt;std::chrono::minutes&gt;(<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">Hours</a><a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">(</a><a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a5bf3d589f3059c8ab489cc2abbdee46a">)</a>);</div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    <span class="keywordflow">return</span> std::chrono::minutes{0};</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>  }</div>
@@ -495,7 +562,7 @@ $(function() {
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span> </div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span><span class="keyword">constexpr</span> std::chrono::seconds</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a8a55ca464556ca89c7474133a9760fe6">  475</a></span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::Seconds() const noexcept {</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a8a55ca464556ca89c7474133a9760fe6">  475</a></span>TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#a8a55ca464556ca89c7474133a9760fe6">Seconds</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (detail::kHasSeconds&lt;Period&gt;) {</div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>    <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::seconds&gt;(since_midnight_) -</div>
 <div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>           std::chrono::duration_cast&lt;std::chrono::seconds&gt;(</div>
@@ -507,8 +574,8 @@ $(function() {
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>}</div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span> </div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="keyword">constexpr</span> <span class="keyword">typename</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::DurationType</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#abdc89910b106fcb5dd41678f9ed0a1b4">  488</a></span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::Subseconds() const noexcept {</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="keyword">constexpr</span> <span class="keyword">typename</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::DurationType</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#abdc89910b106fcb5dd41678f9ed0a1b4">  488</a></span>TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#abdc89910b106fcb5dd41678f9ed0a1b4">Subseconds</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (detail::kHasSubseconds&lt;Period&gt;) {</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    <span class="keywordflow">return</span> since_midnight_ -</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>           std::chrono::duration_cast&lt;std::chrono::seconds&gt;(since_midnight_);</div>
@@ -518,56 +585,61 @@ $(function() {
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>}</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span> </div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span><span class="keyword">constexpr</span> <span class="keyword">typename</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::DurationType</div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#ae73dbf807182c9bebae6be586c822a6f">  499</a></span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::SinceMidnight() const noexcept {</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span><span class="keyword">constexpr</span> <span class="keyword">typename</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::DurationType</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#ae73dbf807182c9bebae6be586c822a6f">  499</a></span>TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#ae73dbf807182c9bebae6be586c822a6f">SinceMidnight</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>  <span class="keywordflow">return</span> since_midnight_;</div>
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>}</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span> </div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="keyword">constexpr</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#aaf55e63466cf8e576c2070a9fc9f6834">  505</a></span><a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;</a>&gt;::FromHHMMInt(<span class="keywordtype">int</span> hh_mm) {</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="keyword">constexpr</span> TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno"><a class="line" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#aaf55e63466cf8e576c2070a9fc9f6834">  505</a></span>TimeOfDay&lt;std::chrono::duration&lt;Rep, Period&gt;&gt;::<a class="code hl_function" href="../../d8/deb/classutils_1_1datetime_1_1TimeOfDay_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html#aaf55e63466cf8e576c2070a9fc9f6834" title="Create time of day from integer representation, e.g.1330 =&gt; 13:30.">FromHHMMInt</a>(<span class="keywordtype">int</span> hh_mm) {</div>
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  <span class="keyword">auto</span> mm = hh_mm % 100;</div>
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>  <span class="keywordflow">if</span> (mm &gt;= 60)</div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    <span class="keywordflow">throw</span> std::runtime_error{fmt::format(</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        <span class="stringliteral">&quot;Invalid value for minutes {} in int representation {}&quot;</span>, mm, hh_mm)};</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">TimeOfDay</a>{std::chrono::minutes{hh_mm / 100 * 60 + mm}};</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>  <span class="keywordflow">return</span> TimeOfDay{std::chrono::minutes{hh_mm / 100 * 60 + mm}};</div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>}</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span> </div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>}  <span class="comment">// namespace utils::datetime</span></div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span> </div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>USERVER_NAMESPACE_END</div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span> </div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="keyword">namespace </span>fmt {</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="keyword">namespace</span> fmt {</div>
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span> </div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Duration&gt;</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html">  520</a></span><span class="keyword">struct </span>formatter&lt;USERVER_NAMESPACE::<a class="code hl_class" href="../../d8/d0d/classutils_1_1datetime_1_1TimeOfDay.html" title="A simple implementation of a &quot;time since midnight&quot; datatype.">utils::datetime::TimeOfDay</a>&lt;Duration&gt;&gt; {</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#a2b6078796032cf59564c4e7414f5204f">  522</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kLongHourFormat =</div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>      USERVER_NAMESPACE::utils::datetime::detail::kLongHourFormat;</div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#aa5787b159380ca331fb8927942e01b83">  525</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kMinutesFormat =</div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>      USERVER_NAMESPACE::utils::datetime::detail::kMinutesFormat;</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#af77e6684edbbf5e58b423e7786957b6c">  528</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kSecondsFormat =</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>      USERVER_NAMESPACE::utils::datetime::detail::kSecondsFormat;</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#a01cdeda519d4f5cb1cb5883aad8e7f7b">  532</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kSubsecondsFormat =</div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>      USERVER_NAMESPACE::utils::datetime::detail::kSubsecondsFormat;</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html">  520</a></span><span class="keyword">struct</span> formatter&lt;USERVER_NAMESPACE::utils::datetime::TimeOfDay&lt;Duration&gt;&gt; {</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>  <span class="comment">/// Format string used for format key `%H`, two-digit 24-hour left-padded by 0</span></div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#a2b6078796032cf59564c4e7414f5204f">  522</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#a2b6078796032cf59564c4e7414f5204f" title="Format string used for format key H, two-digit 24-hour left-padded by 0.">kLongHourFormat</a> =</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>      USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kLongHourFormat;</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>  <span class="comment">/// Format string used for minutes, key `%M`, no variations</span></div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#aa5787b159380ca331fb8927942e01b83">  525</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#aa5787b159380ca331fb8927942e01b83" title="Format string used for minutes, key M, no variations.">kMinutesFormat</a> =</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>      USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kMinutesFormat;</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>  <span class="comment">/// Format string used for seconds, key `%S`, no variations</span></div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#af77e6684edbbf5e58b423e7786957b6c">  528</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#af77e6684edbbf5e58b423e7786957b6c" title="Format string used for seconds, key S, no variations.">kSecondsFormat</a> =</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>      USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kSecondsFormat;</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>  <span class="comment">/// Format string for subseconds, keys not yet assigned</span></div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>  <span class="comment">/// for use in representation</span></div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno"><a class="line" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#a01cdeda519d4f5cb1cb5883aad8e7f7b">  532</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/ddf/structfmt_1_1formatter_3_1_1utils_1_1datetime_1_1TimeOfDay_3_01Duration_01_4_01_4.html#a01cdeda519d4f5cb1cb5883aad8e7f7b">kSubsecondsFormat</a> =</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>      USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kSubsecondsFormat;</div>
 <div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span> </div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kSubsecondsPreformat =</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>      USERVER_NAMESPACE::utils::datetime::detail::kSubsecondsPreformat&lt;</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>      USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kSubsecondsPreformat&lt;</div>
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>          <span class="keyword">typename</span> Duration::period&gt;;</div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span> </div>
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kLiteralPercent = <span class="stringliteral">&quot;%&quot;</span>;</div>
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span> </div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kDefaultFormat =</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>      USERVER_NAMESPACE::utils::datetime::detail::kDefaultFormat&lt;</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>      USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kDefaultFormat&lt;</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>          <span class="keyword">typename</span> Duration::period&gt;;</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span> </div>
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>  <span class="keyword">constexpr</span> std::string_view GetFormatForKey(<span class="keywordtype">char</span> key) {</div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    <span class="comment">// TODO Check if time part already seen</span></div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    <span class="keywordflow">switch</span> (key) {</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>      <span class="keywordflow">case</span> <span class="charliteral">&#39;H&#39;</span>:</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>      <span class="keywordflow">case</span> <span class="stringliteral">&#39;H&#39;</span>:</div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>        <span class="keywordflow">return</span> kLongHourFormat;</div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>      <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>      <span class="keywordflow">case</span> <span class="stringliteral">&#39;M&#39;</span>:</div>
 <div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>        <span class="keywordflow">return</span> kMinutesFormat;</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>      <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>      <span class="keywordflow">case</span> <span class="stringliteral">&#39;S&#39;</span>:</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>        <span class="keywordflow">return</span> kSecondsFormat;</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>      <span class="keywordflow">default</span>:</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>        <span class="keywordflow">throw</span> format_error{fmt::format(<span class="stringliteral">&quot;Unsupported format key {}&quot;</span>, key)};</div>
@@ -582,12 +654,12 @@ $(function() {
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    <span class="keywordtype">bool</span> custom_format = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    std::size_t size = 0;</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <span class="keywordflow">for</span> (; it != end &amp;&amp; *it != <span class="charliteral">&#39;}&#39;</span>; ++it) {</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <span class="keywordflow">for</span> (; it != end &amp;&amp; *it != <span class="stringliteral">&#39;}&#39;</span>; ++it) {</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>      <span class="keywordflow">if</span> (!custom_format) {</div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        representation.clear();</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>        custom_format = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>      }</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>      <span class="keywordflow">if</span> (*it == <span class="charliteral">&#39;%&#39;</span>) {</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>      <span class="keywordflow">if</span> (*it == <span class="stringliteral">&#39;%&#39;</span>) {</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        <span class="keywordflow">if</span> (state == kPercent) {</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>          representation.emplace_back(kLiteralPercent);</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>          state = kKey;</div>
@@ -623,8 +695,8 @@ $(function() {
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatContext&gt;</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> format(</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>      <span class="keyword">const</span> USERVER_NAMESPACE::utils::datetime::TimeOfDay&lt;Duration&gt;&amp; value,</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>      FormatContext&amp; ctx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>      <span class="keyword">const</span> USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::TimeOfDay&lt;Duration&gt;&amp; value,</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>      FormatContext&amp; ctx) <span class="keyword">const</span> {</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keyword">auto</span> hours = value.Hours().count();</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <span class="keyword">auto</span> mins = value.Minutes().count();</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    <span class="keyword">auto</span> secs = value.Seconds().count();</div>
@@ -633,7 +705,7 @@ $(function() {
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span> </div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <span class="comment">// Number of decimal positions (min 1) + point + null terminator</span></div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keyword">constexpr</span> std::size_t buffer_size =</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        std::max(USERVER_NAMESPACE::utils::datetime::detail::kDecimalPositions&lt;</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        std::max(USERVER_NAMESPACE::<a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_namespace" href="../../db/dec/namespaceutils_1_1datetime.html" title="Date and time utilities.">datetime</a>::detail::kDecimalPositions&lt;</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>                     <span class="keyword">typename</span> Duration::period&gt;,</div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>                 std::size_t{1}) +</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        2;</div>
@@ -644,7 +716,7 @@ $(function() {
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>      subseconds[buffer_size - 1] = 0;</div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>      <span class="keywordflow">if</span> (truncate_trailing_subseconds) {</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        <span class="comment">// Truncate trailing zeros</span></div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> last = buffer_size - 2; last &gt; 0 &amp;&amp; subseconds[last] == <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> last = buffer_size - 2; last &gt; 0 &amp;&amp; subseconds[last] == <span class="stringliteral">&#39;0&#39;</span>;</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>             --last)</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>          subseconds[last] = 0;</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>      }</div>
@@ -668,7 +740,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:50:29 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -775,14 +847,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

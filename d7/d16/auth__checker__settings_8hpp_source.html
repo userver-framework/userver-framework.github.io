@@ -88,28 +88,28 @@ $(function() {
   <div class="headertitle"><div class="title">auth_checker_settings.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">optional</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="../../d0/da2/shared_2include_2userver_2formats_2json_2value_8hpp.html" title="Non-mutable JSON value representation.">userver/formats/json/value.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">json</span><span class="preprocessor">/</span><span class="preprocessor">value</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;auth_checker_apikey_settings.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="../../d9/d99/auth__checker__apikey__settings_8hpp.html">&quot;auth_checker_apikey_settings.hpp&quot;</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>server::handlers::auth {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> server::handlers::auth {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../dd/d13/classserver_1_1handlers_1_1auth_1_1AuthCheckerSettings.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d13/classserver_1_1handlers_1_1auth_1_1AuthCheckerSettings.html">AuthCheckerSettings</a> final {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class</span> AuthCheckerSettings <span class="keyword">final</span> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="../../dd/d13/classserver_1_1handlers_1_1auth_1_1AuthCheckerSettings.html">AuthCheckerSettings</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>&amp; doc);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">explicit</span> AuthCheckerSettings(<span class="keyword">const</span> formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value&amp; doc);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">const</span> std::optional&lt;ApiKeysMap&gt;&amp; GetApiKeysMap()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">const</span> std::optional&lt;ApiKeysMap&gt;&amp; GetApiKeysMap() <span class="keyword">const</span> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> apikeys_map_;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">void</span> ParseApikeys(<span class="keyword">const</span> <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>&amp; apikeys_map);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">void</span> ParseApikeys(<span class="keyword">const</span> formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value&amp; apikeys_map);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::optional&lt;ApiKeysMap&gt; apikeys_map_;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
@@ -122,7 +122,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:46:12 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -229,14 +229,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }

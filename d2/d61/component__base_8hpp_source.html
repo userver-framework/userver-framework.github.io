@@ -88,32 +88,41 @@ $(function() {
   <div class="headertitle"><div class="title">component_base.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../dd/d20/namespaceyaml__config.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">struct </span><a class="code hl_struct" href="../../d1/d3e/structyaml__config_1_1Schema.html" title="JSON Schema-like type definition.">Schema</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">struct</span> Schema;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}  <span class="comment">// namespace yaml_config</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f">   14</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f" title="State of the component.">ComponentHealth</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// State of the component</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f" title="State of the component.">ComponentHealth</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="comment">/// component is alive and fine</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410fae69fa9a656f76dd8a4d89f21992b2d3a" title="component is alive and fine">kOk</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="comment">/// component in fallback state, but the service keeps working</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410fa6dfc03075d8e0dc40351be0dfeb33b04" title="component in fallback state, but the service keeps working">kFallback</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="comment">/// component is sick, service can not work without it</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410fae66f945a3c2423ef09406cf09fa9de26" title="component is sick, service can not work without it">kFatal</a>,</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139c">   25</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139c">ConfigFileMode</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  kRequired,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// Whether the static config for the component must always be present, or can</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// be missing</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139c">ConfigFileMode</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">/// component must be setup in config</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1" title="component must be setup in config">kRequired</a>,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="comment">/// component must be not setup in config</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf41e181a8f52db2f4f6c22c982edf97b" title="component must be not setup in config">kNotRequired</a></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span>impl {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace</span> impl {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">class </span>ComponentBase {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/// Don&#39;t use it for application components, use LoggableComponentBase instead</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">class</span> ComponentBase {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  ComponentBase() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
@@ -123,8 +132,8 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">virtual</span> ~ComponentBase();</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">virtual</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f" title="State of the component.">ComponentHealth</a> GetComponentHealth()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410fae69fa9a656f76dd8a4d89f21992b2d3a" title="component is alive and fine">ComponentHealth::kOk</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">virtual</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f" title="State of the component.">ComponentHealth</a> GetComponentHealth() <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f" title="State of the component.">ComponentHealth</a><a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410fae69fa9a656f76dd8a4d89f21992b2d3a" title="component is alive and fine">::</a><a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410fae69fa9a656f76dd8a4d89f21992b2d3a" title="component is alive and fine">kOk</a>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnLoadingCancelled() {}</div>
@@ -133,16 +142,23 @@ $(function() {
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnAllComponentsAreStopping() {}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">static</span> <a class="code hl_struct" href="../../d1/d3e/structyaml__config_1_1Schema.html" title="JSON Schema-like type definition.">yaml_config::Schema</a> GetStaticConfigSchema();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">static</span> <a class="code hl_namespace" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::Schema GetStaticConfigSchema();</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}  <span class="comment">// namespace impl</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Component&gt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d0/d1f/namespacecomponents.html#a6449aa8d70e696bcd34f8cf75798c7a4">   65</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a6449aa8d70e696bcd34f8cf75798c7a4">kHasValidate</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">/// Specialize it for typename Component to validate static config against</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/// schema from Component::GetStaticConfigSchema</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">///</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/// @see @ref static-configs-validation &quot;Static configs validation&quot;</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a6449aa8d70e696bcd34f8cf75798c7a4">Component</a>&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a6449aa8d70e696bcd34f8cf75798c7a4">kHasValidate</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Component&gt;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">   71</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">kConfigFileMode</a> = <a class="code hl_enumvalue" href="../../d0/d1f/namespacecomponents.html#a4dcb9f95aed3bdf47421fcc9e298139caf7c00a6afc59e0b5c1fff929070484a1" title="component must be setup in config">ConfigFileMode::kRequired</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/// Specialize this to customize the loading of component settings</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">///</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/// @see @ref select-config-file-mode &quot;Setup config file mode&quot;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">Component</a>&gt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">kConfigFileMode</a> = <a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">ConfigFileMode</a>::<a class="code hl_variable" href="../../d0/d1f/namespacecomponents.html#a647349627b7de0a22e024ffe4d628309">kRequired</a>;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}  <span class="comment">// namespace components</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
@@ -152,7 +168,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 3 2022 17:44:48 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -259,14 +275,13 @@ function setup_if_landing() {
     if (document.getElementById('landing_logo_id') === null) {
         return false;
     }
+    $('body').css('background-color', 'black');
+    $('#titlearea').hide();
+    $('.header').hide();
     $(function() {
-        $('#titlearea').hide();
-        const main_nav = $('#main-nav')
+        const main_nav = $('#main-nav');
         main_nav.addClass('main-nav-landing');
         main_nav.append('<hr>');
-        $('.header').hide();
-        $('body').css('background-color', 'black');
-        $('#page_edit').hide();
     });
     return true;
 }
