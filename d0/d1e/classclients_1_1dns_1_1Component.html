@@ -171,7 +171,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Caching DNS resolver component. </p>
 <p >Returned references to <a class="el" href="../../d0/d75/classclients_1_1dns_1_1Resolver.html">clients::dns::Resolver</a> live for a lifetime of the component and are safe for concurrent use.</p>
-<h2><a class="anchor" id="autotoc_md415"></a>
+<h2><a class="anchor" id="autotoc_md419"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -197,9 +197,23 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">cache-failure-ttl   </td><td class="markdownTableBodyNone">TTL for network failures caching   </td><td class="markdownTableBodyNone">5s   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md416"></a>
+<h2><a class="anchor" id="autotoc_md420"></a>
 Static configuration example:</h2>
-<div class="fragment"></div><!-- fragment --> 
+<div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
+<div class="line">    dns-client:</div>
+<div class="line">      <a class="code hl_namespace" href="../../d5/d8f/namespacefs.html" title="filesystem support">fs</a>-task-processor: <a class="code hl_namespace" href="../../d5/d8f/namespacefs.html" title="filesystem support">fs</a>-task-processor</div>
+<div class="line">      hosts-file-path: /etc/hosts</div>
+<div class="line">      hosts-file-update-interval: 5m</div>
+<div class="line">      network-timeout: 1s</div>
+<div class="line">      network-attempts: 1</div>
+<div class="line">      network-custom-servers:</div>
+<div class="line">        - 127.0.0.1</div>
+<div class="line">        - 127.0.0.2</div>
+<div class="line">      <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>-ways: 16</div>
+<div class="line">      <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>-size-per-way: 256</div>
+<div class="line">      <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>-max-reply-ttl: 5m</div>
+<div class="line">      <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>-failure-ttl: 5s</div>
+</div><!-- fragment --> 
 <p class="definition">Definition at line <a class="el" href="../../d6/dbb/core_2include_2userver_2clients_2dns_2component_8hpp_source.html#l00042">42</a> of file <a class="el" href="../../d6/dbb/core_2include_2userver_2clients_2dns_2component_8hpp_source.html">component.hpp</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a6dedda44fce21358f491d706cd36cb74" name="a6dedda44fce21358f491d706cd36cb74"></a>
@@ -234,7 +248,7 @@ Static configuration example:</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:32 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

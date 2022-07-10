@@ -191,7 +191,7 @@ $(function() {
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  std::unique_ptr&lt;grpc::ClientContext&gt; context_;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  std::string_view call_name_;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  State state_;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  State state_{State::kOpen};</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  std::unique_ptr&lt;RemoteData&gt; remote_data_;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
@@ -264,7 +264,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:47:28 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:19:56 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

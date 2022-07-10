@@ -105,9 +105,9 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Test name printer for parameterized tests written in gtest. </p>
-<h2><a class="anchor" id="autotoc_md501"></a>
+<h2><a class="anchor" id="autotoc_md507"></a>
 Example usage:</h2>
-<h3><a class="anchor" id="autotoc_md502"></a>
+<h3><a class="anchor" id="autotoc_md508"></a>
 Singly-parameterized test.</h3>
 <p >Special-purpose field <code>test_name</code> of type <code>std::string</code> may be used for describing test input in a human-readable form.</p>
 <div class="fragment"><div class="line"><span class="comment">// Declare a structure to keep input parameters for a test.</span></div>
@@ -146,7 +146,7 @@ Singly-parameterized test.</h3>
 <div class="fragment"><div class="line">ParametrizedTest.BasicTest/First</div>
 <div class="line">ParametrizedTest.BasicTest/Second</div>
 <div class="line">ParametrizedTest.BasicTest/Third</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md503"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md509"></a>
 Another option to override a test name.</h3>
 <p >Helper class <code>::utest::PrintTestName()</code> also supports conventional <code>PrintTo</code> override. However field <code>test_name</code> of a parameters' structure has a higher priority for overriding a test name than a <code>PrintTo</code> function.</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>AnotherTestParams {</div>
@@ -179,7 +179,7 @@ Another option to override a test name.</h3>
 <div class="line">INSTANTIATE_TEST_SUITE_P(<span class="comment">/* no prefix */</span>, AnotherParametrizedTest,</div>
 <div class="line">                         testing::ValuesIn(kAnotherTestParams),</div>
 <div class="line">                         <a class="code hl_struct" href="../../df/d72/structutest_1_1PrintTestName.html" title="Test name printer for parameterized tests written in gtest.">utest::PrintTestName</a>());</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md504"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md510"></a>
 Doubly-parametrized test.</h3>
 <p >In case you have more than one dimension for possible test parameters, you can also use <code>::utest::PrintTestName()</code> to combine names for the dimensions of every parameter. You can mix methods for overriding test names for the dimension of every parameter independently.</p>
 <div class="fragment"><div class="line"><span class="comment">// Define a class for running tests which get parameterized with the structures</span></div>
@@ -256,7 +256,7 @@ template&lt;typename ParamType &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:35 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:24:12 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

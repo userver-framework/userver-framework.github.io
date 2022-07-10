@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code hl_namespace" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::<a class="code hl_namespace" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace</span> storages::<a class="code hl_namespace" href="../../de/d6d/namespacestorages_1_1postgres.html" title="Top namespace for uPg driver.">postgres</a>::<a class="code hl_namespace" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html" title="uPg input-output.">io</a> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// clang-format wraps snippet lines</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// clang-format off</span></div>
@@ -173,7 +173,7 @@ $(function() {
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> ReadField(<a class="code hl_struct" href="../../d5/d3e/structstorages_1_1postgres_1_1io_1_1FieldBuffer.html">FieldBuffer</a>&amp; buffer, <span class="keyword">const</span> TypeBufferCategory&amp; categories,</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                 U&amp; val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    Integer field_type;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    Integer field_type = 0;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    buffer.Read(field_type, <a class="code hl_enumeration" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22">BufferCategory</a><a class="code hl_enumvalue" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22af488377ad58e124fc274a7a87ae55404" title="kPlainBuffer the buffer is a single plain value">::</a><a class="code hl_enumvalue" href="../../d2/d79/namespacestorages_1_1postgres_1_1io.html#a943f92259f590f75376ede1e75065b22af488377ad58e124fc274a7a87ae55404" title="kPlainBuffer the buffer is a single plain value">kPlainBuffer</a>);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">auto</span> elem_category = GetTypeBufferCategory(categories, field_type);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (elem_category == BufferCategory::kNoParser) {</div>
@@ -317,7 +317,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:48:19 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:20:52 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

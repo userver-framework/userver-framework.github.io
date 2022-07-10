@@ -170,33 +170,42 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsMissing</b> () const</td></tr>
 <tr class="memdesc:a3bc19355d62d8ca47b09645c63335dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds nothing. When <code><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a3bc19355d62d8ca47b09645c63335dc9" title="Returns true if *this holds nothing. When IsMissing() returns true any attempt to get the actual valu...">IsMissing()</a></code> returns <code>true</code> any attempt to get the actual value or iterate over *this will throw <a class="el" href="../../d4/dcb/classformats_1_1yaml_1_1MemberMissingException.html">MemberMissingException</a>. <br /></td></tr>
 <tr class="separator:a3bc19355d62d8ca47b09645c63335dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a6e30882e093e96697d3f906efb2814"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a4a6e30882e093e96697d3f906efb2814">IsNull</a> () const</td></tr>
-<tr class="memdesc:a4a6e30882e093e96697d3f906efb2814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a Null (Type::kNull).  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a4a6e30882e093e96697d3f906efb2814">More...</a><br /></td></tr>
-<tr class="separator:a4a6e30882e093e96697d3f906efb2814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade079384dd382ad5271f91406cce8c9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#ade079384dd382ad5271f91406cce8c9b">IsBool</a> () const</td></tr>
-<tr class="memdesc:ade079384dd382ad5271f91406cce8c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to bool.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#ade079384dd382ad5271f91406cce8c9b">More...</a><br /></td></tr>
-<tr class="separator:ade079384dd382ad5271f91406cce8c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5da51cb722431962a42add3209469e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#ab5da51cb722431962a42add3209469e7">IsInt</a> () const</td></tr>
-<tr class="memdesc:ab5da51cb722431962a42add3209469e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#ab5da51cb722431962a42add3209469e7">More...</a><br /></td></tr>
-<tr class="separator:ab5da51cb722431962a42add3209469e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e2bf7f684b2b8f391cb800889b1887"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a25e2bf7f684b2b8f391cb800889b1887">IsInt64</a> () const</td></tr>
-<tr class="memdesc:a25e2bf7f684b2b8f391cb800889b1887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int64_t.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a25e2bf7f684b2b8f391cb800889b1887">More...</a><br /></td></tr>
-<tr class="separator:a25e2bf7f684b2b8f391cb800889b1887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d55d585cca70c062aa3eb507b87c6c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a2d55d585cca70c062aa3eb507b87c6c8">IsUInt64</a> () const</td></tr>
-<tr class="memdesc:a2d55d585cca70c062aa3eb507b87c6c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to uint64_t.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a2d55d585cca70c062aa3eb507b87c6c8">More...</a><br /></td></tr>
-<tr class="separator:a2d55d585cca70c062aa3eb507b87c6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7e112b0da6af3f0f76b87a79b48d5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#add7e112b0da6af3f0f76b87a79b48d5e">IsDouble</a> () const</td></tr>
-<tr class="memdesc:add7e112b0da6af3f0f76b87a79b48d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to double.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#add7e112b0da6af3f0f76b87a79b48d5e">More...</a><br /></td></tr>
-<tr class="separator:add7e112b0da6af3f0f76b87a79b48d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a272b13faeb791303c00a028adeaa5723"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a272b13faeb791303c00a028adeaa5723">IsString</a> () const</td></tr>
-<tr class="memdesc:a272b13faeb791303c00a028adeaa5723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to std::string.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a272b13faeb791303c00a028adeaa5723">More...</a><br /></td></tr>
-<tr class="separator:a272b13faeb791303c00a028adeaa5723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36ce69c6b24fa2b01fe8b271d81da503"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a36ce69c6b24fa2b01fe8b271d81da503">IsArray</a> () const</td></tr>
-<tr class="memdesc:a36ce69c6b24fa2b01fe8b271d81da503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is an array (Type::kArray).  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a36ce69c6b24fa2b01fe8b271d81da503">More...</a><br /></td></tr>
-<tr class="separator:a36ce69c6b24fa2b01fe8b271d81da503"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9d12031767cbd32e79fa7e2b343b3b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#ae9d12031767cbd32e79fa7e2b343b3b2">IsObject</a> () const</td></tr>
-<tr class="memdesc:ae9d12031767cbd32e79fa7e2b343b3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is a map (Type::kObject).  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#ae9d12031767cbd32e79fa7e2b343b3b2">More...</a><br /></td></tr>
-<tr class="separator:ae9d12031767cbd32e79fa7e2b343b3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a02a645b5e37cad99ee82d61eae586e"><td class="memItemLeft" align="right" valign="top"><a id="a1a02a645b5e37cad99ee82d61eae586e" name="a1a02a645b5e37cad99ee82d61eae586e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsNull</b> () const noexcept</td></tr>
+<tr class="memdesc:a1a02a645b5e37cad99ee82d61eae586e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a Null (Type::kNull). <br /></td></tr>
+<tr class="separator:a1a02a645b5e37cad99ee82d61eae586e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e02e32511a50df71413c61bb5c0c16"><td class="memItemLeft" align="right" valign="top"><a id="a19e02e32511a50df71413c61bb5c0c16" name="a19e02e32511a50df71413c61bb5c0c16"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsBool</b> () const noexcept</td></tr>
+<tr class="memdesc:a19e02e32511a50df71413c61bb5c0c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to bool. <br /></td></tr>
+<tr class="separator:a19e02e32511a50df71413c61bb5c0c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81fe813e10a0045f915a898ec3d95ff1"><td class="memItemLeft" align="right" valign="top"><a id="a81fe813e10a0045f915a898ec3d95ff1" name="a81fe813e10a0045f915a898ec3d95ff1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInt</b> () const noexcept</td></tr>
+<tr class="memdesc:a81fe813e10a0045f915a898ec3d95ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int. <br /></td></tr>
+<tr class="separator:a81fe813e10a0045f915a898ec3d95ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea236750cf68fb0a7e162db80873907e"><td class="memItemLeft" align="right" valign="top"><a id="aea236750cf68fb0a7e162db80873907e" name="aea236750cf68fb0a7e162db80873907e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInt64</b> () const noexcept</td></tr>
+<tr class="memdesc:aea236750cf68fb0a7e162db80873907e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int64_t. <br /></td></tr>
+<tr class="separator:aea236750cf68fb0a7e162db80873907e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab320bac661d544a01de1ce47c1d46344"><td class="memItemLeft" align="right" valign="top"><a id="ab320bac661d544a01de1ce47c1d46344" name="ab320bac661d544a01de1ce47c1d46344"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUInt64</b> () const noexcept</td></tr>
+<tr class="memdesc:ab320bac661d544a01de1ce47c1d46344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to uint64_t. <br /></td></tr>
+<tr class="separator:ab320bac661d544a01de1ce47c1d46344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4572d6cb58df67e5d52cfce65d29a4"><td class="memItemLeft" align="right" valign="top"><a id="abb4572d6cb58df67e5d52cfce65d29a4" name="abb4572d6cb58df67e5d52cfce65d29a4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDouble</b> () const noexcept</td></tr>
+<tr class="memdesc:abb4572d6cb58df67e5d52cfce65d29a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to double. <br /></td></tr>
+<tr class="separator:abb4572d6cb58df67e5d52cfce65d29a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9241130a1dffca14c8a562090a435b4c"><td class="memItemLeft" align="right" valign="top"><a id="a9241130a1dffca14c8a562090a435b4c" name="a9241130a1dffca14c8a562090a435b4c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsString</b> () const noexcept</td></tr>
+<tr class="memdesc:a9241130a1dffca14c8a562090a435b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to std::string. <br /></td></tr>
+<tr class="separator:a9241130a1dffca14c8a562090a435b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e52c6a4f8a3f1581d784398d1225f0d"><td class="memItemLeft" align="right" valign="top"><a id="a5e52c6a4f8a3f1581d784398d1225f0d" name="a5e52c6a4f8a3f1581d784398d1225f0d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsArray</b> () const noexcept</td></tr>
+<tr class="memdesc:a5e52c6a4f8a3f1581d784398d1225f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is an array (Type::kArray). <br /></td></tr>
+<tr class="separator:a5e52c6a4f8a3f1581d784398d1225f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a5dad599443da9f2d8d33ec9d2e3d6e"><td class="memItemLeft" align="right" valign="top"><a id="a3a5dad599443da9f2d8d33ec9d2e3d6e" name="a3a5dad599443da9f2d8d33ec9d2e3d6e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsObject</b> () const noexcept</td></tr>
+<tr class="memdesc:a3a5dad599443da9f2d8d33ec9d2e3d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is a map (Type::kObject). <br /></td></tr>
+<tr class="separator:a3a5dad599443da9f2d8d33ec9d2e3d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5802cd1f6d84d14213ccf51c282cbd65"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5802cd1f6d84d14213ccf51c282cbd65"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a5802cd1f6d84d14213ccf51c282cbd65">As</a> () const</td></tr>
 <tr class="memdesc:a5802cd1f6d84d14213ccf51c282cbd65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value of *this converted to T.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a5802cd1f6d84d14213ccf51c282cbd65">More...</a><br /></td></tr>
@@ -209,8 +218,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsMissing</b> () cons
 <tr class="memitem:a016d3bdf0cf19f0dd320aa8ccc0c8d4c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a016d3bdf0cf19f0dd320aa8ccc0c8d4c">As</a> (<a class="el" href="../../de/dba/structformats_1_1yaml_1_1Value_1_1DefaultConstructed.html">DefaultConstructed</a>) const</td></tr>
 <tr class="memdesc:a016d3bdf0cf19f0dd320aa8ccc0c8d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value of *this converted to T or T() if this-&gt;<a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a3bc19355d62d8ca47b09645c63335dc9" title="Returns true if *this holds nothing. When IsMissing() returns true any attempt to get the actual valu...">IsMissing()</a>.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a016d3bdf0cf19f0dd320aa8ccc0c8d4c">More...</a><br /></td></tr>
 <tr class="separator:a016d3bdf0cf19f0dd320aa8ccc0c8d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43725745a39240a275f8a5d67888df43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a43725745a39240a275f8a5d67888df43">HasMember</a> (std::string_view key) const</td></tr>
-<tr class="memdesc:a43725745a39240a275f8a5d67888df43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a <code>key</code>.  <a href="../../da/dc1/classformats_1_1yaml_1_1Value.html#a43725745a39240a275f8a5d67888df43">More...</a><br /></td></tr>
+<tr class="memitem:a43725745a39240a275f8a5d67888df43"><td class="memItemLeft" align="right" valign="top"><a id="a43725745a39240a275f8a5d67888df43" name="a43725745a39240a275f8a5d67888df43"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasMember</b> (std::string_view key) const</td></tr>
+<tr class="memdesc:a43725745a39240a275f8a5d67888df43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a <code>key</code>. <br /></td></tr>
 <tr class="separator:a43725745a39240a275f8a5d67888df43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae659e486d84511784b90fc6ea2ba80ac"><td class="memItemLeft" align="right" valign="top"><a id="ae659e486d84511784b90fc6ea2ba80ac" name="ae659e486d84511784b90fc6ea2ba80ac"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetPath</b> () const</td></tr>
@@ -287,7 +297,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Serialize</b> (const 
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Non-mutable YAML value representation. </p>
 <p >Class provides non mutable access YAML value. For modification and construction of new YAML values use <a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html" title="Builder for YAML.">formats::yaml::ValueBuilder</a>.</p>
-<h2><a class="anchor" id="autotoc_md402"></a>
+<h2><a class="anchor" id="autotoc_md406"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="comment">// #include &lt;userver/formats/yaml.hpp&gt;</span></div>
 <div class="line"> </div>
@@ -431,7 +441,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md403"></a>
+<h2><a class="anchor" id="autotoc_md407"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
 <div class="line"> </div>
@@ -463,7 +473,7 @@ Example usage:</h2>
 <div class="line">}  <span class="comment">// namespace my_namespace</span></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/dd7/md_en_userver_formats.html">Formats (JSON, YAML, BSON, ...)</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00280">280</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00268">268</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -494,7 +504,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Use as <code>value.As&lt;T&gt;({})</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00316">316</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00306">306</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -534,7 +544,7 @@ template&lt;typename T , typename First , typename... Rest&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00307">307</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00295">295</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -863,107 +873,6 @@ template&lt;typename T , typename First , typename... Rest&gt; </div>
 
 </div>
 </div>
-<a id="a43725745a39240a275f8a5d67888df43" name="a43725745a39240a275f8a5d67888df43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43725745a39240a275f8a5d67888df43">&#9670;&nbsp;</a></span>HasMember()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::HasMember </td>
-          <td>(</td>
-          <td class="paramtype">std::string_view&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this holds a <code>key</code>. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a36ce69c6b24fa2b01fe8b271d81da503" name="a36ce69c6b24fa2b01fe8b271d81da503"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36ce69c6b24fa2b01fe8b271d81da503">&#9670;&nbsp;</a></span>IsArray()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsArray </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is an array (Type::kArray). </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ade079384dd382ad5271f91406cce8c9b" name="ade079384dd382ad5271f91406cce8c9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade079384dd382ad5271f91406cce8c9b">&#9670;&nbsp;</a></span>IsBool()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsBool </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is convertible to bool. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="add7e112b0da6af3f0f76b87a79b48d5e" name="add7e112b0da6af3f0f76b87a79b48d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add7e112b0da6af3f0f76b87a79b48d5e">&#9670;&nbsp;</a></span>IsDouble()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsDouble </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is convertible to double. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="aabc6b11e911bb90405434d26c59baea2" name="aabc6b11e911bb90405434d26c59baea2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabc6b11e911bb90405434d26c59baea2">&#9670;&nbsp;</a></span>IsEmpty()</h2>
 
@@ -983,156 +892,6 @@ template&lt;typename T , typename First , typename... Rest&gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="../../d0/df6/classformats_1_1yaml_1_1TypeMismatchException.html">TypeMismatchException</a></td><td>if not an array or an object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab5da51cb722431962a42add3209469e7" name="ab5da51cb722431962a42add3209469e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5da51cb722431962a42add3209469e7">&#9670;&nbsp;</a></span>IsInt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsInt </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is convertible to int. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a25e2bf7f684b2b8f391cb800889b1887" name="a25e2bf7f684b2b8f391cb800889b1887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25e2bf7f684b2b8f391cb800889b1887">&#9670;&nbsp;</a></span>IsInt64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsInt64 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is convertible to int64_t. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4a6e30882e093e96697d3f906efb2814" name="a4a6e30882e093e96697d3f906efb2814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a6e30882e093e96697d3f906efb2814">&#9670;&nbsp;</a></span>IsNull()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsNull </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this holds a Null (Type::kNull). </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae9d12031767cbd32e79fa7e2b343b3b2" name="ae9d12031767cbd32e79fa7e2b343b3b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d12031767cbd32e79fa7e2b343b3b2">&#9670;&nbsp;</a></span>IsObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is a map (Type::kObject). </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a272b13faeb791303c00a028adeaa5723" name="a272b13faeb791303c00a028adeaa5723"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a272b13faeb791303c00a028adeaa5723">&#9670;&nbsp;</a></span>IsString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is convertible to std::string. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2d55d585cca70c062aa3eb507b87c6c8" name="a2d55d585cca70c062aa3eb507b87c6c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d55d585cca70c062aa3eb507b87c6c8">&#9670;&nbsp;</a></span>IsUInt64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::Value::IsUInt64 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this is convertible to uint64_t. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1165,7 +924,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -1322,7 +1081,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00269">269</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00257">257</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -1346,7 +1105,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00272">272</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html#l00260">260</a> of file <a class="el" href="../../d6/d99/shared_2include_2userver_2formats_2yaml_2value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -1358,7 +1117,7 @@ template&lt;class T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:45 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

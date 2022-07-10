@@ -284,26 +284,25 @@ $(function() {
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keyword">static</span> OptionalDeleter DoNotDelete() <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    OptionalDeleter(<span class="keywordtype">bool</span> do_delete) : do_delete(do_delete) {}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keyword">explicit</span> OptionalDeleter(<span class="keywordtype">bool</span> do_delete) : do_delete(do_delete) {}</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> do_delete;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  };</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  std::unique_ptr&lt;Impl, OptionalDeleter&gt; pimpl_;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>};</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::LogHelper&amp; operator&lt;&lt;(<a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::LogHelper&amp; lh, <span class="keyword">const</span> Span&amp; span);</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}  <span class="comment">// namespace tracing</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  std::unique_ptr&lt;Impl, OptionalDeleter&gt; pimpl_;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>};</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::LogHelper&amp; operator&lt;&lt;(<a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>::LogHelper&amp; lh, <span class="keyword">const</span> Span&amp; span);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}  <span class="comment">// namespace tracing</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:46:52 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:19:17 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

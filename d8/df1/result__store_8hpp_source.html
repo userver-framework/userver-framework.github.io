@@ -180,30 +180,31 @@ $(function() {
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  exception_ = std::move(exception);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a43e5062cf90c88785fa433598dcde612">   93</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::<a class="code hl_function" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a43e5062cf90c88785fa433598dcde612" title="Checks value availability or rethrows the stored exception.">Retrieve</a>() { Get(); }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::Get() <span class="keyword">const</span>&amp; {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">if</span> (has_value_) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">if</span> (exception_) std::rethrow_exception(exception_);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;result store is not ready&quot;</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a05dd15b2d7231709c3297b5a1984ced4">  101</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::<a class="code hl_function" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a05dd15b2d7231709c3297b5a1984ced4" title="Marks the value as available.">SetValue</a>() <span class="keyword">noexcept</span> { has_value_ = <span class="keyword">true</span>; }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#aabc4cf049506118096c6adc2c142721a">  103</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::<a class="code hl_function" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#aabc4cf049506118096c6adc2c142721a" title="Stores an exception.">SetException</a>(</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    std::exception_ptr&amp;&amp; exception) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  exception_ = std::move(exception);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}  <span class="comment">// namespace utils</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// NOLINTNEXTLINE(readability-make-member-function-const)</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a43e5062cf90c88785fa433598dcde612">   94</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::<a class="code hl_function" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a43e5062cf90c88785fa433598dcde612" title="Checks value availability or rethrows the stored exception.">Retrieve</a>() { Get(); }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::Get() <span class="keyword">const</span>&amp; {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">if</span> (has_value_) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">if</span> (exception_) std::rethrow_exception(exception_);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;result store is not ready&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a05dd15b2d7231709c3297b5a1984ced4">  102</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::<a class="code hl_function" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#a05dd15b2d7231709c3297b5a1984ced4" title="Marks the value as available.">SetValue</a>() <span class="keyword">noexcept</span> { has_value_ = <span class="keyword">true</span>; }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#aabc4cf049506118096c6adc2c142721a">  104</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> ResultStore&lt;<span class="keywordtype">void</span>&gt;::<a class="code hl_function" href="../../dc/db9/classutils_1_1ResultStore_3_01void_01_4.html#aabc4cf049506118096c6adc2c142721a" title="Stores an exception.">SetException</a>(</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    std::exception_ptr&amp;&amp; exception) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  exception_ = std::move(exception);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}  <span class="comment">// namespace utils</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:23 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:05 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

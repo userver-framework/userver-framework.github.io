@@ -389,7 +389,7 @@ virtual <a class="el" href="../../dc/d4a/classstorages_1_1redis_1_1Request.html"
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Atomic sequence of commands (<a href="https://redis.io/topics/transactions">https://redis.io/topics/transactions</a>). Please note that Redis transaction implements isolation, but not all-or-nothing semantics (IOW a subcommand may fail, but the following subcommands will succeed). Methods will add commands to the <code><a class="el" href="../../d2/d9c/classstorages_1_1redis_1_1Transaction.html">Transaction</a></code> object. For each added command a future-like object will be returned. You can get the result of each transaction's subcommand by calling <code>Get()</code> method for these objects. Commands will be sent to a server after calling <code><a class="el" href="../../d2/d9c/classstorages_1_1redis_1_1Transaction.html#a345b7f98a87c66cb4ec501bf68923f1a">Exec()</a></code> that returns <code>RequestExec</code> object. You should not call <code>Get()</code> method in a future-like subcommand's object before calling <code>Get()</code> method on <code>RequestExec</code> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html">transaction.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html">transaction.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad7527725458eac8f832717f29492e6a8" name="ad7527725458eac8f832717f29492e6a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7527725458eac8f832717f29492e6a8">&#9670;&nbsp;</a></span>ProcessResultCallback</h2>
@@ -405,7 +405,7 @@ template&lt;typename <a class="el" href="../../dc/d4a/classstorages_1_1redis_1_1
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html">transaction.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html">transaction.hpp</a>.</p>
 
 </div>
 </div>
@@ -430,7 +430,7 @@ template&lt;typename <a class="el" href="../../dc/d4a/classstorages_1_1redis_1_1
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html#l00034">34</a> of file <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html">transaction.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp_source.html">transaction.hpp</a>.</p>
 
 </div>
 </div>
@@ -470,7 +470,7 @@ template&lt;typename <a class="el" href="../../dc/d4a/classstorages_1_1redis_1_1
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:35 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:24:09 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

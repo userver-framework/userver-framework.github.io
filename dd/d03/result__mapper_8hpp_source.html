@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::<a class="code hl_namespace" href="../../dd/de0/namespacestorages_1_1clickhouse.html" title="Top namespace for uClickHouse driver.">clickhouse</a>::<a class="code hl_namespace" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html" title="uClickHouse input-output.">io</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace</span> storages::<a class="code hl_namespace" href="../../dd/de0/namespacestorages_1_1clickhouse.html" title="Top namespace for uClickHouse driver.">clickhouse</a>::<a class="code hl_namespace" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html" title="uClickHouse input-output.">io</a> {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class</span> IteratorsTester;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
@@ -134,7 +134,7 @@ $(function() {
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">using</span> MappedType = <span class="keyword">typename</span> CppToClickhouse&lt;Row&gt;::mapped_type;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">explicit</span> RowsMapper(<a class="code hl_namespace" href="../../dd/de0/namespacestorages_1_1clickhouse.html" title="Top namespace for uClickHouse driver.">clickhouse</a>::impl::BlockWrapperPtr&amp;&amp; block)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      : block_{block.release()}, begin_iterators_{}, end_iterators_{} {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      : block_{block.release()} {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    IteratorsHelperT::Init(begin_iterators_, end_iterators_, *block_);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  ~RowsMapper() = <span class="keywordflow">default</span>;</div>
@@ -208,8 +208,8 @@ $(function() {
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">using</span> IteratorsHelperT = clickhouse::impl::IteratorsHelper&lt;MappedType&gt;;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <a class="code hl_namespace" href="../../dd/de0/namespacestorages_1_1clickhouse.html" title="Top namespace for uClickHouse driver.">clickhouse</a>::impl::BlockWrapperPtr block_;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  IteratorsTupleT begin_iterators_;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  IteratorsTupleT end_iterators_;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  IteratorsTupleT begin_iterators_{};</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  IteratorsTupleT end_iterators_{};</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Row&gt;</div>
@@ -275,7 +275,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:44:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:16:45 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -106,7 +106,7 @@ Example</h2>
 </ol>
 <div class="fragment"><div class="line">Logging::Logging(<span class="keyword">const</span> ComponentConfig&amp; config, <span class="keyword">const</span> ComponentContext&amp; context)</div>
 <div class="line">    : signal_subscriber_(</div>
-<div class="line">          context.FindComponent&lt;os_signals::ProcessorComponent&gt;()</div>
+<div class="line">          context.FindComponent&lt;<a class="code hl_namespace" href="../../d5/d79/namespaceos__signals.html" title="Components and functions to work with OS signals.">os_signals</a>::ProcessorComponent&gt;()</div>
 <div class="line">              .Get()</div>
 <div class="line">              .AddListener(this, kName, SIGUSR1, &amp;Logging::OnLogRotate))</div>
 </div><!-- fragment --><ol type="1">
@@ -119,7 +119,7 @@ Example</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:30 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

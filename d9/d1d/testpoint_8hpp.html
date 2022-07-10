@@ -218,17 +218,19 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsControl), otherwise does nothing. </p>
-<p >Example usage: </p><div class="fragment"></div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">async def </span>test_injection(service_client, testpoint):</div>
-<div class="line">    <span class="preprocessor">@testpoint(&#39;injection-point&#39;)</span></div>
-<div class="line">    <span class="keyword">def </span>injection_point(data):</div>
-<div class="line">        <span class="keywordflow">return</span> {<span class="stringliteral">&#39;value&#39;</span>: <span class="stringliteral">&#39;injected&#39;</span>}</div>
+<p >Example usage: </p><div class="fragment"><div class="line">  <a class="code hl_define" href="../../d9/d1d/testpoint_8hpp.html#a8a6d27a839e4327f705ac8d965e4b6e8" title="Send testpoint notification. Works only if testpoint support is enabled (e.g. in components::TestsCon...">TESTPOINT</a>(<span class="stringliteral">&quot;simple-testpoint&quot;</span>, [] {</div>
+<div class="line">    <a class="code hl_class" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> builder;</div>
+<div class="line">    builder[<span class="stringliteral">&quot;payload&quot;</span>] = <span class="stringliteral">&quot;Hello, world!&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">return</span> builder.<a class="code hl_function" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a078ae0edbffa37a654914629000680ad" title="Take out the resulting Value object. After calling this method the object is in unspecified (but vali...">ExtractValue</a>();</div>
+<div class="line">  }());</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">async def </span>test_basic(service_client, testpoint):</div>
+<div class="line">    <span class="preprocessor">@testpoint(&#39;simple-testpoint&#39;)</span></div>
+<div class="line">    <span class="keyword">def </span>simple_testpoint(data):</div>
+<div class="line">        <span class="keyword">assert</span> data == {<span class="stringliteral">&#39;payload&#39;</span>: <span class="stringliteral">&#39;Hello, world!&#39;</span>}</div>
 <div class="line"> </div>
 <div class="line">    response = await service_client.get(<span class="stringliteral">&#39;/testpoint&#39;</span>)</div>
 <div class="line">    <span class="keyword">assert</span> response.status == 200</div>
-<div class="line">    <span class="keyword">assert</span> response.json() == {<span class="stringliteral">&#39;value&#39;</span>: <span class="stringliteral">&#39;injected&#39;</span>}</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment"># testpoint supports callqueue interface</span></div>
-<div class="line">    <span class="keyword">assert</span> injection_point.times_called == 1</div>
+<div class="line">    <span class="keyword">assert</span> simple_testpoint.times_called == 1</div>
 </div><!-- fragment --> 
 <p class="definition">Definition at line <a class="el" href="../../d9/d1d/testpoint_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d9/d1d/testpoint_8hpp_source.html">testpoint.hpp</a>.</p>
 
@@ -267,7 +269,13 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Send testpoint notification and receive data. Works only if testpoint support is enabled (e.g. in components::TestsControl), otherwise does nothing. </p>
-<p >Example usage: </p><div class="fragment"></div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">async def </span>test_injection(service_client, testpoint):</div>
+<p >Example usage: </p><div class="fragment"><div class="line">  <a class="code hl_class" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> result;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_define" href="../../d9/d1d/testpoint_8hpp.html#affc6f7542ce4c6a761234d96c33f43d0" title="Send testpoint notification and receive data. Works only if testpoint support is enabled (e....">TESTPOINT_CALLBACK</a>(<span class="stringliteral">&quot;injection-point&quot;</span>, <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>(),</div>
+<div class="line">                     [&amp;result](<span class="keyword">const</span> <a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>&amp; doc) {</div>
+<div class="line">                       result[<span class="stringliteral">&quot;value&quot;</span>] = doc[<span class="stringliteral">&quot;value&quot;</span>].<a class="code hl_function" href="../../de/d91/classformats_1_1json_1_1Value.html#a4383138b64646d372ab3990e38e2fc62" title="Returns value of *this converted to T.">As</a>&lt;std::string&gt;(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">                     });</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">async def </span>test_injection(service_client, testpoint):</div>
 <div class="line">    <span class="preprocessor">@testpoint(&#39;injection-point&#39;)</span></div>
 <div class="line">    <span class="keyword">def </span>injection_point(data):</div>
 <div class="line">        <span class="keywordflow">return</span> {<span class="stringliteral">&#39;value&#39;</span>: <span class="stringliteral">&#39;injected&#39;</span>}</div>
@@ -370,7 +378,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:30 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:20 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

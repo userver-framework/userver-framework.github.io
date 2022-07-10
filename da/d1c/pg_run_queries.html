@@ -87,7 +87,7 @@ $(function() {
 <div class="textblock"><p >All queries are executed through a transaction object, event when being executed through singe-query interface, so here only executing queries with transaction will be covered. Single-query interface is basically the same except for additional options.</p>
 <p >uPg provides means to execute text queries only. There is no query generation, but can be used by other tools to execute SQL queries.</p>
 <dl class="section warning"><dt>Warning</dt><dd>A query must contain a single query, multiple statements delimited by ';' are not supported.</dd></dl>
-<p>All queries are parsed and prepared during the first invocation and are executed as prepared afterwards.</p>
+<p>All queries are parsed and prepared during the first invocation and are executed as prepared statements afterwards.</p>
 <p >Any query execution can throw an exception. Please see <a class="el" href="../../d5/d8e/pg_errors.html">uPg: Postgres errors</a> for more information on possible errors.</p>
 <dl class="section user"><dt>Queries without parameters</dt><dd></dd></dl>
 <p>Executing a query wihout any parameters is rather straightforward. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> trx = cluster-&gt;Begin(<span class="comment">/* transaction options */</span>);</div>
@@ -110,7 +110,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:32 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

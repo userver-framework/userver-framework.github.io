@@ -147,7 +147,7 @@ $(function() {
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/// @param data start of continuous range in memory</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">/// @param len size of that range</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../df/d51/hex_8hpp.html#a1dc3addc96b950de58b5468b94998d5c">   59</a></span><span class="keyword">inline</span> std::string <a class="code hl_function" href="../../df/d51/hex_8hpp.html#a1dc3addc96b950de58b5468b94998d5c" title="Allocates std::string, converts input and writes into said string.">ToHex</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* encoded, size_t len) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">auto</span>* chars = <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">const</span> <span class="keywordtype">char</span>*&gt;(encoded);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">const</span> <span class="keyword">auto</span>* chars = <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">const</span> <span class="keywordtype">char</span>*&gt;(encoded);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">return</span> ToHex(std::string_view{chars, len});</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
@@ -196,7 +196,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:12 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:22:53 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

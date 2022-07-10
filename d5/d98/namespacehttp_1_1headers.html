@@ -223,7 +223,7 @@ Variables</h2></td></tr>
 <tr class="separator:a2fe121aa75fe9c870930e9c02fd6ade9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62af3e8762cbf0c2aff996014db158d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/namespacehttp_1_1headers.html#ae62af3e8762cbf0c2aff996014db158d">kXRemoteIp</a> [] = &quot;X-Remote-IP&quot;</td></tr>
 <tr class="separator:ae62af3e8762cbf0c2aff996014db158d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Service Yandex.Taxi headers</div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Generic Yandex/MLU headers</div></td></tr>
 <tr class="memitem:a2a16567382142cc287a40d07dd86ecc3"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/namespacehttp_1_1headers.html#a2a16567382142cc287a40d07dd86ecc3">kXYaTaxiAllowAuthRequest</a> []</td></tr>
 <tr class="separator:a2a16567382142cc287a40d07dd86ecc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad71aedf889e2921e660593e775296275"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/namespacehttp_1_1headers.html#ad71aedf889e2921e660593e775296275">kXYaTaxiAllowAuthResponse</a> []</td></tr>
@@ -232,6 +232,10 @@ Variables</h2></td></tr>
 <tr class="separator:ab711c62dd2b59892f64ceff75934badb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a812515bb3a8ebadcb97ff99a637244e9"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/namespacehttp_1_1headers.html#a812515bb3a8ebadcb97ff99a637244e9">kXYaTaxiClientTimeoutMs</a> [] = &quot;X-YaTaxi-Client-TimeoutMs&quot;</td></tr>
 <tr class="separator:a812515bb3a8ebadcb97ff99a637244e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dac72c49d62607a14d27f7b7069b6e4"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/namespacehttp_1_1headers.html#a8dac72c49d62607a14d27f7b7069b6e4">kXYaTaxiRatelimitedBy</a> [] = &quot;X-YaTaxi-Ratelimited-By&quot;</td></tr>
+<tr class="separator:a8dac72c49d62607a14d27f7b7069b6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36913ae168440539039d0d0dc82a286b"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/namespacehttp_1_1headers.html#a36913ae168440539039d0d0dc82a286b">kXYaTaxiRatelimitReason</a> [] = &quot;X-YaTaxi-Ratelimit-Reason&quot;</td></tr>
+<tr class="separator:a36913ae168440539039d0d0dc82a286b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Common HTTP headers. </p>
@@ -1658,6 +1662,54 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a8dac72c49d62607a14d27f7b7069b6e4" name="a8dac72c49d62607a14d27f7b7069b6e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dac72c49d62607a14d27f7b7069b6e4">&#9670;&nbsp;</a></span>kXYaTaxiRatelimitedBy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char http::headers::kXYaTaxiRatelimitedBy[] = &quot;X-YaTaxi-Ratelimited-By&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d9f/common__headers_8hpp_source.html#l00143">143</a> of file <a class="el" href="../../d8/d9f/common__headers_8hpp_source.html">common_headers.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a36913ae168440539039d0d0dc82a286b" name="a36913ae168440539039d0d0dc82a286b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36913ae168440539039d0d0dc82a286b">&#9670;&nbsp;</a></span>kXYaTaxiRatelimitReason</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char http::headers::kXYaTaxiRatelimitReason[] = &quot;X-YaTaxi-Ratelimit-Reason&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d9f/common__headers_8hpp_source.html#l00144">144</a> of file <a class="el" href="../../d8/d9f/common__headers_8hpp_source.html">common_headers.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ab711c62dd2b59892f64ceff75934badb" name="ab711c62dd2b59892f64ceff75934badb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab711c62dd2b59892f64ceff75934badb">&#9670;&nbsp;</a></span>kXYaTaxiServerHostname</h2>
 
@@ -1711,7 +1763,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:46 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

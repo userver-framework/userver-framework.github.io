@@ -86,10 +86,10 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_en_landing"></a></p><div class="landing-description">The C++ Asynchronous Framework</div><div class="landing-logo" id="landing_logo_id"> <img src="logo.svg" alt="userver logo big" style="pointer-events: none;" class="inline"/> </div><hr  />
 <div class="landing-text"> 🐙 userver is the modern open source asynchronous framework with a rich set of abstractions for fast and comfortable creation of C++ microservices, services and utilities. The problem of efficient I/O interactions is solved transparently for the developers:</div><div class="landing-text"> <pre style="padding: 20px; color: silver;white-space: pre-wrap; word-wrap: break-word;">
-std::size_t InsertKey(storages::postgres::Cluster&amp; pg, std::string_view key) {
-    <span style="color: darkgoldenrod">// Asynchronous execution of the SQL query. Current thread handles other</span>
-    <span style="color: darkgoldenrod">// requests while the response from the DB is being received:</span>
-    <span style="color: #008000">auto</span> res = pg.Execute(ClusterHostType::kMaster, <span style="color: darkgreen">"INSERT INTO keys VALUES ($1)"</span>, key);
+std::size_t Ins(storages::postgres::Transaction&amp; tr, std::string_view key) {
+    <span style="color: darkgoldenrod">// Asynchronous execution of the SQL query in transaction. Current thread</span>
+    <span style="color: darkgoldenrod">// handles other requests while the response from the DB is being received:</span>
+    <span style="color: #008000">auto</span> res = tr.Execute(<span style="color: darkgreen">"INSERT INTO keys VALUES ($1)"</span>, key);
     <span style="color: #008000">return</span> res.RowsAffected();
 }
 </pre> </div><hr  />
@@ -101,7 +101,7 @@ std::size_t InsertKey(storages::postgres::Cluster&amp; pg, std::string_view key)
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:36 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:24:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

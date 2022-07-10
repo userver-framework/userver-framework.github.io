@@ -172,7 +172,14 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Provides a <a class="el" href="../../d5/dac/classugrpc_1_1client_1_1ClientFactory.html" title="Creates generated gRPC clients. Has a minimal built-in channel cache: as long as a channel to the sam...">ClientFactory</a> in the component system. </p>
-<h2><a class="anchor" id="autotoc_md544"></a>
+<h2><a class="anchor" id="autotoc_md550"></a>
+Authentication</h2>
+<p >Authentication is controlled by <code>auth-type</code> static config field. Possible values:</p><ul>
+<li><code>null</code> (<code>InsecureChannelCredentials</code> - default)</li>
+<li><code>ssl</code> (<code>SslCredentials</code>)</li>
+</ul>
+<p >Default (empty) credentials config is used.</p>
+<h2><a class="anchor" id="autotoc_md551"></a>
 Static options:</h2>
 <p >The default component name for static config is <code>"grpc-client-factory"</code>.</p>
 <table class="markdownTable">
@@ -183,13 +190,15 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">channel-args   </td><td class="markdownTableBodyNone">a map of channel arguments, see gRPC Core docs   </td><td class="markdownTableBodyNone">{}    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">native-log-level   </td><td class="markdownTableBodyNone">min log level for the native gRPC library   </td><td class="markdownTableBodyNone">'error'   </td></tr>
+<td class="markdownTableBodyNone">native-log-level   </td><td class="markdownTableBodyNone">min log level for the native gRPC library   </td><td class="markdownTableBodyNone">'error'    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">auth-type   </td><td class="markdownTableBodyNone">authentication method, see above   </td><td class="markdownTableBodyNone">-   </td></tr>
 </table>
 <dl class="section see"><dt>See also</dt><dd><a href="https://grpc.github.io/grpc/core/group__grpc__arg__keys.html">https://grpc.github.io/grpc/core/group__grpc__arg__keys.html</a> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../db/de5/samples_2grpc_service_2grpc_service_8cpp-example.html#_a4">samples/grpc_service/grpc_service.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html">client_factory_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html#l00038">38</a> of file <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html">client_factory_component.hpp</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="abdf331d469792d9adfbdc7cedcd83b20" name="abdf331d469792d9adfbdc7cedcd83b20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdf331d469792d9adfbdc7cedcd83b20">&#9670;&nbsp;</a></span>kName</h2>
@@ -211,7 +220,7 @@ Static options:</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html">client_factory_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html#l00040">40</a> of file <a class="el" href="../../da/dd3/client__factory__component_8hpp_source.html">client_factory_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -223,7 +232,7 @@ Static options:</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:35 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:24:10 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

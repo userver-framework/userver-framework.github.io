@@ -100,12 +100,12 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace</span> storages::mongo::impl::cdriver {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class</span> CDriverCollectionImpl;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}  <span class="comment">// namespace storages::mongo::impl::cdriver</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// Collection operations</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::<a class="code hl_namespace" href="../../d3/db5/namespacestorages_1_1mongo.html" title="MongoDB client.">operations</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace</span> storages::mongo::<a class="code hl_namespace" href="../../d3/db5/namespacestorages_1_1mongo.html" title="MongoDB client.">operations</a> {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// Counts documents matching the filter</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d1/d4e/classstorages_1_1mongo_1_1operations_1_1Count.html">   21</a></span><span class="keyword">class</span> <a class="code hl_class" href="../../d1/d4e/classstorages_1_1mongo_1_1operations_1_1Count.html" title="Counts documents matching the filter.">Count</a> {</div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_enumeration" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html#ad86852c1b2b50d7ccfb6e4300784bd43" title="Selects count implementation to use: new aggregation-based or old cmd-based.">ForceCountImpl</a>);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 80;</div>
@@ -153,7 +153,7 @@ $(function() {
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d6/d6b/classstorages_1_1mongo_1_1options_1_1Limit.html" title="Specifies the number of documents to request from the server.">Limit</a>);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 56;</div>
@@ -187,7 +187,7 @@ $(function() {
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> SetOption(<span class="keyword">const</span> <a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d0/db6/classstorages_1_1mongo_1_1options_1_1MaxServerTime.html" title="Specifies the server-side time limit for the operation.">MaxServerTime</a>&amp;);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 80;</div>
@@ -212,7 +212,7 @@ $(function() {
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d3/dcf/classstorages_1_1mongo_1_1options_1_1SuppressServerExceptions.html" title="Disables exception throw on server errors, should be checked manually in WriteResult.">SuppressServerExceptions</a>);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 72;</div>
@@ -241,7 +241,7 @@ $(function() {
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d3/dcf/classstorages_1_1mongo_1_1options_1_1SuppressServerExceptions.html" title="Disables exception throw on server errors, should be checked manually in WriteResult.">SuppressServerExceptions</a>);</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 80;</div>
@@ -268,7 +268,7 @@ $(function() {
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d3/dcf/classstorages_1_1mongo_1_1options_1_1SuppressServerExceptions.html" title="Disables exception throw on server errors, should be checked manually in WriteResult.">SuppressServerExceptions</a>);</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 88;</div>
@@ -298,7 +298,7 @@ $(function() {
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d3/dcf/classstorages_1_1mongo_1_1options_1_1SuppressServerExceptions.html" title="Disables exception throw on server errors, should be checked manually in WriteResult.">SuppressServerExceptions</a>);</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 88;</div>
@@ -325,7 +325,7 @@ $(function() {
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">void</span> SetOption(<a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d3/dcf/classstorages_1_1mongo_1_1options_1_1SuppressServerExceptions.html" title="Disables exception throw on server errors, should be checked manually in WriteResult.">SuppressServerExceptions</a>);</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 72;</div>
@@ -356,7 +356,7 @@ $(function() {
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  <span class="keywordtype">void</span> SetOption(<span class="keyword">const</span> <a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d0/db6/classstorages_1_1mongo_1_1options_1_1MaxServerTime.html" title="Specifies the server-side time limit for the operation.">MaxServerTime</a>&amp;);</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 64;</div>
@@ -383,7 +383,7 @@ $(function() {
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordtype">void</span> SetOption(<span class="keyword">const</span> <a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d0/db6/classstorages_1_1mongo_1_1options_1_1MaxServerTime.html" title="Specifies the server-side time limit for the operation.">MaxServerTime</a>&amp;);</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 64;</div>
@@ -413,7 +413,7 @@ $(function() {
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keywordtype">void</span> SetOption(<span class="keyword">const</span> <a class="code hl_namespace" href="../../de/dff/namespacestorages_1_1mongo_1_1options.html" title="Collection operation options.">options</a>::<a class="code hl_class" href="../../d0/db6/classstorages_1_1mongo_1_1options_1_1MaxServerTime.html" title="Specifies the server-side time limit for the operation.">MaxServerTime</a>&amp;);</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code hl_namespace" href="../../d0/d91/namespacestorages.html" title="Components, clients and helpers for different databases and storages.">storages</a>::mongo::impl::cdriver::CDriverCollectionImpl;</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keyword">friend</span> <span class="keyword">class</span> storages::mongo::impl::cdriver::CDriverCollectionImpl;</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keyword">class</span> Impl;</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kSize = 112;</div>
@@ -430,7 +430,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:45:25 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:17:44 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

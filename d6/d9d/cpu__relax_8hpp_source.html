@@ -136,7 +136,7 @@ $(function() {
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_class" href="../../d5/dd2/classutils_1_1ScopeTimePause.html" title="Utility to easily pause ScopeTime, e.g. when yielding.">ScopeTimePause</a> pause_;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">const</span> std::size_t every_iterations_;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  std::size_t iterations_;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  std::size_t iterations_{0};</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/// Utility to yield in a CPU-bound data processing task</span></div>
@@ -160,8 +160,8 @@ $(function() {
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_class" href="../../d5/dd2/classutils_1_1ScopeTimePause.html" title="Utility to easily pause ScopeTime, e.g. when yielding.">ScopeTimePause</a> pause_;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  std::uint64_t check_time_after_bytes_;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  std::uint64_t total_bytes_;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  std::uint64_t bytes_since_last_time_check_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  std::uint64_t total_bytes_{0};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  std::uint64_t bytes_since_last_time_check_{0};</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  std::chrono::steady_clock::time_point last_yield_time_;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
@@ -173,7 +173,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:46:51 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:19:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

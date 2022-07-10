@@ -203,7 +203,7 @@ const ValuePtr&#160;</td><td class="memItemRight" valign="bottom"><b>Get</b> (co
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Key, typename Value&gt;<br />
 class rcu::RcuMap&lt; Key, Value &gt;</div><p >Map-like structure allowing RCU keyset updates. </p>
 <p >Only keyset changes are thread-safe in scope of this class. Values are stored in <code>shared_ptr</code>s and are not copied during keyset change. The map itself is implemented as <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">rcu::Variable</a>, so every keyset change (e.g. insert or erase) triggers the whole map copying. </p><dl class="section note"><dt>Note</dt><dd>No synchronization is provided for value access, it must be implemented by Value when necessary.</dd></dl>
-<h2><a class="anchor" id="autotoc_md469"></a>
+<h2><a class="anchor" id="autotoc_md475"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="keyword">struct </span>Data {</div>
 <div class="line">    <span class="comment">// Access to RcuMap content must be synchronized via std::atomic</span></div>
@@ -354,7 +354,7 @@ template&lt;typename Key , typename Value &gt; </div>
 
 <p>Replace current data by data from <code>new_map</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00372">372</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00368">368</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ template&lt;typename K , typename V &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00223">223</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00219">219</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -390,7 +390,7 @@ template&lt;typename K , typename V &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00209">209</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00205">205</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +410,7 @@ template&lt;typename K , typename V &gt; </div>
 
 <p>Resets the map to an empty state. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00367">367</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00363">363</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -444,7 +444,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00287">287</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00283">283</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +497,7 @@ template&lt;typename K , typename V &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00230">230</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00226">226</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +515,7 @@ template&lt;typename K , typename V &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00216">216</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00212">212</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -541,7 +541,7 @@ template&lt;typename Key , typename Value &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>whether the key was present </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Copies the whole map, might be slow for large maps. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00345">345</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00341">341</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -562,7 +562,7 @@ template&lt;typename K , typename V &gt; </div>
 <p>Returns a readonly copy of the map. </p>
 <dl class="section note"><dt>Note</dt><dd>Equivalent to <code>{begin(), end()}</code> construct, preferable for long-running operations. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00378">378</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00374">374</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -597,7 +597,7 @@ template&lt;typename Key , typename Value &gt; </div>
 <p>Inserts a new element into the container if there is no element with the key in the container. Returns a pair consisting of a pointer to the inserted element, or the already-existing element if no insertion happened, and a bool denoting whether the insertion took place. </p>
 <dl class="section note"><dt>Note</dt><dd>Copies the whole map if the key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00277">277</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00273">273</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -633,7 +633,7 @@ template&lt;typename RawKey &gt; </div>
 
 <p>If a key equivalent to <code>key</code> already exists in the container, replaces the associated value. Otherwise, inserts a new pair into the map. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00328">328</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00324">324</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -710,7 +710,7 @@ template&lt;typename Key , typename Value &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>a value if the key was present, empty pointer otherwise </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Copies the whole map, might be slow for large maps. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00357">357</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00353">353</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -730,7 +730,7 @@ template&lt;typename K , typename V &gt; </div>
 
 <p>Returns an estimated size of the map at some point in time. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00237">237</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00233">233</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -764,7 +764,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00308">308</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html#l00304">304</a> of file <a class="el" href="../../d1/d0d/rcu__map_8hpp_source.html">rcu_map.hpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +776,7 @@ template&lt;typename... Args&gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:47 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

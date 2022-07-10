@@ -169,12 +169,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFrozen</b> (const 
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:afb898669d84d98eae9cc4c7ba271e172"><td class="memItemLeft" align="right" valign="top"><a id="afb898669d84d98eae9cc4c7ba271e172" name="afb898669d84d98eae9cc4c7ba271e172"></a>
 static <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html">LogExtra</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StacktraceNocache</b> () noexcept</td></tr>
-<tr class="memdesc:afb898669d84d98eae9cc4c7ba271e172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">LogExtra</a> with current thread's stacktrace. <br /></td></tr>
+<tr class="memdesc:afb898669d84d98eae9cc4c7ba271e172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">LogExtra</a> with current thread's stacktrace if the default log level is less or equal to DEBUG. <br /></td></tr>
 <tr class="separator:afb898669d84d98eae9cc4c7ba271e172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1e85523d58e0c3339a6f88cffc5a7c"><td class="memItemLeft" align="right" valign="top"><a id="a9d1e85523d58e0c3339a6f88cffc5a7c" name="a9d1e85523d58e0c3339a6f88cffc5a7c"></a>
+static <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html">LogExtra</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StacktraceNocache</b> (const logging::LoggerPtr &amp;logger) noexcept</td></tr>
+<tr class="memdesc:a9d1e85523d58e0c3339a6f88cffc5a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">LogExtra</a> with current thread's stacktrace if the logger log level is less or equal to DEBUG. <br /></td></tr>
+<tr class="separator:a9d1e85523d58e0c3339a6f88cffc5a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5c0ac15a20cf227500b750d8995d9ab"><td class="memItemLeft" align="right" valign="top"><a id="ae5c0ac15a20cf227500b750d8995d9ab" name="ae5c0ac15a20cf227500b750d8995d9ab"></a>
 static <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html">LogExtra</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Stacktrace</b> () noexcept</td></tr>
-<tr class="memdesc:ae5c0ac15a20cf227500b750d8995d9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">LogExtra</a> with current thread's stacktrace, uses cache for faster stacktrace symbolization. <br /></td></tr>
+<tr class="memdesc:ae5c0ac15a20cf227500b750d8995d9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">LogExtra</a> with current thread's stacktrace if the logger log level is less or equal to DEBUG. Uses cache for faster stacktrace symbolization. <br /></td></tr>
 <tr class="separator:ae5c0ac15a20cf227500b750d8995d9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446eaeb2b94c25563c2671d4d819d637"><td class="memItemLeft" align="right" valign="top"><a id="a446eaeb2b94c25563c2671d4d819d637" name="a446eaeb2b94c25563c2671d4d819d637"></a>
+static <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html">LogExtra</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Stacktrace</b> (const logging::LoggerPtr &amp;logger) noexcept</td></tr>
+<tr class="memdesc:a446eaeb2b94c25563c2671d4d819d637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html" title="Extra tskv fields storage.">LogExtra</a> with current thread's stacktrace if the logger log level is less or equal to DEBUG. Uses cache for faster stacktrace symbolization. <br /></td></tr>
+<tr class="separator:a446eaeb2b94c25563c2671d4d819d637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -186,7 +194,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Extra tskv fields storage. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00027">27</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3b1020b8c8238f9701a024d15ecc41cc" name="a3b1020b8c8238f9701a024d15ecc41cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b1020b8c8238f9701a024d15ecc41cc">&#9670;&nbsp;</a></span>Key</h2>
@@ -200,7 +208,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +224,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +240,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00030">30</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +273,7 @@ Friends</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00035">35</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00036">36</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +322,7 @@ template&lt;typename Iterator &gt; </div>
 
 <p>Adds a range of key-value pairs. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -339,7 +347,7 @@ template&lt;typename Iterator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00108">108</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +371,7 @@ template&lt;typename Iterator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00097">97</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/def/log__extra_8hpp_source.html#l00109">109</a> of file <a class="el" href="../../d6/def/log__extra_8hpp_source.html">log_extra.hpp</a>.</p>
 
 </div>
 </div>
@@ -375,7 +383,7 @@ template&lt;typename Iterator &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:46 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

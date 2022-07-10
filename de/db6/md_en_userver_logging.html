@@ -145,9 +145,9 @@ Tags</h2>
 </div><!-- fragment --><p >If the same fields must be added to each log in a code block, it is recommended to use <code><a class="el" href="../../d7/d1a/classtracing_1_1Span.html" title="Measures the execution time of the current code block, links it with the parent tracing::Spans and st...">tracing::Span</a></code>, which implicitly adds tags to the log.</p>
 <h2><a class="anchor" id="autotoc_md185"></a>
 Stacktrace</h2>
-<p >Sometimes it is useful to write a full stacktrace to the log. Typical use case is for logging a "never should happen happened" situation. Use <code><a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html#ae5c0ac15a20cf227500b750d8995d9ab" title="Creates a LogExtra with current thread&#39;s stacktrace, uses cache for faster stacktrace symbolization.">logging::LogExtra::Stacktrace()</a></code> for such cases:</p>
+<p >Sometimes it is useful to write a full stacktrace to the log. Typical use case is for logging a "never should happen happened" situation. Use <code><a class="el" href="../../d3/df8/classlogging_1_1LogExtra.html#ae5c0ac15a20cf227500b750d8995d9ab" title="Creates a LogExtra with current thread&#39;s stacktrace if the logger log level is less or equal to DEBUG...">logging::LogExtra::Stacktrace()</a></code> for such cases:</p>
 <div class="fragment"><div class="line">  <a class="code hl_define" href="../../df/d72/logging_2log_8hpp.html#aa14f3fd56b4112420dd49c2ebf8276f1" title="Evaluates a message and logs it to the default logger if its level is below or equal to logging::Leve...">LOG_ERROR</a>() &lt;&lt; <span class="stringliteral">&quot;Deadlock in ABC identified&quot;</span></div>
-<div class="line">              &lt;&lt; <a class="code hl_function" href="../../d3/df8/classlogging_1_1LogExtra.html#ae5c0ac15a20cf227500b750d8995d9ab" title="Creates a LogExtra with current thread&#39;s stacktrace, uses cache for faster stacktrace symbolization.">logging::LogExtra::Stacktrace</a>();</div>
+<div class="line">              &lt;&lt; <a class="code hl_function" href="../../d3/df8/classlogging_1_1LogExtra.html#ae5c0ac15a20cf227500b750d8995d9ab" title="Creates a LogExtra with current thread&#39;s stacktrace if the logger log level is less or equal to DEBUG...">logging::LogExtra::Stacktrace</a>();</div>
 </div><!-- fragment --><p >Important: getting a text representation of a stacktrace is an <b>expensive operation</b>. In addition, the stacktrace itself increases the log record size several times. Therefore, you do not need to use a stack trace for all errors. Use it only when it is 100% useful for diagnostics and other diagnostic tools are ineffective.</p>
 <h2><a class="anchor" id="autotoc_md186"></a>
 Additional loggers</h2>
@@ -242,7 +242,7 @@ Selectively disabling Span logging</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:30 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

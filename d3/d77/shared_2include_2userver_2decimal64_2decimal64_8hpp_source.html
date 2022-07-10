@@ -1522,8 +1522,8 @@ $(function() {
 <div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>                     Char&gt; {</div>
 <div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> parse(fmt::format_parse_context&amp; ctx) {</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    <span class="keyword">auto</span> it = ctx.begin();</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>    <span class="keyword">const</span> <span class="keyword">auto</span> end = ctx.end();</div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    <span class="keyword">const</span> <span class="keyword">auto</span>* it = ctx.begin();</div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>    <span class="keyword">const</span> <span class="keyword">auto</span>* end = ctx.end();</div>
 <div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span> </div>
 <div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>    <span class="keywordflow">if</span> (it != end &amp;&amp; *it == <span class="stringliteral">&#39;.&#39;</span>) {</div>
 <div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>      remove_trailing_zeros_ = <span class="keyword">false</span>;</div>
@@ -1581,7 +1581,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:49:19 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:21:54 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

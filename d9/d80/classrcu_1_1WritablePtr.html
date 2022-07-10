@@ -124,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
 class rcu::WritablePtr&lt; T &gt;</div><p >Smart pointer for rcu::Variable&lt;T&gt; for changing RCU value. It stores a reference to a to-be-changed value and allows one to mutate the value (e.g. add items to std::unordered_map). Changed value is not visible to readers until explicit store by Commit. Only a single writer may own a <a class="el" href="../../d9/d80/classrcu_1_1WritablePtr.html">WritablePtr</a> associated with the same <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">Variable</a>, so <a class="el" href="../../d9/d80/classrcu_1_1WritablePtr.html">WritablePtr</a> creates a critical section. This critical section doesn't affect readers, so a slow writer doesn't block readers. </p><dl class="section note"><dt>Note</dt><dd>you may not pass <a class="el" href="../../d9/d80/classrcu_1_1WritablePtr.html">WritablePtr</a> between coroutines as it owns <a class="el" href="../../d0/da4/classengine_1_1Mutex.html" title="std::mutex replacement for asynchronous tasks">engine::Mutex</a>, which must be unlocked in the same coroutine that was used to lock the mutex. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00201">201</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00200">200</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7214649afff686fb13b5c8844107998b" name="a7214649afff686fb13b5c8844107998b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7214649afff686fb13b5c8844107998b">&#9670;&nbsp;</a></span>WritablePtr() <span class="overload">[1/3]</span></h2>
@@ -154,7 +154,7 @@ template&lt;typename T &gt; </div>
 
 <p>For internal use only. Use <code>var.StartWrite()</code> instead. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00204">204</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00203">203</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -204,7 +204,7 @@ template&lt;typename... Args&gt; </div>
 
 <p>For internal use only. Use <code>var.Emplace(args...)</code> instead. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00213">213</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00212">212</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00221">221</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00220">220</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -263,7 +263,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00228">228</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00227">227</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +294,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Store the changed value in <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html" title="Read-Copy-Update variable.">Variable</a>. After <a class="el" href="../../d9/d80/classrcu_1_1WritablePtr.html#a1da36ec5ac0779fb9310a0d5230dc865">Commit()</a> the value becomes visible to new readers (IOW, <a class="el" href="../../d8/d5a/classrcu_1_1Variable.html#af49761672fa9b070645a256956870cae" title="Obtain a smart pointer which can be used to read the current value.">Variable::Read()</a> returns <a class="el" href="../../dd/df3/classrcu_1_1ReadablePtr.html">ReadablePtr</a> referencing the stored value, not an old value). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00237">237</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00236">236</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +323,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00246">246</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00245">245</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +352,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00251">251</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00250">250</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -381,7 +381,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00256">256</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00255">255</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +410,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00257">257</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00256">256</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +439,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00253">253</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00252">252</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +468,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00254">254</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d1b/rcu_8hpp_source.html#l00253">253</a> of file <a class="el" href="../../d7/d1b/rcu_8hpp_source.html">rcu.hpp</a>.</p>
 
 </div>
 </div>
@@ -480,7 +480,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:47 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

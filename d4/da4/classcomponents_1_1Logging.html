@@ -161,7 +161,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Logging component </p>
 <p >Allows to configure the default logger and/or additional loggers for your needs.</p>
-<h2><a class="anchor" id="autotoc_md465"></a>
+<h2><a class="anchor" id="autotoc_md471"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -183,7 +183,7 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">testsuite-capture   </td><td class="markdownTableBodyNone">if exists, setups additional TCP log sink for testing purposes   </td><td class="markdownTableBodyNone">{}   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md466"></a>
+<h3><a class="anchor" id="autotoc_md472"></a>
 testsuite-capture options:</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,7 +193,7 @@ testsuite-capture options:</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">port   </td><td class="markdownTableBodyNone">testsuite port   </td><td class="markdownTableBodyNone">-   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md467"></a>
+<h2><a class="anchor" id="autotoc_md473"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    <a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>:</div>
@@ -212,6 +212,9 @@ Static configuration example:</h2>
 <div class="line">          file_path: $default_log_path</div>
 <div class="line">          level: $log_level</div>
 <div class="line">          level#fallback: debug</div>
+<div class="line">          overflow_behavior: discard</div>
+<div class="line">        tracer:</div>
+<div class="line">          file_path: <span class="stringliteral">&#39;@stdout&#39;</span></div>
 <div class="line">          overflow_behavior: discard</div>
 </div><!-- fragment --><p ><code>default</code> section configures the default logger for LOG_*. </p>
 
@@ -312,7 +315,7 @@ Static configuration example:</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:32 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -417,9 +417,16 @@ template&lt;typename... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Execute a statement at host of specified type. </p>
-<dl class="section note"><dt>Note</dt><dd>You must specify at least one role from ClusterHostType here </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You must specify at least one role from ClusterHostType here</dd></dl>
+<div class="fragment"><div class="line">std::size_t InsertSomeKey(<a class="code hl_class" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html" title="Interface for executing queries on a cluster of PostgreSQL servers.">storages::postgres::Cluster</a>&amp; pg,</div>
+<div class="line">                          std::string_view key) {</div>
+<div class="line">  <span class="keyword">auto</span> res = pg.<a class="code hl_function" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html#aa921f5367f903ac52cdd1477a0f6e088" title="Execute a statement at host of specified type.">Execute</a>(<a class="code hl_enumvalue" href="../../de/d6d/namespacestorages_1_1postgres.html#a112991762e57633e6213c2cbbce7d62fad4720c3695455d7cf5bce1b2c7bcecdf">storages::postgres::ClusterHostType::kMaster</a>,</div>
+<div class="line">                        <span class="stringliteral">&quot;INSERT INTO keys VALUES ($1)&quot;</span>, key);</div>
+<div class="line">  <span class="keywordflow">return</span> res.RowsAffected();</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Do NOT create a query string manually by embedding arguments! It leads to vulnerabilities and bad performance. Either pass arguments separately, or use storages::postgres::ParameterScope. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html#l00209">209</a> of file <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html">cluster.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html#l00218">218</a> of file <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html">cluster.hpp</a>.</p>
 
 </div>
 </div>
@@ -464,9 +471,10 @@ template&lt;typename... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Execute a statement with specified host selection rules and command control settings. </p>
-<dl class="section note"><dt>Note</dt><dd>You must specify at least one role from ClusterHostType here </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You must specify at least one role from ClusterHostType here</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Do NOT create a query string manually by embedding arguments! It leads to vulnerabilities and bad performance. Either pass arguments separately, or use storages::postgres::ParameterScope. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html#l00215">215</a> of file <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html">cluster.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html#l00224">224</a> of file <a class="el" href="../../de/dd3/postgresql_2include_2userver_2storages_2postgres_2cluster_8hpp_source.html">cluster.hpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +505,7 @@ template&lt;typename... Args&gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:54 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

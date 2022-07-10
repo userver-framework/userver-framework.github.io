@@ -201,15 +201,45 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7094769f0684edc4be8cf98f17b4bc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#ab7094769f0684edc4be8cf98f17b4bc0">IsEmpty</a> () const</td></tr>
 <tr class="memdesc:ab7094769f0684edc4be8cf98f17b4bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the array or object is empty.  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#ab7094769f0684edc4be8cf98f17b4bc0">More...</a><br /></td></tr>
 <tr class="separator:ab7094769f0684edc4be8cf98f17b4bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4743ef99d25fdfc4b6f57459123e83f8"><td class="memItemLeft" align="right" valign="top"><a id="a4743ef99d25fdfc4b6f57459123e83f8" name="a4743ef99d25fdfc4b6f57459123e83f8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsNull</b> () const noexcept</td></tr>
+<tr class="memdesc:a4743ef99d25fdfc4b6f57459123e83f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a Null (Type::kNull). <br /></td></tr>
+<tr class="separator:a4743ef99d25fdfc4b6f57459123e83f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288f80a11be9f78e3a6b876d57eb0db6"><td class="memItemLeft" align="right" valign="top"><a id="a288f80a11be9f78e3a6b876d57eb0db6" name="a288f80a11be9f78e3a6b876d57eb0db6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsBool</b> () const noexcept</td></tr>
+<tr class="memdesc:a288f80a11be9f78e3a6b876d57eb0db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to bool. <br /></td></tr>
+<tr class="separator:a288f80a11be9f78e3a6b876d57eb0db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a16d572fbcb58991b5bb1f53063cbc0"><td class="memItemLeft" align="right" valign="top"><a id="a9a16d572fbcb58991b5bb1f53063cbc0" name="a9a16d572fbcb58991b5bb1f53063cbc0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInt</b> () const noexcept</td></tr>
+<tr class="memdesc:a9a16d572fbcb58991b5bb1f53063cbc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int. <br /></td></tr>
+<tr class="separator:a9a16d572fbcb58991b5bb1f53063cbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e5071e706386e0d4b8ac9408f515f1e"><td class="memItemLeft" align="right" valign="top"><a id="a9e5071e706386e0d4b8ac9408f515f1e" name="a9e5071e706386e0d4b8ac9408f515f1e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInt64</b> () const noexcept</td></tr>
+<tr class="memdesc:a9e5071e706386e0d4b8ac9408f515f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int64_t. <br /></td></tr>
+<tr class="separator:a9e5071e706386e0d4b8ac9408f515f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e4568a374948d05d79ee76126682d9"><td class="memItemLeft" align="right" valign="top"><a id="ae2e4568a374948d05d79ee76126682d9" name="ae2e4568a374948d05d79ee76126682d9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUInt64</b> () const noexcept</td></tr>
+<tr class="memdesc:ae2e4568a374948d05d79ee76126682d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to uint64_t. <br /></td></tr>
+<tr class="separator:ae2e4568a374948d05d79ee76126682d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa394773c928badc08d6e5386ce43bb0"><td class="memItemLeft" align="right" valign="top"><a id="afa394773c928badc08d6e5386ce43bb0" name="afa394773c928badc08d6e5386ce43bb0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDouble</b> () const noexcept</td></tr>
+<tr class="memdesc:afa394773c928badc08d6e5386ce43bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to double. <br /></td></tr>
+<tr class="separator:afa394773c928badc08d6e5386ce43bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67092fa0e201d64c37786046882e4128"><td class="memItemLeft" align="right" valign="top"><a id="a67092fa0e201d64c37786046882e4128" name="a67092fa0e201d64c37786046882e4128"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsString</b> () const noexcept</td></tr>
+<tr class="memdesc:a67092fa0e201d64c37786046882e4128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to std::string. <br /></td></tr>
+<tr class="separator:a67092fa0e201d64c37786046882e4128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af504269ea6eb927764140fe6c7f2f838"><td class="memItemLeft" align="right" valign="top"><a id="af504269ea6eb927764140fe6c7f2f838" name="af504269ea6eb927764140fe6c7f2f838"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsArray</b> () const noexcept</td></tr>
+<tr class="memdesc:af504269ea6eb927764140fe6c7f2f838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is an array (Type::kArray). <br /></td></tr>
+<tr class="separator:af504269ea6eb927764140fe6c7f2f838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4b9b84f66a75ac16200668526b15e0"><td class="memItemLeft" align="right" valign="top"><a id="a0e4b9b84f66a75ac16200668526b15e0" name="a0e4b9b84f66a75ac16200668526b15e0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsObject</b> () const noexcept</td></tr>
+<tr class="memdesc:a0e4b9b84f66a75ac16200668526b15e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a map (Type::kObject). <br /></td></tr>
+<tr class="separator:a0e4b9b84f66a75ac16200668526b15e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d9042f97115107af8ab02c87655fa7d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a7d9042f97115107af8ab02c87655fa7d">GetSize</a> () const</td></tr>
 <tr class="memdesc:a7d9042f97115107af8ab02c87655fa7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns array size or object members count.  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a7d9042f97115107af8ab02c87655fa7d">More...</a><br /></td></tr>
 <tr class="separator:a7d9042f97115107af8ab02c87655fa7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb3fb5d642b339242755ce37886553f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#acb3fb5d642b339242755ce37886553f4">IsNull</a> () const</td></tr>
-<tr class="memdesc:acb3fb5d642b339242755ce37886553f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a null (Type::kNull).  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#acb3fb5d642b339242755ce37886553f4">More...</a><br /></td></tr>
-<tr class="separator:acb3fb5d642b339242755ce37886553f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa29f3f476cf3000b19f8c33aaa87f973"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#aa29f3f476cf3000b19f8c33aaa87f973">IsObject</a> () const</td></tr>
-<tr class="memdesc:aa29f3f476cf3000b19f8c33aaa87f973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a map (Type::kObject).  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#aa29f3f476cf3000b19f8c33aaa87f973">More...</a><br /></td></tr>
-<tr class="separator:aa29f3f476cf3000b19f8c33aaa87f973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17affce8bb7cee64069073da989514b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a17affce8bb7cee64069073da989514b6">HasMember</a> (const char *key) const</td></tr>
 <tr class="memdesc:a17affce8bb7cee64069073da989514b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value holds a <code>key</code>.  <a href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html#a17affce8bb7cee64069073da989514b6">More...</a><br /></td></tr>
 <tr class="separator:a17affce8bb7cee64069073da989514b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +270,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Builder for JSON. </p>
 <p >Class provides methods for building JSON. For read only access to the existing JSON values use <a class="el" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a>.</p>
-<h2><a class="anchor" id="autotoc_md400"></a>
+<h2><a class="anchor" id="autotoc_md404"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="comment">// #include &lt;userver/formats/json.hpp&gt;</span></div>
 <div class="line">  <a class="code hl_class" href="../../d2/daa/classformats_1_1json_1_1ValueBuilder.html" title="Builder for JSON.">formats::json::ValueBuilder</a> builder;</div>
@@ -250,7 +280,7 @@ Example usage:</h2>
 <div class="line"> </div>
 <div class="line">  ASSERT_EQ(json[<span class="stringliteral">&quot;key1&quot;</span>].As&lt;int&gt;(), 1);</div>
 <div class="line">  ASSERT_EQ(json[<span class="stringliteral">&quot;key2&quot;</span>][<span class="stringliteral">&quot;key3&quot;</span>].As&lt;std::string&gt;(), <span class="stringliteral">&quot;val&quot;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md401"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md405"></a>
 Customization example:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
 <div class="line"> </div>
@@ -370,7 +400,7 @@ template&lt;typename T &gt; </div>
 
 <p>Universal constructor using Serialize. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00087">87</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
 
 </div>
 </div>
@@ -535,56 +565,6 @@ template&lt;typename T &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">`TypeMismatchException`</td><td>if not an array or an object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acb3fb5d642b339242755ce37886553f4" name="acb3fb5d642b339242755ce37886553f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb3fb5d642b339242755ce37886553f4">&#9670;&nbsp;</a></span>IsNull()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::json::ValueBuilder::IsNull </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this holds a null (Type::kNull). </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa29f3f476cf3000b19f8c33aaa87f973" name="aa29f3f476cf3000b19f8c33aaa87f973"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa29f3f476cf3000b19f8c33aaa87f973">&#9670;&nbsp;</a></span>IsObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::json::ValueBuilder::IsObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this holds a map (Type::kObject). </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -771,7 +751,7 @@ template&lt;typename Tag , <a class="el" href="../../d6/d84/namespaceutils.html#
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00178">178</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00196">196</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
 
 </div>
 </div>
@@ -795,7 +775,7 @@ template&lt;typename Tag , <a class="el" href="../../d6/d84/namespaceutils.html#
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00178">178</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html#l00196">196</a> of file <a class="el" href="../../db/d97/shared_2include_2userver_2formats_2json_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +787,7 @@ template&lt;typename Tag , <a class="el" href="../../d6/d84/namespaceutils.html#
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:43 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -100,11 +100,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab33fb91ab9ef33cf8223b1cc3375b170"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classengine_1_1TaskLocalVariable.html#ab33fb91ab9ef33cf8223b1cc3375b170">operator*</a> ()</td></tr>
-<tr class="memdesc:ab33fb91ab9ef33cf8223b1cc3375b170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance of the variable for the current coroutine.  <a href="../../d0/d40/classengine_1_1TaskLocalVariable.html#ab33fb91ab9ef33cf8223b1cc3375b170">More...</a><br /></td></tr>
+<tr class="memdesc:ab33fb91ab9ef33cf8223b1cc3375b170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance of the variable for the current coroutine. Initializes (default constructs) the variable if it was not previously initialized.  <a href="../../d0/d40/classengine_1_1TaskLocalVariable.html#ab33fb91ab9ef33cf8223b1cc3375b170">More...</a><br /></td></tr>
 <tr class="separator:ab33fb91ab9ef33cf8223b1cc3375b170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee9887de78fca34b57b1eb3ce55b0e01"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classengine_1_1TaskLocalVariable.html#aee9887de78fca34b57b1eb3ce55b0e01">operator-&gt;</a> ()</td></tr>
 <tr class="memdesc:aee9887de78fca34b57b1eb3ce55b0e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="../../d0/d40/classengine_1_1TaskLocalVariable.html#aee9887de78fca34b57b1eb3ce55b0e01">More...</a><br /></td></tr>
 <tr class="separator:aee9887de78fca34b57b1eb3ce55b0e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8039a0b438e18ed8361a27d623a64c3d"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classengine_1_1TaskLocalVariable.html#a8039a0b438e18ed8361a27d623a64c3d">GetOptional</a> () const noexcept</td></tr>
+<tr class="memdesc:a8039a0b438e18ed8361a27d623a64c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the variable instance for the current task.  <a href="../../d0/d40/classengine_1_1TaskLocalVariable.html#a8039a0b438e18ed8361a27d623a64c3d">More...</a><br /></td></tr>
+<tr class="separator:a8039a0b438e18ed8361a27d623a64c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -114,6 +117,38 @@ class engine::TaskLocalVariable&lt; T &gt;</div><p ><a class="el" href="../../d0
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d05/local__variable_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../dd/d05/local__variable_8hpp_source.html">local_variable.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8039a0b438e18ed8361a27d623a64c3d" name="a8039a0b438e18ed8361a27d623a64c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8039a0b438e18ed8361a27d623a64c3d">&#9670;&nbsp;</a></span>GetOptional()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T * <a class="el" href="../../d0/d40/classengine_1_1TaskLocalVariable.html">engine::TaskLocalVariable</a>&lt; T &gt;::GetOptional </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the variable instance for the current task. </p>
+<dl class="section return"><dt>Returns</dt><dd>the variable or <code>nullptr</code> if variable was not initialized. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d05/local__variable_8hpp_source.html#l00039">39</a> of file <a class="el" href="../../dd/d05/local__variable_8hpp_source.html">local_variable.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ab33fb91ab9ef33cf8223b1cc3375b170" name="ab33fb91ab9ef33cf8223b1cc3375b170"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab33fb91ab9ef33cf8223b1cc3375b170">&#9670;&nbsp;</a></span>operator*()</h2>
 
@@ -128,10 +163,10 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the instance of the variable for the current coroutine. </p>
+<p>Get the instance of the variable for the current coroutine. Initializes (default constructs) the variable if it was not previously initialized. </p>
 <dl class="section note"><dt>Note</dt><dd>Must be called from a coroutine, otherwise it is UB. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d05/local__variable_8hpp_source.html#l00042">42</a> of file <a class="el" href="../../dd/d05/local__variable_8hpp_source.html">local_variable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d05/local__variable_8hpp_source.html#l00051">51</a> of file <a class="el" href="../../dd/d05/local__variable_8hpp_source.html">local_variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -151,7 +186,7 @@ template&lt;typename T &gt; </div>
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d05/local__variable_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../dd/d05/local__variable_8hpp_source.html">local_variable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d05/local__variable_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../dd/d05/local__variable_8hpp_source.html">local_variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -163,7 +198,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:40 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -124,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <p >Must not be awaited or signaled multiple times in the same waiting session.</p>
 <p >The main advantage of <code><a class="el" href="../../dc/dde/classengine_1_1SingleUseEvent.html" title="A single-producer, single-consumer event.">SingleUseEvent</a></code> over <code><a class="el" href="../../d8/d87/classengine_1_1SingleConsumerEvent.html" title="Event for a single awaiter, multiple signal coroutines.">SingleConsumerEvent</a></code> is that the waiting coroutine is allowed to immediately destroy the <code><a class="el" href="../../dc/dde/classengine_1_1SingleUseEvent.html" title="A single-producer, single-consumer event.">SingleUseEvent</a></code> after waking up; it will not stop a concurrent <code>Send</code> from completing correctly.</p>
 <p >Timeouts and cancellations are not supported. Only a concurrent call to <code>Send</code> can wake up the waiter. This is necessary for the waiter not to destroy the <code><a class="el" href="../../dc/dde/classengine_1_1SingleUseEvent.html" title="A single-producer, single-consumer event.">SingleUseEvent</a></code> unexpectedly for the sender.</p>
-<h2><a class="anchor" id="autotoc_md462"></a>
+<h2><a class="anchor" id="autotoc_md468"></a>
 Example usage:</h2>
 <div class="fragment"></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6b/md_en_userver_synchronization.html">Synchronization Primitives</a> </dd></dl>
 
@@ -247,7 +247,7 @@ Example usage:</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:40 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

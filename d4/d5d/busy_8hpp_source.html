@@ -126,40 +126,41 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">bool</span> UpdateCurrentWorkerLoad(std::vector&lt;Duration&gt;&amp; load) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">struct</span> Impl;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  std::unique_ptr&lt;Impl&gt; pimpl;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">friend</span> <span class="keyword">class</span> BusyMarker;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/* A RAII-style guard to account code block execution time in BusyStorage.</span></div>
-<div class="line"><span class="lineno">   47</span><span class="comment"> * It is reentrant, IOW you may create BusyMarker inside of another BusyMarker</span></div>
-<div class="line"><span class="lineno">   48</span><span class="comment"> * and work time is accounted correctly (based on the outer BusyMarker</span></div>
-<div class="line"><span class="lineno">   49</span><span class="comment"> * lifetime).</span></div>
-<div class="line"><span class="lineno">   50</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">class</span> BusyMarker <span class="keyword">final</span> {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  BusyMarker(BusyStorage&amp; storage) : storage_(storage) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    worker_id_ = storage.StartWork();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  ~BusyMarker() { storage_.StopWork(worker_id_); }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  BusyStorage&amp; storage_;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  BusyStorage::WorkerId worker_id_;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}  <span class="comment">// namespace utils::statistics</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">struct</span> Impl;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  std::unique_ptr&lt;Impl&gt; pimpl;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">friend</span> <span class="keyword">class</span> BusyMarker;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/* A RAII-style guard to account code block execution time in BusyStorage.</span></div>
+<div class="line"><span class="lineno">   46</span><span class="comment"> * It is reentrant, IOW you may create BusyMarker inside of another BusyMarker</span></div>
+<div class="line"><span class="lineno">   47</span><span class="comment"> * and work time is accounted correctly (based on the outer BusyMarker</span></div>
+<div class="line"><span class="lineno">   48</span><span class="comment"> * lifetime).</span></div>
+<div class="line"><span class="lineno">   49</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">class</span> BusyMarker <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  BusyMarker(BusyStorage&amp; storage)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      : storage_(storage), worker_id_(storage.StartWork()) {}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  BusyMarker(<span class="keyword">const</span> BusyMarker&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  BusyMarker&amp; operator=(<span class="keyword">const</span> BusyMarker&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  ~BusyMarker() { storage_.StopWork(worker_id_); }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  BusyStorage&amp; storage_;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  BusyStorage::WorkerId worker_id_;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}  <span class="comment">// namespace utils::statistics</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:46:57 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:19:22 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

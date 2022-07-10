@@ -271,7 +271,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Invalidate</b> ()</td
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A task that tries to acquire a distributed lock and runs user callback once while the lock is held. </p><dl class="section see"><dt>See also</dt><dd>AlwaysBusyDistLockStrategy </dd></dl>
-<h2><a class="anchor" id="autotoc_md440"></a>
+<h2><a class="anchor" id="autotoc_md446"></a>
 Example with retrying</h2>
 <div class="fragment"><div class="line">  <span class="keyword">auto</span> strategy = GetSomeDistLockStrategyForTheSample();</div>
 <div class="line">  std::atomic&lt;std::size_t&gt; counter = 0;</div>
@@ -287,7 +287,7 @@ Example with retrying</h2>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_define" href="../../d1/db2/group__userver__utest.html#gafdf4f737b3561621eff19fb93f9c27fd">UEXPECT_NO_THROW</a>(locked_task.Get());</div>
 <div class="line">  EXPECT_EQ(counter, 5);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md441"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md447"></a>
 Example without retrying</h2>
 <div class="fragment"><div class="line">  <span class="keyword">auto</span> strategy = GetSomeDistLockStrategyForTheSample();</div>
 <div class="line">  std::atomic&lt;std::size_t&gt; counter = 0;</div>
@@ -443,7 +443,7 @@ Example without retrying</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:32 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:38 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -91,6 +91,7 @@ Features</h1>
 <li>PostgreSQL cluster topology discovery;</li>
 <li>Manual cluster sharding (access to shard clusters by index);</li>
 <li>Connection pooling;</li>
+<li>Queries are transparently converted to prepared statements to use less network on next execution, give the database more optimization freedom, avoid the need for parameters escaping as the latter are now send separately from the query;</li>
 <li>Automatic PgaaS topology discovery;</li>
 <li>Selecting query target (master/slave);</li>
 <li>Connection failover</li>
@@ -121,7 +122,7 @@ More information</h1>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:32 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:31 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

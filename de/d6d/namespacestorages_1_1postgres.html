@@ -249,6 +249,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result set doesn't have field with the requested name.  <a href="../../d5/db8/classstorages_1_1postgres_1_1FieldNameDoesntExist.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d63/structstorages_1_1postgres_1_1FieldTag.html">FieldTag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag type to disambiguate reading the first value of a row to a user's composite type (PostgreSQL composite type in the row initializes user's type).  <a href="../../d2/d63/structstorages_1_1postgres_1_1FieldTag.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de9/classstorages_1_1postgres_1_1FieldTupleMismatch.html">FieldTupleMismatch</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A row was requested to be parsed based on field names/indexed, the count of names/indexes doesn't match the tuple size.  <a href="../../d9/de9/classstorages_1_1postgres_1_1FieldTupleMismatch.html#details">More...</a><br /></td></tr>
@@ -357,7 +358,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classstorages_1_1postgres_1_1OperatorIntervention.html">OperatorIntervention</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html">ParameterStore</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for dynamic parameter list construction.  <a href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for dynamic PostgreSQL parameter list construction.  <a href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d26/classstorages_1_1postgres_1_1PlPgSqlError.html">PlPgSqlError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,6 +400,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result set has less rows than the requested row index.  <a href="../../db/dea/classstorages_1_1postgres_1_1RowIndexOutOfBounds.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d46/structstorages_1_1postgres_1_1RowTag.html">RowTag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag type to disambiguate reading the row to a user's row type (values of the row initialize user's type data members).  <a href="../../df/d46/structstorages_1_1postgres_1_1RowTag.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d97/classstorages_1_1postgres_1_1RuntimeError.html">RuntimeError</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base Postgres runtime error. Reports errors that are consequences of erroneous data, misconfiguration, network errors etc.  <a href="../../d6/d97/classstorages_1_1postgres_1_1RuntimeError.html#details">More...</a><br /></td></tr>
@@ -3328,7 +3330,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dc9/row__types_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dc9/row__types_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -3376,7 +3378,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dc9/row__types_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dc9/row__types_8hpp_source.html#l00027">27</a> of file <a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -3488,7 +3490,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:53 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

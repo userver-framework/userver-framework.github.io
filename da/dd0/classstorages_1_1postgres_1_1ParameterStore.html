@@ -88,11 +88,11 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../d5/d85/classstorages_1_1postgres_1_1ParameterStore-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">storages::postgres::ParameterStore Class Reference</div></div>
+  <div class="headertitle"><div class="title">storages::postgres::ParameterStore Class Reference<div class="ingroups"><a class="el" href="../../df/d2e/group__userver__containers.html">Containers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class for dynamic parameter list construction.  
+<p>Class for dynamic PostgreSQL parameter list construction.  
  <a href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">userver/storages/postgres/parameter_store.hpp</a>&gt;</code></p>
@@ -111,9 +111,46 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a338537bfe93b2558ec303251b9a8e0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Class for dynamic parameter list construction. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
+<div class="textblock"><p >Class for dynamic PostgreSQL parameter list construction. </p>
+<p >Typical use case for this container is to keep parameters around while the query is being contructed on the fly: </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> ConnectionPtr&gt;</div>
+<div class="line"><span class="keyword">auto</span> ParameterStoreSample(<span class="keyword">const</span> ConnectionPtr&amp; conn, std::optional&lt;int&gt; a = {},</div>
+<div class="line">                          std::optional&lt;int&gt; b = {}, std::optional&lt;int&gt; c = {},</div>
+<div class="line">                          std::optional&lt;int&gt; d = {},</div>
+<div class="line">                          std::optional&lt;int&gt; e = {}) {</div>
+<div class="line">  <a class="code hl_class" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html" title="Class for dynamic PostgreSQL parameter list construction.">storages::postgres::ParameterStore</a> parameters;</div>
+<div class="line">  std::string filter;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">auto</span> append_if_has_value = [&amp;](std::string_view name, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; value) {</div>
+<div class="line">    <span class="keywordflow">if</span> (value) {</div>
+<div class="line">      <span class="keyword">auto</span> separator = (parameters.<a class="code hl_function" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a004597b49f0a9d3ae05b341fcdd53b12" title="Returns whether the parameter list is empty.">IsEmpty</a>() ? std::string_view{} : <span class="stringliteral">&quot; AND &quot;</span>);</div>
+<div class="line">      parameters.<a class="code hl_function" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a2c805dd1c2e25acab1ae61711516e0a7" title="Adds a parameter to the end of the parameter list.">PushBack</a>(*value);</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Do NOT put parameters directly into the query! It leads to</span></div>
+<div class="line">      <span class="comment">// vulnerabilities and bad performance.</span></div>
+<div class="line">      filter += fmt::format(<span class="stringliteral">&quot;{}{}=${}&quot;</span>, separator, name, parameters.<a class="code hl_function" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a338537bfe93b2558ec303251b9a8e0cb" title="Returns current size of the list.">Size</a>());</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  append_if_has_value(<span class="stringliteral">&quot;a&quot;</span>, a);</div>
+<div class="line">  append_if_has_value(<span class="stringliteral">&quot;b&quot;</span>, b);</div>
+<div class="line">  append_if_has_value(<span class="stringliteral">&quot;c&quot;</span>, c);</div>
+<div class="line">  append_if_has_value(<span class="stringliteral">&quot;d&quot;</span>, d);</div>
+<div class="line">  append_if_has_value(<span class="stringliteral">&quot;e&quot;</span>, e);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">if</span> (parameters.<a class="code hl_function" href="../../da/dd0/classstorages_1_1postgres_1_1ParameterStore.html#a004597b49f0a9d3ae05b341fcdd53b12" title="Returns whether the parameter list is empty.">IsEmpty</a>()) {</div>
+<div class="line">    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;No filters provided&quot;</span>);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> conn-&gt;Execute(<span class="stringliteral">&quot;SELECT x FROM some_table WHERE &quot;</span> + filter, parameters);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p >Note that <a class="el" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html#aa921f5367f903ac52cdd1477a0f6e088" title="Execute a statement at host of specified type.">storages::postgres::Cluster::Execute</a> with explicitly provided arguments works slightly faster: </p><div class="fragment"><div class="line">std::size_t InsertSomeKey(<a class="code hl_class" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html" title="Interface for executing queries on a cluster of PostgreSQL servers.">storages::postgres::Cluster</a>&amp; pg,</div>
+<div class="line">                          std::string_view key) {</div>
+<div class="line">  <span class="keyword">auto</span> res = pg.<a class="code hl_function" href="../../dd/d69/classstorages_1_1postgres_1_1Cluster.html#aa921f5367f903ac52cdd1477a0f6e088" title="Execute a statement at host of specified type.">Execute</a>(<a class="code hl_enumvalue" href="../../de/d6d/namespacestorages_1_1postgres.html#a112991762e57633e6213c2cbbce7d62fad4720c3695455d7cf5bce1b2c7bcecdf">storages::postgres::ClusterHostType::kMaster</a>,</div>
+<div class="line">                        <span class="stringliteral">&quot;INSERT INTO keys VALUES ($1)&quot;</span>, key);</div>
+<div class="line">  <span class="keywordflow">return</span> res.RowsAffected();</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a004597b49f0a9d3ae05b341fcdd53b12" name="a004597b49f0a9d3ae05b341fcdd53b12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a004597b49f0a9d3ae05b341fcdd53b12">&#9670;&nbsp;</a></span>IsEmpty()</h2>
@@ -140,7 +177,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns whether the parameter list is empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00030">30</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00040">40</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
 
 </div>
 </div>
@@ -173,7 +210,7 @@ template&lt;typename T &gt; </div>
 <p>Adds a parameter to the end of the parameter list. </p>
 <dl class="section note"><dt>Note</dt><dd>Currently only built-in/system types are supported. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
 
 </div>
 </div>
@@ -202,7 +239,7 @@ template&lt;typename T &gt; </div>
 
 <p>Returns current size of the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html#l00043">43</a> of file <a class="el" href="../../db/d6e/parameter__store_8hpp_source.html">parameter_store.hpp</a>.</p>
 
 </div>
 </div>
@@ -214,7 +251,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:58 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

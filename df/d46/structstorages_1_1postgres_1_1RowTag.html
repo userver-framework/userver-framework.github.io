@@ -88,9 +88,21 @@ $(function() {
   <div class="headertitle"><div class="title">storages::postgres::RowTag Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Tag type to disambiguate reading the row to a user's row type (values of the row initialize user's type data members).  
+ <a href="../../df/d46/structstorages_1_1postgres_1_1RowTag.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/dc9/row__types_8hpp_source.html">userver/storages/postgres/io/row_types.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d8/dc9/row__types_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a>.</p>
+<div class="textblock"><p >Tag type to disambiguate reading the row to a user's row type (values of the row initialize user's type data members). </p>
+<div class="fragment"><div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> res = conn-&gt;Execute(<span class="stringliteral">&quot;select $1, $2&quot;</span>, 42, <span class="stringliteral">&quot;foobar&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">using </span>TupleType = std::tuple&lt;int, std::string&gt;;</div>
+<div class="line">  <span class="keyword">auto</span> tuple = res.AsSingleRow&lt;TupleType&gt;(storages::postgres::kRowTag);</div>
+<div class="line">  EXPECT_EQ(std::get&lt;0&gt;(tuple), 42);</div>
+<div class="line">  EXPECT_EQ(std::get&lt;1&gt;(tuple), <span class="stringliteral">&quot;foobar&quot;</span>);</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../d8/dc9/row__types_8hpp_source.html#l00018">18</a> of file <a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>userver/storages/postgres/io/<a class="el" href="../../d8/dc9/row__types_8hpp_source.html">row_types.hpp</a></li>
 </ul>
@@ -99,7 +111,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:58 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

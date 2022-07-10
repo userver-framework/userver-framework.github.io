@@ -32,5 +32,6 @@ var searchData=
   ['externalroutineexception_29',['ExternalRoutineException',['../dd/d8e/classstorages_1_1postgres_1_1ExternalRoutineException.html',1,'storages::postgres']]],
   ['externalroutineinvocationexception_30',['ExternalRoutineInvocationException',['../d3/d4a/classstorages_1_1postgres_1_1ExternalRoutineInvocationException.html',1,'storages::postgres']]],
   ['extractiontag_31',['ExtractionTag',['../d7/da4/structstorages_1_1postgres_1_1io_1_1traits_1_1ExtractionTag.html',1,'storages::postgres::io::traits']]],
-  ['extractiontag_3c_20t_2c_20std_3a_3aenable_5fif_5ft_3c_20kisrowtype_3c_20t_20_3e_20_3e_20_3e_32',['ExtractionTag&lt; T, std::enable_if_t&lt; kIsRowType&lt; T &gt; &gt; &gt;',['../d8/daa/structstorages_1_1postgres_1_1io_1_1traits_1_1ExtractionTag_3_01T_00_01std_1_1enable__if__t_3_01kIsRowType_3_01T_01_4_01_4_01_4.html',1,'storages::postgres::io::traits']]]
+  ['extractiontag_3c_20t_2c_20std_3a_3aenable_5fif_5ft_3c_20kisrowtype_3c_20t_20_3e_20_3e_20_3e_32',['ExtractionTag&lt; T, std::enable_if_t&lt; kIsRowType&lt; T &gt; &gt; &gt;',['../d8/daa/structstorages_1_1postgres_1_1io_1_1traits_1_1ExtractionTag_3_01T_00_01std_1_1enable__if__t_3_01kIsRowType_3_01T_01_4_01_4_01_4.html',1,'storages::postgres::io::traits']]],
+  ['extraheaders_33',['ExtraHeaders',['../d0/d5b/structserver_1_1handlers_1_1ExtraHeaders.html',1,'server::handlers']]]
 ];

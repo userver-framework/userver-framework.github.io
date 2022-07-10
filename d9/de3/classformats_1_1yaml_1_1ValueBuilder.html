@@ -154,18 +154,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a526621212967592b86e02cb54ea955b3"><td class="memItemLeft" align="right" valign="top"><a id="a526621212967592b86e02cb54ea955b3" name="a526621212967592b86e02cb54ea955b3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (unsigned int t)</td></tr>
 <tr class="separator:a526621212967592b86e02cb54ea955b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d8fa354f14f2b31797baea721504e9c"><td class="memItemLeft" align="right" valign="top"><a id="a5d8fa354f14f2b31797baea721504e9c" name="a5d8fa354f14f2b31797baea721504e9c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (uint64_t t)</td></tr>
-<tr class="separator:a5d8fa354f14f2b31797baea721504e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8775b537d677bbb58412d2a49797a6d"><td class="memItemLeft" align="right" valign="top"><a id="aa8775b537d677bbb58412d2a49797a6d" name="aa8775b537d677bbb58412d2a49797a6d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (int64_t t)</td></tr>
-<tr class="separator:aa8775b537d677bbb58412d2a49797a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5878bb9ce86f03db9a18bf8d54599a9"><td class="memItemLeft" align="right" valign="top"><a id="ae5878bb9ce86f03db9a18bf8d54599a9" name="ae5878bb9ce86f03db9a18bf8d54599a9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (long t)</td></tr>
 <tr class="separator:ae5878bb9ce86f03db9a18bf8d54599a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bd4dda83b56d4bdffa70f70fdf33db0"><td class="memItemLeft" align="right" valign="top"><a id="a8bd4dda83b56d4bdffa70f70fdf33db0" name="a8bd4dda83b56d4bdffa70f70fdf33db0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (unsigned long t)</td></tr>
 <tr class="separator:a8bd4dda83b56d4bdffa70f70fdf33db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af22038514ae968f720518c69b693c2ec"><td class="memItemLeft" align="right" valign="top"><a id="af22038514ae968f720518c69b693c2ec" name="af22038514ae968f720518c69b693c2ec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (long long t)</td></tr>
+<tr class="separator:af22038514ae968f720518c69b693c2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f9de8e4747153c6955fc33e1536dded"><td class="memItemLeft" align="right" valign="top"><a id="a5f9de8e4747153c6955fc33e1536dded" name="a5f9de8e4747153c6955fc33e1536dded"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (unsigned long long t)</td></tr>
+<tr class="separator:a5f9de8e4747153c6955fc33e1536dded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a373fe4eef2617ce54eb3a751ab364abf"><td class="memItemLeft" align="right" valign="top"><a id="a373fe4eef2617ce54eb3a751ab364abf" name="a373fe4eef2617ce54eb3a751ab364abf"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ValueBuilder</b> (float t)</td></tr>
 <tr class="separator:a373fe4eef2617ce54eb3a751ab364abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,17 +201,52 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a29e3072006c661ad070a5eee273c2381"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a29e3072006c661ad070a5eee273c2381">IsEmpty</a> () const</td></tr>
 <tr class="memdesc:a29e3072006c661ad070a5eee273c2381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the array or object is empty.  <a href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a29e3072006c661ad070a5eee273c2381">More...</a><br /></td></tr>
 <tr class="separator:a29e3072006c661ad070a5eee273c2381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d2d9982606d7b3b1e0a94a4146aff73"><td class="memItemLeft" align="right" valign="top"><a id="a8d2d9982606d7b3b1e0a94a4146aff73" name="a8d2d9982606d7b3b1e0a94a4146aff73"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsNull</b> () const noexcept</td></tr>
+<tr class="memdesc:a8d2d9982606d7b3b1e0a94a4146aff73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a Null (Type::kNull). <br /></td></tr>
+<tr class="separator:a8d2d9982606d7b3b1e0a94a4146aff73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942d4519eddaa5f7b6cf2308da633448"><td class="memItemLeft" align="right" valign="top"><a id="a942d4519eddaa5f7b6cf2308da633448" name="a942d4519eddaa5f7b6cf2308da633448"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsBool</b> () const noexcept</td></tr>
+<tr class="memdesc:a942d4519eddaa5f7b6cf2308da633448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to bool. <br /></td></tr>
+<tr class="separator:a942d4519eddaa5f7b6cf2308da633448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233ac7b0f167c1c78cda45571097a271"><td class="memItemLeft" align="right" valign="top"><a id="a233ac7b0f167c1c78cda45571097a271" name="a233ac7b0f167c1c78cda45571097a271"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInt</b> () const noexcept</td></tr>
+<tr class="memdesc:a233ac7b0f167c1c78cda45571097a271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int. <br /></td></tr>
+<tr class="separator:a233ac7b0f167c1c78cda45571097a271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed5e88837a86ec244c51eff8859eb22"><td class="memItemLeft" align="right" valign="top"><a id="a2ed5e88837a86ec244c51eff8859eb22" name="a2ed5e88837a86ec244c51eff8859eb22"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInt64</b> () const noexcept</td></tr>
+<tr class="memdesc:a2ed5e88837a86ec244c51eff8859eb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to int64_t. <br /></td></tr>
+<tr class="separator:a2ed5e88837a86ec244c51eff8859eb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1b1513c3cce87c1d24f6af025bff96"><td class="memItemLeft" align="right" valign="top"><a id="a9d1b1513c3cce87c1d24f6af025bff96" name="a9d1b1513c3cce87c1d24f6af025bff96"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUInt64</b> () const noexcept</td></tr>
+<tr class="memdesc:a9d1b1513c3cce87c1d24f6af025bff96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to uint64_t. <br /></td></tr>
+<tr class="separator:a9d1b1513c3cce87c1d24f6af025bff96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa588ab761bde8bd8fa803239ecfe17af"><td class="memItemLeft" align="right" valign="top"><a id="aa588ab761bde8bd8fa803239ecfe17af" name="aa588ab761bde8bd8fa803239ecfe17af"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDouble</b> () const noexcept</td></tr>
+<tr class="memdesc:aa588ab761bde8bd8fa803239ecfe17af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to double. <br /></td></tr>
+<tr class="separator:aa588ab761bde8bd8fa803239ecfe17af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32c79bad6b1396859b74cab3f86886c"><td class="memItemLeft" align="right" valign="top"><a id="ad32c79bad6b1396859b74cab3f86886c" name="ad32c79bad6b1396859b74cab3f86886c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsString</b> () const noexcept</td></tr>
+<tr class="memdesc:ad32c79bad6b1396859b74cab3f86886c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is convertible to std::string. <br /></td></tr>
+<tr class="separator:ad32c79bad6b1396859b74cab3f86886c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9f20c27d67647dea72ece8e26cc46a"><td class="memItemLeft" align="right" valign="top"><a id="a8e9f20c27d67647dea72ece8e26cc46a" name="a8e9f20c27d67647dea72ece8e26cc46a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsArray</b> () const noexcept</td></tr>
+<tr class="memdesc:a8e9f20c27d67647dea72ece8e26cc46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this is an array (Type::kArray). <br /></td></tr>
+<tr class="separator:a8e9f20c27d67647dea72ece8e26cc46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4bc2d533a212df4498564cbce66499b"><td class="memItemLeft" align="right" valign="top"><a id="ad4bc2d533a212df4498564cbce66499b" name="ad4bc2d533a212df4498564cbce66499b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsObject</b> () const noexcept</td></tr>
+<tr class="memdesc:ad4bc2d533a212df4498564cbce66499b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a map (Type::kObject). <br /></td></tr>
+<tr class="separator:ad4bc2d533a212df4498564cbce66499b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc427583e7c86ee9cb26e06b55b3789"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a3dc427583e7c86ee9cb26e06b55b3789">GetSize</a> () const</td></tr>
 <tr class="memdesc:a3dc427583e7c86ee9cb26e06b55b3789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns array size or object members count.  <a href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a3dc427583e7c86ee9cb26e06b55b3789">More...</a><br /></td></tr>
 <tr class="separator:a3dc427583e7c86ee9cb26e06b55b3789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b7c491c8e4a3dea9e9912a2ee3add5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#af6b7c491c8e4a3dea9e9912a2ee3add5">IsObject</a> () const</td></tr>
-<tr class="memdesc:af6b7c491c8e4a3dea9e9912a2ee3add5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if *this holds a map (Type::kObject).  <a href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#af6b7c491c8e4a3dea9e9912a2ee3add5">More...</a><br /></td></tr>
-<tr class="separator:af6b7c491c8e4a3dea9e9912a2ee3add5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1860d166c9500a82d521a918cab977ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a1860d166c9500a82d521a918cab977ce">HasMember</a> (const char *key) const</td></tr>
-<tr class="memdesc:a1860d166c9500a82d521a918cab977ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value holds a <code>key</code>.  <a href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a1860d166c9500a82d521a918cab977ce">More...</a><br /></td></tr>
+<tr class="memitem:a1860d166c9500a82d521a918cab977ce"><td class="memItemLeft" align="right" valign="top"><a id="a1860d166c9500a82d521a918cab977ce" name="a1860d166c9500a82d521a918cab977ce"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasMember</b> (const char *key) const</td></tr>
+<tr class="memdesc:a1860d166c9500a82d521a918cab977ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value holds a <code>key</code>. <br /></td></tr>
 <tr class="separator:a1860d166c9500a82d521a918cab977ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d259cc638a206ad69bfc014c2490a67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a9d259cc638a206ad69bfc014c2490a67">HasMember</a> (const std::string &amp;key) const</td></tr>
-<tr class="memdesc:a9d259cc638a206ad69bfc014c2490a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value holds a <code>key</code>.  <a href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#a9d259cc638a206ad69bfc014c2490a67">More...</a><br /></td></tr>
+<tr class="memitem:a9d259cc638a206ad69bfc014c2490a67"><td class="memItemLeft" align="right" valign="top"><a id="a9d259cc638a206ad69bfc014c2490a67" name="a9d259cc638a206ad69bfc014c2490a67"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasMember</b> (const std::string &amp;key) const</td></tr>
+<tr class="memdesc:a9d259cc638a206ad69bfc014c2490a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value holds a <code>key</code>. <br /></td></tr>
 <tr class="separator:a9d259cc638a206ad69bfc014c2490a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdfa97bec2b1d3ccb4a49037f21526c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#acdfa97bec2b1d3ccb4a49037f21526c3">Resize</a> (std::size_t size)</td></tr>
 <tr class="memdesc:acdfa97bec2b1d3ccb4a49037f21526c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the array value or convert null value into an array of requested size.  <a href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html#acdfa97bec2b1d3ccb4a49037f21526c3">More...</a><br /></td></tr>
@@ -231,7 +266,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Builder for YAML. </p>
 <p >Class provides methods for building YAML. For read only access to the existing YAML values use <a class="el" href="../../da/dc1/classformats_1_1yaml_1_1Value.html" title="Non-mutable YAML value representation.">formats::yaml::Value</a>.</p>
-<h2><a class="anchor" id="autotoc_md404"></a>
+<h2><a class="anchor" id="autotoc_md408"></a>
 Example usage:</h2>
 <div class="fragment"><div class="line">  <span class="comment">// #include &lt;userver/formats/yaml.hpp&gt;</span></div>
 <div class="line">  <a class="code hl_class" href="../../d9/de3/classformats_1_1yaml_1_1ValueBuilder.html" title="Builder for YAML.">formats::yaml::ValueBuilder</a> builder;</div>
@@ -244,7 +279,7 @@ Example usage:</h2>
 <div class="line"> </div>
 <div class="line">  ASSERT_EQ(yaml[<span class="stringliteral">&quot;key1&quot;</span>].As&lt;int&gt;(), 1);</div>
 <div class="line">  ASSERT_EQ(yaml[<span class="stringliteral">&quot;key2&quot;</span>][<span class="stringliteral">&quot;key3&quot;</span>].As&lt;std::string&gt;(), <span class="stringliteral">&quot;val&quot;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md405"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md409"></a>
 Customization example:</h2>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_namespace {</div>
 <div class="line"> </div>
@@ -362,7 +397,7 @@ template&lt;typename T &gt; </div>
 
 <p>Universal constructor using Serialize. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
 
 </div>
 </div>
@@ -417,58 +452,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a1860d166c9500a82d521a918cab977ce" name="a1860d166c9500a82d521a918cab977ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1860d166c9500a82d521a918cab977ce">&#9670;&nbsp;</a></span>HasMember() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::ValueBuilder::HasMember </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if value holds a <code>key</code>. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9d259cc638a206ad69bfc014c2490a67" name="a9d259cc638a206ad69bfc014c2490a67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d259cc638a206ad69bfc014c2490a67">&#9670;&nbsp;</a></span>HasMember() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::ValueBuilder::HasMember </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if value holds a <code>key</code>. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a29e3072006c661ad070a5eee273c2381" name="a29e3072006c661ad070a5eee273c2381"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29e3072006c661ad070a5eee273c2381">&#9670;&nbsp;</a></span>IsEmpty()</h2>
 
@@ -488,31 +471,6 @@ template&lt;typename T &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">`TypeMismatchException`</td><td>if not an array or an object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af6b7c491c8e4a3dea9e9912a2ee3add5" name="af6b7c491c8e4a3dea9e9912a2ee3add5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6b7c491c8e4a3dea9e9912a2ee3add5">&#9670;&nbsp;</a></span>IsObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool formats::yaml::ValueBuilder::IsObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if *this holds a map (Type::kObject). </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Nothing.</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -571,7 +529,7 @@ template&lt;typename Tag , <a class="el" href="../../d6/d84/namespaceutils.html#
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html#l00183">183</a> of file <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html#l00195">195</a> of file <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +659,7 @@ template&lt;typename Tag , <a class="el" href="../../d6/d84/namespaceutils.html#
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html#l00177">177</a> of file <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html#l00189">189</a> of file <a class="el" href="../../da/d7f/shared_2include_2userver_2formats_2yaml_2value__builder_8hpp_source.html">value_builder.hpp</a>.</p>
 
 </div>
 </div>
@@ -713,7 +671,7 @@ template&lt;typename Tag , <a class="el" href="../../d6/d84/namespaceutils.html#
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:45 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

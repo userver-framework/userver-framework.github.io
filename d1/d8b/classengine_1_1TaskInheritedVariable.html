@@ -107,7 +107,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acca31c8a1a0e8cfca70cf37a50ce58da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55dcc72c53228fc5fe24863628e6be18"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a55dcc72c53228fc5fe24863628e6be18"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d8b/classengine_1_1TaskInheritedVariable.html#a55dcc72c53228fc5fe24863628e6be18">Emplace</a> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a55dcc72c53228fc5fe24863628e6be18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or replace the variable instance that could be later retrieved from current or child tasks via <code>Get</code> or <code>GetOptional</code>  <a href="../../d1/d8b/classengine_1_1TaskInheritedVariable.html#a55dcc72c53228fc5fe24863628e6be18">More...</a><br /></td></tr>
+<tr class="memdesc:a55dcc72c53228fc5fe24863628e6be18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or replaces the T variable instance.  <a href="../../d1/d8b/classengine_1_1TaskInheritedVariable.html#a55dcc72c53228fc5fe24863628e6be18">More...</a><br /></td></tr>
 <tr class="separator:a55dcc72c53228fc5fe24863628e6be18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1035f0f99abe08b94b148600ebbb3ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d8b/classengine_1_1TaskInheritedVariable.html#a1035f0f99abe08b94b148600ebbb3ac5">Set</a> (T &amp;&amp;value)</td></tr>
 <tr class="memdesc:a1035f0f99abe08b94b148600ebbb3ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="../../d1/d8b/classengine_1_1TaskInheritedVariable.html#a1035f0f99abe08b94b148600ebbb3ac5">More...</a><br /></td></tr>
@@ -155,9 +155,9 @@ template&lt;typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set or replace the variable instance that could be later retrieved from current or child tasks via <code>Get</code> or <code>GetOptional</code> </p>
+<p>Sets or replaces the T variable instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00043">43</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -189,7 +189,7 @@ template&lt;typename T &gt; </div>
 <p>Hide the variable so that it is no longer accessible from the current or child tasks. </p>
 <dl class="section note"><dt>Note</dt><dd>The variable might not actually be destroyed immediately </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -221,7 +221,7 @@ template&lt;typename T &gt; </div>
 <p>Get the variable instance for the current task. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if none was set </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>if variable was not set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -256,7 +256,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Get the variable instance for the current task. </p>
-<dl class="section return"><dt>Returns</dt><dd>the variable or <code>nullptr</code> if none was set </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the variable or <code>nullptr</code> if variable was not set. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
 
@@ -290,7 +290,7 @@ template&lt;typename T &gt; </div>
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00053">53</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -322,7 +322,7 @@ template&lt;typename T &gt; </div>
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../d9/d56/inherited__variable_8hpp_source.html">inherited_variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 3 2022 17:50:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Sun Jul 10 2022 20:23:40 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
