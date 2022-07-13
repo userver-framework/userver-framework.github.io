@@ -244,13 +244,13 @@ Additional Inherited Members</h2></td></tr>
 class components::CachingComponentBase&lt; T &gt;</div><p >Base class for caching components. </p>
 <p >Provides facilities for creating periodically updated caches. You need to override CacheUpdateTrait::Update then call CacheUpdateTrait::StartPeriodicUpdates after setup and CacheUpdateTrait::StopPeriodicUpdates before teardown.</p>
 <p >Caching components must be configured in service config (see options below) and may be reconfigured dynamically via <a class="el" href="../../dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the runtime config.">components::DynamicConfig</a>.</p>
-<h2><a class="anchor" id="autotoc_md411"></a>
+<h2><a class="anchor" id="autotoc_md415"></a>
 Dynamic config</h2>
 <ul>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_CACHES">USERVER_CACHES</a></li>
 <li><a class="el" href="../../dd/d2c/md_en_schemas_dynamic_configs.html#USERVER_DUMPS">USERVER_DUMPS</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md412"></a>
+<h2><a class="anchor" id="autotoc_md416"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -276,14 +276,14 @@ Static options:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">testsuite-force-periodic-update   </td><td class="markdownTableBodyNone">override testsuite-periodic-update-enabled in <a class="el" href="../../d9/de2/classcomponents_1_1TestsuiteSupport.html" title="Testsuite support component.">TestsuiteSupport</a> component config   </td><td class="markdownTableBodyNone">&ndash;   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md413"></a>
+<h3><a class="anchor" id="autotoc_md417"></a>
 Update types</h3>
 <ul>
 <li><code>full-and-incremental</code>: both <code>update-interval</code> and <code>full-update-interval</code> must be specified. Updates with UpdateType::kIncremental will be triggered each <code>update-interval</code> (adjusted by jitter) unless <code>full-update-interval</code> has passed and UpdateType::kFull is triggered.</li>
 <li><code>only-full</code>: only <code>update-interval</code> must be specified. UpdateType::kFull will be triggered each <code>update-interval</code> (adjusted by jitter).</li>
 <li><code>only-incremental</code>: only <code>update-interval</code> must be specified. UpdateType::kFull is triggered on the first update, afterwards UpdateType::kIncremental will be triggered each <code>update-interval</code> (adjusted by jitter).</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md414"></a>
+<h3><a class="anchor" id="autotoc_md418"></a>
 testsuite-force-periodic-update</h3>
 <p >use it to enable periodic cache update for a component in testsuite environment where testsuite-periodic-update-enabled from <a class="el" href="../../d9/de2/classcomponents_1_1TestsuiteSupport.html" title="Testsuite support component.">TestsuiteSupport</a> config is false</p>
 <p >By default, update types are guessed based on update intervals presence. If both <code>update-interval</code> and <code>full-update-interval</code> are present, <code>full-and-incremental</code> types is assumed. Otherwise <code>only-full</code> is used.</p>
@@ -718,7 +718,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:07 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:37 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

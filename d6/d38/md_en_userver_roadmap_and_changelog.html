@@ -87,7 +87,7 @@ $(function() {
 <div class="textblock"><p >We keep an eye on all the issues and feature requests at the <a href="https://github.com/userver-framework">github.com/userver-framework</a>, at the <a href="https://t.me/userver_en">English-speaking</a> and <a href="https://t.me/userver_ru">Russian-speaking</a> Telegram support chats. All the good ideas are discussed, big and important ones go to the Roadmap. We also have our in-house feature requests, those could be also found in Roadmap.</p>
 <p >Important or interesting features go to the changelog as they get implemented. Note that there's also a <a class="el" href="../../df/d3a/md_en_userver_security_changelog.html">Security Changelog</a>.</p>
 <p >Changelog news also go to the <a href="https://t.me/userver_news">userver framework news channel</a>.</p>
-<h1><a class="anchor" id="autotoc_md231"></a>
+<h1><a class="anchor" id="autotoc_md235"></a>
 Roadmap</h1>
 <ul>
 <li>Add component to serve static pages<ul>
@@ -104,15 +104,15 @@ Roadmap</h1>
 <li>Add Prometheus metrics format</li>
 <li>Add priorities for the tasks processors</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md232"></a>
+<h1><a class="anchor" id="autotoc_md236"></a>
 Changelog</h1>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md237"></a>
 Beta (since end of May 2022 to public anouncement)</h2>
 <ul>
 <li><a class="el" href="../../dc/db7/group__userver__concurrency.html#gac91f56844690ea79c568cb3b43ba98a5">utils::Async()</a> now can be invoked from non-coroutine thread (in that case do not forget to use <a class="el" href="../../d8/d7c/classengine_1_1Task.html#a779d698abc4a6dd681e48441f513cd4a">engine::Task::BlockingWait()</a> to wait for it). Thanks to <a href="https://github.com/itrofimow">Ivan Trofimov</a> for the report.</li>
 <li>Improved MacOS support, thanks to <a href="https://github.com/kargatpwnz">Evgeny Medvedev</a>.</li>
 <li>Docker suport: <a href="https://github.com/userver-framework/docker-userver-build-base/pkgs/container/docker-userver-build-base">base image for developement</a>, docker-compose.yaml for the userver with build and test targets.</li>
-<li>Docs improved: removed internal links; added <a class="el" href="../../d7/dca/md_en_userver_framework_comparison.html">Feature Comparison with other Frameworks</a>, <a class="el" href="../../d9/d08/md_en_userver_supported_platforms.html">Supported Platforms</a>, <a class="el" href="../../d3/d53/md_en_userver_beta_state.html">About the BETA state</a>, <a class="el" href="../../df/d3a/md_en_userver_security_changelog.html">Security Changelog</a>, <a class="el" href="../../d9/d71/md_en_userver_profile_context_switches.html">Profiling context switches</a>, <a class="el" href="../../d9/d75/md_en_userver_os_signals.html">Handling OS signals</a> and <a class="el" href="../../d6/d38/md_en_userver_roadmap_and_changelog.html">Roadmap and Changelog</a>.</li>
+<li>Docs improved: removed internal links; added <a class="el" href="../../d7/dca/md_en_userver_framework_comparison.html">Feature Comparison with other Frameworks</a>, <a class="el" href="../../d9/d08/md_en_userver_supported_platforms.html">Supported Platforms</a>, <a class="el" href="../../d3/d53/md_en_userver_beta_state.html">About the BETA state</a>, <a class="el" href="../../df/d3a/md_en_userver_security_changelog.html">Security Changelog</a>, <a class="el" href="../../d9/d71/md_en_userver_profile_context_switches.html">Profiling context switches</a>, <a class="el" href="../../d6/d18/md_en_userver_driver_guide.html">Driver Writing Guide</a>, <a class="el" href="../../d9/d75/md_en_userver_os_signals.html">Handling OS signals</a> and <a class="el" href="../../d6/d38/md_en_userver_roadmap_and_changelog.html">Roadmap and Changelog</a>.</li>
 <li>AArch64 build supported. Tests pass successfully</li>
 <li>HTTP headers hashing not vulnerable to HashDOS any more, thanks to Ivan Trofimov for the report.</li>
 <li><a class="el" href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2" title="Waits for the completion of any of the specified tasks or the cancellation of the caller.">engine::WaitAny</a> now can wait for <a class="el" href="../../d8/d67/classengine_1_1Future.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise">engine::Future</a>, including futures that are signaled by <a class="el" href="../../d9/d2e/classengine_1_1Promise.html" title="std::promise replacement for asynchronous tasks that works in pair with engine::Future">engine::Promise</a> from non-coroutine environment.</li>
@@ -129,7 +129,7 @@ Beta (since end of May 2022 to public anouncement)</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

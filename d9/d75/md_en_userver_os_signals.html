@@ -84,18 +84,18 @@ $(function() {
   <div class="headertitle"><div class="title">Handling OS signals </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md213"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md217"></a>
 Default behavior</h1>
 <ul>
 <li><code>SIGINT</code> - return trace</li>
 <li><code>SIGTERM</code>, <code>SIGQUIT</code> - shutdown service</li>
 <li><code>SIGUSR1</code> - reopen file descriptors for log (logrotate)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md214"></a>
+<h1><a class="anchor" id="autotoc_md218"></a>
 User behavior</h1>
 <p >The component <a class="el" href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html" title="A storage for Processor listeners signals.">os_signals::ProcessorComponent</a> stores <a class="el" href="../../d1/d6c/classos__signals_1_1Processor.html" title="A manager that allows to subscribe to OS signals, example: SIGUSR1, SIGUSR2.">os_signals::Processor</a> and listens to <code>SIGUSR1</code> and <code>SIGUSR2</code> signals. You can use <code>AddListener</code> function to subscribe to these signals.</p>
 <p >For example, we use signal <code>SIGUSR1</code> in <a class="el" href="../../d4/da4/classcomponents_1_1Logging.html" title="Logging component">components::Logging</a> for reopening files after executing <a href="https://github.com/logrotate/logrotate">logrotate</a>.</p>
-<h2><a class="anchor" id="autotoc_md215"></a>
+<h2><a class="anchor" id="autotoc_md219"></a>
 Example</h2>
 <ol type="1">
 <li>Add in private field class</li>
@@ -119,7 +119,7 @@ Example</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

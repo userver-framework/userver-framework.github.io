@@ -286,7 +286,7 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetMet
 <div class="textblock"><p >Handler that allows to control the behavior of server from tests. </p>
 <p >It is highly recommended to disable this handle in production via the <a class="el" href="../../dd/d1c/group__userver__components.html">load-enabled: false</a> option.</p>
 <p >The component must be configured in service config.</p>
-<h2><a class="anchor" id="autotoc_md498"></a>
+<h2><a class="anchor" id="autotoc_md502"></a>
 Static options:</h2>
 <p >Aside from <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">common handler options</a> component has the following options:</p>
 <table class="markdownTable">
@@ -299,7 +299,7 @@ Static options:</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">testpoint-timeout   </td><td class="markdownTableBodyNone">timeout to use while working with testpoint-url   </td><td class="markdownTableBodyNone">1s   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md499"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    tests-control:</div>
@@ -311,7 +311,7 @@ Static configuration example:</h2>
 <div class="line">        path: /tests/{action}</div>
 <div class="line">        method: POST</div>
 <div class="line">        task_processor: main-task-processor</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md500"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md504"></a>
 Scheme</h2>
 <p >The scheme matches the <a href="https://yandex.github.io/yandex-taxi-testsuite/">https://yandex.github.io/yandex-taxi-testsuite/</a> expectations from <code>/tests/control</code> handle. In particular: </p><div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="stringliteral">&quot;action&quot;</span>: <span class="stringliteral">&quot;run_periodic_task&quot;</span> | <span class="stringliteral">&quot;suspend_periodic_tasks&quot;</span> | <span class="stringliteral">&quot;write_cache_dumps&quot;</span> | <span class="stringliteral">&quot;read_cache_dumps&quot;</span></div>
@@ -402,7 +402,7 @@ Scheme</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:23 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:53 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

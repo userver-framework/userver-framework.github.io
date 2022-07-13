@@ -86,20 +86,20 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p >Userver is used by hundreds of microservices only in our code base. Manual application of modifications to the whole code-base is a burden.</p>
 <p ><b>Rule of the thumb:</b> we endeavor to change things only if the migration path is simple or there is a script to automate it.</p>
-<h1><a class="anchor" id="autotoc_md102"></a>
+<h1><a class="anchor" id="autotoc_md101"></a>
 Versioning</h1>
 <p >Userver follows the classical three-part versioning:</p>
 <p ><code>major.minor.patch</code></p>
 <p >Example: <code>1.0.0</code></p>
-<h1><a class="anchor" id="autotoc_md103"></a>
+<h1><a class="anchor" id="autotoc_md102"></a>
 API stability</h1>
 <p >API does not change between minor and patch version changes.</p>
 <p >Note that framework internals located in <code>*::impl::*</code> and <code>*::detail::*</code> namespaces have no stability guarantees. You should not use those in your code directly.</p>
-<h1><a class="anchor" id="autotoc_md104"></a>
+<h1><a class="anchor" id="autotoc_md103"></a>
 Compilation</h1>
 <p >Transitive includes could not be relied on. Even a change in patch version could remove some <code>#include</code> from header and break code that relies on transitive includes. However, we provide script <code>./scripts/add-missing-include.sh</code> that helps to add missing includes in big code bases.</p>
 <p >Avoid adding your own forward declarations for the framework types as the type could change to an alias or vice versa during the userver development process.</p>
-<h1><a class="anchor" id="autotoc_md105"></a>
+<h1><a class="anchor" id="autotoc_md104"></a>
 ABI stability</h1>
 <p >Userver is meant for usage mostly as a static library that is linked with the application. Because of that userver has no Application <b>Binary</b> Interface (ABI) stability guarantees. While the API is kept stable, binary interface may change even on patch version change.</p>
 <p >However, you could redefine cmake options <code>USERVER_NAMESPACE</code>, <code>USERVER_NAMESPACE_BEGIN</code> and <code>USERVER_NAMESPACE_END</code> to place all the entities of the userver into versioned inline namespace. That would to allow you mixing different versions of userver in a single binary without ODR-violations. </p>
@@ -109,7 +109,7 @@ ABI stability</h1>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:03 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

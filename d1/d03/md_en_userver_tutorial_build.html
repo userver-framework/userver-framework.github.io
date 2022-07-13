@@ -84,7 +84,7 @@ $(function() {
   <div class="headertitle"><div class="title">Configure and Build </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md273"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md277"></a>
 CMake options</h1>
 <p >The following options could be used to control <code>cmake</code>:</p>
 <table class="markdownTable">
@@ -153,11 +153,11 @@ CMake options</h1>
 </table>
 <p >To explicitly specialize the compiler use the cmake options <code>CMAKE_C_COMPILER</code> and <code>CMAKE_CXX_COMPILER</code>. For example to use clang-12 compiler install it and add the following options to cmake: <code>-DCMAKE_CXX_COMPILER=clang++-12 -DCMAKE_C_COMPILER=clang-12</code></p>
 <p >Prefer avoiding Boost versions that are affected by the bug <a href="https://github.com/boostorg/lockfree/issues/59">https://github.com/boostorg/lockfree/issues/59</a> (1.71 and above).</p>
-<h1><a class="anchor" id="autotoc_md274"></a>
+<h1><a class="anchor" id="autotoc_md278"></a>
 Installation instructions</h1>
 <p >Download and extract the latest release from <a href="https://github.com/userver-framework/userver">https://github.com/userver-framework/userver</a></p>
 <p >Follow the platforms specific instructions:</p>
-<h2><a class="anchor" id="autotoc_md275"></a>
+<h2><a class="anchor" id="autotoc_md279"></a>
 Ubuntu 22.04 (Jammy Jellyfish)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-22.04.md file, configure git: <div class="fragment"><div class="line">bash</div>
@@ -171,7 +171,7 @@ Ubuntu 22.04 (Jammy Jellyfish)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md276"></a>
+<h2><a class="anchor" id="autotoc_md280"></a>
 Ubuntu 21.10 (Impish Indri)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-21.10.md file: <div class="fragment"><div class="line">bash</div>
@@ -184,7 +184,7 @@ Ubuntu 21.10 (Impish Indri)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md277"></a>
+<h2><a class="anchor" id="autotoc_md281"></a>
 Ubuntu 20.04 (Focal Fossa)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-20.04.md file: <div class="fragment"><div class="line">bash</div>
@@ -197,7 +197,7 @@ Ubuntu 20.04 (Focal Fossa)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md278"></a>
+<h2><a class="anchor" id="autotoc_md282"></a>
 Ubuntu 18.04 (Bionic Beaver)</h2>
 <ol type="1">
 <li>Install the build and test dependencies from ubuntu-18.04.md file: <div class="fragment"><div class="line">bash</div>
@@ -212,7 +212,7 @@ Ubuntu 18.04 (Bionic Beaver)</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md279"></a>
+<h2><a class="anchor" id="autotoc_md283"></a>
 Fedora 35</h2>
 <ol type="1">
 <li>Install the build and test dependencies from fedora-35.md file: <div class="fragment"><div class="line">bash</div>
@@ -225,7 +225,7 @@ Fedora 35</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md280"></a>
+<h2><a class="anchor" id="autotoc_md284"></a>
 Debian 11 32-bit</h2>
 <ol type="1">
 <li>Install the build and test dependencies from debian-11x32.md file: <div class="fragment"><div class="line">bash</div>
@@ -239,7 +239,7 @@ Debian 11 32-bit</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md281"></a>
+<h2><a class="anchor" id="autotoc_md285"></a>
 Gentoo</h2>
 <ol type="1">
 <li>Install the build and test dependencies from gentoo.md file: <div class="fragment"><div class="line">bash</div>
@@ -253,7 +253,7 @@ Gentoo</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md282"></a>
+<h2><a class="anchor" id="autotoc_md286"></a>
 Arch</h2>
 <ol type="1">
 <li>Install the build and test dependencies from arch.md file:<ul>
@@ -281,7 +281,7 @@ Arch</h2>
 <div class="line">make -j$(nproc)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md283"></a>
+<h2><a class="anchor" id="autotoc_md287"></a>
 MacOS</h2>
 <p >MacOS is recommended only for development as it may have performance issues in some cases. At least MacOS 10.15 required with <a href="https://apps.apple.com/us/app/xcode/id497799835">Xcode</a> and <a href="https://brew.sh/">Homebrew</a>.</p>
 <p >Start with the following command: </p><div class="fragment"><div class="line">bash</div>
@@ -292,11 +292,11 @@ MacOS</h2>
 <div class="line">      -DUSERVER_FEATURE_CLICKHOUSE=0 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@1.1 \</div>
 <div class="line">      -DBENCHMARK_ENABLE_WERROR=0 ..</div>
 </div><!-- fragment --><p >Follow the cmake hints for the installation of required packets and keep calling cmake with the options.</p>
-<h2><a class="anchor" id="autotoc_md284"></a>
+<h2><a class="anchor" id="autotoc_md288"></a>
 Other POSIX based platforms</h2>
 <p >🐙 <b>userver</b> works well on modern POSIX platforms. Follow the cmake hints for the installation of required packets and experiment with the CMake options.</p>
 <p >Feel free to provide a PR with instructions for your favorite platform at <a href="https://github.com/userver-framework/userver">https://github.com/userver-framework/userver</a>.</p>
-<h2><a class="anchor" id="autotoc_md285"></a>
+<h2><a class="anchor" id="autotoc_md289"></a>
 Docker</h2>
 <p >Docker images in userver provide the following functionality:</p><ul>
 <li>build and start all userver tests: <div class="fragment"><div class="line">bash</div>
@@ -315,7 +315,7 @@ Docker</h2>
 <p >Start CMake: </p><div class="fragment"><div class="line">docker-compose run --rm userver-debian cmake -B./build -S./</div>
 </div><!-- fragment --><p> Build userver: </p><div class="fragment"><div class="line">docker-compose run --rm userver-debian bash -c &#39;cd /userver/build &amp;&amp; make -j $(nproc)&#39;</div>
 </div><!-- fragment --><p> Run all test: </p><div class="fragment"><div class="line">docker-compose run --rm userver-debian bash -c &#39;cd /userver/build &amp;&amp; ctest -V&#39;</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md286"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md290"></a>
 Run framework tests</h1>
 <p >To run tests and make sure that the framework works fine use the following command: </p><div class="fragment"><div class="line">bash</div>
 <div class="line">cd build_release</div>
@@ -326,7 +326,7 @@ Run framework tests</h1>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

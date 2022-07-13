@@ -89,7 +89,7 @@ $(function() {
 <li>the service waits for something. Profiling would help to detect the most common cases of waiting for IO, tasks or synchronization primitives.</li>
 <li>the service spends a lot of CPU time under low load. Profiling would help to detect the place where the context switching often happens.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md217"></a>
+<h1><a class="anchor" id="autotoc_md221"></a>
 How to profile a service</h1>
 <ol type="1">
 <li>Make sure that service is build with debug information and that the cmake option <code>USERVER_FEATURE_STACKTRACE</code> was turned <code>ON</code>.</li>
@@ -118,7 +118,7 @@ How to profile a service</h1>
 <li>Start your service</li>
 <li>Look at the traces.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md218"></a>
+<h1><a class="anchor" id="autotoc_md222"></a>
 What to search in profiles</h1>
 <dl class="section note"><dt>Note</dt><dd>Here and below <code>./scripts/human_logs.py</code> is used to get more compact logs.</dd></dl>
 <p>Take a look at the following log:</p>
@@ -179,7 +179,7 @@ What to search in profiles</h1>
 <div class="line"> 7# std::lock_guard&lt;userver::engine::Mutex&gt;::lock_guard(userver::engine::Mutex&amp;) at /usr/include/c++/bits/std_mutex.h:159</div>
 <div class="line"> 8# userver::concurrent::LockedPtr&lt;std::lock_guard&lt;userver::engine::Mutex&gt;, userver::components::ComponentContext::Impl::ProtectedData const&gt;::LockedPtr(userver::engine::Mutex&amp;, userver::components::ComponentContext::Impl::ProtectedData const&amp;) at /userver/core/include/userver/concurrent/variable.hpp:20</div>
 <div class="line"> ...</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md219"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md223"></a>
 FAQ</h1>
 <ul>
 <li><p class="startli"><b>Q:</b> I get barely readable traces, without function or file names.</p>
@@ -195,7 +195,7 @@ FAQ</h1>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 11:33:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 14:54:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
