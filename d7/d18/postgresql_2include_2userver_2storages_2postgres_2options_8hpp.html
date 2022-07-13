@@ -36,7 +36,7 @@
   </td>
   <td style="float: right; padding-right: 15px; padding-top: 15px;">
     <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
-      <img src="../../github_logo.svg" alt="Github"/>
+      <img src="../../github_logo.svg" style="filter: invert(100%);" alt="Github"/>
     </a>
     &nbsp;
     <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
@@ -238,6 +238,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a01097d907702ee4a4af02d9e92c20094"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6d/namespacestorages_1_1postgres.html#a01097d907702ee4a4af02d9e92c20094">storages::postgres::kDefaultPoolMaxQueueSize</a> = 200</td></tr>
 <tr class="memdesc:a01097d907702ee4a4af02d9e92c20094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default size of queue for clients waiting for connections.  <a href="../../de/d6d/namespacestorages_1_1postgres.html#a01097d907702ee4a4af02d9e92c20094">More...</a><br /></td></tr>
 <tr class="separator:a01097d907702ee4a4af02d9e92c20094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89fd763d928181ab7edeb98ae784ce22"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6d/namespacestorages_1_1postgres.html#a89fd763d928181ab7edeb98ae784ce22">storages::postgres::kDefaultConnectingLimit</a> = 0</td></tr>
+<tr class="memdesc:a89fd763d928181ab7edeb98ae784ce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default limit for concurrent establishing connections number.  <a href="../../de/d6d/namespacestorages_1_1postgres.html#a89fd763d928181ab7edeb98ae784ce22">More...</a><br /></td></tr>
+<tr class="separator:a89fd763d928181ab7edeb98ae784ce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b486f2972c2d2a276dae46871be875f"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f">storages::postgres::kDefaultMaxPreparedCacheSize</a> = 5000</td></tr>
 <tr class="memdesc:a4b486f2972c2d2a276dae46871be875f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default size limit for prepared statements cache.  <a href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f">More...</a><br /></td></tr>
 <tr class="separator:a4b486f2972c2d2a276dae46871be875f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,7 +254,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 10 2022 20:23:22 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 11:32:55 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -411,10 +414,10 @@ function telegram_channel_language() {
 // * all the elements (except menue parts) are already parsed up above
 // * skipping it speedups page load
 // * with it Firefox does not scroll to a JS generated anchor links
+telegram_channel_language();
 if (!setup_if_landing()) {
   draw_toc();
   highlight_code();
-  telegram_channel_language();
   sticky_menu();
 }
 </script>

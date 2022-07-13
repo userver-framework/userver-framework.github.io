@@ -36,7 +36,7 @@
   </td>
   <td style="float: right; padding-right: 15px; padding-top: 15px;">
     <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
-      <img src="../../github_logo.svg" alt="Github"/>
+      <img src="../../github_logo.svg" style="filter: invert(100%);" alt="Github"/>
     </a>
     &nbsp;
     <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
@@ -287,7 +287,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00155">155</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00160">160</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -337,10 +337,10 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Can be called only once.</p>
-<p >Consumer may outlive the queue and the producer. </p>
+<p >Get a consumer which makes it possible to read items from the queue. Can be called only once. You may not use the Consumer simultaneously from multiple coroutines/threads.</p>
+<dl class="section note"><dt>Note</dt><dd>Consumer may outlive the queue and the producer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00174">174</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00179">179</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +358,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00202">202</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00207">207</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -375,10 +375,10 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Can be called only once.</p>
-<p >Producer may outlive the queue and the consumer. </p>
+<p >Get a producer which makes it possible to push items into the queue. Can be called multiple times. The resulting Producer is not thread-safe, so you have to use multiple Producers of the same queue to simultaneously write from multiple coroutines/threads.</p>
+<dl class="section note"><dt>Note</dt><dd>Producer may outlive the queue and the consumer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00166">166</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00171">171</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +396,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00192">192</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00197">197</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -416,7 +416,7 @@ template&lt;typename T &gt; </div>
 
 <p>Gets the limit on the queue size. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00187">187</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00192">192</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -438,7 +438,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00197">197</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00202">202</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -463,7 +463,7 @@ template&lt;typename T &gt; </div>
 <p>Sets the limit on the queue size, pushes over this limit will block. </p>
 <dl class="section note"><dt>Note</dt><dd>This is a soft limit and may be slightly overrun under load. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00182">182</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00187">187</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -481,7 +481,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00207">207</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html#l00212">212</a> of file <a class="el" href="../../df/d5f/concurrent_2mpsc__queue_8hpp_source.html">mpsc_queue.hpp</a>.</p>
 
 </div>
 </div>
@@ -522,7 +522,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 10 2022 20:23:36 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 11:33:10 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -682,10 +682,10 @@ function telegram_channel_language() {
 // * all the elements (except menue parts) are already parsed up above
 // * skipping it speedups page load
 // * with it Firefox does not scroll to a JS generated anchor links
+telegram_channel_language();
 if (!setup_if_landing()) {
   draw_toc();
   highlight_code();
-  telegram_channel_language();
   sticky_menu();
 }
 </script>

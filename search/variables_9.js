@@ -6,7 +6,7 @@ var searchData=
   ['kdecimalfactor_3',['kDecimalFactor',['../df/dec/classdecimal64_1_1Decimal.html#a826e8064ca24123525038a7fc36b7194',1,'decimal64::Decimal']]],
   ['kdecimalpoints_4',['kDecimalPoints',['../df/dec/classdecimal64_1_1Decimal.html#a81d498bb4dbfee796fa615a45b00e77f',1,'decimal64::Decimal']]],
   ['kdefaultcommandcontrol_5',['kDefaultCommandControl',['../d1/d92/classcomponents_1_1Postgres.html#abd1859637d5d430e30cc1417d4b11c98',1,'components::Postgres']]],
-  ['kdefaultconnectinglimit_6',['kDefaultConnectingLimit',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#af670a896c300cabbdabb1f4bff693aad',1,'storages::mongo::PoolConfig']]],
+  ['kdefaultconnectinglimit_6',['kDefaultConnectingLimit',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#af670a896c300cabbdabb1f4bff693aad',1,'storages::mongo::PoolConfig::kDefaultConnectingLimit()'],['../de/d6d/namespacestorages_1_1postgres.html#a89fd763d928181ab7edeb98ae784ce22',1,'storages::postgres::kDefaultConnectingLimit()']]],
   ['kdefaultconntimeout_7',['kDefaultConnTimeout',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#ad97f1c9dfc0a57b043621a1be9cebed0',1,'storages::mongo::PoolConfig']]],
   ['kdefaultidlelimit_8',['kDefaultIdleLimit',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#aa7fc5a0d2751f1f16a32aefaca201990',1,'storages::mongo::PoolConfig']]],
   ['kdefaultinitialsize_9',['kDefaultInitialSize',['../d1/d52/classstorages_1_1mongo_1_1PoolConfig.html#a4fea51125152e64bab66c8dd3fbd1e5a',1,'storages::mongo::PoolConfig']]],

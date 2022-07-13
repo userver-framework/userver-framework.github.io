@@ -36,7 +36,7 @@
   </td>
   <td style="float: right; padding-right: 15px; padding-top: 15px;">
     <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
-      <img src="github_logo.svg" alt="Github"/>
+      <img src="github_logo.svg" style="filter: invert(100%);" alt="Github"/>
     </a>
     &nbsp;
     <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
@@ -84,7 +84,12 @@ $(function() {
   <div class="headertitle"><div class="title">userver </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_en_landing"></a></p><div class="landing-description">The C++ Asynchronous Framework</div><div class="landing-logo" id="landing_logo_id"> <img src="logo.svg" alt="userver logo big" style="pointer-events: none;" class="inline"/> </div><hr  />
+<div class="textblock"><p ><a class="anchor" id="md_en_landing"></a></p><div class="landing-description">The C++ Asynchronous Framework</div><p > 
+<div class="landing-logo" id='landing_logo_id'>
+  <a href="d6/d2f/md_en_index.html"><img src='logo.svg' alt='userver logo big'/></a>
+</div>
+</p>
+<hr  />
 <div class="landing-text"> 🐙 userver is the modern open source asynchronous framework with a rich set of abstractions for fast and comfortable creation of C++ microservices, services and utilities. The problem of efficient I/O interactions is solved transparently for the developers:</div><div class="landing-text"> <pre style="padding: 20px; color: silver;white-space: pre-wrap; word-wrap: break-word;">
 std::size_t Ins(storages::postgres::Transaction&amp; tr, std::string_view key) {
     <span style="color: darkgoldenrod">// Asynchronous execution of the SQL query in transaction. Current thread</span>
@@ -95,13 +100,21 @@ std::size_t Ins(storages::postgres::Transaction&amp; tr, std::string_view key) {
 </pre> </div><hr  />
 <div class="landing-container"> <div class="landing-intro-center"> Micro-services based on userver served more than a billion requests while you were reading this sentence. </div> </div><hr  />
 <div class="landing-container"> <div class="landing-intro-left"> Technologies for debugging and memory profiling a running production service. </div> <div class="landing-intro-right"> Write <a class="el" href="d9/d72/md_en_userver_tutorial_hello_service.html">your first toy C++ service</a>, evolve it into a <a class="el" href="d6/d08/md_en_userver_tutorial_production_service.html">production ready service</a>. </div> </div><div class="landing-container"> <div class="landing-intro-left"> Efficient asynchronous drivers for databases (MongoDB, PostgreSQL, Redis, ClickHouse, ...) and data transfer protocols (HTTP, GRPC, TCP, ...), tasks construction and cancellation. </div> <div class="landing-intro-right"> Functionality to <a class="el" href="dd/d2c/md_en_schemas_dynamic_configs.html">change the service configuration</a> on-the-fly. Adjust options of the deadline propagation, timeouts, congestion-control without a restart. </div> </div><div class="landing-container"> <div class="landing-intro-left"> Rich set of high-level components for caches, tasks, distributed locking, logging, tracing, statistics, metrics, <a class="el" href="db/dd7/md_en_userver_formats.html">JSON/YAML/BSON</a>. </div> <div class="landing-intro-right"> Comprehensive set of asynchronous low-level synchronization primitives and OS abstractions. </div> </div><hr  />
-<div class="landing-container"> <div class="landing-intro-center"> Speed of C++, simplicity of Python, coroutine model of Go. </div> <div class="landing-intro-center"> Dive <a class="el" href="d6/d2f/md_en_index.html">into docs</a> for more details. </div> </div> </div></div><!-- PageDoc -->
+ <div class="landing-container"> <div class="landing-intro-center"> Speed of C++, simplicity of Python, coroutine model of Go. </div></div><div class="landing-container"> <div class="landing-intro-center"> Dive into <a class="el" href="d6/d2f/md_en_index.html">the documentation</a> for more details.</div></div><div class="landing-container"><div class="landing-intro-center">  
+    <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
+      <img src="github_logo.svg"  width="48" height="48" style="filter: invert(100%);" alt="Github"/>
+    </a>
+    &nbsp;
+    <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+      <img src="telegram_logo.svg"  width="48" height="48" alt="Telegram"/>
+    </a>
+     </div></div><div class="landing-container"></div> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 10 2022 20:24:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 11:33:49 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -261,10 +274,10 @@ function telegram_channel_language() {
 // * all the elements (except menue parts) are already parsed up above
 // * skipping it speedups page load
 // * with it Firefox does not scroll to a JS generated anchor links
+telegram_channel_language();
 if (!setup_if_landing()) {
   draw_toc();
   highlight_code();
-  telegram_channel_language();
   sticky_menu();
 }
 </script>

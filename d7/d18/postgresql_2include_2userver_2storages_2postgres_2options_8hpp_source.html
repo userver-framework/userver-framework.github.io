@@ -36,7 +36,7 @@
   </td>
   <td style="float: right; padding-right: 15px; padding-top: 15px;">
     <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
-      <img src="../../github_logo.svg" alt="Github"/>
+      <img src="../../github_logo.svg" style="filter: invert(100%);" alt="Github"/>
     </a>
     &nbsp;
     <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
@@ -252,105 +252,108 @@ $(function() {
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">/// Default size of queue for clients waiting for connections</span></div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#a01097d907702ee4a4af02d9e92c20094">  163</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a01097d907702ee4a4af02d9e92c20094" title="Default size of queue for clients waiting for connections.">size_t</a> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a01097d907702ee4a4af02d9e92c20094" title="Default size of queue for clients waiting for connections.">kDefaultPoolMaxQueueSize</a> = 200;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">/// @brief PostgreSQL connection pool options</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">///</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment">/// Dynamic option @ref POSTGRES_CONNECTION_POOL_SETTINGS</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html">  168</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">PoolSettings</a> {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="comment">/// Number of connections created initially</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#ab7b82df3f76f8332a2e20082ee6bd2ba">  170</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#ab7b82df3f76f8332a2e20082ee6bd2ba" title="Number of connections created initially.">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#ab7b82df3f76f8332a2e20082ee6bd2ba" title="Number of connections created initially.">min_size</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultPoolMinSize</a>};</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="comment">/// Maximum number of created connections</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a200216633b50034b6d7dbeacb5b5bad1">  173</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a200216633b50034b6d7dbeacb5b5bad1" title="Maximum number of created connections.">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a200216633b50034b6d7dbeacb5b5bad1" title="Maximum number of created connections.">max_size</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultPoolMaxSize</a>};</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">/// Default limit for concurrent establishing connections number</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#a89fd763d928181ab7edeb98ae784ce22">  166</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a89fd763d928181ab7edeb98ae784ce22" title="Default limit for concurrent establishing connections number.">size_t</a> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a89fd763d928181ab7edeb98ae784ce22" title="Default limit for concurrent establishing connections number.">kDefaultConnectingLimit</a> = 0;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">/// @brief PostgreSQL connection pool options</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">///</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">/// Dynamic option @ref POSTGRES_CONNECTION_POOL_SETTINGS</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html">  171</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">PoolSettings</a> {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="comment">/// Number of connections created initially</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#ab7b82df3f76f8332a2e20082ee6bd2ba">  173</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#ab7b82df3f76f8332a2e20082ee6bd2ba" title="Number of connections created initially.">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#ab7b82df3f76f8332a2e20082ee6bd2ba" title="Number of connections created initially.">min_size</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultPoolMinSize</a>};</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="comment">/// Maximum number of clients waiting for a connection</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a283808ab33dce1f64c181cf5376b5ad0">  176</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a283808ab33dce1f64c181cf5376b5ad0" title="Maximum number of clients waiting for a connection.">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a283808ab33dce1f64c181cf5376b5ad0" title="Maximum number of clients waiting for a connection.">max_queue_size</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultPoolMaxQueueSize</a>};</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="comment">/// Maximum number of created connections</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a200216633b50034b6d7dbeacb5b5bad1">  176</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a200216633b50034b6d7dbeacb5b5bad1" title="Maximum number of created connections.">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a200216633b50034b6d7dbeacb5b5bad1" title="Maximum number of created connections.">max_size</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultPoolMaxSize</a>};</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="comment">/// Limits number of concurrent establishing connections (0 - unlimited)</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c">  179</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c" title="Limits number of concurrent establishing connections (0 - unlimited)">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c" title="Limits number of concurrent establishing connections (0 - unlimited)">connecting_limit</a>{0};</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="comment">/// Maximum number of clients waiting for a connection</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a283808ab33dce1f64c181cf5376b5ad0">  179</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a283808ab33dce1f64c181cf5376b5ad0" title="Maximum number of clients waiting for a connection.">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a283808ab33dce1f64c181cf5376b5ad0" title="Maximum number of clients waiting for a connection.">max_queue_size</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultPoolMaxQueueSize</a>};</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">PoolSettings</a>&amp; rhs) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">return</span> min_size == rhs.min_size &amp;&amp; max_size == rhs.max_size &amp;&amp;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>           max_queue_size == rhs.max_queue_size &amp;&amp;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>           connecting_limit == rhs.connecting_limit;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  }</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>};</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">/// Default size limit for prepared statements cache</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f">  189</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f" title="Default size limit for prepared statements cache.">size_t</a> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f" title="Default size limit for prepared statements cache.">kDefaultMaxPreparedCacheSize</a> = 5000;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="comment">/// Limits number of concurrent establishing connections (0 - unlimited)</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c">  182</a></span>  <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c" title="Limits number of concurrent establishing connections (0 - unlimited)">size_t</a> <a class="code hl_variable" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a0043c1d8d13cba9e1e0a414d157aec0c" title="Limits number of concurrent establishing connections (0 - unlimited)">connecting_limit</a>{<a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">kDefaultConnectingLimit</a>};</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">PoolSettings</a>&amp; rhs) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">return</span> min_size == rhs.min_size &amp;&amp; max_size == rhs.max_size &amp;&amp;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>           max_queue_size == rhs.max_queue_size &amp;&amp;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>           connecting_limit == rhs.connecting_limit;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">/// PostgreSQL connection options</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html">  192</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html" title="PostgreSQL connection options.">ConnectionSettings</a> {</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keyword">enum</span> PreparedStatementOptions {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    kCachePreparedStatements,</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    kNoPreparedStatements,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  };</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="keyword">enum</span> UserTypesOptions {</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    kUserTypesEnabled,</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    kPredefinedTypesOnly,</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  };</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keyword">enum</span> CheckQueryParamsOptions {</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    kIgnoreUnused,</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    kCheckUnused,</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  };</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keyword">enum</span> PipelineMode {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    kPipelineDisabled,</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    kPipelineEnabled,</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  };</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  PreparedStatementOptions prepared_statements = kCachePreparedStatements;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  UserTypesOptions user_types = kUserTypesEnabled;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  CheckQueryParamsOptions ignore_unused_query_params = kCheckUnused;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  size_t max_prepared_cache_size = <a class="code hl_struct" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html" title="PostgreSQL connection options.">kDefaultMaxPreparedCacheSize</a>;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  PipelineMode pipeline_mode = kPipelineDisabled;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>};</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">/// @brief PostgreSQL statements metrics options</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">///</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">/// Dynamic option @ref POSTGRES_STATEMENT_METRICS_SETTINGS</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html">  219</a></span><span class="keyword">struct</span> StatementMetricsSettings <span class="keyword">final</span> {</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">/// Store metrics in LRU of this size</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html#a0c543dcbe20d2f8e6f0639c36441836c">  221</a></span>  <a class="code hl_variable" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html#a0c543dcbe20d2f8e6f0639c36441836c" title="Store metrics in LRU of this size.">size_t</a> <a class="code hl_variable" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html#a0c543dcbe20d2f8e6f0639c36441836c" title="Store metrics in LRU of this size.">max_statements</a>{0};</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> StatementMetricsSettings&amp; other) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">return</span> max_statements == other.max_statements;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  }</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>};</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">/// Initialization modes</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf">  229</a></span><span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf" title="Initialization modes.">InitMode</a> {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  kSync = 0,</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  kAsync,</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>};</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">/// Settings for storages::postgres::Cluster</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html">  235</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html" title="Settings for storages::postgres::Cluster.">ClusterSettings</a> {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="comment">/// settings for statements metrics</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a603f3926c9d8730dac25f4d0490758ce">  237</a></span>  StatementMetricsSettings <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a603f3926c9d8730dac25f4d0490758ce" title="settings for statements metrics">statement_metrics_settings</a>;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="comment">/// settings for host discovery</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#aab467b2fe758b72bff811fbf55e1429c">  240</a></span>  <a class="code hl_struct" href="../../d0/d16/structstorages_1_1postgres_1_1TopologySettings.html">TopologySettings</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#aab467b2fe758b72bff811fbf55e1429c" title="settings for host discovery">topology_settings</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">/// Default size limit for prepared statements cache</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f">  192</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f" title="Default size limit for prepared statements cache.">size_t</a> <a class="code hl_variable" href="../../de/d6d/namespacestorages_1_1postgres.html#a4b486f2972c2d2a276dae46871be875f" title="Default size limit for prepared statements cache.">kDefaultMaxPreparedCacheSize</a> = 5000;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">/// PostgreSQL connection options</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html">  195</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html" title="PostgreSQL connection options.">ConnectionSettings</a> {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keyword">enum</span> PreparedStatementOptions {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    kCachePreparedStatements,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    kNoPreparedStatements,</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  };</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keyword">enum</span> UserTypesOptions {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    kUserTypesEnabled,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    kPredefinedTypesOnly,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  };</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keyword">enum</span> CheckQueryParamsOptions {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    kIgnoreUnused,</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    kCheckUnused,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  };</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keyword">enum</span> PipelineMode {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    kPipelineDisabled,</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    kPipelineEnabled,</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  };</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  PreparedStatementOptions prepared_statements = kCachePreparedStatements;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  UserTypesOptions user_types = kUserTypesEnabled;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  CheckQueryParamsOptions ignore_unused_query_params = kCheckUnused;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  size_t max_prepared_cache_size = <a class="code hl_struct" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html" title="PostgreSQL connection options.">kDefaultMaxPreparedCacheSize</a>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  PipelineMode pipeline_mode = kPipelineDisabled;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>};</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">/// @brief PostgreSQL statements metrics options</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">///</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">/// Dynamic option @ref POSTGRES_STATEMENT_METRICS_SETTINGS</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html">  222</a></span><span class="keyword">struct</span> StatementMetricsSettings <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="comment">/// Store metrics in LRU of this size</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html#a0c543dcbe20d2f8e6f0639c36441836c">  224</a></span>  <a class="code hl_variable" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html#a0c543dcbe20d2f8e6f0639c36441836c" title="Store metrics in LRU of this size.">size_t</a> <a class="code hl_variable" href="../../d8/d64/structstorages_1_1postgres_1_1StatementMetricsSettings.html#a0c543dcbe20d2f8e6f0639c36441836c" title="Store metrics in LRU of this size.">max_statements</a>{0};</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> StatementMetricsSettings&amp; other) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">return</span> max_statements == other.max_statements;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>};</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">/// Initialization modes</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf">  232</a></span><span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf" title="Initialization modes.">InitMode</a> {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  kSync = 0,</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  kAsync,</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>};</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment">/// Settings for storages::postgres::Cluster</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html">  238</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html" title="Settings for storages::postgres::Cluster.">ClusterSettings</a> {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="comment">/// settings for statements metrics</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a603f3926c9d8730dac25f4d0490758ce">  240</a></span>  StatementMetricsSettings <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a603f3926c9d8730dac25f4d0490758ce" title="settings for statements metrics">statement_metrics_settings</a>;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="comment">/// settings for connection pools</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#ae2f1ad22f4e8ba57cb9a581f9916fd2e">  243</a></span>  <a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">PoolSettings</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#ae2f1ad22f4e8ba57cb9a581f9916fd2e" title="settings for connection pools">pool_settings</a>;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="comment">/// settings for host discovery</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#aab467b2fe758b72bff811fbf55e1429c">  243</a></span>  <a class="code hl_struct" href="../../d0/d16/structstorages_1_1postgres_1_1TopologySettings.html">TopologySettings</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#aab467b2fe758b72bff811fbf55e1429c" title="settings for host discovery">topology_settings</a>;</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="comment">/// settings for individual connections</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a11c8fb54028e2a6f7b5b0959e427bf6f">  246</a></span>  <a class="code hl_struct" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html" title="PostgreSQL connection options.">ConnectionSettings</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a11c8fb54028e2a6f7b5b0959e427bf6f" title="settings for individual connections">conn_settings</a>;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="comment">/// settings for connection pools</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#ae2f1ad22f4e8ba57cb9a581f9916fd2e">  246</a></span>  <a class="code hl_struct" href="../../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html" title="PostgreSQL connection pool options.">PoolSettings</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#ae2f1ad22f4e8ba57cb9a581f9916fd2e" title="settings for connection pools">pool_settings</a>;</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="comment">/// initialization mode</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#abd995b32a698a20b2dae4e6cbecd5cd8">  249</a></span>  <a class="code hl_enumeration" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf" title="Initialization modes.">InitMode</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#abd995b32a698a20b2dae4e6cbecd5cd8" title="initialization mode">init_mode</a> = <a class="code hl_enumeration" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf" title="Initialization modes.">InitMode</a>::kSync;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="comment">/// settings for individual connections</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a11c8fb54028e2a6f7b5b0959e427bf6f">  249</a></span>  <a class="code hl_struct" href="../../d0/dbf/structstorages_1_1postgres_1_1ConnectionSettings.html" title="PostgreSQL connection options.">ConnectionSettings</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a11c8fb54028e2a6f7b5b0959e427bf6f" title="settings for individual connections">conn_settings</a>;</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="comment">/// database name</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a939e12a9781eb659be882bbae8a21ba0">  252</a></span>  std::string <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a939e12a9781eb659be882bbae8a21ba0" title="database name">db_name</a>;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>};</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}  <span class="comment">// namespace storages::postgres</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="comment">/// initialization mode</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#abd995b32a698a20b2dae4e6cbecd5cd8">  252</a></span>  <a class="code hl_enumeration" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf" title="Initialization modes.">InitMode</a> <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#abd995b32a698a20b2dae4e6cbecd5cd8" title="initialization mode">init_mode</a> = <a class="code hl_enumeration" href="../../de/d6d/namespacestorages_1_1postgres.html#ab1c2f6a113c8023a576dc3758ac12fbf" title="Initialization modes.">InitMode</a>::kSync;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="comment">/// database name</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a939e12a9781eb659be882bbae8a21ba0">  255</a></span>  std::string <a class="code hl_variable" href="../../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a939e12a9781eb659be882bbae8a21ba0" title="database name">db_name</a>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>};</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}  <span class="comment">// namespace storages::postgres</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Sun Jul 10 2022 20:20:27 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 13 2022 11:29:47 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
@@ -510,10 +513,10 @@ function telegram_channel_language() {
 // * all the elements (except menue parts) are already parsed up above
 // * skipping it speedups page load
 // * with it Firefox does not scroll to a JS generated anchor links
+telegram_channel_language();
 if (!setup_if_landing()) {
   draw_toc();
   highlight_code();
-  telegram_channel_language();
   sticky_menu();
 }
 </script>
