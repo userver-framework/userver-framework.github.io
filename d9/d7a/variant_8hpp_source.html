@@ -88,26 +88,19 @@ $(function() {
   <div class="headertitle"><div class="title">variant.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d9/d7a/variant_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d9/d7a/variant_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/formats/parse/variant.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Ineffective but generic parser for std::variant type</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// Parsing is performed for each of the N alternatives in variant, N-1</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// exceptions is thrown and catched during the parsing.</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">///</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// @ingroup userver_formats_parse</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">optional</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">typeinfo</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">variant</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">compiler</span><span class="preprocessor">/</span><span class="preprocessor">demangle</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">parse</span><span class="preprocessor">/</span><span class="preprocessor">to</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="../../d1/d37/demangle_8hpp.html" title="Returns a human-readable representation of provided type name.">userver/compiler/demangle.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d3d/shared_2include_2userver_2formats_2parse_2to_8hpp.html" title="Helper for parsers.">userver/formats/parse/to.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">formats::parse</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParseException, <span class="keyword">typename</span> Variant, <span class="keyword">typename</span> TypeA&gt;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>[[noreturn]] <span class="keywordtype">void</span> ThrowVariantAmbiguousParse(<span class="keyword">const</span> std::string&amp; path,</div>
@@ -115,35 +108,35 @@ $(function() {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">throw</span> ParseException(</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="stringliteral">&quot;Value of &#39;&quot;</span> + path +</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="stringliteral">&quot;&#39; is ambiguous, it is parseable into multiple variants of &#39;&quot;</span> +</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <a class="code hl_namespace" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::GetTypeName&lt;Variant&gt;() + <span class="stringliteral">&quot;&#39;, at least &#39;&quot;</span> +</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <a class="code hl_namespace" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::GetTypeName&lt;TypeA&gt;() + <span class="stringliteral">&quot;&#39; and &#39;&quot;</span> +</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <a class="code hl_namespace" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a><a class="code hl_function" href="../../da/d79/namespacecompiler.html#a30485e7bc78c53e64494a6b0ac468b66" title="Returns a human-readable representation of provided type name.">::</a><a class="code hl_function" href="../../da/d79/namespacecompiler.html#a30485e7bc78c53e64494a6b0ac468b66" title="Returns a human-readable representation of provided type name.">GetTypeName</a><a class="code hl_function" href="../../da/d79/namespacecompiler.html#a30485e7bc78c53e64494a6b0ac468b66" title="Returns a human-readable representation of provided type name.">(</a>type_b<a class="code hl_function" href="../../da/d79/namespacecompiler.html#a30485e7bc78c53e64494a6b0ac468b66" title="Returns a human-readable representation of provided type name.">)</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      compiler::GetTypeName&lt;Variant&gt;() + <span class="stringliteral">&quot;&#39;, at least &#39;&quot;</span> +</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      compiler::GetTypeName&lt;TypeA&gt;() + <span class="stringliteral">&quot;&#39; and &#39;&quot;</span> +</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <a class="code hl_function" href="../../da/d79/namespacecompiler.html#a30485e7bc78c53e64494a6b0ac468b66" title="Returns a human-readable representation of provided type name.">compiler::GetTypeName</a>(type_b) + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParseException, <span class="keyword">typename</span> Variant&gt;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>[[noreturn]] <span class="keywordtype">void</span> ThrowVariantParseException(<span class="keyword">const</span> std::string&amp; path) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">throw</span> ParseException(<span class="stringliteral">&quot;Value of &#39;&quot;</span> + path + <span class="stringliteral">&quot;&#39; cannot be parsed as &quot;</span> +</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                       <a class="code hl_namespace" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::GetTypeName&lt;Variant&gt;());</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                       compiler::GetTypeName&lt;Variant&gt;());</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace</span> impl {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span>impl {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Value, <span class="keyword">typename</span> Result&gt;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> ParseVariantSingle(<span class="keyword">const</span> Value&amp; value, std::optional&lt;Result&gt;&amp; result) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">if</span> (result) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> <span class="keyword">auto</span> old_type = std::visit(</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; v) -&gt; std::type_index { <span class="keywordflow">return</span> <span class="keyword">typeid</span>(v); }, *result);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      value.<span class="keyword">template</span> As&lt;T&gt;();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      value.template As&lt;T&gt;();</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp;) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ThrowVariantAmbiguousParse&lt;<span class="keyword">typename</span> Value::ParseException, Result, T&gt;(</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ThrowVariantAmbiguousParse&lt;typename Value::ParseException, Result, T&gt;(</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        value.GetPath(), old_type);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// No result yet</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      result = value.<span class="keyword">template</span> As&lt;T&gt;();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      result = value.template As&lt;T&gt;();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp;) {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
@@ -151,9 +144,9 @@ $(function() {
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}  <span class="comment">// namespace impl</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Value, <span class="keyword">typename</span>... Types&gt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">class </span>Value, <span class="keyword">typename</span>... Types&gt;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>std::variant&lt;Types...&gt; Parse(<span class="keyword">const</span> Value&amp; value,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                             formats::<a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;std::variant&lt;Types...&gt;&gt;) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                             <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To</a>&lt;std::variant&lt;Types...&gt;&gt;) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  std::optional&lt;std::variant&lt;Types...&gt;&gt; result;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  (impl::ParseVariantSingle&lt;Types&gt;(value, result), ...);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
@@ -173,7 +166,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:53:09 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

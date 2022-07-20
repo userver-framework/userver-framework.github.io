@@ -88,25 +88,23 @@ $(function() {
   <div class="headertitle"><div class="title">cache_statistics.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d1/d8c/cache__statistics_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d1/d8c/cache__statistics_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/cache/cache_statistics.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Statistics collection for components::CachingComponentBase</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">atomic</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">chrono</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstddef</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">cache</span><span class="preprocessor">/</span><span class="preprocessor">update_type</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">json_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="../../d9/dc2/update__type_8hpp.html" title="Enums representing periodic update types for CachingComponentBase">userver/cache/update_type.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d7d/json__fwd_8hpp.html" title="Forward declarations of formats::json types, formats::parse::To and formats::serialize::To.">userver/formats/json_fwd.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace</span> cache {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">impl</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>impl {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">struct</span> UpdateStatistics <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">struct </span>UpdateStatistics final {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::atomic&lt;std::size_t&gt; update_attempt_count{0};</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::atomic&lt;std::size_t&gt; update_no_changes_count{0};</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::atomic&lt;std::size_t&gt; update_failures_count{0};</div>
@@ -120,55 +118,38 @@ $(function() {
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  std::atomic&lt;std::chrono::milliseconds&gt; last_update_duration{{}};</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value Serialize(<span class="keyword">const</span> UpdateStatistics&amp; stats,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                               formats::<a class="code hl_namespace" href="../../d8/d69/namespaceformats_1_1serialize.html" title="Common serializers.">serialize</a>::<a class="code hl_struct" href="../../d7/d48/structformats_1_1serialize_1_1To.html">To</a>&lt;formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value&gt;);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> <a class="code hl_function" href="../../da/d81/namespacedecimal64.html#a4b4e3949d5a30d3fb74593264c484a6f" title="Serializes the Decimal to string.">Serialize</a>(<span class="keyword">const</span> UpdateStatistics&amp; stats,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                               <a class="code hl_struct" href="../../d7/d48/structformats_1_1serialize_1_1To.html">formats::serialize::To&lt;formats::json::Value&gt;</a>);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">struct</span> Statistics <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">struct </span>Statistics final {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  UpdateStatistics full_update;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  UpdateStatistics incremental_update;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  std::atomic&lt;std::size_t&gt; documents_current_count{0};</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value Serialize(<span class="keyword">const</span> Statistics&amp; stats,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                               formats::<a class="code hl_namespace" href="../../d8/d69/namespaceformats_1_1serialize.html" title="Common serializers.">serialize</a>::<a class="code hl_struct" href="../../d7/d48/structformats_1_1serialize_1_1To.html">To</a>&lt;formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a>::Value&gt;);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><a class="code hl_class" href="../../de/d91/classformats_1_1json_1_1Value.html" title="Non-mutable JSON value representation.">formats::json::Value</a> <a class="code hl_function" href="../../da/d81/namespacedecimal64.html#a4b4e3949d5a30d3fb74593264c484a6f" title="Serializes the Decimal to string.">Serialize</a>(<span class="keyword">const</span> Statistics&amp; stats,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                               <a class="code hl_struct" href="../../d7/d48/structformats_1_1serialize_1_1To.html">formats::serialize::To&lt;formats::json::Value&gt;</a>);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}  <span class="comment">// namespace impl</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/// @brief Allows a specific cache to fill cache statistics during an `Update`</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">///</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/// Unless Finish or FinishNoChanges is called, the update is considered to be a</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/// failure.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html">   51</a></span><span class="keyword">class</span> UpdateStatisticsScope <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html">   51</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html" title="Allows a specific cache to fill cache statistics during an Update">UpdateStatisticsScope</a> final {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">/// @cond</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// For internal use only</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  UpdateStatisticsScope(<a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">impl</a>::Statistics&amp; stats, cache::<a class="code hl_enumeration" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">UpdateType</a> type);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_class" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html" title="Allows a specific cache to fill cache statistics during an Update">UpdateStatisticsScope</a>(impl::Statistics&amp; stats, <a class="code hl_enumeration" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">cache::UpdateType</a> type);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  ~UpdateStatisticsScope();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">/// @endcond</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_class" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html" title="Allows a specific cache to fill cache statistics during an Update">~UpdateStatisticsScope</a>();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="comment">/// @brief Mark that the `Update` has finished with changes</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="comment">/// @param documents_count the new total number of items stored in the cache</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a466304bf4dd8987646c864dd7a4328ae">   62</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a466304bf4dd8987646c864dd7a4328ae" title="Mark that the Update has finished with changes.">Finish</a>(std::size_t documents_count);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">/// @brief Mark that the `Update` has finished without changes</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a695e6de302860dd4116bda054ac545c8">   65</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a695e6de302860dd4116bda054ac545c8" title="Mark that the Update has finished without changes.">FinishNoChanges</a>();</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">/// @brief Each item received from the data source should be accounted with</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="comment">/// this function</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">/// @note This method can be called multiple times per `Update`</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">/// @param add the number of items (both valid and non-valid) newly received</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a827e23b43f5d0bae74a07e00e7ae84f5">   71</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a827e23b43f5d0bae74a07e00e7ae84f5" title="Each item received from the data source should be accounted with this function.">IncreaseDocumentsReadCount</a>(std::size_t add);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="comment">/// @brief Each received item that failed validation should be accounted with</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">/// this function, in addition to IncreaseDocumentsReadCount</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">/// @note This method can be called multiple times per `Update`</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="comment">/// @param add the number of non-valid items newly received</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a7b26e9ac6dcf520780088bc3da299ca1">   77</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/db9/classcache_1_1UpdateStatisticsScope.html#a7b26e9ac6dcf520780088bc3da299ca1" title="Each received item that failed validation should be accounted with this function, in addition to Incr...">IncreaseDocumentsParseFailures</a>(std::size_t add);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">impl</a>::Statistics&amp; stats_;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">impl</a>::UpdateStatistics&amp; update_stats_;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  impl::Statistics&amp; stats_;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  impl::UpdateStatistics&amp; update_stats_;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">bool</span> finished_{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">const</span> std::chrono::steady_clock::time_point update_start_time_;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
@@ -181,7 +162,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:46:55 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:02 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

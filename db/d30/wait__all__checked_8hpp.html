@@ -92,9 +92,12 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Provides <a class="el" href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279" title="Waits for the successful completion of all of the specified tasks or for the cancellation of the call...">engine::WaitAllChecked</a>.  
+<p>Provides <a class="el" href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279" title="Waits for the successful completion of all of the specified tasks or for the cancellation of the call...">engine::WaitAllChecked</a>.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d2/d22/deadline_8hpp_source.html">userver/engine/deadline.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d0/dd6/future__status_8hpp_source.html">userver/engine/future_status.hpp</a>&gt;</code><br />
 <code>#include &lt;userver/utils/impl/span.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp_source.html">userver/utils/meta.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -104,18 +107,21 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../de/d56/wait__all__checked_8hpp__incl.png" border="0" usemap="#auserver_2engine_2wait__all__checked_8hpp" alt=""/></div>
 <map name="auserver_2engine_2wait__all__checked_8hpp" id="auserver_2engine_2wait__all__checked_8hpp">
-<area shape="rect" title="Provides engine::WaitAllChecked." alt="" coords="387,5,537,47"/>
-<area shape="rect" title=" " alt="" coords="445,191,508,218"/>
-<area shape="rect" href="../../d2/d44/utils_2impl_2span_8hpp_source.html" title=" " alt="" coords="223,95,359,136"/>
-<area shape="rect" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="500,102,669,129"/>
-<area shape="rect" title=" " alt="" coords="256,191,327,218"/>
-<area shape="rect" title=" " alt="" coords="351,191,421,218"/>
-<area shape="rect" title=" " alt="" coords="599,273,691,300"/>
-<area shape="rect" href="../../d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="5,191,180,218"/>
-<area shape="rect" title=" " alt="" coords="44,273,141,300"/>
-<area shape="rect" title=" " alt="" coords="842,191,906,218"/>
-<area shape="rect" title=" " alt="" coords="533,191,607,218"/>
-<area shape="rect" href="../../d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="683,184,817,225"/>
+<area shape="rect" title="Provides engine::WaitAllChecked." alt="" coords="333,5,467,47"/>
+<area shape="rect" title=" " alt="" coords="5,191,67,218"/>
+<area shape="rect" title=" " alt="" coords="537,191,596,218"/>
+<area shape="rect" href="../../d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="52,102,236,129"/>
+<area shape="rect" href="../../d0/dd6/future__status_8hpp.html" title="std::future state extended with &quot;cancelled&quot; state" alt="" coords="407,95,551,136"/>
+<area shape="rect" href="../../d2/d44/utils_2impl_2span_8hpp_source.html" title=" " alt="" coords="261,95,382,136"/>
+<area shape="rect" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts." alt="" coords="626,102,777,129"/>
+<area shape="rect" title=" " alt="" coords="291,191,357,218"/>
+<area shape="rect" title=" " alt="" coords="445,191,507,218"/>
+<area shape="rect" title=" " alt="" coords="592,273,675,300"/>
+<area shape="rect" href="../../d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="109,191,267,218"/>
+<area shape="rect" title=" " alt="" coords="144,273,232,300"/>
+<area shape="rect" title=" " alt="" coords="671,191,731,218"/>
+<area shape="rect" title=" " alt="" coords="756,191,823,218"/>
+<area shape="rect" href="../../d9/dce/void__t_8hpp.html" title="std::void_t implementation with workarounds for compiler bugs" alt="" coords="847,184,969,225"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -125,8 +131,8 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d2/d8e/wait__all__checked_8hpp__dep__incl.png" border="0" usemap="#auserver_2engine_2wait__all__checked_8hppdep" alt=""/></div>
 <map name="auserver_2engine_2wait__all__checked_8hppdep" id="auserver_2engine_2wait__all__checked_8hppdep">
-<area shape="rect" title="Provides engine::WaitAllChecked." alt="" coords="5,5,156,47"/>
-<area shape="rect" href="../../db/d71/get__all_8hpp.html" title="Provides engine::GetAll." alt="" coords="9,95,153,136"/>
+<area shape="rect" title="Provides engine::WaitAllChecked." alt="" coords="5,5,140,47"/>
+<area shape="rect" href="../../db/d71/get__all_8hpp.html" title="Provides engine::GetAll." alt="" coords="8,95,137,136"/>
 </map>
 </div>
 </div>
@@ -140,13 +146,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
-<tr class="memitem:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279">engine::WaitAllChecked</a> (Tasks &amp;... tasks)</td></tr>
-<tr class="memdesc:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or for the cancellation of the caller.  <a href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279">More...</a><br /></td></tr>
-<tr class="separator:ae7a0b9edf6e9e23e3433edafc6d59279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279">engine::WaitAllChecked</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or for the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279">More...</a><br /></td></tr>
+<tr class="separator:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4064d201fcda620e4e13605eacd4c8"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks, typename Rep , typename Period &gt; </td></tr>
+<tr class="memitem:abc4064d201fcda620e4e13605eacd4c8"><td class="memTemplItemLeft" align="right" valign="top">FutureStatus&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#abc4064d201fcda620e4e13605eacd4c8">engine::WaitAllCheckedFor</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;duration, Tasks &amp;... tasks)</td></tr>
+<tr class="separator:abc4064d201fcda620e4e13605eacd4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87bcdca30241f0880ee78e44a8c7edc0"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks, typename Clock , typename Duration &gt; </td></tr>
+<tr class="memitem:a87bcdca30241f0880ee78e44a8c7edc0"><td class="memTemplItemLeft" align="right" valign="top">FutureStatus&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a87bcdca30241f0880ee78e44a8c7edc0">engine::WaitAllCheckedUntil</a> (const std::chrono::time_point&lt; Clock, Duration &gt; &amp;until, Tasks &amp;... tasks)</td></tr>
+<tr class="separator:a87bcdca30241f0880ee78e44a8c7edc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1ec706c0c42556bd4aa5b4c2d0fa51"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:a0f1ec706c0c42556bd4aa5b4c2d0fa51"><td class="memTemplItemLeft" align="right" valign="top">FutureStatus&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d3f/namespaceengine.html#a0f1ec706c0c42556bd4aa5b4c2d0fa51">engine::WaitAllCheckedUntil</a> (Deadline deadline, Tasks &amp;... tasks)</td></tr>
+<tr class="separator:a0f1ec706c0c42556bd4aa5b4c2d0fa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Provides <a class="el" href="../../dc/d3f/namespaceengine.html#ae7a0b9edf6e9e23e3433edafc6d59279" title="Waits for the successful completion of all of the specified tasks or for the cancellation of the call...">engine::WaitAllChecked</a>. </p>
+<div class="textblock"><p >Provides <a class="el" href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279" title="Waits for the successful completion of all of the specified tasks or for the cancellation of the call...">engine::WaitAllChecked</a>. </p>
 
 <p class="definition">Definition in file <a class="el" href="../../db/d30/wait__all__checked_8hpp_source.html">wait_all_checked.hpp</a>.</p>
 </div></div><!-- contents -->
@@ -154,7 +169,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:20 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:05 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

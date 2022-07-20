@@ -88,47 +88,47 @@ $(function() {
   <div class="headertitle"><div class="title">manager.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">functional</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">shared_mutex</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">unordered_map</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;shared_mutex&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">components</span><span class="preprocessor">/</span><span class="preprocessor">component_context</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">components</span><span class="preprocessor">/</span><span class="preprocessor">component_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">components</span><span class="preprocessor">/</span><span class="preprocessor">impl</span><span class="preprocessor">/</span><span class="preprocessor">component_base</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">engine</span><span class="preprocessor">/</span><span class="preprocessor">task</span><span class="preprocessor">/</span><span class="preprocessor">task_processor_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../db/d8f/component__context_8hpp.html" title="Class to retrieve other components.">userver/components/component_context.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="../../d7/d47/component__fwd_8hpp.html" title="Forward declarations for components::ComponentContext and components::ComponentConfig; function compo...">userver/components/component_fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;userver/components/impl/component_base.hpp&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d03/task__processor__fwd_8hpp.html">userver/engine/task/task_processor_fwd.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace</span> engine::impl {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class</span> TaskProcessorPools;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>engine::impl {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>TaskProcessorPools;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}  <span class="comment">// namespace engine::impl</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d5/d79/namespaceos__signals.html" title="Components and functions to work with OS signals.">os_signals</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class</span> ProcessorComponent;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d5/d79/namespaceos__signals.html">   22</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d5/d79/namespaceos__signals.html" title="Components and functions to work with OS signals.">os_signals</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span><a class="code hl_class" href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html" title="A storage for Processor listeners signals.">ProcessorComponent</a>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}  <span class="comment">// namespace os_signals</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a> {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class</span> ComponentList;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">struct</span> ManagerConfig;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span>ComponentList;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">struct </span>ManagerConfig;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using</span> <a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">ComponentConfigMap</a> =</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">std</a>::<a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">unordered_map</a>&lt;<a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">std</a>::<a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">string</a>, <span class="keyword">const</span> <a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">ComponentConfig</a>&amp;&gt;;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using </span>ComponentConfigMap =</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::unordered_map&lt;std::string, const ComponentConfig&amp;&gt;;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">class</span> Manager <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../da/d48/classcomponents_1_1Manager.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="../../da/d48/classcomponents_1_1Manager.html">Manager</a> final {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">using</span> TaskProcessorsMap =</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">using </span>TaskProcessorsMap =</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      std::unordered_map&lt;std::string, std::unique_ptr&lt;engine::TaskProcessor&gt;&gt;;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  Manager(std::unique_ptr&lt;ManagerConfig&gt;&amp;&amp; config,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          <span class="keyword">const</span> ComponentList&amp; component_list);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  ~Manager();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="../../da/d48/classcomponents_1_1Manager.html">Manager</a>(std::unique_ptr&lt;ManagerConfig&gt;&amp;&amp; config,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          <span class="keyword">const</span> <a class="code hl_class" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">ComponentList</a>&amp; component_list);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_class" href="../../da/d48/classcomponents_1_1Manager.html">~Manager</a>();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">const</span> ManagerConfig&amp; GetConfig() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">const</span> std::shared_ptr&lt;engine::impl::TaskProcessorPools&gt;&amp;</div>
@@ -140,8 +140,8 @@ $(function() {
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    <span class="keyword">const</span> std::string&amp; name) {</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static_assert</span>(std::is_base_of_v&lt;impl::ComponentBase, Component&gt;);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    AddComponentImpl(config_map, name,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                     [](<span class="keyword">const</span> components::ComponentConfig&amp; config,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        <span class="keyword">const</span> components::ComponentContext&amp; context) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                     [](<span class="keyword">const</span> <a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp; config,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        <span class="keyword">const</span> <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>&amp; context) {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                       <span class="keywordflow">return</span> std::make_unique&lt;Component&gt;(config, context);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                     });</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
@@ -153,7 +153,7 @@ $(function() {
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  std::chrono::milliseconds GetLoadDuration() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">class</span> TaskProcessorsStorage {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">class </span>TaskProcessorsStorage {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">explicit</span> TaskProcessorsStorage(</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        std::shared_ptr&lt;engine::impl::TaskProcessorPools&gt; task_processor_pools);</div>
@@ -161,11 +161,11 @@ $(function() {
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> Reset() <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">using</span> Map = TaskProcessorsMap;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">using </span>Map = TaskProcessorsMap;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> Map&amp; GetMap() <span class="keyword">const</span> { <span class="keywordflow">return</span> task_processors_map_; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> Map&amp; GetMap()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> task_processors_map_; }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">const</span> std::shared_ptr&lt;engine::impl::TaskProcessorPools&gt;&amp;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    GetTaskProcessorPools() <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    GetTaskProcessorPools()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="keywordflow">return</span> task_processor_pools_;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
@@ -177,31 +177,31 @@ $(function() {
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    Map task_processors_map_;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  };</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">void</span> CreateComponentContext(<span class="keyword">const</span> ComponentList&amp; component_list);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> AddComponents(<span class="keyword">const</span> ComponentList&amp; component_list);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">void</span> CreateComponentContext(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">ComponentList</a>&amp; component_list);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> AddComponents(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">ComponentList</a>&amp; component_list);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> AddComponentImpl(</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <span class="keyword">const</span> components::ComponentConfigMap&amp; config_map, <span class="keyword">const</span> std::string&amp; name,</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      std::function&lt;std::unique_ptr&lt;components::impl::ComponentBase&gt;(</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>          <span class="keyword">const</span> components::ComponentConfig&amp;,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          <span class="keyword">const</span> components::ComponentContext&amp;)&gt;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>          <span class="keyword">const</span> <a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp;,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          <span class="keyword">const</span> <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>&amp;)&gt;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>          factory);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordtype">void</span> ClearComponents() <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  components::ComponentConfigMap MakeComponentConfigMap(</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keyword">const</span> ComponentList&amp; component_list);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keyword">const</span> <a class="code hl_class" href="../../dc/df0/classcomponents_1_1ComponentList.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">ComponentList</a>&amp; component_list);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  std::unique_ptr&lt;<span class="keyword">const</span> ManagerConfig&gt; config_;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  std::unique_ptr&lt;const ManagerConfig&gt; config_;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  std::vector&lt;ComponentConfig&gt; empty_configs_;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  TaskProcessorsStorage task_processors_storage_;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">mutable</span> std::shared_timed_mutex context_mutex_;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <a class="code hl_namespace" href="../../d0/d1f/namespacecomponents.html" title="Contains functions and types to start a userver based service/tool.">components</a>::ComponentContext component_context_;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a> component_context_;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">bool</span> components_cleared_{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  engine::TaskProcessor* default_task_processor_{<span class="keywordtype">nullptr</span>};</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  engine::TaskProcessor* default_task_processor_{<span class="keyword">nullptr</span>};</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">const</span> std::chrono::steady_clock::time_point start_time_;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  std::chrono::milliseconds load_duration_{0};</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_namespace" href="../../d5/d79/namespaceos__signals.html" title="Components and functions to work with OS signals.">os_signals</a>::ProcessorComponent* signal_processor_{<span class="keywordtype">nullptr</span>};</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_class" href="../../d9/d4a/classos__signals_1_1ProcessorComponent.html" title="A storage for Processor listeners signals.">os_signals::ProcessorComponent</a>* signal_processor_{<span class="keyword">nullptr</span>};</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>};</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}  <span class="comment">// namespace components</span></div>
@@ -212,7 +212,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:47:20 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:02 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -88,41 +88,35 @@ $(function() {
   <div class="headertitle"><div class="title">child_process_status.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d7/d11/child__process__status_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d7/d11/child__process__status_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/engine/subprocess/child_process_status.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief engine::subprocess::ChildProcessStatus</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">chrono</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">traceful_exception</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="../../da/de0/traceful__exception_8hpp.html" title="Exception that remembers the backtrace at the point of its construction.">userver/utils/traceful_exception.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace</span> engine::subprocess {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>engine::subprocess {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// status of finished subprocess</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html">   16</a></span><span class="keyword">class</span> <a class="code hl_class" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html" title="status of finished subprocess">ChildProcessStatus</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html" title="status of finished subprocess">ChildProcessStatus</a> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  ChildProcessStatus(<span class="keywordtype">int</span> status, std::chrono::milliseconds execution_time);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_class" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html" title="status of finished subprocess">ChildProcessStatus</a>(<span class="keywordtype">int</span> status, std::chrono::milliseconds execution_time);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">enum</span> <span class="keyword">class</span> ExitReason { kExited, kSignaled };</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">enum class</span> ExitReason { kExited, kSignaled };</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  ExitReason GetExitReason() <span class="keyword">const</span> { <span class="keywordflow">return</span> exit_reason_; }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  ExitReason GetExitReason()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> exit_reason_; }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">bool</span> IsExited() <span class="keyword">const</span> { <span class="keywordflow">return</span> exit_reason_ == ExitReason::kExited; }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">bool</span> IsExited()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> exit_reason_ == ExitReason::kExited; }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">/// can be called if `IsExited()` returns true</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a55410bb3b266a552cf3dd3b7d68721cd">   27</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a55410bb3b266a552cf3dd3b7d68721cd" title="can be called if IsExited() returns true">GetExitCode</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">bool</span> IsSignaled() <span class="keyword">const</span> { <span class="keywordflow">return</span> exit_reason_ == ExitReason::kSignaled; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">bool</span> IsSignaled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> exit_reason_ == ExitReason::kSignaled; }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">/// can be called if `IsSignaled()` returns true</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a4645d2d1e72227d6433547a59389dee0">   32</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a4645d2d1e72227d6433547a59389dee0" title="can be called if IsSignaled() returns true">GetTermSignal</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">/// Returns execution time for subprocess + time to start it with `execve()`</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a5103bb54c66e615af34938dba96977fd">   35</a></span>  std::chrono::milliseconds <a class="code hl_function" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a5103bb54c66e615af34938dba96977fd" title="Returns execution time for subprocess + time to start it with execve()">GetExecutionTime</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> execution_time_; }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a5103bb54c66e615af34938dba96977fd">   35</a></span>  std::chrono::milliseconds <a class="code hl_function" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html#a5103bb54c66e615af34938dba96977fd" title="Returns execution time for subprocess + time to start it with execve()">GetExecutionTime</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> execution_time_; }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> std::chrono::milliseconds execution_time_;</div>
@@ -131,12 +125,12 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> term_signal_;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d5/dc3/classengine_1_1subprocess_1_1ChildProcessStatusException.html">   44</a></span><span class="keyword">class</span> <a class="code hl_class" href="../../d5/dc3/classengine_1_1subprocess_1_1ChildProcessStatusException.html">ChildProcessStatusException</a> : <span class="keyword">public</span> <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_class" href="../../df/dae/classutils_1_1TracefulException.html" title="Exception that remembers the backtrace at the point of its construction.">TracefulException</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d5/dc3/classengine_1_1subprocess_1_1ChildProcessStatusException.html">   44</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d5/dc3/classengine_1_1subprocess_1_1ChildProcessStatusException.html">ChildProcessStatusException</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../df/dae/classutils_1_1TracefulException.html" title="Exception that remembers the backtrace at the point of its construction.">utils::TracefulException</a> {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">using</span> <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::<a class="code hl_class" href="../../df/dae/classutils_1_1TracefulException.html" title="Exception that remembers the backtrace at the point of its construction.">TracefulException</a>::TracefulException;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">using </span>utils::TracefulException::TracefulException;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">const</span> std::string&amp; ToString(<a class="code hl_class" href="../../d4/df1/classengine_1_1subprocess_1_1ChildProcessStatus.html" title="status of finished subprocess">ChildProcessStatus</a>::ExitReason exit_reason);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="../../dc/d3f/namespaceengine.html#adbde2c9ac4b204da493330c74fa08fef" title="Returns a string representation of a cancellation reason.">ToString</a>(ChildProcessStatus::ExitReason exit_reason);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}  <span class="comment">// namespace engine::subprocess</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
@@ -146,7 +140,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:48:34 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:02 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

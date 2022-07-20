@@ -89,7 +89,8 @@ $(function() {
 <h2><a class="anchor" id="autotoc_md112"></a>
 Easy to write, poor performance</h2>
 <p >Create a separate <code>TaskProcessor</code> for the driver and put all the blocking interactions of the native library into it:</p>
-<div class="fragment"><div class="line">template &lt;class... Args&gt;</div>
+<div class="fragment"><div class="line">cpp</div>
+<div class="line">template &lt;class... Args&gt;</div>
 <div class="line">auto UserverSide::DoStuff(Args&amp;&amp;... args) { </div>
 <div class="line">  return utils::Async(driver_task_processor, &quot;driver-action&quot;, [&amp;]() {</div>
 <div class="line">    return native_do_stuff(std::forward&lt;Args&gt;(args));</div>
@@ -120,7 +121,7 @@ Recommendations</h1>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:06 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

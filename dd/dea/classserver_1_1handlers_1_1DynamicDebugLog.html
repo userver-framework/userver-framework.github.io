@@ -105,11 +105,11 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d2/d50/classserver_1_1handlers_1_1DynamicDebugLog__inherit__graph.png" border="0" usemap="#aserver_1_1handlers_1_1DynamicDebugLog_inherit__map" alt="Inheritance graph"/></div>
 <map name="aserver_1_1handlers_1_1DynamicDebugLog_inherit__map" id="aserver_1_1handlers_1_1DynamicDebugLog_inherit__map">
-<area shape="rect" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="47,304,240,345"/>
-<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="20,229,267,256"/>
-<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="34,155,253,181"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,281,107"/>
-<area shape="rect" title=" " alt="" coords="16,5,271,32"/>
+<area shape="rect" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="43,304,218,345"/>
+<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="19,229,242,256"/>
+<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="31,155,230,181"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,256,107"/>
+<area shape="rect" title=" " alt="" coords="15,5,246,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -119,13 +119,13 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d3/dfe/classserver_1_1handlers_1_1DynamicDebugLog__coll__graph.png" border="0" usemap="#aserver_1_1handlers_1_1DynamicDebugLog_coll__map" alt="Collaboration graph"/></div>
 <map name="aserver_1_1handlers_1_1DynamicDebugLog_coll__map" id="aserver_1_1handlers_1_1DynamicDebugLog_coll__map">
-<area shape="rect" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="155,337,348,379"/>
-<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="24,248,271,275"/>
-<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="34,165,253,191"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,81,281,108"/>
-<area shape="rect" title=" " alt="" coords="16,5,271,32"/>
-<area shape="rect" title=" " alt="" coords="297,248,422,275"/>
-<area shape="rect" title=" " alt="" coords="277,157,444,199"/>
+<area shape="rect" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="143,337,318,379"/>
+<area shape="rect" href="../../d6/d36/classserver_1_1handlers_1_1HttpHandlerBase.html" title="Base class for all the Userver HTTP Handlers." alt="" coords="23,248,246,275"/>
+<area shape="rect" href="../../d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="31,165,230,191"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,81,256,108"/>
+<area shape="rect" title=" " alt="" coords="15,5,246,32"/>
+<area shape="rect" title=" " alt="" coords="272,248,387,275"/>
+<area shape="rect" title=" " alt="" coords="255,157,407,199"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -262,16 +262,16 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetMet
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Handler for forcing specific lines logging. Feature also known as dynamic debug logging. </p>
 <p >The component has no service configuration except the <a class="el" href="../../d2/d9b/group__userver__http__handlers.html">common handler options</a>.</p>
-<h2><a class="anchor" id="autotoc_md484"></a>
+<h2><a class="anchor" id="autotoc_md493"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line">    handler-dynamic-debug-log:</div>
 <div class="line">        path: /service/log/dynamic-debug</div>
 <div class="line">        method: GET,PUT,DELETE</div>
 <div class="line">        task_processor: monitor-task-processor</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md485"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md494"></a>
 Scheme</h2>
 <p ><code>GET</code> request shows information about available locations and forced loggings. <code>PUT</code> adds forced logging for a particular location. <code>DELETE</code> request removes forced logging from a location.</p>
-<h3><a class="anchor" id="autotoc_md486"></a>
+<h3><a class="anchor" id="autotoc_md495"></a>
 GET</h3>
 <p >For the <code>GET</code> requests this handler returns a list of all the known logging locations tab separated from a on/off value of logging: </p><div class="fragment"><div class="line">project/src/some.cpp:13     0</div>
 <div class="line">project/src/some.cpp:23     0</div>
@@ -279,10 +279,10 @@ GET</h3>
 <div class="line">project/src/some.cpp:113    0</div>
 <div class="line">userver/core/src/server/server.cpp:131    0</div>
 </div><!-- fragment --><p >In the above sample <code>1</code> means that logging was enabled via this handler and that logger would write logs even if the logger level tells not to do that. <code>0</code> means that the log will be written down only if the logger level tells to do that.</p>
-<h3><a class="anchor" id="autotoc_md487"></a>
+<h3><a class="anchor" id="autotoc_md496"></a>
 PUT</h3>
 <p ><code>PUT</code> request enables logging for the location specified in a <code>location=</code> argument in URL. <code>PUT</code> request should have a <code>location=</code> argument in URL with a location from the <code>GET</code> request or with a location without line number, to enable logging for the whole file.</p>
-<h3><a class="anchor" id="autotoc_md488"></a>
+<h3><a class="anchor" id="autotoc_md497"></a>
 DELETE</h3>
 <p ><code>DELETE</code> request removes the forced logging from location. Location should be specified in the <code>location=</code> argument in URL.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d61/md_en_userver_log_level_running_service.html">Changing the log level at runtime</a> </dd></dl>
@@ -360,7 +360,7 @@ DELETE</h3>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:52 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:09 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

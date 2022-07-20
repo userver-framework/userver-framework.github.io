@@ -88,25 +88,21 @@ $(function() {
   <div class="headertitle"><div class="title">float32_column.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d5/d0f/float32__column_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d5/d0f/float32__column_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/storages/clickhouse/io/columns/float32_column.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Float32 column support</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @ingroup userver_clickhouse_types</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">storages</span><span class="preprocessor">/</span><span class="preprocessor">clickhouse</span><span class="preprocessor">/</span><span class="preprocessor">io</span><span class="preprocessor">/</span><span class="preprocessor">columns</span><span class="preprocessor">/</span><span class="preprocessor">column_includes</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d5f/column__includes_8hpp.html">userver/storages/clickhouse/io/columns/column_includes.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> storages::<a class="code hl_namespace" href="../../dd/de0/namespacestorages_1_1clickhouse.html" title="Top namespace for uClickHouse driver.">clickhouse</a>::<a class="code hl_namespace" href="../../d8/dd6/namespacestorages_1_1clickhouse_1_1io.html" title="uClickHouse input-output.">io</a>::<a class="code hl_namespace" href="../../d6/d2f/namespacestorages_1_1clickhouse_1_1io_1_1columns.html" title="uClickHouse columns.">columns</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/d2f/namespacestorages_1_1clickhouse_1_1io_1_1columns.html" title="uClickHouse columns.">storages::clickhouse::io::columns</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// @brief Represents Clickhouse Float32 column</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../dd/d6c/classstorages_1_1clickhouse_1_1io_1_1columns_1_1Float32Column.html">   14</a></span><span class="keyword">class</span> Float32Column <span class="keyword">final</span> : <span class="keyword">public</span> ClickhouseColumn&lt;Float32Column&gt; {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../dd/d6c/classstorages_1_1clickhouse_1_1io_1_1columns_1_1Float32Column.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d6c/classstorages_1_1clickhouse_1_1io_1_1columns_1_1Float32Column.html" title="Represents Clickhouse Float32 column.">Float32Column</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../df/da4/classstorages_1_1clickhouse_1_1io_1_1columns_1_1ClickhouseColumn.html" title="Base class for every typed ClickHouse column. To add new columns one should derive from this class,...">ClickhouseColumn</a>&lt;Float32Column&gt; {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">using</span> cpp_type = <span class="keywordtype">float</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">using</span> container_type = std::vector&lt;cpp_type&gt;;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">using </span>cpp_type = float;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">using </span>container_type = std::vector&lt;cpp_type&gt;;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  Float32Column(ColumnRef column);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_class" href="../../dd/d6c/classstorages_1_1clickhouse_1_1io_1_1columns_1_1Float32Column.html" title="Represents Clickhouse Float32 column.">Float32Column</a>(ColumnRef column);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">static</span> ColumnRef Serialize(<span class="keyword">const</span> container_type&amp; from);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
@@ -119,7 +115,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:46:45 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:02 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

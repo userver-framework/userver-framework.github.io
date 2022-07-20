@@ -105,8 +105,8 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../da/d78/classcomponents_1_1Logging__inherit__graph.png" border="0" usemap="#acomponents_1_1Logging_inherit__map" alt="Inheritance graph"/></div>
 <map name="acomponents_1_1Logging_inherit__map" id="acomponents_1_1Logging_inherit__map">
-<area shape="rect" title="Logging component" alt="" coords="52,80,213,107"/>
-<area shape="rect" title=" " alt="" coords="5,5,260,32"/>
+<area shape="rect" title="Logging component" alt="" coords="47,80,194,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,236,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -116,10 +116,10 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d8/ded/classcomponents_1_1Logging__coll__graph.png" border="0" usemap="#acomponents_1_1Logging_coll__map" alt="Collaboration graph"/></div>
 <map name="acomponents_1_1Logging_coll__map" id="acomponents_1_1Logging_coll__map">
-<area shape="rect" title="Logging component" alt="" coords="73,185,235,212"/>
-<area shape="rect" title=" " alt="" coords="5,96,260,123"/>
-<area shape="rect" title=" " alt="" coords="285,96,410,123"/>
-<area shape="rect" title=" " alt="" coords="264,5,431,47"/>
+<area shape="rect" title="Logging component" alt="" coords="69,185,215,212"/>
+<area shape="rect" title=" " alt="" coords="5,96,236,123"/>
+<area shape="rect" title=" " alt="" coords="261,96,375,123"/>
+<area shape="rect" title=" " alt="" coords="242,5,394,47"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -161,7 +161,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Logging component </p>
 <p >Allows to configure the default logger and/or additional loggers for your needs.</p>
-<h2><a class="anchor" id="autotoc_md475"></a>
+<h2><a class="anchor" id="autotoc_md484"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -173,17 +173,15 @@ Static options:</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">format   </td><td class="markdownTableBodyNone">log output format, either <code>tskv</code> or <code>ltsv</code>   </td><td class="markdownTableBodyNone">tskv    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">pattern   </td><td class="markdownTableBodyNone">message formatting pattern, see <a href="https://github.com/gabime/spdlog/wiki/3.-Custom-formatting#pattern-flags">spdlog wiki</a> for details, %v means message text   </td><td class="markdownTableBodyNone">tskv or ltsv prologue with timestamp, timezone and level fields    </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">flush_level   </td><td class="markdownTableBodyNone">messages of this and higher levels get flushed to the file immediately   </td><td class="markdownTableBodyNone">warning    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">message_queue_size   </td><td class="markdownTableBodyNone">the size of internal message queue, must be a power of 2   </td><td class="markdownTableBodyNone">65536    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">overflow_behavior   </td><td class="markdownTableBodyNone">message handling policy while the queue is full: <code>discard</code> drops messages, <code>block</code> waits until message gets into the queue   </td><td class="markdownTableBodyNone">discard    </td></tr>
+<td class="markdownTableBodyNone">message_queue_size   </td><td class="markdownTableBodyNone">the size of internal message queue, must be a power of 2   </td><td class="markdownTableBodyNone">65536    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">overflow_behavior   </td><td class="markdownTableBodyNone">message handling policy while the queue is full: <code>discard</code> drops messages, <code>block</code> waits until message gets into the queue   </td><td class="markdownTableBodyNone">discard    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">testsuite-capture   </td><td class="markdownTableBodyNone">if exists, setups additional TCP log sink for testing purposes   </td><td class="markdownTableBodyNone">{}   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md476"></a>
+<h3><a class="anchor" id="autotoc_md485"></a>
 testsuite-capture options:</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,7 +191,7 @@ testsuite-capture options:</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">port   </td><td class="markdownTableBodyNone">testsuite port   </td><td class="markdownTableBodyNone">-   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md477"></a>
+<h2><a class="anchor" id="autotoc_md486"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    <a class="code hl_namespace" href="../../dd/d46/namespacelogging.html" title="Logging macro and utilities.">logging</a>:</div>
@@ -218,7 +216,7 @@ Static configuration example:</h2>
 <div class="line">          overflow_behavior: discard</div>
 </div><!-- fragment --><p ><code>default</code> section configures the default logger for LOG_*. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html">component.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a122224571a07513cfcb9c97c46a09aa9" name="a122224571a07513cfcb9c97c46a09aa9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a122224571a07513cfcb9c97c46a09aa9">&#9670;&nbsp;</a></span>GetLogger()</h2>
@@ -303,7 +301,7 @@ Static configuration example:</h2>
 
 <p>The default name of this component. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html#l00064">64</a> of file <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html">component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../dc/d2e/core_2include_2userver_2logging_2component_8hpp_source.html">component.hpp</a>.</p>
 
 </div>
 </div>
@@ -315,7 +313,7 @@ Static configuration example:</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:38 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:06 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

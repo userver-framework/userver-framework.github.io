@@ -98,9 +98,9 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../dc/db7/group__userver__concurrency.png" border="0" usemap="#adc_2db7_2group____userver____concurrency" alt=""/></div>
 <map name="adc_2db7_2group____userver____concurrency" id="adc_2db7_2group____userver____concurrency">
-<area shape="rect" href="../../da/d0c/group__userver__base__classes.html" title="Base classes that simplify implementation of functionality." alt="" coords="365,5,473,31"/>
-<area shape="rect" title="Task construction and synchronization primitives for coroutines." alt="" coords="5,65,108,91"/>
-<area shape="rect" href="../../df/d2e/group__userver__containers.html" title="Utility containers." alt="" coords="373,124,465,149"/>
+<area shape="rect" href="../../da/d0c/group__userver__base__classes.html" title="Base classes that simplify implementation of functionality." alt="" coords="341,5,445,31"/>
+<area shape="rect" title="Task construction and synchronization primitives for coroutines." alt="" coords="5,65,101,91"/>
+<area shape="rect" href="../../df/d2e/group__userver__containers.html" title="Utility containers." alt="" coords="351,124,436,149"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -203,6 +203,14 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf51ba47af7fc25b21c86e2603f0d7f55"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gaf51ba47af7fc25b21c86e2603f0d7f55">utils::AtomicMax</a> (std::atomic&lt; T &gt; &amp;atomic, T value)</td></tr>
 <tr class="memdesc:gaf51ba47af7fc25b21c86e2603f0d7f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concurrently safe sets <code>atomic</code> to a <code>value</code> if <code>value</code> is greater.  <a href="../../dc/db7/group__userver__concurrency.html#gaf51ba47af7fc25b21c86e2603f0d7f55">More...</a><br /></td></tr>
 <tr class="separator:gaf51ba47af7fc25b21c86e2603f0d7f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26c1ba3047210ae48bbc0f027fedd31c"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:ga26c1ba3047210ae48bbc0f027fedd31c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#ga26c1ba3047210ae48bbc0f027fedd31c">engine::GetAll</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:ga26c1ba3047210ae48bbc0f027fedd31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#ga26c1ba3047210ae48bbc0f027fedd31c">More...</a><br /></td></tr>
+<tr class="separator:ga26c1ba3047210ae48bbc0f027fedd31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
+<tr class="memitem:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279">engine::WaitAllChecked</a> (Tasks &amp;... tasks)</td></tr>
+<tr class="memdesc:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the successful completion of all of the specified tasks or for the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279">More...</a><br /></td></tr>
+<tr class="separator:gae7a0b9edf6e9e23e3433edafc6d59279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplParams" colspan="2">template&lt;typename... Tasks&gt; </td></tr>
 <tr class="memitem:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2">engine::WaitAny</a> (Tasks &amp;... tasks)</td></tr>
 <tr class="memdesc:ga6fc06edbfecd5d58598fb3880ae9edb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the completion of any of the specified tasks or the cancellation of the caller.  <a href="../../dc/db7/group__userver__concurrency.html#ga6fc06edbfecd5d58598fb3880ae9edb2">More...</a><br /></td></tr>
@@ -446,7 +454,7 @@ template&lt;typename Function , typename... Args&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">engine::TaskWithResult</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html#a6">samples/flatbuf_service/flatbuf_service.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d25/components_2component_sample_test_8cpp-example.html#a8">components/component_sample_test.cpp</a>, and <a class="el" href="../../d8/dea/samples_2flatbuf_service_2flatbuf_service_8cpp-example.html#a6">samples/flatbuf_service/flatbuf_service.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d4e/utils_2async_8hpp_source.html#l00123">123</a> of file <a class="el" href="../../de/d4e/utils_2async_8hpp_source.html">async.hpp</a>.</p>
@@ -772,6 +780,49 @@ template&lt;typename Function , typename... Args&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../db/d80/classengine_1_1TaskWithResult.html">engine::TaskWithResult</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d4e/utils_2async_8hpp_source.html#l00220">220</a> of file <a class="el" href="../../de/d4e/utils_2async_8hpp_source.html">async.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga26c1ba3047210ae48bbc0f027fedd31c" name="ga26c1ba3047210ae48bbc0f027fedd31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26c1ba3047210ae48bbc0f027fedd31c">&#9670;&nbsp;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Tasks&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto engine::GetAll </td>
+          <td>(</td>
+          <td class="paramtype">Tasks &amp;...&#160;</td>
+          <td class="paramname"><em>tasks</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Waits for the successful completion of all of the specified tasks or the cancellation of the caller. </p>
+<p >Effectively performs <code>for (auto&amp; task : tasks) task.Get();</code> with a twist: task.Get() is called in tasks completion order rather than in provided order, thus exceptions are rethrown ASAP.</p>
+<p >After successful return from this method the tasks are invalid, in case of an exception being thrown some of the tasks might be invalid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>either a single container, or a pack of future-like elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::vector&lt;Result&gt;</code> or <code>void</code>, depending on the tasks result type (which must be the same for all <code>tasks</code>). </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td><td>when <code><a class="el" href="../../db/df2/cancel_8hpp.html#a561f4b1f4b6d9b12f41a8f6a0d98547e" title="Checks for pending cancellation requests.">current_task::IsCancelRequested()</a></code> and no TaskCancellationBlockers are present. </td></tr>
+    <tr><td class="paramname">std::exception</td><td>rethrows one of specified tasks exception, if any, in no particular order.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Has overall computational complexity of O(N^2), where N is the number of tasks. </dd>
+<dd>
+Prefer <a class="el" href="../../dc/db7/group__userver__concurrency.html#gae7a0b9edf6e9e23e3433edafc6d59279" title="Waits for the successful completion of all of the specified tasks or for the cancellation of the call...">engine::WaitAllChecked</a> for tasks with a result, unless you specifically need the results stored in a <code>std::vector</code> or when storing the results long-term. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d71/get__all_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../db/d71/get__all_8hpp_source.html">get_all.hpp</a>.</p>
 
 </div>
 </div>
@@ -1106,6 +1157,51 @@ template&lt;typename Function , typename... Args&gt; </div>
 
 </div>
 </div>
+<a id="gae7a0b9edf6e9e23e3433edafc6d59279" name="gae7a0b9edf6e9e23e3433edafc6d59279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7a0b9edf6e9e23e3433edafc6d59279">&#9670;&nbsp;</a></span>WaitAllChecked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Tasks&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::WaitAllChecked </td>
+          <td>(</td>
+          <td class="paramtype">Tasks &amp;...&#160;</td>
+          <td class="paramname"><em>tasks</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Waits for the successful completion of all of the specified tasks or for the cancellation of the caller. </p>
+<p >Effectively performs <code>for (auto&amp; task : tasks) task.Wait();</code> with a twist: if any task completes with an exception, it gets rethrown ASAP.</p>
+<p >Invalid tasks are skipped.</p>
+<p >Tasks are not invalidated by <code>WaitAllChecked</code>; the result can be retrieved after the call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>either a single container, or a pack of future-like elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../de/dae/classengine_1_1WaitInterruptedException.html">WaitInterruptedException</a></td><td>when <code><a class="el" href="../../db/df2/cancel_8hpp.html#aed8fc1cdfd588f3973f5c9bc503c9986">current_task::ShouldCancel()</a></code> (for WaitAllChecked versions without a deadline) </td></tr>
+    <tr><td class="paramname">std::exception</td><td>one of specified tasks exception, if any, in no particular order.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Has overall computational complexity of O(N^2), where N is the number of tasks. </dd>
+<dd>
+Keeping the tasks valid may have a small extra memory impact. Make sure to drop the tasks after reading the results. </dd>
+<dd>
+Prefer <a class="el" href="../../dc/db7/group__userver__concurrency.html#ga26c1ba3047210ae48bbc0f027fedd31c" title="Waits for the successful completion of all of the specified tasks or the cancellation of the caller.">engine::GetAll</a> for tasks without a result, unless you specifically need to keep the tasks alive for some reason. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d30/wait__all__checked_8hpp_source.html#l00101">101</a> of file <a class="el" href="../../db/d30/wait__all__checked_8hpp_source.html">wait_all_checked.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ga6fc06edbfecd5d58598fb3880ae9edb2" name="ga6fc06edbfecd5d58598fb3880ae9edb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6fc06edbfecd5d58598fb3880ae9edb2">&#9670;&nbsp;</a></span>WaitAny()</h2>
 
@@ -1166,7 +1262,7 @@ template&lt;typename... Tasks&gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:35 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:06 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

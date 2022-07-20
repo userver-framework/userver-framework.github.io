@@ -121,7 +121,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Client to retrieve credentials from the <a class="el" href="../../da/dc7/classcomponents_1_1Secdist.html" title="Component that stores security related data (keys, passwords, ...).">components::Secdist</a>. </p>
-<h2><a class="anchor" id="autotoc_md506"></a>
+<h2><a class="anchor" id="autotoc_md515"></a>
 Example usage:</h2>
 <p >Declare a type that would work with the credentials:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dd/d27/secdist_8hpp.html" title="Client to retrieve credentials from the components::Secdist.">userver/storages/secdist/secdist.hpp</a>&gt;</span></div>
@@ -139,7 +139,7 @@ Example usage:</h2>
 <div class="line">      : user_password_(doc[<span class="stringliteral">&quot;user-passwords&quot;</span>].As&lt;Storage&gt;()) {}</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">bool</span> IsMatching(<span class="keyword">const</span> std::string&amp; user, <span class="keyword">const</span> Password&amp; password)<span class="keyword"> const </span>{</div>
-<div class="line">    <span class="keyword">auto</span> ptr = <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a6584be0d2316984130b2aae5c198adf3" title="Returns nullptr if no key in associative container, otherwise returns pointer to value.">utils::FindOrNullptr</a>(user_password_, user);</div>
+<div class="line">    <span class="keyword">auto</span> ptr = <a class="code hl_function" href="../../d6/d84/namespaceutils.html#a718d98173957dede88ba7ac2718a207a" title="Returns nullptr if no key in associative container, otherwise returns pointer to value.">utils::FindOrNullptr</a>(user_password_, user);</div>
 <div class="line">    <span class="keywordflow">return</span> ptr &amp;&amp; <a class="code hl_function" href="../../dd/d0e/namespacecrypto_1_1algorithm.html#a23ab15948fb8273453bf8c3f056fa785" title="Performs constant-time string comparison if the strings are of equal size.">crypto::algorithm::AreStringsEqualConstTime</a>(</div>
 <div class="line">                      ptr-&gt;GetUnderlying(), password.GetUnderlying());</div>
 <div class="line">  }</div>
@@ -232,7 +232,7 @@ template&lt;typename T &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:55:13 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:11 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -105,11 +105,11 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d0/d4a/classcomponents_1_1DynamicConfigClientUpdater__inherit__graph.png" border="0" usemap="#acomponents_1_1DynamicConfigClientUpdater_inherit__map" alt="Inheritance graph"/></div>
 <map name="acomponents_1_1DynamicConfigClientUpdater_inherit__map" id="acomponents_1_1DynamicConfigClientUpdater_inherit__map">
-<area shape="rect" title="Component that does a periodic update of runtime configs." alt="" coords="165,244,375,285"/>
-<area shape="rect" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="143,155,397,196"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,281,107"/>
-<area shape="rect" title=" " alt="" coords="16,5,271,32"/>
-<area shape="rect" href="../../da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="305,80,488,107"/>
+<area shape="rect" title="Component that does a periodic update of runtime configs." alt="" coords="153,244,343,285"/>
+<area shape="rect" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="133,155,363,196"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="5,80,256,107"/>
+<area shape="rect" title=" " alt="" coords="15,5,246,32"/>
+<area shape="rect" href="../../da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="280,80,451,107"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -119,13 +119,13 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="../../d0/dd2/classcomponents_1_1DynamicConfigClientUpdater__coll__graph.png" border="0" usemap="#acomponents_1_1DynamicConfigClientUpdater_coll__map" alt="Collaboration graph"/></div>
 <map name="acomponents_1_1DynamicConfigClientUpdater_coll__map" id="acomponents_1_1DynamicConfigClientUpdater_coll__map">
-<area shape="rect" title="Component that does a periodic update of runtime configs." alt="" coords="989,78,1199,119"/>
-<area shape="rect" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="635,49,889,90"/>
-<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="309,5,585,32"/>
-<area shape="rect" title=" " alt="" coords="5,5,260,32"/>
-<area shape="rect" href="../../da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="356,56,539,83"/>
-<area shape="rect" title=" " alt="" coords="699,115,825,141"/>
-<area shape="rect" title=" " alt="" coords="364,107,531,149"/>
+<area shape="rect" title="Component that does a periodic update of runtime configs." alt="" coords="911,78,1101,119"/>
+<area shape="rect" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title=" " alt="" coords="585,49,816,90"/>
+<area shape="rect" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="285,5,536,32"/>
+<area shape="rect" title=" " alt="" coords="5,5,236,32"/>
+<area shape="rect" href="../../da/df8/classcache_1_1CacheUpdateTrait.html" title="Base class for periodically updated caches." alt="" coords="325,56,496,83"/>
+<area shape="rect" title=" " alt="" coords="643,115,758,141"/>
+<area shape="rect" title=" " alt="" coords="335,107,487,149"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -255,7 +255,7 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Na
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Component that does a periodic update of runtime configs. </p>
-<h2><a class="anchor" id="autotoc_md463"></a>
+<h2><a class="anchor" id="autotoc_md472"></a>
 Optional update event deduplication</h2>
 <p >Config update types to deduplicate. If enabled, JSON of the whole config is compared to the previous one; if same, no config update event is sent to the subscribers of <a class="el" href="../../d1/d22/classdynamic__config_1_1Source.html" title="A client for easy dynamic config fetching in components.">dynamic_config::Source</a> (<code>OnConfigUpdate</code> functions).</p>
 <p ><code>deduplicate-update-types</code> static config option specifies the update types of the config cache, for which event deduplication should be performed. Possible values:</p><ul>
@@ -266,7 +266,7 @@ Optional update event deduplication</h2>
 </ul>
 <p >Full updates will always send an event unless deduplicated. Incremental updates may send an extra event for some config service implementations.</p>
 <p >Note: This is not a silver bullet against extra events, because the events will be sent to every dynamic config subscriber if <em>any</em> part of the config has updated, not if the interesting part has updated.</p>
-<h2><a class="anchor" id="autotoc_md464"></a>
+<h2><a class="anchor" id="autotoc_md473"></a>
 Static options:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -283,7 +283,7 @@ Static options:</h2>
 <td class="markdownTableBodyNone">deduplicate-update-types   </td><td class="markdownTableBodyNone">update types for best-effort update event deduplication, see above   </td><td class="markdownTableBodyNone"><code>full-and-incremental</code>   </td></tr>
 </table>
 <p >See also the options for <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a>.</p>
-<h2><a class="anchor" id="autotoc_md465"></a>
+<h2><a class="anchor" id="autotoc_md474"></a>
 Static configuration example:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># yaml</span></div>
 <div class="line">    dynamic-config-client-updater:</div>
@@ -397,7 +397,7 @@ Static configuration example:</h2>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:38 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:06 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

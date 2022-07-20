@@ -88,27 +88,21 @@ $(function() {
   <div class="headertitle"><div class="title">merge.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d5/d99/merge_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d5/d99/merge_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/formats/common/merge.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief formats::json::MergeSchemas</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">common</span><span class="preprocessor">/</span><span class="preprocessor">items</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;userver/formats/common/items.hpp&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../d8/d5b/namespaceformats.html" title="Value formats representation, parsing and serialization.">common</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d4/d6e/namespaceformats_1_1common.html" title="Common utilities for all the formats.">formats::common</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// @brief Add to `original` new non-object elements from `patch` (overwriting</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// the old ones, if any) and merge object elements recursively.</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// @note For the missing `patch`, it does nothing with the `original`.</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// @note Arrays are not merged.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d6e/namespaceformats_1_1common.html#afbd56773b21c58fd71d5606f340675e1">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d6e/namespaceformats_1_1common.html#afbd56773b21c58fd71d5606f340675e1" title="Add to original new non-object elements from patch (overwriting the old ones, if any) and merge objec...">Merge</a>(<span class="keyword">typename</span> Value::Builder&amp; original, <span class="keyword">const</span> Value&amp; patch) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">if</span> (patch.IsObject() &amp;&amp; original.IsObject() &amp;&amp; !original.IsEmpty()) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [elem_key, elem_value] : <a class="code hl_namespace" href="../../d8/d5b/namespaceformats.html" title="Value formats representation, parsing and serialization.">common</a>::Items(patch)) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [elem_key, elem_value] : common::Items(patch)) {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keyword">auto</span> next_origin = original[elem_key];</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      Merge(next_origin, elem_value);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      <a class="code hl_function" href="../../d4/d6e/namespaceformats_1_1common.html#afbd56773b21c58fd71d5606f340675e1" title="Add to original new non-object elements from patch (overwriting the old ones, if any) and merge objec...">Merge</a>(next_origin, elem_value);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!patch.IsMissing()) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    original = patch;</div>
@@ -123,7 +117,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:52:47 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

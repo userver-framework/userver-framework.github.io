@@ -89,7 +89,6 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="../../d4/d8c/classengine_1_1Deadline-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">engine::Deadline Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
@@ -144,12 +143,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5e491909c3630a5968e13be5ccb36f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts time point to a <a class="el" href="../../de/d6a/classengine_1_1Deadline.html" title="Internal representation of a deadline time point.">Deadline</a>.  <a href="../../de/d6a/classengine_1_1Deadline.html#a5e491909c3630a5968e13be5ccb36f68">More...</a><br /></td></tr>
 <tr class="separator:a5e491909c3630a5968e13be5ccb36f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a397468c03692e36acc41804df72148ad"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../de/d6a/classengine_1_1Deadline.html">Deadline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6a/classengine_1_1Deadline.html#a397468c03692e36acc41804df72148ad">Passed</a> () noexcept</td></tr>
+<tr class="memdesc:a397468c03692e36acc41804df72148ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../de/d6a/classengine_1_1Deadline.html" title="Internal representation of a deadline time point.">Deadline</a> that is guaranteed to be IsReached.  <a href="../../de/d6a/classengine_1_1Deadline.html#a397468c03692e36acc41804df72148ad">More...</a><br /></td></tr>
 <tr class="separator:a397468c03692e36acc41804df72148ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:afe580383d6e90edfeccca8fc60826728"><td class="memItemLeft" align="right" valign="top">static constexpr TimePoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6a/classengine_1_1Deadline.html#afe580383d6e90edfeccca8fc60826728">kPassed</a> = TimePoint::min()</td></tr>
-<tr class="separator:afe580383d6e90edfeccca8fc60826728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Internal representation of a deadline time point. </p>
@@ -325,7 +320,7 @@ template&lt;typename Clock , typename Duration &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00069">69</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00068">68</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +348,7 @@ template&lt;typename Clock , typename Duration &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00064">64</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
 
 </div>
 </div>
@@ -380,7 +375,9 @@ template&lt;typename Clock , typename Duration &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
+<p>A <a class="el" href="../../de/d6a/classengine_1_1Deadline.html" title="Internal representation of a deadline time point.">Deadline</a> that is guaranteed to be IsReached. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,31 +407,6 @@ template&lt;typename Clock , typename Duration &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="afe580383d6e90edfeccca8fc60826728" name="afe580383d6e90edfeccca8fc60826728"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe580383d6e90edfeccca8fc60826728">&#9670;&nbsp;</a></span>kPassed</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr TimePoint engine::Deadline::kPassed = TimePoint::min()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d22/deadline_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>userver/engine/<a class="el" href="../../d2/d22/deadline_8hpp_source.html">deadline.hpp</a></li>
 </ul>
@@ -443,7 +415,7 @@ template&lt;typename Clock , typename Duration &gt; </div>
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:43 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:07 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

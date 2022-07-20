@@ -88,75 +88,75 @@ $(function() {
   <div class="headertitle"><div class="title">types.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">common</span><span class="preprocessor">/</span><span class="preprocessor">type</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="../../da/d72/type_8hpp.html" title="Common enum of types.">userver/formats/common/type.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// copypasted from rapidjson/fwd.h</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace</span> rapidjson {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>rapidjson {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> CharType&gt;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct</span> UTF8;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class</span> CrtAllocator;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d6/d4e/structrapidjson_1_1UTF8.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d6/d4e/structrapidjson_1_1UTF8.html">UTF8</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>CrtAllocator;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Encoding, <span class="keyword">typename</span> Allocator&gt;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class</span> GenericValue;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d3/d69/classrapidjson_1_1GenericValue.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d3/d69/classrapidjson_1_1GenericValue.html">GenericValue</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Encoding, <span class="keyword">typename</span> Allocator, <span class="keyword">typename</span> StackAllocator&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class</span> GenericDocument;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d3/d04/classrapidjson_1_1GenericDocument.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d3/d04/classrapidjson_1_1GenericDocument.html">GenericDocument</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}  <span class="comment">// namespace rapidjson</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">json</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/da1/namespaceformats_1_1json.html" title="JSON support.">formats::json</a> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">using</span> formats::<a class="code hl_namespace" href="../../d8/d5b/namespaceformats.html" title="Value formats representation, parsing and serialization.">common</a>::Type;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">using </span><a class="code hl_enumeration" href="../../d4/d6e/namespaceformats_1_1common.html#a1b04d736fad0aa205910ef52e8a04690" title="Common enum of types.">formats::common::Type</a>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class</span> Value;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class </span>Value;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace</span> impl {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span>impl {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// rapidjson integration</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">using</span> UTF8 = ::rapidjson::UTF8&lt;<span class="keywordtype">char</span>&gt;;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">using</span> Value = ::rapidjson::GenericValue&lt;UTF8, ::rapidjson::CrtAllocator&gt;;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using</span> Document = ::rapidjson::GenericDocument&lt;UTF8, ::rapidjson::CrtAllocator,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">using </span><a class="code hl_struct" href="../../d6/d4e/structrapidjson_1_1UTF8.html">UTF8</a> = <a class="code hl_struct" href="../../d6/d4e/structrapidjson_1_1UTF8.html">::rapidjson::UTF8&lt;char&gt;</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">using </span>Value = <a class="code hl_class" href="../../d3/d69/classrapidjson_1_1GenericValue.html">::rapidjson::GenericValue&lt;UTF8, ::rapidjson::CrtAllocator&gt;</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using </span>Document = <a class="code hl_class" href="../../d3/d04/classrapidjson_1_1GenericDocument.html">::rapidjson::GenericDocument</a>&lt;<a class="code hl_struct" href="../../d6/d4e/structrapidjson_1_1UTF8.html">UTF8</a>, ::rapidjson::CrtAllocator,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                                              ::rapidjson::CrtAllocator&gt;;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">class</span> VersionedValuePtr <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">class </span>VersionedValuePtr final {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> size_t kInvalidVersion = -1;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> kInvalidVersion = -1;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  VersionedValuePtr() <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  VersionedValuePtr() noexcept;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">static</span> VersionedValuePtr Create(Args&amp;&amp;... args);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  template &lt;typename... Args&gt;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  static VersionedValuePtr Create(Args&amp;&amp;... args);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  VersionedValuePtr(<span class="keyword">const</span> VersionedValuePtr&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  VersionedValuePtr(VersionedValuePtr&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  VersionedValuePtr&amp; operator=(<span class="keyword">const</span> VersionedValuePtr&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  VersionedValuePtr&amp; operator=(VersionedValuePtr&amp;&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  VersionedValuePtr(const VersionedValuePtr&amp;) = default;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  VersionedValuePtr(VersionedValuePtr&amp;&amp;) = default;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  VersionedValuePtr&amp; operator=(const VersionedValuePtr&amp;) = default;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  VersionedValuePtr&amp; operator=(VersionedValuePtr&amp;&amp;) noexcept = default;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  ~VersionedValuePtr();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">explicit</span> operator <span class="keywordtype">bool</span>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">bool</span> IsUnique() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  explicit operator <span class="keywordtype">bool</span>() const;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">bool</span> IsUnique() const;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">const</span> impl::Value* Get() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  const impl::Value* Get() const;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  impl::Value* Get();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">const</span> impl::Value&amp; operator*() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  const impl::Value&amp; operator*() const;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  impl::Value&amp; operator*();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> impl::Value* operator-&gt;() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  const impl::Value* operator-&gt;() const;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  impl::Value* operator-&gt;();</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  size_t Version() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">size_t</span> Version() const;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> BumpVersion();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">struct</span> Data;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> private:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  struct Data;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">explicit</span> VersionedValuePtr(std::shared_ptr&lt;Data&gt;&amp;&amp;) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  explicit VersionedValuePtr(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::shared_ptr&lt;Data&gt;&amp;&amp;) noexcept;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  std::shared_ptr&lt;Data&gt; data_;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::shared_ptr&lt;Data&gt; data_;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}  <span class="comment">// namespace impl</span></div>
@@ -168,7 +168,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:53:24 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

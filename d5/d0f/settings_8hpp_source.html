@@ -88,38 +88,37 @@ $(function() {
   <div class="headertitle"><div class="title">settings.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">yaml_config</span><span class="preprocessor">/</span><span class="preprocessor">yaml_config</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d61/yaml__config_8hpp.html" title="Datatype that represents YAML with substituted variables.">userver/yaml_config/yaml_config.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d6/dca/namespaceerror__injection.html" title="Artificial errors injection framework.">error_injection</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/dca/namespaceerror__injection.html" title="Artificial errors injection framework.">error_injection</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// What error injection hook may decide to do</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153" title="What error injection hook may decide to do.">Verdict</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a902b0d55fddef6f8d651fe1035b7d4bd" title="return error">Error</a>,        <span class="comment">///&lt; return error</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153ac85a251cc457840f1e032f1b733e9398" title="wait for deadline and return error">Timeout</a>,      <span class="comment">///&lt; wait for deadline and return error</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a9b7c1e8201f6f7fa566965c41c28a53a" title="wait for deadline w/o returning an error">MaxDelay</a>,     <span class="comment">///&lt; wait for deadline w/o returning an error</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a32ce86e70468d75e9d8617dbb05aea87" title="wait for [0; deadline] w/o retunring an error">RandomDelay</a>,  <span class="comment">///&lt; wait for [0; deadline] w/o retunring an error</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153">   14</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153" title="What error injection hook may decide to do.">Verdict</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a902b0d55fddef6f8d651fe1035b7d4bd" title="return error">Error</a>,        </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153ac85a251cc457840f1e032f1b733e9398" title="wait for deadline and return error">Timeout</a>,      </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a9b7c1e8201f6f7fa566965c41c28a53a" title="wait for deadline w/o returning an error">MaxDelay</a>,     </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a32ce86e70468d75e9d8617dbb05aea87" title="wait for [0; deadline] w/o retunring an error">RandomDelay</a>,  </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="comment">// Skip must be the last</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a72ef2b9b6965d078e3c7f95487a82d1c" title="no error">Skip</a>,  <span class="comment">///&lt; no error</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_enumvalue" href="../../d6/dca/namespaceerror__injection.html#a3a105c3fd36d41aed524d5dd8667a153a72ef2b9b6965d078e3c7f95487a82d1c" title="no error">Skip</a>,  </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">struct</span> Settings <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d8/d85/structerror__injection_1_1Settings.html">   25</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d8/d85/structerror__injection_1_1Settings.html">Settings</a> final {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">bool</span> enabled{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">double</span> probability{0};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::vector&lt;Verdict&gt; possible_verdicts;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>Settings Parse(<span class="keyword">const</span> <a class="code hl_namespace" href="../../dd/d20/namespaceyaml__config.html" title="Utilities to work with static YAML config.">yaml_config</a>::<a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">YamlConfig</a>&amp; value,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>               formats::<a class="code hl_namespace" href="../../d9/d14/namespaceformats_1_1parse.html" title="Generic parsers and converters.">parse</a>::<a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">To</a>&lt;Settings&gt;);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><a class="code hl_struct" href="../../d8/d85/structerror__injection_1_1Settings.html">Settings</a> Parse(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/d6c/classyaml__config_1_1YamlConfig.html" title="Datatype that represents YAML with substituted variables.">yaml_config::YamlConfig</a>&amp; value,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>               <a class="code hl_struct" href="../../d6/dd1/structformats_1_1parse_1_1To.html">formats::parse::To&lt;Settings&gt;</a>);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}  <span class="comment">// namespace error_injection</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
@@ -129,7 +128,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:48:44 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:02 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

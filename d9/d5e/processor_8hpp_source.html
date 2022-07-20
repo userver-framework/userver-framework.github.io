@@ -88,28 +88,24 @@ $(function() {
   <div class="headertitle"><div class="title">processor.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d9/d5e/processor_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d9/d5e/processor_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/os_signals/processor.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief os_signals::Processor</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">concurrent</span><span class="preprocessor">/</span><span class="preprocessor">async_event_channel</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">engine</span><span class="preprocessor">/</span><span class="preprocessor">task</span><span class="preprocessor">/</span><span class="preprocessor">task_processor_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">os_signals</span><span class="preprocessor">/</span><span class="preprocessor">subscriber</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">internal_tag_fwd</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d09/async__event__channel_8hpp.html">userver/concurrent/async_event_channel.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d03/task__processor__fwd_8hpp.html">userver/engine/task/task_processor_fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="../../d8/df0/subscriber_8hpp.html">userver/os_signals/subscriber.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="../../d1/d54/internal__tag__fwd_8hpp.html">userver/utils/internal_tag_fwd.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../d5/d79/namespaceos__signals.html" title="Components and functions to work with OS signals.">os_signals</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d5/d79/namespaceos__signals.html" title="Components and functions to work with OS signals.">os_signals</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// @brief A manager that allows to subscribe</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// to OS signals, example: SIGUSR1, SIGUSR2</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d1/d6c/classos__signals_1_1Processor.html">   17</a></span><span class="keyword">class</span> Processor <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d1/d6c/classos__signals_1_1Processor.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d6c/classos__signals_1_1Processor.html" title="A manager that allows to subscribe to OS signals, example: SIGUSR1, SIGUSR2.">Processor</a> final {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">explicit</span> Processor(engine::TaskProcessor&amp; task_processor);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="../../d1/d6c/classos__signals_1_1Processor.html" title="A manager that allows to subscribe to OS signals, example: SIGUSR1, SIGUSR2.">Processor</a>(engine::TaskProcessor&amp; task_processor);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Class&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  Subscriber AddListener(Class* obj, std::string_view name, <span class="keywordtype">int</span> signum,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_class" href="../../dd/de6/classconcurrent_1_1AsyncEventSubscriberScope.html" title="Manages the subscription to events from an AsyncEventSource.">Subscriber</a> AddListener(Class* obj, std::string_view name, <span class="keywordtype">int</span> signum,</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                         <span class="keywordtype">void</span> (Class::*func)()) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">auto</span> execute = [obj, func, signum](<span class="keywordtype">int</span> sig) {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">if</span> (sig == signum) {</div>
@@ -117,16 +113,14 @@ $(function() {
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">return</span> {channel_.AddListener(concurrent::FunctionId(obj), name,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">return</span> {channel_.<a class="code hl_function" href="../../dc/d11/classconcurrent_1_1AsyncEventSource.html#a3cf98160df115e5da5ded59dd91ab3c1" title="Subscribes to updates from this event source.">AddListener</a>(<a class="code hl_class" href="../../d8/dd3/classconcurrent_1_1FunctionId.html">concurrent::FunctionId</a>(obj), name,</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                                 std::move(execute))};</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">/// @cond</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">void</span> Notify(<span class="keywordtype">int</span> signum, <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::InternalTag);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="comment">/// @endcond</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">void</span> Notify(<span class="keywordtype">int</span> signum, utils::InternalTag);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_namespace" href="../../df/d2b/namespaceconcurrent.html" title="Locking stuff.">concurrent</a>::<a class="code hl_class" href="../../d6/d38/classconcurrent_1_1AsyncEventChannel.html">AsyncEventChannel</a>&lt;<span class="keywordtype">int</span>&gt; channel_;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="../../d6/d38/classconcurrent_1_1AsyncEventChannel.html">concurrent::AsyncEventChannel&lt;int&gt;</a> channel_;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  engine::TaskProcessor&amp; task_processor_;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
@@ -138,7 +132,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:48:48 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:03 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

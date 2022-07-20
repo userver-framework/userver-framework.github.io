@@ -9,7 +9,7 @@
 <meta property="og:image" content="../../logo_in_circle.png"/>
 <meta property="og:image:alt" content="userver logo"/>
 <link rel="icon" href="../../favicon.svg">
-<title>userver: /data/code/service_template/third_party/userver/testsuite/pytest_plugins/pytest_userver/plugins/samples.py Source File</title>
+<title>userver: /Users/alexiprof/dock/userver/testsuite/pytest_plugins/pytest_userver/plugins/samples.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <link rel="stylesheet" href="../../doxygen-like.css">
@@ -101,31 +101,30 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="stringliteral">&#39;--service-source-dir&#39;</span>,</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        type=pathlib.Path,</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        help=<span class="stringliteral">&#39;Path to service source directory.&#39;</span>,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        required=<span class="keyword">True</span>,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    )</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    )</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">def </span>service_source_dir(pytestconfig):</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> pytestconfig.option.service_source_dir</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">def </span>service_source_dir(pytestconfig):</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> pytestconfig.option.service_source_dir</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">def </span>sample_config_hook(service_source_dir: pathlib.Path):</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">def </span>_patch_config(config_yaml, config_vars):</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        components = config_yaml[<span class="stringliteral">&#39;components_manager&#39;</span>][<span class="stringliteral">&#39;components&#39;</span>]</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span> <span class="stringliteral">&#39;secdist&#39;</span> <span class="keywordflow">in</span> components:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            components[<span class="stringliteral">&#39;secdist&#39;</span>][<span class="stringliteral">&#39;config&#39;</span>] = str(</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                service_source_dir.joinpath(<span class="stringliteral">&#39;secure_data.json&#39;</span>),</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            )</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> _patch_config</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">@pytest.fixture(scope=&#39;session&#39;)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">def </span>sample_config_hook(service_source_dir):</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">def </span>_patch_config(config_yaml, config_vars):</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        components = config_yaml[<span class="stringliteral">&#39;components_manager&#39;</span>][<span class="stringliteral">&#39;components&#39;</span>]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span> <span class="stringliteral">&#39;secdist&#39;</span> <span class="keywordflow">in</span> components:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            components[<span class="stringliteral">&#39;secdist&#39;</span>][<span class="stringliteral">&#39;config&#39;</span>] = str(</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                pathlib.Path(service_source_dir).joinpath(<span class="stringliteral">&#39;secure_data.json&#39;</span>),</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            )</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> _patch_config</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -9,7 +9,7 @@
 <meta property="og:image" content="../../logo_in_circle.png"/>
 <meta property="og:image:alt" content="userver logo"/>
 <link rel="icon" href="../../favicon.svg">
-<title>userver: /data/code/service_template/third_party/userver/testsuite/pytest_plugins/pytest_userver/plugins/service.py Source File</title>
+<title>userver: /Users/alexiprof/dock/userver/testsuite/pytest_plugins/pytest_userver/plugins/service.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <link rel="stylesheet" href="../../doxygen-like.css">
@@ -106,41 +106,43 @@ $(function() {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        create_daemon_scope,</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        service_env,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        service_baseurl,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        service_config_path,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        service_config_path_temp,</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        service_config_yaml,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        create_port_health_checker,</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>):</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    components = service_config_yaml[<span class="stringliteral">&#39;components_manager&#39;</span>][<span class="stringliteral">&#39;components&#39;</span>]</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ping_url = <span class="keywordtype">None</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    health_check = <span class="keywordtype">None</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> <span class="stringliteral">&#39;handler-ping&#39;</span> <span class="keywordflow">in</span> components:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        ping_url = url_util.join(</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            service_baseurl, components[<span class="stringliteral">&#39;handler-ping&#39;</span>][<span class="stringliteral">&#39;path&#39;</span>],</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        )</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        health_check = create_port_health_checker(</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            hostname=<span class="stringliteral">&#39;localhost&#39;</span>, port=pytestconfig.option.service_port,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        )</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">async</span> <span class="keyword">with</span> create_daemon_scope(</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            args=[</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                str(pytestconfig.option.service_binary),</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="stringliteral">&#39;--config&#39;</span>,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                str(service_config_path),</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            ],</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            ping_url=ping_url,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            health_check=health_check,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            env=service_env,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    ) <span class="keyword">as</span> scope:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">yield</span> scope</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        service_binary,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        service_port,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        create_port_health_checker,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>):</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    components = service_config_yaml[<span class="stringliteral">&#39;components_manager&#39;</span>][<span class="stringliteral">&#39;components&#39;</span>]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    ping_url = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    health_check = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> <span class="stringliteral">&#39;handler-ping&#39;</span> <span class="keywordflow">in</span> components:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        ping_url = url_util.join(</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            service_baseurl, components[<span class="stringliteral">&#39;handler-ping&#39;</span>][<span class="stringliteral">&#39;path&#39;</span>],</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        )</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        health_check = create_port_health_checker(</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            hostname=<span class="stringliteral">&#39;localhost&#39;</span>, port=service_port,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        )</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">async</span> <span class="keyword">with</span> create_daemon_scope(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            args=[</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                str(service_binary),</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="stringliteral">&#39;--config&#39;</span>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                str(service_config_path_temp),</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            ],</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            ping_url=ping_url,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            health_check=health_check,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            env=service_env,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    ) <span class="keyword">as</span> scope:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">yield</span> scope</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:54:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

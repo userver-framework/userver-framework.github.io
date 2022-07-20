@@ -88,84 +88,54 @@ $(function() {
   <div class="headertitle"><div class="title">file_descriptor.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../de/d4f/file__descriptor_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../de/d4f/file__descriptor_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/fs/blocking/file_descriptor.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief fs::blocking::FileDescriptor</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">boost</span><span class="preprocessor">/</span><span class="preprocessor">filesystem</span><span class="preprocessor">/</span><span class="preprocessor">operations</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;boost/filesystem/operations.hpp&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">fs</span><span class="preprocessor">/</span><span class="preprocessor">blocking</span><span class="preprocessor">/</span><span class="preprocessor">open_mode</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d83/open__mode_8hpp.html" title="A set of OpenFlags.">userver/fs/blocking/open_mode.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace</span> fs::<a class="code hl_namespace" href="../../d5/d8f/namespacefs.html" title="filesystem support">blocking</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/dcb/namespacefs_1_1blocking.html" title="blocking function and classes to work with filesystem">fs::blocking</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// @ingroup userver_containers</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">///</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// @brief A file descriptor wrapper</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// @details The file is closed in the destructor</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// @note The operations on the file are blocking and not thread-safe</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html">   22</a></span><span class="keyword">class</span> FileDescriptor <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a> final {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">/// @brief Open a file using ::open</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">/// @throws std::runtime_error</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a4f6d522fe86c998578732dc545b0d090">   26</a></span>  <span class="keyword">static</span> FileDescriptor <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a4f6d522fe86c998578732dc545b0d090" title="Open a file using ::open.">Open</a>(</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="keyword">const</span> std::string&amp; path, OpenMode flags,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a4f6d522fe86c998578732dc545b0d090">   26</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a4f6d522fe86c998578732dc545b0d090" title="Open a file using ::open.">Open</a>(</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="keyword">const</span> std::string&amp; path, <a class="code hl_class" href="../../df/d8b/classutils_1_1Flags.html" title="Wrapper to extend enum with flags interface.">OpenMode</a> flags,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      boost::filesystem::perms perms = boost::filesystem::perms::owner_read |</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                                       boost::filesystem::perms::owner_write);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">/// @brief Open a directory node</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">/// @note The only valid operation for such a `FileDescriptor` is `FSync`.</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="comment">/// @throws std::runtime_error</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aed056354e971d8aa3c671f6fd0be4679">   34</a></span>  <span class="keyword">static</span> FileDescriptor <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aed056354e971d8aa3c671f6fd0be4679" title="Open a directory node.">OpenDirectory</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aed056354e971d8aa3c671f6fd0be4679">   34</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aed056354e971d8aa3c671f6fd0be4679" title="Open a directory node.">OpenDirectory</a>(<span class="keyword">const</span> std::string&amp; path);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  FileDescriptor() = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  FileDescriptor(FileDescriptor&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  FileDescriptor&amp; operator=(FileDescriptor&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  ~FileDescriptor();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a>(<a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a>&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a>&amp; operator=(<a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a>&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">~FileDescriptor</a>();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="comment">/// @brief Checks if the file is open</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">/// @note Operations can only be performed on an open `FileDescriptor`.</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aad6c51a49bdfa42208537cf5ae1b7a69">   43</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aad6c51a49bdfa42208537cf5ae1b7a69" title="Checks if the file is open.">IsOpen</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">/// @brief Closes the file manually</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">/// @throws std::runtime_error</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a92248f457911a6ffa1a094826c91762b">   47</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a92248f457911a6ffa1a094826c91762b" title="Closes the file manually.">Close</a>() &amp;&amp;;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">/// Returns the native file handle</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#ad8b1063c9d47233e6c953e6f1132ee22">   50</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#ad8b1063c9d47233e6c953e6f1132ee22" title="Returns the native file handle.">GetNative</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">/// Passes the ownership of the file descriptor to the caller</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a955ca436fc4c236e56c883ec4d1317b8">   53</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a955ca436fc4c236e56c883ec4d1317b8" title="Passes the ownership of the file descriptor to the caller.">Release</a>() &amp;&amp;;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">/// @brief Writes data to the file</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">/// @warning Unless `FSync` is called, there is no guarantee the data</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="comment">/// is stored on disk safely.</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">/// @throws std::runtime_error</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aab73cb23c2107f8b5b08fabba58407e1">   59</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#aab73cb23c2107f8b5b08fabba58407e1" title="Writes data to the file.">Write</a>(std::string_view contents);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="comment">/// @brief Reads data from the file</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">/// @returns The amount of bytes actually acquired, which can be equal</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">/// to `max_size`, or less on end-of-file</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">/// @throws std::runtime_error</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a2fd3167dbd0d5b9aa563a37b42fb9940">   65</a></span>  std::size_t <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a2fd3167dbd0d5b9aa563a37b42fb9940" title="Reads data from the file.">Read</a>(<span class="keywordtype">char</span>* buffer, std::size_t max_size);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">/// @brief Makes sure the written data is actually stored on disk</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="comment">/// @throws std::runtime_error</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a3f409aa2b9221d4d31187150a10864fa">   69</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a3f409aa2b9221d4d31187150a10864fa" title="Makes sure the written data is actually stored on disk.">FSync</a>();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">/// @brief Fetches the file size</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">/// @throws std::runtime_error</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a6b0d67d42a621b1b168e7721ed7f4f0a">   73</a></span>  std::size_t <a class="code hl_function" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html#a6b0d67d42a621b1b168e7721ed7f4f0a" title="Fetches the file size.">GetSize</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">explicit</span> FileDescriptor(<span class="keywordtype">int</span> fd);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="../../dd/d5b/classfs_1_1blocking_1_1FileDescriptor.html" title="A file descriptor wrapper.">FileDescriptor</a>(<span class="keywordtype">int</span> fd);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">friend</span> <span class="keyword">class</span> TempFile;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d7/ddb/classfs_1_1blocking_1_1TempFile.html" title="A unique temporary file. The file is deleted when the TempFile object is destroyed.">TempFile</a>;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">int</span> fd_;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
@@ -178,7 +148,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:53:33 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

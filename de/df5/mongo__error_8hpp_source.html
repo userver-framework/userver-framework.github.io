@@ -88,59 +88,47 @@ $(function() {
   <div class="headertitle"><div class="title">mongo_error.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">bson</span><span class="preprocessor">/</span><span class="preprocessor">bson</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;bson/bson.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace</span> storages::mongo {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d3/db5/namespacestorages_1_1mongo.html" title="MongoDB client.">storages::mongo</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// MongoDB error</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class</span> <a class="code hl_class" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html" title="MongoDB error.">MongoError</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html" title="MongoDB error.">MongoError</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="comment">/// Error kinds</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">enum</span> <span class="keyword">class</span> <a class="code hl_enumeration" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bced" title="Error kinds.">Kind</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bcedafcd1af9ec66cb99f2d106d7fdc865c8b" title="Error was not reported correctly.">kNoError</a>,               <span class="comment">///&lt; Error was not reported correctly</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bceda62f22144de8e8a0bac264d00f661d8ec" title="Network (connectivity) error.">kNetwork</a>,               <span class="comment">///&lt; @copybrief NetworkException</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bcedac4c0a69676a51449930262db558030b1" title="No server available to satisfy request constraints.">kClusterUnavailable</a>,    <span class="comment">///&lt; @copybrief ClusterUnavailableException</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bceda8614f2d0b21e4aebfbcd0a29492c1a35" title="Incompatible server version.">kIncompatibleServer</a>,    <span class="comment">///&lt; @copybrief IncompatibleServerException</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bcedaabe8ecbbd670edc8363a290ba1d2d5c2" title="Authentication error.">kAuthentication</a>,        <span class="comment">///&lt; @copybrief AuthenticationException</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bceda048ab922d2bb9497e916ff610af475d0" title="Generic query error.">kQuery</a>,                 <span class="comment">///&lt; @copybrief QueryException</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bcedadb4bee470edf6116043180757c865265" title="Query argument validation error.">kInvalidQueryArgument</a>,  <span class="comment">///&lt; @copybrief InvalidQueryArgumentException</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bceda715c76514601e8aea81451c7edb84c8e" title="Server-side error.">kServer</a>,                <span class="comment">///&lt; @copybrief ServerException</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bcedad876b6013f6796339eaba7b8c83d98af" title="Write concern error.">kWriteConcern</a>,          <span class="comment">///&lt; @copybrief WriteConcernException</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bceda0a383e736507a1b0a86b3a8953167e55" title="Duplicate key error.">kDuplicateKey</a>,          <span class="comment">///&lt; @copybrief DuplicateKeyException</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bceda341b8a8f03cf33821c46aa5c3aad4b7a" title="Unclassified error.">kOther</a>                  <span class="comment">///&lt; Unclassified error</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bced">   15</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bced" title="Error kinds.">Kind</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    kNoError,               </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    kNetwork,               </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    kClusterUnavailable,    </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    kIncompatibleServer,    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    kAuthentication,        </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    kQuery,                 </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    kInvalidQueryArgument,  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    kServer,                </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    kWriteConcern,          </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    kDuplicateKey,          </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    kOther                  </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  };</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="comment">/// @cond</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">/// Creates a not-an-error</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  MongoError();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">/// @endcond</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_class" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html" title="MongoDB error.">MongoError</a>();</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">/// Checks whether an error is set up</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a578b425cdc3be89e2625b880ebb40a27" title="Checks whether an error is set up.">operator</a> <span class="keywordtype">bool</span>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a578b425cdc3be89e2625b880ebb40a27">   35</a></span>  <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">/// Checks whether this is a server error</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a968ca1b354cbcefcc04d551b98bba7b2" title="Checks whether this is a server error.">IsServerError</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a968ca1b354cbcefcc04d551b98bba7b2">   38</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a968ca1b354cbcefcc04d551b98bba7b2" title="Checks whether this is a server error.">IsServerError</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_enumeration" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#af754e5ace2ff28d63facadf73d78bced" title="Error kinds.">Kind</a> GetKind() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  uint32_t Code() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">const</span> <span class="keywordtype">char</span>* Message() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">/// @cond</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">/// Error domain, for internal use</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  uint32_t Domain() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">/// Returns native type, internal use only</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  bson_error_t* GetNative();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">/// @endcond</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">/// Unconditionally throws specialized MongoException</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  [[<a class="code hl_class" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html" title="MongoDB error.">noreturn</a>]] <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a48199ff12f51a84ceeee5b2b7e1bf061" title="Unconditionally throws specialized MongoException.">Throw</a>(std::string prefix) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a48199ff12f51a84ceeee5b2b7e1bf061">   53</a></span>  [[noreturn]] <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/df5/classstorages_1_1mongo_1_1MongoError.html#a48199ff12f51a84ceeee5b2b7e1bf061" title="Unconditionally throws specialized MongoException.">Throw</a>(std::string prefix) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  bson_error_t value_;</div>
@@ -154,7 +142,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:51:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:03 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

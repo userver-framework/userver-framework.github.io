@@ -1,33 +1,35 @@
 <map id="userver/engine/future_status.hpp" name="userver/engine/future_status.hpp">
-<area shape="rect" id="node1" title="std::future state extended with &quot;cancelled&quot; state" alt="" coords="279,5,441,47"/>
-<area shape="rect" id="node2" href="$db/ddf/future_8hpp.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise" alt="" coords="265,184,455,211"/>
-<area shape="rect" id="node31" href="$de/d5c/future__state_8hpp_source.html" title=" " alt="" coords="341,95,493,136"/>
-<area shape="rect" id="node3" href="$d2/de8/response__future_8hpp.html" title="Allows to perform a request concurrently with other work without creating an extra coroutine for wait..." alt="" coords="163,259,322,300"/>
-<area shape="rect" id="node8" href="$d1/d35/transaction__subrequest__data_8hpp_source.html" title=" " alt="" coords="256,616,467,672"/>
-<area shape="rect" id="node9" href="$d0/d28/redis_2include_2userver_2storages_2redis_2impl_2types_8hpp_source.html" title=" " alt="" coords="754,259,921,300"/>
-<area shape="rect" id="node4" href="$d1/d57/core_2include_2userver_2clients_2http_2request_8hpp.html" title="Class for creating and performing new http requests." alt="" coords="169,348,317,389"/>
-<area shape="rect" id="node5" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="171,437,319,479"/>
-<area shape="rect" id="node7" href="$d2/d6c/http__server__mock_8hpp_source.html" title=" " alt="" coords="5,437,147,479"/>
-<area shape="rect" id="node6" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="171,527,319,568"/>
-<area shape="rect" id="node10" href="$dd/d3c/base_8hpp_source.html" title=" " alt="" coords="1122,348,1289,389"/>
-<area shape="rect" id="node14" href="$d7/dc7/command_8hpp_source.html" title=" " alt="" coords="1702,437,1869,479"/>
-<area shape="rect" id="node20" href="$d0/d43/redis_2include_2userver_2storages_2redis_2impl_2request_8hpp_source.html" title=" " alt="" coords="1893,437,2059,479"/>
-<area shape="rect" id="node24" href="$d1/daf/parse__reply_8hpp_source.html" title=" " alt="" coords="667,527,834,568"/>
-<area shape="rect" id="node29" href="$d8/d9c/expire__reply_8hpp_source.html" title=" " alt="" coords="397,348,600,389"/>
-<area shape="rect" id="node30" href="$d6/d19/ttl__reply_8hpp_source.html" title=" " alt="" coords="624,348,800,389"/>
-<area shape="rect" id="node11" href="$dd/dc2/redis_2include_2userver_2storages_2redis_2client_8hpp.html" title="Redis client." alt="" coords="682,809,849,851"/>
-<area shape="rect" id="node12" href="$d6/ddc/command__options_8hpp_source.html" title=" " alt="" coords="925,623,1099,665"/>
-<area shape="rect" id="node16" href="$da/df3/sentinel_8hpp_source.html" title=" " alt="" coords="1558,623,1725,665"/>
-<area shape="rect" id="node17" href="$da/d8c/impl_2command__options_8hpp_source.html" title=" " alt="" coords="986,527,1193,568"/>
-<area shape="rect" id="node18" href="$d5/dcb/impl_2reply_8hpp_source.html" title=" " alt="" coords="1269,437,1435,479"/>
-<area shape="rect" id="node21" href="$df/d12/secdist__redis_8hpp_source.html" title=" " alt="" coords="1459,527,1631,568"/>
-<area shape="rect" id="node22" href="$d0/d5e/redis__config_8hpp_source.html" title=" " alt="" coords="1511,437,1678,479"/>
-<area shape="rect" id="node23" href="$d9/dd6/reply__types_8hpp_source.html" title=" " alt="" coords="597,437,763,479"/>
-<area shape="rect" id="node28" href="$dd/dfe/subscribe__client_8hpp.html" title="When you call Subscribe() or Psubscribe() command a new async task will be started...." alt="" coords="975,437,1142,479"/>
-<area shape="rect" id="node13" href="$db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp.html" title=" " alt="" coords="682,720,849,761"/>
-<area shape="rect" id="node15" href="$dc/dd9/redis__stats_8hpp_source.html" title=" " alt="" coords="1655,527,1822,568"/>
-<area shape="rect" id="node19" href="$dd/dc2/reply_8hpp_source.html" title=" " alt="" coords="1269,527,1435,568"/>
-<area shape="rect" id="node26" href="$d7/d98/redis_2include_2userver_2storages_2redis_2request_8hpp_source.html" title=" " alt="" coords="491,623,658,665"/>
-<area shape="rect" id="node27" href="$db/d81/request__data__base_8hpp_source.html" title=" " alt="" coords="414,527,591,568"/>
-<area shape="rect" id="node25" href="$da/df5/request__eval_8hpp_source.html" title=" " alt="" coords="491,720,658,761"/>
+<area shape="rect" id="node1" title="std::future state extended with &quot;cancelled&quot; state" alt="" coords="347,5,491,47"/>
+<area shape="rect" id="node2" href="$db/ddf/future_8hpp.html" title="std::future replacement for asynchronous tasks that works in pair with engine::Promise" alt="" coords="248,191,417,218"/>
+<area shape="rect" id="node31" href="$de/d5c/future__state_8hpp_source.html" title=" " alt="" coords="247,95,381,136"/>
+<area shape="rect" id="node32" href="$db/d30/wait__all__checked_8hpp.html" title="Provides engine::WaitAllChecked." alt="" coords="457,95,592,136"/>
+<area shape="rect" id="node3" href="$d2/de8/response__future_8hpp.html" title="Allows to perform a request concurrently with other work without creating an extra coroutine for wait..." alt="" coords="151,273,295,315"/>
+<area shape="rect" id="node8" href="$d1/d35/transaction__subrequest__data_8hpp_source.html" title=" " alt="" coords="238,631,427,687"/>
+<area shape="rect" id="node9" href="$d0/d28/redis_2include_2userver_2storages_2redis_2impl_2types_8hpp_source.html" title=" " alt="" coords="689,273,840,315"/>
+<area shape="rect" id="node4" href="$d1/d57/core_2include_2userver_2clients_2http_2request_8hpp.html" title="Class for creating and performing new http requests." alt="" coords="157,363,290,404"/>
+<area shape="rect" id="node5" href="$d3/db8/core_2include_2userver_2clients_2http_2client_8hpp.html" title="HTTP client that returns a HTTP request builder from CreateRequest()." alt="" coords="159,452,293,493"/>
+<area shape="rect" id="node7" href="$d2/d6c/http__server__mock_8hpp_source.html" title=" " alt="" coords="5,452,135,493"/>
+<area shape="rect" id="node6" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::Client." alt="" coords="159,541,293,583"/>
+<area shape="rect" id="node10" href="$dd/d3c/base_8hpp_source.html" title=" " alt="" coords="1043,363,1193,404"/>
+<area shape="rect" id="node14" href="$d7/dc7/command_8hpp_source.html" title=" " alt="" coords="1583,452,1733,493"/>
+<area shape="rect" id="node20" href="$d0/d43/redis_2include_2userver_2storages_2redis_2impl_2request_8hpp_source.html" title=" " alt="" coords="1757,452,1908,493"/>
+<area shape="rect" id="node24" href="$d1/daf/parse__reply_8hpp_source.html" title=" " alt="" coords="617,541,768,583"/>
+<area shape="rect" id="node29" href="$d8/d9c/expire__reply_8hpp_source.html" title=" " alt="" coords="370,363,549,404"/>
+<area shape="rect" id="node30" href="$d6/d19/ttl__reply_8hpp_source.html" title=" " alt="" coords="573,363,727,404"/>
+<area shape="rect" id="node11" href="$dd/dc2/redis_2include_2userver_2storages_2redis_2client_8hpp.html" title="Redis client." alt="" coords="627,824,777,865"/>
+<area shape="rect" id="node12" href="$d6/ddc/command__options_8hpp_source.html" title=" " alt="" coords="853,638,1010,679"/>
+<area shape="rect" id="node16" href="$da/df3/sentinel_8hpp_source.html" title=" " alt="" coords="1447,638,1597,679"/>
+<area shape="rect" id="node17" href="$da/d8c/impl_2command__options_8hpp_source.html" title=" " alt="" coords="920,541,1105,583"/>
+<area shape="rect" id="node18" href="$d5/dcb/impl_2reply_8hpp_source.html" title=" " alt="" coords="1181,452,1332,493"/>
+<area shape="rect" id="node21" href="$df/d12/secdist__redis_8hpp_source.html" title=" " alt="" coords="1356,541,1512,583"/>
+<area shape="rect" id="node22" href="$d0/d5e/redis__config_8hpp_source.html" title=" " alt="" coords="1408,452,1559,493"/>
+<area shape="rect" id="node23" href="$d9/dd6/reply__types_8hpp_source.html" title=" " alt="" coords="540,452,691,493"/>
+<area shape="rect" id="node28" href="$dd/dfe/subscribe__client_8hpp.html" title="When you call Subscribe() or Psubscribe() command a new async task will be started...." alt="" coords="904,452,1055,493"/>
+<area shape="rect" id="node13" href="$db/d36/redis_2include_2userver_2storages_2redis_2transaction_8hpp.html" title=" " alt="" coords="627,735,777,776"/>
+<area shape="rect" id="node15" href="$dc/dd9/redis__stats_8hpp_source.html" title=" " alt="" coords="1536,541,1687,583"/>
+<area shape="rect" id="node19" href="$dd/dc2/reply_8hpp_source.html" title=" " alt="" coords="1181,541,1332,583"/>
+<area shape="rect" id="node26" href="$d7/d98/redis_2include_2userver_2storages_2redis_2request_8hpp_source.html" title=" " alt="" coords="452,638,603,679"/>
+<area shape="rect" id="node27" href="$db/d81/request__data__base_8hpp_source.html" title=" " alt="" coords="380,541,541,583"/>
+<area shape="rect" id="node25" href="$da/df5/request__eval_8hpp_source.html" title=" " alt="" coords="452,735,603,776"/>
+<area shape="rect" id="node33" href="$db/d71/get__all_8hpp.html" title="Provides engine::GetAll." alt="" coords="460,184,589,225"/>
 </map>

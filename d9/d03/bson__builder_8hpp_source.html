@@ -88,90 +88,83 @@ $(function() {
   <div class="headertitle"><div class="title">bson_builder.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d9/d03/bson__builder_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d9/d03/bson__builder_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/formats/bson/bson_builder.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Internal helpers for inline document build</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">chrono</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstddef</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">compiler</span><span class="preprocessor">/</span><span class="preprocessor">select</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">bson</span><span class="preprocessor">/</span><span class="preprocessor">types</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">bson</span><span class="preprocessor">/</span><span class="preprocessor">value</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">fast_pimpl</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d84/select_8hpp.html" title="Utilities for selection of platform specific values.">userver/compiler/select.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../d0/d1c/mongo_2include_2userver_2formats_2bson_2types_8hpp.html" title="BSON-specific types.">userver/formats/bson/types.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d70/mongo_2include_2userver_2formats_2bson_2value_8hpp.html" title="Non-mutable BSON value representation.">userver/formats/bson/value.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d02/fast__pimpl_8hpp.html" title="Implements pimpl idiom without dynamic memory allocation.">userver/utils/fast_pimpl.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../dd/dee/namespaceformats_1_1bson.html" title="BSON support.">bson</a>::impl {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>formats::bson::impl {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class</span> MutableBson;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>MutableBson;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class</span> BsonBuilder {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span>BsonBuilder {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  BsonBuilder();</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">explicit</span> BsonBuilder(<span class="keyword">const</span> ValueImpl&amp;);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  ~BsonBuilder();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  BsonBuilder(<span class="keyword">const</span> BsonBuilder&amp;);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  BsonBuilder(BsonBuilder&amp;&amp;) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  BsonBuilder&amp; operator=(<span class="keyword">const</span> BsonBuilder&amp;);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  BsonBuilder&amp; operator=(BsonBuilder&amp;&amp;) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  BsonBuilder(BsonBuilder&amp;&amp;) noexcept;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  BsonBuilder&amp; operator=(const BsonBuilder&amp;);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  BsonBuilder&amp; operator=(BsonBuilder&amp;&amp;) noexcept;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  BsonBuilder&amp; Append(std::string_view key, std::nullptr_t);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  BsonBuilder&amp; Append(std::string_view key, int32_t);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  BsonBuilder&amp; Append(std::string_view key, int64_t);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  BsonBuilder&amp; Append(std::string_view key, uint64_t);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// Different typedefs for 64_t on macOS and on 32-bit platforms</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">__APPLE__</span><span class="preprocessor">)</span> <span class="preprocessor">||</span> <span class="preprocessor">!</span><span class="preprocessor">defined</span><span class="preprocessor">(</span>__x86_64__<span class="preprocessor">)</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keywordtype">long</span>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keywordtype">long</span> <span class="keywordtype">long</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keywordtype">double</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> <span class="keywordtype">char</span>*);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  BsonBuilder&amp; Append(std::string_view key, std::string_view);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  BsonBuilder&amp; Append(std::string_view key,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                      std::chrono::system_clock::time_point);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> <a class="code hl_class" href="../../d9/d41/classformats_1_1bson_1_1Oid.html" title="BSON ObjectId.">Oid</a>&amp;);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> <a class="code hl_class" href="../../de/d18/classformats_1_1bson_1_1Binary.html" title="BSON Binary.">Binary</a>&amp;);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> <a class="code hl_class" href="../../dd/dc1/classformats_1_1bson_1_1Decimal128.html" title="BSON Decimal128.">Decimal128</a>&amp;);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  BsonBuilder&amp; Append(std::string_view key, <a class="code hl_class" href="../../d3/da0/classformats_1_1bson_1_1MinKey.html" title="BSON MinKey.">MinKey</a>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  BsonBuilder&amp; Append(std::string_view key, <a class="code hl_class" href="../../dd/dfd/classformats_1_1bson_1_1MaxKey.html" title="BSON MaxKey.">MaxKey</a>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> <a class="code hl_class" href="../../d3/d82/classformats_1_1bson_1_1Timestamp.html" title="BSON Timestamp.">Timestamp</a>&amp;);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d67/classformats_1_1bson_1_1Value.html" title="Non-mutable BSON value representation.">Value</a>&amp;);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::nullptr_t);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">long</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">long</span> <span class="keywordtype">long</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <span class="keywordtype">double</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const <span class="keywordtype">char</span>*);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                      <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::chrono::system_clock::time_point);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const <a class="code hl_typedef" href="../../de/d6d/namespacestorages_1_1postgres.html#a7453f4428554e1e00d4068a82b5d584a" title="PostgreSQL Oid type.">Oid</a>&amp;);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const Binary&amp;);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const Decimal128&amp;);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, MinKey);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, MaxKey);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const <a class="code hl_function" href="../../db/dec/namespaceutils_1_1datetime.html#af4761bea1516e00c00392c2f573229bf" title="Converts time point to std::time_t.">Timestamp</a>&amp;);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const Value&amp;);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  BsonBuilder&amp; Append(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const bson_t*);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  const bson_t* Get() const;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  bson_t* Get();</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  BsonBuilder&amp; Append(std::string_view key, <span class="keyword">const</span> bson_t*);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  BsonHolder Extract();</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">const</span> bson_t* Get() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  bson_t* Get();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> private:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> AppendInto(bson_t*, <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::string_view key, const ValueImpl&amp;);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  BsonHolder Extract();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">void</span> AppendInto(bson_t*, std::string_view key, <span class="keyword">const</span> ValueImpl&amp;);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t kSize = compiler::SelectSize()  <span class="comment">//</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                           .For64Bit(8)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                           .For32Bit(4);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t kAlignment = <span class="keyword">alignof</span>(<span class="keywordtype">void</span>*);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  utils::FastPimpl&lt;MutableBson, kSize, kAlignment, utils::kStrictMatch&gt; bson_;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}  <span class="comment">// namespace formats::bson::impl</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>USERVER_NAMESPACE_END</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  static constexpr <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::<span class="keywordtype">size_t</span> kSize = <a class="code hl_namespace" href="../../da/d79/namespacecompiler.html" title="Compiler and C++ language related tweaks.">compiler</a>::<a class="code hl_typedef" href="../../da/d79/namespacecompiler.html#a1ef9c36f46f6383256f527ccdcf0f0d2" title="Alias for std::size_t values selection for the current compiler and standard library.">SelectSize</a>()  <span class="comment">//</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                           .For64Bit(8)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                           .For32Bit(4);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  static constexpr <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html" title="STL namespace.">std</a>::<span class="keywordtype">size_t</span> kAlignment = alignof(<span class="keywordtype">void</span>*);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::FastPimpl&lt;MutableBson, kSize, kAlignment, <a class="code hl_namespace" href="../../d6/d84/namespaceutils.html" title="Utilities.">utils</a>::kStrictMatch&gt; bson_;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}  <span class="comment">// namespace formats::bson::impl</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>USERVER_NAMESPACE_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:50:56 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:03 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

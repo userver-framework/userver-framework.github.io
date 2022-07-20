@@ -88,102 +88,53 @@ $(function() {
   <div class="headertitle"><div class="title">hash.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d9/d04/hash_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d9/d04/hash_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/crypto/hash.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief @copybrief crypto::hash</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string_view</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// Cryptographic hashing</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html">   11</a></span><span class="keyword">namespace</span> crypto::<a class="code hl_namespace" href="../../d4/daa/namespacecrypto_1_1hash.html" title="Cryptographic hashing.">hash</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html">   11</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d4/daa/namespacecrypto_1_1hash.html" title="Cryptographic hashing.">crypto::hash</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">enum</span> <span class="keyword">class</span> OutputEncoding { kBinary, kBase16, kHex = kBase16, kBase64 };</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">enum class</span> OutputEncoding { kBinary, kBase16, kHex = kBase16, kBase64 };</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">enum</span> <span class="keyword">class</span> Pad { kWith, kWithout };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">enum class</span> Pad { kWith, kWithout };</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">USERVER_NO_CRYPTOPP_BLAKE2</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// @brief Calculates Blake2-128, output format depends from encoding param</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifndef USERVER_NO_CRYPTOPP_BLAKE2</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#a639d49dd0fa46934a6e26c3b0295ac1f">   21</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#a639d49dd0fa46934a6e26c3b0295ac1f" title="Calculates Blake2-128, output format depends from encoding param.">Blake2b128</a>(std::string_view data,</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                       OutputEncoding encoding = OutputEncoding::kHex);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// @brief Calculates SHA-1, output format depends from encoding param</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#ac3f6e10e424b454afaa7acbc99a16a85">   28</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#ac3f6e10e424b454afaa7acbc99a16a85" title="Calculates SHA-1, output format depends from encoding param.">Sha1</a>(std::string_view data,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                 OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// @brief Calculates SHA-224, output format depends from encoding param</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#a8bdfd2f0da694ee497e11022e2128df5">   34</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#a8bdfd2f0da694ee497e11022e2128df5" title="Calculates SHA-224, output format depends from encoding param.">Sha224</a>(std::string_view data,</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                   OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/// @brief Calculates SHA-256, output format depends from encoding param</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#a42760e41cfa402c2bb1b09ed12a63af5">   40</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#a42760e41cfa402c2bb1b09ed12a63af5" title="Calculates SHA-256, output format depends from encoding param.">Sha256</a>(std::string_view data,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                   OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/// @brief Calculates SHA-384, output format depends from encoding param</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#a69d70ecf850d24e550aa8cf66b7fd5a8">   46</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#a69d70ecf850d24e550aa8cf66b7fd5a8" title="Calculates SHA-384, output format depends from encoding param.">Sha384</a>(std::string_view data,</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                   OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/// @brief Calculates SHA-512, output format depends from encoding param</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#a3e2771a2a99f5010d8b8175c3220da3b">   52</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#a3e2771a2a99f5010d8b8175c3220da3b" title="Calculates SHA-512, output format depends from encoding param.">Sha512</a>(std::string_view data,</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                   OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/// @brief Calculates HMAC (using SHA-1 hash), encodes result with `encoding`</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/// algorithm</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/// @param key HMAC key</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">/// @param message data to encode</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#a5806c944d5a7bb0777df36b121af5446">   61</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#a5806c944d5a7bb0777df36b121af5446" title="Calculates HMAC (using SHA-1 hash), encodes result with encoding algorithm.">HmacSha1</a>(std::string_view key, std::string_view message,</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                     OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">/// @brief Calculates HMAC (using SHA-256 hash), encodes result with `encoding`</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/// algorithm</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/// @param key HMAC key</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/// @param message data to encode</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#ab286f4730e742e9e01aed3a4f4b3cbd6">   70</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#ab286f4730e742e9e01aed3a4f4b3cbd6" title="Calculates HMAC (using SHA-256 hash), encodes result with encoding algorithm.">HmacSha256</a>(std::string_view key, std::string_view message,</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                       OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/// @brief Calculates HMAC (using SHA-384 hash), encodes result with `encoding`</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/// algorithm</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/// @param key HMAC key</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/// @param message data to encode</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#ac5715d3e37f542d0ae1cca3002e507f1">   79</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#ac5715d3e37f542d0ae1cca3002e507f1" title="Calculates HMAC (using SHA-384 hash), encodes result with encoding algorithm.">HmacSha384</a>(std::string_view key, std::string_view message,</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                       OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">/// @brief Calculates HMAC (using SHA-512 hash), encodes result with `encoding`</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">/// algorithm</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">/// @param key HMAC key</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">/// @param message data to encode</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d4/daa/namespacecrypto_1_1hash.html#ab5fdc33a00d7a3bccc6d173b0d476d1a">   88</a></span>std::string <a class="code hl_function" href="../../d4/daa/namespacecrypto_1_1hash.html#ab5fdc33a00d7a3bccc6d173b0d476d1a" title="Calculates HMAC (using SHA-512 hash), encodes result with encoding algorithm.">HmacSha512</a>(std::string_view key, std::string_view message,</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                       OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">/// Broken cryptographic hashes, must not be used except for compatibility</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../df/d40/namespacecrypto_1_1hash_1_1weak.html">   92</a></span><span class="keyword">namespace</span> <a class="code hl_namespace" href="../../df/d40/namespacecrypto_1_1hash_1_1weak.html" title="Broken cryptographic hashes, must not be used except for compatibility.">weak</a> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../df/d40/namespacecrypto_1_1hash_1_1weak.html">   92</a></span><span class="keyword">namespace </span>weak {</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">/// @brief Calculates MD5, output format depends from encoding param</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">/// @param encoding result could be returned as binary string or encoded</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/// @throws CryptoException internal library exception</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../df/d40/namespacecrypto_1_1hash_1_1weak.html#af7219a746b5b8c9ffdb3480ab2a33e0e">   97</a></span>std::string <a class="code hl_function" href="../../df/d40/namespacecrypto_1_1hash_1_1weak.html#af7219a746b5b8c9ffdb3480ab2a33e0e" title="Calculates MD5, output format depends from encoding param.">Md5</a>(std::string_view data,</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                OutputEncoding encoding = OutputEncoding::kHex);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
@@ -196,7 +147,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:52:42 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

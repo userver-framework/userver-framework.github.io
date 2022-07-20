@@ -88,40 +88,33 @@ $(function() {
   <div class="headertitle"><div class="title">write_to_stream.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d4/dea/write__to__stream_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="../../d4/dea/write__to__stream_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @file userver/formats/serialize/write_to_stream.hpp</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Common WriteToStream functions for SAX serializers.</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @ingroup userver_formats_serialize_sax</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">map</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">optional</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">unordered_map</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">variant</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">utils</span><span class="preprocessor">/</span><span class="preprocessor">meta</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="../../d7/df2/shared_2include_2userver_2utils_2meta_8hpp.html" title="Metaprogramming, template variables and concepts.">userver/utils/meta.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">userver</span><span class="preprocessor">/</span><span class="preprocessor">formats</span><span class="preprocessor">/</span><span class="preprocessor">common</span><span class="preprocessor">/</span><span class="preprocessor">meta</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="../../d1/de2/shared_2include_2userver_2formats_2common_2meta_8hpp.html" title="Metaprogramming helpers for converters detection.">userver/formats/common/meta.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>USERVER_NAMESPACE_BEGIN</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace</span> formats::<a class="code hl_namespace" href="../../d8/d69/namespaceformats_1_1serialize.html" title="Common serializers.">serialize</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/d69/namespaceformats_1_1serialize.html" title="Common serializers.">formats::serialize</a> {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// An ADL helper that allows searching for `WriteToStream` functions in</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// namespace of the stream. Derive your SAX string builder from this type.</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dc/db3/structformats_1_1serialize_1_1SaxStream.html">   23</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="../../dc/db3/structformats_1_1serialize_1_1SaxStream.html">SaxStream</a> {};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dc/db3/structformats_1_1serialize_1_1SaxStream.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dc/db3/structformats_1_1serialize_1_1SaxStream.html">SaxStream</a> {};</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// Variant serialization</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Types, <span class="keyword">typename</span> StringBuilder&gt;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d8/d69/namespaceformats_1_1serialize.html#ad00644f3c85c554fbdd0627319fe7878">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#ad00644f3c85c554fbdd0627319fe7878" title="Variant serialization.">WriteToStream</a>(<span class="keyword">const</span> std::variant&lt;Types...&gt;&amp; value, StringBuilder&amp; sw) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d8/d69/namespaceformats_1_1serialize.html#ad00644f3c85c554fbdd0627319fe7878">   27</a></span><span class="keywordtype">void</span> WriteToStream(<span class="keyword">const</span> std::variant&lt;Types...&gt;&amp; value, StringBuilder&amp; sw) {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">return</span> std::visit([&amp;sw](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item) { WriteToStream(item, sw); },</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                    value);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// std::optional serialization</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> StringBuilder&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d69/namespaceformats_1_1serialize.html#a9b75c628ca0b356347971a0f3aabe073">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#a9b75c628ca0b356347971a0f3aabe073" title="std::optional serialization">WriteToStream</a>(<span class="keyword">const</span> std::optional&lt;T&gt;&amp; value, StringBuilder&amp; sw) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d69/namespaceformats_1_1serialize.html#a9b75c628ca0b356347971a0f3aabe073">   34</a></span><span class="keywordtype">void</span> WriteToStream(<span class="keyword">const</span> std::optional&lt;T&gt;&amp; value, StringBuilder&amp; sw) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">if</span> (!value) {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    sw.WriteNull();</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span>;</div>
@@ -130,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  WriteToStream(*value, sw);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace</span> impl {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span>impl {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// We specialize kIsSerializeAllowedInWriteToStream to catch the usages of</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// Serialize for your type. Make sure that kIsSerializeAllowedInWriteToStream is</span></div>
@@ -144,7 +137,7 @@ $(function() {
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">typename</span> StringBuilder::ArrayGuard guard(sw);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : value) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// explicit cast for vector&lt;bool&gt; shenanigans</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    WriteToStream(<span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> meta::RangeValueType&lt;T&gt;&amp;&gt;(item), sw);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    WriteToStream(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>meta::RangeValueType&lt;T&gt;&amp;<span class="keyword">&gt;</span>(item), sw);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
@@ -154,20 +147,16 @@ $(function() {
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">typename</span> StringBuilder::ObjectGuard guard(sw);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : value) {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    sw.Key(key);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    WriteToStream(value, sw);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="../../da/d81/namespacedecimal64.html#aefab7afd1e43337052854ff312601e0f" title="Writes the Decimal to stream.">WriteToStream</a>(value, sw);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}  <span class="comment">// namespace impl</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/// Handle ranges, fall back to using formats::*::Serialize</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">///</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/// The signature of this WriteToStream must remain the less specialized one, so</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/// that it is not preferred over other functions.</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> StringBuilder&gt;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">   78</a></span><a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">std</a>::<a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">enable_if_t</a>&lt;!<a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">std</a>::<a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">is_arithmetic_v</a>&lt;<a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">T</a>&gt;&gt; <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">WriteToStream</a>(<span class="keyword">const</span> <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">T</a>&amp; <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">value</a>,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                                                         <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">StringBuilder</a>&amp; <a class="code hl_function" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">sw</a>) {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">using</span> Value = <span class="keyword">typename</span> StringBuilder::Value;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d8/d69/namespaceformats_1_1serialize.html#abc3696b936105f8755d532bc7209ca25">   78</a></span>std::enable_if_t&lt;!std::is_arithmetic_v&lt;T&gt;&gt; WriteToStream(<span class="keyword">const</span> T&amp; value,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                                                         StringBuilder&amp; sw) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">using </span>Value = <span class="keyword">typename</span> StringBuilder::Value;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (meta::kIsMap&lt;T&gt;) {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    impl::WriteToStreamDict(value, sw);</div>
@@ -177,13 +166,13 @@ $(function() {
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                  <span class="stringliteral">&quot;(boost::filesystem::path?) Please implement WriteToStream &quot;</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                  <span class="stringliteral">&quot;for your type&quot;</span>);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    impl::WriteToStreamArray(value, sw);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_namespace" href="../../d8/d5b/namespaceformats.html" title="Value formats representation, parsing and serialization.">common</a>::impl::kHasSerialize&lt;Value, T&gt;) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (common::impl::kHasSerialize&lt;Value, T&gt;) {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">static_assert</span>(</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        !<span class="keyword">sizeof</span>(T) ||</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            impl::kIsSerializeAllowedInWriteToStream&lt;T, StringBuilder&gt;,</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="stringliteral">&quot;SAX serialization falls back to Serialize call, which is not &quot;</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="stringliteral">&quot;allowed. Please implement WriteToStream for your type&quot;</span>);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    sw.WriteValue(Serialize(value, <a class="code hl_namespace" href="../../d8/d69/namespaceformats_1_1serialize.html" title="Common serializers.">serialize</a>::<a class="code hl_struct" href="../../d7/d48/structformats_1_1serialize_1_1To.html">To</a>&lt;Value&gt;{}));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    sw.WriteValue(Serialize(value, <a class="code hl_struct" href="../../d7/d48/structformats_1_1serialize_1_1To.html">serialize::To&lt;Value&gt;</a>{}));</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">static_assert</span>(!<span class="keyword">sizeof</span>(T),</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                  <span class="stringliteral">&quot;Please implement WriteToStream or Serialize for your type&quot;</span>);</div>
@@ -198,7 +187,7 @@ $(function() {
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:53:16 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:04 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {

@@ -267,10 +267,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a01458f76e98349020602bcb537ac534f"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d84/namespaceutils.html#a01458f76e98349020602bcb537ac534f">StrCat</a> (const Strings &amp;... strings)</td></tr>
 <tr class="memdesc:a01458f76e98349020602bcb537ac534f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates multiple <code>std::string_view</code>-convertible items.  <a href="../../d6/d84/namespaceutils.html#a01458f76e98349020602bcb537ac534f">More...</a><br /></td></tr>
 <tr class="separator:a01458f76e98349020602bcb537ac534f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6584be0d2316984130b2aae5c198adf3"><td class="memTemplParams" colspan="2">template&lt;class Map , class Key &gt; </td></tr>
-<tr class="memitem:a6584be0d2316984130b2aae5c198adf3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d84/namespaceutils.html#a6584be0d2316984130b2aae5c198adf3">FindOrNullptr</a> (Map &amp;map, const Key &amp;key)</td></tr>
-<tr class="memdesc:a6584be0d2316984130b2aae5c198adf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns nullptr if no key in associative container, otherwise returns pointer to value.  <a href="../../d6/d84/namespaceutils.html#a6584be0d2316984130b2aae5c198adf3">More...</a><br /></td></tr>
-<tr class="separator:a6584be0d2316984130b2aae5c198adf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718d98173957dede88ba7ac2718a207a"><td class="memTemplParams" colspan="2">template&lt;class Map , class Key &gt; </td></tr>
+<tr class="memitem:a718d98173957dede88ba7ac2718a207a"><td class="memTemplItemLeft" align="right" valign="top">auto *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d84/namespaceutils.html#a718d98173957dede88ba7ac2718a207a">FindOrNullptr</a> (Map &amp;map, const Key &amp;key)</td></tr>
+<tr class="memdesc:a718d98173957dede88ba7ac2718a207a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns nullptr if no key in associative container, otherwise returns pointer to value.  <a href="../../d6/d84/namespaceutils.html#a718d98173957dede88ba7ac2718a207a">More...</a><br /></td></tr>
+<tr class="separator:a718d98173957dede88ba7ac2718a207a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73095ec43d8b12b986a2c2de64bf5f74"><td class="memTemplParams" colspan="2">template&lt;class Map , class Key , class Default &gt; </td></tr>
 <tr class="memitem:a73095ec43d8b12b986a2c2de64bf5f74"><td class="memTemplItemLeft" align="right" valign="top">Map::mapped_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d84/namespaceutils.html#a73095ec43d8b12b986a2c2de64bf5f74">FindOrDefault</a> (Map &amp;map, const Key &amp;key, Default &amp;&amp;def)</td></tr>
 <tr class="memdesc:a73095ec43d8b12b986a2c2de64bf5f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns default value if no key in associative container, otherwise returns a copy of the stored value.  <a href="../../d6/d84/namespaceutils.html#a73095ec43d8b12b986a2c2de64bf5f74">More...</a><br /></td></tr>
@@ -689,7 +689,7 @@ template&lt;typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d29/any__movable_8hpp_source.html#l00215">215</a> of file <a class="el" href="../../d5/d29/any__movable_8hpp_source.html">any_movable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d29/any__movable_8hpp_source.html#l00219">219</a> of file <a class="el" href="../../d5/d29/any__movable_8hpp_source.html">any_movable.hpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +718,7 @@ template&lt;typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d29/any__movable_8hpp_source.html#l00199">199</a> of file <a class="el" href="../../d5/d29/any__movable_8hpp_source.html">any_movable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d29/any__movable_8hpp_source.html#l00201">201</a> of file <a class="el" href="../../d5/d29/any__movable_8hpp_source.html">any_movable.hpp</a>.</p>
 
 </div>
 </div>
@@ -778,7 +778,7 @@ template&lt;typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d29/any__movable_8hpp_source.html#l00207">207</a> of file <a class="el" href="../../d5/d29/any__movable_8hpp_source.html">any_movable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d29/any__movable_8hpp_source.html#l00211">211</a> of file <a class="el" href="../../d5/d29/any__movable_8hpp_source.html">any_movable.hpp</a>.</p>
 
 </div>
 </div>
@@ -901,7 +901,7 @@ template&lt;typename Container , typename Pred &gt; </div>
 
 <p>returns true if there is an element in container which satisfies the predicate </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dc2/algo_8hpp_source.html#l00150">150</a> of file <a class="el" href="../../db/dc2/algo_8hpp_source.html">algo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dc2/algo_8hpp_source.html#l00151">151</a> of file <a class="el" href="../../db/dc2/algo_8hpp_source.html">algo.hpp</a>.</p>
 
 </div>
 </div>
@@ -1189,8 +1189,8 @@ template&lt;class Map , class Key , class Default &gt; </div>
 
 </div>
 </div>
-<a id="a6584be0d2316984130b2aae5c198adf3" name="a6584be0d2316984130b2aae5c198adf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6584be0d2316984130b2aae5c198adf3">&#9670;&nbsp;</a></span>FindOrNullptr()</h2>
+<a id="a718d98173957dede88ba7ac2718a207a" name="a718d98173957dede88ba7ac2718a207a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718d98173957dede88ba7ac2718a207a">&#9670;&nbsp;</a></span>FindOrNullptr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1198,7 +1198,7 @@ template&lt;class Map , class Key , class Default &gt; </div>
 template&lt;class Map , class Key &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto utils::FindOrNullptr </td>
+          <td class="memname">auto * utils::FindOrNullptr </td>
           <td>(</td>
           <td class="paramtype">Map &amp;&#160;</td>
           <td class="paramname"><em>map</em>, </td>
@@ -3189,7 +3189,7 @@ template&lt;typename Tag , typename T , <a class="el" href="../../d6/d84/namespa
 <!-- start footer part -->
 <hr class="footer"/>
 <address class="footer"><small>
-Generated on Wed Jul 13 2022 14:55:15 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
+Generated on Wed Jul 20 2022 19:10:11 for userver by <a href="http://www.doxygen.org/index.html">Doxygen</a> 1.9.4
 </small></address>
 <script type="text/javascript">
 const LOWER_CASE_TRANSLITTERATION_MAPPING = {
