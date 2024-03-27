@@ -1,0 +1,42 @@
+<map id="userver/formats/yaml_fwd.hpp" name="userver/formats/yaml_fwd.hpp">
+<area shape="rect" id="Node000001" title="Forward declarations of formats::yaml types, formats::parse::To and formats::serialize::To." alt="" coords="582,5,745,45"/>
+<area shape="rect" id="Node000002" href="$d2/d67/schema_8hpp.html" title="JSON Schema&#45;like type definition." alt="" coords="586,93,741,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="666,59,666,93,661,93,661,59"/>
+<area shape="rect" id="Node000003" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="191,189,359,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="573,137,372,184,344,191,343,186,371,179,572,132"/>
+<area shape="rect" id="Node000007" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="383,189,562,229"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="614,142,512,191,510,186,611,137"/>
+<area shape="rect" id="Node000008" href="$df/d88/static__config__validator_8hpp_source.html" title=" " alt="" coords="625,284,825,324"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="717,139,738,157,755,180,762,208,759,236,750,263,739,285,734,282,745,261,754,235,757,208,750,182,734,161,713,143"/>
+<area shape="rect" id="Node000016" href="$d5/d4d/http__handler__flatbuf__base_8hpp.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="815,181,991,236"/>
+<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="725,136,837,179,835,184,724,141"/>
+<area shape="rect" id="Node000017" href="$de/db2/http__middleware__base_8hpp.html" title="Base classes for implementing custom middlewares." alt="" coords="1016,189,1220,229"/>
+<area shape="poly" id="edge16_Node000002_Node000017" title=" " alt="" coords="755,129,1004,179,1037,186,1036,191,1003,184,754,134"/>
+<area shape="rect" id="Node000018" href="$d2/d80/validate__static__config_8hpp_source.html" title=" " alt="" coords="586,181,741,236"/>
+<area shape="poly" id="edge17_Node000002_Node000018" title=" " alt="" coords="666,147,666,181,661,181,661,147"/>
+<area shape="rect" id="Node000019" href="$dc/d5f/merge__schemas_8hpp.html" title="Merge parent and child components schemas of static configs." alt="" coords="5,189,167,229"/>
+<area shape="poly" id="edge19_Node000002_Node000019" title=" " alt="" coords="573,126,390,148,180,184,150,191,148,186,179,179,390,143,572,121"/>
+<area shape="rect" id="Node000004" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="12,284,160,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="226,237,125,286,123,282,224,232"/>
+<area shape="rect" id="Node000005" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL." alt="" coords="184,284,343,324"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="274,243,268,284,263,284,269,242"/>
+<area shape="rect" id="Node000006" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="367,284,549,324"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="326,232,422,282,420,286,323,237"/>
+<area shape="rect" id="Node000009" href="$d9/d32/component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co..." alt="" coords="647,372,802,412"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="727,338,727,372,722,372,722,338"/>
+<area shape="rect" id="Node000010" href="$d1/d1c/common__component__list_8hpp.html" title="Returns the most common list of components with runtime config updates and HTTP client." alt="" coords="22,467,241,507"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="634,407,457,430,253,463,215,470,214,465,252,457,456,425,633,402"/>
+<area shape="rect" id="Node000011" href="$dc/dec/common__server__component__list_8hpp.html" title="Returns the most common list of components to start a fully functional server." alt="" coords="265,460,475,515"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="640,418,470,463,469,457,639,413"/>
+<area shape="rect" id="Node000012" href="$d9/d9e/minimal__component__list_8hpp.html" title="Returns a list of components to do basic logging, component initialization and configuration." alt="" coords="500,467,715,507"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="692,423,633,469,629,465,689,418"/>
+<area shape="rect" id="Node000013" href="$db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server." alt="" coords="739,460,947,515"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="761,418,812,458,808,462,758,422"/>
+<area shape="rect" id="Node000014" href="$da/d51/run_8hpp.html" title="Functions to start a service or tool with the specified config and components::ComponentList." alt="" coords="971,467,1126,507"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="805,413,960,457,985,465,984,470,959,463,803,418"/>
+<area shape="rect" id="Node000015" href="$d7/de0/daemon__run_8hpp.html" title="Functions to start a daemon with specified components list." alt="" coords="1150,467,1310,507"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="816,402,968,425,1139,457,1168,465,1167,470,1137,463,967,430,815,408"/>
+<area shape="poly" id="edge18_Node000018_Node000008" title=" " alt="" coords="690,246,715,282,710,285,686,249"/>
+<area shape="poly" id="edge20_Node000019_Node000004" title=" " alt="" coords="89,242,89,284,83,284,83,242"/>
+<area shape="poly" id="edge21_Node000019_Node000005" title=" " alt="" coords="135,233,229,282,226,286,133,237"/>
+</map>

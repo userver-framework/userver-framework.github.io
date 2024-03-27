@@ -1,0 +1,502 @@
+<!-- HTML header for doxygen 1.8.13-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <!-- Yandex.Metrika counter -->
+      <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(94541714, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+      </script>
+      <noscript><div><img src="https://mc.yandex.ru/watch/94541714" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      <!-- /Yandex.Metrika counter -->
+      <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+      <meta name="generator" content="Doxygen 1.10.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta property="og:image" content="../../logo_in_circle.png"/>
+      <meta property="og:image:alt" content="userver logo"/>
+      <link rel="icon" href="../../favicon.svg">
+      <title>userver: cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt; Class Template Reference</title>
+      <!-- Roboto fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      <!-- Roboto fonts -->
+      <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+      <script type="text/javascript" src="../../jquery.js"></script>
+      <!-- Highlight.js -->
+      <link rel="stylesheet" href="../../highlightjs.css">
+      <script src="../../highlight.min.js"></script>
+      <!-- Highlight.js -->
+      <!-- Roboto fonts -->
+      <script type="text/javascript" src="../../dynsections.js"></script>
+      <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+      <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+      <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+      <link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="../../customdoxygen.css">
+      <!-- Doxygen Awesome -->
+      <script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+      <script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+      <script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+      <script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+      <script type="text/javascript" src="../../toc.js"></script>
+      <script type="text/javascript">
+        DoxygenAwesomeDarkModeToggle.init()
+        DoxygenAwesomeFragmentCopyButton.init()
+        DoxygenAwesomeParagraphLink.init()
+        DoxygenAwesomeInteractiveToc.init()
+      </script>
+      <!-- Doxygen Awesome -->
+    </head>
+    <body>
+      <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+        <div id="titlearea">
+          <table cellspacing="0" cellpadding="0" style="width: 100%;">
+            <tbody>
+              <tr style="height: 56px;">
+                <td id="projectlogo"><a id='logo-anchor' href="../../index.html"><img alt="Logo" src="../../logo.svg"/></a></td>
+                <td id="projectalign">
+                  <div id="projectname">
+                    <a class="titlelink" href="../../index.html">userver
+                    </a>
+                  </div>
+                  <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework</a></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- end header part --><!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d9/d97/classcache_1_1LruCacheComponent.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="../../dc/de2/classcache_1_1LruCacheComponent-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="../../dd/d1c/group__userver__components.html">Components</a> &#124; <a class="el" href="../../da/d0c/group__userver__base__classes.html">Base Classes</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">userver/cache/lru_cache_component_base.hpp</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Key, typename Value, typename Hash = std::hash&lt;Key&gt;, typename Equal = std::equal_to&lt;Key&gt;&gt;<br />
+class cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt;</div><p>Base class for LRU-cache components. </p>
+<p>Provides facilities for creating LRU caches. You need to override LruCacheComponent::DoGetByKey to handle cache misses.</p>
+<p>Caching components must be configured in service config (see options below) and may be reconfigured dynamically via <a class="el" href="../../dd/d1a/classcomponents_1_1DynamicConfig.html" title="Component that stores the dynamic config.">components::DynamicConfig</a>.</p>
+<h2><a class="anchor" id="autotoc_md747"></a>
+Dynamic config</h2>
+<ul>
+<li><a class="el" href="../../de/d10/md_en_2schemas_2dynamic__configs.html#USERVER_LRU_CACHES">USERVER_LRU_CACHES</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md748"></a>
+Static options:</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Default value    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">size   </td><td class="markdownTableBodyNone">max amount of items to store in cache   </td><td class="markdownTableBodyNone">&ndash;    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ways   </td><td class="markdownTableBodyNone">number of ways for associative cache   </td><td class="markdownTableBodyNone">&ndash;    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">lifetime   </td><td class="markdownTableBodyNone">TTL for cache entries (0 is unlimited)   </td><td class="markdownTableBodyNone">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">config-settings   </td><td class="markdownTableBodyNone">enables dynamic reconfiguration with CacheConfigSet   </td><td class="markdownTableBodyNone">true   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md749"></a>
+Example usage:</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU-cache components.">userver/cache/lru_cache_component_base.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d9/d32/component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co...">userver/components/component_list.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using </span>Key = std::string;</div>
+<div class="line"><span class="keyword">using </span>Value = std::size_t;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>ExampleCacheComponent final</div>
+<div class="line">    : <span class="keyword">public</span> <a class="code hl_class" href="../../d9/d97/classcache_1_1LruCacheComponent.html" title="Base class for LRU-cache components.">cache::LruCacheComponent</a>&lt;Key, Value&gt; {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;example-cache&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  ExampleCacheComponent(<span class="keyword">const</span> <a class="code hl_class" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a>&amp; config,</div>
+<div class="line">                        <span class="keyword">const</span> <a class="code hl_class" href="../../da/db1/classcomponents_1_1ComponentContext.html" title="Class to retrieve other components.">components::ComponentContext</a>&amp; context)</div>
+<div class="line">      : ::<a class="code hl_namespace" href="../../db/d8d/namespacecache.html" title="Utilities for caching.">cache</a>::LruCacheComponent&lt;Key, Value&gt;(config, context) {}</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  Value DoGetByKey(<span class="keyword">const</span> Key&amp; key)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keywordflow">return</span> GetValueForExpiredKeyFromRemote(key);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  Value GetValueForExpiredKeyFromRemote(<span class="keyword">const</span> Key&amp; key);</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>Do not forget to <a class="el" href="../../dd/d1c/group__userver__components.html">add the component to component list</a>: </p><div class="fragment"><div class="line">  <span class="keyword">auto</span> component_list = <a class="code hl_function" href="../../dd/d1c/group__userver__components.html#gae24db3a604b813e3f36497b0a1c7d792" title="Returns a list of components to do basic logging, component initialization and configuration.">components::MinimalComponentList</a>();</div>
+<div class="line">  component_list.Append&lt;ExampleCacheComponent&gt;();</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md750"></a>
+Example config:</h2>
+<div class="fragment"><div class="line"><span class="stringliteral"># yaml</span></div>
+<div class="line"><span class="stringliteral">    example-cache:</span></div>
+<div class="line"><span class="stringliteral">      size: 1</span></div>
+<div class="line"><span class="stringliteral">      ways: 1</span></div>
+<div class="line"><span class="stringliteral">      lifetime: 1s # 0 (unlimited) by default</span></div>
+<div class="line"><span class="stringliteral">      config-settings: false # true by default</span></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00077">77</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Inheritance diagram for cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d3e/classcache_1_1LruCacheComponent__inherit__graph.svg" width="483" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for cache::LruCacheComponent&lt; Key, Value, Hash, Equal &gt;:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d25/classcache_1_1LruCacheComponent__coll__graph.svg" width="483" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a71c14f8dc681b0f9c5a18ace90bc9a45" id="r_a71c14f8dc681b0f9c5a18ace90bc9a45"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71c14f8dc681b0f9c5a18ace90bc9a45">Cache</a> = <a class="el" href="../../d1/d22/classcache_1_1ExpirableLruCache.html">ExpirableLruCache</a>&lt;Key, Value, Hash, Equal&gt;</td></tr>
+<tr class="separator:a71c14f8dc681b0f9c5a18ace90bc9a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c964f48a56584c684eafea5388e864" id="r_ac7c964f48a56584c684eafea5388e864"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7c964f48a56584c684eafea5388e864">CacheWrapper</a> = <a class="el" href="../../dd/ddb/classcache_1_1LruCacheWrapper.html">LruCacheWrapper</a>&lt;Key, Value, Hash, Equal&gt;</td></tr>
+<tr class="separator:ac7c964f48a56584c684eafea5388e864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a95c13cae6013498708a14c15f55cc539" id="r_a95c13cae6013498708a14c15f55cc539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95c13cae6013498708a14c15f55cc539">LruCacheComponent</a> (const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a> &amp;, const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">components::ComponentContext</a> &amp;)</td></tr>
+<tr class="separator:a95c13cae6013498708a14c15f55cc539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58d096d5088c9c2b30963d2a99d7c42" id="r_ab58d096d5088c9c2b30963d2a99d7c42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/ddb/classcache_1_1LruCacheWrapper.html">CacheWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab58d096d5088c9c2b30963d2a99d7c42">GetCache</a> ()</td></tr>
+<tr class="separator:ab58d096d5088c9c2b30963d2a99d7c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcomponents_1_1LoggableComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcomponents_1_1LoggableComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">components::LoggableComponentBase</a></td></tr>
+<tr class="memitem:a7b2b853a1b16547cc5e1b8c54f69c376 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a7b2b853a1b16547cc5e1b8c54f69c376"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggableComponentBase</b> (const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> &amp;, const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">ComponentContext</a> &amp;)</td></tr>
+<tr class="separator:a7b2b853a1b16547cc5e1b8c54f69c376 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8840d7199368a6425d4c4fc87ffe2e9 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_af8840d7199368a6425d4c4fc87ffe2e9"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggableComponentBase</b> (<a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">LoggableComponentBase</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:af8840d7199368a6425d4c4fc87ffe2e9 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492b43c837c34c90e1ccc4fd8264878f inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a492b43c837c34c90e1ccc4fd8264878f"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggableComponentBase</b> (const <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">LoggableComponentBase</a> &amp;)=delete</td></tr>
+<tr class="separator:a492b43c837c34c90e1ccc4fd8264878f inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9408f7cb9eace1fe8b9b5ff68c901015 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a9408f7cb9eace1fe8b9b5ff68c901015"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#a9408f7cb9eace1fe8b9b5ff68c901015">~LoggableComponentBase</a> () override=default</td></tr>
+<tr class="separator:a9408f7cb9eace1fe8b9b5ff68c901015 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5544da96b967a63593cf4900a290000 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_aa5544da96b967a63593cf4900a290000"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f">ComponentHealth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#aa5544da96b967a63593cf4900a290000">GetComponentHealth</a> () const override</td></tr>
+<tr class="separator:aa5544da96b967a63593cf4900a290000 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c5e6609069a774fd8cbe2a622e34b3 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_ad2c5e6609069a774fd8cbe2a622e34b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#ad2c5e6609069a774fd8cbe2a622e34b3">OnLoadingCancelled</a> () override</td></tr>
+<tr class="separator:ad2c5e6609069a774fd8cbe2a622e34b3 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcabdef99950f3c2abec1ff0069f573 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_acdcabdef99950f3c2abec1ff0069f573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#acdcabdef99950f3c2abec1ff0069f573">OnAllComponentsLoaded</a> () override</td></tr>
+<tr class="separator:acdcabdef99950f3c2abec1ff0069f573 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff153ac78db3fbf3c3689e324e03ad5 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a5ff153ac78db3fbf3c3689e324e03ad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#a5ff153ac78db3fbf3c3689e324e03ad5">OnAllComponentsAreStopping</a> () override</td></tr>
+<tr class="separator:a5ff153ac78db3fbf3c3689e324e03ad5 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a704369c7571f5234601411d28cb55d01" id="r_a704369c7571f5234601411d28cb55d01"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a704369c7571f5234601411d28cb55d01">GetStaticConfigSchema</a> ()</td></tr>
+<tr class="separator:a704369c7571f5234601411d28cb55d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classcomponents_1_1LoggableComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classcomponents_1_1LoggableComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">components::LoggableComponentBase</a></td></tr>
+<tr class="memitem:a0444cf509b540497db68eb59782ac00c inherit pub_static_methods_classcomponents_1_1LoggableComponentBase" id="r_a0444cf509b540497db68eb59782ac00c"><td class="memItemLeft" align="right" valign="top">
+static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticConfigSchema</b> ()</td></tr>
+<tr class="separator:a0444cf509b540497db68eb59782ac00c inherit pub_static_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0dae562b3e207fe33d56ee520d4a7692" id="r_a0dae562b3e207fe33d56ee520d4a7692"><td class="memItemLeft" align="right" valign="top"><a id="a0dae562b3e207fe33d56ee520d4a7692" name="a0dae562b3e207fe33d56ee520d4a7692"></a>
+virtual Value&#160;</td><td class="memItemRight" valign="bottom"><b>DoGetByKey</b> (const Key &amp;key)=0</td></tr>
+<tr class="separator:a0dae562b3e207fe33d56ee520d4a7692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b050946ff09fb454e9c87bd6220ea4" id="r_a23b050946ff09fb454e9c87bd6220ea4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d1/d22/classcache_1_1ExpirableLruCache.html">Cache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23b050946ff09fb454e9c87bd6220ea4">GetCacheRaw</a> ()</td></tr>
+<tr class="separator:a23b050946ff09fb454e9c87bd6220ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a71c14f8dc681b0f9c5a18ace90bc9a45" name="a71c14f8dc681b0f9c5a18ace90bc9a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c14f8dc681b0f9c5a18ace90bc9a45">&#9670;&#160;</a></span>Cache</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash  = std::hash&lt;Key&gt;, typename Equal  = std::equal_to&lt;Key&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::Cache = <a class="el" href="../../d1/d22/classcache_1_1ExpirableLruCache.html">ExpirableLruCache</a>&lt;Key, Value, Hash, Equal&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac7c964f48a56584c684eafea5388e864" name="ac7c964f48a56584c684eafea5388e864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c964f48a56584c684eafea5388e864">&#9670;&#160;</a></span>CacheWrapper</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash  = std::hash&lt;Key&gt;, typename Equal  = std::equal_to&lt;Key&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::CacheWrapper = <a class="el" href="../../dd/ddb/classcache_1_1LruCacheWrapper.html">LruCacheWrapper</a>&lt;Key, Value, Hash, Equal&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a95c13cae6013498708a14c15f55cc539" name="a95c13cae6013498708a14c15f55cc539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c13cae6013498708a14c15f55cc539">&#9670;&#160;</a></span>LruCacheComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash , typename Equal &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::LruCacheComponent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">components::ComponentConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">components::ComponentContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>context</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00125">125</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad7e854da8a79c58e9de32f41d7937572" name="ad7e854da8a79c58e9de32f41d7937572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e854da8a79c58e9de32f41d7937572">&#9670;&#160;</a></span>~LruCacheComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash , typename Equal &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::~<a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">LruCacheComponent</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00164">164</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab58d096d5088c9c2b30963d2a99d7c42" name="ab58d096d5088c9c2b30963d2a99d7c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58d096d5088c9c2b30963d2a99d7c42">&#9670;&#160;</a></span>GetCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash , typename Equal &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::CacheWrapper <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::GetCache </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00176">176</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a23b050946ff09fb454e9c87bd6220ea4" name="a23b050946ff09fb454e9c87bd6220ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b050946ff09fb454e9c87bd6220ea4">&#9670;&#160;</a></span>GetCacheRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash  = std::hash&lt;Key&gt;, typename Equal  = std::equal_to&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="../../d1/d22/classcache_1_1ExpirableLruCache.html">Cache</a> &gt; <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::GetCacheRaw </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00095">95</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a704369c7571f5234601411d28cb55d01" name="a704369c7571f5234601411d28cb55d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704369c7571f5234601411d28cb55d01">&#9670;&#160;</a></span>GetStaticConfigSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value , typename Hash , typename Equal &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a> <a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">cache::LruCacheComponent</a>&lt; Key, Value, Hash, Equal &gt;::GetStaticConfigSchema </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html#l00213">213</a> of file <a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>userver/cache/<a class="el" href="../../d9/daf/lru__cache__component__base_8hpp_source.html">lru_cache_component_base.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.13-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../db/d8d/namespacecache.html">cache</a></li><li class="navelem"><a class="el" href="../../d9/d97/classcache_1_1LruCacheComponent.html">LruCacheComponent</a></li>
+    <li class="footer">Generated on Wed Mar 27 2024 19:21:59 for userver by
+    <a href="https://www.doxygen.org/index.html">Doxygen</a> 1.10.0</li>
+  </ul>
+</div>
+<script type="text/javascript" src="../../codeHighlight.js"></script>
+<script type="text/javascript" src="../../telegramLanguage.js"></script>
+<script type="text/javascript" src="../../styledBtn.js"></script>
+<script type="text/javascript" src="../../search.js"></script>
+<script type="text/javascript" src="../../header.js"></script>
+<script type="text/javascript" src="../../searchHighlight.js"></script>
+<script>
+  const addLinks = () =>  {
+      const links = document.createElement('div')
+      links.id = 'links';
+      links.innerHTML = `
+          <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
+              <img src="../../github_logo.svg" alt="Github" class="gh-logo"/> 
+          </a>
+          <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+              <img src="../../telegram_logo.svg" alt="Telegram"/>
+          </a>
+      `
+      document.getElementById('main-navbar').appendChild(links);
+  }
+  $(function() {
+    $(document).ready(function() {
+      setTimeout(() => {
+      init_all_results_button();
+      init_header();
+      addLinks();
+      changeTelegramChannelLanguageForRussianSpeakingUser();
+      document.getElementById("side-nav").style.display = "none"; // TODO: disable treeview and save sticky footer
+      const isLanding = document.getElementById('landing_logo_id') !== null;
+      if (isLanding) return;
+      highlight_code();
+      styleNavButtons(); // TODO: code style?
+    }, 0);
+    });
+  });
+</script>
+</body>
+</html>

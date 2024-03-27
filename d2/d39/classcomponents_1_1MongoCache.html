@@ -1,0 +1,516 @@
+<!-- HTML header for doxygen 1.8.13-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <!-- Yandex.Metrika counter -->
+      <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(94541714, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+      </script>
+      <noscript><div><img src="https://mc.yandex.ru/watch/94541714" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      <!-- /Yandex.Metrika counter -->
+      <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+      <meta name="generator" content="Doxygen 1.10.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta property="og:image" content="../../logo_in_circle.png"/>
+      <meta property="og:image:alt" content="userver logo"/>
+      <link rel="icon" href="../../favicon.svg">
+      <title>userver: components::MongoCache&lt; MongoCacheTraits &gt; Class Template Reference</title>
+      <!-- Roboto fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      <!-- Roboto fonts -->
+      <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+      <script type="text/javascript" src="../../jquery.js"></script>
+      <!-- Highlight.js -->
+      <link rel="stylesheet" href="../../highlightjs.css">
+      <script src="../../highlight.min.js"></script>
+      <!-- Highlight.js -->
+      <!-- Roboto fonts -->
+      <script type="text/javascript" src="../../dynsections.js"></script>
+      <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+      <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+      <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+      <link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="../../customdoxygen.css">
+      <!-- Doxygen Awesome -->
+      <script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+      <script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+      <script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+      <script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+      <script type="text/javascript" src="../../toc.js"></script>
+      <script type="text/javascript">
+        DoxygenAwesomeDarkModeToggle.init()
+        DoxygenAwesomeFragmentCopyButton.init()
+        DoxygenAwesomeParagraphLink.init()
+        DoxygenAwesomeInteractiveToc.init()
+      </script>
+      <!-- Doxygen Awesome -->
+    </head>
+    <body>
+      <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+        <div id="titlearea">
+          <table cellspacing="0" cellpadding="0" style="width: 100%;">
+            <tbody>
+              <tr style="height: 56px;">
+                <td id="projectlogo"><a id='logo-anchor' href="../../index.html"><img alt="Logo" src="../../logo.svg"/></a></td>
+                <td id="projectalign">
+                  <div id="projectname">
+                    <a class="titlelink" href="../../index.html">userver
+                    </a>
+                  </div>
+                  <div id="projectbrief"><a class="titlelink" href="../../index.html">C++ Async Framework</a></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- end header part --><!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d2/d39/classcomponents_1_1MongoCache.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="../../d2/d33/classcomponents_1_1MongoCache-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">components::MongoCache&lt; MongoCacheTraits &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/d1c/group__userver__components.html">Components</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">userver/cache/base_mongo_cache.hpp</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class MongoCacheTraits&gt;<br />
+class components::MongoCache&lt; MongoCacheTraits &gt;</div><p>Base class for all caches polling mongo collection </p>
+<p>You have to provide a traits class in order to use this.</p>
+<h3><a class="anchor" id="autotoc_md882"></a>
+Avoiding memory leaks</h3>
+<p>See <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">components::CachingComponentBase</a></p>
+<h2><a class="anchor" id="autotoc_md883"></a>
+Static options:</h2>
+<p>All options of <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html" title="Base class for caching components.">CachingComponentBase</a> and </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Default value    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">update-correction   </td><td class="markdownTableBodyNone">adjusts incremental updates window to overlap with previous update   </td><td class="markdownTableBodyNone">0   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md884"></a>
+Traits example:</h2>
+<p>All fields below (except for function overrides) are mandatory.</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>MongoCacheTraitsExample {</div>
+<div class="line">  <span class="comment">// Component name for component</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view kName = <span class="stringliteral">&quot;mongo-dynamic-config&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Collection to read from</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kMongoCollectionsField =</div>
+<div class="line">      &amp;storages::mongo::Collections::config;</div>
+<div class="line">  <span class="comment">// Update field name to use for incremental update (optional).</span></div>
+<div class="line">  <span class="comment">// When missing, incremental update is disabled.</span></div>
+<div class="line">  <span class="comment">// Please use reference here to avoid global variables</span></div>
+<div class="line">  <span class="comment">// initialization order issues.</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> std::string&amp; kMongoUpdateFieldName =</div>
+<div class="line">      mongo::db::taxi::config::kUpdated;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Cache element type</span></div>
+<div class="line">  <span class="keyword">using </span>ObjectType = CachedObject;</div>
+<div class="line">  <span class="comment">// Cache element field name that is used as an index in the cache map</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> kKeyField = &amp;CachedObject::name;</div>
+<div class="line">  <span class="comment">// Type of kKeyField</span></div>
+<div class="line">  <span class="keyword">using </span>KeyType = std::string;</div>
+<div class="line">  <span class="comment">// Type of cache map, e.g. unordered_map, map, bimap</span></div>
+<div class="line">  <span class="keyword">using </span>DataType = std::unordered_map&lt;KeyType, ObjectType&gt;;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Whether the cache prefers to read from replica (if true, you might get stale data)</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> kIsSecondaryPreferred = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Optional function that overrides BSON to ObjectType conversion</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> DeserializeObject = &amp;CachedObject::FromBson;</div>
+<div class="line">  <span class="comment">// or</span></div>
+<div class="line">  <span class="keyword">static</span> ObjectType DeserializeObject(<span class="keyword">const</span> <a class="code hl_class" href="../../d9/d49/classformats_1_1bson_1_1Document.html" title="BSON document.">formats::bson::Document</a>&amp; doc) {</div>
+<div class="line">    <span class="keywordflow">return</span> doc[<span class="stringliteral">&quot;value&quot;</span>].<a class="code hl_function" href="../../db/d67/classformats_1_1bson_1_1Value.html#a8f7a2fb9c0c768bad2412f89f0c34ea8">As</a>&lt;ObjectType&gt;();</div>
+<div class="line">  }</div>
+<div class="line">  <span class="comment">// (default implementation calls doc.As&lt;ObjectType&gt;())</span></div>
+<div class="line">  <span class="comment">// For using default implementation</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> kUseDefaultDeserializeObject = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Optional function that overrides data retrieval operation</span></div>
+<div class="line">  <span class="keyword">static</span> <a class="code hl_class" href="../../d0/d55/classstorages_1_1mongo_1_1operations_1_1Find.html" title="Retrieves documents matching the filter.">storages::mongo::operations::Find</a> GetFindOperation(</div>
+<div class="line">     <a class="code hl_enumeration" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1" title="Type of CachingComponentBase update.">cache::UpdateType</a> type,</div>
+<div class="line">     <span class="keyword">const</span> std::chrono::system_clock::time_point&amp; last_update,</div>
+<div class="line">     <span class="keyword">const</span> std::chrono::system_clock::time_point&amp; now,</div>
+<div class="line">     <span class="keyword">const</span> std::chrono::system_clock::duration&amp; correction) {</div>
+<div class="line">    mongo::operations::Find find_op({});</div>
+<div class="line">    find_op.SetOption(mongo::options::Projection{<span class="stringliteral">&quot;key&quot;</span>, <span class="stringliteral">&quot;value&quot;</span>});</div>
+<div class="line">    <span class="keywordflow">return</span> find_op;</div>
+<div class="line">  }</div>
+<div class="line">  <span class="comment">// (default implementation queries kMongoUpdateFieldName: {$gt: last_update}</span></div>
+<div class="line">  <span class="comment">// for incremental updates, and {} for full updates)</span></div>
+<div class="line">  <span class="comment">// For using default implementation</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> kUseDefaultFindOperation = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Whether update part of the cache even if failed to parse some documents</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> kAreInvalidDocumentsSkipped = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Component to get the collections</span></div>
+<div class="line">  <span class="keyword">using </span>MongoCollectionsComponent = components::MongoCollections;</div>
+<div class="line">};</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html#l00122">122</a> of file <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">base_mongo_cache.hpp</a>.</p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Inheritance diagram for components::MongoCache&lt; MongoCacheTraits &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d23/classcomponents_1_1MongoCache__inherit__graph.svg" width="494" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for components::MongoCache&lt; MongoCacheTraits &gt;:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d85/classcomponents_1_1MongoCache__coll__graph.svg" width="1172" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0a0ea8ee583a4638c180c1a14d5bddee" id="r_a0a0ea8ee583a4638c180c1a14d5bddee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a0ea8ee583a4638c180c1a14d5bddee">MongoCache</a> (const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> &amp;, const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">ComponentContext</a> &amp;)</td></tr>
+<tr class="separator:a0a0ea8ee583a4638c180c1a14d5bddee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcomponents_1_1CachingComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcomponents_1_1CachingComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html">components::CachingComponentBase&lt; MongoCacheTraits::DataType &gt;</a></td></tr>
+<tr class="memitem:a31f5021c129ab52ef4dd7be6f6f0eedc inherit pub_methods_classcomponents_1_1CachingComponentBase" id="r_a31f5021c129ab52ef4dd7be6f6f0eedc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a31f5021c129ab52ef4dd7be6f6f0eedc">CachingComponentBase</a> (const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> &amp;config, const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">ComponentContext</a> &amp;)</td></tr>
+<tr class="separator:a31f5021c129ab52ef4dd7be6f6f0eedc inherit pub_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1006090c0e080a71ec8e6a9f41288d5f inherit pub_methods_classcomponents_1_1CachingComponentBase" id="r_a1006090c0e080a71ec8e6a9f41288d5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d70/classutils_1_1SharedReadablePtr.html">utils::SharedReadablePtr</a>&lt; MongoCacheTraits::DataType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a1006090c0e080a71ec8e6a9f41288d5f">Get</a> () const</td></tr>
+<tr class="separator:a1006090c0e080a71ec8e6a9f41288d5f inherit pub_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607052516bcf51f06ebf3afc4659f77f inherit pub_methods_classcomponents_1_1CachingComponentBase" id="r_a607052516bcf51f06ebf3afc4659f77f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d70/classutils_1_1SharedReadablePtr.html">utils::SharedReadablePtr</a>&lt; MongoCacheTraits::DataType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a607052516bcf51f06ebf3afc4659f77f">GetUnsafe</a> () const</td></tr>
+<tr class="separator:a607052516bcf51f06ebf3afc4659f77f inherit pub_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8dd8aab0c2d9d98271b4c9d4591f15 inherit pub_methods_classcomponents_1_1CachingComponentBase" id="r_a2a8dd8aab0c2d9d98271b4c9d4591f15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/de6/classconcurrent_1_1AsyncEventSubscriberScope.html">concurrent::AsyncEventSubscriberScope</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a2a8dd8aab0c2d9d98271b4c9d4591f15">UpdateAndListen</a> (Class *obj, std::string name, void(Class::*func)(const std::shared_ptr&lt; const MongoCacheTraits::DataType &gt; &amp;))</td></tr>
+<tr class="separator:a2a8dd8aab0c2d9d98271b4c9d4591f15 inherit pub_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50fdaf580d571bc83f69ebe4de90cb74 inherit pub_methods_classcomponents_1_1CachingComponentBase" id="r_a50fdaf580d571bc83f69ebe4de90cb74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d38/classconcurrent_1_1AsyncEventChannel.html">concurrent::AsyncEventChannel</a>&lt; const std::shared_ptr&lt; const MongoCacheTraits::DataType &gt; &amp; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a50fdaf580d571bc83f69ebe4de90cb74">GetEventChannel</a> ()</td></tr>
+<tr class="separator:a50fdaf580d571bc83f69ebe4de90cb74 inherit pub_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcomponents_1_1LoggableComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcomponents_1_1LoggableComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">components::LoggableComponentBase</a></td></tr>
+<tr class="memitem:a7b2b853a1b16547cc5e1b8c54f69c376 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a7b2b853a1b16547cc5e1b8c54f69c376"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggableComponentBase</b> (const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> &amp;, const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">ComponentContext</a> &amp;)</td></tr>
+<tr class="separator:a7b2b853a1b16547cc5e1b8c54f69c376 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8840d7199368a6425d4c4fc87ffe2e9 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_af8840d7199368a6425d4c4fc87ffe2e9"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggableComponentBase</b> (<a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">LoggableComponentBase</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:af8840d7199368a6425d4c4fc87ffe2e9 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492b43c837c34c90e1ccc4fd8264878f inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a492b43c837c34c90e1ccc4fd8264878f"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggableComponentBase</b> (const <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">LoggableComponentBase</a> &amp;)=delete</td></tr>
+<tr class="separator:a492b43c837c34c90e1ccc4fd8264878f inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9408f7cb9eace1fe8b9b5ff68c901015 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a9408f7cb9eace1fe8b9b5ff68c901015"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#a9408f7cb9eace1fe8b9b5ff68c901015">~LoggableComponentBase</a> () override=default</td></tr>
+<tr class="separator:a9408f7cb9eace1fe8b9b5ff68c901015 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5544da96b967a63593cf4900a290000 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_aa5544da96b967a63593cf4900a290000"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d1f/namespacecomponents.html#a7a041524f23130330b0aec16f1e3410f">ComponentHealth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#aa5544da96b967a63593cf4900a290000">GetComponentHealth</a> () const override</td></tr>
+<tr class="separator:aa5544da96b967a63593cf4900a290000 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c5e6609069a774fd8cbe2a622e34b3 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_ad2c5e6609069a774fd8cbe2a622e34b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#ad2c5e6609069a774fd8cbe2a622e34b3">OnLoadingCancelled</a> () override</td></tr>
+<tr class="separator:ad2c5e6609069a774fd8cbe2a622e34b3 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcabdef99950f3c2abec1ff0069f573 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_acdcabdef99950f3c2abec1ff0069f573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#acdcabdef99950f3c2abec1ff0069f573">OnAllComponentsLoaded</a> () override</td></tr>
+<tr class="separator:acdcabdef99950f3c2abec1ff0069f573 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff153ac78db3fbf3c3689e324e03ad5 inherit pub_methods_classcomponents_1_1LoggableComponentBase" id="r_a5ff153ac78db3fbf3c3689e324e03ad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html#a5ff153ac78db3fbf3c3689e324e03ad5">OnAllComponentsAreStopping</a> () override</td></tr>
+<tr class="separator:a5ff153ac78db3fbf3c3689e324e03ad5 inherit pub_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac38ea0769c4f6c4762db6f88b50b3a17" id="r_ac38ea0769c4f6c4762db6f88b50b3a17"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac38ea0769c4f6c4762db6f88b50b3a17">GetStaticConfigSchema</a> ()</td></tr>
+<tr class="separator:ac38ea0769c4f6c4762db6f88b50b3a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classcomponents_1_1CachingComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classcomponents_1_1CachingComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html">components::CachingComponentBase&lt; MongoCacheTraits::DataType &gt;</a></td></tr>
+<tr class="memitem:a91eb4c6fa488f546fbddc25669ae270f inherit pub_static_methods_classcomponents_1_1CachingComponentBase" id="r_a91eb4c6fa488f546fbddc25669ae270f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a91eb4c6fa488f546fbddc25669ae270f">GetStaticConfigSchema</a> ()</td></tr>
+<tr class="separator:a91eb4c6fa488f546fbddc25669ae270f inherit pub_static_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classcomponents_1_1LoggableComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classcomponents_1_1LoggableComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d5/d69/classcomponents_1_1LoggableComponentBase.html">components::LoggableComponentBase</a></td></tr>
+<tr class="memitem:a0444cf509b540497db68eb59782ac00c inherit pub_static_methods_classcomponents_1_1LoggableComponentBase" id="r_a0444cf509b540497db68eb59782ac00c"><td class="memItemLeft" align="right" valign="top">
+static <a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticConfigSchema</b> ()</td></tr>
+<tr class="separator:a0444cf509b540497db68eb59782ac00c inherit pub_static_methods_classcomponents_1_1LoggableComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ab532ed11b052929786b83a37b2dcd884" id="r_ab532ed11b052929786b83a37b2dcd884"><td class="memItemLeft" align="right" valign="top">static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab532ed11b052929786b83a37b2dcd884">kName</a> = MongoCacheTraits::kName</td></tr>
+<tr class="separator:ab532ed11b052929786b83a37b2dcd884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classcomponents_1_1CachingComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classcomponents_1_1CachingComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html">components::CachingComponentBase&lt; MongoCacheTraits::DataType &gt;</a></td></tr>
+<tr class="memitem:a7705f2d6d5e3cebb43faf3aebdfa0a0d inherit pub_types_classcomponents_1_1CachingComponentBase" id="r_a7705f2d6d5e3cebb43faf3aebdfa0a0d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a7705f2d6d5e3cebb43faf3aebdfa0a0d">DataType</a></td></tr>
+<tr class="separator:a7705f2d6d5e3cebb43faf3aebdfa0a0d inherit pub_types_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_types_classcache_1_1CacheUpdateTrait"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_classcache_1_1CacheUpdateTrait')"><img src="../../closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html">cache::CacheUpdateTrait</a></td></tr>
+<tr class="memitem:aa375deac7c6ea286764d3382820862c4 inherit pro_types_classcache_1_1CacheUpdateTrait" id="r_aa375deac7c6ea286764d3382820862c4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aa375deac7c6ea286764d3382820862c4">Flag</a> { <br />
+&#160;&#160;<b>kNone</b> = 0
+, <br />
+&#160;&#160;<a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aa375deac7c6ea286764d3382820862c4aea7df304b37501ac208cf453cb612ad3">kNoFirstUpdate</a> = 1 &lt;&lt; 0
+<br />
+ }</td></tr>
+<tr class="memdesc:aa375deac7c6ea286764d3382820862c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodic update flags.  <a href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aa375deac7c6ea286764d3382820862c4">More...</a><br /></td></tr>
+<tr class="separator:aa375deac7c6ea286764d3382820862c4 inherit pro_types_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classcomponents_1_1CachingComponentBase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classcomponents_1_1CachingComponentBase')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html">components::CachingComponentBase&lt; MongoCacheTraits::DataType &gt;</a></td></tr>
+<tr class="memitem:a0d2ad77cfdc6f33bbf8f1f7ae6de3b24 inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_a0d2ad77cfdc6f33bbf8f1f7ae6de3b24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a0d2ad77cfdc6f33bbf8f1f7ae6de3b24">Set</a> (std::unique_ptr&lt; const MongoCacheTraits::DataType &gt; value_ptr)</td></tr>
+<tr class="separator:a0d2ad77cfdc6f33bbf8f1f7ae6de3b24 inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f3487065167275201e48a679eef57d inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_a15f3487065167275201e48a679eef57d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a15f3487065167275201e48a679eef57d">Set</a> (MongoCacheTraits::DataType &amp;&amp;value)</td></tr>
+<tr class="separator:a15f3487065167275201e48a679eef57d inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423361ab7bdad41e7581b5ae54743589 inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_a423361ab7bdad41e7581b5ae54743589"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a423361ab7bdad41e7581b5ae54743589">Emplace</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a423361ab7bdad41e7581b5ae54743589 inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1de4b27b60c861babf9a57c9195a8bf inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_aa1de4b27b60c861babf9a57c9195a8bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#aa1de4b27b60c861babf9a57c9195a8bf">Clear</a> ()</td></tr>
+<tr class="separator:aa1de4b27b60c861babf9a57c9195a8bf inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfffc2be9748626fce79a1e282ca00c inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_a6cfffc2be9748626fce79a1e282ca00c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a6cfffc2be9748626fce79a1e282ca00c">MayReturnNull</a> () const</td></tr>
+<tr class="separator:a6cfffc2be9748626fce79a1e282ca00c inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8eff05171e08887f9e29a01d49901fc inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_af8eff05171e08887f9e29a01d49901fc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#af8eff05171e08887f9e29a01d49901fc">PreAssignCheck</a> (const MongoCacheTraits::DataType *old_value_ptr, const MongoCacheTraits::DataType *new_value_ptr) const</td></tr>
+<tr class="memdesc:af8eff05171e08887f9e29a01d49901fc inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the option has-pre-assign-check is set true in static config, this function is called before assigning the new value to the cache.  <br /></td></tr>
+<tr class="separator:af8eff05171e08887f9e29a01d49901fc inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005d50cad4df9eb516c1dcd08e1058b6 inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_a005d50cad4df9eb516c1dcd08e1058b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a005d50cad4df9eb516c1dcd08e1058b6">WriteContents</a> (<a class="el" href="../../df/d09/classdump_1_1Writer.html">dump::Writer</a> &amp;writer, const MongoCacheTraits::DataType &amp;contents) const</td></tr>
+<tr class="separator:a005d50cad4df9eb516c1dcd08e1058b6 inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ce7853d25b158af0514ce49c1969d0 inherit pro_methods_classcomponents_1_1CachingComponentBase" id="r_a07ce7853d25b158af0514ce49c1969d0"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; const MongoCacheTraits::DataType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd1/classcomponents_1_1CachingComponentBase.html#a07ce7853d25b158af0514ce49c1969d0">ReadContents</a> (<a class="el" href="../../d2/d03/classdump_1_1Reader.html">dump::Reader</a> &amp;reader) const</td></tr>
+<tr class="separator:a07ce7853d25b158af0514ce49c1969d0 inherit pro_methods_classcomponents_1_1CachingComponentBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classcache_1_1CacheUpdateTrait"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classcache_1_1CacheUpdateTrait')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html">cache::CacheUpdateTrait</a></td></tr>
+<tr class="memitem:ac7a9c61b804d5b0144e75f9673f52357 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_ac7a9c61b804d5b0144e75f9673f52357"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="../../db/d8d/namespacecache.html#af4d5349e172fcdf86eb68f2ceaa3295f">AllowedUpdateTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllowedUpdateTypes</b> () const</td></tr>
+<tr class="memdesc:ac7a9c61b804d5b0144e75f9673f52357 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update types configured for the cache. <br /></td></tr>
+<tr class="separator:ac7a9c61b804d5b0144e75f9673f52357 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990a4035c1d2e9e3b2b318d4aae8435a inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a990a4035c1d2e9e3b2b318d4aae8435a"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>StartPeriodicUpdates</b> (<a class="el" href="../../df/d8b/classutils_1_1Flags.html">utils::Flags</a>&lt; <a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aa375deac7c6ea286764d3382820862c4">Flag</a> &gt; flags={})</td></tr>
+<tr class="memdesc:a990a4035c1d2e9e3b2b318d4aae8435a inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts periodic updates. <br /></td></tr>
+<tr class="separator:a990a4035c1d2e9e3b2b318d4aae8435a inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9115b904029f229500eb347cc6b28c03 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a9115b904029f229500eb347cc6b28c03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#a9115b904029f229500eb347cc6b28c03">StopPeriodicUpdates</a> ()</td></tr>
+<tr class="memdesc:a9115b904029f229500eb347cc6b28c03 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops periodic updates.  <br /></td></tr>
+<tr class="separator:a9115b904029f229500eb347cc6b28c03 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7898262c1bdcb9b25cf624236226e3b7 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a7898262c1bdcb9b25cf624236226e3b7"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AssertPeriodicUpdateStarted</b> ()</td></tr>
+<tr class="separator:a7898262c1bdcb9b25cf624236226e3b7 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b6542d6bad1ad3f59926133f22571e inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a07b6542d6bad1ad3f59926133f22571e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#a07b6542d6bad1ad3f59926133f22571e">OnCacheModified</a> ()</td></tr>
+<tr class="separator:a07b6542d6bad1ad3f59926133f22571e inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fdc4fd6d1c1898cf662b32368bd757 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a93fdc4fd6d1c1898cf662b32368bd757"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>CacheUpdateTrait</b> (<a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html">CacheUpdateTrait</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a93fdc4fd6d1c1898cf662b32368bd757 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a04bdc00ba96aa586a4ff975ec614f7 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a7a04bdc00ba96aa586a4ff975ec614f7"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html">CacheUpdateTrait</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html">CacheUpdateTrait</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a7a04bdc00ba96aa586a4ff975ec614f7 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9cdbfeb7144904bdfe9d799029fcbf9 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_aa9cdbfeb7144904bdfe9d799029fcbf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#aa9cdbfeb7144904bdfe9d799029fcbf9">InvalidateAsync</a> (<a class="el" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1">UpdateType</a> update_type)</td></tr>
+<tr class="memdesc:aa9cdbfeb7144904bdfe9d799029fcbf9 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-blocking forced cache update of specified type.  <br /></td></tr>
+<tr class="separator:aa9cdbfeb7144904bdfe9d799029fcbf9 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed99a01e30d17df235831480156268e inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a7ed99a01e30d17df235831480156268e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#a7ed99a01e30d17df235831480156268e">UpdateSyncDebug</a> (<a class="el" href="../../db/d8d/namespacecache.html#a99d3f117ecf9ccf2816a2bb19c1ffce1">UpdateType</a> update_type)</td></tr>
+<tr class="memdesc:a7ed99a01e30d17df235831480156268e inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces a cache update of specified type.  <br /></td></tr>
+<tr class="separator:a7ed99a01e30d17df235831480156268e inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1862cab7092e4efaf5165432d5403445 inherit pro_methods_classcache_1_1CacheUpdateTrait" id="r_a1862cab7092e4efaf5165432d5403445"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df8/classcache_1_1CacheUpdateTrait.html#a1862cab7092e4efaf5165432d5403445">Name</a> () const</td></tr>
+<tr class="separator:a1862cab7092e4efaf5165432d5403445 inherit pro_methods_classcache_1_1CacheUpdateTrait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0a0ea8ee583a4638c180c1a14d5bddee" name="a0a0ea8ee583a4638c180c1a14d5bddee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a0ea8ee583a4638c180c1a14d5bddee">&#9670;&#160;</a></span>MongoCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MongoCacheTraits &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html">components::MongoCache</a>&lt; MongoCacheTraits &gt;::MongoCache </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/dff/classcomponents_1_1ComponentConfig.html">ComponentConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/db1/classcomponents_1_1ComponentContext.html">ComponentContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>context</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html#l00164">164</a> of file <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">base_mongo_cache.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a27ab32b9a1e0dc990d8cf44de179d9db" name="a27ab32b9a1e0dc990d8cf44de179d9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ab32b9a1e0dc990d8cf44de179d9db">&#9670;&#160;</a></span>~MongoCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MongoCacheTraits &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html">components::MongoCache</a>&lt; MongoCacheTraits &gt;::~<a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html">MongoCache</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html#l00200">200</a> of file <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">base_mongo_cache.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac38ea0769c4f6c4762db6f88b50b3a17" name="ac38ea0769c4f6c4762db6f88b50b3a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38ea0769c4f6c4762db6f88b50b3a17">&#9670;&#160;</a></span>GetStaticConfigSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MongoCacheTraits &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d3e/structyaml__config_1_1Schema.html">yaml_config::Schema</a> <a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html">components::MongoCache</a>&lt; MongoCacheTraits &gt;::GetStaticConfigSchema </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html#l00346">346</a> of file <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">base_mongo_cache.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab532ed11b052929786b83a37b2dcd884" name="ab532ed11b052929786b83a37b2dcd884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab532ed11b052929786b83a37b2dcd884">&#9670;&#160;</a></span>kName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MongoCacheTraits &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view <a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html">components::MongoCache</a>&lt; MongoCacheTraits &gt;::kName = MongoCacheTraits::kName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html#l00128">128</a> of file <a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">base_mongo_cache.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>userver/cache/<a class="el" href="../../dd/d6c/base__mongo__cache_8hpp_source.html">base_mongo_cache.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.13-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d0/d1f/namespacecomponents.html">components</a></li><li class="navelem"><a class="el" href="../../d2/d39/classcomponents_1_1MongoCache.html">MongoCache</a></li>
+    <li class="footer">Generated on Wed Mar 27 2024 19:21:59 for userver by
+    <a href="https://www.doxygen.org/index.html">Doxygen</a> 1.10.0</li>
+  </ul>
+</div>
+<script type="text/javascript" src="../../codeHighlight.js"></script>
+<script type="text/javascript" src="../../telegramLanguage.js"></script>
+<script type="text/javascript" src="../../styledBtn.js"></script>
+<script type="text/javascript" src="../../search.js"></script>
+<script type="text/javascript" src="../../header.js"></script>
+<script type="text/javascript" src="../../searchHighlight.js"></script>
+<script>
+  const addLinks = () =>  {
+      const links = document.createElement('div')
+      links.id = 'links';
+      links.innerHTML = `
+          <a href="https://github.com/userver-framework/" rel="noopener" target="_blank" class="titlelink">
+              <img src="../../github_logo.svg" alt="Github" class="gh-logo"/> 
+          </a>
+          <a href="https://t.me/userver_en" rel="noopener" id='telegram_channel' target="_blank" class="titlelink">
+              <img src="../../telegram_logo.svg" alt="Telegram"/>
+          </a>
+      `
+      document.getElementById('main-navbar').appendChild(links);
+  }
+  $(function() {
+    $(document).ready(function() {
+      setTimeout(() => {
+      init_all_results_button();
+      init_header();
+      addLinks();
+      changeTelegramChannelLanguageForRussianSpeakingUser();
+      document.getElementById("side-nav").style.display = "none"; // TODO: disable treeview and save sticky footer
+      const isLanding = document.getElementById('landing_logo_id') !== null;
+      if (isLanding) return;
+      highlight_code();
+      styleNavButtons(); // TODO: code style?
+    }, 0);
+    });
+  });
+</script>
+</body>
+</html>

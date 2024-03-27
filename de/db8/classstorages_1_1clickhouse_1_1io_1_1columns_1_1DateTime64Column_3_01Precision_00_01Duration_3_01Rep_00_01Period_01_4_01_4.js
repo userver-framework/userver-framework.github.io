@@ -1,0 +1,4 @@
+var classstorages_1_1clickhouse_1_1io_1_1columns_1_1DateTime64Column_3_01Precision_00_01Duration_3_01Rep_00_01Period_01_4_01_4 =
+[
+    [ "Tag", "d1/d2f/structstorages_1_1clickhouse_1_1io_1_1columns_1_1DateTime64Column_3_01Precision_00_01Duration_3_be5e9514a2d2c63db5189a53aa0bbf7a.html", null ]
+];

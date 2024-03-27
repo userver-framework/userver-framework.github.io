@@ -1,0 +1,46 @@
+<map id="userver/engine/task/shared_task.hpp" name="userver/engine/task/shared_task.hpp">
+<area shape="rect" id="Node000001" title="Asynchronous task that has a shared ownership of the payload." alt="" coords="162,5,313,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="93,277,171,302"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,45,255,80,261,126,259,176,253,200,242,223,230,239,215,253,181,273,178,269,211,248,226,235,238,220,248,198,254,175,256,126,250,81,241,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="131,533,223,559"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,48,117,70,64,103,41,123,24,146,12,171,8,200,8,378,12,404,21,428,36,450,54,469,97,502,139,525,136,530,94,506,51,473,32,453,16,431,6,406,3,379,3,200,7,170,19,143,37,119,60,98,114,65,169,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="174,101,234,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,47,216,89,211,87,227,45"/>
+<area shape="rect" id="Node000005" href="$d5/df2/task__context__holder_8hpp_source.html" title=" " alt="" coords="43,181,229,221"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="210,48,185,69,164,95,148,131,141,168,136,167,143,130,159,92,181,65,206,44"/>
+<area shape="rect" id="Node000007" href="$d8/da1/task_8hpp.html" title="Asynchronous task that has a unique ownership of the payload." alt="" coords="367,93,518,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="283,43,386,86,384,91,281,48"/>
+<area shape="rect" id="Node000017" href="$d8/d03/task__processor__fwd_8hpp.html" title=" " alt="" coords="689,269,871,309"/>
+<area shape="poly" id="edge26_Node000001_Node000017" title=" " alt="" coords="313,32,419,52,476,69,530,91,598,129,660,174,714,220,754,258,750,262,710,224,657,179,595,134,528,96,474,74,417,58,312,37"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="112,445,299,485"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="117,223,98,244,84,270,80,289,84,308,101,346,125,380,175,434,171,438,120,383,97,348,79,310,74,289,79,268,94,241,113,220"/>
+<area shape="rect" id="Node000008" href="$d9/d72/task__base_8hpp.html" title="Base class for all the asynchronous tasks (engine::Task, engine::SharedTask, engine::SharedTaskWithRe..." alt="" coords="423,181,574,221"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="457,132,481,168,477,171,453,135"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="424,219,313,242,190,272,179,275,177,270,189,267,312,237,423,214"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="423,215,312,237,265,253,235,271,222,289,213,308,202,351,200,394,203,431,197,432,195,394,197,351,208,306,218,286,232,267,263,248,311,232,422,210"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="617,533,684,559"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="539,219,569,240,594,268,612,300,626,334,644,405,652,470,654,519,648,519,647,470,639,406,621,336,607,302,590,271,565,244,536,224"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="323,453,381,478"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="511,221,526,257,538,303,540,353,535,377,524,399,510,415,496,425,466,434,433,438,394,448,390,450,388,445,392,443,432,432,465,429,493,420,506,411,519,396,530,375,535,352,533,304,521,258,506,223"/>
+<area shape="rect" id="Node000011" href="$d2/d22/deadline_8hpp.html" title="Internal representation of a deadline time point." alt="" coords="406,453,613,478"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="529,220,552,241,570,268,583,303,587,333,582,363,570,398,556,424,536,445,532,442,551,421,566,396,577,362,581,333,578,305,566,271,548,244,526,223"/>
+<area shape="rect" id="Node000014" href="$d9/d27/core_2include_2userver_2engine_2exception_8hpp.html" title="Coroutine engine exceptions." alt="" coords="246,277,461,302"/>
+<area shape="poly" id="edge17_Node000008_Node000014" title=" " alt="" coords="468,224,386,272,383,267,465,219"/>
+<area shape="rect" id="Node000016" href="$db/df2/cancel_8hpp.html" title="Task cancellation helpers." alt="" coords="359,357,510,397"/>
+<area shape="poly" id="edge23_Node000008_Node000016" title=" " alt="" coords="498,222,489,263,474,310,457,346,452,344,470,308,484,262,493,221"/>
+<area shape="poly" id="edge24_Node000008_Node000017" title=" " alt="" coords="561,219,706,263,705,268,560,224"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="462,481,237,533,236,528,460,475"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="531,476,619,524,616,529,529,481"/>
+<area shape="rect" id="Node000012" href="$d2/d54/assert_8hpp.html" title="Assertion macros UASSERT, UASSERT_MSG, UINVARIANT." alt="" coords="418,533,593,559"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="511,478,509,520,504,519,506,478"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="457,607,554,632"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="508,559,508,593,503,593,503,559"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="249,365,335,390"/>
+<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="347,304,311,355,306,352,343,301"/>
+<area shape="poly" id="edge19_Node000014_Node000016" title=" " alt="" coords="366,300,409,345,405,349,362,304"/>
+<area shape="poly" id="edge21_Node000016_Node000006" title=" " alt="" coords="385,400,269,443,267,438,383,395"/>
+<area shape="poly" id="edge20_Node000016_Node000010" title=" " alt="" coords="418,399,375,444,371,441,414,396"/>
+<area shape="poly" id="edge22_Node000016_Node000011" title=" " alt="" coords="453,396,492,440,488,444,449,399"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="737,365,823,390"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="783,310,783,351,777,351,777,310"/>
+</map>

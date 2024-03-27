@@ -1,0 +1,28 @@
+var namespacestorages_1_1redis =
+[
+    [ "Client", "d4/da0/classstorages_1_1redis_1_1Client.html", null ],
+    [ "Config", "dc/d74/structstorages_1_1redis_1_1Config.html", null ],
+    [ "EmptyTransactionException", "da/dd8/classstorages_1_1redis_1_1EmptyTransactionException.html", null ],
+    [ "GeoPoint", "de/df3/structstorages_1_1redis_1_1GeoPoint.html", null ],
+    [ "MemberScore", "d4/d72/structstorages_1_1redis_1_1MemberScore.html", null ],
+    [ "NotStartedTransactionException", "d2/de6/classstorages_1_1redis_1_1NotStartedTransactionException.html", null ],
+    [ "Point", "da/dcc/structstorages_1_1redis_1_1Point.html", null ],
+    [ "Request", "dc/d4a/classstorages_1_1redis_1_1Request.html", null ],
+    [ "RequestDataBase", "d4/ddc/classstorages_1_1redis_1_1RequestDataBase.html", null ],
+    [ "RequestEval", "df/d69/classstorages_1_1redis_1_1RequestEval.html", null ],
+    [ "RequestEvalSha", "d5/daf/classstorages_1_1redis_1_1RequestEvalSha.html", "d5/daf/classstorages_1_1redis_1_1RequestEvalSha" ],
+    [ "RequestScanData", "d7/dbd/classstorages_1_1redis_1_1RequestScanData.html", null ],
+    [ "RequestScanDataBase", "da/d20/classstorages_1_1redis_1_1RequestScanDataBase.html", null ],
+    [ "ScanOptionsBase", "d6/d9d/classstorages_1_1redis_1_1ScanOptionsBase.html", "d6/d9d/classstorages_1_1redis_1_1ScanOptionsBase" ],
+    [ "ScanOptionsTmpl", "d7/dfa/classstorages_1_1redis_1_1ScanOptionsTmpl.html", null ],
+    [ "ScanReplyElem", "d7/d19/structstorages_1_1redis_1_1ScanReplyElem.html", null ],
+    [ "ScanReplyElem< ScanTag::kHscan >", "db/d99/structstorages_1_1redis_1_1ScanReplyElem_3_01ScanTag_1_1kHscan_01_4.html", null ],
+    [ "ScanReplyElem< ScanTag::kScan >", "d2/da8/structstorages_1_1redis_1_1ScanReplyElem_3_01ScanTag_1_1kScan_01_4.html", null ],
+    [ "ScanReplyElem< ScanTag::kSscan >", "de/dd3/structstorages_1_1redis_1_1ScanReplyElem_3_01ScanTag_1_1kSscan_01_4.html", null ],
+    [ "ScanReplyElem< ScanTag::kZscan >", "d6/db2/structstorages_1_1redis_1_1ScanReplyElem_3_01ScanTag_1_1kZscan_01_4.html", null ],
+    [ "ScanRequest", "d1/d52/classstorages_1_1redis_1_1ScanRequest.html", "d1/d52/classstorages_1_1redis_1_1ScanRequest" ],
+    [ "SubscribeClient", "d6/d2d/classstorages_1_1redis_1_1SubscribeClient.html", null ],
+    [ "SubscriptionToken", "d3/db8/classstorages_1_1redis_1_1SubscriptionToken.html", "d3/db8/classstorages_1_1redis_1_1SubscriptionToken" ],
+    [ "To", "d0/dbc/structstorages_1_1redis_1_1To.html", null ],
+    [ "Transaction", "d2/d9c/classstorages_1_1redis_1_1Transaction.html", "d2/d9c/classstorages_1_1redis_1_1Transaction" ]
+];
