@@ -1,0 +1,41 @@
+<map id="userver/yaml_config/schema.hpp" name="userver/yaml_config/schema.hpp">
+<area shape="rect" id="Node000001" title="JSON Schema&#45;like type definition." alt="" coords="524,5,679,45"/>
+<area shape="rect" id="Node000002" href="$df/d56/caching__component__base_8hpp.html" title="Base class for caching components." alt="" coords="213,101,381,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,52,360,103,358,98,526,47"/>
+<area shape="rect" id="Node000006" href="$d9/daf/lru__cache__component__base_8hpp.html" title="Base class for LRU&#45;cache components." alt="" coords="405,101,584,141"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="571,56,518,103,514,99,568,52"/>
+<area shape="rect" id="Node000007" href="$df/d88/static__config__validator_8hpp_source.html" title=" " alt="" coords="608,101,808,141"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="635,52,688,99,685,103,631,56"/>
+<area shape="rect" id="Node000015" href="$d5/d4d/http__handler__flatbuf__base_8hpp.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="832,93,1008,148"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="680,47,832,91,831,96,678,52"/>
+<area shape="rect" id="Node000016" href="$de/db2/http__middleware__base_8hpp.html" title="Base classes for implementing custom middlewares." alt="" coords="1033,101,1237,141"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="692,37,846,60,1020,91,1056,98,1055,103,1020,96,845,65,692,42"/>
+<area shape="rect" id="Node000019" href="$dc/d5f/merge__schemas_8hpp.html" title="Merge parent and child components schemas of static configs." alt="" coords="27,101,189,141"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="511,42,365,64,202,96,172,103,171,98,201,91,364,59,510,36"/>
+<area shape="rect" id="Node000003" href="$dd/d6c/base__mongo__cache_8hpp.html" title="Base class for all caches polling mongo collection" alt="" coords="34,196,182,236"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,149,147,198,145,194,246,144"/>
+<area shape="rect" id="Node000004" href="$dc/df7/base__postgres__cache_8hpp.html" title="Caching component for PostgreSQL. See Caching Component for PostgreSQL." alt="" coords="206,196,365,236"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="296,155,290,196,285,196,291,154"/>
+<area shape="rect" id="Node000005" href="$db/df3/core_2include_2userver_2dynamic__config_2updater_2component_8hpp.html" title="Component that does a periodic update of runtime configs." alt="" coords="389,196,571,236"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="348,144,444,194,442,198,345,149"/>
+<area shape="rect" id="Node000008" href="$d9/d32/component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co..." alt="" coords="631,196,785,236"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="711,154,711,196,705,196,705,154"/>
+<area shape="rect" id="Node000009" href="$d1/d1c/common__component__list_8hpp.html" title="Returns the most common list of components with runtime config updates and HTTP client." alt="" coords="5,291,224,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="617,234,583,239,409,261,236,287,199,294,198,289,236,281,409,256,582,233,617,228"/>
+<area shape="rect" id="Node000010" href="$dc/dec/common__server__component__list_8hpp.html" title="Returns the most common list of components to start a fully functional server." alt="" coords="248,284,459,339"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="624,242,454,287,452,281,622,237"/>
+<area shape="rect" id="Node000011" href="$d9/d9e/minimal__component__list_8hpp.html" title="Returns a list of components to do basic logging, component initialization and configuration." alt="" coords="483,291,698,331"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="675,247,616,293,613,289,672,242"/>
+<area shape="rect" id="Node000012" href="$db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server." alt="" coords="723,284,931,339"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="744,242,795,282,792,286,741,246"/>
+<area shape="rect" id="Node000013" href="$da/d51/run_8hpp.html" title="Functions to start a service or tool with the specified config and components::ComponentList." alt="" coords="955,291,1109,331"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="788,237,943,281,968,289,967,294,942,287,787,242"/>
+<area shape="rect" id="Node000014" href="$d7/de0/daemon__run_8hpp.html" title="Functions to start a daemon with specified components list." alt="" coords="1133,291,1293,331"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="799,226,951,249,1122,281,1151,289,1150,294,1121,287,950,254,799,232"/>
+<area shape="rect" id="Node000017" href="$d8/d9b/headers__propagator_8hpp_source.html" title=" " alt="" coords="921,196,1125,236"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1103,152,1047,198,1044,194,1100,148"/>
+<area shape="rect" id="Node000018" href="$df/dd5/middlewares_8hpp_source.html" title=" " alt="" coords="1149,203,1397,229"/>
+<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="1175,146,1258,201,1255,205,1172,150"/>
+<area shape="poly" id="edge19_Node000019_Node000003" title=" " alt="" coords="111,154,111,196,105,196,105,154"/>
+<area shape="poly" id="edge20_Node000019_Node000004" title=" " alt="" coords="157,145,251,194,248,198,155,149"/>
+</map>

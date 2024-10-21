@@ -1,0 +1,39 @@
+<map id="server::handlers::HttpHandlerBase" name="server::handlers::HttpHandlerBase">
+<area shape="rect" id="Node000001" title="Base class for all the Userver HTTP Handlers." alt="" coords="831,362,1077,387"/>
+<area shape="rect" id="Node000005" href="$d1/d48/classserver_1_1handlers_1_1DnsClientControl.html" title="Handlers that controls the DNS client." alt="" coords="1163,5,1362,45"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="959,348,977,287,1009,208,1031,166,1057,125,1088,88,1124,55,1162,35,1164,40,1127,60,1092,91,1062,128,1036,169,1014,210,982,289,964,350"/>
+<area shape="rect" id="Node000006" href="$dd/dea/classserver_1_1handlers_1_1DynamicDebugLog.html" title="Handler for forcing specific lines logging. Feature also known as dynamic debug logging." alt="" coords="1166,69,1359,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="963,348,985,299,1019,236,1065,173,1093,144,1124,119,1165,100,1167,105,1127,124,1097,148,1069,176,1023,239,989,301,967,350"/>
+<area shape="rect" id="Node000007" href="$d8/dfe/classserver_1_1handlers_1_1HttpHandlerFlatbufBase.html" title="Convenient base for handlers that accept requests with body in Flatbuffer format and respond with bod..." alt="" coords="1125,133,1400,173"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="968,348,993,311,1029,266,1073,221,1124,183,1149,171,1151,176,1127,188,1077,225,1033,270,998,314,973,351"/>
+<area shape="rect" id="Node000008" href="$da/dbe/classserver_1_1handlers_1_1HttpHandlerJsonBase.html" title="Convenient base for handlers that accept requests with body in JSON format and respond with body in J..." alt="" coords="1155,197,1370,237"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="977,350,1040,298,1081,270,1124,247,1156,235,1158,240,1126,252,1084,275,1044,302,981,354"/>
+<area shape="rect" id="Node000012" href="$dd/d88/classserver_1_1handlers_1_1HttpHandlerStatic.html" title="Handler that returns HTTP 200 if file exist and returns file data with mapped content/type." alt="" coords="1155,261,1370,301"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="999,354,1125,311,1169,299,1170,304,1126,316,1001,359"/>
+<area shape="rect" id="Node000013" href="$de/d97/classserver_1_1handlers_1_1ImplicitOptions.html" title="A &quot;magical&quot; handler that will respond to OPTIONS HTTP method for any other handler that cannot handle..." alt="" coords="1171,325,1355,365"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1091,359,1170,351,1171,357,1091,364"/>
+<area shape="rect" id="Node000014" href="$d2/d34/classserver_1_1handlers_1_1Jemalloc.html" title="Handler that controls the jemalloc allocator." alt="" coords="1167,390,1358,415"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1091,384,1167,391,1167,397,1091,390"/>
+<area shape="rect" id="Node000015" href="$da/da0/classserver_1_1handlers_1_1LogLevel.html" title="Handler that controls logging levels of all the loggers." alt="" coords="1166,439,1359,465"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1005,389,1126,425,1180,437,1179,442,1125,431,1003,394"/>
+<area shape="rect" id="Node000016" href="$dc/dde/classserver_1_1handlers_1_1OnLogRotate.html" title="Handler that controls logging levels of all the loggers." alt="" coords="1153,489,1372,514"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="984,393,1047,435,1086,457,1126,475,1165,486,1163,491,1124,480,1083,462,1044,440,981,398"/>
+<area shape="rect" id="Node000017" href="$d7/d6d/classserver_1_1handlers_1_1Ping.html" title="Handler that returns HTTP 200 if the service is OK and able to process requests." alt="" coords="1181,538,1344,563"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="976,396,1038,461,1080,496,1127,524,1153,535,1182,541,1180,547,1152,540,1124,529,1077,500,1034,465,972,400"/>
+<area shape="rect" id="Node000018" href="$dc/d10/classserver_1_1handlers_1_1ServerMonitor.html" title="Handler that returns statistics data." alt="" coords="1174,588,1351,628"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="971,398,996,437,1031,485,1075,533,1127,574,1150,585,1175,594,1173,599,1148,590,1124,578,1071,537,1027,488,991,440,967,401"/>
+<area shape="rect" id="Node000019" href="$d3/dc5/classserver_1_1websocket_1_1WebsocketHandlerBase.html" title="Base class for WebSocket handler." alt="" coords="1175,652,1350,692"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="967,399,988,450,1021,515,1068,582,1096,612,1127,638,1150,651,1176,660,1174,665,1148,656,1124,642,1092,616,1064,585,1017,518,983,453,962,401"/>
+<area shape="rect" id="Node000002" href="$d1/ddc/classserver_1_1handlers_1_1HandlerBase.html" title="Base class for the request handlers." alt="" coords="564,362,783,387"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="797,372,830,372,830,377,797,377"/>
+<area shape="rect" id="Node000003" href="$d7/db4/classcomponents_1_1ComponentBase.html" title="Base class for all application components, it depends on components::Logger and components::Tracer." alt="" coords="299,362,516,387"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="530,372,564,372,564,377,530,377"/>
+<area shape="rect" id="Node000004" href="$d2/d86/classcomponents_1_1RawComponentBase.html" title="The base class for all components. Don&#39;t use it for application components, use ComponentBase instead..." alt="" coords="5,362,251,387"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,372,299,372,299,377,264,377"/>
+<area shape="rect" id="Node000009" href="$d6/d08/classalerts_1_1Handler.html" title="Handler that returns the list of active fired alerts." alt="" coords="1496,147,1615,173"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1378,192,1495,169,1496,174,1379,197"/>
+<area shape="rect" id="Node000010" href="$d8/d67/classserver_1_1handlers_1_1InspectRequests.html" title="Handler that returns information about all in&#45;flight requests." alt="" coords="1464,197,1647,237"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1384,215,1464,215,1464,220,1384,220"/>
+<area shape="rect" id="Node000011" href="$d5/ded/classserver_1_1handlers_1_1TestsControl.html" title="Handler that allows to control the behavior of server from tests, and functional tests with testsuite..." alt="" coords="1448,262,1663,287"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1379,237,1490,259,1489,265,1378,243"/>
+</map>

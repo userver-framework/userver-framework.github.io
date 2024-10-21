@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['ubuntu_2018_2004_0',['ubuntu-18.04',['../d7/d6f/md_en_2deps_2ubuntu-18_804.html',1,'']]],
+  ['ubuntu_2020_2004_1',['ubuntu-20.04',['../d9/d65/md_en_2deps_2ubuntu-20_804.html',1,'']]],
+  ['ubuntu_2021_2010_2',['ubuntu-21.10',['../d1/dc1/md_en_2deps_2ubuntu-21_810.html',1,'']]],
+  ['ubuntu_2022_2004_3',['ubuntu-22.04',['../de/d9c/md_en_2deps_2ubuntu-22_804.html',1,'']]],
+  ['ubuntu_2024_2004_4',['ubuntu-24.04',['../d5/d6a/md_en_2deps_2ubuntu-24_804.html',1,'']]],
+  ['unit_20tests_20and_20benchmarks_5',['Unit Tests and Benchmarks',['../d4/d70/md_en_2userver_2testing.html',1,'']]],
+  ['upg_20driver_6',['uPg Driver',['../de/de0/pg_driver.html',1,'']]],
+  ['upg_3a_20automatic_20connection_20limit_7',['uPg: Automatic connection limit',['../d1/d60/md_en_2userver_2pg__connlimit__mode__auto.html',1,'']]],
+  ['upg_3a_20cluster_20topology_20discovery_8',['uPg: Cluster topology discovery',['../da/d75/pg_topology.html',1,'']]],
+  ['upg_3a_20postgres_20errors_9',['uPg: Postgres errors',['../d5/d8e/pg_errors.html',1,'']]],
+  ['upg_3a_20postgresql_20user_20type_20mappings_10',['uPg: PostgreSQL user type mappings',['../df/d47/md_en_2userver_2pg__user__types.html',1,'']]],
+  ['upg_3a_20running_20queries_11',['uPg: Running queries',['../da/d1c/pg_run_queries.html',1,'']]],
+  ['upg_3a_20support_20for_20c_20strong_20typedef_20idiom_12',['uPg: support for C++ &apos;strong typedef&apos; idiom',['../d3/ddf/pg_strong_typedef.html',1,'']]],
+  ['upg_3a_20supported_20data_20types_13',['uPg: Supported data types',['../dd/dad/md_en_2userver_2pg__types.html',1,'']]],
+  ['upg_3a_20transactions_14',['uPg: Transactions',['../db/dd8/pg_transactions.html',1,'']]],
+  ['upg_3a_20typed_20postgresql_20results_15',['uPg: Typed PostgreSQL results',['../d2/d2f/pg_user_row_types.html',1,'']]],
+  ['upg_3a_20working_20with_20result_20sets_16',['uPg: Working with result sets',['../db/db5/pg_process_results.html',1,'']]],
+  ['uploads_20and_20multipart_20form_20data_20testing_17',['File uploads and multipart/form-data testing',['../df/d0f/md_en_2userver_2tutorial_2multipart__service.html',1,'']]],
+  ['usage_18',['Guide on TaskProcessor Usage',['../db/d90/md_en_2userver_2task__processors__guide.html',1,'']]],
+  ['used_20lru_20caches_20and_20expirable_20lru_20caches_19',['Least Recently Used (LRU) Caches and expirable LRU caches',['../d0/dd8/md_en_2userver_2lru__cache.html',1,'']]],
+  ['user_20type_20mappings_20',['uPg: PostgreSQL user type mappings',['../df/d47/md_en_2userver_2pg__user__types.html',1,'']]],
+  ['userver_21',['userver',['../da/de1/md_en_2userver_2tutorial_2build__userver.html',1,'Build instructions for userver'],['../d7/df3/md__2data_2code_2userver_2scripts_2docker_2Readme.html',1,'Building Docker container for userver'],['../index.html',1,'userver']]]
+];

@@ -1,0 +1,45 @@
+<map id="ugrpc::client::BaseError" name="ugrpc::client::BaseError">
+<area shape="rect" id="Node000001" title="Base exception for all the client errors." alt="" coords="168,513,341,539"/>
+<area shape="rect" id="Node000003" href="$d3/d28/classugrpc_1_1client_1_1RpcError.html" title="Error during an RPC." alt="" coords="389,513,555,539"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="355,523,389,523,389,529,355,529"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,513,120,539"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,523,168,523,168,529,134,529"/>
+<area shape="rect" id="Node000004" href="$d4/d7d/classugrpc_1_1client_1_1ErrorWithStatus.html" title="Error with grpc::Status details." alt="" coords="621,442,791,482"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="532,507,631,480,633,485,533,512"/>
+<area shape="rect" id="Node000021" href="$d8/ddb/classugrpc_1_1client_1_1RpcCancelledError.html" title="RPC failed due to task cancellation." alt="" coords="607,506,805,546"/>
+<area shape="poly" id="edge20_Node000003_Node000021" title=" " alt="" coords="568,523,606,523,606,529,568,529"/>
+<area shape="rect" id="Node000022" href="$db/d86/classugrpc_1_1client_1_1RpcInterruptedError.html" title="RPC failed without a status. This means that either the call got cancelled using TryCancel,..." alt="" coords="603,570,809,610"/>
+<area shape="poly" id="edge21_Node000003_Node000022" title=" " alt="" coords="533,540,633,567,631,572,532,545"/>
+<area shape="rect" id="Node000005" href="$d3/d0b/classugrpc_1_1client_1_1AbortedError.html" title=" " alt="" coords="881,5,1073,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="706,428,715,348,738,244,758,188,783,134,815,85,856,41,879,27,882,31,859,45,820,88,788,137,763,190,744,245,720,349,711,428"/>
+<area shape="rect" id="Node000006" href="$dc/d5f/classugrpc_1_1client_1_1AlreadyExistsError.html" title=" " alt="" coords="877,55,1076,95"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="709,427,723,360,749,273,768,227,792,183,821,141,856,105,876,92,878,96,859,109,825,145,797,185,773,229,754,275,728,361,714,428"/>
+<area shape="rect" id="Node000007" href="$d3/dc0/classugrpc_1_1client_1_1CancelledError.html" title="Concrete errors for all the error codes." alt="" coords="889,119,1064,159"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="713,428,730,372,758,302,800,230,826,198,856,169,887,151,890,156,859,173,830,201,804,233,763,304,735,373,718,429"/>
+<area shape="rect" id="Node000008" href="$d6/d3e/classugrpc_1_1client_1_1DataLossError.html" title=" " alt="" coords="876,184,1077,209"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="716,428,735,381,765,324,805,267,829,242,856,220,880,207,883,212,859,224,833,246,809,271,769,327,740,383,721,430"/>
+<area shape="rect" id="Node000009" href="$d2/dc6/classugrpc_1_1client_1_1DeadlineExceededError.html" title=" " alt="" coords="861,234,1092,274"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="724,429,777,355,814,317,856,284,879,272,882,277,859,288,817,321,781,359,728,432"/>
+<area shape="rect" id="Node000010" href="$d3/d87/classugrpc_1_1client_1_1FailedPreconditionError.html" title=" " alt="" coords="862,298,1091,338"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="738,430,791,388,856,348,886,336,888,340,859,352,794,392,741,435"/>
+<area shape="rect" id="Node000011" href="$d9/d4d/classugrpc_1_1client_1_1InternalError.html" title=" " alt="" coords="881,363,1072,388"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="762,434,857,398,906,385,907,391,858,403,764,439"/>
+<area shape="rect" id="Node000012" href="$d4/dc9/classugrpc_1_1client_1_1InvalidArgumentError.html" title=" " alt="" coords="867,413,1086,453"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="805,449,867,442,867,447,805,454"/>
+<area shape="rect" id="Node000013" href="$d9/dc2/classugrpc_1_1client_1_1NotFoundError.html" title=" " alt="" coords="875,477,1078,503"/>
+<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="805,470,875,477,875,482,804,475"/>
+<area shape="rect" id="Node000014" href="$dd/d53/classugrpc_1_1client_1_1OutOfRangeError.html" title=" " alt="" coords="882,527,1071,567"/>
+<area shape="poly" id="edge13_Node000004_Node000014" title=" " alt="" coords="789,484,810,492,858,511,900,525,899,530,856,517,808,496,787,489"/>
+<area shape="rect" id="Node000015" href="$d1/d8a/classugrpc_1_1client_1_1PermissionDeniedError.html" title=" " alt="" coords="885,591,1068,631"/>
+<area shape="poly" id="edge14_Node000004_Node000015" title=" " alt="" coords="804,487,811,492,829,514,836,536,842,557,859,577,886,593,883,597,856,581,838,560,831,538,824,516,807,496,801,491"/>
+<area shape="rect" id="Node000016" href="$d8/db2/classugrpc_1_1client_1_1ResourceExhaustedError.html" title=" " alt="" coords="857,655,1096,695"/>
+<area shape="poly" id="edge15_Node000004_Node000016" title=" " alt="" coords="805,486,811,492,826,511,833,531,836,569,838,606,845,624,859,641,875,653,872,657,855,645,841,626,833,607,830,569,828,532,821,514,807,496,801,490"/>
+<area shape="rect" id="Node000017" href="$d4/da1/classugrpc_1_1client_1_1UnauthenticatedError.html" title=" " alt="" coords="867,719,1086,759"/>
+<area shape="poly" id="edge16_Node000004_Node000017" title=" " alt="" coords="804,486,811,492,830,520,838,547,838,575,835,601,833,628,833,654,841,680,859,706,874,717,870,721,855,709,836,682,828,655,827,628,830,601,833,574,833,548,825,522,807,496,801,490"/>
+<area shape="rect" id="Node000018" href="$de/df2/classugrpc_1_1client_1_1UnavailableError.html" title=" " alt="" coords="883,783,1071,823"/>
+<area shape="poly" id="edge17_Node000004_Node000018" title=" " alt="" coords="805,486,811,492,834,528,842,564,841,599,835,634,830,668,829,702,837,736,859,769,884,787,881,792,855,773,832,738,823,703,824,667,830,633,836,598,837,564,829,530,807,496,801,489"/>
+<area shape="rect" id="Node000019" href="$da/dc4/classugrpc_1_1client_1_1UnimplementedError.html" title=" " alt="" coords="869,847,1084,887"/>
+<area shape="poly" id="edge18_Node000004_Node000019" title=" " alt="" coords="805,485,811,492,827,514,838,537,847,580,844,623,835,666,826,708,824,750,833,792,843,812,859,834,872,845,869,849,855,837,839,815,828,793,818,750,821,707,830,665,839,623,842,581,833,538,823,517,807,496,801,489"/>
+<area shape="rect" id="Node000020" href="$dc/d6c/classugrpc_1_1client_1_1UnknownError.html" title=" " alt="" coords="875,912,1078,937"/>
+<area shape="poly" id="edge19_Node000004_Node000020" title=" " alt="" coords="805,485,811,492,830,519,842,545,849,571,851,597,846,649,834,699,822,749,817,799,820,824,827,848,840,873,859,897,877,911,873,915,855,901,836,876,822,850,815,825,812,799,816,749,828,698,841,648,846,597,844,572,837,547,825,521,807,496,801,489"/>
+</map>

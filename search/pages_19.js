@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['taskprocessor_20usage_0',['Guide on TaskProcessor Usage',['../db/d90/md_en_2userver_2task__processors__guide.html',1,'']]],
+  ['tcp_20full_20duplex_20server_20with_20metrics_20and_20spans_1',['TCP full-duplex server with metrics and Spans',['../db/db9/md_en_2userver_2tutorial_2tcp__full.html',1,'']]],
+  ['tcp_20half_20duplex_20server_20with_20static_20configs_20validation_2',['TCP half-duplex server with static configs validation',['../dc/d93/md_en_2userver_2tutorial_2tcp__service.html',1,'']]],
+  ['testing_3',['Chaos Testing',['../de/d74/md_en_2userver_2chaos__testing.html',1,'']]],
+  ['testing_4',['File uploads and multipart/form-data testing',['../df/d0f/md_en_2userver_2tutorial_2multipart__service.html',1,'']]],
+  ['tests_20and_20benchmarks_5',['Unit Tests and Benchmarks',['../d4/d70/md_en_2userver_2testing.html',1,'']]],
+  ['tests_20testsuite_6',['Functional service tests (testsuite)',['../df/d07/md_en_2userver_2functional__testing.html',1,'']]],
+  ['testsuite_7',['Functional service tests (testsuite)',['../df/d07/md_en_2userver_2functional__testing.html',1,'']]],
+  ['the_20basics_8',['The Basics',['../d8/d00/md_en_2userver_2intro.html',1,'']]],
+  ['the_20c_20asynchronous_20framework_9',['The C++ Asynchronous Framework',['../de/d6a/md_en_2index.html',1,'']]],
+  ['the_20chaotic_10',['JSON schema codegen - the Chaotic',['../d8/d43/md_en_2userver_2chaotic.html',1,'']]],
+  ['third_20party_20code_20licenses_11',['Third Party Code Licenses',['../d6/dc8/md__2data_2code_2userver_2THIRD__PARTY.html',1,'']]],
+  ['to_20external_20contributors_12',['Notice to external contributors',['../df/d91/md__2data_2code_2userver_2CONTRIBUTING.html',1,'']]],
+  ['todo_20list_13',['Todo List',['../dd/da0/todo.html',1,'']]],
+  ['tool_14',['Non-Coroutine Console Tool',['../d2/dfc/md_en_2userver_2tutorial_2json__to__yaml.html',1,'']]],
+  ['topology_20discovery_15',['uPg: Cluster topology discovery',['../da/d75/pg_topology.html',1,'']]],
+  ['tracing_16',['Logging and Tracing',['../df/d0c/md_en_2userver_2logging.html',1,'']]],
+  ['transactions_17',['uPg: Transactions',['../db/dd8/pg_transactions.html',1,'']]],
+  ['trunk_20based_20development_20and_20pull_20requests_18',['Releases, Trunk-based Development and Pull Requests',['../d0/d7b/md_en_2userver_2development_2releases.html',1,'']]],
+  ['type_20mappings_19',['uPg: PostgreSQL user type mappings',['../df/d47/md_en_2userver_2pg__user__types.html',1,'']]],
+  ['typed_20postgresql_20results_20',['uPg: Typed PostgreSQL results',['../d2/d2f/pg_user_row_types.html',1,'']]],
+  ['typedef_20idiom_21',['uPg: support for C++ &apos;strong typedef&apos; idiom',['../d3/ddf/pg_strong_typedef.html',1,'']]],
+  ['types_22',['types',['../d2/d0a/md_en_2userver_2mysql_2supported__types.html',1,'MySQL supported types'],['../dd/dad/md_en_2userver_2pg__types.html',1,'uPg: Supported data types']]]
+];

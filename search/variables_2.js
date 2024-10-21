@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['cache_5ffailure_5fttl_0',['cache_failure_ttl',['../dd/dc2/structclients_1_1dns_1_1ResolverConfig.html#a6d16a1ca3480858b9a6adb020e6f166c',1,'clients::dns::ResolverConfig']]],
+  ['cache_5fmax_5freply_5fttl_1',['cache_max_reply_ttl',['../dd/dc2/structclients_1_1dns_1_1ResolverConfig.html#a72df63cc6a3987de235c2d791253d1db',1,'clients::dns::ResolverConfig']]],
+  ['cache_5fsize_5fper_5fway_2',['cache_size_per_way',['../dd/dc2/structclients_1_1dns_1_1ResolverConfig.html#aacb6f7856d9d014ec3d357dc81f0dad5',1,'clients::dns::ResolverConfig']]],
+  ['cache_5fways_3',['cache_ways',['../dd/dc2/structclients_1_1dns_1_1ResolverConfig.html#afa6d120359f070cea1ba9da6599dbcd6',1,'clients::dns::ResolverConfig']]],
+  ['cancel_5ftask_5ftime_5flimit_4',['cancel_task_time_limit',['../d8/d26/structydb_1_1DistLockSettings.html#aff1999eef5799855d5fab884eeaea8b0',1,'ydb::DistLockSettings']]],
+  ['category_5',['category',['../d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a8256cde028c64a8bf477f64b5afe2be7',1,'storages::postgres::DBTypeDescription']]],
+  ['cc_5fconfig_6',['cc_config',['../d6/d5b/structstorages_1_1mongo_1_1PoolConfig.html#a2f718160d7afc57db2ff654d996c4143',1,'storages::mongo::PoolConfig::cc_config'],['../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#af3d78c48ceba2ba3869d5f3331ce22ef',1,'storages::postgres::ClusterSettings::cc_config']]],
+  ['channel_5fargs_7',['channel_args',['../db/d27/structugrpc_1_1client_1_1ClientFactorySettings.html#a4ff3c8274cd83f3d6553ce96c0236a9b',1,'ugrpc::client::ClientFactorySettings::channel_args'],['../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#a19cd8dc39bab28ac386d0a03ca2d3db4',1,'ugrpc::server::ServerConfig::channel_args']]],
+  ['channel_5fcount_8',['channel_count',['../db/d27/structugrpc_1_1client_1_1ClientFactorySettings.html#a6b0b8ac6fe81ce2ae38c7f82a929a459',1,'ugrpc::client::ClientFactorySettings']]],
+  ['chunk_5fsize_9',['chunk_size',['../d2/ded/structredis_1_1CommandControl.html#a3e3eb0f39589b57c7fe81e54d2b91ebe',1,'redis::CommandControl']]],
+  ['client_5fcredentials_10',['client_credentials',['../db/d27/structugrpc_1_1client_1_1ClientFactorySettings.html#afcdfe346e3d0e99809c8cc5a6d0f97a7',1,'ugrpc::client::ClientFactorySettings']]],
+  ['client_5fname_11',['client_name',['../d5/ddc/structugrpc_1_1client_1_1ClientSettings.html#a30b26fd208623d2170ddec2837db11fc',1,'ugrpc::client::ClientSettings']]],
+  ['client_5fqos_12',['client_qos',['../d5/ddc/structugrpc_1_1client_1_1ClientSettings.html#a4ba51b63e57652d41c870d1a941f6b56',1,'ugrpc::client::ClientSettings']]],
+  ['close_5fstatus_13',['close_status',['../d1/d0a/structserver_1_1websocket_1_1Message.html#a7f254d47d2cddc747ad43756b1904186',1,'server::websocket::Message']]],
+  ['commit_5ftotal_14',['commit_total',['../d8/d2f/structstorages_1_1postgres_1_1TransactionStatistics.html#a3858f341ec58be0fd599291c2b8a7122',1,'storages::postgres::TransactionStatistics']]],
+  ['completion_5fqueue_5fnum_15',['completion_queue_num',['../d9/d53/structugrpc_1_1server_1_1ServerConfig.html#a9d07fdff751ca8115202682b6f7f5987',1,'ugrpc::server::ServerConfig']]],
+  ['congestion_5fcontrol_16',['congestion_control',['../df/d1c/structstorages_1_1postgres_1_1InstanceStatisticsTemplate.html#a7fd6eade1618365c0710b95fbf03b97a',1,'storages::postgres::InstanceStatisticsTemplate']]],
+  ['conn_5fsettings_17',['conn_settings',['../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a11c8fb54028e2a6f7b5b0959e427bf6f',1,'storages::postgres::ClusterSettings']]],
+  ['conn_5ftimeout_18',['conn_timeout',['../d6/d5b/structstorages_1_1mongo_1_1PoolConfig.html#a6957e1a738ad0204965523e7dec495f9',1,'storages::mongo::PoolConfig']]],
+  ['connecting_5flimit_19',['connecting_limit',['../df/d2d/structstorages_1_1mongo_1_1PoolSettings.html#ad467c5309a0806bc532acbb7192be97b',1,'storages::mongo::PoolSettings::connecting_limit'],['../dd/da8/structstorages_1_1postgres_1_1PoolSettings.html#a02584063801fa2260513704259d1d272',1,'storages::postgres::PoolSettings::connecting_limit']]],
+  ['connection_20',['connection',['../df/d1c/structstorages_1_1postgres_1_1InstanceStatisticsTemplate.html#ad94c1786dfa0089e2cb69f9a6532b467',1,'storages::postgres::InstanceStatisticsTemplate']]],
+  ['connection_5fpercentile_21',['connection_percentile',['../df/d1c/structstorages_1_1postgres_1_1InstanceStatisticsTemplate.html#a005b0cddaea3f0d345ab971419d7c684',1,'storages::postgres::InstanceStatisticsTemplate']]],
+  ['connlimit_5fmode_22',['connlimit_mode',['../de/d83/structstorages_1_1postgres_1_1ClusterSettings.html#a6decc208019a3b07c7e4e06dad99b7aa',1,'storages::postgres::ClusterSettings']]],
+  ['connlimit_5fmode_5fauto_5fon_23',['connlimit_mode_auto_on',['../d5/d39/structstorages_1_1postgres_1_1ClusterStatistics.html#ace5efa57dcb8925cefa829ab3c8f935f',1,'storages::postgres::ClusterStatistics']]],
+  ['credentials_24',['credentials',['../db/d27/structugrpc_1_1client_1_1ClientFactorySettings.html#a8df8edfe699b9ee8b6a95c44732fb90f',1,'ugrpc::client::ClientFactorySettings']]]
+];

@@ -1,0 +1,1224 @@
+/* 🐙 userver variables */
+
+html {
+  /* Color variables */
+  --black-color-1: #282431;
+
+  --white-color-1: #f2f2f3;
+
+  /* Additional primary theme color */
+  --primary-color-1: #fefaf5;
+  --primary-color-2: #fae7d3;
+  --primary-color-3: #ebd9c7;
+
+  --secondary-color-1: #f5f5f5;
+  --secondary-color-2: #f0f0f0;
+
+  /* Header */
+  --header-text-color: #f7f7f7;
+
+  /* Table of contents */
+  --toc-active-color: #352e48;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) {
+    --primary-color-1: #433d53;
+    --primary-color-2: #373148;
+    --primary-color-3: #2E273F;
+
+    --secondary-color-1: #9c99a4;
+    --secondary-color-2: #94919c;
+
+    --toc-active-color: #ffffff;
+  }
+}
+
+/* Fontello icon font */
+@font-face {
+  font-family: 'fontello';
+  src: url('fontello.eot?53870425');
+  src: url('fontello.eot?53870425#iefix') format('embedded-opentype'),
+    url('fontello.woff2?53870425') format('woff2'),
+    url('fontello.woff?53870425') format('woff'),
+    url('fontello.ttf?53870425') format('truetype'),
+    url('fontello.svg?53870425#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Change color of iframe polygon scheme in dark-mode */
+html.dark-mode div.contents .dotgraph iframe {
+  filter: none;
+}
+
+html.dark-mode {
+  --primary-color-1: #433d53;
+  --primary-color-2: #373148;
+  --primary-color-3: #2E273F;
+
+  --secondary-color-1: #9c99a4;
+  --secondary-color-2: #94919c;
+
+  --toc-active-color: #ffffff;
+}
+
+/* Doxygen Awesome override */
+
+html {
+  /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
+  --primary-color: #f18128;
+  --primary-dark-color: #ff9643;
+
+  /* page base colors */
+  --page-foreground-color: var(--black-color-1);
+  --page-secondary-foreground-color: #716690;
+
+  /* color for all separators on the website: hr, borders, ... */
+  --separator-color: #fdcc9a;
+
+  /* default box shadow used for raising an element above the normal content. Used in dropdowns, search result, ... */
+  --box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+
+  --odd-color: rgba(0, 0, 0, 0.03);
+
+  /* font-families. will affect all text on the website
+     * font-family: the normal font for text, headlines, menus
+     * font-family-monospace: used for preformatted text in memtitle, code, fragments
+     */
+  --font-family: "fontello", Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  --font-family-monospace: "fontello", "Roboto Mono", ui-monospace, SFMono-Regular, SF Mono,
+    Menlo, Consolas, Liberation Mono, monospace;
+
+  /* The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to auto.*/
+  --content-maxwidth: 1440px;
+
+  /* table colors */
+  --tablehead-background: var(--primary-color-1);
+
+  /* code block colors */
+  --code-background: var(--primary-color-1);
+
+  /* fragment colors */
+  --fragment-background: #fefaf4;
+
+  /* sidebar navigation (treeview) colors */
+  --side-nav-background: var(--primary-color-1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) {
+    color-scheme: dark;
+
+    --primary-color: #f18128;
+    --primary-dark-color: #d97223;
+
+    --page-background-color: var(--black-color-1);
+    --page-foreground-color: var(--white-color-1);
+    --page-secondary-foreground-color: #716690;
+
+    --separator-color: #4A4163;
+
+    --tablehead-background: #413956;
+
+    --code-background: #4d416c;
+
+    --side-nav-background: var(--black-color-1);
+  }
+}
+
+/* dark mode variables are defined twice, to support both the dark-mode without and with doxygen-awesome-darkmode-toggle.js */
+html.dark-mode {
+  color-scheme: dark;
+
+  --primary-color: #f18128;
+  --primary-dark-color: #d97223;
+
+  --page-background-color: var(--black-color-1);
+  --page-foreground-color: var(--white-color-1);
+  --page-secondary-foreground-color: #716690;
+
+  --separator-color: #4A4163;
+
+  --tablehead-background: #413956;
+
+  --code-background: #4d416c;
+
+  --side-nav-background: var(--black-color-1);
+}
+
+#doc-content {
+  /* Disable standard Doxygen content margin */
+  margin-left: 0 !important;
+}
+
+/* Highlight.js overrides */
+
+.hljs,
+.hljs-template-tag,
+.hljs-type,
+.hljs-section,
+.hljs-title,
+.hljs-function {
+  color: var(--fragment-foreground);
+}
+
+.hljs {
+  background: #fbf1c7;
+}
+
+.hljs-comment {
+  color: #d46d6d;
+}
+
+.hljs-tag .hljs-attr,
+.hljs-tag .hljs-name {
+  color: var(--fragment-foreground);
+}
+
+.hljs-deletion,
+.hljs-number,
+.hljs-quote {
+  color: #00CC51;
+}
+
+.hljs-link,
+.hljs-operator,
+.hljs-variable {
+  color: #00CC51;
+}
+
+.hljs-literal {
+  color: #eb6bbb;
+}
+
+.hljs-literal {
+  color: #eb6bbb;
+}
+
+.hljs-addition,
+.hljs-built_in {
+  color: #8D41DA;
+}
+
+.hljs-bullet,
+.hljs-selector-pseudo,
+.hljs-tag {
+  color: #18E5E5;
+}
+
+.hljs-addition,
+.hljs-section,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-string,
+.hljs-symbol {
+  color: #F79400;
+}
+
+.hljs-code,
+.hljs-regexpб .hljs-selector-id,
+.hljs-template-variable {
+  color: #FF5C5C;
+}
+
+/* Common styles */
+
+/* In doxygen 1.10.0 there is a '.paramname em' with hardcoded color. Fixing */
+span.paramname em {
+  color: var(--primary-dark-color);
+}
+
+
+/* Scale down image to the page width */
+.image img {
+  max-width: calc(100% - 7px - 7px - 1px - 1px);
+  background-color: var(--primary-color-1);
+  /* matches .fragment */
+  border: 1px solid var(--separator-color);
+  /* matches .fragment */
+  padding: 7px;
+  /* matches .fragment */
+}
+
+hr {
+  display: none;
+}
+
+/* Header */
+
+#top {
+  justify-content: space-between;
+  background-color: var(--black-color-1);
+  color: white !important;
+  padding: 15px 20px;
+}
+
+#titlearea {
+  padding: 0px;
+}
+
+#titlearea a:hover {
+  text-decoration: none;
+  background: none;
+  /* doxygen 1.10.0 draws an underscore via background */
+}
+
+#titlearea td {
+  margin-left: 15px;
+}
+
+#projectlogo img {
+  width: 55px;
+  max-height: none;
+}
+
+#projectalign {
+  padding-left: 0.5em;
+}
+
+#projectname a,
+#projectbrief a {
+  color: white !important;
+}
+
+#projectname {
+  line-height: 26px;
+  font-size: 38px;
+}
+
+#projectbrief {
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+#links a:hover {
+  text-decoration: none;
+  /* doxygen 1.10.0 draws an underscore via background */
+  background: none;
+}
+
+.gh-logo {
+  mask-image: url(github_logo.svg);
+  -webkit-mask-image: url(github_logo.svg);
+  filter: invert(1)
+}
+
+html.dark-mode .gh-logo {
+  fill: white;
+}
+
+#main-navbar {
+  display: flex;
+  align-items: center;
+}
+
+#navbar-main-menu>li>a {
+  color: rgb(255, 255, 255) !important;
+  font-size: 18px;
+}
+
+.sm.sm-dox a {
+  color: black !important;
+}
+
+html.dark-mode .sm.sm-dox a {
+  color: white !important;
+}
+
+.sm.sm-dox li:last-child ul {
+  padding: 0;
+  border-radius: var(--border-radius-large) !important;
+}
+
+html.dark-mode .sm.sm-dox li:last-child ul {
+  background-color: #2e273f !important;
+}
+
+.sm.sm-dox li:last-child ul li:first-child {
+  border-radius: var(--border-radius-large) var(--border-radius-large) 0 0 !important;
+}
+
+.sm.sm-dox li:last-child ul li:last-child {
+  border-radius: 0 0 var(--border-radius-large) var(--border-radius-large) !important;
+}
+
+.sm.sm-dox li:last-child ul li:hover {
+  background-color: var(--primary-color-2);
+}
+
+html.dark-mode .sm.sm-dox li:last-child ul li:hover {
+  background-color: #7a6da0;
+}
+
+html.dark-mode .sm.sm-dox li:last-child ul li a {
+  background-color: transparent !important;
+}
+
+#main-nav {
+  display: none;
+}
+
+#links {
+  order: 3;
+  display: flex;
+  margin-left: 10px;
+}
+
+#telegram_channel {
+  margin-left: 5px;
+}
+
+#MSearchBox {
+  width: 400px;
+  margin: 0px;
+  margin-left: 5px;
+  border-radius: 14px;
+  box-sizing: content-box;
+  background: white !important;
+}
+
+#MSearchBox span.left {
+  width: 100%;
+}
+
+.MSearchBoxInactive::before,
+.MSearchBoxInactive::after {
+  display: block;
+  position: absolute;
+  top: 7px;
+  background-color: #373148;
+  font-family: var(--font-family-monospace);
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 4px;
+  padding: 3px 5px;
+}
+
+.MSearchBoxInactive::before {
+  content: "Ctrl";
+  right: 36px;
+}
+
+.MSearchBoxInactive::after {
+  content: "K";
+  right: 15px;
+}
+
+#projectlogo img {
+  margin: 0px;
+}
+
+h2.groupheader {
+  box-shadow: none;
+}
+
+div.header {
+  border: 0;
+}
+
+div.header .summary {
+  display: none;
+}
+
+div.header .title {
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sm-dox ul a:hover,
+.sm-dox ul a:active,
+.sm-dox ul a:focus {
+  background-color: transparent;
+}
+
+/* colors of arrow in nav menu */
+.sm.sm-dox li a .sub-arrow {
+  border-color: white transparent transparent transparent !important;
+}
+
+.sm.sm-dox li ul a .sub-arrow {
+  border-color: black transparent transparent transparent !important;
+}
+
+html.dark-mode .sm-dox a span.sub-arrow {
+  border-color: white transparent transparent transparent !important;
+}
+
+.sm-dox ul a span.sub-arrow {
+  border-color: transparent transparent transparent var(--page-foreground-color);
+}
+
+.sm-dox ul a:hover,
+.sm-dox ul a:active,
+.sm-dox ul a:focus {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.sm-dox a:hover,
+.sm-dox a:active,
+.tablist li a:hover {
+  background: transparent;
+  color: var(--primary-color) !important;
+}
+
+a.titlelink {
+  color: var(--page-foreground-color) !important;
+}
+
+a.titlelink:hover {
+  color: var(--primary-color) !important;
+  background: none;
+  /* doxygen 1.10.0 draws an underscore via background */
+}
+
+/* Burger menu */
+.main-menu-btn {
+  margin-left: 5px;
+}
+
+.main-menu-btn-icon,
+.main-menu-btn-icon::before,
+.main-menu-btn-icon::after {
+  width: 26px;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: var(--primary-color);
+}
+
+.main-menu-btn-icon {
+  margin-top: -1px;
+}
+
+.main-menu-btn-icon::before {
+  top: -8px;
+}
+
+.main-menu-btn-icon::after {
+  top: 8px;
+}
+
+.SRResult .highlight {
+  font-weight: 600;
+}
+
+#MSearchResults .SRPage .SREntry {
+  font-size: 14px;
+}
+
+#MSearchResults .SRPage .SREntry:hover {
+  background: var(--separator-color);
+  border-radius: var(--border-radius-large);
+}
+
+#MSearchSelect {
+  display: none;
+}
+
+#MSearchField {
+  width: 100%;
+  margin-top: 1px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.right {
+  margin-right: 5px;
+}
+
+#MSearchCloseImg {
+  width: 16px;
+  box-sizing: content-box;
+}
+
+.all-results-link {
+  padding: var(--spacing-small) var(--spacing-medium);
+  display: flex;
+  align-items: center;
+}
+
+.all-results-link:hover {
+  background: var(--separator-color);
+  border-radius: var(--border-radius-large);
+}
+
+.all-results-link::after {
+  margin-left: 7px;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  mask-image: url(ep_arrow-up.svg);
+  -webkit-mask-image: url(ep_arrow-up.svg);
+}
+
+.all-results-link:hover::after {
+  background-color: var(--primary-color);
+}
+
+#MSearchResultsWindow {
+  height: auto !important;
+  max-height: 80vh !important;
+  width: 400px !important;
+}
+
+#MSearchResultsWindow {
+  transform: translate(-90px, 20px) !important;
+}
+
+.MSearchBoxActive #MSearchField {
+  color: black;
+}
+
+#main-nav ul a:active {
+  background-color: none;
+}
+
+doxygen-awesome-dark-mode-toggle {
+  order: 1;
+}
+
+#MSearchBox {
+  order: 2;
+}
+
+@media (max-width: 1439px) {
+  #top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #projectlogo {
+    padding: 0;
+  }
+
+  #projectlogo img {
+    width: 36px;
+    max-height: none;
+  }
+
+  td#projectalign {
+    padding: 5px;
+  }
+
+  #projectname {
+    font-size: 18px;
+    line-height: 12px;
+  }
+
+  #projectbrief {
+    line-height: 12px;
+    font-size: 10px;
+  }
+
+  #MSearchBox {
+    width: 390px;
+  }
+
+  .MSearchBoxInactive::before,
+  .MSearchBoxInactive::after {
+    display: none;
+  }
+
+  #MSearchField {
+    width: 390px;
+  }
+
+  #MSearchResultsWindow {
+    height: auto !important;
+    max-height: 80vh !important;
+    width: 390px !important;
+    transform: translate(-54px, 20px) !important;
+  }
+
+  #links {
+    margin-left: 5px;
+  }
+
+  #telegram_channel {
+    display: none;
+  }
+
+  #github_header {
+    padding: 0;
+    order: 3;
+  }
+
+  #navbar-main-menu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    flex-direction: column;
+    width: 300px;
+    background-color: white;
+    border-radius: var(--border-radius-large);
+    border: 1px solid #d3d1d1;
+  }
+
+  html.dark-mode #navbar-main-menu {
+    background-color: #2e273f;
+    border: 1px solid #796da0;
+  }
+
+  #navbar-main-menu>li>a {
+    color: black !important;
+    font-size: 18px;
+  }
+
+  html.dark-mode #navbar-main-menu>li>a {
+    color: white !important;
+  }
+
+  #navbar-main-menu li:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-2) !important;
+  }
+
+  html.dark-mode #navbar-main-menu li:hover {
+    background-color: #7a6da0 !important;
+  }
+
+  .sm-dox {
+    margin: auto 0;
+    position: relative;
+  }
+
+  .sm.sm-dox ul {
+    padding: 0;
+  }
+
+  html:not(.dark-mode) .sm.sm-dox ul a:hover {
+    color: black !important;
+  }
+
+  .sm.sm-dox a {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  .sm.sm-dox>li {
+    padding: 5px;
+  }
+
+  .sm.sm-dox>li:first-child {
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+  }
+
+  .sm.sm-dox>li:last-child {
+    border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+  }
+
+  .main-menu-btn {
+    order: 4;
+    position: relative;
+    top: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  #projectlogo {
+    padding: 0;
+  }
+
+  #projectlogo img {
+    width: 36px;
+    max-height: none;
+  }
+
+  #main-navbar {
+    width: 100%;
+  }
+
+  .sm-dox {
+    margin: auto 45px;
+    position: relative;
+    padding: 0px !important;
+  }
+
+  .sm.sm-dox {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .sm.sm-dox a {
+    color: black !important;
+    font-weight: bold;
+    background: transparent;
+    font-size: 18px !important;
+  }
+
+  .sm.sm-dox a:hover {
+    font-size: 18px !important;
+  }
+
+  .sm.sm-dox ul {
+    border-radius: var(--border-radius-large) !important;
+  }
+
+  .sm.sm-dox>li {
+    padding: 5px;
+  }
+
+  .sm.sm-dox>li:first-child {
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+  }
+
+  .sm.sm-dox>li:last-child {
+    border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+  }
+
+  td#projectalign {
+    padding: 5px;
+  }
+
+  #projectalign {
+    display: none;
+  }
+
+  #projectname a {
+    font-size: 14px;
+    color: white !important;
+  }
+
+  #projectbrief a {
+    font-size: 7px;
+    color: white !important;
+  }
+
+  #MSearchBox {
+    width: 100%;
+  }
+
+  .MSearchBoxInactive::before,
+  .MSearchBoxInactive::after {
+    display: none;
+  }
+
+  #MSearchField {
+    width: 100%;
+  }
+
+  #MSearchResultsWindow {
+    height: auto !important;
+    max-height: 80vh !important;
+    width: 95% !important;
+    transform: translate(0px, 20px) !important;
+    z-index: 1000;
+  }
+
+  #navbar-main-menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 300px;
+    background-color: white;
+    border-radius: var(--border-radius-large);
+    border: 1px solid #d3d1d1;
+  }
+
+  #navbar-main-menu li:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-2) !important;
+  }
+
+  .main-menu-btn {
+    width: 45px;
+  }
+
+  #MSearchCloseImg {
+    width: 16px;
+  }
+}
+
+html:not(.black-mode) .landing-intro-center {
+  color: #304053;
+}
+
+html:not(.light-mode) .landing-intro-center {
+  color: #dedede;
+}
+
+/* Next/prev page buttons */
+
+.bottom-nav {
+  width: 100%;
+  display: flex;
+}
+
+.bottom-nav .button {
+  font-size: 12px;
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--separator-color);
+  padding: 16px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 4px;
+}
+
+html.dark-mode .btn-title {
+  color: var(--page-foreground-color);
+}
+
+.bottom-nav .button:hover {
+  background: var(--primary-color-2);
+}
+
+.bottom-nav .button.prev {
+  margin-right: 10px;
+}
+
+.bottom-nav .button.next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.bottom-nav .btn-title {
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom-nav .button.prev .btn-title::before,
+.bottom-nav .button.next .btn-title::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--page-foreground-color);
+  mask-image: url(arrow.svg);
+  -webkit-mask-image: url(arrow.svg);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+.bottom-nav .button.next .btn-title::after {
+  transform: rotate(180deg);
+}
+
+.btn-sub {
+  color: #716690;
+}
+
+/* Bigger font for menu */
+
+#main-nav>ul>li>a:hover {
+  color: var(--primary-color) !important;
+}
+
+.sm-dox a span.sub-arrow {
+  border-color: #d2dbde transparent transparent transparent;
+}
+
+.sm-dox ul a:hover span.sub-arrow {
+  border-color: transparent transparent transparent var(--primary-color);
+}
+
+/* Table of contents */
+
+div.toc li.level1 {
+  margin-left: 0px;
+}
+
+div.toc li.level2 {
+  margin-left: 15px;
+}
+
+div.toc li.level3 {
+  margin-left: 30px;
+}
+
+div.toc li.level4 {
+  margin-left: 45px;
+}
+
+div.toc li.level5 {
+  margin-left: 60px;
+}
+
+div.toc li.level6 {
+  margin-left: 75px;
+}
+
+div.contents .toc {
+  border: 1px solid var(--separator-color);
+  border-radius: var(--border-radius-large);
+  box-sizing: border-box;
+  min-width: 300px;
+  padding: 16px 16px;
+  top: 77px;
+  max-height: calc(100vh - 255px);
+}
+
+div.toc li.level1:first-child {
+  margin-top: 16px;
+}
+
+div.toc li.level1,
+div.toc li.level2,
+div.toc li.level3,
+div.toc li.level4 {
+  margin-top: 12px;
+}
+
+.toc ul li {
+  line-height: 18px;
+}
+
+div.toc li {
+  font-family: "Roboto", sans-serif;
+}
+
+div.toc li a {
+  font-size: 14px;
+  color: var(--primary-color) !important;
+}
+
+div.toc li a.active {
+  color: var(--toc-active-color) !important;
+  font-weight: bold;
+}
+
+@media (max-width: 999px) {
+  div.contents .toc {
+    padding: 0px;
+    padding-left: 10px;
+  }
+
+  div.toc h3 {
+    padding-top: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  div.contents .toc {
+    padding-top: 0;
+  }
+
+  .bottom-nav .button {
+    font-size: 14px;
+  }
+}
+
+/* Page feedback */
+
+page-feedback {
+  position: absolute;
+  top: 136px;
+  right: 30px;
+}
+
+page-feedback>input {
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  background-color: var(--page-foreground-color);
+  width: 20px;
+  height: 20px;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: filter 0.3s;
+}
+
+page-feedback>input:not(:first-child) {
+  margin-left: 8px;
+}
+
+page-feedback>input.like-checkbox {
+  mask-image: url("like.svg");
+  -webkit-mask-image: url("like.svg");
+}
+
+page-feedback>input.like-checkbox:checked {
+  background-color: var(--primary-color);
+}
+
+page-feedback>input.dislike-checkbox {
+  mask-image: url("dislike.svg");
+  -webkit-mask-image: url("dislike.svg");
+}
+
+page-feedback>input.dislike-checkbox:checked {
+  background-color: var(--primary-color);
+}
+
+page-feedback-popup {
+  opacity: 0;
+  background-color: var(--page-background-color);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--separator-color);
+  width: 150px;
+  display: block;
+  top: 22px;
+  position: absolute;
+  padding: 10px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+page-feedback-popup>h6,
+page-feedback-popup>p {
+  margin: 0;
+}
+
+page-feedback-popup>h6 {
+  font-size: 16px;
+}
+
+page-feedback-popup>p,
+page-feedback-popup>a {
+  margin-top: 8px;
+}
+
+page-feedback-popup>p {
+  font-size: 14px;
+  line-height: 18px !important;
+}
+
+page-feedback-popup>a {
+  display: block;
+  font-size: 16px;
+  background-image: none !important;
+}
+
+page-feedback-popup>a:hover {
+  filter: brightness(1.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) page-feedback-popup {
+    box-shadow: 0 6px 10px 0 rgba(128, 128, 128, 0.1);
+  }
+}
+
+html.dark-mode page-feedback-popup {
+  box-shadow: 0 6px 10px 0 rgba(128, 128, 128, 0.1);
+}
+
+@media (hover: hover) and (prefers-color-scheme: dark) {
+  page-feedback>input:hover {
+    filter: brightness(0.7);
+  }
+}
+
+@media (hover: hover) {
+  page-feedback>input:hover {
+    filter: brightness(2.5);
+  }
+
+  page-feedback>input:checked:hover {
+    filter: brightness(1.3);
+  }
+
+  html.dark-mode page-feedback>input:hover {
+    filter: brightness(0.7);
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  page-feedback {
+    top: 135px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  div.contents .toc {
+    top: unset;
+    margin-top: 15px;
+  }
+
+  page-feedback {
+    position: relative;
+    right: 0px !important;
+    top: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* in the mobile version, the popup is always on the right side */
+  page-feedback-popup {
+    left: unset !important;
+    right: 0px;
+  }
+}
+
+/* Code examples */
+
+/* More space and scrolling for code snippets */
+div.fragment {
+  padding: 7px;
+  border-radius: var(--border-radius-large);
+}
+
+pre {
+  font-family: var(--font-family-monospace);
+}
+
+.memItemLeft,
+.memTemplItemLeft {
+  white-space: normal;
+  font-size: 14px;
+}
+
+/* style block code */
+.textblock li>.fragment,
+.textblock li>.doxygen-awesome-fragment-wrapper>.fragment {
+  margin: var(--spacing-medium) calc(15px - var(--spacing-large));
+}
+
+@media screen and (max-width: 767px) {
+  doxygen-awesome-fragment-copy-button {
+    right: (var(--spacing-small));
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  div.fragment,
+  pre.fragment {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    border: 1px solid var(--separator-color);
+    border-radius: var(--border-radius-large);
+    margin: var(--spacing-medium) calc(15px - var(--spacing-large));
+  }
+}
+
+
+/* position copy btn */
+@media screen and (max-width: 767px) {
+
+  .textblock>.doxygen-awesome-fragment-wrapper>doxygen-awesome-fragment-copy-button,
+  .textblock li>.doxygen-awesome-fragment-wrapper>doxygen-awesome-fragment-copy-button,
+  .memdoc li>.doxygen-awesome-fragment-wrapper>doxygen-awesome-fragment-copy-button,
+  .memdoc>.doxygen-awesome-fragment-wrapper>doxygen-awesome-fragment-copy-button,
+  dl dd>.doxygen-awesome-fragment-wrapper>doxygen-awesome-fragment-copy-button {
+    right: 7px;
+  }
+}
+
+#nav-sync {
+  display: none;
+}
