@@ -1,0 +1,25 @@
+var postgresql_2include_2userver_2storages_2postgres_2io_2optional_8hpp =
+[
+    [ "storages::postgres::io::BufferParser&lt; boost::optional&lt; T &gt; &gt;", "dd/d0d/structstorages_1_1postgres_1_1io_1_1BufferParser_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::BufferFormatter&lt; boost::optional&lt; T &gt; &gt;", "de/dd0/structstorages_1_1postgres_1_1io_1_1BufferFormatter_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::BufferParser&lt; std::optional&lt; T &gt; &gt;", "d4/d26/structstorages_1_1postgres_1_1io_1_1BufferParser_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::BufferFormatter&lt; std::optional&lt; T &gt; &gt;", "d8/de6/structstorages_1_1postgres_1_1io_1_1BufferFormatter_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::BufferFormatter&lt;::utils::OptionalRef&lt; T &gt; &gt;", "d3/d97/structstorages_1_1postgres_1_1io_1_1BufferFormatter_3_1_1utils_1_1OptionalRef_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::CppToPg&lt; boost::optional&lt; T &gt; &gt;", "d9/d21/structstorages_1_1postgres_1_1io_1_1CppToPg_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::CppToPg&lt; std::optional&lt; T &gt; &gt;", "d1/d8a/structstorages_1_1postgres_1_1io_1_1CppToPg_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::CppToPg&lt;::utils::OptionalRef&lt; T &gt; &gt;", "d8/d42/structstorages_1_1postgres_1_1io_1_1CppToPg_3_1_1utils_1_1OptionalRef_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsNullable&lt; boost::optional&lt; T &gt; &gt;", "d9/db1/structstorages_1_1postgres_1_1io_1_1traits_1_1IsNullable_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::GetSetNull&lt; boost::optional&lt; T &gt; &gt;", "df/df5/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsMappedToPg&lt; boost::optional&lt; T &gt; &gt;", "df/dce/structstorages_1_1postgres_1_1io_1_1traits_1_1IsMappedToPg_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsSpecialMapping&lt; boost::optional&lt; T &gt; &gt;", "da/dbc/structstorages_1_1postgres_1_1io_1_1traits_1_1IsSpecialMapping_3_01boost_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::ParserBufferCategory&lt; BufferParser&lt; boost::optional&lt; T &gt; &gt; &gt;", "de/d3f/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory_3_01BufferParser_3_01boost_1_1optional_3_01T_01_4_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsNullable&lt; std::optional&lt; T &gt; &gt;", "d7/d11/structstorages_1_1postgres_1_1io_1_1traits_1_1IsNullable_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::GetSetNull&lt; std::optional&lt; T &gt; &gt;", "db/da0/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsMappedToPg&lt; std::optional&lt; T &gt; &gt;", "dd/d35/structstorages_1_1postgres_1_1io_1_1traits_1_1IsMappedToPg_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsSpecialMapping&lt; std::optional&lt; T &gt; &gt;", "d5/d66/structstorages_1_1postgres_1_1io_1_1traits_1_1IsSpecialMapping_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::ParserBufferCategory&lt; BufferParser&lt; std::optional&lt; T &gt; &gt; &gt;", "d9/df9/structstorages_1_1postgres_1_1io_1_1traits_1_1ParserBufferCategory_3_01BufferParser_3_01std_1_1optional_3_01T_01_4_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsNullable&lt;::utils::OptionalRef&lt; T &gt; &gt;", "de/d5a/structstorages_1_1postgres_1_1io_1_1traits_1_1IsNullable_3_1_1utils_1_1OptionalRef_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::GetSetNull&lt;::utils::OptionalRef&lt; T &gt; &gt;", "de/dda/structstorages_1_1postgres_1_1io_1_1traits_1_1GetSetNull_3_1_1utils_1_1OptionalRef_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsMappedToPg&lt;::utils::OptionalRef&lt; T &gt; &gt;", "d4/d73/structstorages_1_1postgres_1_1io_1_1traits_1_1IsMappedToPg_3_1_1utils_1_1OptionalRef_3_01T_01_4_01_4.html", null ],
+    [ "storages::postgres::io::traits::IsSpecialMapping&lt;::utils::OptionalRef&lt; T &gt; &gt;", "d9/dab/structstorages_1_1postgres_1_1io_1_1traits_1_1IsSpecialMapping_3_1_1utils_1_1OptionalRef_3_01T_01_4_01_4.html", null ]
+];

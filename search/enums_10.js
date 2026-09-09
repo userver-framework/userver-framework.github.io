@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['scantag_0',['ScanTag',['../d3/d0c/namespacestorages_1_1redis.html#a666d0f633dda768bbe642242253b74a5',1,'storages::redis']]],
+  ['secdistformat_1',['SecdistFormat',['../d1/d49/namespacestorages_1_1secdist.html#a593f469071a7e267f5d06f9a3f9721c3',1,'storages::secdist']]],
+  ['servicelifetimestage_2',['ServiceLifetimeStage',['../d0/d1f/namespacecomponents.html#a887cd9232040a56eaca5df29893bfdda',1,'components']]],
+  ['settingsreadfile_3',['SettingsReadFile',['../d5/d8f/namespacefs.html#a3b0ab608b92cc616984b85646f1adbf0',1,'fs']]],
+  ['shardingstrategy_4',['ShardingStrategy',['../d3/d0c/namespacestorages_1_1redis.html#a025fb725020b6e7be53994fdbc85afd8',1,'storages::redis']]],
+  ['sockettype_5',['SocketType',['../dd/daf/namespaceengine_1_1io.html#a5fe607a82eb6848ecd7da829f36a3949',1,'engine::io']]],
+  ['specialcasecompletiontype_6',['SpecialCaseCompletionType',['../de/d08/group__userver__clients.html#ga6526873300b565ecf000611d188ace15',1,'ugrpc::client']]],
+  ['sqlstate_7',['SqlState',['../de/d6d/namespacestorages_1_1postgres.html#a93029bf118436c93545ac7e734ed2658',1,'storages::postgres']]],
+  ['sqlstateclass_8',['SqlStateClass',['../de/d6d/namespacestorages_1_1postgres.html#a58ea081a583e7a99c69b05965787d6a6',1,'storages::postgres']]],
+  ['state_9',['State',['../d5/d4b/classengine_1_1TaskBase.html#a3263b3671eeab3f01a2e15e5dfcfd6cf',1,'engine::TaskBase::State'],['../d4/da3/classstorages_1_1mongo_1_1Transaction.html#a6957a3ec2afccc6d759161a20895dcc1',1,'storages::mongo::Transaction::State']]],
+  ['statisticlevel_10',['StatisticLevel',['../d5/d94/structydb_1_1TopicWriterSettings.html#a0bc49327e6e924db269662d70963bdf6',1,'ydb::TopicWriterSettings']]],
+  ['statsverbosity_11',['StatsVerbosity',['../d3/db5/namespacestorages_1_1mongo.html#a78f1d0f4800bc3bb6b0c3055cc045743',1,'storages::mongo']]],
+  ['status_12',['Status',['../dd/d17/classengine_1_1io_1_1Poller.html#accd2603e25c97a49bae22d114499fa04',1,'engine::io::Poller']]],
+  ['statuscode_13',['StatusCode',['../d3/d69/namespacehttp.html#a7537616cbf0ad69ab70901d81e90876f',1,'http']]],
+  ['strategy_14',['Strategy',['../dd/dc2/structstorages_1_1redis_1_1CommandControl.html#aad093c7cdd1f152bef46a717040da6a7',1,'storages::redis::CommandControl']]],
+  ['strength_15',['Strength',['../de/d8a/classstorages_1_1mongo_1_1options_1_1Collation.html#a4fc12b9ad9dc8853171f94061fe7bc14',1,'storages::mongo::options::Collation']]],
+  ['strongtypedefops_16',['StrongTypedefOps',['../d6/d84/namespaceutils.html#acd86450343253334e717518d0babb273',1,'utils']]],
+  ['synchronous_17',['Synchronous',['../d5/d8f/structstorages_1_1sqlite_1_1settings_1_1SQLiteSettings.html#a62f06fd37a54eb7108988b80027041bc',1,'storages::sqlite::settings::SQLiteSettings']]]
+];

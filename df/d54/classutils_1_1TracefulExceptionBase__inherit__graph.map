@@ -1,0 +1,81 @@
+<map id="utils::TracefulExceptionBase" name="utils::TracefulExceptionBase">
+<area shape="rect" id="Node000001" title="Base class implementing backtrace storage and message builder, published only for documentation purpo..." alt="" coords="5,507,210,534"/>
+<area shape="rect" id="Node000002" href="$df/dae/classutils_1_1TracefulException.html" title="Exception that remembers the backtrace at the point of its construction." alt="" coords="291,476,464,504"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,505,293,498,289,501,227,509"/>
+<area shape="rect" id="Node000040" title=" " alt="" coords="258,528,497,572"/>
+<area shape="poly" id="edge39_Node000001_Node000040" title=" " alt="" coords="224,531,259,535,255,538,226,536"/>
+<area shape="rect" id="Node000003" href="$d4/d92/classcrypto_1_1CryptoException.html" title="Base exception." alt="" coords="580,109,757,137"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,462,657,135,654,140,401,465"/>
+<area shape="rect" id="Node000008" href="$d2/d81/classengine_1_1io_1_1IoException.html" title="Generic I/O error." alt="" coords="584,325,753,353"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="414,466,544,393,635,352,631,355,546,398,417,470"/>
+<area shape="rect" id="Node000015" href="$d5/dc3/classengine_1_1subprocess_1_1ChildProcessStatusException.html" title=" " alt="" coords="560,408,777,452"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="462,470,561,451,557,454,464,475"/>
+<area shape="rect" id="Node000016" href="$d5/d9e/classformats_1_1bson_1_1BsonException.html" title="Generic BSON&#45;related exception." alt="" coords="560,476,776,504"/>
+<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="478,487,563,488,558,491,480,492"/>
+<area shape="rect" id="Node000023" href="$d1/d7c/classrcu_1_1MissingKeyException.html" title="Thrown on missing element access." alt="" coords="574,528,762,556"/>
+<area shape="poly" id="edge22_Node000002_Node000023" title=" " alt="" coords="473,504,589,526,584,529,474,510"/>
+<area shape="rect" id="Node000024" href="$d9/dc4/classstorages_1_1mongo_1_1MongoException.html" title="Generic mongo&#45;related exception." alt="" coords="545,808,791,836"/>
+<area shape="poly" id="edge23_Node000002_Node000024" title=" " alt="" coords="478,502,499,513,521,535,544,568,593,654,663,808,658,807,588,657,540,571,516,539,495,517,479,507"/>
+<area shape="rect" id="Node000039" href="$d5/de0/classutils_1_1InvariantError.html" title="Exception that is thrown on UINVARIANT violation." alt="" coords="595,860,741,888"/>
+<area shape="poly" id="edge38_Node000002_Node000039" title=" " alt="" coords="477,498,499,513,515,534,527,555,536,597,533,640,524,682,515,723,512,764,520,805,531,825,547,845,569,861,597,872,592,873,566,866,543,849,527,828,515,807,506,765,509,722,518,681,528,639,531,598,522,557,511,537,495,517,478,503"/>
+<area shape="rect" id="Node000004" href="$da/d49/classcrypto_1_1KeyParseError.html" title="Signing key parse error." alt="" coords="880,5,1040,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="708,100,769,71,838,43,885,32,881,35,840,48,771,76,712,104"/>
+<area shape="rect" id="Node000005" href="$dd/dc0/classcrypto_1_1SerializationError.html" title="Serialization error." alt="" coords="869,57,1051,85"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="764,104,880,84,876,87,766,108"/>
+<area shape="rect" id="Node000006" href="$d2/deb/classcrypto_1_1SignError.html" title="Signature generation error." alt="" coords="895,109,1025,137"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="771,121,897,122,893,124,773,126"/>
+<area shape="rect" id="Node000007" href="$d0/dc8/classcrypto_1_1VerificationError.html" title="Signature verification error." alt="" coords="873,161,1047,189"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="764,138,880,160,876,162,766,143"/>
+<area shape="rect" id="Node000009" href="$dc/de4/classengine_1_1io_1_1IoInterrupted.html" title="I/O interruption." alt="" coords="871,213,1049,241"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="705,315,767,282,838,251,883,240,879,243,840,256,769,287,708,319"/>
+<area shape="rect" id="Node000012" href="$d1/d90/classengine_1_1io_1_1IoSystemError.html" title="Operating system I/O error." alt="" coords="867,265,1053,293"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="753,319,891,292,887,295,755,324"/>
+<area shape="rect" id="Node000013" href="$dd/d4c/classengine_1_1io_1_1TerminatorNotFoundException.html" title=" " alt="" coords="867,317,1053,362"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="767,337,869,338,864,340,769,342"/>
+<area shape="rect" id="Node000014" href="$d1/d1d/classengine_1_1io_1_1TlsException.html" title="TLS I/O error." alt="" coords="872,385,1048,413"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="753,354,892,384,887,386,755,359"/>
+<area shape="rect" id="Node000010" href="$df/de3/classengine_1_1io_1_1IoCancelled.html" title=" " alt="" coords="1166,188,1336,216"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1063,216,1168,208,1163,210,1065,221"/>
+<area shape="rect" id="Node000011" href="$de/d2d/classengine_1_1io_1_1IoTimeout.html" title="I/O timeout." alt="" coords="1171,240,1330,268"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1064,234,1173,246,1168,247,1065,239"/>
+<area shape="rect" id="Node000017" href="$d8/d55/classformats_1_1bson_1_1ExceptionWithPath.html" title=" " alt="" coords="868,437,1052,482"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="790,474,870,468,866,470,792,479"/>
+<area shape="rect" id="Node000022" href="$d8/d86/classformats_1_1bson_1_1ParseException.html" title="BSON parsing error." alt="" coords="851,505,1069,533"/>
+<area shape="poly" id="edge21_Node000016_Node000022" title=" " alt="" coords="790,500,853,507,848,509,792,505"/>
+<area shape="rect" id="Node000018" href="$d9/de6/classformats_1_1bson_1_1ConversionException.html" title="Conversion error." alt="" coords="1155,333,1347,378"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="1065,429,1079,422,1103,405,1127,388,1160,377,1155,379,1130,392,1106,409,1082,427,1067,433"/>
+<area shape="rect" id="Node000019" href="$d5/d07/classformats_1_1bson_1_1MemberMissingException.html" title="BSON nonexisting member access error." alt="" coords="1139,402,1362,447"/>
+<area shape="poly" id="edge18_Node000017_Node000019" title=" " alt="" coords="1066,444,1141,437,1136,439,1068,449"/>
+<area shape="rect" id="Node000020" href="$dc/dd1/classformats_1_1bson_1_1OutOfBoundsException.html" title="BSON array indexing error." alt="" coords="1148,472,1354,516"/>
+<area shape="poly" id="edge19_Node000017_Node000020" title=" " alt="" coords="1067,469,1150,481,1145,482,1068,475"/>
+<area shape="rect" id="Node000021" href="$d2/d94/classformats_1_1bson_1_1TypeMismatchException.html" title="BSON types mismatch error." alt="" coords="1144,541,1358,586"/>
+<area shape="poly" id="edge20_Node000017_Node000021" title=" " alt="" coords="1066,485,1082,492,1106,509,1130,526,1160,540,1155,541,1127,531,1103,513,1079,496,1066,490"/>
+<area shape="rect" id="Node000025" href="$d5/dd6/classstorages_1_1mongo_1_1AuthenticationException.html" title="Authentication error." alt="" coords="843,557,1077,602"/>
+<area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="683,793,707,753,742,704,786,654,838,612,864,601,859,603,841,616,790,658,746,707,712,756,686,796"/>
+<area shape="rect" id="Node000026" href="$d0/d98/classstorages_1_1mongo_1_1CancelledException.html" title="The current task has been cancelled, e.g. by deadline propagation." alt="" coords="859,626,1061,671"/>
+<area shape="poly" id="edge25_Node000024_Node000026" title=" " alt="" coords="692,795,755,738,795,707,838,681,868,670,864,673,841,686,798,712,758,742,695,799"/>
+<area shape="rect" id="Node000027" href="$d8/d48/classstorages_1_1mongo_1_1ClusterUnavailableException.html" title="No server available to satisfy request constraints." alt="" coords="868,696,1052,740"/>
+<area shape="poly" id="edge26_Node000024_Node000027" title=" " alt="" coords="714,799,838,750,878,740,873,742,840,755,716,804"/>
+<area shape="rect" id="Node000028" href="$d7/df9/classstorages_1_1mongo_1_1IncompatibleServerException.html" title="Incompatible server version." alt="" coords="848,765,1072,810"/>
+<area shape="poly" id="edge27_Node000024_Node000028" title=" " alt="" coords="804,803,851,800,845,801,806,808"/>
+<area shape="rect" id="Node000029" href="$d4/d1d/classstorages_1_1mongo_1_1InvalidConfigException.html" title="Config validation error." alt="" coords="869,834,1051,879"/>
+<area shape="poly" id="edge28_Node000024_Node000029" title=" " alt="" coords="805,835,871,845,866,846,805,841"/>
+<area shape="rect" id="Node000030" href="$da/d68/classstorages_1_1mongo_1_1NetworkException.html" title="Network (connectivity) error." alt="" coords="863,904,1057,948"/>
+<area shape="poly" id="edge29_Node000024_Node000030" title=" " alt="" coords="775,839,793,846,808,857,818,868,827,879,841,889,867,903,862,903,838,893,823,882,813,871,804,861,790,851,775,844"/>
+<area shape="rect" id="Node000031" href="$d3/d28/classstorages_1_1mongo_1_1PoolNotFoundException.html" title="Nonexistent pool requested from the set." alt="" coords="865,973,1055,1018"/>
+<area shape="poly" id="edge30_Node000024_Node000031" title=" " alt="" coords="785,841,793,847,806,860,813,875,818,904,823,932,830,945,841,958,868,977,862,977,838,963,825,948,818,934,813,904,808,876,802,863,790,850,784,846"/>
+<area shape="rect" id="Node000032" href="$dc/d28/classstorages_1_1mongo_1_1PoolOverloadException.html" title="Pool refused to satisfy connection request due to high load." alt="" coords="847,1042,1073,1087"/>
+<area shape="poly" id="edge31_Node000024_Node000032" title=" " alt="" coords="787,842,793,847,811,869,819,892,820,915,819,939,818,984,825,1006,841,1028,856,1042,851,1041,837,1032,821,1008,813,985,813,938,815,915,813,893,806,872,789,850,786,847"/>
+<area shape="rect" id="Node000033" href="$de/db7/classstorages_1_1mongo_1_1QueryException.html" title="Generic query error." alt="" coords="839,1111,1081,1138"/>
+<area shape="poly" id="edge32_Node000024_Node000033" title=" " alt="" coords="788,842,793,847,815,878,824,910,823,942,818,974,813,1006,812,1037,820,1067,841,1097,856,1111,851,1109,837,1101,815,1070,807,1038,807,1005,813,974,818,942,818,911,810,880,789,850,787,848"/>
+<area shape="rect" id="Node000038" href="$df/d21/classstorages_1_1mongo_1_1TransactionException.html" title="Transaction&#45;related exception." alt="" coords="854,1162,1066,1207"/>
+<area shape="poly" id="edge37_Node000024_Node000038" title=" " alt="" coords="788,842,793,847,808,866,819,885,828,923,826,961,819,999,812,1036,810,1074,818,1111,827,1129,841,1148,856,1163,851,1161,837,1152,823,1132,813,1113,804,1074,807,1035,814,998,821,960,823,923,814,887,804,869,789,850,787,848"/>
+<area shape="rect" id="Node000034" href="$d6/db8/classstorages_1_1mongo_1_1InvalidQueryArgumentException.html" title="Query argument validation error." alt="" coords="1157,1073,1345,1118"/>
+<area shape="poly" id="edge33_Node000033_Node000034" title=" " alt="" coords="1096,1108,1153,1105,1159,1104,1096,1113"/>
+<area shape="rect" id="Node000035" href="$d1/de8/classstorages_1_1mongo_1_1ServerException.html" title="Server&#45;side error." alt="" coords="1129,1141,1373,1169"/>
+<area shape="poly" id="edge34_Node000033_Node000035" title=" " alt="" coords="1096,1136,1131,1142,1126,1142,1096,1142"/>
+<area shape="rect" id="Node000036" href="$d7/d4b/classstorages_1_1mongo_1_1DuplicateKeyException.html" title="Duplicate key error." alt="" coords="1434,1098,1634,1143"/>
+<area shape="poly" id="edge35_Node000035_Node000036" title=" " alt="" coords="1384,1136,1431,1133,1436,1133,1385,1142"/>
+<area shape="rect" id="Node000037" href="$d9/d98/classstorages_1_1mongo_1_1WriteConcernException.html" title="Write concern error." alt="" coords="1421,1168,1647,1212"/>
+<area shape="poly" id="edge36_Node000035_Node000037" title=" " alt="" coords="1385,1169,1423,1176,1418,1176,1384,1174"/>
+</map>

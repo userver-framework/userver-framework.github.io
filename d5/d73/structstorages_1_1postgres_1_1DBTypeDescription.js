@@ -1,0 +1,35 @@
+var structstorages_1_1postgres_1_1DBTypeDescription =
+[
+    [ "NameHash", "d5/d0e/structstorages_1_1postgres_1_1DBTypeDescription_1_1NameHash.html", null ],
+    [ "NamesEqual", "d3/d8d/structstorages_1_1postgres_1_1DBTypeDescription_1_1NamesEqual.html", null ],
+    [ "TypeCategoryHash", "dc/d31/structstorages_1_1postgres_1_1DBTypeDescription_1_1TypeCategoryHash.html", null ],
+    [ "TypeCategory", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51", [
+      [ "kInvalid", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51ab10913c938482a8aa4ba85b7a1116cb4", null ],
+      [ "kArray", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51aafc9b058c0fa7b9d2556bbcdcc49a272", null ],
+      [ "kBoolean", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a57f58630ea0106aa965e5bf61a49d02c", null ],
+      [ "kComposite", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a27dfe7d7c73a3d4245dc31a1ae0b649b", null ],
+      [ "kDatetime", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51ac6e0e30ce2ef7ff0a1b1c2f2a02c0e4b", null ],
+      [ "kEnumeration", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a8df1279805c31deefe45294f50b190d7", null ],
+      [ "kGeometric", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a214d2c89b85e706df3d39c258b9b7b5f", null ],
+      [ "kNetwork", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a62f22144de8e8a0bac264d00f661d8ec", null ],
+      [ "kNumeric", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a63bb3b55964d402ddf0a942c0d147cd1", null ],
+      [ "kPseudotype", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a759c311a1fcbe7cd2acd48fca213cb62", null ],
+      [ "kRange", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a2cc58b76b278d74f669ba5d28d67e271", null ],
+      [ "kString", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a302e56d566a2561033b27c13680ea4b2", null ],
+      [ "kTimespan", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a2cfc915fae2955fa9709e3792cb73850", null ],
+      [ "kUser", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a3ea6f9f6140b78f0c5a050d926097f56", null ],
+      [ "kBitstring", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a9563cc70b3941ab164af8bbd0c797bbb", null ],
+      [ "kUnknown", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af1b5238b62b72fa0c87cbd781a6d6b51a25c2dc47991b3df171ed5192bcf70390", null ]
+    ] ],
+    [ "array_type", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a9db6acdb7e72ca219ca383542df5fc63", null ],
+    [ "base_type", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#af3fee9b49b32e539bf426c61fa19835f", null ],
+    [ "category", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a8256cde028c64a8bf477f64b5afe2be7", null ],
+    [ "element_type", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#aad8e5cf54493a018f099340d3aa8f9a9", null ],
+    [ "length", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a4fb50108a005b0bb86f92094a93368e3", null ],
+    [ "name", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a116ed8ee7e1be27d20a524c47eb879fa", null ],
+    [ "not_null", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a976baca0866f145db31a7b1155064f53", null ],
+    [ "oid", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a592655432b990d92b675fc0074964d0b", null ],
+    [ "relation_id", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#ad0c0b4153e271749f484ea8feebd0d7c", null ],
+    [ "schema", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a6624d470a3728e9e9f0157da2293464f", null ],
+    [ "type_class", "d5/d73/structstorages_1_1postgres_1_1DBTypeDescription.html#a324d15323c83b634bb6ea517efa0c969", null ]
+];

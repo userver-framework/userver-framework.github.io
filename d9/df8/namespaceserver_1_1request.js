@@ -1,0 +1,27 @@
+var namespaceserver_1_1request =
+[
+    [ "DeadlinePropagationBlocker", "dd/d26/classserver_1_1request_1_1DeadlinePropagationBlocker.html", null ],
+    [ "DeadlineSignal", "da/d84/classserver_1_1request_1_1DeadlineSignal.html", null ],
+    [ "Header", "d5/d96/structserver_1_1request_1_1Header.html", null ],
+    [ "HttpRequestConfig", "d7/d23/structserver_1_1request_1_1HttpRequestConfig.html", null ],
+    [ "RequestContext", "de/df6/classserver_1_1request_1_1RequestContext.html", "de/df6/classserver_1_1request_1_1RequestContext" ],
+    [ "ResponseBase", "d3/dee/classserver_1_1request_1_1ResponseBase.html", "d3/dee/classserver_1_1request_1_1ResponseBase" ],
+    [ "ResponseDataAccounter", "d0/d6f/classserver_1_1request_1_1ResponseDataAccounter.html", null ],
+    [ "TaskInheritedData", "d3/d73/structserver_1_1request_1_1TaskInheritedData.html", "d3/d73/structserver_1_1request_1_1TaskInheritedData" ],
+    [ "GetPropagatedHeader", "d9/df8/namespaceserver_1_1request.html#a7e8f05104b34ee90056f77537fce5f0a", null ],
+    [ "GetPropagatedHeader", "d9/df8/namespaceserver_1_1request.html#ab438e766328a55a13caebc2c333701ff", null ],
+    [ "GetPropagatedHeaders", "d9/df8/namespaceserver_1_1request.html#adae69ebf0a2a6301682ad8a34282498d", null ],
+    [ "GetRequestJson", "d9/df8/namespaceserver_1_1request.html#af0f4cc5f3724ba7816c67e00b1ec2219", null ],
+    [ "GetResponseJson", "d9/df8/namespaceserver_1_1request.html#a4cb1f8ebcf62ff78dd70fb87e208232e", null ],
+    [ "GetTaskInheritedDeadline", "d9/df8/namespaceserver_1_1request.html#a71599441ee9180e5ba2f2ea81ddd48d4", null ],
+    [ "GetTaskInheritedOriginalDeadline", "d9/df8/namespaceserver_1_1request.html#a73d6f3b1dfe7267f45ce2fab3e836b7b", null ],
+    [ "GetTaskInheritedQueryParameter", "d9/df8/namespaceserver_1_1request.html#a2ce141aefd1537c8e366c157cc116a9f", null ],
+    [ "HasPropagatedHeader", "d9/df8/namespaceserver_1_1request.html#aa9c2f46817a1c6c286c8b9107299922d", null ],
+    [ "HasPropagatedHeader", "d9/df8/namespaceserver_1_1request.html#a863383812234a75c00dfc73f523b1bce", null ],
+    [ "HasTaskInheritedQueryParameter", "d9/df8/namespaceserver_1_1request.html#aa0dc57340344ed1fdd25bf17a01f6f57", null ],
+    [ "MarkTaskInheritedDeadlineExpired", "d9/df8/namespaceserver_1_1request.html#a0d505404e1e932cec2bb8a81f56c19f7", null ],
+    [ "SetPropagatedHeaders", "d9/df8/namespaceserver_1_1request.html#abab54c1c31d373ba07b62a2afedc5b1d", null ],
+    [ "SetRequestJson", "d9/df8/namespaceserver_1_1request.html#ac2e27677b0e6058500610c1b58f77dd8", null ],
+    [ "SetResponseJson", "d9/df8/namespaceserver_1_1request.html#a3bec5edd55ad185589f4d54afcebfc10", null ],
+    [ "kTaskInheritedData", "d9/df8/namespaceserver_1_1request.html#a4a92ea288fda2b5ebb33345b49673a1c", null ]
+];

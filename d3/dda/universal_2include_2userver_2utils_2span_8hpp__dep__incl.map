@@ -1,0 +1,82 @@
+<map id="userver/utils/span.hpp" name="userver/utils/span.hpp">
+<area shape="rect" id="Node000001" title="A polyfill for std::span with some of the newer features enabled." alt="" coords="1715,5,1880,33"/>
+<area shape="rect" id="Node000002" href="$d3/d1a/core_2include_2userver_2clients_2http_2middlewares_2base_8hpp.html" title="Base class for HTTP Client middlewares." alt="" coords="590,81,762,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1697,27,1349,51,906,84,763,96,762,91,905,78,1349,46,1702,26"/>
+<area shape="rect" id="Node000012" href="$d1/df2/random_8hpp.html" title="Cryptographically&#45;secure randomness." alt="" coords="918,90,1115,117"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1697,27,1441,49,1284,64,1127,84,1080,92,1079,86,1127,78,1283,59,1440,44,1702,26"/>
+<area shape="rect" id="Node000013" href="$d2/d1c/wait__any_8hpp.html" title="Provides engine::WaitAny, engine::WaitAnyFor, engine::WaitAnyUntil, engine::WaitAnyContext and engine..." alt="" coords="1138,81,1289,126"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1697,30,1515,52,1302,84,1290,86,1289,81,1301,78,1514,47,1702,29"/>
+<area shape="rect" id="Node000016" href="$dc/d30/headers_8hpp.html" title="Kafka message header views and readers." alt="" coords="1566,90,1760,117"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1766,40,1686,91,1684,86,1761,42"/>
+<area shape="rect" id="Node000017" href="$db/d4a/kafka_2include_2userver_2kafka_2message_8hpp.html" title="Wrapper for polled message data access." alt="" coords="1288,199,1488,227"/>
+<area shape="poly" id="edge23_Node000001_Node000017" title=" " alt="" coords="1697,35,1628,55,1556,83,1529,103,1505,128,1408,201,1405,196,1501,124,1526,99,1554,79,1626,50,1703,33"/>
+<area shape="rect" id="Node000022" href="$dc/d7e/kafka__fixture_8hpp_source.html" title=" " alt="" coords="1702,309,1848,354"/>
+<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="1798,47,1779,310,1774,307,1794,50"/>
+<area shape="rect" id="Node000023" href="$d9/d5a/rebalance__types_8hpp.html" title="Kafka consumer rebalance callback types." alt="" coords="1313,81,1490,126"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="1717,37,1492,86,1490,81,1722,36"/>
+<area shape="rect" id="Node000024" href="$d5/d78/protobuf__visit_8hpp.html" title="Utilities for visiting the fields of protobufs." alt="" coords="1836,81,2005,126"/>
+<area shape="poly" id="edge27_Node000001_Node000024" title=" " alt="" coords="1831,39,1890,81,1885,80,1829,45"/>
+<area shape="rect" id="Node000025" href="$dd/d0e/log__capture__fixture_8hpp.html" title="Fixture that allows you to capture and extract log written into the default logger." alt="" coords="2029,81,2217,126"/>
+<area shape="poly" id="edge28_Node000001_Node000025" title=" " alt="" coords="1865,35,2039,80,2034,80,1865,40"/>
+<area shape="rect" id="Node000027" href="$df/d51/hex_8hpp.html" title="Encoders, decoders and helpers for hexadecimal representations." alt="" coords="2243,81,2408,126"/>
+<area shape="poly" id="edge30_Node000001_Node000027" title=" " alt="" coords="1896,30,2053,50,2229,78,2245,84,2240,84,2228,84,2052,56,1896,35"/>
+<area shape="rect" id="Node000032" href="$d5/d6e/histogram_8hpp.html" title="A histogram with a dynamically&#45;allocated array of buckets." alt="" coords="2656,81,2822,126"/>
+<area shape="poly" id="edge35_Node000001_Node000032" title=" " alt="" coords="1896,20,2228,37,2436,54,2643,78,2659,83,2653,83,2643,84,2435,59,2228,42,1896,26"/>
+<area shape="rect" id="Node000036" href="$d4/d6f/histogram__aggregator_8hpp.html" title="Used to aggregate multiple utils::statistics::Histogram metrics." alt="" coords="2434,81,2630,126"/>
+<area shape="poly" id="edge39_Node000001_Node000036" title=" " alt="" coords="1896,25,2135,45,2421,78,2437,83,2431,83,2420,84,2135,50,1896,30"/>
+<area shape="rect" id="Node000037" href="$dd/d42/connection_8hpp.html" title="Main class for Websocket connection." alt="" coords="2845,90,3092,117"/>
+<area shape="poly" id="edge41_Node000001_Node000037" title=" " alt="" coords="1896,20,2305,38,2568,55,2834,78,2895,89,2890,89,2833,84,2568,60,2305,43,1896,26"/>
+<area shape="rect" id="Node000003" href="$d5/dd2/client__with__middlewares_8hpp.html" title="HTTP client that returns an HTTP request builder from CreateRequest() with applied middlewares." alt="" coords="117,191,332,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="573,131,317,193,315,188,577,127"/>
+<area shape="rect" id="Node000006" href="$da/d32/core_2include_2userver_2clients_2http_2middlewares_2component_8hpp.html" title="Base component for HTTP client middleware plugins." alt="" coords="448,191,662,235"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="643,135,581,192,578,188,639,137"/>
+<area shape="rect" id="Node000010" href="$da/d04/manager_8hpp.html" title="Base class for propagating trace context information in headers." alt="" coords="752,199,960,227"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="726,131,837,199,832,199,725,137"/>
+<area shape="rect" id="Node000004" href="$d7/d98/core_2include_2userver_2clients_2http_2component_8hpp.html" title="Component that manages clients::http::ClientWithMiddlewares." alt="" coords="5,309,153,354"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="184,247,108,310,104,307,187,243"/>
+<area shape="rect" id="Node000005" href="$dc/d2e/easy_8cpp_source.html" title=" " alt="" coords="8,410,150,472"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="81,367,82,410,76,409,77,371"/>
+<area shape="rect" id="Node000007" href="$de/dd8/core_2include_2userver_2clients_2http_2middlewares_2headers__propagator_2component_8hpp.html" title=" " alt="" coords="177,300,381,362"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="488,243,352,302,350,297,492,240"/>
+<area shape="rect" id="Node000008" href="$d2/d8f/core_2include_2userver_2clients_2http_2middlewares_2retry__budget_2component_8hpp.html" title=" " alt="" coords="405,300,601,362"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="541,248,518,302,514,298,537,251"/>
+<area shape="rect" id="Node000009" href="$df/d42/core_2include_2userver_2clients_2http_2middlewares_2yandex__tracing_2component_8hpp.html" title=" " alt="" coords="626,300,839,362"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="601,241,689,300,684,300,600,247"/>
+<area shape="rect" id="Node000011" href="$d6/dbd/manager__component_8hpp.html" title="TracingManager base and default components." alt="" coords="863,309,1044,354"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="878,236,938,309,933,308,876,241"/>
+<area shape="rect" id="Node000014" href="$d7/daa/core_2include_2userver_2utils_2hedged__request_8hpp.html" title="Classes and functions for performing hedged requests." alt="" coords="1059,191,1214,235"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1191,137,1154,192,1150,188,1187,140"/>
+<area shape="rect" id="Node000015" href="$df/d70/redis_2include_2userver_2storages_2redis_2hedged__request_8hpp.html" title="Classes and functions for performing hedged requests." alt="" coords="1068,309,1234,354"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="1143,248,1150,310,1146,307,1139,252"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1618,123,1423,201,1421,196,1612,124"/>
+<area shape="rect" id="Node000020" href="$df/dd7/producer_8hpp.html" title="Apache Kafka Producer Client." alt="" coords="1512,199,1710,227"/>
+<area shape="poly" id="edge19_Node000016_Node000020" title=" " alt="" coords="1652,130,1619,201,1615,197,1648,133"/>
+<area shape="poly" id="edge22_Node000016_Node000022" title=" " alt="" coords="1688,126,1724,172,1741,208,1755,245,1773,310,1768,307,1750,247,1737,210,1719,175,1686,131"/>
+<area shape="rect" id="Node000018" href="$de/d7b/consumer__scope_8hpp.html" title="RAII class that used as interface for Apache Kafka Consumer interaction and proper lifetime managemen..." alt="" coords="1286,309,1464,354"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="1387,240,1379,310,1376,307,1383,244"/>
+<area shape="rect" id="Node000019" href="$d6/d08/consumer__component_8hpp.html" title="Apache Kafka Consumer client component." alt="" coords="1286,418,1464,463"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="1377,367,1377,420,1373,416,1373,371"/>
+<area shape="rect" id="Node000021" href="$d1/dd1/producer__component_8hpp.html" title="Apache Kafka Producer client component." alt="" coords="1507,309,1678,354"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="1608,240,1598,310,1594,306,1605,244"/>
+<area shape="poly" id="edge21_Node000020_Node000022" title=" " alt="" coords="1642,233,1747,309,1742,308,1641,238"/>
+<area shape="poly" id="edge25_Node000023_Node000018" title=" " alt="" coords="1322,132,1297,153,1279,175,1269,195,1267,212,1270,230,1279,251,1303,283,1335,309,1330,308,1299,286,1274,254,1265,232,1261,213,1264,193,1274,172,1294,149,1318,134"/>
+<area shape="rect" id="Node000026" href="$df/dc2/struct__to__json__test_8cpp_source.html" title=" " alt="" coords="1835,182,2046,244"/>
+<area shape="poly" id="edge29_Node000025_Node000026" title=" " alt="" coords="2076,133,1993,184,1991,179,2070,135"/>
+<area shape="rect" id="Node000028" href="$d2/d05/bytes__from__json__test_8cpp_source.html" title=" " alt="" coords="2070,174,2237,252"/>
+<area shape="poly" id="edge31_Node000027_Node000028" title=" " alt="" coords="2281,133,2216,176,2215,171,2276,135"/>
+<area shape="rect" id="Node000029" href="$d4/dc9/bytes__to__json__test_8cpp_source.html" title=" " alt="" coords="2261,174,2409,252"/>
+<area shape="poly" id="edge32_Node000027_Node000029" title=" " alt="" coords="2331,139,2334,175,2330,172,2327,143"/>
+<area shape="rect" id="Node000030" href="$dc/db8/universal_2include_2userver_2utils_2macaddr_8hpp.html" title="MAC address types." alt="" coords="2433,199,2624,227"/>
+<area shape="poly" id="edge33_Node000027_Node000030" title=" " alt="" coords="2380,131,2507,199,2501,198,2379,136"/>
+<area shape="rect" id="Node000031" href="$d3/d98/postgresql_2include_2userver_2storages_2postgres_2io_2macaddr_8hpp.html" title="utils::Macaddr and utils::Macaddr8 I/O support" alt="" coords="2433,309,2624,354"/>
+<area shape="poly" id="edge34_Node000030_Node000031" title=" " alt="" coords="2530,240,2530,310,2526,307,2526,244"/>
+<area shape="rect" id="Node000033" href="$d3/d90/sqlite_2include_2userver_2storages_2sqlite_2infra_2statistics_2statistics_8hpp.html" title="SQLite pool statistics structs and metric dump helpers." alt="" coords="2648,191,2857,235"/>
+<area shape="poly" id="edge36_Node000032_Node000033" title=" " alt="" coords="2745,139,2752,192,2748,188,2742,144"/>
+<area shape="rect" id="Node000034" href="$dd/d55/sqlite_2include_2userver_2storages_2sqlite_2infra_2pool_8hpp.html" title="SQLite connection pool." alt="" coords="2656,309,2827,354"/>
+<area shape="poly" id="edge37_Node000033_Node000034" title=" " alt="" coords="2751,249,2746,310,2742,307,2747,252"/>
+<area shape="rect" id="Node000035" href="$d4/dbd/statistics__counter_8hpp.html" title="RAII helpers to account SQLite pool query and transaction statistics." alt="" coords="2851,300,3032,362"/>
+<area shape="poly" id="edge38_Node000033_Node000035" title=" " alt="" coords="2801,241,2895,300,2890,299,2800,246"/>
+<area shape="poly" id="edge40_Node000036_Node000033" title=" " alt="" coords="2591,130,2711,190,2705,190,2590,136"/>
+<area shape="rect" id="Node000038" href="$d4/d64/websocket__handler_8hpp.html" title="Base class for WebSocket handler." alt="" coords="2881,191,3058,235"/>
+<area shape="poly" id="edge42_Node000037_Node000038" title=" " alt="" coords="2970,131,2971,192,2967,189,2967,135"/>
+</map>
