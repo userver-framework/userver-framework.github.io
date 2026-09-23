@@ -1,0 +1,9 @@
+<map id="storages::sqlite::infra::strategy::PoolStrategyBase" name="storages::sqlite::infra::strategy::PoolStrategyBase">
+<area shape="rect" id="Node000001" title="Selects read&#45;only vs read&#45;write SQLite pool for an operation." alt="" coords="5,91,211,136"/>
+<area shape="rect" id="Node000002" href="$d7/df8/classstorages_1_1sqlite_1_1infra_1_1strategy_1_1ExclusiveReadWriteStrategy.html" title="SQLite pool strategy: single shared read&#45;write pool." alt="" coords="259,5,479,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,84,265,66,260,69,201,89"/>
+<area shape="rect" id="Node000003" href="$d1/d8c/classstorages_1_1sqlite_1_1infra_1_1strategy_1_1ReadOnlyStrategy.html" title="SQLite pool strategy: read&#45;only connections only." alt="" coords="265,91,473,136"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,111,267,113,262,114,227,116"/>
+<area shape="rect" id="Node000004" href="$df/df1/classstorages_1_1sqlite_1_1infra_1_1strategy_1_1ReadWriteStrategy.html" title="SQLite pool strategy: separate read and read&#45;write connection pools." alt="" coords="262,160,476,205"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,138,285,159,279,160,209,143"/>
+</map>

@@ -1,0 +1,38 @@
+<map id="userver/components/static_config_validator.hpp" name="userver/components/static_config_validator.hpp">
+<area shape="rect" id="Node000001" title="Static component configuration validation helpers." alt="" coords="689,5,888,50"/>
+<area shape="rect" id="Node000002" href="$de/d52/core_2include_2userver_2components_2component__list_8hpp.html" title="A list to keep a unique list of components to start with components::Run(), utils::DaemonMain() or co..." alt="" coords="711,98,866,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="790,63,791,99,786,96,787,68"/>
+<area shape="rect" id="Node000003" href="$d1/d1a/core_2include_2userver_2clients_2http_2component__list_8hpp.html" title="Returns list of components required to use HTTP client." alt="" coords="185,309,338,354"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="693,138,603,161,505,193,445,221,386,253,294,311,291,306,384,248,442,216,503,188,601,156,698,136"/>
+<area shape="rect" id="Node000005" href="$d1/d1c/common__component__list_8hpp.html" title="Returns the most common list of components with runtime config updates and HTTP client." alt="" coords="826,199,1044,244"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="834,149,906,199,900,198,833,154"/>
+<area shape="rect" id="Node000006" href="$dc/dec/common__server__component__list_8hpp.html" title="Returns the most common list of components to start a fully functional server." alt="" coords="1067,191,1278,252"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="881,143,1069,193,1064,193,881,148"/>
+<area shape="rect" id="Node000007" href="$d9/d9e/minimal__component__list_8hpp.html" title="Returns a list of components to do basic logging, component initialization and configuration." alt="" coords="1301,199,1516,244"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="881,129,1071,152,1290,188,1329,199,1324,199,1289,193,1070,158,881,134"/>
+<area shape="rect" id="Node000008" href="$db/dbf/minimal__server__component__list_8hpp.html" title="Returns a list of components to start a basic HTTP server." alt="" coords="362,300,569,362"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="694,138,632,160,600,175,570,193,542,217,518,246,482,302,479,298,514,243,538,213,567,189,597,170,630,155,699,136"/>
+<area shape="rect" id="Node000010" href="$da/d51/run_8hpp.html" title="Functions to start a service or tool with the specified config and components::ComponentList." alt="" coords="596,199,751,244"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="754,152,700,201,697,197,750,154"/>
+<area shape="rect" id="Node000011" href="$d7/de0/daemon__run_8hpp.html" title="Functions to start a daemon with specified components list." alt="" coords="594,309,753,354"/>
+<area shape="poly" id="edge21_Node000002_Node000011" title=" " alt="" coords="693,130,666,140,635,152,608,169,586,192,579,207,577,220,587,251,609,282,639,309,634,308,605,286,582,254,571,221,573,205,582,189,605,165,633,147,664,135,698,128"/>
+<area shape="rect" id="Node000012" href="$d3/d53/core_2include_2userver_2dynamic__config_2updater_2component__list_8hpp.html" title="Returns list of components required to update configs in runtime." alt="" coords="1539,199,1747,244"/>
+<area shape="poly" id="edge15_Node000002_Node000012" title=" " alt="" coords="881,123,1171,143,1349,162,1527,188,1567,199,1562,198,1527,193,1348,167,1170,149,881,128"/>
+<area shape="rect" id="Node000013" href="$d9/d66/easy_8hpp.html" title="Headers of an library for easy prototyping." alt="" coords="828,317,959,345"/>
+<area shape="poly" id="edge16_Node000002_Node000013" title=" " alt="" coords="791,156,800,204,817,251,846,288,878,317,872,316,842,291,813,254,795,205,789,160"/>
+<area shape="rect" id="Node000014" href="$d7/d07/grpc_2include_2userver_2ugrpc_2client_2component__list_8hpp.html" title="Two common component lists for grpc&#45;client (default and minimal)." alt="" coords="1770,199,1924,244"/>
+<area shape="poly" id="edge18_Node000002_Node000014" title=" " alt="" coords="881,118,1047,120,1266,129,1513,150,1638,167,1760,188,1792,199,1787,198,1758,193,1637,172,1512,156,1266,134,1047,125,882,123"/>
+<area shape="rect" id="Node000015" href="$d6/df1/grpc_2include_2userver_2ugrpc_2server_2component__list_8hpp.html" title="Two common component lists for grpc&#45;server (default and minimal)." alt="" coords="5,309,161,354"/>
+<area shape="poly" id="edge19_Node000002_Node000015" title=" " alt="" coords="693,131,545,154,460,171,377,193,304,220,233,252,121,311,118,306,231,247,302,215,376,188,459,166,544,148,698,129"/>
+<area shape="rect" id="Node000004" href="$df/d0a/main_8cpp_source.html" title=" " alt="" coords="276,410,453,489"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,363,333,410,328,409,290,368"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="432,372,399,412,397,407,427,375"/>
+<area shape="rect" id="Node000009" href="$dc/d2e/easy_8cpp_source.html" title=" " alt="" coords="661,418,804,480"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="549,366,666,418,660,418,548,371"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="726,251,750,273,768,299,776,330,773,362,764,393,752,420,748,416,759,391,768,362,770,331,763,301,746,276,724,256"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="675,258,676,310,671,307,672,262"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="605,359,454,417,453,412,599,360"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="693,365,720,419,715,417,690,369"/>
+<area shape="poly" id="edge17_Node000013_Node000009" title=" " alt="" coords="866,353,775,420,773,415,861,355"/>
+<area shape="poly" id="edge20_Node000015_Node000004" title=" " alt="" coords="150,357,278,410,273,413,149,362"/>
+</map>
